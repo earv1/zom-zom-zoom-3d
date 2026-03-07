@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bfk70k3q8woou"]
+[gd_scene load_steps=21 format=3 uid="uid://bfk70k3q8woou"]
 
 [ext_resource type="PackedScene" uid="uid://cmpcr4wp2d8gk" path="res://scenes/environment_and_light.tscn" id="1_q1xh4"]
 [ext_resource type="Script" uid="uid://dksmntt24x1d" path="res://tutorial/5 ramps and shapecasts/raycast_car.gd" id="5_7l6n7"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://vae1yu2flf4a" path="res://assets/car/nissan35/nissan_skyliner35.glb" id="11_ojl4o"]
 [ext_resource type="Script" uid="uid://socgkim3vuae" path="res://tutorial/4 finishing basics/car_follow_camera.gd" id="12_mcko3"]
 [ext_resource type="Script" path="res://scenes/world/chunk_manager.gd" id="20_chkmgr"]
+[ext_resource type="Script" path="res://scenes/world/world.gd" id="21_world"]
+[ext_resource type="Script" path="res://scenes/zombie/zombie_spawner.gd" id="22_spawner"]
+[ext_resource type="PackedScene" path="res://scenes/zombie/zombie.tscn" id="23_zombie"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qm2o8"]
 friction = 0.0
@@ -44,7 +47,9 @@ material = SubResource("StandardMaterial3D_o6rug")
 size = Vector2(0.6, 1)
 orientation = 1
 
-[node name="World" type="Node3D"]
+[node name="World" type="Node3D" node_paths=PackedStringArray("car")]
+script = ExtResource("21_world")
+car = NodePath("Car")
 
 [node name="DirectionalLight3D" parent="." instance=ExtResource("1_q1xh4")]
 
@@ -214,6 +219,11 @@ script = ExtResource("12_mcko3")
 min_distance = 6.0
 max_distance = 10.0
 height = 4.0
+
+[node name="ZombieSpawner" type="Node3D" parent="." node_paths=PackedStringArray("car")]
+script = ExtResource("22_spawner")
+car = NodePath("../Car")
+zombie_scene = ExtResource("23_zombie")
 
 [editable path="DirectionalLight3D"]
 [editable path="Car/nissan_skyliner35"]

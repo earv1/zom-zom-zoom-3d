@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scenes/zombie/zombie.gd" id="1_zombie"]
+[ext_resource type="Material" uid="uid://dywl6ja3yf4ba" path="res://assets/prototype/prototype-materials/green_square.tres" id="2_mat"]
+[ext_resource type="PackedScene" path="res://scenes/zombie/zombie_fragment.tscn" id="3_frag"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_zombie"]
+size = Vector3(1.0, 1.0, 1.0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_zombie"]
+size = Vector3(1.0, 1.0, 1.0)
+
+[node name="Zombie" type="RigidBody3D"]
+mass = 20.0
+script = ExtResource("1_zombie")
+fragment_scene = ExtResource("3_frag")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_mat")
+mesh = SubResource("BoxMesh_zombie")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_zombie")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, -3, 0)
