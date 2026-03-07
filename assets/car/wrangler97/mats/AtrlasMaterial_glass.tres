@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://db7o2w007ol2h"]
+
+[ext_resource type="Texture2D" uid="uid://c8vahgx1lv0go" path="res://assets/car/nissan35/ImphenziaPalette01-256-Gradient.png" id="1_2cq6g"]
+
+[resource]
+resource_name = "AtrlasMaterial_glass"
+transparency = 4
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 0.2)
+albedo_texture = ExtResource("1_2cq6g")
+roughness = 0.5
