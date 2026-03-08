@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3]
+
+[ext_resource type="Script" path="res://data/upgrade_data.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+upgrade_type = 2
+display_name = "Explosive Ammo"
+description = "+15% Damage"
+icon_color = Color(0.8, 0.3, 0.1, 1)
+stat_target = 3
+stat_value = 0.15

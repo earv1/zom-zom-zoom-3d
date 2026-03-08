@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemy/runner.gd" id="1_runner"]
+[ext_resource type="Material" path="res://assets/prototype/prototype-materials/red_square.tres" id="2_mat"]
+[ext_resource type="PackedScene" path="res://scenes/enemy/runner_fragment.tscn" id="3_frag"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_runner"]
+size = Vector3(1.0, 1.0, 1.0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_runner"]
+size = Vector3(1.0, 1.0, 1.0)
+
+[node name="Runner" type="RigidBody3D"]
+mass = 15.0
+scale = Vector3(0.7, 0.7, 0.7)
+script = ExtResource("1_runner")
+fragment_scene = ExtResource("3_frag")
+speed = 20.0
+max_health = 1
+xp_value = 8
+contact_damage = 8
+fragment_count = 8
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_mat")
+mesh = SubResource("BoxMesh_runner")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_runner")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, -3, 0)

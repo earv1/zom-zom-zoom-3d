@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/weapons/side_rockets.gd" id="1_sr"]
+
+[node name="SideRockets" type="Node3D"]
+script = ExtResource("1_sr")
+weapon_id = &"side_rockets"

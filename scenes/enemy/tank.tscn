@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemy/tank.gd" id="1_tank"]
+[ext_resource type="Material" path="res://assets/prototype/prototype-materials/blue_square.tres" id="2_mat"]
+[ext_resource type="PackedScene" path="res://scenes/enemy/tank_fragment.tscn" id="3_frag"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tank"]
+size = Vector3(1.0, 1.0, 1.0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tank"]
+size = Vector3(1.0, 1.0, 1.0)
+
+[node name="Tank" type="RigidBody3D"]
+mass = 60.0
+scale = Vector3(1.8, 1.8, 1.8)
+script = ExtResource("1_tank")
+fragment_scene = ExtResource("3_frag")
+speed = 3.0
+max_health = 5
+xp_value = 25
+contact_damage = 20
+fragment_count = 16
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_mat")
+mesh = SubResource("BoxMesh_tank")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_tank")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, -3, 0)

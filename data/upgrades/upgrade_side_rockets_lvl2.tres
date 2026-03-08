@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3]
+
+[ext_resource type="Script" path="res://data/upgrade_data.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+upgrade_type = 1
+display_name = "Side Rockets Lv.2"
+description = "+75% Damage"
+icon_color = Color(0.3, 0.6, 1.0, 1)
+weapon_id = &"side_rockets"

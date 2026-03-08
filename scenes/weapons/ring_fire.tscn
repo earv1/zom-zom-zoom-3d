@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/weapons/ring_fire.gd" id="1_rf"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ring"]
+radius = 4.0
+
+[node name="RingFire" type="Node3D"]
+script = ExtResource("1_rf")
+weapon_id = &"ring_fire"
+
+[node name="Area3D" type="Area3D" parent="."]
+monitoring = true
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_ring")

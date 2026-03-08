@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/hud.gd" id="1_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/level_up_screen.tscn" id="2_lus"]
+[ext_resource type="PackedScene" path="res://scenes/ui/game_over_screen.tscn" id="3_gos"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hud")
+
+[node name="TopBar" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 40.0
+
+[node name="HealthBar" type="ProgressBar" parent="TopBar"]
+custom_minimum_size = Vector2(200, 24)
+max_value = 100.0
+value = 100.0
+
+[node name="TimerLabel" type="Label" parent="TopBar"]
+text = "  00:00"
+
+[node name="LevelLabel" type="Label" parent="TopBar"]
+text = "  Lv 1"
+
+[node name="XPBar" type="ProgressBar" parent="."]
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -20.0
+offset_bottom = 0.0
+max_value = 100.0
+
+[node name="LevelUpScreen" parent="." instance=ExtResource("2_lus")]
+
+[node name="GameOverScreen" parent="." instance=ExtResource("3_gos")]

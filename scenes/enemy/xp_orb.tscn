@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scenes/enemy/xp_orb.gd" id="1_orb"]
+[ext_resource type="Material" path="res://assets/prototype/prototype-materials/yellow_square.tres" id="2_mat"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_orb"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="XpOrb" type="Node3D"]
+script = ExtResource("1_orb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_mat")
+mesh = SubResource("BoxMesh_orb")

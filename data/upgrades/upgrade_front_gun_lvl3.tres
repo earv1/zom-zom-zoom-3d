@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3]
+
+[ext_resource type="Script" path="res://data/upgrade_data.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+upgrade_type = 1
+display_name = "Front Gun Lv.3"
+description = "Triple shot spread"
+icon_color = Color(1.0, 0.9, 0.1, 1)
+weapon_id = &"front_gun"

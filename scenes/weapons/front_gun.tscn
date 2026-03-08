@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/weapons/front_gun.gd" id="1_fg"]
+
+[node name="FrontGun" type="Node3D"]
+script = ExtResource("1_fg")
+weapon_id = &"front_gun"

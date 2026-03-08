@@ -10,8 +10,10 @@
 [ext_resource type="Script" uid="uid://socgkim3vuae" path="res://scenes/world/car_follow_camera.gd" id="12_mcko3"]
 [ext_resource type="Script" path="res://scenes/world/chunk_manager.gd" id="20_chkmgr"]
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="21_world"]
-[ext_resource type="Script" path="res://scenes/zombie/zombie_spawner.gd" id="22_spawner"]
-[ext_resource type="PackedScene" path="res://scenes/zombie/zombie.tscn" id="23_zombie"]
+[ext_resource type="Script" path="res://scenes/enemy/enemy_spawner.gd" id="22_spawner"]
+[ext_resource type="Script" path="res://scenes/weapons/weapon_manager.gd" id="23_wm"]
+[ext_resource type="PackedScene" path="res://scenes/weapons/front_gun.tscn" id="24_fg"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="25_hud"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qm2o8"]
 friction = 0.0
@@ -225,10 +227,16 @@ min_distance = 6.0
 max_distance = 10.0
 height = 4.0
 
-[node name="ZombieSpawner" type="Node3D" parent="." node_paths=PackedStringArray("car")]
+[node name="WeaponManager" type="Node3D" parent="Car"]
+script = ExtResource("23_wm")
+
+[node name="FrontGun" parent="Car/WeaponManager" instance=ExtResource("24_fg")]
+
+[node name="EnemySpawner" type="Node3D" parent="." node_paths=PackedStringArray("car")]
 script = ExtResource("22_spawner")
 car = NodePath("../Car")
-zombie_scene = ExtResource("23_zombie")
+
+[node name="HUD" parent="." instance=ExtResource("25_hud")]
 
 [editable path="DirectionalLight3D"]
 [editable path="Car/nissan_skyliner35"]
