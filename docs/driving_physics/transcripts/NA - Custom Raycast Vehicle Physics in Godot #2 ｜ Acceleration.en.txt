@@ -1,0 +1,426 @@
+Kind: captions
+Language: en
+[Music]
+We are back again with the next step for
+our raycast car. This time we will make
+our car move, organize the code to allow
+for better customization, and fix a lot
+of very specific
+problems. Here's our car. First, let's
+start by improving how we define the
+wheels properties. Currently, all of our
+wheels spring forces are defined in car
+itself. But what if we want each wheel
+to behave differently from each other?
+So to do that, let's select one of the
+raycast nodes and create a new script
+and call it raycast wheel. We are going
+to name this class raycast wheel and use
+it to store all of the wheels properties
+from now on. So just like in the car
+script, create an export variable for
+the spring strength, spring damping,
+rest distance, and let's also give it a
+variable name overextend if you wanted
+to have that spring pulld down force.
+Finally, we add our wheel
+radius and create a ready bar for the
+wheel mesh called wheel and set it to
+get child zero. This will get the first
+child of the raycast wheel and set it as
+the wheel mesh. But you can do this in
+any way you want as long as we get the
+reference for the wheel mesh. Now that
+we have our wheel class, let's drag in
+the script and add it to the other
+wheels.
+Then select or cast wheels and let's set
+the spring strength back to 5,000 and
+the spring damping to 120. The other
+values are fine as they are. Now let's
+go to our car script and make some
+changes to make autocomplete work. Let's
+change the wheels array type to raycast
+wheel. And now let's delete all of our
+old variables. Now we couldn't make the
+wheel class itself calculate the forces
+by giving the wheel access to the car
+rigid body. But I'm going to keep this
+functions here in the car script itself
+and use the wheel class only to hold
+their properties. Now let's fix this
+errors. Change the variable type to
+raycast wheel so the autocomplete works.
+And let's rename the suspension ray just
+to ray to keep things small. You can
+select the name and press Ctrl D to
+multi select and change all the instance
+at the same time. Then copy the array
+dot and paste it before any wheel
+variable to fix the errors.
+And we are done. And here's a small tip.
+If you are rendering the bug arrows, you
+can divide the force by the mass to keep
+the arrow size very consistent with the
+movement. Everything should still work
+the same. And let's not forget to remove
+our hard-coded pull force and place our
+new ray.extend here. And we can also
+remove the get node line and replace it
+by
+ray.wheel. So let's make our car move.
+We'll start simple. Let's add a new
+export variable acceleration to our car
+and set it to 600. And just like our
+wheel suspensions, let's create a new
+function named do single wheel
+acceleration that receives a raycast
+wheel named ray. To make it move, we'll
+check if the wheel is colliding first.
+Then we'll get the wheels forward
+direction with minus ray.global
+basis.z and the contact point with
+ray.get collision point. Our vector
+force is simply the forward direction
+time the acceleration. And just like
+before, we find the force position with
+the global position we want to apply it
+to minus the global position of the car
+and call apply force passing the force
+vector and the force position. If you
+have a debug draw script, you can call
+it here to draw the forces arrow. Then
+we just need to call this function
+inside the wheels
+loop and something should
+happen. Yeah, we are not quite there
+yet. Anytime a wheel hit the ground, it
+accelerates the car, which is not what
+we want. We need to make sure only one
+sets of wheels accelerates at a time.
+You could simply check the wheels local
+Z position here. A positive Z value here
+would make it so only the rear wheels
+move the car, but we can do better than
+that. Let's add another export variable
+to our wheels class and name it is motor
+and set it to false.
+Now, select the group of wheels you want
+to accelerate and enable is motor for
+them. I'm going to make this car
+accelerate with the rear wheels because
+I like how it feels, but most normal
+cars usually accelerate with their front
+wheels, so you might want to choose that
+instead. And back to the car script.
+Let's make sure ray do is motor is
+true. Now, only the back wheels
+accelerate. Next, we need to actually
+control the car's acceleration. So, open
+the project settings and go to the input
+map tab and create a new action named
+accelerate. Then find that action and
+click on the plus button to add a key.
+Press the W key and press okay. You can
+add multiple keys for the action if you
+want. Then do the same for the
+decelerate action to break or reverse
+the car using the S key.
+Next, let's create a variable called
+motor input and set it to zero and
+create a unhandled input function. This
+is a good function that will be called
+for any input events that have not been
+consumed yet. So here we'll be checking
+if your accelerate action is pressed. If
+it is, we set the motor input to one and
+when it is released, we turn it back to
+zero. And we also do the same to the
+decelerate action, but we set the motor
+input to minus one instead to make the
+car move
+backwards. And to use it, it is as
+simple as checking if you have the motor
+input and multiply your force vector
+with
+it. And there it is. We can accelerate
+with a key
+now, although maybe a bit too strong.
+And because of how low the force is, it
+can make the car flip very easily. One
+of the reasons for that is that we are
+applying the forces on the ground
+contact point when we should have been
+applying it at the center of the wheel
+instead. So let's change the contact to
+be raywheel global
+position. Now our car has a much more
+stable
+acceleration and we should probably make
+our suspension forces apply from the
+center of the wheel as
+well. To do that change the contact
+variable after we are done with the
+calculations and set it to rate
+wheel.global of global
+position. Everything is still working.
+So, we are good. Now, one problem you
+might see is that the car accelerates
+too fast and the wheels lose contact
+with the ground and that causes the
+acceleration to flicker on and off. One
+thing that contributes to this is that
+the wheel apply forces toward the car or
+the wheel front direction. And as the
+car slightly changes rotation, so does
+that force direction, which makes it
+even worse. One technique to improve
+that is to instead use a projected
+force. You can cast a projected vector
+with the rick cast normal and apply the
+force along the floor instead. So here
+the black projected force is applied
+instead of the red one which might help
+make the car stay more grounded. But for
+this car at least it has barely any
+difference. So we are sticking with the
+normal one. But you can test them out
+and see whichever you prefer. We can
+always change to the projected force
+later. So we can accelerate our car and
+reverse it. But if we keep pressing the
+key, the car will keep increasing its
+velocity forever, which is not
+good. So, let's give our car script a
+max speed variable and set it to 20 m/s,
+which is about 44 m. Now, inside the
+acceleration function, let me fix this
+typo here
+first. We can get the forward velocity
+of the car, we have forward
+direction of the linear velocity. And if
+our forward speed is higher than our max
+speed, we can just return and not
+accelerate the wheel. And while this
+works while the car starts and stops its
+engine when reaching the max
+speed. So a better way to do that is to
+decrease the acceleration force just so
+we can win over the drag and keep the
+velocity more
+stable. But before we add drag and
+improve the acceleration, let's quickly
+make our wheels move. To rotate the
+wheels is very simple.
+We just need to call raywheel rotate x
+and rotate it by minus the velocity time
+delta time. And to calculate how fast
+the wheel should turn, it is also very
+easy. The wheel surface area is 2pr. So
+we multiply it by 2 pi and the wheel
+radius. This will make sure the wheels
+rotate exactly as it needs. But you can
+also clamp this value to make the wheels
+rotate better at high speeds. Now you
+might have noticed, but our car won't
+ever stop by itself. It is actually
+losing speed, but that's because Goto
+uses a default linear dump of 0.1 that
+reduces all movements over time. If we
+remove that, the car won't ever stop
+again and we'll keep going
+forever. So, let's create a new
+deceleration variable of 200 that will
+stop our car. We are going to remove the
+motor
+input and use it in an if before the
+apply force instead.
+Then we are going to add our drag force
+to be the global basis.z the car's back
+direction times the deceleration times
+sinf velocity. This will return one if
+the velocity is positive or minus one
+otherwise making sure we always add the
+force opposed to the movement of the
+car. Now our car will quickly
+stop. Another thing we can do is only
+add this deceleration force when it is
+not using the
+motor. so that our acceleration force
+does not have to compete with it. And to
+remove the drag flicking back and forth,
+we can check if the car has some speed
+in either direction with ABS
+velocity. Now that we have the basics
+done, let's improve how our car
+accelerates. Right now, it has a
+constant acceleration, which is very
+unrealistic. Acceleration in real cars
+is not constant, and it changes in time
+based on the speed and torque of the
+motor due to how the transmission work.
+And we can make a simplified version of
+that with
+curves. So let's create a new export
+variable named acceleration
+curve of the type
+curve. Done that. Let's create a new
+curve on the right. And just so we have
+more space, you can right click the
+node, go to super resource, and select
+that curve. This will select the curve
+and display it alone in the inspector.
+Then you can click on the three dots and
+make it a floating window and resize it
+to a bigger size.
+Now we got some space to work with. So
+this will be our car acceleration curve.
+The horizontal line is how much speed
+the car has and the vertical one is how
+much acceleration it will give the car.
+So this script will tell the script how
+much of the acceleration it will give
+based on the car's current speed. So
+let's activate snap and place some
+values. The car will start with 30% of
+its
+acceleration and it will keep increasing
+it until it hits about 30% of its total
+speed. Then it will slowly decrease
+until it hits 80% of the max speed. And
+finally have a sharp decrease until it
+hits 10% when it reaches its max speed.
+Since code form curves can now use
+values outside of zero and one. So you
+could use real velocity values here
+instead of percent of the max velocity
+we are using here. Now we can close the
+window and the inspector tab will return
+to its duck
+position. Back to our code. Let's get
+the speed ratio of our cart by
+calculating the current velocity divided
+by the max
+velocity and get our real acceleration
+from the curve by calling sample baked
+and passing the speed ratio the
+horizontal value of the curve and we'll
+use that to multiply the final force.
+Now let's set acceleration to 150 so we
+can see it
+working. The car will now slowly
+accelerate until it picks up some speed
+and then barely stop when it hits its
+max speed. Now that we got our car
+moving, let's take a look at some
+problems and fix them. Let's increase
+the acceleration and the max speed and
+try running the game again. And our car
+is sinking. The higher the speed of the
+car, the more things get strange. And
+this shouldn't be happening. The
+strangest thing about this is that when
+we run physics in slow motion,
+everything's great. But it all breaks
+when we get back to realtime speeds. So
+to explore what's going on, let's draw a
+sphere where the raycast hits the
+ground. And now we can clearly see
+what's wrong. The raycast is lagging
+behind. The faster we are, the worse off
+its position is. So I'm not sure if this
+is a bug or not. But if we select the
+recast and go to its documentation, it
+says it calculates the recast each
+physics frame and holds the results
+until the next one. But I think it's
+getting the hit position from the
+previous frame and messing up our
+calculations. To fix this, we are going
+to manually update the raycast
+ourselves. First, select the raycast
+nodes and disable them by unchecking the
+enable property. And inside our wheel
+loop, we just need to call wheelforce
+recast update to manually update recast
+collision. And just like that, now our
+physics works and the car is no longer
+sinking. And this also helped fix jumps.
+If you try using ramps before this, the
+lagging rate cast was making the car
+flip every time by making the spring
+apply forces at the wrong time. You can
+also remove this if statement because
+the acceleration curve now does this for
+us. Another thing we can do is make all
+four wheels slow down the car, not only
+the ones that have motors. We can do
+that by putting the is motor and motor
+input checks inside and moving some
+variables around. And on the else
+statement, you can check for not motor
+input. If you want to keep the drag
+working only when not pressing the
+accelerate button like before, we just
+need to rename your force to drag tors
+vector and use that
+instead. And now all of the four wheels
+will affect the car to stop
+it. You can adjust the absolute velocity
+check to remove the flickering drag as
+needed. Lastly, let's try to change the
+wheels a bit. We'll make the back wheels
+bigger. Select both of the back wheels
+mesh and increase their scale to
+1.35. You can use the measure tool to
+figure its approximate
+radius which seems to be about 0.5. So
+let's select both
+wheels and change the radius to
+0.5. But now something strange is
+happening. The car is moving by itself
+before the drag starts and stop it.
+The reason for that is that the car is
+slightly tilted. So the spring has a
+little bit of forward force. Also, the
+correct wheel radius for this should be
+0.54. To fix this problem, let's go back
+to the spring calculation code. Instead
+of applying the force in the spring up
+direction, we are going to use the
+collision point normal direction
+instead. This will make sure our spring
+forces won't move the car. And now our
+car stays firmly on the ground. There is
+a slightly more complicated way to deal
+with this, but using the rake as normal
+works just fine for most
+cases. And just to finish it off, if you
+want to prevent your car from flipping
+over, there is a very neat little trick
+a lot of arcade games uses, which is to
+change the center of mass to be below
+the car when it leaves the ground. This
+will make the car really want to stay
+upright, making it very hard to flip.
+So to do that, let's create a ground
+variable and check if any of the wheels
+are touching the ground. If they are, we
+set the center of mass to zero. But if
+they are not touching any ground, we
+make sure center of mass mode is set to
+custom and put the center of mass below
+the car. You can play with these values
+until you find something that is not
+hard to flip and not too
+crazy. And now the car will try really
+hard to reorient itself when
+landing. But that's it. Our car is
+finally moving and we solved a lot of
+issues that we found. Now all that's
+left for the basics is to make it turn
+and add some real friction to the
+wheels. As always, if you want to
+support me, you can get the files using
+these tutorials on Patreon. I hope you
+like this video and until next time.

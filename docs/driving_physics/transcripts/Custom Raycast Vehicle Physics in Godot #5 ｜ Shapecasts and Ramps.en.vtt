@@ -1,0 +1,2896 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.320 --> 00:00:02.310 align:start position:0%
+ 
+We<00:00:00.560><c> are</c><00:00:00.719><c> back</c><00:00:00.880><c> again,</c><00:00:01.439><c> ready</c><00:00:01.680><c> to</c><00:00:01.839><c> improve</c><00:00:02.159><c> our</c>
+
+00:00:02.310 --> 00:00:02.320 align:start position:0%
+We are back again, ready to improve our
+ 
+
+00:00:02.320 --> 00:00:04.630 align:start position:0%
+We are back again, ready to improve our
+car<00:00:02.480><c> and</c><00:00:02.720><c> fix</c><00:00:02.960><c> some</c><00:00:03.120><c> very</c><00:00:03.280><c> annoying</c><00:00:03.679><c> problems.</c>
+
+00:00:04.630 --> 00:00:04.640 align:start position:0%
+car and fix some very annoying problems.
+ 
+
+00:00:04.640 --> 00:00:06.470 align:start position:0%
+car and fix some very annoying problems.
+This<00:00:04.880><c> time,</c><00:00:05.279><c> we'll</c><00:00:05.600><c> give</c><00:00:05.759><c> the</c><00:00:05.920><c> car</c><00:00:06.080><c> shape</c><00:00:06.319><c> gas</c>
+
+00:00:06.470 --> 00:00:06.480 align:start position:0%
+This time, we'll give the car shape gas
+ 
+
+00:00:06.480 --> 00:00:07.749 align:start position:0%
+This time, we'll give the car shape gas
+wheel<00:00:06.720><c> so</c><00:00:06.799><c> it</c><00:00:06.960><c> can</c><00:00:07.040><c> go</c><00:00:07.200><c> as</c><00:00:07.279><c> smoothly</c><00:00:07.600><c> over</c>
+
+00:00:07.749 --> 00:00:07.759 align:start position:0%
+wheel so it can go as smoothly over
+ 
+
+00:00:07.759 --> 00:00:09.830 align:start position:0%
+wheel so it can go as smoothly over
+bumps,<00:00:08.320><c> fix</c><00:00:08.720><c> lighting</c><00:00:08.960><c> ramps</c><00:00:09.280><c> and</c><00:00:09.440><c> lateral</c>
+
+00:00:09.830 --> 00:00:09.840 align:start position:0%
+bumps, fix lighting ramps and lateral
+ 
+
+00:00:09.840 --> 00:00:12.790 align:start position:0%
+bumps, fix lighting ramps and lateral
+collisions,<00:00:10.400><c> and</c><00:00:10.559><c> many</c><00:00:10.800><c> more</c><00:00:10.960><c> improvements.</c>
+
+00:00:12.790 --> 00:00:12.800 align:start position:0%
+collisions, and many more improvements.
+ 
+
+00:00:12.800 --> 00:00:14.870 align:start position:0%
+collisions, and many more improvements.
+But<00:00:13.040><c> before</c><00:00:13.280><c> we</c><00:00:13.440><c> start,</c><00:00:14.160><c> let's</c><00:00:14.480><c> do</c><00:00:14.639><c> something</c>
+
+00:00:14.870 --> 00:00:14.880 align:start position:0%
+But before we start, let's do something
+ 
+
+00:00:14.880 --> 00:00:16.070 align:start position:0%
+But before we start, let's do something
+that<00:00:15.040><c> we</c><00:00:15.200><c> should</c><00:00:15.360><c> have</c><00:00:15.519><c> done</c><00:00:15.679><c> a</c><00:00:15.839><c> long</c><00:00:16.000><c> time</c>
+
+00:00:16.070 --> 00:00:16.080 align:start position:0%
+that we should have done a long time
+ 
+
+00:00:16.080 --> 00:00:18.550 align:start position:0%
+that we should have done a long time
+ago.<00:00:16.800><c> Changing</c><00:00:17.119><c> the</c><00:00:17.279><c> physics</c><00:00:17.600><c> engine.</c>
+
+00:00:18.550 --> 00:00:18.560 align:start position:0%
+ago. Changing the physics engine.
+ 
+
+00:00:18.560 --> 00:00:20.790 align:start position:0%
+ago. Changing the physics engine.
+Starting<00:00:18.800><c> from</c><00:00:19.039><c> Gordo</c><00:00:19.439><c> 4.6,</c><00:00:20.080><c> Jolt</c><00:00:20.400><c> physics</c><00:00:20.640><c> is</c>
+
+00:00:20.790 --> 00:00:20.800 align:start position:0%
+Starting from Gordo 4.6, Jolt physics is
+ 
+
+00:00:20.800 --> 00:00:21.990 align:start position:0%
+Starting from Gordo 4.6, Jolt physics is
+now<00:00:20.960><c> going</c><00:00:21.039><c> to</c><00:00:21.119><c> be</c><00:00:21.199><c> the</c><00:00:21.359><c> default</c><00:00:21.680><c> physics</c>
+
+00:00:21.990 --> 00:00:22.000 align:start position:0%
+now going to be the default physics
+ 
+
+00:00:22.000 --> 00:00:23.750 align:start position:0%
+now going to be the default physics
+engine.<00:00:22.640><c> So,</c><00:00:22.800><c> there</c><00:00:22.960><c> is</c><00:00:23.119><c> no</c><00:00:23.279><c> reason</c><00:00:23.439><c> not</c><00:00:23.600><c> to</c>
+
+00:00:23.750 --> 00:00:23.760 align:start position:0%
+engine. So, there is no reason not to
+ 
+
+00:00:23.760 --> 00:00:25.910 align:start position:0%
+engine. So, there is no reason not to
+use<00:00:23.920><c> it</c><00:00:24.080><c> anymore.</c><00:00:24.720><c> So,</c><00:00:24.960><c> if</c><00:00:25.119><c> you</c><00:00:25.279><c> are</c><00:00:25.359><c> on</c><00:00:25.600><c> good</c>
+
+00:00:25.910 --> 00:00:25.920 align:start position:0%
+use it anymore. So, if you are on good
+ 
+
+00:00:25.920 --> 00:00:28.790 align:start position:0%
+use it anymore. So, if you are on good
+4.5<00:00:26.480><c> or</c><00:00:26.720><c> higher,</c><00:00:27.359><c> go</c><00:00:27.519><c> to</c><00:00:27.680><c> project</c><00:00:28.080><c> settings</c>
+
+00:00:28.790 --> 00:00:28.800 align:start position:0%
+4.5 or higher, go to project settings
+ 
+
+00:00:28.800 --> 00:00:30.870 align:start position:0%
+4.5 or higher, go to project settings
+and<00:00:29.039><c> under</c><00:00:29.359><c> physics</c><00:00:29.679><c> 3D,</c><00:00:30.160><c> change</c><00:00:30.400><c> the</c><00:00:30.560><c> physics</c>
+
+00:00:30.870 --> 00:00:30.880 align:start position:0%
+and under physics 3D, change the physics
+ 
+
+00:00:30.880 --> 00:00:32.709 align:start position:0%
+and under physics 3D, change the physics
+engine<00:00:31.199><c> to</c><00:00:31.359><c> jolt.</c><00:00:31.920><c> And</c><00:00:32.079><c> after</c><00:00:32.320><c> a</c><00:00:32.480><c> quick</c>
+
+00:00:32.709 --> 00:00:32.719 align:start position:0%
+engine to jolt. And after a quick
+ 
+
+00:00:32.719 --> 00:00:34.470 align:start position:0%
+engine to jolt. And after a quick
+restart,<00:00:33.280><c> we</c><00:00:33.440><c> should</c><00:00:33.600><c> now</c><00:00:33.840><c> be</c><00:00:33.920><c> getting</c><00:00:34.160><c> a</c><00:00:34.320><c> much</c>
+
+00:00:34.470 --> 00:00:34.480 align:start position:0%
+restart, we should now be getting a much
+ 
+
+00:00:34.480 --> 00:00:35.670 align:start position:0%
+restart, we should now be getting a much
+more<00:00:34.640><c> precise</c><00:00:34.880><c> and</c><00:00:35.120><c> faster</c><00:00:35.360><c> physics</c>
+
+00:00:35.670 --> 00:00:35.680 align:start position:0%
+more precise and faster physics
+ 
+
+00:00:35.680 --> 00:00:38.790 align:start position:0%
+more precise and faster physics
+calculation.<00:00:36.480><c> Just</c><00:00:36.640><c> like</c><00:00:36.880><c> that.</c><00:00:38.160><c> Then</c><00:00:38.480><c> we'll</c>
+
+00:00:38.790 --> 00:00:38.800 align:start position:0%
+calculation. Just like that. Then we'll
+ 
+
+00:00:38.800 --> 00:00:41.590 align:start position:0%
+calculation. Just like that. Then we'll
+open<00:00:38.960><c> the</c><00:00:39.120><c> wheel</c><00:00:39.360><c> script</c><00:00:40.719><c> and</c><00:00:40.960><c> rename</c><00:00:41.280><c> a</c><00:00:41.440><c> few</c>
+
+00:00:41.590 --> 00:00:41.600 align:start position:0%
+open the wheel script and rename a few
+ 
+
+00:00:41.600 --> 00:00:43.750 align:start position:0%
+open the wheel script and rename a few
+variables.<00:00:42.640><c> Here</c><00:00:43.040><c> I'll</c><00:00:43.280><c> be</c><00:00:43.360><c> changing</c><00:00:43.600><c> the</c>
+
+00:00:43.750 --> 00:00:43.760 align:start position:0%
+variables. Here I'll be changing the
+ 
+
+00:00:43.760 --> 00:00:45.510 align:start position:0%
+variables. Here I'll be changing the
+velocity<00:00:44.079><c> variable</c><00:00:44.320><c> to</c><00:00:44.640><c> speed</c><00:00:44.960><c> when</c><00:00:45.280><c> it's</c><00:00:45.440><c> a</c>
+
+00:00:45.510 --> 00:00:45.520 align:start position:0%
+velocity variable to speed when it's a
+ 
+
+00:00:45.520 --> 00:00:47.750 align:start position:0%
+velocity variable to speed when it's a
+non<00:00:45.760><c> vector</c><00:00:46.160><c> value.</c><00:00:46.960><c> So,</c><00:00:47.200><c> we</c><00:00:47.360><c> have</c><00:00:47.440><c> the</c><00:00:47.600><c> car</c>
+
+00:00:47.750 --> 00:00:47.760 align:start position:0%
+non vector value. So, we have the car
+ 
+
+00:00:47.760 --> 00:00:50.549 align:start position:0%
+non vector value. So, we have the car
+forward<00:00:48.079><c> speed</c><00:00:48.320><c> at</c><00:00:48.480><c> the</c><00:00:48.640><c> top</c>
+
+00:00:50.549 --> 00:00:50.559 align:start position:0%
+forward speed at the top
+ 
+
+00:00:50.559 --> 00:00:52.470 align:start position:0%
+forward speed at the top
+and<00:00:50.800><c> the</c><00:00:50.960><c> wheel</c><00:00:51.200><c> forward</c><00:00:51.520><c> speed</c><00:00:51.840><c> used</c><00:00:52.160><c> at</c><00:00:52.320><c> the</c>
+
+00:00:52.470 --> 00:00:52.480 align:start position:0%
+and the wheel forward speed used at the
+ 
+
+00:00:52.480 --> 00:00:55.110 align:start position:0%
+and the wheel forward speed used at the
+bottom.<00:00:53.680><c> Now</c><00:00:54.000><c> things</c><00:00:54.399><c> should</c><00:00:54.559><c> be</c><00:00:54.719><c> hopefully</c>
+
+00:00:55.110 --> 00:00:55.120 align:start position:0%
+bottom. Now things should be hopefully
+ 
+
+00:00:55.120 --> 00:00:57.430 align:start position:0%
+bottom. Now things should be hopefully
+less<00:00:55.360><c> confusing.</c><00:00:56.559><c> And</c><00:00:56.800><c> another</c><00:00:57.120><c> important</c>
+
+00:00:57.430 --> 00:00:57.440 align:start position:0%
+less confusing. And another important
+ 
+
+00:00:57.440 --> 00:00:59.510 align:start position:0%
+less confusing. And another important
+thing<00:00:57.680><c> before</c><00:00:58.000><c> we</c><00:00:58.160><c> start</c><00:00:58.879><c> the</c><00:00:59.120><c> direction</c>
+
+00:00:59.510 --> 00:00:59.520 align:start position:0%
+thing before we start the direction
+ 
+
+00:00:59.520 --> 00:01:01.590 align:start position:0%
+thing before we start the direction
+indicator<00:00:59.920><c> we</c><00:01:00.160><c> are</c><00:01:00.239><c> using</c><00:01:00.480><c> from</c><00:01:00.640><c> global</c><00:01:01.039><c> basis</c>
+
+00:01:01.590 --> 00:01:01.600 align:start position:0%
+indicator we are using from global basis
+ 
+
+00:01:01.600 --> 00:01:03.670 align:start position:0%
+indicator we are using from global basis
+are<00:01:01.840><c> not</c><00:01:02.000><c> normalized.</c>
+
+00:01:03.670 --> 00:01:03.680 align:start position:0%
+are not normalized.
+ 
+
+00:01:03.680 --> 00:01:05.670 align:start position:0%
+are not normalized.
+So<00:01:03.920><c> if</c><00:01:04.080><c> your</c><00:01:04.320><c> raycast</c><00:01:04.720><c> node</c><00:01:04.879><c> or</c><00:01:05.040><c> any</c><00:01:05.199><c> of</c><00:01:05.439><c> its</c>
+
+00:01:05.670 --> 00:01:05.680 align:start position:0%
+So if your raycast node or any of its
+ 
+
+00:01:05.680 --> 00:01:07.510 align:start position:0%
+So if your raycast node or any of its
+parents<00:01:06.000><c> are</c><00:01:06.240><c> scaled,</c><00:01:06.880><c> you'll</c><00:01:07.119><c> be</c><00:01:07.280><c> getting</c>
+
+00:01:07.510 --> 00:01:07.520 align:start position:0%
+parents are scaled, you'll be getting
+ 
+
+00:01:07.520 --> 00:01:09.030 align:start position:0%
+parents are scaled, you'll be getting
+completely<00:01:07.920><c> wrong</c><00:01:08.159><c> values</c><00:01:08.479><c> for</c><00:01:08.720><c> all</c><00:01:08.880><c> your</c>
+
+00:01:09.030 --> 00:01:09.040 align:start position:0%
+completely wrong values for all your
+ 
+
+00:01:09.040 --> 00:01:10.550 align:start position:0%
+completely wrong values for all your
+calculations.
+
+00:01:10.550 --> 00:01:10.560 align:start position:0%
+calculations.
+ 
+
+00:01:10.560 --> 00:01:12.149 align:start position:0%
+calculations.
+If<00:01:10.799><c> you</c><00:01:10.960><c> want</c><00:01:11.040><c> to</c><00:01:11.200><c> make</c><00:01:11.280><c> sure</c><00:01:11.439><c> to</c><00:01:11.600><c> get</c><00:01:11.840><c> correct</c>
+
+00:01:12.149 --> 00:01:12.159 align:start position:0%
+If you want to make sure to get correct
+ 
+
+00:01:12.159 --> 00:01:13.910 align:start position:0%
+If you want to make sure to get correct
+values,<00:01:12.640><c> you</c><00:01:12.799><c> can</c><00:01:12.880><c> add</c><00:01:13.040><c> a</c><00:01:13.200><c> normalized</c><00:01:13.680><c> at</c><00:01:13.840><c> the</c>
+
+00:01:13.910 --> 00:01:13.920 align:start position:0%
+values, you can add a normalized at the
+ 
+
+00:01:13.920 --> 00:01:15.750 align:start position:0%
+values, you can add a normalized at the
+end<00:01:14.159><c> on</c><00:01:14.400><c> lines</c><00:01:14.720><c> that</c><00:01:14.880><c> use</c><00:01:15.040><c> the</c><00:01:15.200><c> global</c><00:01:15.439><c> basis</c>
+
+00:01:15.750 --> 00:01:15.760 align:start position:0%
+end on lines that use the global basis
+ 
+
+00:01:15.760 --> 00:01:18.149 align:start position:0%
+end on lines that use the global basis
+vector.<00:01:16.560><c> But</c><00:01:16.640><c> I'll</c><00:01:16.880><c> leave</c><00:01:17.040><c> that</c><00:01:17.200><c> to</c><00:01:17.360><c> you.</c><00:01:17.920><c> And</c>
+
+00:01:18.149 --> 00:01:18.159 align:start position:0%
+vector. But I'll leave that to you. And
+ 
+
+00:01:18.159 --> 00:01:19.910 align:start position:0%
+vector. But I'll leave that to you. And
+just<00:01:18.320><c> one</c><00:01:18.560><c> last</c><00:01:18.720><c> thing,</c><00:01:19.200><c> if</c><00:01:19.439><c> you</c><00:01:19.600><c> remember</c>
+
+00:01:19.910 --> 00:01:19.920 align:start position:0%
+just one last thing, if you remember
+ 
+
+00:01:19.920 --> 00:01:21.830 align:start position:0%
+just one last thing, if you remember
+previously,<00:01:20.560><c> we</c><00:01:20.720><c> had</c><00:01:20.880><c> to</c><00:01:21.040><c> disable</c><00:01:21.280><c> the</c><00:01:21.439><c> recast</c>
+
+00:01:21.830 --> 00:01:21.840 align:start position:0%
+previously, we had to disable the recast
+ 
+
+00:01:21.840 --> 00:01:23.749 align:start position:0%
+previously, we had to disable the recast
+node<00:01:22.080><c> and</c><00:01:22.240><c> manually</c><00:01:22.640><c> call</c><00:01:22.880><c> force</c><00:01:23.119><c> recast</c><00:01:23.600><c> in</c>
+
+00:01:23.749 --> 00:01:23.759 align:start position:0%
+node and manually call force recast in
+ 
+
+00:01:23.759 --> 00:01:25.429 align:start position:0%
+node and manually call force recast in
+the<00:01:23.920><c> code</c><00:01:24.159><c> to</c><00:01:24.400><c> prevent</c><00:01:24.560><c> the</c><00:01:24.720><c> precision</c><00:01:25.119><c> error</c>
+
+00:01:25.429 --> 00:01:25.439 align:start position:0%
+the code to prevent the precision error
+ 
+
+00:01:25.439 --> 00:01:27.429 align:start position:0%
+the code to prevent the precision error
+caused<00:01:25.680><c> by</c><00:01:25.759><c> delay</c><00:01:26.159><c> checks.</c><00:01:26.799><c> But</c><00:01:26.960><c> while</c><00:01:27.280><c> this</c>
+
+00:01:27.429 --> 00:01:27.439 align:start position:0%
+caused by delay checks. But while this
+ 
+
+00:01:27.439 --> 00:01:29.350 align:start position:0%
+caused by delay checks. But while this
+works,<00:01:27.759><c> we</c><00:01:27.920><c> lose</c><00:01:28.159><c> the</c><00:01:28.400><c> book</c><00:01:28.560><c> shapes</c><00:01:28.799><c> in</c><00:01:28.960><c> game.</c>
+
+00:01:29.350 --> 00:01:29.360 align:start position:0%
+works, we lose the book shapes in game.
+ 
+
+00:01:29.360 --> 00:01:30.950 align:start position:0%
+works, we lose the book shapes in game.
+So<00:01:29.520><c> I</c><00:01:29.680><c> figure</c><00:01:29.920><c> a</c><00:01:30.080><c> proper</c><00:01:30.320><c> way</c><00:01:30.400><c> to</c><00:01:30.560><c> make</c><00:01:30.720><c> it</c>
+
+00:01:30.950 --> 00:01:30.960 align:start position:0%
+So I figure a proper way to make it
+ 
+
+00:01:30.960 --> 00:01:33.830 align:start position:0%
+So I figure a proper way to make it
+work.<00:01:31.759><c> First,</c><00:01:32.560><c> select</c><00:01:32.880><c> all</c><00:01:33.040><c> the</c><00:01:33.119><c> rcast</c><00:01:33.600><c> and</c>
+
+00:01:33.830 --> 00:01:33.840 align:start position:0%
+work. First, select all the rcast and
+ 
+
+00:01:33.840 --> 00:01:35.990 align:start position:0%
+work. First, select all the rcast and
+enable<00:01:34.240><c> them</c><00:01:34.400><c> back.</c><00:01:35.119><c> And</c><00:01:35.280><c> to</c><00:01:35.520><c> make</c><00:01:35.680><c> sure</c><00:01:35.759><c> we</c>
+
+00:01:35.990 --> 00:01:36.000 align:start position:0%
+enable them back. And to make sure we
+ 
+
+00:01:36.000 --> 00:01:37.429 align:start position:0%
+enable them back. And to make sure we
+get<00:01:36.159><c> the</c><00:01:36.320><c> correct</c><00:01:36.560><c> results,</c><00:01:37.040><c> open</c><00:01:37.280><c> the</c>
+
+00:01:37.429 --> 00:01:37.439 align:start position:0%
+get the correct results, open the
+ 
+
+00:01:37.439 --> 00:01:39.590 align:start position:0%
+get the correct results, open the
+process<00:01:37.759><c> tab</c><00:01:38.240><c> and</c><00:01:38.479><c> set</c><00:01:38.640><c> the</c><00:01:38.799><c> physics</c><00:01:39.119><c> priority</c>
+
+00:01:39.590 --> 00:01:39.600 align:start position:0%
+process tab and set the physics priority
+ 
+
+00:01:39.600 --> 00:01:41.670 align:start position:0%
+process tab and set the physics priority
+to<00:01:39.759><c> minus</c><00:01:40.079><c> one.</c><00:01:40.799><c> This</c><00:01:40.960><c> will</c><00:01:41.119><c> make</c><00:01:41.200><c> the</c><00:01:41.360><c> nodes</c>
+
+00:01:41.670 --> 00:01:41.680 align:start position:0%
+to minus one. This will make the nodes
+ 
+
+00:01:41.680 --> 00:01:43.350 align:start position:0%
+to minus one. This will make the nodes
+execute<00:01:42.079><c> last</c><00:01:42.400><c> and</c><00:01:42.640><c> fix</c><00:01:42.799><c> the</c><00:01:42.960><c> precision</c>
+
+00:01:43.350 --> 00:01:43.360 align:start position:0%
+execute last and fix the precision
+ 
+
+00:01:43.360 --> 00:01:45.510 align:start position:0%
+execute last and fix the precision
+problems<00:01:43.680><c> without</c><00:01:43.920><c> the</c><00:01:44.079><c> manual</c><00:01:44.400><c> request.</c><00:01:45.200><c> But</c>
+
+00:01:45.510 --> 00:01:45.520 align:start position:0%
+problems without the manual request. But
+ 
+
+00:01:45.520 --> 00:01:47.670 align:start position:0%
+problems without the manual request. But
+now,<00:01:45.840><c> let's</c><00:01:46.159><c> really</c><00:01:46.399><c> start.</c><00:01:47.280><c> The</c><00:01:47.520><c> first</c>
+
+00:01:47.670 --> 00:01:47.680 align:start position:0%
+now, let's really start. The first
+ 
+
+00:01:47.680 --> 00:01:49.510 align:start position:0%
+now, let's really start. The first
+outstanding<00:01:48.159><c> problem</c><00:01:48.399><c> with</c><00:01:48.560><c> the</c><00:01:48.720><c> car</c><00:01:48.880><c> is</c>
+
+00:01:49.510 --> 00:01:49.520 align:start position:0%
+outstanding problem with the car is
+ 
+
+00:01:49.520 --> 00:01:51.749 align:start position:0%
+outstanding problem with the car is
+ramps.<00:01:50.399><c> The</c><00:01:50.640><c> car</c><00:01:50.799><c> simply</c><00:01:51.119><c> won't</c><00:01:51.360><c> stay</c><00:01:51.600><c> still</c>
+
+00:01:51.749 --> 00:01:51.759 align:start position:0%
+ramps. The car simply won't stay still
+ 
+
+00:01:51.759 --> 00:01:53.749 align:start position:0%
+ramps. The car simply won't stay still
+on<00:01:52.000><c> them.</c><00:01:52.560><c> You</c><00:01:52.799><c> can</c><00:01:52.880><c> hold</c><00:01:53.040><c> the</c><00:01:53.200><c> brake</c><00:01:53.439><c> all</c><00:01:53.680><c> you</c>
+
+00:01:53.749 --> 00:01:53.759 align:start position:0%
+on them. You can hold the brake all you
+ 
+
+00:01:53.759 --> 00:01:56.389 align:start position:0%
+on them. You can hold the brake all you
+want<00:01:54.079><c> and</c><00:01:54.320><c> it</c><00:01:54.560><c> will</c><00:01:54.720><c> still</c><00:01:54.960><c> slide</c><00:01:55.200><c> down.</c><00:01:56.079><c> Not</c>
+
+00:01:56.389 --> 00:01:56.399 align:start position:0%
+want and it will still slide down. Not
+ 
+
+00:01:56.399 --> 00:01:59.030 align:start position:0%
+want and it will still slide down. Not
+good.<00:01:57.600><c> Even</c><00:01:57.840><c> if</c><00:01:58.000><c> we</c><00:01:58.159><c> set</c><00:01:58.399><c> the</c><00:01:58.479><c> traction</c><00:01:58.719><c> to</c><00:01:58.880><c> one</c>
+
+00:01:59.030 --> 00:01:59.040 align:start position:0%
+good. Even if we set the traction to one
+ 
+
+00:01:59.040 --> 00:02:01.749 align:start position:0%
+good. Even if we set the traction to one
+and<00:01:59.280><c> hold</c><00:01:59.439><c> the</c><00:01:59.600><c> brake,</c><00:02:00.079><c> it</c><00:02:00.320><c> still</c><00:02:00.560><c> slides.</c>
+
+00:02:01.749 --> 00:02:01.759 align:start position:0%
+and hold the brake, it still slides.
+ 
+
+00:02:01.759 --> 00:02:04.389 align:start position:0%
+and hold the brake, it still slides.
+Something<00:02:02.079><c> is</c><00:02:02.240><c> definitely</c><00:02:02.719><c> wrong</c><00:02:02.960><c> here.</c><00:02:04.240><c> So,</c>
+
+00:02:04.389 --> 00:02:04.399 align:start position:0%
+Something is definitely wrong here. So,
+ 
+
+00:02:04.399 --> 00:02:07.429 align:start position:0%
+Something is definitely wrong here. So,
+let's<00:02:04.640><c> reset</c><00:02:04.960><c> this</c><00:02:05.200><c> value</c><00:02:05.439><c> and</c><00:02:05.680><c> get</c><00:02:05.840><c> to</c><00:02:05.920><c> work.</c>
+
+00:02:07.429 --> 00:02:07.439 align:start position:0%
+let's reset this value and get to work.
+ 
+
+00:02:07.439 --> 00:02:09.669 align:start position:0%
+let's reset this value and get to work.
+Open<00:02:07.680><c> up</c><00:02:07.840><c> the</c><00:02:08.000><c> wheel</c><00:02:08.319><c> script.</c><00:02:09.200><c> And</c><00:02:09.360><c> in</c><00:02:09.520><c> the</c>
+
+00:02:09.669 --> 00:02:09.679 align:start position:0%
+Open up the wheel script. And in the
+ 
+
+00:02:09.679 --> 00:02:11.670 align:start position:0%
+Open up the wheel script. And in the
+spring<00:02:09.920><c> calculation,</c><00:02:10.879><c> we</c><00:02:11.120><c> are</c><00:02:11.280><c> going</c><00:02:11.360><c> to</c><00:02:11.520><c> take</c>
+
+00:02:11.670 --> 00:02:11.680 align:start position:0%
+spring calculation, we are going to take
+ 
+
+00:02:11.680 --> 00:02:13.750 align:start position:0%
+spring calculation, we are going to take
+this<00:02:11.920><c> spring</c><00:02:12.160><c> force</c><00:02:12.720><c> and</c><00:02:12.959><c> save</c><00:02:13.200><c> it</c><00:02:13.360><c> into</c><00:02:13.520><c> a</c>
+
+00:02:13.750 --> 00:02:13.760 align:start position:0%
+this spring force and save it into a
+ 
+
+00:02:13.760 --> 00:02:16.309 align:start position:0%
+this spring force and save it into a
+variable<00:02:14.080><c> named</c><00:02:14.879><c> suspension</c><00:02:15.440><c> force</c><00:02:16.080><c> before</c>
+
+00:02:16.309 --> 00:02:16.319 align:start position:0%
+variable named suspension force before
+ 
+
+00:02:16.319 --> 00:02:18.550 align:start position:0%
+variable named suspension force before
+we<00:02:16.560><c> apply</c><00:02:16.800><c> the</c><00:02:16.879><c> collision</c><00:02:17.200><c> normal.</c><00:02:18.160><c> And</c><00:02:18.319><c> now</c>
+
+00:02:18.550 --> 00:02:18.560 align:start position:0%
+we apply the collision normal. And now
+ 
+
+00:02:18.560 --> 00:02:20.150 align:start position:0%
+we apply the collision normal. And now
+at<00:02:18.720><c> the</c><00:02:18.879><c> very</c><00:02:19.040><c> bottom,</c><00:02:19.360><c> after</c><00:02:19.599><c> all</c><00:02:19.680><c> the</c><00:02:19.840><c> forces</c>
+
+00:02:20.150 --> 00:02:20.160 align:start position:0%
+at the very bottom, after all the forces
+ 
+
+00:02:20.160 --> 00:02:22.070 align:start position:0%
+at the very bottom, after all the forces
+are<00:02:20.239><c> done</c><00:02:20.480><c> being</c><00:02:20.720><c> calculated,</c><00:02:21.599><c> we</c><00:02:21.840><c> are</c><00:02:22.000><c> going</c>
+
+00:02:22.070 --> 00:02:22.080 align:start position:0%
+are done being calculated, we are going
+ 
+
+00:02:22.080 --> 00:02:24.309 align:start position:0%
+are done being calculated, we are going
+to<00:02:22.239><c> apply</c><00:02:22.400><c> a</c><00:02:22.560><c> counter</c><00:02:22.879><c> spring</c><00:02:23.200><c> force</c><00:02:24.080><c> to</c>
+
+00:02:24.309 --> 00:02:24.319 align:start position:0%
+to apply a counter spring force to
+ 
+
+00:02:24.319 --> 00:02:25.910 align:start position:0%
+to apply a counter spring force to
+nullify<00:02:24.800><c> some</c><00:02:24.959><c> of</c><00:02:25.040><c> these</c><00:02:25.200><c> spring</c><00:02:25.440><c> forces</c><00:02:25.760><c> in</c>
+
+00:02:25.910 --> 00:02:25.920 align:start position:0%
+nullify some of these spring forces in
+ 
+
+00:02:25.920 --> 00:02:28.309 align:start position:0%
+nullify some of these spring forces in
+the<00:02:26.000><c> X</c><00:02:26.160><c> and</c><00:02:26.400><c> Y</c><00:02:26.560><c> directions,</c><00:02:27.680><c> but</c><00:02:27.920><c> only</c><00:02:28.160><c> when</c>
+
+00:02:28.309 --> 00:02:28.319 align:start position:0%
+the X and Y directions, but only when
+ 
+
+00:02:28.319 --> 00:02:30.949 align:start position:0%
+the X and Y directions, but only when
+the<00:02:28.480><c> car</c><00:02:28.640><c> is</c><00:02:28.800><c> at</c><00:02:28.959><c> a</c><00:02:29.120><c> very</c><00:02:29.280><c> low</c><00:02:29.520><c> speed.</c><00:02:30.560><c> So</c><00:02:30.720><c> let's</c>
+
+00:02:30.949 --> 00:02:30.959 align:start position:0%
+the car is at a very low speed. So let's
+ 
+
+00:02:30.959 --> 00:02:32.470 align:start position:0%
+the car is at a very low speed. So let's
+check<00:02:31.120><c> if</c><00:02:31.280><c> the</c><00:02:31.440><c> wheel</c><00:02:31.680><c> speed</c><00:02:31.920><c> is</c><00:02:32.080><c> low</c><00:02:32.239><c> enough</c>
+
+00:02:32.470 --> 00:02:32.480 align:start position:0%
+check if the wheel speed is low enough
+ 
+
+00:02:32.480 --> 00:02:35.430 align:start position:0%
+check if the wheel speed is low enough
+with<00:02:32.800><c> ABS</c><00:02:33.360><c> float</c><00:02:34.080><c> F</c><00:02:34.400><c> speed</c><00:02:34.800><c> and</c><00:02:35.040><c> choose</c><00:02:35.280><c> a</c>
+
+00:02:35.430 --> 00:02:35.440 align:start position:0%
+with ABS float F speed and choose a
+ 
+
+00:02:35.440 --> 00:02:37.430 align:start position:0%
+with ABS float F speed and choose a
+small<00:02:35.680><c> value.</c><00:02:36.319><c> You</c><00:02:36.560><c> can</c><00:02:36.640><c> adjust</c><00:02:36.959><c> this</c><00:02:37.200><c> value</c>
+
+00:02:37.430 --> 00:02:37.440 align:start position:0%
+small value. You can adjust this value
+ 
+
+00:02:37.440 --> 00:02:40.309 align:start position:0%
+small value. You can adjust this value
+or<00:02:37.680><c> turn</c><00:02:37.840><c> it</c><00:02:38.000><c> into</c><00:02:38.160><c> a</c><00:02:38.319><c> variable</c><00:02:38.640><c> later.</c>
+
+00:02:40.309 --> 00:02:40.319 align:start position:0%
+or turn it into a variable later.
+ 
+
+00:02:40.319 --> 00:02:41.830 align:start position:0%
+or turn it into a variable later.
+Then<00:02:40.640><c> we</c><00:02:40.879><c> are</c><00:02:40.959><c> going</c><00:02:41.040><c> to</c><00:02:41.200><c> get</c><00:02:41.280><c> the</c><00:02:41.440><c> suspension</c>
+
+00:02:41.830 --> 00:02:41.840 align:start position:0%
+Then we are going to get the suspension
+ 
+
+00:02:41.840 --> 00:02:44.470 align:start position:0%
+Then we are going to get the suspension
+force<00:02:42.080><c> in</c><00:02:42.160><c> the</c><00:02:42.319><c> car</c><00:02:42.560><c> Y-axis.</c>
+
+00:02:44.470 --> 00:02:44.480 align:start position:0%
+force in the car Y-axis.
+ 
+
+00:02:44.480 --> 00:02:46.630 align:start position:0%
+force in the car Y-axis.
+And<00:02:44.640><c> then</c><00:02:44.879><c> reduce</c><00:02:45.200><c> the</c><00:02:45.360><c> final</c><00:02:45.599><c> Z</c><00:02:45.840><c> force</c><00:02:46.400><c> Z</c>
+
+00:02:46.630 --> 00:02:46.640 align:start position:0%
+And then reduce the final Z force Z
+ 
+
+00:02:46.640 --> 00:02:48.949 align:start position:0%
+And then reduce the final Z force Z
+force<00:02:47.360><c> based</c><00:02:47.599><c> on</c><00:02:47.760><c> how</c><00:02:47.920><c> in</c><00:02:48.000><c> line</c><00:02:48.239><c> it</c><00:02:48.400><c> is</c><00:02:48.720><c> with</c>
+
+00:02:48.949 --> 00:02:48.959 align:start position:0%
+force based on how in line it is with
+ 
+
+00:02:48.959 --> 00:02:52.630 align:start position:0%
+force based on how in line it is with
+the<00:02:49.120><c> global</c><00:02:49.440><c> Y</c><00:02:49.680><c> vector</c><00:02:50.000><c> 3.up.</c><00:02:51.440><c> Copy</c><00:02:51.760><c> this</c><00:02:51.920><c> line</c>
+
+00:02:52.630 --> 00:02:52.640 align:start position:0%
+the global Y vector 3.up. Copy this line
+ 
+
+00:02:52.640 --> 00:02:56.630 align:start position:0%
+the global Y vector 3.up. Copy this line
+and<00:02:52.879><c> do</c><00:02:53.040><c> the</c><00:02:53.120><c> same</c><00:02:53.280><c> for</c><00:02:53.440><c> the</c><00:02:53.599><c> X</c><00:02:53.760><c> force.x</c><00:02:54.560><c> next.</c>
+
+00:02:56.630 --> 00:02:56.640 align:start position:0%
+and do the same for the X force.x next.
+ 
+
+00:02:56.640 --> 00:02:58.470 align:start position:0%
+and do the same for the X force.x next.
+And<00:02:56.800><c> by</c><00:02:57.040><c> countering</c><00:02:57.440><c> the</c><00:02:57.599><c> spring</c><00:02:57.840><c> forces</c><00:02:58.319><c> this</c>
+
+00:02:58.470 --> 00:02:58.480 align:start position:0%
+And by countering the spring forces this
+ 
+
+00:02:58.480 --> 00:03:00.470 align:start position:0%
+And by countering the spring forces this
+way,<00:02:59.040><c> we</c><00:02:59.280><c> can</c><00:02:59.360><c> make</c><00:02:59.519><c> the</c><00:02:59.680><c> car</c><00:02:59.840><c> stop</c><00:03:00.080><c> at</c><00:03:00.319><c> low</c>
+
+00:03:00.470 --> 00:03:00.480 align:start position:0%
+way, we can make the car stop at low
+ 
+
+00:03:00.480 --> 00:03:02.949 align:start position:0%
+way, we can make the car stop at low
+inclines,<00:03:01.360><c> but</c><00:03:01.840><c> it</c><00:03:02.080><c> still</c><00:03:02.319><c> very</c><00:03:02.560><c> slowly</c>
+
+00:03:02.949 --> 00:03:02.959 align:start position:0%
+inclines, but it still very slowly
+ 
+
+00:03:02.959 --> 00:03:05.350 align:start position:0%
+inclines, but it still very slowly
+slides<00:03:03.280><c> down.</c><00:03:04.480><c> So</c><00:03:04.640><c> we</c><00:03:04.879><c> are</c><00:03:04.959><c> going</c><00:03:05.040><c> to</c><00:03:05.200><c> add</c>
+
+00:03:05.350 --> 00:03:05.360 align:start position:0%
+slides down. So we are going to add
+ 
+
+00:03:05.360 --> 00:03:07.190 align:start position:0%
+slides down. So we are going to add
+another<00:03:05.680><c> check</c><00:03:06.080><c> just</c><00:03:06.319><c> before</c><00:03:06.560><c> the</c><00:03:06.720><c> Z</c><00:03:06.879><c> force</c>
+
+00:03:07.190 --> 00:03:07.200 align:start position:0%
+another check just before the Z force
+ 
+
+00:03:07.200 --> 00:03:09.589 align:start position:0%
+another check just before the Z force
+calculation.<00:03:08.319><c> Now</c><00:03:08.720><c> we</c><00:03:08.879><c> are</c><00:03:09.040><c> going</c><00:03:09.120><c> to</c><00:03:09.200><c> set</c><00:03:09.360><c> the</c>
+
+00:03:09.589 --> 00:03:09.599 align:start position:0%
+calculation. Now we are going to set the
+ 
+
+00:03:09.599 --> 00:03:11.270 align:start position:0%
+calculation. Now we are going to set the
+friction<00:03:09.840><c> to</c><00:03:10.000><c> a</c><00:03:10.159><c> very</c><00:03:10.400><c> high</c><00:03:10.560><c> value</c><00:03:10.720><c> if</c><00:03:10.959><c> the</c><00:03:11.120><c> car</c>
+
+00:03:11.270 --> 00:03:11.280 align:start position:0%
+friction to a very high value if the car
+ 
+
+00:03:11.280 --> 00:03:13.589 align:start position:0%
+friction to a very high value if the car
+is<00:03:11.440><c> moving</c><00:03:11.680><c> at</c><00:03:11.840><c> a</c><00:03:12.000><c> low</c><00:03:12.239><c> speed.</c><00:03:12.959><c> This</c><00:03:13.200><c> can</c><00:03:13.360><c> be</c><00:03:13.440><c> a</c>
+
+00:03:13.589 --> 00:03:13.599 align:start position:0%
+is moving at a low speed. This can be a
+ 
+
+00:03:13.599 --> 00:03:15.670 align:start position:0%
+is moving at a low speed. This can be a
+very<00:03:13.760><c> low</c><00:03:14.000><c> value</c><00:03:14.560><c> and</c><00:03:14.800><c> it</c><00:03:15.040><c> will</c><00:03:15.200><c> work</c><00:03:15.440><c> kind</c><00:03:15.599><c> of</c>
+
+00:03:15.670 --> 00:03:15.680 align:start position:0%
+very low value and it will work kind of
+ 
+
+00:03:15.680 --> 00:03:17.830 align:start position:0%
+very low value and it will work kind of
+like<00:03:15.920><c> a</c><00:03:16.080><c> static</c><00:03:16.480><c> friction</c><00:03:16.879><c> for</c><00:03:17.120><c> our</c><00:03:17.360><c> simulated</c>
+
+00:03:17.830 --> 00:03:17.840 align:start position:0%
+like a static friction for our simulated
+ 
+
+00:03:17.840 --> 00:03:19.430 align:start position:0%
+like a static friction for our simulated
+wheels.
+
+00:03:19.430 --> 00:03:19.440 align:start position:0%
+wheels.
+ 
+
+00:03:19.440 --> 00:03:20.949 align:start position:0%
+wheels.
+But<00:03:19.599><c> now</c><00:03:19.760><c> our</c><00:03:20.000><c> car</c><00:03:20.159><c> perfectly</c><00:03:20.560><c> stopped</c><00:03:20.800><c> on</c>
+
+00:03:20.949 --> 00:03:20.959 align:start position:0%
+But now our car perfectly stopped on
+ 
+
+00:03:20.959 --> 00:03:23.670 align:start position:0%
+But now our car perfectly stopped on
+ramps<00:03:22.319><c> and</c><00:03:22.480><c> you</c><00:03:22.720><c> can</c><00:03:22.800><c> set</c><00:03:22.959><c> the</c><00:03:23.120><c> friction</c><00:03:23.440><c> check</c>
+
+00:03:23.670 --> 00:03:23.680 align:start position:0%
+ramps and you can set the friction check
+ 
+
+00:03:23.680 --> 00:03:25.830 align:start position:0%
+ramps and you can set the friction check
+speed<00:03:24.000><c> to</c><00:03:24.159><c> a</c><00:03:24.319><c> very</c><00:03:24.480><c> low</c><00:03:24.720><c> value</c><00:03:25.200><c> just</c><00:03:25.360><c> to</c><00:03:25.599><c> stop</c>
+
+00:03:25.830 --> 00:03:25.840 align:start position:0%
+speed to a very low value just to stop
+ 
+
+00:03:25.840 --> 00:03:28.470 align:start position:0%
+speed to a very low value just to stop
+that<00:03:26.080><c> extra</c><00:03:26.319><c> momentum.</c><00:03:27.760><c> And</c><00:03:27.920><c> it</c><00:03:28.159><c> still</c><00:03:28.319><c> works</c>
+
+00:03:28.470 --> 00:03:28.480 align:start position:0%
+that extra momentum. And it still works
+ 
+
+00:03:28.480 --> 00:03:31.030 align:start position:0%
+that extra momentum. And it still works
+the<00:03:28.720><c> same</c><00:03:28.959><c> successfully</c><00:03:29.599><c> stopping</c><00:03:29.920><c> the</c><00:03:30.080><c> car.</c>
+
+00:03:31.030 --> 00:03:31.040 align:start position:0%
+the same successfully stopping the car.
+ 
+
+00:03:31.040 --> 00:03:32.949 align:start position:0%
+the same successfully stopping the car.
+And<00:03:31.200><c> of</c><00:03:31.440><c> course</c><00:03:31.920><c> it</c><00:03:32.159><c> won't</c><00:03:32.400><c> work</c><00:03:32.560><c> on</c><00:03:32.720><c> bigger</c>
+
+00:03:32.949 --> 00:03:32.959 align:start position:0%
+And of course it won't work on bigger
+ 
+
+00:03:32.959 --> 00:03:34.789 align:start position:0%
+And of course it won't work on bigger
+ramps.<00:03:33.680><c> because</c><00:03:33.920><c> we</c><00:03:34.159><c> still</c><00:03:34.319><c> have</c><00:03:34.480><c> to</c><00:03:34.560><c> fight</c>
+
+00:03:34.789 --> 00:03:34.799 align:start position:0%
+ramps. because we still have to fight
+ 
+
+00:03:34.799 --> 00:03:36.949 align:start position:0%
+ramps. because we still have to fight
+gravity<00:03:35.599><c> and</c><00:03:35.840><c> our</c><00:03:36.080><c> counter</c><00:03:36.400><c> force</c><00:03:36.640><c> is</c><00:03:36.799><c> based</c>
+
+00:03:36.949 --> 00:03:36.959 align:start position:0%
+gravity and our counter force is based
+ 
+
+00:03:36.959 --> 00:03:38.550 align:start position:0%
+gravity and our counter force is based
+on<00:03:37.120><c> how</c><00:03:37.280><c> aligned</c><00:03:37.519><c> the</c><00:03:37.680><c> car</c><00:03:37.840><c> is</c><00:03:38.000><c> with</c><00:03:38.159><c> the</c><00:03:38.319><c> up</c>
+
+00:03:38.550 --> 00:03:38.560 align:start position:0%
+on how aligned the car is with the up
+ 
+
+00:03:38.560 --> 00:03:41.030 align:start position:0%
+on how aligned the car is with the up
+direction.<00:03:39.920><c> Now</c><00:03:40.159><c> with</c><00:03:40.319><c> the</c><00:03:40.400><c> ramp</c><00:03:40.720><c> problems</c>
+
+00:03:41.030 --> 00:03:41.040 align:start position:0%
+direction. Now with the ramp problems
+ 
+
+00:03:41.040 --> 00:03:42.949 align:start position:0%
+direction. Now with the ramp problems
+fixed,<00:03:41.920><c> let's</c><00:03:42.159><c> start</c><00:03:42.319><c> turning</c><00:03:42.560><c> the</c><00:03:42.720><c> wheels</c>
+
+00:03:42.949 --> 00:03:42.959 align:start position:0%
+fixed, let's start turning the wheels
+ 
+
+00:03:42.959 --> 00:03:45.589 align:start position:0%
+fixed, let's start turning the wheels
+into<00:03:43.120><c> shape</c><00:03:43.440><c> casts.</c><00:03:44.879><c> If</c><00:03:45.120><c> you</c><00:03:45.280><c> remember</c>
+
+00:03:45.589 --> 00:03:45.599 align:start position:0%
+into shape casts. If you remember
+ 
+
+00:03:45.599 --> 00:03:47.190 align:start position:0%
+into shape casts. If you remember
+previously,<00:03:46.159><c> one</c><00:03:46.400><c> of</c><00:03:46.480><c> the</c><00:03:46.560><c> big</c><00:03:46.720><c> hurdles</c><00:03:47.040><c> of</c>
+
+00:03:47.190 --> 00:03:47.200 align:start position:0%
+previously, one of the big hurdles of
+ 
+
+00:03:47.200 --> 00:03:49.509 align:start position:0%
+previously, one of the big hurdles of
+raycast<00:03:47.680><c> cars</c><00:03:47.920><c> are</c><00:03:48.159><c> small</c><00:03:48.319><c> gaps.</c><00:03:49.120><c> This</c><00:03:49.280><c> is</c><00:03:49.360><c> due</c>
+
+00:03:49.509 --> 00:03:49.519 align:start position:0%
+raycast cars are small gaps. This is due
+ 
+
+00:03:49.519 --> 00:03:51.190 align:start position:0%
+raycast cars are small gaps. This is due
+to<00:03:49.599><c> raycast</c><00:03:50.080><c> being</c><00:03:50.239><c> a</c><00:03:50.400><c> single</c><00:03:50.640><c> array</c><00:03:50.959><c> and</c>
+
+00:03:51.190 --> 00:03:51.200 align:start position:0%
+to raycast being a single array and
+ 
+
+00:03:51.200 --> 00:03:54.070 align:start position:0%
+to raycast being a single array and
+failing<00:03:51.519><c> to</c><00:03:51.599><c> detect</c><00:03:52.000><c> gaps.</c><00:03:53.120><c> So</c><00:03:53.360><c> to</c><00:03:53.599><c> fix</c><00:03:53.760><c> this,</c>
+
+00:03:54.070 --> 00:03:54.080 align:start position:0%
+failing to detect gaps. So to fix this,
+ 
+
+00:03:54.080 --> 00:03:55.990 align:start position:0%
+failing to detect gaps. So to fix this,
+we'll<00:03:54.400><c> turn</c><00:03:54.560><c> our</c><00:03:54.799><c> wheels</c><00:03:55.040><c> into</c><00:03:55.280><c> shapes</c><00:03:55.760><c> and</c>
+
+00:03:55.990 --> 00:03:56.000 align:start position:0%
+we'll turn our wheels into shapes and
+ 
+
+00:03:56.000 --> 00:03:58.550 align:start position:0%
+we'll turn our wheels into shapes and
+sweep<00:03:56.239><c> an</c><00:03:56.480><c> area</c><00:03:56.640><c> for</c><00:03:56.879><c> collisions.</c><00:03:58.080><c> Instead</c><00:03:58.400><c> of</c>
+
+00:03:58.550 --> 00:03:58.560 align:start position:0%
+sweep an area for collisions. Instead of
+ 
+
+00:03:58.560 --> 00:04:00.149 align:start position:0%
+sweep an area for collisions. Instead of
+replacing<00:03:58.879><c> the</c><00:03:59.040><c> gray</c><00:03:59.280><c> cast</c><00:03:59.519><c> wheels,</c><00:03:59.840><c> we'll</c><00:04:00.000><c> be</c>
+
+00:04:00.149 --> 00:04:00.159 align:start position:0%
+replacing the gray cast wheels, we'll be
+ 
+
+00:04:00.159 --> 00:04:01.750 align:start position:0%
+replacing the gray cast wheels, we'll be
+adding<00:04:00.319><c> the</c><00:04:00.480><c> shape</c><00:04:00.720><c> cast</c><00:04:00.959><c> as</c><00:04:01.040><c> an</c><00:04:01.200><c> alternative.</c>
+
+00:04:01.750 --> 00:04:01.760 align:start position:0%
+adding the shape cast as an alternative.
+ 
+
+00:04:01.760 --> 00:04:03.270 align:start position:0%
+adding the shape cast as an alternative.
+So,<00:04:01.920><c> we</c><00:04:02.080><c> can</c><00:04:02.239><c> turn</c><00:04:02.319><c> it</c><00:04:02.480><c> on</c><00:04:02.640><c> and</c><00:04:02.799><c> off</c><00:04:02.959><c> depending</c>
+
+00:04:03.270 --> 00:04:03.280 align:start position:0%
+So, we can turn it on and off depending
+ 
+
+00:04:03.280 --> 00:04:05.910 align:start position:0%
+So, we can turn it on and off depending
+on<00:04:03.360><c> the</c><00:04:03.519><c> type</c><00:04:03.760><c> we</c><00:04:03.920><c> want</c><00:04:04.080><c> to</c><00:04:04.239><c> use.</c><00:04:05.519><c> So,</c><00:04:05.680><c> let's</c>
+
+00:04:05.910 --> 00:04:05.920 align:start position:0%
+on the type we want to use. So, let's
+ 
+
+00:04:05.920 --> 00:04:08.309 align:start position:0%
+on the type we want to use. So, let's
+select<00:04:06.239><c> our</c><00:04:06.400><c> first</c><00:04:06.640><c> wheel</c><00:04:07.760><c> and</c><00:04:08.000><c> create</c><00:04:08.159><c> a</c>
+
+00:04:08.309 --> 00:04:08.319 align:start position:0%
+select our first wheel and create a
+ 
+
+00:04:08.319 --> 00:04:10.789 align:start position:0%
+select our first wheel and create a
+shapecast<00:04:08.799><c> 3D</c><00:04:09.120><c> node.</c><00:04:10.000><c> Just</c><00:04:10.239><c> make</c><00:04:10.400><c> sure</c><00:04:10.480><c> it</c><00:04:10.720><c> is</c>
+
+00:04:10.789 --> 00:04:10.799 align:start position:0%
+shapecast 3D node. Just make sure it is
+ 
+
+00:04:10.799 --> 00:04:12.390 align:start position:0%
+shapecast 3D node. Just make sure it is
+not<00:04:10.959><c> the</c><00:04:11.120><c> first</c><00:04:11.280><c> child</c><00:04:11.680><c> because</c><00:04:11.840><c> the</c><00:04:12.080><c> script</c>
+
+00:04:12.390 --> 00:04:12.400 align:start position:0%
+not the first child because the script
+ 
+
+00:04:12.400 --> 00:04:14.550 align:start position:0%
+not the first child because the script
+used<00:04:12.640><c> that</c><00:04:12.799><c> for</c><00:04:12.959><c> the</c><00:04:13.040><c> mesh.</c><00:04:13.680><c> Next,</c><00:04:14.159><c> create</c><00:04:14.400><c> a</c>
+
+00:04:14.550 --> 00:04:14.560 align:start position:0%
+used that for the mesh. Next, create a
+ 
+
+00:04:14.560 --> 00:04:16.469 align:start position:0%
+used that for the mesh. Next, create a
+cylinder<00:04:14.959><c> shape</c><00:04:15.439><c> or</c><00:04:15.680><c> if</c><00:04:15.920><c> you</c><00:04:16.000><c> don't</c><00:04:16.160><c> care</c><00:04:16.320><c> for</c>
+
+00:04:16.469 --> 00:04:16.479 align:start position:0%
+cylinder shape or if you don't care for
+ 
+
+00:04:16.479 --> 00:04:18.469 align:start position:0%
+cylinder shape or if you don't care for
+precision<00:04:16.880><c> that</c><00:04:17.120><c> much,</c><00:04:17.519><c> using</c><00:04:17.759><c> a</c><00:04:18.000><c> sphere</c><00:04:18.239><c> will</c>
+
+00:04:18.469 --> 00:04:18.479 align:start position:0%
+precision that much, using a sphere will
+ 
+
+00:04:18.479 --> 00:04:20.150 align:start position:0%
+precision that much, using a sphere will
+give<00:04:18.560><c> you</c><00:04:18.799><c> much</c><00:04:18.959><c> better</c><00:04:19.280><c> results</c><00:04:19.680><c> while</c><00:04:19.919><c> being</c>
+
+00:04:20.150 --> 00:04:20.160 align:start position:0%
+give you much better results while being
+ 
+
+00:04:20.160 --> 00:04:22.150 align:start position:0%
+give you much better results while being
+faster<00:04:20.400><c> to</c><00:04:20.560><c> calculate.</c><00:04:21.519><c> But,</c><00:04:21.600><c> we'll</c><00:04:21.840><c> use</c><00:04:22.000><c> a</c>
+
+00:04:22.150 --> 00:04:22.160 align:start position:0%
+faster to calculate. But, we'll use a
+ 
+
+00:04:22.160 --> 00:04:24.070 align:start position:0%
+faster to calculate. But, we'll use a
+cylinder<00:04:22.560><c> here.</c>
+
+00:04:24.070 --> 00:04:24.080 align:start position:0%
+cylinder here.
+ 
+
+00:04:24.080 --> 00:04:26.629 align:start position:0%
+cylinder here.
+Set<00:04:24.320><c> the</c><00:04:24.479><c> height</c><00:04:24.639><c> to</c><00:04:24.800><c> 0.2</c><00:04:25.759><c> how</c><00:04:25.919><c> thick</c><00:04:26.160><c> the</c><00:04:26.320><c> tire</c>
+
+00:04:26.629 --> 00:04:26.639 align:start position:0%
+Set the height to 0.2 how thick the tire
+ 
+
+00:04:26.639 --> 00:04:29.110 align:start position:0%
+Set the height to 0.2 how thick the tire
+is.<00:04:27.600><c> And</c><00:04:27.759><c> let</c><00:04:28.000><c> me</c><00:04:28.160><c> change</c><00:04:28.320><c> the</c><00:04:28.479><c> debug</c><00:04:28.800><c> color</c><00:04:28.960><c> to</c>
+
+00:04:29.110 --> 00:04:29.120 align:start position:0%
+is. And let me change the debug color to
+ 
+
+00:04:29.120 --> 00:04:30.950 align:start position:0%
+is. And let me change the debug color to
+red<00:04:29.520><c> so</c><00:04:29.759><c> we</c><00:04:29.919><c> can</c><00:04:30.000><c> better</c><00:04:30.240><c> see</c><00:04:30.400><c> what</c><00:04:30.639><c> we</c><00:04:30.800><c> are</c>
+
+00:04:30.950 --> 00:04:30.960 align:start position:0%
+red so we can better see what we are
+ 
+
+00:04:30.960 --> 00:04:33.189 align:start position:0%
+red so we can better see what we are
+working<00:04:31.120><c> with.</c><00:04:32.160><c> Now,</c><00:04:32.479><c> as</c><00:04:32.720><c> you</c><00:04:32.880><c> might</c><00:04:33.040><c> have</c>
+
+00:04:33.189 --> 00:04:33.199 align:start position:0%
+working with. Now, as you might have
+ 
+
+00:04:33.199 --> 00:04:34.950 align:start position:0%
+working with. Now, as you might have
+noticed,<00:04:33.759><c> the</c><00:04:34.000><c> cylinder</c><00:04:34.320><c> is</c><00:04:34.479><c> facing</c><00:04:34.720><c> the</c>
+
+00:04:34.950 --> 00:04:34.960 align:start position:0%
+noticed, the cylinder is facing the
+ 
+
+00:04:34.960 --> 00:04:37.110 align:start position:0%
+noticed, the cylinder is facing the
+wrong<00:04:35.120><c> way</c><00:04:35.600><c> and</c><00:04:35.919><c> it</c><00:04:36.080><c> will</c><00:04:36.320><c> sweep</c><00:04:36.560><c> the</c><00:04:36.720><c> shape</c><00:04:36.880><c> in</c>
+
+00:04:37.110 --> 00:04:37.120 align:start position:0%
+wrong way and it will sweep the shape in
+ 
+
+00:04:37.120 --> 00:04:39.270 align:start position:0%
+wrong way and it will sweep the shape in
+this<00:04:37.280><c> direction.</c>
+
+00:04:39.270 --> 00:04:39.280 align:start position:0%
+this direction.
+ 
+
+00:04:39.280 --> 00:04:41.590 align:start position:0%
+this direction.
+So,<00:04:39.520><c> let's</c><00:04:39.759><c> set</c><00:04:39.919><c> the</c><00:04:40.080><c> target</c><00:04:40.320><c> to</c><00:04:40.479><c> zero</c><00:04:40.639><c> for</c><00:04:40.880><c> now</c>
+
+00:04:41.590 --> 00:04:41.600 align:start position:0%
+So, let's set the target to zero for now
+ 
+
+00:04:41.600 --> 00:04:43.510 align:start position:0%
+So, let's set the target to zero for now
+and<00:04:41.840><c> rotate</c><00:04:42.240><c> the</c><00:04:42.320><c> shape</c><00:04:42.639><c> cast</c><00:04:42.800><c> in</c><00:04:42.960><c> the</c><00:04:43.040><c> Z-axis</c>
+
+00:04:43.510 --> 00:04:43.520 align:start position:0%
+and rotate the shape cast in the Z-axis
+ 
+
+00:04:43.520 --> 00:04:46.790 align:start position:0%
+and rotate the shape cast in the Z-axis
+by<00:04:43.680><c> 90°</c><00:04:44.400><c> to</c><00:04:44.639><c> turn</c><00:04:44.800><c> it</c><00:04:44.960><c> in</c><00:04:45.120><c> the</c><00:04:45.280><c> correct</c><00:04:45.520><c> way</c><00:04:46.560><c> and</c>
+
+00:04:46.790 --> 00:04:46.800 align:start position:0%
+by 90° to turn it in the correct way and
+ 
+
+00:04:46.800 --> 00:04:49.909 align:start position:0%
+by 90° to turn it in the correct way and
+set<00:04:46.960><c> the</c><00:04:47.120><c> radius</c><00:04:47.440><c> to</c><00:04:47.600><c> 0.33.</c>
+
+00:04:49.909 --> 00:04:49.919 align:start position:0%
+set the radius to 0.33.
+ 
+
+00:04:49.919 --> 00:04:51.749 align:start position:0%
+set the radius to 0.33.
+Now,<00:04:50.400><c> it's</c><00:04:50.639><c> important</c><00:04:50.880><c> that</c><00:04:51.040><c> the</c><00:04:51.199><c> shape</c><00:04:51.520><c> cast</c>
+
+00:04:51.749 --> 00:04:51.759 align:start position:0%
+Now, it's important that the shape cast
+ 
+
+00:04:51.759 --> 00:04:53.990 align:start position:0%
+Now, it's important that the shape cast
+is<00:04:51.840><c> at</c><00:04:52.080><c> its</c><00:04:52.320><c> origin</c><00:04:52.880><c> or</c><00:04:53.199><c> a</c><00:04:53.360><c> lot</c><00:04:53.440><c> of</c><00:04:53.600><c> things</c><00:04:53.759><c> will</c>
+
+00:04:53.990 --> 00:04:54.000 align:start position:0%
+is at its origin or a lot of things will
+ 
+
+00:04:54.000 --> 00:04:56.070 align:start position:0%
+is at its origin or a lot of things will
+break.<00:04:54.960><c> if</c><00:04:55.199><c> you</c><00:04:55.280><c> need</c><00:04:55.440><c> to</c><00:04:55.520><c> adjust</c><00:04:55.680><c> the</c><00:04:55.840><c> shape</c>
+
+00:04:56.070 --> 00:04:56.080 align:start position:0%
+break. if you need to adjust the shape
+ 
+
+00:04:56.080 --> 00:04:57.830 align:start position:0%
+break. if you need to adjust the shape
+cast<00:04:56.320><c> position.</c><00:04:56.880><c> Make</c><00:04:57.120><c> sure</c><00:04:57.199><c> you're</c><00:04:57.520><c> doing</c><00:04:57.680><c> so</c>
+
+00:04:57.830 --> 00:04:57.840 align:start position:0%
+cast position. Make sure you're doing so
+ 
+
+00:04:57.840 --> 00:05:00.150 align:start position:0%
+cast position. Make sure you're doing so
+by<00:04:58.000><c> moving</c><00:04:58.160><c> the</c><00:04:58.320><c> raycast</c><00:04:58.720><c> node</c><00:04:58.960><c> above.</c><00:04:59.919><c> So</c>
+
+00:05:00.150 --> 00:05:00.160 align:start position:0%
+by moving the raycast node above. So
+ 
+
+00:05:00.160 --> 00:05:01.510 align:start position:0%
+by moving the raycast node above. So
+let's<00:05:00.320><c> reset</c><00:05:00.639><c> the</c><00:05:00.800><c> position</c><00:05:01.040><c> for</c><00:05:01.120><c> the</c><00:05:01.280><c> shape</c>
+
+00:05:01.510 --> 00:05:01.520 align:start position:0%
+let's reset the position for the shape
+ 
+
+00:05:01.520 --> 00:05:04.150 align:start position:0%
+let's reset the position for the shape
+cast<00:05:01.759><c> node</c><00:05:03.120><c> and</c><00:05:03.360><c> not</c><00:05:03.520><c> forget</c><00:05:03.759><c> to</c><00:05:03.919><c> set</c><00:05:04.000><c> the</c>
+
+00:05:04.150 --> 00:05:04.160 align:start position:0%
+cast node and not forget to set the
+ 
+
+00:05:04.160 --> 00:05:06.070 align:start position:0%
+cast node and not forget to set the
+physics<00:05:04.479><c> priority</c><00:05:04.960><c> to</c><00:05:05.120><c> minus</c><00:05:05.360><c> one</c><00:05:05.759><c> so</c><00:05:05.919><c> we</c>
+
+00:05:06.070 --> 00:05:06.080 align:start position:0%
+physics priority to minus one so we
+ 
+
+00:05:06.080 --> 00:05:08.469 align:start position:0%
+physics priority to minus one so we
+don't<00:05:06.240><c> get</c><00:05:06.400><c> precision</c><00:05:06.800><c> errors.</c><00:05:08.080><c> But</c><00:05:08.240><c> because</c>
+
+00:05:08.469 --> 00:05:08.479 align:start position:0%
+don't get precision errors. But because
+ 
+
+00:05:08.479 --> 00:05:10.629 align:start position:0%
+don't get precision errors. But because
+we<00:05:08.720><c> rotated</c><00:05:09.039><c> the</c><00:05:09.199><c> shape</c><00:05:09.520><c> cast</c><00:05:09.919><c> now</c><00:05:10.160><c> the</c><00:05:10.320><c> target</c>
+
+00:05:10.629 --> 00:05:10.639 align:start position:0%
+we rotated the shape cast now the target
+ 
+
+00:05:10.639 --> 00:05:13.830 align:start position:0%
+we rotated the shape cast now the target
+position<00:05:11.280><c> Y</c><00:05:11.600><c> is</c><00:05:11.759><c> sideways.</c><00:05:13.120><c> So</c><00:05:13.360><c> we</c><00:05:13.520><c> will</c><00:05:13.680><c> have</c>
+
+00:05:13.830 --> 00:05:13.840 align:start position:0%
+position Y is sideways. So we will have
+ 
+
+00:05:13.840 --> 00:05:15.909 align:start position:0%
+position Y is sideways. So we will have
+to<00:05:14.000><c> remember</c><00:05:14.639><c> we</c><00:05:14.880><c> need</c><00:05:15.039><c> to</c><00:05:15.120><c> adjust</c><00:05:15.440><c> our</c><00:05:15.680><c> X</c>
+
+00:05:15.909 --> 00:05:15.919 align:start position:0%
+to remember we need to adjust our X
+ 
+
+00:05:15.919 --> 00:05:18.070 align:start position:0%
+to remember we need to adjust our X
+position<00:05:16.240><c> instead.</c><00:05:16.960><c> Make</c><00:05:17.120><c> sure</c><00:05:17.199><c> that</c><00:05:17.520><c> minus</c><00:05:17.840><c> X</c>
+
+00:05:18.070 --> 00:05:18.080 align:start position:0%
+position instead. Make sure that minus X
+ 
+
+00:05:18.080 --> 00:05:19.749 align:start position:0%
+position instead. Make sure that minus X
+goes<00:05:18.320><c> down</c><00:05:18.639><c> which</c><00:05:18.880><c> might</c><00:05:19.039><c> be</c><00:05:19.199><c> flipped</c><00:05:19.520><c> in</c><00:05:19.680><c> case</c>
+
+00:05:19.749 --> 00:05:19.759 align:start position:0%
+goes down which might be flipped in case
+ 
+
+00:05:19.759 --> 00:05:21.189 align:start position:0%
+goes down which might be flipped in case
+you<00:05:20.000><c> rotated</c><00:05:20.320><c> the</c><00:05:20.400><c> wheels</c><00:05:20.639><c> the</c><00:05:20.880><c> other</c><00:05:21.039><c> way</c>
+
+00:05:21.189 --> 00:05:21.199 align:start position:0%
+you rotated the wheels the other way
+ 
+
+00:05:21.199 --> 00:05:23.670 align:start position:0%
+you rotated the wheels the other way
+around.<00:05:22.240><c> And</c><00:05:22.479><c> for</c><00:05:22.639><c> better</c><00:05:22.960><c> performance,</c><00:05:23.440><c> you</c>
+
+00:05:23.670 --> 00:05:23.680 align:start position:0%
+around. And for better performance, you
+ 
+
+00:05:23.680 --> 00:05:25.430 align:start position:0%
+around. And for better performance, you
+can<00:05:23.759><c> adjust</c><00:05:23.919><c> the</c><00:05:24.080><c> max</c><00:05:24.320><c> results</c><00:05:24.639><c> to</c><00:05:24.880><c> three</c><00:05:25.199><c> or</c>
+
+00:05:25.430 --> 00:05:25.440 align:start position:0%
+can adjust the max results to three or
+ 
+
+00:05:25.440 --> 00:05:27.990 align:start position:0%
+can adjust the max results to three or
+some<00:05:25.600><c> low</c><00:05:25.919><c> number.</c><00:05:27.120><c> And</c><00:05:27.280><c> I</c><00:05:27.520><c> will</c><00:05:27.680><c> increase</c><00:05:27.840><c> the</c>
+
+00:05:27.990 --> 00:05:28.000 align:start position:0%
+some low number. And I will increase the
+ 
+
+00:05:28.000 --> 00:05:30.310 align:start position:0%
+some low number. And I will increase the
+radius<00:05:28.320><c> to</c><00:05:28.479><c> 0.35</c><00:05:29.520><c> just</c><00:05:29.680><c> so</c><00:05:29.840><c> we</c><00:05:30.000><c> can</c><00:05:30.080><c> see</c><00:05:30.160><c> the</c>
+
+00:05:30.310 --> 00:05:30.320 align:start position:0%
+radius to 0.35 just so we can see the
+ 
+
+00:05:30.320 --> 00:05:32.790 align:start position:0%
+radius to 0.35 just so we can see the
+shape<00:05:30.479><c> debug</c><00:05:30.960><c> over</c><00:05:31.120><c> the</c><00:05:31.280><c> wheels.</c>
+
+00:05:32.790 --> 00:05:32.800 align:start position:0%
+shape debug over the wheels.
+ 
+
+00:05:32.800 --> 00:05:34.790 align:start position:0%
+shape debug over the wheels.
+Now<00:05:33.039><c> copy</c><00:05:33.280><c> the</c><00:05:33.440><c> shape</c><00:05:33.680><c> cast</c><00:05:33.840><c> node</c><00:05:34.320><c> and</c><00:05:34.560><c> paste</c>
+
+00:05:34.790 --> 00:05:34.800 align:start position:0%
+Now copy the shape cast node and paste
+ 
+
+00:05:34.800 --> 00:05:37.110 align:start position:0%
+Now copy the shape cast node and paste
+it<00:05:34.960><c> inside</c><00:05:35.199><c> all</c><00:05:35.360><c> the</c><00:05:35.520><c> other</c><00:05:35.759><c> car</c><00:05:36.000><c> wheels.</c><00:05:36.880><c> They</c>
+
+00:05:37.110 --> 00:05:37.120 align:start position:0%
+it inside all the other car wheels. They
+ 
+
+00:05:37.120 --> 00:05:38.310 align:start position:0%
+it inside all the other car wheels. They
+should<00:05:37.199><c> all</c><00:05:37.360><c> be</c><00:05:37.600><c> already</c><00:05:37.840><c> in</c><00:05:38.000><c> the</c><00:05:38.160><c> correct</c>
+
+00:05:38.310 --> 00:05:38.320 align:start position:0%
+should all be already in the correct
+ 
+
+00:05:38.320 --> 00:05:41.029 align:start position:0%
+should all be already in the correct
+position,<00:05:39.600><c> which</c><00:05:39.840><c> means</c><00:05:40.160><c> it's</c><00:05:40.479><c> time</c><00:05:40.560><c> to</c><00:05:40.800><c> start</c>
+
+00:05:41.029 --> 00:05:41.039 align:start position:0%
+position, which means it's time to start
+ 
+
+00:05:41.039 --> 00:05:42.710 align:start position:0%
+position, which means it's time to start
+coding.
+
+00:05:42.710 --> 00:05:42.720 align:start position:0%
+coding.
+ 
+
+00:05:42.720 --> 00:05:44.870 align:start position:0%
+coding.
+First,<00:05:43.600><c> let's</c><00:05:43.919><c> create</c><00:05:44.080><c> an</c><00:05:44.240><c> export</c><00:05:44.639><c> variable</c>
+
+00:05:44.870 --> 00:05:44.880 align:start position:0%
+First, let's create an export variable
+ 
+
+00:05:44.880 --> 00:05:46.870 align:start position:0%
+First, let's create an export variable
+for<00:05:45.039><c> the</c><00:05:45.199><c> shape</c><00:05:45.440><c> cast</c><00:05:45.680><c> node.</c><00:05:46.160><c> I'll</c><00:05:46.479><c> put</c><00:05:46.639><c> it</c><00:05:46.720><c> at</c>
+
+00:05:46.870 --> 00:05:46.880 align:start position:0%
+for the shape cast node. I'll put it at
+ 
+
+00:05:46.880 --> 00:05:48.950 align:start position:0%
+for the shape cast node. I'll put it at
+the<00:05:47.039><c> top.</c>
+
+00:05:48.950 --> 00:05:48.960 align:start position:0%
+the top.
+ 
+
+00:05:48.960 --> 00:05:50.310 align:start position:0%
+the top.
+And<00:05:49.120><c> now</c><00:05:49.280><c> we</c><00:05:49.440><c> need</c><00:05:49.520><c> to</c><00:05:49.680><c> assign</c><00:05:50.000><c> each</c><00:05:50.160><c> shape</c>
+
+00:05:50.310 --> 00:05:50.320 align:start position:0%
+And now we need to assign each shape
+ 
+
+00:05:50.320 --> 00:05:53.909 align:start position:0%
+And now we need to assign each shape
+cast<00:05:50.560><c> to</c><00:05:50.720><c> its</c><00:05:50.880><c> wheel.</c>
+
+00:05:53.909 --> 00:05:53.919 align:start position:0%
+ 
+ 
+
+00:05:53.919 --> 00:05:55.749 align:start position:0%
+ 
+Next,<00:05:54.320><c> inside</c><00:05:54.560><c> the</c><00:05:54.720><c> ready</c><00:05:55.039><c> function,</c><00:05:55.440><c> we</c><00:05:55.680><c> are</c>
+
+00:05:55.749 --> 00:05:55.759 align:start position:0%
+Next, inside the ready function, we are
+ 
+
+00:05:55.759 --> 00:05:58.150 align:start position:0%
+Next, inside the ready function, we are
+going<00:05:55.919><c> to</c><00:05:56.000><c> check</c><00:05:56.240><c> if</c><00:05:56.479><c> we</c><00:05:56.639><c> have</c><00:05:56.720><c> a</c><00:05:56.880><c> shape</c><00:05:57.199><c> cast.</c>
+
+00:05:58.150 --> 00:05:58.160 align:start position:0%
+going to check if we have a shape cast.
+ 
+
+00:05:58.160 --> 00:06:00.469 align:start position:0%
+going to check if we have a shape cast.
+If<00:05:58.320><c> we</c><00:05:58.560><c> do,</c><00:05:59.280><c> we</c><00:05:59.520><c> need</c><00:05:59.600><c> to</c><00:05:59.759><c> adjust</c><00:06:00.000><c> its</c><00:06:00.240><c> target</c>
+
+00:06:00.469 --> 00:06:00.479 align:start position:0%
+If we do, we need to adjust its target
+ 
+
+00:06:00.479 --> 00:06:02.230 align:start position:0%
+If we do, we need to adjust its target
+position<00:06:01.039><c> much</c><00:06:01.280><c> like</c><00:06:01.440><c> our</c><00:06:01.600><c> raycast</c><00:06:02.000><c> node</c>
+
+00:06:02.230 --> 00:06:02.240 align:start position:0%
+position much like our raycast node
+ 
+
+00:06:02.240 --> 00:06:04.390 align:start position:0%
+position much like our raycast node
+above.<00:06:03.199><c> But</c><00:06:03.360><c> we</c><00:06:03.520><c> are</c><00:06:03.600><c> changing</c><00:06:03.840><c> the</c><00:06:03.919><c> X</c><00:06:04.240><c> here</c>
+
+00:06:04.390 --> 00:06:04.400 align:start position:0%
+above. But we are changing the X here
+ 
+
+00:06:04.400 --> 00:06:06.870 align:start position:0%
+above. But we are changing the X here
+because<00:06:04.639><c> we</c><00:06:04.880><c> rotated</c><00:06:05.199><c> the</c><00:06:05.360><c> node.</c><00:06:06.560><c> And</c><00:06:06.720><c> the</c>
+
+00:06:06.870 --> 00:06:06.880 align:start position:0%
+because we rotated the node. And the
+ 
+
+00:06:06.880 --> 00:06:08.550 align:start position:0%
+because we rotated the node. And the
+shape<00:06:07.120><c> cast</c><00:06:07.440><c> doesn't</c><00:06:07.600><c> need</c><00:06:07.759><c> the</c><00:06:07.919><c> wheel</c><00:06:08.160><c> radius</c>
+
+00:06:08.550 --> 00:06:08.560 align:start position:0%
+shape cast doesn't need the wheel radius
+ 
+
+00:06:08.560 --> 00:06:11.670 align:start position:0%
+shape cast doesn't need the wheel radius
+anymore<00:06:08.960><c> because</c><00:06:09.199><c> the</c><00:06:09.440><c> shape</c><00:06:09.600><c> itself</c><00:06:09.919><c> has</c><00:06:10.160><c> it.</c>
+
+00:06:11.670 --> 00:06:11.680 align:start position:0%
+anymore because the shape itself has it.
+ 
+
+00:06:11.680 --> 00:06:13.670 align:start position:0%
+anymore because the shape itself has it.
+And<00:06:11.840><c> finally,</c><00:06:12.240><c> we</c><00:06:12.479><c> need</c><00:06:12.560><c> to</c><00:06:12.720><c> call</c><00:06:12.880><c> shapecast</c>
+
+00:06:13.670 --> 00:06:13.680 align:start position:0%
+And finally, we need to call shapecast
+ 
+
+00:06:13.680 --> 00:06:15.590 align:start position:0%
+And finally, we need to call shapecast
+addex<00:06:13.919><c> exception</c><00:06:14.560><c> and</c><00:06:14.800><c> give</c><00:06:14.960><c> it</c><00:06:15.120><c> the</c><00:06:15.360><c> parent</c>
+
+00:06:15.590 --> 00:06:15.600 align:start position:0%
+addex exception and give it the parent
+ 
+
+00:06:15.600 --> 00:06:17.909 align:start position:0%
+addex exception and give it the parent
+node,<00:06:16.400><c> the</c><00:06:16.639><c> car's</c><00:06:16.960><c> widget</c><00:06:17.280><c> body,</c><00:06:17.520><c> so</c><00:06:17.680><c> it</c>
+
+00:06:17.909 --> 00:06:17.919 align:start position:0%
+node, the car's widget body, so it
+ 
+
+00:06:17.919 --> 00:06:19.270 align:start position:0%
+node, the car's widget body, so it
+doesn't<00:06:18.080><c> detect</c><00:06:18.479><c> collisions</c><00:06:18.800><c> with</c><00:06:18.880><c> the</c><00:06:19.039><c> car</c>
+
+00:06:19.270 --> 00:06:19.280 align:start position:0%
+doesn't detect collisions with the car
+ 
+
+00:06:19.280 --> 00:06:21.909 align:start position:0%
+doesn't detect collisions with the car
+body.<00:06:20.400><c> Then</c><00:06:20.720><c> in</c><00:06:20.960><c> the</c><00:06:21.120><c> wheel</c><00:06:21.360><c> physics</c><00:06:21.759><c> you</c>
+
+00:06:21.909 --> 00:06:21.919 align:start position:0%
+body. Then in the wheel physics you
+ 
+
+00:06:21.919 --> 00:06:24.150 align:start position:0%
+body. Then in the wheel physics you
+modify<00:06:22.240><c> the</c><00:06:22.400><c> pass</c><00:06:22.639><c> condition.</c><00:06:23.759><c> If</c><00:06:23.919><c> you</c><00:06:24.080><c> are</c>
+
+00:06:24.150 --> 00:06:24.160 align:start position:0%
+modify the pass condition. If you are
+ 
+
+00:06:24.160 --> 00:06:25.670 align:start position:0%
+modify the pass condition. If you are
+not<00:06:24.319><c> using</c><00:06:24.560><c> the</c><00:06:24.720><c> shape</c><00:06:24.960><c> cast</c><00:06:25.199><c> and</c><00:06:25.360><c> the</c><00:06:25.440><c> ray</c>
+
+00:06:25.670 --> 00:06:25.680 align:start position:0%
+not using the shape cast and the ray
+ 
+
+00:06:25.680 --> 00:06:27.029 align:start position:0%
+not using the shape cast and the ray
+cast<00:06:25.919><c> is</c><00:06:26.000><c> not</c><00:06:26.160><c> colliding</c><00:06:26.639><c> we</c><00:06:26.880><c> don't</c>
+
+00:06:27.029 --> 00:06:27.039 align:start position:0%
+cast is not colliding we don't
+ 
+
+00:06:27.039 --> 00:06:29.110 align:start position:0%
+cast is not colliding we don't
+calculate.<00:06:28.160><c> And</c><00:06:28.319><c> if</c><00:06:28.479><c> you</c><00:06:28.639><c> are</c><00:06:28.800><c> using</c><00:06:28.960><c> the</c>
+
+00:06:29.110 --> 00:06:29.120 align:start position:0%
+calculate. And if you are using the
+ 
+
+00:06:29.120 --> 00:06:30.710 align:start position:0%
+calculate. And if you are using the
+shape<00:06:29.360><c> cast</c><00:06:29.680><c> and</c><00:06:29.840><c> the</c><00:06:30.000><c> shape</c><00:06:30.240><c> cast</c><00:06:30.400><c> is</c><00:06:30.560><c> not</c>
+
+00:06:30.710 --> 00:06:30.720 align:start position:0%
+shape cast and the shape cast is not
+ 
+
+00:06:30.720 --> 00:06:33.990 align:start position:0%
+shape cast and the shape cast is not
+colliding<00:06:31.199><c> we</c><00:06:31.360><c> don't</c><00:06:31.520><c> calculate</c><00:06:31.919><c> forces.</c>
+
+00:06:33.990 --> 00:06:34.000 align:start position:0%
+colliding we don't calculate forces.
+ 
+
+00:06:34.000 --> 00:06:35.990 align:start position:0%
+colliding we don't calculate forces.
+Then<00:06:34.240><c> for</c><00:06:34.400><c> the</c><00:06:34.560><c> contact</c><00:06:34.880><c> point</c><00:06:35.360><c> if</c><00:06:35.520><c> the</c><00:06:35.680><c> shape</c>
+
+00:06:35.990 --> 00:06:36.000 align:start position:0%
+Then for the contact point if the shape
+ 
+
+00:06:36.000 --> 00:06:38.230 align:start position:0%
+Then for the contact point if the shape
+cast<00:06:36.240><c> exists</c><00:06:37.039><c> we</c><00:06:37.280><c> set</c><00:06:37.440><c> the</c><00:06:37.600><c> contact</c><00:06:37.840><c> point</c><00:06:38.160><c> be</c>
+
+00:06:38.230 --> 00:06:38.240 align:start position:0%
+cast exists we set the contact point be
+ 
+
+00:06:38.240 --> 00:06:40.950 align:start position:0%
+cast exists we set the contact point be
+the<00:06:38.400><c> shape</c><00:06:38.720><c> cast</c><00:06:39.199><c> get</c><00:06:39.440><c> collision</c><00:06:39.919><c> point0.</c>
+
+00:06:40.950 --> 00:06:40.960 align:start position:0%
+the shape cast get collision point0.
+ 
+
+00:06:40.960 --> 00:06:42.150 align:start position:0%
+the shape cast get collision point0.
+There<00:06:41.120><c> can</c><00:06:41.280><c> be</c><00:06:41.360><c> more</c><00:06:41.520><c> than</c><00:06:41.680><c> one</c><00:06:41.840><c> collision</c>
+
+00:06:42.150 --> 00:06:42.160 align:start position:0%
+There can be more than one collision
+ 
+
+00:06:42.160 --> 00:06:43.749 align:start position:0%
+There can be more than one collision
+point<00:06:42.319><c> at</c><00:06:42.560><c> once</c><00:06:42.800><c> but</c><00:06:43.039><c> usually</c><00:06:43.360><c> getting</c><00:06:43.600><c> the</c>
+
+00:06:43.749 --> 00:06:43.759 align:start position:0%
+point at once but usually getting the
+ 
+
+00:06:43.759 --> 00:06:45.350 align:start position:0%
+point at once but usually getting the
+first<00:06:43.919><c> one</c><00:06:44.080><c> already</c><00:06:44.400><c> gives</c><00:06:44.639><c> us</c><00:06:44.720><c> a</c><00:06:44.880><c> very</c><00:06:45.120><c> good</c>
+
+00:06:45.350 --> 00:06:45.360 align:start position:0%
+first one already gives us a very good
+ 
+
+00:06:45.360 --> 00:06:46.629 align:start position:0%
+first one already gives us a very good
+result.<00:06:45.759><c> If</c><00:06:46.000><c> you</c><00:06:46.080><c> want</c><00:06:46.160><c> to</c><00:06:46.240><c> calculate</c><00:06:46.560><c> the</c>
+
+00:06:46.629 --> 00:06:46.639 align:start position:0%
+result. If you want to calculate the
+ 
+
+00:06:46.639 --> 00:06:48.309 align:start position:0%
+result. If you want to calculate the
+forces<00:06:46.880><c> for</c><00:06:47.120><c> all</c><00:06:47.199><c> the</c><00:06:47.360><c> collision</c><00:06:47.680><c> points,</c><00:06:48.080><c> you</c>
+
+00:06:48.309 --> 00:06:48.319 align:start position:0%
+forces for all the collision points, you
+ 
+
+00:06:48.319 --> 00:06:49.830 align:start position:0%
+forces for all the collision points, you
+need<00:06:48.400><c> to</c><00:06:48.560><c> create</c><00:06:48.639><c> a</c><00:06:48.880><c> loop</c><00:06:49.120><c> and</c><00:06:49.280><c> get</c><00:06:49.440><c> the</c><00:06:49.600><c> sum</c><00:06:49.759><c> of</c>
+
+00:06:49.830 --> 00:06:49.840 align:start position:0%
+need to create a loop and get the sum of
+ 
+
+00:06:49.840 --> 00:06:51.749 align:start position:0%
+need to create a loop and get the sum of
+the<00:06:50.000><c> spring</c><00:06:50.240><c> forces</c><00:06:50.560><c> for</c><00:06:50.720><c> all</c><00:06:51.039><c> points</c><00:06:51.360><c> and</c><00:06:51.600><c> not</c>
+
+00:06:51.749 --> 00:06:51.759 align:start position:0%
+the spring forces for all points and not
+ 
+
+00:06:51.759 --> 00:06:53.189 align:start position:0%
+the spring forces for all points and not
+forget<00:06:52.080><c> to</c><00:06:52.240><c> divide</c><00:06:52.400><c> the</c><00:06:52.560><c> final</c><00:06:52.800><c> suspension</c>
+
+00:06:53.189 --> 00:06:53.199 align:start position:0%
+forget to divide the final suspension
+ 
+
+00:06:53.199 --> 00:06:54.790 align:start position:0%
+forget to divide the final suspension
+force<00:06:53.520><c> by</c><00:06:53.680><c> the</c><00:06:53.840><c> total</c><00:06:54.080><c> number</c><00:06:54.240><c> of</c><00:06:54.400><c> collision</c>
+
+00:06:54.790 --> 00:06:54.800 align:start position:0%
+force by the total number of collision
+ 
+
+00:06:54.800 --> 00:06:57.430 align:start position:0%
+force by the total number of collision
+points.<00:06:55.440><c> But</c><00:06:55.600><c> we</c><00:06:55.759><c> won't</c><00:06:56.000><c> do</c><00:06:56.160><c> that.</c><00:06:56.800><c> Then</c><00:06:57.199><c> right</c>
+
+00:06:57.430 --> 00:06:57.440 align:start position:0%
+points. But we won't do that. Then right
+ 
+
+00:06:57.440 --> 00:06:58.790 align:start position:0%
+points. But we won't do that. Then right
+at<00:06:57.600><c> the</c><00:06:57.759><c> end</c><00:06:57.840><c> of</c><00:06:58.000><c> the</c><00:06:58.160><c> suspension</c><00:06:58.560><c> force</c>
+
+00:06:58.790 --> 00:06:58.800 align:start position:0%
+at the end of the suspension force
+ 
+
+00:06:58.800 --> 00:07:01.909 align:start position:0%
+at the end of the suspension force
+calculation,<00:06:59.840><c> if</c><00:07:00.080><c> we</c><00:07:00.240><c> are</c><00:07:00.400><c> using</c><00:07:00.639><c> shape</c><00:07:00.960><c> cast,</c>
+
+00:07:01.909 --> 00:07:01.919 align:start position:0%
+calculation, if we are using shape cast,
+ 
+
+00:07:01.919 --> 00:07:03.990 align:start position:0%
+calculation, if we are using shape cast,
+we<00:07:02.160><c> need</c><00:07:02.319><c> to</c><00:07:02.479><c> use</c><00:07:02.639><c> shapecast.get</c><00:07:03.680><c> collision</c>
+
+00:07:03.990 --> 00:07:04.000 align:start position:0%
+we need to use shapecast.get collision
+ 
+
+00:07:04.000 --> 00:07:07.670 align:start position:0%
+we need to use shapecast.get collision
+normal.
+
+00:07:07.670 --> 00:07:07.680 align:start position:0%
+ 
+ 
+
+00:07:07.680 --> 00:07:09.510 align:start position:0%
+ 
+And<00:07:07.919><c> just</c><00:07:08.160><c> like</c><00:07:08.319><c> that,</c><00:07:08.720><c> the</c><00:07:08.960><c> car</c><00:07:09.199><c> will</c><00:07:09.360><c> now</c>
+
+00:07:09.510 --> 00:07:09.520 align:start position:0%
+And just like that, the car will now
+ 
+
+00:07:09.520 --> 00:07:11.830 align:start position:0%
+And just like that, the car will now
+gracefully<00:07:09.919><c> go</c><00:07:10.080><c> over</c><00:07:10.319><c> bumps</c><00:07:11.039><c> and</c><00:07:11.360><c> behave</c><00:07:11.599><c> much</c>
+
+00:07:11.830 --> 00:07:11.840 align:start position:0%
+gracefully go over bumps and behave much
+ 
+
+00:07:11.840 --> 00:07:13.830 align:start position:0%
+gracefully go over bumps and behave much
+more<00:07:12.160><c> naturally.</c>
+
+00:07:13.830 --> 00:07:13.840 align:start position:0%
+more naturally.
+ 
+
+00:07:13.840 --> 00:07:15.270 align:start position:0%
+more naturally.
+And<00:07:14.080><c> let's</c><00:07:14.240><c> not</c><00:07:14.400><c> forget</c><00:07:14.639><c> to</c><00:07:14.800><c> set</c><00:07:14.880><c> the</c><00:07:15.039><c> shape</c>
+
+00:07:15.270 --> 00:07:15.280 align:start position:0%
+And let's not forget to set the shape
+ 
+
+00:07:15.280 --> 00:07:17.110 align:start position:0%
+And let's not forget to set the shape
+cast<00:07:15.520><c> target</c><00:07:15.759><c> at</c><00:07:15.919><c> the</c><00:07:16.080><c> start</c><00:07:16.240><c> of</c><00:07:16.400><c> the</c><00:07:16.560><c> physics.</c>
+
+00:07:17.110 --> 00:07:17.120 align:start position:0%
+cast target at the start of the physics.
+ 
+
+00:07:17.120 --> 00:07:18.550 align:start position:0%
+cast target at the start of the physics.
+So<00:07:17.280><c> we</c><00:07:17.440><c> can</c><00:07:17.520><c> change</c><00:07:17.680><c> the</c><00:07:17.840><c> sprinkl</c><00:07:18.160><c> length</c><00:07:18.400><c> at</c>
+
+00:07:18.550 --> 00:07:18.560 align:start position:0%
+So we can change the sprinkl length at
+ 
+
+00:07:18.560 --> 00:07:20.950 align:start position:0%
+So we can change the sprinkl length at
+runtime<00:07:18.880><c> if</c><00:07:19.120><c> you</c><00:07:19.199><c> need</c><00:07:19.360><c> to.</c><00:07:20.400><c> But</c><00:07:20.560><c> we</c><00:07:20.720><c> are</c><00:07:20.880><c> not</c>
+
+00:07:20.950 --> 00:07:20.960 align:start position:0%
+runtime if you need to. But we are not
+ 
+
+00:07:20.960 --> 00:07:22.870 align:start position:0%
+runtime if you need to. But we are not
+done<00:07:21.199><c> yet.</c><00:07:21.919><c> There</c><00:07:22.080><c> are</c><00:07:22.240><c> a</c><00:07:22.400><c> few</c><00:07:22.560><c> hidden</c>
+
+00:07:22.870 --> 00:07:22.880 align:start position:0%
+done yet. There are a few hidden
+ 
+
+00:07:22.880 --> 00:07:25.589 align:start position:0%
+done yet. There are a few hidden
+problems<00:07:23.120><c> with</c><00:07:23.280><c> this</c><00:07:23.520><c> yet.</c><00:07:24.479><c> First,</c><00:07:25.039><c> cylinders</c>
+
+00:07:25.589 --> 00:07:25.599 align:start position:0%
+problems with this yet. First, cylinders
+ 
+
+00:07:25.599 --> 00:07:27.510 align:start position:0%
+problems with this yet. First, cylinders
+are<00:07:25.759><c> not</c><00:07:25.919><c> great.</c><00:07:26.560><c> Besides</c><00:07:26.960><c> being</c><00:07:27.199><c> expensive</c>
+
+00:07:27.510 --> 00:07:27.520 align:start position:0%
+are not great. Besides being expensive
+ 
+
+00:07:27.520 --> 00:07:29.189 align:start position:0%
+are not great. Besides being expensive
+to<00:07:27.759><c> calculate,</c><00:07:28.240><c> the</c><00:07:28.400><c> collision</c><00:07:28.800><c> point</c><00:07:29.039><c> that</c>
+
+00:07:29.189 --> 00:07:29.199 align:start position:0%
+to calculate, the collision point that
+ 
+
+00:07:29.199 --> 00:07:30.469 align:start position:0%
+to calculate, the collision point that
+is<00:07:29.360><c> hitting</c><00:07:29.680><c> the</c><00:07:29.759><c> ground</c><00:07:30.000><c> is</c><00:07:30.160><c> a</c><00:07:30.400><c> bit</c>
+
+00:07:30.469 --> 00:07:30.479 align:start position:0%
+is hitting the ground is a bit
+ 
+
+00:07:30.479 --> 00:07:32.309 align:start position:0%
+is hitting the ground is a bit
+imprecise.<00:07:31.360><c> If</c><00:07:31.599><c> you</c><00:07:31.759><c> take</c><00:07:31.840><c> a</c><00:07:31.919><c> look</c><00:07:32.000><c> at</c><00:07:32.160><c> this</c>
+
+00:07:32.309 --> 00:07:32.319 align:start position:0%
+imprecise. If you take a look at this
+ 
+
+00:07:32.319 --> 00:07:34.070 align:start position:0%
+imprecise. If you take a look at this
+other<00:07:32.560><c> car</c><00:07:32.720><c> that</c><00:07:32.960><c> has</c><00:07:33.120><c> bigger</c><00:07:33.360><c> tires,</c><00:07:33.840><c> we</c><00:07:34.000><c> can</c>
+
+00:07:34.070 --> 00:07:34.080 align:start position:0%
+other car that has bigger tires, we can
+ 
+
+00:07:34.080 --> 00:07:35.830 align:start position:0%
+other car that has bigger tires, we can
+see<00:07:34.240><c> why.</c><00:07:34.800><c> The</c><00:07:34.960><c> collision</c><00:07:35.360><c> point</c><00:07:35.520><c> in</c><00:07:35.680><c> the</c>
+
+00:07:35.830 --> 00:07:35.840 align:start position:0%
+see why. The collision point in the
+ 
+
+00:07:35.840 --> 00:07:37.270 align:start position:0%
+see why. The collision point in the
+ground<00:07:36.000><c> is</c><00:07:36.160><c> alternating</c><00:07:36.720><c> between</c><00:07:36.880><c> the</c><00:07:37.120><c> left</c>
+
+00:07:37.270 --> 00:07:37.280 align:start position:0%
+ground is alternating between the left
+ 
+
+00:07:37.280 --> 00:07:39.029 align:start position:0%
+ground is alternating between the left
+and<00:07:37.440><c> right.</c><00:07:37.840><c> This</c><00:07:38.080><c> usually</c><00:07:38.319><c> won't</c><00:07:38.560><c> cause</c><00:07:38.800><c> much</c>
+
+00:07:39.029 --> 00:07:39.039 align:start position:0%
+and right. This usually won't cause much
+ 
+
+00:07:39.039 --> 00:07:40.710 align:start position:0%
+and right. This usually won't cause much
+problems,<00:07:39.599><c> but</c><00:07:39.840><c> just</c><00:07:40.000><c> know</c><00:07:40.160><c> that</c><00:07:40.319><c> this</c><00:07:40.560><c> can</c>
+
+00:07:40.710 --> 00:07:40.720 align:start position:0%
+problems, but just know that this can
+ 
+
+00:07:40.720 --> 00:07:42.870 align:start position:0%
+problems, but just know that this can
+happen.<00:07:41.759><c> Another</c><00:07:42.240><c> problem</c><00:07:42.479><c> is</c><00:07:42.639><c> that</c><00:07:42.800><c> the</c>
+
+00:07:42.870 --> 00:07:42.880 align:start position:0%
+happen. Another problem is that the
+ 
+
+00:07:42.880 --> 00:07:45.189 align:start position:0%
+happen. Another problem is that the
+collision<00:07:43.199><c> point</c><00:07:43.440><c> we</c><00:07:43.599><c> are</c><00:07:43.759><c> getting</c><00:07:44.720><c> the</c><00:07:44.880><c> green</c>
+
+00:07:45.189 --> 00:07:45.199 align:start position:0%
+collision point we are getting the green
+ 
+
+00:07:45.199 --> 00:07:46.710 align:start position:0%
+collision point we are getting the green
+sphere<00:07:45.599><c> is</c><00:07:45.759><c> not</c><00:07:45.919><c> at</c><00:07:46.160><c> the</c><00:07:46.240><c> bottom</c><00:07:46.400><c> of</c><00:07:46.560><c> the</c>
+
+00:07:46.710 --> 00:07:46.720 align:start position:0%
+sphere is not at the bottom of the
+ 
+
+00:07:46.720 --> 00:07:48.629 align:start position:0%
+sphere is not at the bottom of the
+wheel.<00:07:47.440><c> So</c><00:07:47.599><c> when</c><00:07:47.759><c> we</c><00:07:47.919><c> calculate</c><00:07:48.240><c> the</c><00:07:48.400><c> distance</c>
+
+00:07:48.629 --> 00:07:48.639 align:start position:0%
+wheel. So when we calculate the distance
+ 
+
+00:07:48.639 --> 00:07:50.230 align:start position:0%
+wheel. So when we calculate the distance
+from<00:07:48.800><c> the</c><00:07:48.960><c> rest</c><00:07:49.199><c> position</c><00:07:49.520><c> to</c><00:07:49.680><c> get</c><00:07:49.840><c> the</c><00:07:50.000><c> spring</c>
+
+00:07:50.230 --> 00:07:50.240 align:start position:0%
+from the rest position to get the spring
+ 
+
+00:07:50.240 --> 00:07:51.430 align:start position:0%
+from the rest position to get the spring
+length<00:07:50.479><c> like</c><00:07:50.639><c> we</c><00:07:50.800><c> were</c><00:07:50.960><c> doing</c><00:07:51.120><c> with</c><00:07:51.280><c> the</c>
+
+00:07:51.430 --> 00:07:51.440 align:start position:0%
+length like we were doing with the
+ 
+
+00:07:51.440 --> 00:07:53.830 align:start position:0%
+length like we were doing with the
+reccast<00:07:51.919><c> before</c><00:07:52.880><c> we</c><00:07:53.039><c> might</c><00:07:53.280><c> get</c><00:07:53.440><c> slightly</c>
+
+00:07:53.830 --> 00:07:53.840 align:start position:0%
+reccast before we might get slightly
+ 
+
+00:07:53.840 --> 00:07:55.909 align:start position:0%
+reccast before we might get slightly
+wrong<00:07:54.080><c> values.</c><00:07:55.039><c> We</c><00:07:55.199><c> can</c><00:07:55.360><c> fix</c><00:07:55.520><c> this</c><00:07:55.680><c> by</c>
+
+00:07:55.909 --> 00:07:55.919 align:start position:0%
+wrong values. We can fix this by
+ 
+
+00:07:55.919 --> 00:07:57.510 align:start position:0%
+wrong values. We can fix this by
+calculating<00:07:56.240><c> the</c><00:07:56.400><c> red</c><00:07:56.560><c> point</c><00:07:56.800><c> instead</c><00:07:57.120><c> with</c><00:07:57.360><c> a</c>
+
+00:07:57.510 --> 00:07:57.520 align:start position:0%
+calculating the red point instead with a
+ 
+
+00:07:57.520 --> 00:07:59.830 align:start position:0%
+calculating the red point instead with a
+bit<00:07:57.680><c> of</c><00:07:57.840><c> extra</c><00:07:58.160><c> math.</c><00:07:58.960><c> But</c><00:07:59.120><c> the</c><00:07:59.280><c> difference</c><00:07:59.599><c> is</c>
+
+00:07:59.830 --> 00:07:59.840 align:start position:0%
+bit of extra math. But the difference is
+ 
+
+00:07:59.840 --> 00:08:01.270 align:start position:0%
+bit of extra math. But the difference is
+usually<00:08:00.160><c> not</c><00:08:00.400><c> significant</c><00:08:00.800><c> enough</c><00:08:01.039><c> to</c>
+
+00:08:01.270 --> 00:08:01.280 align:start position:0%
+usually not significant enough to
+ 
+
+00:08:01.280 --> 00:08:04.550 align:start position:0%
+usually not significant enough to
+notice.<00:08:02.240><c> So</c><00:08:02.400><c> we</c><00:08:02.560><c> will</c><00:08:02.639><c> leave</c><00:08:02.800><c> it</c><00:08:02.960><c> as</c><00:08:03.199><c> it</c><00:08:03.360><c> is.</c>
+
+00:08:04.550 --> 00:08:04.560 align:start position:0%
+notice. So we will leave it as it is.
+ 
+
+00:08:04.560 --> 00:08:06.629 align:start position:0%
+notice. So we will leave it as it is.
+Now<00:08:04.800><c> the</c><00:08:05.039><c> other</c><00:08:05.199><c> problem</c><00:08:05.440><c> is</c><00:08:05.680><c> this.</c><00:08:06.319><c> We</c><00:08:06.560><c> can</c>
+
+00:08:06.629 --> 00:08:06.639 align:start position:0%
+Now the other problem is this. We can
+ 
+
+00:08:06.639 --> 00:08:07.990 align:start position:0%
+Now the other problem is this. We can
+get<00:08:06.800><c> our</c><00:08:06.960><c> wheel</c><00:08:07.199><c> stuck</c><00:08:07.440><c> inside</c><00:08:07.599><c> the</c><00:08:07.759><c> ground</c>
+
+00:08:07.990 --> 00:08:08.000 align:start position:0%
+get our wheel stuck inside the ground
+ 
+
+00:08:08.000 --> 00:08:10.390 align:start position:0%
+get our wheel stuck inside the ground
+fairly<00:08:08.319><c> easily.</c><00:08:09.360><c> In</c><00:08:09.599><c> this</c><00:08:09.759><c> situation,</c><00:08:10.240><c> the</c>
+
+00:08:10.390 --> 00:08:10.400 align:start position:0%
+fairly easily. In this situation, the
+ 
+
+00:08:10.400 --> 00:08:11.670 align:start position:0%
+fairly easily. In this situation, the
+shape<00:08:10.720><c> cast</c><00:08:10.960><c> is</c><00:08:11.039><c> not</c><00:08:11.199><c> detecting</c><00:08:11.520><c> any</c>
+
+00:08:11.670 --> 00:08:11.680 align:start position:0%
+shape cast is not detecting any
+ 
+
+00:08:11.680 --> 00:08:13.510 align:start position:0%
+shape cast is not detecting any
+collisions<00:08:12.080><c> anymore.</c><00:08:12.720><c> So,</c><00:08:12.879><c> no</c><00:08:13.039><c> forces</c><00:08:13.360><c> are</c>
+
+00:08:13.510 --> 00:08:13.520 align:start position:0%
+collisions anymore. So, no forces are
+ 
+
+00:08:13.520 --> 00:08:15.749 align:start position:0%
+collisions anymore. So, no forces are
+being<00:08:13.759><c> applied</c><00:08:14.080><c> there.</c><00:08:14.800><c> But</c><00:08:14.960><c> if</c><00:08:15.199><c> you</c><00:08:15.360><c> move</c><00:08:15.520><c> a</c>
+
+00:08:15.749 --> 00:08:15.759 align:start position:0%
+being applied there. But if you move a
+ 
+
+00:08:15.759 --> 00:08:17.670 align:start position:0%
+being applied there. But if you move a
+bit,<00:08:16.319><c> it</c><00:08:16.560><c> might</c><00:08:16.720><c> just</c><00:08:16.879><c> be</c><00:08:17.039><c> enough</c><00:08:17.199><c> for</c><00:08:17.360><c> it</c><00:08:17.520><c> to</c>
+
+00:08:17.670 --> 00:08:17.680 align:start position:0%
+bit, it might just be enough for it to
+ 
+
+00:08:17.680 --> 00:08:20.230 align:start position:0%
+bit, it might just be enough for it to
+work<00:08:17.919><c> again.</c><00:08:18.639><c> Not</c><00:08:18.960><c> great.</c><00:08:19.440><c> And</c><00:08:19.599><c> it</c><00:08:19.759><c> is</c><00:08:19.919><c> fairly</c>
+
+00:08:20.230 --> 00:08:20.240 align:start position:0%
+work again. Not great. And it is fairly
+ 
+
+00:08:20.240 --> 00:08:21.990 align:start position:0%
+work again. Not great. And it is fairly
+easy<00:08:20.400><c> to</c><00:08:20.560><c> get</c><00:08:20.720><c> this</c><00:08:20.879><c> problem.</c><00:08:21.520><c> Any</c><00:08:21.840><c> high</c>
+
+00:08:21.990 --> 00:08:22.000 align:start position:0%
+easy to get this problem. Any high
+ 
+
+00:08:22.000 --> 00:08:23.589 align:start position:0%
+easy to get this problem. Any high
+enough<00:08:22.319><c> jump</c><00:08:22.639><c> will</c><00:08:22.800><c> get</c><00:08:22.960><c> you</c><00:08:23.199><c> stuck</c><00:08:23.440><c> with</c>
+
+00:08:23.589 --> 00:08:23.599 align:start position:0%
+enough jump will get you stuck with
+ 
+
+00:08:23.599 --> 00:08:25.270 align:start position:0%
+enough jump will get you stuck with
+this.
+
+00:08:25.270 --> 00:08:25.280 align:start position:0%
+this.
+ 
+
+00:08:25.280 --> 00:08:28.230 align:start position:0%
+this.
+So,<00:08:25.520><c> why</c><00:08:25.680><c> is</c><00:08:25.840><c> that?</c><00:08:26.800><c> Well,</c><00:08:27.360><c> shape</c><00:08:27.680><c> cast</c><00:08:28.000><c> won't</c>
+
+00:08:28.230 --> 00:08:28.240 align:start position:0%
+So, why is that? Well, shape cast won't
+ 
+
+00:08:28.240 --> 00:08:29.830 align:start position:0%
+So, why is that? Well, shape cast won't
+properly<00:08:28.560><c> detect</c><00:08:28.960><c> things</c><00:08:29.199><c> already</c><00:08:29.520><c> inside</c>
+
+00:08:29.830 --> 00:08:29.840 align:start position:0%
+properly detect things already inside
+ 
+
+00:08:29.840 --> 00:08:31.749 align:start position:0%
+properly detect things already inside
+them.<00:08:30.400><c> Only</c><00:08:30.720><c> objects</c><00:08:31.039><c> that</c><00:08:31.199><c> are</c><00:08:31.280><c> hit</c><00:08:31.520><c> after</c>
+
+00:08:31.749 --> 00:08:31.759 align:start position:0%
+them. Only objects that are hit after
+ 
+
+00:08:31.759 --> 00:08:33.670 align:start position:0%
+them. Only objects that are hit after
+they<00:08:32.000><c> have</c><00:08:32.240><c> moved.</c><00:08:32.959><c> If</c><00:08:33.120><c> you</c><00:08:33.279><c> take</c><00:08:33.360><c> a</c><00:08:33.519><c> look</c><00:08:33.599><c> at</c>
+
+00:08:33.670 --> 00:08:33.680 align:start position:0%
+they have moved. If you take a look at
+ 
+
+00:08:33.680 --> 00:08:35.990 align:start position:0%
+they have moved. If you take a look at
+the<00:08:33.919><c> car</c><00:08:34.159><c> and</c><00:08:34.399><c> push</c><00:08:34.640><c> it</c><00:08:34.800><c> down,</c><00:08:35.680><c> you</c><00:08:35.839><c> can</c><00:08:35.919><c> see</c>
+
+00:08:35.990 --> 00:08:36.000 align:start position:0%
+the car and push it down, you can see
+ 
+
+00:08:36.000 --> 00:08:37.990 align:start position:0%
+the car and push it down, you can see
+the<00:08:36.240><c> tire</c><00:08:36.479><c> shape</c><00:08:36.719><c> is</c><00:08:36.880><c> pushed</c><00:08:37.120><c> down</c><00:08:37.519><c> at</c><00:08:37.760><c> its</c>
+
+00:08:37.990 --> 00:08:38.000 align:start position:0%
+the tire shape is pushed down at its
+ 
+
+00:08:38.000 --> 00:08:39.909 align:start position:0%
+the tire shape is pushed down at its
+most<00:08:38.240><c> extended</c><00:08:38.719><c> position.</c><00:08:39.360><c> Although</c><00:08:39.680><c> this</c>
+
+00:08:39.909 --> 00:08:39.919 align:start position:0%
+most extended position. Although this
+ 
+
+00:08:39.919 --> 00:08:41.909 align:start position:0%
+most extended position. Although this
+gives<00:08:40.159><c> us</c><00:08:40.399><c> the</c><00:08:40.640><c> correct</c><00:08:40.959><c> collision</c><00:08:41.279><c> point,</c>
+
+00:08:41.909 --> 00:08:41.919 align:start position:0%
+gives us the correct collision point,
+ 
+
+00:08:41.919 --> 00:08:43.350 align:start position:0%
+gives us the correct collision point,
+there<00:08:42.080><c> are</c><00:08:42.320><c> situations</c><00:08:42.640><c> that</c><00:08:42.880><c> the</c><00:08:43.039><c> things</c>
+
+00:08:43.350 --> 00:08:43.360 align:start position:0%
+there are situations that the things
+ 
+
+00:08:43.360 --> 00:08:45.829 align:start position:0%
+there are situations that the things
+just<00:08:43.599><c> break</c><00:08:43.839><c> and</c><00:08:44.080><c> stop</c><00:08:44.240><c> detecting</c><00:08:44.720><c> at</c><00:08:44.880><c> all.</c><00:08:45.680><c> So</c>
+
+00:08:45.829 --> 00:08:45.839 align:start position:0%
+just break and stop detecting at all. So
+ 
+
+00:08:45.839 --> 00:08:47.350 align:start position:0%
+just break and stop detecting at all. So
+to<00:08:46.080><c> fix</c><00:08:46.240><c> this,</c><00:08:46.480><c> we</c><00:08:46.720><c> are</c><00:08:46.800><c> going</c><00:08:46.880><c> to</c><00:08:47.040><c> create</c><00:08:47.120><c> a</c>
+
+00:08:47.350 --> 00:08:47.360 align:start position:0%
+to fix this, we are going to create a
+ 
+
+00:08:47.360 --> 00:08:49.910 align:start position:0%
+to fix this, we are going to create a
+new<00:08:47.440><c> variable</c><00:08:47.920><c> called</c><00:08:48.480><c> shape</c><00:08:48.800><c> cast</c><00:08:49.040><c> offset</c><00:08:49.600><c> of</c>
+
+00:08:49.910 --> 00:08:49.920 align:start position:0%
+new variable called shape cast offset of
+ 
+
+00:08:49.920 --> 00:08:52.550 align:start position:0%
+new variable called shape cast offset of
+0.3.<00:08:51.279><c> We</c><00:08:51.519><c> are</c><00:08:51.600><c> going</c><00:08:51.680><c> to</c><00:08:51.839><c> use</c><00:08:52.000><c> this</c><00:08:52.160><c> to</c><00:08:52.320><c> push</c>
+
+00:08:52.550 --> 00:08:52.560 align:start position:0%
+0.3. We are going to use this to push
+ 
+
+00:08:52.560 --> 00:08:54.389 align:start position:0%
+0.3. We are going to use this to push
+our<00:08:52.720><c> shape</c><00:08:52.959><c> cast</c><00:08:53.200><c> above</c><00:08:53.519><c> its</c><00:08:53.680><c> rest</c><00:08:54.000><c> position</c>
+
+00:08:54.389 --> 00:08:54.399 align:start position:0%
+our shape cast above its rest position
+ 
+
+00:08:54.399 --> 00:08:56.630 align:start position:0%
+our shape cast above its rest position
+without<00:08:54.720><c> altering</c><00:08:55.120><c> the</c><00:08:55.279><c> calculations.</c><00:08:56.399><c> We</c>
+
+00:08:56.630 --> 00:08:56.640 align:start position:0%
+without altering the calculations. We
+ 
+
+00:08:56.640 --> 00:08:58.070 align:start position:0%
+without altering the calculations. We
+just<00:08:56.800><c> need</c><00:08:56.880><c> to</c><00:08:57.040><c> subtract</c><00:08:57.360><c> the</c><00:08:57.519><c> offset</c><00:08:57.839><c> inside</c>
+
+00:08:58.070 --> 00:08:58.080 align:start position:0%
+just need to subtract the offset inside
+ 
+
+00:08:58.080 --> 00:09:00.790 align:start position:0%
+just need to subtract the offset inside
+the<00:08:58.240><c> target</c><00:08:58.560><c> position</c><00:08:58.880><c> calculation</c>
+
+00:09:00.790 --> 00:09:00.800 align:start position:0%
+the target position calculation
+ 
+
+00:09:00.800 --> 00:09:02.550 align:start position:0%
+the target position calculation
+and<00:09:01.040><c> set</c><00:09:01.200><c> the</c><00:09:01.279><c> shape</c><00:09:01.519><c> cast</c><00:09:01.760><c> position.</c><00:09:02.320><c> height</c>
+
+00:09:02.550 --> 00:09:02.560 align:start position:0%
+and set the shape cast position. height
+ 
+
+00:09:02.560 --> 00:09:05.110 align:start position:0%
+and set the shape cast position. height
+to<00:09:02.720><c> be</c><00:09:02.880><c> the</c><00:09:03.040><c> offset.</c><00:09:04.399><c> This</c><00:09:04.640><c> will</c><00:09:04.800><c> push</c><00:09:04.959><c> the</c>
+
+00:09:05.110 --> 00:09:05.120 align:start position:0%
+to be the offset. This will push the
+ 
+
+00:09:05.120 --> 00:09:06.550 align:start position:0%
+to be the offset. This will push the
+shape<00:09:05.279><c> cast</c><00:09:05.519><c> to</c><00:09:05.680><c> be</c><00:09:05.760><c> above</c><00:09:06.000><c> its</c><00:09:06.240><c> normal</c>
+
+00:09:06.550 --> 00:09:06.560 align:start position:0%
+shape cast to be above its normal
+ 
+
+00:09:06.560 --> 00:09:08.310 align:start position:0%
+shape cast to be above its normal
+position,<00:09:07.200><c> meaning</c><00:09:07.519><c> it</c><00:09:07.680><c> will</c><00:09:07.839><c> be</c><00:09:07.920><c> harder</c><00:09:08.160><c> for</c>
+
+00:09:08.310 --> 00:09:08.320 align:start position:0%
+position, meaning it will be harder for
+ 
+
+00:09:08.320 --> 00:09:09.829 align:start position:0%
+position, meaning it will be harder for
+the<00:09:08.399><c> shape</c><00:09:08.640><c> cast</c><00:09:08.880><c> to</c><00:09:08.959><c> fail</c><00:09:09.200><c> due</c><00:09:09.440><c> to</c><00:09:09.600><c> starting</c>
+
+00:09:09.829 --> 00:09:09.839 align:start position:0%
+the shape cast to fail due to starting
+ 
+
+00:09:09.839 --> 00:09:12.550 align:start position:0%
+the shape cast to fail due to starting
+inside<00:09:10.160><c> objects.</c><00:09:11.600><c> You</c><00:09:11.839><c> can</c><00:09:12.000><c> play</c><00:09:12.160><c> around</c><00:09:12.320><c> with</c>
+
+00:09:12.550 --> 00:09:12.560 align:start position:0%
+inside objects. You can play around with
+ 
+
+00:09:12.560 --> 00:09:14.470 align:start position:0%
+inside objects. You can play around with
+this<00:09:12.720><c> value</c><00:09:13.200><c> to</c><00:09:13.440><c> find</c><00:09:13.600><c> what</c><00:09:13.839><c> works</c><00:09:14.080><c> best</c><00:09:14.320><c> for</c>
+
+00:09:14.470 --> 00:09:14.480 align:start position:0%
+this value to find what works best for
+ 
+
+00:09:14.480 --> 00:09:16.870 align:start position:0%
+this value to find what works best for
+each<00:09:14.640><c> car.</c><00:09:15.600><c> But</c><00:09:15.760><c> now,</c><00:09:16.000><c> if</c><00:09:16.240><c> we</c><00:09:16.320><c> push</c><00:09:16.560><c> the</c><00:09:16.640><c> car</c>
+
+00:09:16.870 --> 00:09:16.880 align:start position:0%
+each car. But now, if we push the car
+ 
+
+00:09:16.880 --> 00:09:18.630 align:start position:0%
+each car. But now, if we push the car
+down<00:09:17.120><c> again,</c><00:09:17.680><c> we</c><00:09:17.920><c> can</c><00:09:18.000><c> see</c><00:09:18.080><c> the</c><00:09:18.240><c> shape</c><00:09:18.480><c> cast</c>
+
+00:09:18.630 --> 00:09:18.640 align:start position:0%
+down again, we can see the shape cast
+ 
+
+00:09:18.640 --> 00:09:19.990 align:start position:0%
+down again, we can see the shape cast
+stays<00:09:18.880><c> correctly</c><00:09:19.200><c> in</c><00:09:19.360><c> place</c><00:09:19.519><c> above</c><00:09:19.839><c> the</c>
+
+00:09:19.990 --> 00:09:20.000 align:start position:0%
+stays correctly in place above the
+ 
+
+00:09:20.000 --> 00:09:21.509 align:start position:0%
+stays correctly in place above the
+ground.
+
+00:09:21.509 --> 00:09:21.519 align:start position:0%
+ground.
+ 
+
+00:09:21.519 --> 00:09:23.269 align:start position:0%
+ground.
+And<00:09:21.680><c> indeed,</c><00:09:22.240><c> now</c><00:09:22.480><c> we</c><00:09:22.640><c> have</c><00:09:22.800><c> working</c><00:09:23.040><c> shape</c>
+
+00:09:23.269 --> 00:09:23.279 align:start position:0%
+And indeed, now we have working shape
+ 
+
+00:09:23.279 --> 00:09:25.430 align:start position:0%
+And indeed, now we have working shape
+cast<00:09:23.519><c> wheels</c><00:09:24.080><c> and</c><00:09:24.240><c> our</c><00:09:24.560><c> little</c><00:09:24.800><c> jeep</c><00:09:25.120><c> doesn't</c>
+
+00:09:25.430 --> 00:09:25.440 align:start position:0%
+cast wheels and our little jeep doesn't
+ 
+
+00:09:25.440 --> 00:09:27.509 align:start position:0%
+cast wheels and our little jeep doesn't
+get<00:09:25.680><c> stuck</c><00:09:25.839><c> anymore.</c>
+
+00:09:27.509 --> 00:09:27.519 align:start position:0%
+get stuck anymore.
+ 
+
+00:09:27.519 --> 00:09:29.110 align:start position:0%
+get stuck anymore.
+But<00:09:27.680><c> before</c><00:09:27.920><c> we</c><00:09:28.160><c> finish,</c><00:09:28.560><c> there</c><00:09:28.720><c> is</c><00:09:28.880><c> still</c>
+
+00:09:29.110 --> 00:09:29.120 align:start position:0%
+But before we finish, there is still
+ 
+
+00:09:29.120 --> 00:09:31.670 align:start position:0%
+But before we finish, there is still
+another<00:09:29.360><c> big</c><00:09:29.600><c> problem</c><00:09:29.839><c> with</c><00:09:30.000><c> our</c><00:09:30.160><c> code.</c><00:09:31.279><c> Let's</c>
+
+00:09:31.670 --> 00:09:31.680 align:start position:0%
+another big problem with our code. Let's
+ 
+
+00:09:31.680 --> 00:09:33.190 align:start position:0%
+another big problem with our code. Let's
+drive<00:09:31.839><c> this</c><00:09:32.080><c> car</c><00:09:32.240><c> and</c><00:09:32.480><c> take</c><00:09:32.560><c> a</c><00:09:32.720><c> closer</c><00:09:33.040><c> look</c><00:09:33.120><c> at</c>
+
+00:09:33.190 --> 00:09:33.200 align:start position:0%
+drive this car and take a closer look at
+ 
+
+00:09:33.200 --> 00:09:36.310 align:start position:0%
+drive this car and take a closer look at
+the<00:09:33.360><c> wheels</c><00:09:33.600><c> grip</c><00:09:33.839><c> curve</c><00:09:34.080><c> values.</c><00:09:35.519><c> So</c><00:09:35.760><c> far,</c>
+
+00:09:36.310 --> 00:09:36.320 align:start position:0%
+the wheels grip curve values. So far,
+ 
+
+00:09:36.320 --> 00:09:38.230 align:start position:0%
+the wheels grip curve values. So far,
+everything<00:09:36.720><c> seems</c><00:09:37.040><c> normal.</c><00:09:37.760><c> We</c><00:09:38.000><c> have</c><00:09:38.080><c> a</c>
+
+00:09:38.230 --> 00:09:38.240 align:start position:0%
+everything seems normal. We have a
+ 
+
+00:09:38.240 --> 00:09:40.630 align:start position:0%
+everything seems normal. We have a
+variable<00:09:38.560><c> grip</c><00:09:38.959><c> similar</c><00:09:39.200><c> to</c><00:09:39.279><c> the</c><00:09:39.440><c> real</c><00:09:39.680><c> cars.</c>
+
+00:09:40.630 --> 00:09:40.640 align:start position:0%
+variable grip similar to the real cars.
+ 
+
+00:09:40.640 --> 00:09:42.470 align:start position:0%
+variable grip similar to the real cars.
+But<00:09:40.800><c> when</c><00:09:40.959><c> we</c><00:09:41.120><c> come</c><00:09:41.200><c> to</c><00:09:41.360><c> a</c><00:09:41.519><c> slow</c><00:09:41.760><c> lateral</c><00:09:42.160><c> slip,</c>
+
+00:09:42.470 --> 00:09:42.480 align:start position:0%
+But when we come to a slow lateral slip,
+ 
+
+00:09:42.480 --> 00:09:44.470 align:start position:0%
+But when we come to a slow lateral slip,
+we<00:09:42.640><c> see</c><00:09:42.720><c> a</c><00:09:42.959><c> problem.</c><00:09:43.519><c> Our</c><00:09:43.839><c> car</c><00:09:44.080><c> doesn't</c><00:09:44.320><c> seem</c>
+
+00:09:44.470 --> 00:09:44.480 align:start position:0%
+we see a problem. Our car doesn't seem
+ 
+
+00:09:44.480 --> 00:09:46.630 align:start position:0%
+we see a problem. Our car doesn't seem
+to<00:09:44.640><c> want</c><00:09:44.800><c> to</c><00:09:44.959><c> stop</c><00:09:45.360><c> and</c><00:09:45.519><c> our</c><00:09:45.839><c> extraction</c><00:09:46.320><c> graph</c>
+
+00:09:46.630 --> 00:09:46.640 align:start position:0%
+to want to stop and our extraction graph
+ 
+
+00:09:46.640 --> 00:09:49.509 align:start position:0%
+to want to stop and our extraction graph
+is<00:09:46.880><c> maxed</c><00:09:47.200><c> out,</c><00:09:47.760><c> giving</c><00:09:48.080><c> us</c><00:09:48.240><c> zero</c><00:09:48.640><c> traction</c>
+
+00:09:49.509 --> 00:09:49.519 align:start position:0%
+is maxed out, giving us zero traction
+ 
+
+00:09:49.519 --> 00:09:51.430 align:start position:0%
+is maxed out, giving us zero traction
+until<00:09:49.839><c> we</c><00:09:50.000><c> move</c><00:09:50.240><c> again</c><00:09:50.560><c> and</c><00:09:50.800><c> it</c><00:09:50.959><c> suddenly</c><00:09:51.279><c> goes</c>
+
+00:09:51.430 --> 00:09:51.440 align:start position:0%
+until we move again and it suddenly goes
+ 
+
+00:09:51.440 --> 00:09:53.670 align:start position:0%
+until we move again and it suddenly goes
+back<00:09:51.600><c> to</c><00:09:51.760><c> normal.</c><00:09:52.640><c> And</c><00:09:52.800><c> it's</c><00:09:53.120><c> even</c><00:09:53.279><c> worse</c><00:09:53.519><c> if</c>
+
+00:09:53.670 --> 00:09:53.680 align:start position:0%
+back to normal. And it's even worse if
+ 
+
+00:09:53.680 --> 00:09:55.670 align:start position:0%
+back to normal. And it's even worse if
+the<00:09:53.839><c> car</c><00:09:53.920><c> is</c><00:09:54.080><c> hit</c><00:09:54.240><c> from</c><00:09:54.480><c> the</c><00:09:54.560><c> sides.</c><00:09:55.279><c> It</c><00:09:55.440><c> just</c>
+
+00:09:55.670 --> 00:09:55.680 align:start position:0%
+the car is hit from the sides. It just
+ 
+
+00:09:55.680 --> 00:09:57.990 align:start position:0%
+the car is hit from the sides. It just
+starts<00:09:55.920><c> moving</c><00:09:56.320><c> without</c><00:09:56.720><c> any</c><00:09:56.959><c> resistance.</c>
+
+00:09:57.990 --> 00:09:58.000 align:start position:0%
+starts moving without any resistance.
+ 
+
+00:09:58.000 --> 00:09:59.829 align:start position:0%
+starts moving without any resistance.
+Well,<00:09:58.480><c> while</c><00:09:58.880><c> cornering</c><00:09:59.360><c> forces</c><00:09:59.680><c> are</c>
+
+00:09:59.829 --> 00:09:59.839 align:start position:0%
+Well, while cornering forces are
+ 
+
+00:09:59.839 --> 00:10:01.829 align:start position:0%
+Well, while cornering forces are
+simulating<00:10:00.320><c> real</c><00:10:00.560><c> forces,</c><00:10:01.440><c> we</c><00:10:01.680><c> don't</c>
+
+00:10:01.829 --> 00:10:01.839 align:start position:0%
+simulating real forces, we don't
+ 
+
+00:10:01.839 --> 00:10:03.829 align:start position:0%
+simulating real forces, we don't
+simulate<00:10:02.240><c> any</c><00:10:02.480><c> real</c><00:10:02.800><c> art</c><00:10:03.200><c> the</c><00:10:03.360><c> wheels</c><00:10:03.680><c> might</c>
+
+00:10:03.829 --> 00:10:03.839 align:start position:0%
+simulate any real art the wheels might
+ 
+
+00:10:03.839 --> 00:10:05.350 align:start position:0%
+simulate any real art the wheels might
+have.<00:10:04.320><c> So,</c><00:10:04.480><c> when</c><00:10:04.640><c> the</c><00:10:04.800><c> car</c><00:10:04.959><c> is</c><00:10:05.120><c> moving</c>
+
+00:10:05.350 --> 00:10:05.360 align:start position:0%
+have. So, when the car is moving
+ 
+
+00:10:05.360 --> 00:10:07.030 align:start position:0%
+have. So, when the car is moving
+sideways,<00:10:05.920><c> we</c><00:10:06.080><c> have</c><00:10:06.160><c> a</c><00:10:06.320><c> very</c><00:10:06.560><c> high</c><00:10:06.720><c> sleep</c>
+
+00:10:07.030 --> 00:10:07.040 align:start position:0%
+sideways, we have a very high sleep
+ 
+
+00:10:07.040 --> 00:10:09.030 align:start position:0%
+sideways, we have a very high sleep
+angle<00:10:07.360><c> and</c><00:10:07.680><c> get</c><00:10:07.920><c> very</c><00:10:08.160><c> little</c><00:10:08.399><c> forces</c><00:10:08.720><c> back</c>
+
+00:10:09.030 --> 00:10:09.040 align:start position:0%
+angle and get very little forces back
+ 
+
+00:10:09.040 --> 00:10:11.590 align:start position:0%
+angle and get very little forces back
+depending<00:10:09.360><c> on</c><00:10:09.519><c> the</c><00:10:09.600><c> grip</c><00:10:09.920><c> curve.</c><00:10:11.120><c> To</c><00:10:11.360><c> fix</c>
+
+00:10:11.590 --> 00:10:11.600 align:start position:0%
+depending on the grip curve. To fix
+ 
+
+00:10:11.600 --> 00:10:13.190 align:start position:0%
+depending on the grip curve. To fix
+that,<00:10:11.920><c> we</c><00:10:12.080><c> are</c><00:10:12.240><c> going</c><00:10:12.320><c> to</c><00:10:12.480><c> do</c><00:10:12.640><c> something</c><00:10:12.959><c> very</c>
+
+00:10:13.190 --> 00:10:13.200 align:start position:0%
+that, we are going to do something very
+ 
+
+00:10:13.200 --> 00:10:15.670 align:start position:0%
+that, we are going to do something very
+similar<00:10:13.440><c> to</c><00:10:13.600><c> the</c><00:10:13.760><c> ramp</c><00:10:14.079><c> solution.</c><00:10:15.279><c> So,</c><00:10:15.519><c> right</c>
+
+00:10:15.670 --> 00:10:15.680 align:start position:0%
+similar to the ramp solution. So, right
+ 
+
+00:10:15.680 --> 00:10:17.670 align:start position:0%
+similar to the ramp solution. So, right
+after<00:10:15.920><c> the</c><00:10:16.079><c> grip</c><00:10:16.320><c> factor</c><00:10:16.640><c> is</c><00:10:16.800><c> calculated,</c><00:10:17.440><c> we</c>
+
+00:10:17.670 --> 00:10:17.680 align:start position:0%
+after the grip factor is calculated, we
+ 
+
+00:10:17.680 --> 00:10:18.949 align:start position:0%
+after the grip factor is calculated, we
+are<00:10:17.760><c> going</c><00:10:17.839><c> to</c><00:10:18.000><c> check</c><00:10:18.160><c> if</c><00:10:18.320><c> the</c><00:10:18.480><c> car</c><00:10:18.720><c> forward</c>
+
+00:10:18.949 --> 00:10:18.959 align:start position:0%
+are going to check if the car forward
+ 
+
+00:10:18.959 --> 00:10:21.190 align:start position:0%
+are going to check if the car forward
+speed<00:10:19.200><c> is</c><00:10:19.360><c> low</c><00:10:19.600><c> enough.</c>
+
+00:10:21.190 --> 00:10:21.200 align:start position:0%
+speed is low enough.
+ 
+
+00:10:21.200 --> 00:10:23.430 align:start position:0%
+speed is low enough.
+And<00:10:21.440><c> if</c><00:10:21.600><c> it</c><00:10:21.760><c> is,</c><00:10:22.240><c> we</c><00:10:22.480><c> force</c><00:10:22.800><c> the</c><00:10:22.880><c> grip</c><00:10:23.200><c> factor</c>
+
+00:10:23.430 --> 00:10:23.440 align:start position:0%
+And if it is, we force the grip factor
+ 
+
+00:10:23.440 --> 00:10:25.590 align:start position:0%
+And if it is, we force the grip factor
+to<00:10:23.680><c> zero,</c><00:10:24.480><c> meaning</c><00:10:24.800><c> there</c><00:10:24.959><c> will</c><00:10:25.200><c> be</c><00:10:25.279><c> a</c><00:10:25.440><c> lot</c><00:10:25.519><c> of</c>
+
+00:10:25.590 --> 00:10:25.600 align:start position:0%
+to zero, meaning there will be a lot of
+ 
+
+00:10:25.600 --> 00:10:28.710 align:start position:0%
+to zero, meaning there will be a lot of
+force<00:10:26.160><c> and</c><00:10:26.480><c> stop</c><00:10:26.640><c> the</c><00:10:26.800><c> car</c><00:10:26.959><c> from</c><00:10:27.200><c> moving.</c><00:10:28.480><c> And</c>
+
+00:10:28.710 --> 00:10:28.720 align:start position:0%
+force and stop the car from moving. And
+ 
+
+00:10:28.720 --> 00:10:30.630 align:start position:0%
+force and stop the car from moving. And
+just<00:10:28.880><c> like</c><00:10:29.040><c> that,</c><00:10:29.519><c> now</c><00:10:29.760><c> our</c><00:10:30.000><c> car</c><00:10:30.160><c> behaves</c><00:10:30.480><c> more</c>
+
+00:10:30.630 --> 00:10:30.640 align:start position:0%
+just like that, now our car behaves more
+ 
+
+00:10:30.640 --> 00:10:32.790 align:start position:0%
+just like that, now our car behaves more
+normally.<00:10:31.600><c> We</c><00:10:31.760><c> can</c><00:10:31.920><c> take</c><00:10:32.079><c> a</c><00:10:32.160><c> hits</c><00:10:32.480><c> from</c><00:10:32.640><c> the</c>
+
+00:10:32.790 --> 00:10:32.800 align:start position:0%
+normally. We can take a hits from the
+ 
+
+00:10:32.800 --> 00:10:35.269 align:start position:0%
+normally. We can take a hits from the
+side.<00:10:33.680><c> And</c><00:10:33.920><c> sliding</c><00:10:34.320><c> to</c><00:10:34.399><c> a</c><00:10:34.560><c> slow</c><00:10:34.800><c> stop</c><00:10:35.040><c> will</c>
+
+00:10:35.269 --> 00:10:35.279 align:start position:0%
+side. And sliding to a slow stop will
+ 
+
+00:10:35.279 --> 00:10:38.310 align:start position:0%
+side. And sliding to a slow stop will
+now<00:10:35.519><c> properly</c><00:10:35.839><c> stop</c><00:10:36.000><c> the</c><00:10:36.240><c> car.</c>
+
+00:10:38.310 --> 00:10:38.320 align:start position:0%
+now properly stop the car.
+ 
+
+00:10:38.320 --> 00:10:40.069 align:start position:0%
+now properly stop the car.
+But<00:10:38.480><c> before</c><00:10:38.720><c> we</c><00:10:38.959><c> finish</c><00:10:39.120><c> the</c><00:10:39.360><c> video,</c><00:10:39.760><c> let's</c>
+
+00:10:40.069 --> 00:10:40.079 align:start position:0%
+But before we finish the video, let's
+ 
+
+00:10:40.079 --> 00:10:41.590 align:start position:0%
+But before we finish the video, let's
+make<00:10:40.240><c> some</c><00:10:40.399><c> minor</c><00:10:40.720><c> improvements</c><00:10:41.200><c> and</c><00:10:41.360><c> changes</c>
+
+00:10:41.590 --> 00:10:41.600 align:start position:0%
+make some minor improvements and changes
+ 
+
+00:10:41.600 --> 00:10:44.470 align:start position:0%
+make some minor improvements and changes
+to<00:10:41.760><c> the</c><00:10:42.000><c> code.</c><00:10:43.360><c> First,</c><00:10:43.760><c> inside</c><00:10:44.079><c> the</c><00:10:44.240><c> car</c>
+
+00:10:44.470 --> 00:10:44.480 align:start position:0%
+to the code. First, inside the car
+ 
+
+00:10:44.480 --> 00:10:46.389 align:start position:0%
+to the code. First, inside the car
+script,<00:10:45.279><c> let's</c><00:10:45.519><c> update</c><00:10:45.839><c> the</c><00:10:46.000><c> get</c><00:10:46.240><c> point</c>
+
+00:10:46.389 --> 00:10:46.399 align:start position:0%
+script, let's update the get point
+ 
+
+00:10:46.399 --> 00:10:47.829 align:start position:0%
+script, let's update the get point
+velocity<00:10:46.800><c> formula</c><00:10:47.200><c> to</c><00:10:47.360><c> take</c><00:10:47.519><c> into</c><00:10:47.760><c> account</c>
+
+00:10:47.829 --> 00:10:47.839 align:start position:0%
+velocity formula to take into account
+ 
+
+00:10:47.839 --> 00:10:49.829 align:start position:0%
+velocity formula to take into account
+the<00:10:48.079><c> center</c><00:10:48.320><c> of</c><00:10:48.480><c> mass</c><00:10:48.720><c> of</c><00:10:48.800><c> the</c><00:10:48.959><c> car.</c><00:10:49.600><c> Change</c>
+
+00:10:49.829 --> 00:10:49.839 align:start position:0%
+the center of mass of the car. Change
+ 
+
+00:10:49.839 --> 00:10:52.069 align:start position:0%
+the center of mass of the car. Change
+the<00:10:50.000><c> global</c><00:10:50.320><c> position</c><00:10:50.640><c> here</c><00:10:50.880><c> to</c><00:10:51.200><c> two</c><00:10:51.440><c> global</c>
+
+00:10:52.069 --> 00:10:52.079 align:start position:0%
+the global position here to two global
+ 
+
+00:10:52.079 --> 00:10:54.710 align:start position:0%
+the global position here to two global
+center<00:10:52.320><c> of</c><00:10:52.480><c> mass.</c><00:10:53.680><c> Now</c><00:10:53.839><c> our</c><00:10:54.079><c> point</c><00:10:54.320><c> velocity</c>
+
+00:10:54.710 --> 00:10:54.720 align:start position:0%
+center of mass. Now our point velocity
+ 
+
+00:10:54.720 --> 00:10:56.230 align:start position:0%
+center of mass. Now our point velocity
+should<00:10:54.880><c> be</c><00:10:55.040><c> correct</c><00:10:55.360><c> even</c><00:10:55.600><c> when</c><00:10:55.839><c> we</c><00:10:56.000><c> are</c><00:10:56.079><c> using</c>
+
+00:10:56.230 --> 00:10:56.240 align:start position:0%
+should be correct even when we are using
+ 
+
+00:10:56.240 --> 00:10:58.870 align:start position:0%
+should be correct even when we are using
+a<00:10:56.399><c> custom</c><00:10:56.720><c> center</c><00:10:57.040><c> of</c><00:10:57.200><c> mass.</c>
+
+00:10:58.870 --> 00:10:58.880 align:start position:0%
+a custom center of mass.
+ 
+
+00:10:58.880 --> 00:11:00.630 align:start position:0%
+a custom center of mass.
+Next,<00:10:59.360><c> let's</c><00:10:59.600><c> add</c><00:10:59.760><c> a</c><00:10:59.920><c> new</c><00:11:00.000><c> property</c><00:11:00.320><c> for</c><00:11:00.480><c> the</c>
+
+00:11:00.630 --> 00:11:00.640 align:start position:0%
+Next, let's add a new property for the
+ 
+
+00:11:00.640 --> 00:11:03.190 align:start position:0%
+Next, let's add a new property for the
+wheel<00:11:01.040><c> called</c><00:11:01.279><c> max</c><00:11:01.600><c> spring</c><00:11:01.839><c> force.</c><00:11:02.800><c> This</c><00:11:03.040><c> can</c>
+
+00:11:03.190 --> 00:11:03.200 align:start position:0%
+wheel called max spring force. This can
+ 
+
+00:11:03.200 --> 00:11:04.870 align:start position:0%
+wheel called max spring force. This can
+be<00:11:03.279><c> helpful</c><00:11:03.519><c> if</c><00:11:03.760><c> the</c><00:11:03.920><c> car</c><00:11:04.079><c> we</c><00:11:04.240><c> have</c><00:11:04.399><c> has</c><00:11:04.640><c> long</c>
+
+00:11:04.870 --> 00:11:04.880 align:start position:0%
+be helpful if the car we have has long
+ 
+
+00:11:04.880 --> 00:11:06.389 align:start position:0%
+be helpful if the car we have has long
+suspensions<00:11:05.440><c> to</c><00:11:05.600><c> better</c><00:11:05.839><c> customize</c><00:11:06.240><c> the</c>
+
+00:11:06.389 --> 00:11:06.399 align:start position:0%
+suspensions to better customize the
+ 
+
+00:11:06.399 --> 00:11:08.150 align:start position:0%
+suspensions to better customize the
+behavior<00:11:06.720><c> we</c><00:11:06.959><c> want.</c><00:11:07.440><c> Then</c><00:11:07.680><c> inside</c><00:11:07.920><c> the</c>
+
+00:11:08.150 --> 00:11:08.160 align:start position:0%
+behavior we want. Then inside the
+ 
+
+00:11:08.160 --> 00:11:09.829 align:start position:0%
+behavior we want. Then inside the
+suspension<00:11:08.560><c> force,</c><00:11:08.959><c> we</c><00:11:09.200><c> just</c><00:11:09.360><c> need</c><00:11:09.440><c> to</c><00:11:09.519><c> clamp</c>
+
+00:11:09.829 --> 00:11:09.839 align:start position:0%
+suspension force, we just need to clamp
+ 
+
+00:11:09.839 --> 00:11:14.630 align:start position:0%
+suspension force, we just need to clamp
+this<00:11:10.000><c> value</c><00:11:10.160><c> between</c><00:11:10.480><c> our</c><00:11:10.640><c> max</c><00:11:10.880><c> spring</c><00:11:11.120><c> force.</c>
+
+00:11:14.630 --> 00:11:14.640 align:start position:0%
+ 
+ 
+
+00:11:14.640 --> 00:11:16.470 align:start position:0%
+ 
+So<00:11:14.800><c> now</c><00:11:15.040><c> by</c><00:11:15.200><c> customizing</c><00:11:15.680><c> this</c><00:11:15.839><c> value</c><00:11:16.160><c> we</c><00:11:16.399><c> can</c>
+
+00:11:16.470 --> 00:11:16.480 align:start position:0%
+So now by customizing this value we can
+ 
+
+00:11:16.480 --> 00:11:17.990 align:start position:0%
+So now by customizing this value we can
+avoid<00:11:16.800><c> our</c><00:11:16.959><c> car</c><00:11:17.120><c> jumping</c><00:11:17.440><c> around</c><00:11:17.680><c> if</c><00:11:17.839><c> the</c>
+
+00:11:17.990 --> 00:11:18.000 align:start position:0%
+avoid our car jumping around if the
+ 
+
+00:11:18.000 --> 00:11:20.389 align:start position:0%
+avoid our car jumping around if the
+springs<00:11:18.240><c> are</c><00:11:18.399><c> suddenly</c><00:11:18.720><c> compressed.</c><00:11:20.079><c> This</c><00:11:20.240><c> is</c>
+
+00:11:20.389 --> 00:11:20.399 align:start position:0%
+springs are suddenly compressed. This is
+ 
+
+00:11:20.399 --> 00:11:22.150 align:start position:0%
+springs are suddenly compressed. This is
+a<00:11:20.560><c> bigger</c><00:11:20.800><c> problem</c><00:11:20.959><c> for</c><00:11:21.120><c> rakas</c><00:11:21.600><c> cars</c><00:11:21.920><c> since</c>
+
+00:11:22.150 --> 00:11:22.160 align:start position:0%
+a bigger problem for rakas cars since
+ 
+
+00:11:22.160 --> 00:11:23.990 align:start position:0%
+a bigger problem for rakas cars since
+they<00:11:22.399><c> can</c><00:11:22.480><c> have</c><00:11:22.640><c> the</c><00:11:22.800><c> spring</c><00:11:23.040><c> qu</c><00:11:23.440><c> from</c><00:11:23.600><c> zero</c><00:11:23.839><c> to</c>
+
+00:11:23.990 --> 00:11:24.000 align:start position:0%
+they can have the spring qu from zero to
+ 
+
+00:11:24.000 --> 00:11:26.389 align:start position:0%
+they can have the spring qu from zero to
+max<00:11:24.320><c> compression</c><00:11:24.720><c> in</c><00:11:24.959><c> an</c><00:11:25.120><c> instant.</c><00:11:26.000><c> But</c><00:11:26.079><c> it</c><00:11:26.240><c> is</c>
+
+00:11:26.389 --> 00:11:26.399 align:start position:0%
+max compression in an instant. But it is
+ 
+
+00:11:26.399 --> 00:11:29.269 align:start position:0%
+max compression in an instant. But it is
+still<00:11:26.560><c> a</c><00:11:26.720><c> good</c><00:11:26.800><c> setting</c><00:11:27.040><c> to</c><00:11:27.279><c> have.</c>
+
+00:11:29.269 --> 00:11:29.279 align:start position:0%
+still a good setting to have.
+ 
+
+00:11:29.279 --> 00:11:30.870 align:start position:0%
+still a good setting to have.
+And<00:11:29.519><c> finally</c><00:11:29.920><c> another</c><00:11:30.240><c> problem</c><00:11:30.399><c> for</c><00:11:30.640><c> high</c>
+
+00:11:30.870 --> 00:11:30.880 align:start position:0%
+And finally another problem for high
+ 
+
+00:11:30.880 --> 00:11:32.870 align:start position:0%
+And finally another problem for high
+suspension<00:11:31.279><c> cars.</c><00:11:31.839><c> When</c><00:11:32.000><c> our</c><00:11:32.240><c> jeep</c><00:11:32.480><c> go</c><00:11:32.720><c> over</c>
+
+00:11:32.870 --> 00:11:32.880 align:start position:0%
+suspension cars. When our jeep go over
+ 
+
+00:11:32.880 --> 00:11:35.509 align:start position:0%
+suspension cars. When our jeep go over
+the<00:11:33.040><c> ball</c><00:11:33.440><c> the</c><00:11:33.680><c> wheel</c><00:11:33.920><c> reacts</c><00:11:34.320><c> like</c><00:11:34.480><c> it</c><00:11:34.720><c> should</c>
+
+00:11:35.509 --> 00:11:35.519 align:start position:0%
+the ball the wheel reacts like it should
+ 
+
+00:11:35.519 --> 00:11:37.910 align:start position:0%
+the ball the wheel reacts like it should
+avoiding<00:11:36.000><c> the</c><00:11:36.160><c> ball</c><00:11:37.040><c> but</c><00:11:37.200><c> the</c><00:11:37.360><c> rigid</c><00:11:37.680><c> body</c>
+
+00:11:37.910 --> 00:11:37.920 align:start position:0%
+avoiding the ball but the rigid body
+ 
+
+00:11:37.920 --> 00:11:39.670 align:start position:0%
+avoiding the ball but the rigid body
+ball<00:11:38.079><c> is</c><00:11:38.160><c> non</c><00:11:38.399><c> the</c><00:11:38.480><c> wiser</c><00:11:38.959><c> and</c><00:11:39.279><c> stays</c><00:11:39.519><c> in</c>
+
+00:11:39.670 --> 00:11:39.680 align:start position:0%
+ball is non the wiser and stays in
+ 
+
+00:11:39.680 --> 00:11:40.949 align:start position:0%
+ball is non the wiser and stays in
+place.
+
+00:11:40.949 --> 00:11:40.959 align:start position:0%
+place.
+ 
+
+00:11:40.959 --> 00:11:42.710 align:start position:0%
+place.
+If<00:11:41.200><c> you</c><00:11:41.360><c> want</c><00:11:41.440><c> to</c><00:11:41.600><c> fix</c><00:11:41.760><c> that,</c><00:11:42.160><c> you</c><00:11:42.320><c> can</c><00:11:42.480><c> go</c><00:11:42.560><c> to</c>
+
+00:11:42.710 --> 00:11:42.720 align:start position:0%
+If you want to fix that, you can go to
+ 
+
+00:11:42.720 --> 00:11:44.470 align:start position:0%
+If you want to fix that, you can go to
+the<00:11:42.800><c> very</c><00:11:43.040><c> bottom</c><00:11:43.200><c> of</c><00:11:43.279><c> the</c><00:11:43.440><c> wheel</c><00:11:43.760><c> code</c><00:11:44.240><c> and</c>
+
+00:11:44.470 --> 00:11:44.480 align:start position:0%
+the very bottom of the wheel code and
+ 
+
+00:11:44.480 --> 00:11:45.829 align:start position:0%
+the very bottom of the wheel code and
+loop<00:11:44.720><c> over</c><00:11:44.880><c> the</c><00:11:45.040><c> shape</c><00:11:45.279><c> cast</c><00:11:45.519><c> collision</c>
+
+00:11:45.829 --> 00:11:45.839 align:start position:0%
+loop over the shape cast collision
+ 
+
+00:11:45.839 --> 00:11:47.990 align:start position:0%
+loop over the shape cast collision
+points.<00:11:46.800><c> If</c><00:11:46.959><c> the</c><00:11:47.120><c> collided</c><00:11:47.519><c> object</c><00:11:47.760><c> is</c><00:11:47.920><c> a</c>
+
+00:11:47.990 --> 00:11:48.000 align:start position:0%
+points. If the collided object is a
+ 
+
+00:11:48.000 --> 00:11:50.150 align:start position:0%
+points. If the collided object is a
+rigid<00:11:48.320><c> body</c><00:11:48.560><c> 3D,</c><00:11:49.120><c> just</c><00:11:49.360><c> apply</c><00:11:49.600><c> a</c><00:11:49.760><c> reaction</c>
+
+00:11:50.150 --> 00:11:50.160 align:start position:0%
+rigid body 3D, just apply a reaction
+ 
+
+00:11:50.160 --> 00:11:52.550 align:start position:0%
+rigid body 3D, just apply a reaction
+force.<00:11:51.040><c> Here</c><00:11:51.360><c> I</c><00:11:51.519><c> am</c><00:11:51.600><c> just</c><00:11:51.839><c> using</c><00:11:52.000><c> the</c><00:11:52.160><c> negative</c>
+
+00:11:52.550 --> 00:11:52.560 align:start position:0%
+force. Here I am just using the negative
+ 
+
+00:11:52.560 --> 00:11:55.110 align:start position:0%
+force. Here I am just using the negative
+some<00:11:52.800><c> forces</c><00:11:53.040><c> of</c><00:11:53.200><c> the</c><00:11:53.279><c> wheel,</c><00:11:54.640><c> but</c><00:11:54.880><c> you</c><00:11:55.040><c> can</c>
+
+00:11:55.110 --> 00:11:55.120 align:start position:0%
+some forces of the wheel, but you can
+ 
+
+00:11:55.120 --> 00:11:57.750 align:start position:0%
+some forces of the wheel, but you can
+fine-tune<00:11:55.600><c> that</c><00:11:55.839><c> later.</c><00:11:57.040><c> Now</c><00:11:57.200><c> the</c><00:11:57.360><c> jeep</c><00:11:57.680><c> can</c>
+
+00:11:57.750 --> 00:11:57.760 align:start position:0%
+fine-tune that later. Now the jeep can
+ 
+
+00:11:57.760 --> 00:12:01.990 align:start position:0%
+fine-tune that later. Now the jeep can
+go<00:11:57.920><c> over</c><00:11:58.079><c> objects</c><00:11:58.399><c> and</c><00:11:58.640><c> fling</c><00:11:58.959><c> them</c><00:11:59.120><c> around.</c>
+
+00:12:01.990 --> 00:12:02.000 align:start position:0%
+go over objects and fling them around.
+ 
+
+00:12:02.000 --> 00:12:03.750 align:start position:0%
+go over objects and fling them around.
+And<00:12:02.240><c> finally,</c><00:12:02.800><c> we</c><00:12:03.040><c> have</c><00:12:03.120><c> a</c><00:12:03.279><c> code</c><00:12:03.440><c> we</c><00:12:03.680><c> can</c>
+
+00:12:03.750 --> 00:12:03.760 align:start position:0%
+And finally, we have a code we can
+ 
+
+00:12:03.760 --> 00:12:05.509 align:start position:0%
+And finally, we have a code we can
+remove.<00:12:04.399><c> When</c><00:12:04.640><c> using</c><00:12:04.880><c> raycast,</c><00:12:05.440><c> we</c>
+
+00:12:05.509 --> 00:12:05.519 align:start position:0%
+remove. When using raycast, we
+ 
+
+00:12:05.519 --> 00:12:07.030 align:start position:0%
+remove. When using raycast, we
+interpolated<00:12:06.000><c> the</c><00:12:06.160><c> wheels</c><00:12:06.480><c> position</c><00:12:06.720><c> to</c><00:12:06.959><c> give</c>
+
+00:12:07.030 --> 00:12:07.040 align:start position:0%
+interpolated the wheels position to give
+ 
+
+00:12:07.040 --> 00:12:09.350 align:start position:0%
+interpolated the wheels position to give
+us<00:12:07.200><c> better</c><00:12:07.519><c> results.</c><00:12:08.320><c> But</c><00:12:08.480><c> shapecast</c><00:12:09.040><c> usually</c>
+
+00:12:09.350 --> 00:12:09.360 align:start position:0%
+us better results. But shapecast usually
+ 
+
+00:12:09.360 --> 00:12:11.509 align:start position:0%
+us better results. But shapecast usually
+don't<00:12:09.519><c> have</c><00:12:09.680><c> this</c><00:12:09.920><c> problem.</c><00:12:10.800><c> So</c><00:12:11.120><c> you</c><00:12:11.279><c> can</c>
+
+00:12:11.509 --> 00:12:11.519 align:start position:0%
+don't have this problem. So you can
+ 
+
+00:12:11.519 --> 00:12:12.790 align:start position:0%
+don't have this problem. So you can
+increase<00:12:11.760><c> the</c><00:12:11.920><c> value</c><00:12:12.160><c> or</c><00:12:12.320><c> remove</c><00:12:12.639><c> this</c>
+
+00:12:12.790 --> 00:12:12.800 align:start position:0%
+increase the value or remove this
+ 
+
+00:12:12.800 --> 00:12:14.790 align:start position:0%
+increase the value or remove this
+entirely.
+
+00:12:14.790 --> 00:12:14.800 align:start position:0%
+entirely.
+ 
+
+00:12:14.800 --> 00:12:17.509 align:start position:0%
+entirely.
+But<00:12:15.040><c> that's</c><00:12:15.200><c> really</c><00:12:15.440><c> it.</c><00:12:16.800><c> We</c><00:12:16.959><c> have</c><00:12:17.040><c> a</c><00:12:17.200><c> shape</c>
+
+00:12:17.509 --> 00:12:17.519 align:start position:0%
+But that's really it. We have a shape
+ 
+
+00:12:17.519 --> 00:12:19.750 align:start position:0%
+But that's really it. We have a shape
+cast<00:12:17.760><c> car</c><00:12:17.920><c> now</c><00:12:18.560><c> along</c><00:12:18.880><c> with</c><00:12:19.040><c> tons</c><00:12:19.360><c> of</c><00:12:19.519><c> other</c>
+
+00:12:19.750 --> 00:12:19.760 align:start position:0%
+cast car now along with tons of other
+ 
+
+00:12:19.760 --> 00:12:21.190 align:start position:0%
+cast car now along with tons of other
+improvements<00:12:20.160><c> and</c><00:12:20.320><c> fixes</c><00:12:20.720><c> to</c><00:12:20.880><c> make</c><00:12:21.040><c> it</c>
+
+00:12:21.190 --> 00:12:21.200 align:start position:0%
+improvements and fixes to make it
+ 
+
+00:12:21.200 --> 00:12:23.910 align:start position:0%
+improvements and fixes to make it
+finally<00:12:21.519><c> more</c><00:12:21.760><c> stable.</c><00:12:22.880><c> As</c><00:12:23.120><c> always,</c><00:12:23.519><c> if</c><00:12:23.760><c> you</c>
+
+00:12:23.910 --> 00:12:23.920 align:start position:0%
+finally more stable. As always, if you
+ 
+
+00:12:23.920 --> 00:12:25.430 align:start position:0%
+finally more stable. As always, if you
+would<00:12:24.079><c> like</c><00:12:24.320><c> support</c><00:12:24.560><c> me,</c><00:12:24.880><c> you</c><00:12:25.120><c> can</c><00:12:25.200><c> get</c><00:12:25.279><c> the</c>
+
+00:12:25.430 --> 00:12:25.440 align:start position:0%
+would like support me, you can get the
+ 
+
+00:12:25.440 --> 00:12:27.110 align:start position:0%
+would like support me, you can get the
+project<00:12:25.760><c> source</c><00:12:26.000><c> files</c><00:12:26.240><c> and</c><00:12:26.480><c> experiments</c><00:12:26.959><c> by</c>
+
+00:12:27.110 --> 00:12:27.120 align:start position:0%
+project source files and experiments by
+ 
+
+00:12:27.120 --> 00:12:29.509 align:start position:0%
+project source files and experiments by
+supporting<00:12:27.440><c> me</c><00:12:27.600><c> on</c><00:12:27.760><c> Patreon.</c><00:12:28.959><c> Now</c><00:12:29.120><c> you</c><00:12:29.360><c> can</c><00:12:29.440><c> go</c>
+
+00:12:29.509 --> 00:12:29.519 align:start position:0%
+supporting me on Patreon. Now you can go
+ 
+
+00:12:29.519 --> 00:12:31.030 align:start position:0%
+supporting me on Patreon. Now you can go
+and<00:12:29.760><c> customize</c><00:12:30.079><c> your</c><00:12:30.240><c> car</c><00:12:30.480><c> to</c><00:12:30.720><c> your</c><00:12:30.880><c> own</c>
+
+00:12:31.030 --> 00:12:31.040 align:start position:0%
+and customize your car to your own
+ 
+
+00:12:31.040 --> 00:12:34.150 align:start position:0%
+and customize your car to your own
+needs.<00:12:32.000><c> I</c><00:12:32.240><c> hope</c><00:12:32.399><c> you</c><00:12:32.560><c> like</c><00:12:32.720><c> this</c><00:12:32.880><c> video</c><00:12:33.920><c> and</c>
+
+00:12:34.150 --> 00:12:34.160 align:start position:0%
+needs. I hope you like this video and
+ 
+
+00:12:34.160 --> 00:12:37.720 align:start position:0%
+needs. I hope you like this video and
+until<00:12:34.560><c> next</c><00:12:34.720><c> time.</c>
+

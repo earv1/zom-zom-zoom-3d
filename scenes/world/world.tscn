@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://socgkim3vuae" path="res://scenes/world/car_follow_camera.gd" id="12_mcko3"]
 [ext_resource type="Script" path="res://scenes/world/chunk_manager.gd" id="20_chkmgr"]
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="21_world"]
+[ext_resource type="Script" path="res://scenes/world/car_boost.gd" id="21_boost"]
 [ext_resource type="Script" path="res://scenes/enemy/enemy_spawner.gd" id="22_spawner"]
 [ext_resource type="Script" path="res://scenes/weapons/weapon_manager.gd" id="23_wm"]
 [ext_resource type="PackedScene" path="res://scenes/weapons/front_gun.tscn" id="24_fg"]
@@ -226,6 +227,9 @@ script = ExtResource("12_mcko3")
 min_distance = 6.0
 max_distance = 10.0
 height = 4.0
+
+[node name="CarBoost" type="Node" parent="Car"]
+script = ExtResource("21_boost")
 
 [node name="WeaponManager" type="Node3D" parent="Car"]
 script = ExtResource("23_wm")

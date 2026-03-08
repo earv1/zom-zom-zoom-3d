@@ -22,7 +22,8 @@ func _process(delta: float) -> void:
 	var interval := maxf(0.3, 2.0 - GameManager.elapsed_time * 0.008)
 	if _timer >= interval:
 		_timer = 0.0
-		_spawn()
+		for i in 10:
+			_spawn()
 
 
 func _spawn() -> void:

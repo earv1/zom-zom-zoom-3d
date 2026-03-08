@@ -1,0 +1,364 @@
+Kind: captions
+Language: en
+We are back again, ready to improve our
+car and fix some very annoying problems.
+This time, we'll give the car shape gas
+wheel so it can go as smoothly over
+bumps, fix lighting ramps and lateral
+collisions, and many more improvements.
+But before we start, let's do something
+that we should have done a long time
+ago. Changing the physics engine.
+Starting from Gordo 4.6, Jolt physics is
+now going to be the default physics
+engine. So, there is no reason not to
+use it anymore. So, if you are on good
+4.5 or higher, go to project settings
+and under physics 3D, change the physics
+engine to jolt. And after a quick
+restart, we should now be getting a much
+more precise and faster physics
+calculation. Just like that. Then we'll
+open the wheel script and rename a few
+variables. Here I'll be changing the
+velocity variable to speed when it's a
+non vector value. So, we have the car
+forward speed at the top
+and the wheel forward speed used at the
+bottom. Now things should be hopefully
+less confusing. And another important
+thing before we start the direction
+indicator we are using from global basis
+are not normalized.
+So if your raycast node or any of its
+parents are scaled, you'll be getting
+completely wrong values for all your
+calculations.
+If you want to make sure to get correct
+values, you can add a normalized at the
+end on lines that use the global basis
+vector. But I'll leave that to you. And
+just one last thing, if you remember
+previously, we had to disable the recast
+node and manually call force recast in
+the code to prevent the precision error
+caused by delay checks. But while this
+works, we lose the book shapes in game.
+So I figure a proper way to make it
+work. First, select all the rcast and
+enable them back. And to make sure we
+get the correct results, open the
+process tab and set the physics priority
+to minus one. This will make the nodes
+execute last and fix the precision
+problems without the manual request. But
+now, let's really start. The first
+outstanding problem with the car is
+ramps. The car simply won't stay still
+on them. You can hold the brake all you
+want and it will still slide down. Not
+good. Even if we set the traction to one
+and hold the brake, it still slides.
+Something is definitely wrong here. So,
+let's reset this value and get to work.
+Open up the wheel script. And in the
+spring calculation, we are going to take
+this spring force and save it into a
+variable named suspension force before
+we apply the collision normal. And now
+at the very bottom, after all the forces
+are done being calculated, we are going
+to apply a counter spring force to
+nullify some of these spring forces in
+the X and Y directions, but only when
+the car is at a very low speed. So let's
+check if the wheel speed is low enough
+with ABS float F speed and choose a
+small value. You can adjust this value
+or turn it into a variable later.
+Then we are going to get the suspension
+force in the car Y-axis.
+And then reduce the final Z force Z
+force based on how in line it is with
+the global Y vector 3.up. Copy this line
+and do the same for the X force.x next.
+And by countering the spring forces this
+way, we can make the car stop at low
+inclines, but it still very slowly
+slides down. So we are going to add
+another check just before the Z force
+calculation. Now we are going to set the
+friction to a very high value if the car
+is moving at a low speed. This can be a
+very low value and it will work kind of
+like a static friction for our simulated
+wheels.
+But now our car perfectly stopped on
+ramps and you can set the friction check
+speed to a very low value just to stop
+that extra momentum. And it still works
+the same successfully stopping the car.
+And of course it won't work on bigger
+ramps. because we still have to fight
+gravity and our counter force is based
+on how aligned the car is with the up
+direction. Now with the ramp problems
+fixed, let's start turning the wheels
+into shape casts. If you remember
+previously, one of the big hurdles of
+raycast cars are small gaps. This is due
+to raycast being a single array and
+failing to detect gaps. So to fix this,
+we'll turn our wheels into shapes and
+sweep an area for collisions. Instead of
+replacing the gray cast wheels, we'll be
+adding the shape cast as an alternative.
+So, we can turn it on and off depending
+on the type we want to use. So, let's
+select our first wheel and create a
+shapecast 3D node. Just make sure it is
+not the first child because the script
+used that for the mesh. Next, create a
+cylinder shape or if you don't care for
+precision that much, using a sphere will
+give you much better results while being
+faster to calculate. But, we'll use a
+cylinder here.
+Set the height to 0.2 how thick the tire
+is. And let me change the debug color to
+red so we can better see what we are
+working with. Now, as you might have
+noticed, the cylinder is facing the
+wrong way and it will sweep the shape in
+this direction.
+So, let's set the target to zero for now
+and rotate the shape cast in the Z-axis
+by 90° to turn it in the correct way and
+set the radius to 0.33.
+Now, it's important that the shape cast
+is at its origin or a lot of things will
+break. if you need to adjust the shape
+cast position. Make sure you're doing so
+by moving the raycast node above. So
+let's reset the position for the shape
+cast node and not forget to set the
+physics priority to minus one so we
+don't get precision errors. But because
+we rotated the shape cast now the target
+position Y is sideways. So we will have
+to remember we need to adjust our X
+position instead. Make sure that minus X
+goes down which might be flipped in case
+you rotated the wheels the other way
+around. And for better performance, you
+can adjust the max results to three or
+some low number. And I will increase the
+radius to 0.35 just so we can see the
+shape debug over the wheels.
+Now copy the shape cast node and paste
+it inside all the other car wheels. They
+should all be already in the correct
+position, which means it's time to start
+coding.
+First, let's create an export variable
+for the shape cast node. I'll put it at
+the top.
+And now we need to assign each shape
+cast to its wheel.
+Next, inside the ready function, we are
+going to check if we have a shape cast.
+If we do, we need to adjust its target
+position much like our raycast node
+above. But we are changing the X here
+because we rotated the node. And the
+shape cast doesn't need the wheel radius
+anymore because the shape itself has it.
+And finally, we need to call shapecast
+addex exception and give it the parent
+node, the car's widget body, so it
+doesn't detect collisions with the car
+body. Then in the wheel physics you
+modify the pass condition. If you are
+not using the shape cast and the ray
+cast is not colliding we don't
+calculate. And if you are using the
+shape cast and the shape cast is not
+colliding we don't calculate forces.
+Then for the contact point if the shape
+cast exists we set the contact point be
+the shape cast get collision point0.
+There can be more than one collision
+point at once but usually getting the
+first one already gives us a very good
+result. If you want to calculate the
+forces for all the collision points, you
+need to create a loop and get the sum of
+the spring forces for all points and not
+forget to divide the final suspension
+force by the total number of collision
+points. But we won't do that. Then right
+at the end of the suspension force
+calculation, if we are using shape cast,
+we need to use shapecast.get collision
+normal.
+And just like that, the car will now
+gracefully go over bumps and behave much
+more naturally.
+And let's not forget to set the shape
+cast target at the start of the physics.
+So we can change the sprinkl length at
+runtime if you need to. But we are not
+done yet. There are a few hidden
+problems with this yet. First, cylinders
+are not great. Besides being expensive
+to calculate, the collision point that
+is hitting the ground is a bit
+imprecise. If you take a look at this
+other car that has bigger tires, we can
+see why. The collision point in the
+ground is alternating between the left
+and right. This usually won't cause much
+problems, but just know that this can
+happen. Another problem is that the
+collision point we are getting the green
+sphere is not at the bottom of the
+wheel. So when we calculate the distance
+from the rest position to get the spring
+length like we were doing with the
+reccast before we might get slightly
+wrong values. We can fix this by
+calculating the red point instead with a
+bit of extra math. But the difference is
+usually not significant enough to
+notice. So we will leave it as it is.
+Now the other problem is this. We can
+get our wheel stuck inside the ground
+fairly easily. In this situation, the
+shape cast is not detecting any
+collisions anymore. So, no forces are
+being applied there. But if you move a
+bit, it might just be enough for it to
+work again. Not great. And it is fairly
+easy to get this problem. Any high
+enough jump will get you stuck with
+this.
+So, why is that? Well, shape cast won't
+properly detect things already inside
+them. Only objects that are hit after
+they have moved. If you take a look at
+the car and push it down, you can see
+the tire shape is pushed down at its
+most extended position. Although this
+gives us the correct collision point,
+there are situations that the things
+just break and stop detecting at all. So
+to fix this, we are going to create a
+new variable called shape cast offset of
+0.3. We are going to use this to push
+our shape cast above its rest position
+without altering the calculations. We
+just need to subtract the offset inside
+the target position calculation
+and set the shape cast position. height
+to be the offset. This will push the
+shape cast to be above its normal
+position, meaning it will be harder for
+the shape cast to fail due to starting
+inside objects. You can play around with
+this value to find what works best for
+each car. But now, if we push the car
+down again, we can see the shape cast
+stays correctly in place above the
+ground.
+And indeed, now we have working shape
+cast wheels and our little jeep doesn't
+get stuck anymore.
+But before we finish, there is still
+another big problem with our code. Let's
+drive this car and take a closer look at
+the wheels grip curve values. So far,
+everything seems normal. We have a
+variable grip similar to the real cars.
+But when we come to a slow lateral slip,
+we see a problem. Our car doesn't seem
+to want to stop and our extraction graph
+is maxed out, giving us zero traction
+until we move again and it suddenly goes
+back to normal. And it's even worse if
+the car is hit from the sides. It just
+starts moving without any resistance.
+Well, while cornering forces are
+simulating real forces, we don't
+simulate any real art the wheels might
+have. So, when the car is moving
+sideways, we have a very high sleep
+angle and get very little forces back
+depending on the grip curve. To fix
+that, we are going to do something very
+similar to the ramp solution. So, right
+after the grip factor is calculated, we
+are going to check if the car forward
+speed is low enough.
+And if it is, we force the grip factor
+to zero, meaning there will be a lot of
+force and stop the car from moving. And
+just like that, now our car behaves more
+normally. We can take a hits from the
+side. And sliding to a slow stop will
+now properly stop the car.
+But before we finish the video, let's
+make some minor improvements and changes
+to the code. First, inside the car
+script, let's update the get point
+velocity formula to take into account
+the center of mass of the car. Change
+the global position here to two global
+center of mass. Now our point velocity
+should be correct even when we are using
+a custom center of mass.
+Next, let's add a new property for the
+wheel called max spring force. This can
+be helpful if the car we have has long
+suspensions to better customize the
+behavior we want. Then inside the
+suspension force, we just need to clamp
+this value between our max spring force.
+So now by customizing this value we can
+avoid our car jumping around if the
+springs are suddenly compressed. This is
+a bigger problem for rakas cars since
+they can have the spring qu from zero to
+max compression in an instant. But it is
+still a good setting to have.
+And finally another problem for high
+suspension cars. When our jeep go over
+the ball the wheel reacts like it should
+avoiding the ball but the rigid body
+ball is non the wiser and stays in
+place.
+If you want to fix that, you can go to
+the very bottom of the wheel code and
+loop over the shape cast collision
+points. If the collided object is a
+rigid body 3D, just apply a reaction
+force. Here I am just using the negative
+some forces of the wheel, but you can
+fine-tune that later. Now the jeep can
+go over objects and fling them around.
+And finally, we have a code we can
+remove. When using raycast, we
+interpolated the wheels position to give
+us better results. But shapecast usually
+don't have this problem. So you can
+increase the value or remove this
+entirely.
+But that's really it. We have a shape
+cast car now along with tons of other
+improvements and fixes to make it
+finally more stable. As always, if you
+would like support me, you can get the
+project source files and experiments by
+supporting me on Patreon. Now you can go
+and customize your car to your own
+needs. I hope you like this video and
+until next time.

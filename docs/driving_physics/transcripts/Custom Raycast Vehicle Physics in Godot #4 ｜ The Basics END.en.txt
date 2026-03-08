@@ -1,0 +1,494 @@
+Kind: captions
+Language: en
+Now that the car is mostly done, all
+that's left are some finishing touches.
+So follow along as we clean up the code,
+put a proper mesh on the car, make some
+improvements, and add a few extra
+things.
+Now that we understand how the physics
+work, we can take all the code from the
+car script and put it inside the wheels
+in a more compact form.
+So after rearranging the code, here's
+what we got. The wheels properties are
+now neatly divided into groups and
+categories. And you can collapse the
+wheel properties group to see how the
+values that affects how they behave. On
+the motor category section, we have a
+new is steer variable that the car can
+use to know whether the tire can turn or
+not. And I've put a toggle to show or
+hide the debug force arrows. On the
+ready function, we now set the target
+position of the raycast to make sure it
+starts correctly. And all the physics
+calculations are now inside the apply
+wheel physics that receives a raycast
+car as a parameter. Inside here, we have
+all the previous physics functions
+combined. Before subate ray cast, rotate
+the wheels and calculate the tire forces
+on the spring calculation. One notable
+change here is that now we set the
+contact variable value before we
+calculate the tire velocity. This way we
+have a proper velocity based on the
+center of the wheel. Then we calculate
+the acceleration, the traction x forces
+and the traction z forces. I have
+removed the skit marks code from here.
+We are having the car script control if
+it want the skit marks or not. Also the
+gravity.y y value is now retrieved with
+minuscar getg gravity.y instead of the
+project settings value. This will give
+us the gravity value after the rigid
+body gravity scale is applied. And
+finally at the end we apply all the
+forces. But you can also just call apply
+force once with the sum of the x y and z
+forces. Now let's take a look at how the
+car changed. First we added a class name
+raycast car. So we have the autocomplete
+working correctly on the wheels. I also
+added the show debug option here and an
+on ready var total wheels to cach how
+many wheels we have. This is used by the
+wheel script to correctly calculate the
+traction forces on the steering rotation
+function. We now check if the wheel has
+the is steer property instead of hard
+coding which wheel to rotate and it is
+now called by passing a wheel as a
+parameter. Finally, the physics process
+now calls the wheels apply wheel physics
+passing itself as a reference to the
+function. Then we call the steering
+rotation to rotate the wheel and place
+and activate our skid marks. I just had
+to expose the wheels grip factor so we
+can check when to do it. And that's it
+for the refactor. All things should
+still work the same.
+So let's enable the debug arrows on our
+wheels by checking the show debug option
+and see how our car is doing. Now let's
+finally put a mesh into our car to see
+how it is done. I have model in Blender
+using some references and we are going
+to use that. I exported it into two
+models, one for the car body and one for
+the wheels. So, first let's drag the car
+body inside the car node.
+Position it at about the same location
+of our box mesh
+and rotate it to the correct
+orientation.
+Now, let's drag the wheels inside each
+of the raycasts.
+Hide the prototype meshes
+and try to position them at the right
+spot. You can use the side view to help
+you with that.
+And that sounds about right. Always make
+sure you are moving the raycast itself
+and not the wheel mesh. Now I'll select
+all the raycasts and put them into the
+same Y position.
+And also adjust the front wheels just a
+bit back.
+Select all the reccasts again and let's
+change the rest distance to 0.1. This is
+how far the spring is going to extend
+from the current position. The wheel
+position right now is when it is at its
+most compressed state and we will give
+it an over extend of 0.05 just to make
+it a bit harder to flip at high speeds.
+The wheel radius for this should be
+about 0.33 m. Our other values are fine
+as they are. Now let's fix the X
+position and tuck in the wheels back
+into the car.
+So we'll adjust a single wheel here at
+about minus0.8 in the X and invert this
+value for the wheel on the other side.
+Do the same for the back wheel and make
+extra sure you're moving the ray cast
+and not the wheel mesh like I did here
+at first. It's really easy to move the
+wrong one at this stage. So let's set
+the X to minus 0.8 and the opposite side
+to 0.8.
+I also mistakenly moved the wheel mesh
+here at some point. So let's make sure
+the wheel mesh is at 00 0 again. Now if
+your wheels are slightly off position
+like this, it is probably because the
+wheel mesh origin is not exactly
+centered and they are not mirrored like
+this wheel I made. So I need to rotate
+the mesh 180° to make sure its correct
+face is pointing outwards.
+And I ended up changing the wheels X
+position to minus 0.85 and 0.85 on the
+other side. And finally, don't forget to
+delete the old meshes because our wheel
+script will assume the first object is
+the mesh that it needs to move. So,
+select all the old meshes and delete
+them. Now, we finally have something
+that looks like a real car we can play
+around with. But another thing we can do
+is improve our collisions.
+We are still using the old box shape
+collision. So, select the car model node
+and enable editable children to see
+what's inside. Select the actual mesh
+node and inside the mesh menu, click on
+create collision shape. Here, let's set
+the collision shape type to single
+convex and create it. This creates a
+collision node with the shape of our
+car. So, let's drag it to the car rig
+body and delete our old box shape. I
+also like to push the shape just a bit
+up so we have some leeway for it not to
+scrape the bottom. But you can fine-tune
+this in any way you want. And
+everything's still working with much
+better collisions now. So, now that we
+can collide, let's put some obstacles. I
+have here a couple of traffic objects
+that I can quickly drag into the game.
+They are just simple rigid bodies that
+have a couple of simple collision
+shapes. Just make sure you change the
+body's mass to reflect what they are.
+There are two different ways you can
+create those objects. Go to the modeling
+part settings and set the root type to
+rigid body 3D. And then we manually add
+our collision shapes or leave it as it
+is. But select the mesh, enable physics
+and set the body type to dynamic. This
+will turn the mesh node into a rigid
+body and create its own shape
+automatically.
+After that, right click the model and
+choose new inherited scene. This will
+save a scene based on the imported model
+where you can make changes and add new
+things to it. And now we have some
+obstacles to play around with. Now,
+let's go see and mitigate one of the
+biggest limitations of Raycast cars,
+sharp bumps and small gaps. To
+demonstrate that, let's create a very
+thin CSG shape. Make sure to enable
+collision and duplicate it to create a
+small gap. If we try to run over this,
+something really strange happens. Our
+wheels jump very high and they overlap a
+lot. Let's take a closer look. The
+raycast is a singular rayon, so it can't
+actually detect if the wheel is inside
+an object. And if it is an obstacle like
+this cube, the ray will suddenly change
+the spring position.
+This makes the wheel looks like it have
+teleported and will make the spring
+force suddenly really high. The wheels
+will also fall if there is any small
+enough gap where the brake can hit its
+bottom. So let's see what we can do to
+solve some of these issues. Let's open
+our wheel script to avoid the wheel from
+teleporting. We can lurp the wheels into
+position and smoothly move them. So you
+will use the move toward function and
+move it from the current position to
+minus spring length at a rate of 5 *
+delta for now. And because we are
+setting the contact variable to be the
+wheel position, this will also make the
+spring forces slightly less drastic.
+And since we are already here, let's
+talk about another problem. The
+resulting spring length value here can
+be negative when hitting the ground too
+fast. What this does is put the wheel
+mesh beyond its most compressed state
+and this can push the wheel up far
+enough to make it go outside of the car.
+To fix this, we just need to make sure
+the value is higher than zero by using
+max f. Now the car will behave slightly
+better. But to completely solve this
+issue, we would need to implement a
+multra cast wheel or a shape cast wheel.
+A multi-raycast wheels uses multiple ray
+cast to prevent these types of errors.
+And while they are still very
+performant, the code becomes more
+complex. The shape cast solution would
+also change the script a bit, but more
+importantly, it is much more performance
+intensive than a few ray casts. We can
+change our car to use shape cast in the
+future, but let's keep it using raycast
+for now. Now that our car is mostly
+done, let's make a proper camera to
+follow it around. And there is a very
+easy to implement follow camera we can
+use. So let's create a camera 3D as a
+child of the car. Put it at the back
+and make sure you enable current if you
+have multiple cameras in your scene. If
+we start our game now, the camera works,
+but it looks very stiff and not good at
+all. We can try other positions, but it
+feels really bad having the camera
+bobbing around along with the car. So,
+let's create a new camera script that
+will control the camera and call it car
+follow camera. Here we are going to have
+a mean distance variable of four, a max
+distance variable of eight, the camera
+height of three and an unready var
+target that gets the parent of the
+camera, the car.
+On the physics process, we declare a
+distance variable from target that is
+the global distance of the camera minus
+the target global position. Next, you'll
+check if the distance is within the min
+and max distances and clamp it by using
+the from target.normalized normalized
+and multiplying it by the min or max
+distances.
+We'll then set the targety to be our
+height and set its position to be the
+target's position plus our distance
+variable from target. Now all that's
+left is to rotate the camera towards the
+target. But we need to make sure our
+look direction is not collinear with the
+direction we chose. So first let's
+create a variable called look direction.
+And the trick you can do here is to take
+the absolute value of the direction and
+reduce it by the vector up. If the
+variable is not zero, that means our
+rotation axis is not colinear with the
+vector 3 up and we can safely rotate it
+without warnings. Our final step is to
+make sure the camera has the top level
+option enabled. This means its position
+will not update with its parent node and
+it is completely independent. And just
+like that, we have a very nice looking
+camera. And it even turns by itself when
+steering.
+Now, to make it just a little bit
+better, we can make it so it can rotate
+with the mouse, too. To do that, we will
+reparent our camera to a new node 3D and
+call it camera pivo. This is not going
+to be a top level node, and we'll follow
+the car's position. Inside the camera
+script, our target now is two parents
+nodes above. So we add another get
+parent call
+and we'll create a new input function to
+check for the mouse movement. If the
+event is input event mouse motion, the
+mouse has moved. So now we will set the
+camera stop level to false which will
+make the camera follow the pivot nodes
+position. Then we will rotate the pivo
+with get parent rotate by the minus
+event.x
+how much the mouse has moved since and
+multiply this by a small value. As the
+rotation use radians, you multiply it by
+0.001.
+And after our camera has rotated, we
+reenable the top level back again. In
+fact, let's create a camera sensibility
+variable for the camera's mouse move
+speed and use that instead.
+Now, we can move the camera with the
+mouse,
+but also have it rotate by itself with
+the car.
+It is not perfect, but it works quite
+fine for such a small bit of code.
+Now let's change some other things and
+improve our brakes. Remember that KTO
+has a default linear damp setting that
+it stops all movements. We do not want
+that to affect our car. So let's select
+the rigid body. And inside linear, we
+can change the dent mode from combine to
+replace. This will replace the default
+linear damp with the value here zero and
+make it stop affecting our car. And
+because we don't have this stopping
+force anymore, we can turn back our
+acceleration back to 600. Now all that's
+stopping the car is the Z traction
+forces of the wheels which by the way
+should have a grip force curve just like
+the side forces to make them stop the
+car more realistically. And speaking of
+curves, let's improve our tire curves
+and save them as godo resources. So
+let's select the front wheel, click on
+the grip curve arrow, and select save
+as. We'll name this car tire front. Now
+select one of the back wheels and save
+it as car tire back. Then select the
+other front wheel and use the quick load
+to select the front wheel we just
+created. And do the same for the other
+back wheel, loading the back wheel curve
+instead. Now if you make the back tires
+has less adherence. This makes the car
+more prone to naturally drifting. So
+let's decrease this grip curve just a
+bit. And you can see the other back tire
+curve also changed while our front tires
+continue to be the same because we use
+different curves for them. You can also
+double click the resource directly and
+change the curve from there.
+But now the car can start drifting when
+turning at high speeds without us having
+to press the hand brake key. Let's just
+increase this curve a bit to make it
+harder to lose control.
+And now the car behaves much more
+naturally.
+And we can still use our drift button as
+usual. But one thing our car is still
+missing is a real brake button. So add a
+new brake button.
+And let's open our wheel script.
+We are going to stop the car by changing
+the Z direction traction when the button
+is pressed. So let's add a new export
+variable called Z brake traction of 0 25
+and a is breaking variable to check if
+it needs to break.
+Now in our Zraction code we just need to
+check if is braking is true and if it is
+we override the Z friction to be our new
+Z brake traction. Now we just need to
+make sure our car sets the braking.
+Instead of using the input function, we
+are going to use input is action pressed
+brake and set the wheel is braking.
+Now we can press the brake key and make
+our car stop. And finally, just for fun,
+let's see how we can make our carry
+things. So let's make it tow another
+car.
+Duplicate our original car.
+Move it back. And let's also rotate it
+just so it looks different. Now let's
+delete some stuff we don't need on the
+second car. Delete the camera.
+Select the front wheels and disable
+steer so it doesn't rotate. And on the
+back wheels, disable motor so it doesn't
+accelerate the car. Now Godo makes it
+really easy to pull things with joints.
+So that's what we are going to use. Add
+a new pin joint 3D. This node will
+attach two rigid bodies together and
+it's really easy to use. First let's
+position the pin joint at the position
+between the cars. This will be the point
+that binds the objects together.
+So, put the car one on node A and car
+two on node B. And we can now tow away
+the other car. The car gets lower
+because it is pushing more mass. It now
+has to overcome the tire friction of the
+car at the back. But they don't collide
+with each other. To make sure they do,
+disable the exclude nodes option.
+And now the cards will collide with each
+other while it's being pushed.
+Another option is to use the more
+complicated 6D doof joint.
+This lets you set angle limits for each
+rotation axis. So we can set exactly how
+much it can turn on each axis, locking
+it at certain angles. And because we can
+use this to limit the placement, we can
+enable the exclude nodes back again. We
+can also make our car smaller and reduce
+its mass just for fun.
+But the biggest problem with the 6DF is
+that they can become really unstable
+when you hit their limit angles at high
+speeds. So you might have to adjust
+their options here and play around with
+these values or even change the joint
+position a bit to prevent this. But they
+can be a bit finicky to work with. The
+basic pin joint is much less
+problematic. And just to finish things
+up, when the car lands too fast, it
+might scrape the ground and stop the
+movement in a weird way. To prevent
+this, you can create a new physics
+material for the car's rigid body and
+set the friction to zero or a lower
+value. Now your car will hit the ground
+and continue forward with no problem.
+But that's it. The basics are now done.
+There is still a lot more we can do to
+improve and much more complicated ways
+we can use to make our car simulation
+more advanced. The basics are meant to
+be a simple implementation that loosely
+simulates a car. So there are a lot that
+was left out, but that's the end of the
+series for now. I might come back to it
+later and add a few things to slowly
+make it into a game or make another car
+focusing on more realistic simulations.
+But in case you want to continue this on
+your own, here's a to-do list of things
+you can research. You can replace our
+simple wheel rotation by the Acurman
+steering that will make each wheel
+rotate different amounts depending on
+the location of the wheel. This is a
+real technique that is used on cars to
+make the tires lip less on turns. And
+there is also the anti-acrian that is
+used on cars such as Formula 1 ones that
+makes it better at high speed turning.
+You can also simulate the wheel RPM,
+torque, and transmission to calculate
+realistic acceleration forces. And
+realistic lateral forces can be
+calculated by using the Pashika magic
+formula, which is a very complicated
+derived formula that calculates forces
+based on several factors. There's a very
+nice explanation of the values here, and
+you can use the reduced simple formula
+at the end that works quite well for
+simulated games and much more. But
+that's really it for now. As always, the
+files used here are available on Patreon
+if you want to support me. I hope you
+can make some great games and until next
+time.

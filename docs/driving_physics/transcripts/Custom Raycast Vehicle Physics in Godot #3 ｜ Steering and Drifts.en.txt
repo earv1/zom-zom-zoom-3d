@@ -1,0 +1,470 @@
+Kind: captions
+Language: en
+In the previous video, we finally made
+our car move and now we are going to
+make a turn, improve on that, and play
+around with simple drift mechanics just
+for
+fun. So, let's start. There are two main
+ways you can steer a raycast car. The
+first one is to completely fake out the
+physics. In this way, when the arrow
+keys are pressed, you directly apply
+torque to the car to turn it and then
+put some forces to stop and control the
+car's drift. You also need to
+dynamically control how much torque is
+applied based on the car speed so it
+doesn't turn without speed. This method,
+while not realistic, is very commonly
+used due to how easy it is to adjust the
+drifting. But we are not going to use
+that. Instead, we are going with the
+second method. This one simulates how
+our real car physics work. So, we just
+have to rotate the wheels and let the
+physics take over and turn the car for
+us. It works by applying forces on the
+wheel itself based on how much the wheel
+is pointing towards the movement of the
+car. So here when the wheels rotate, we
+apply the red lateral force to the tire.
+The more not aligned it is with the
+speed of the car, the yellow arrow, the
+higher this force. That is the direction
+the tire wants to resist movement that
+it doesn't want to roll. And we can also
+apply the blue arrow force to calculate
+the wheels friction to stop the car
+instead of how it did previously. This
+way of applying forces is well
+documented in real cars. The red arrow
+force, for example, is called the
+cornering force or side force. And we
+can find a whole graph showing this
+named cornering stiffness which is the
+ability of the tire to resist
+deformation. This graph will show how
+much lateral force a real tire produces
+based on the slip angle which is how
+many degrees the tire is pointing off
+the movement direction. And you can also
+find the same for what is called
+longitudinal tire force which represents
+the blue arrow that is pushing backwards
+and resisting the rolling. In real cars,
+these graphs can change a lot due to the
+temperature, load, tire deformation, and
+much more. So, while we won't get quite
+as precise, we are going to use some of
+the same principles to apply our forces.
+So, let's get started. But first, let's
+fix the wheel rotation. You might notice
+that the wheels are the opposite of what
+we want. The big wheel is rotating
+faster than the smaller one. So, in the
+wheel acceleration function, I got
+confused and made a mistake here. To
+make the wheels turn correctly, you just
+need to divide the velocity by the
+radius of the
+wheel. Now, that's done. Let's really
+start. First, let's remove our
+deceleration
+code. We'll make the car. We will stop
+the car with the simulated friction now,
+which makes it easier to adjust the grip
+over different types of
+terrains. And just so we are back to the
+default settings, let's reenable the
+default linear damp, which will make the
+cart lose velocity and stop with time.
+We can remove this damp just for the car
+in the rigid body later if we need to.
+And let's not forget to remove the
+deceleration variable.
+Now go to project settings, input map,
+and let's set the action turn right and
+turn
+left. Click on the plus button and add
+the A key for the left and D key for the
+right action. And you can also add the
+arrow keys if you want to. Now let's add
+a new variable called tire turn speed to
+tell how fast the tires turn in radians
+and tire max turn degrees to tell how
+much our steering tires can turn in each
+direction.
+create a new function called basic
+steering rotation that will turn our
+wheels. We then create a var turn input
+which is the input get axis of the turn
+left and turn right actions. This will
+give us a value between minus1 and one
+depending on how much each of the inputs
+are pressed and we'll multiply that by
+the tire turn
+speed. And if we have any turn input we
+rotate the wheels. So let's drag the
+front left wheel for now and change its
+rotation. to be clamp f of the current
+rotation plus the turn input time delta.
+And we clamp the values between the tire
+max turn degrees after converting it to
+radians. And then we do the same for the
+front right
+wheel. And if there is no input, we want
+to return the wheel to the start
+rotation. So we set the rotation.y of
+which wheel with the move toward
+function moving it from the current
+rotation to zero by the rotation speed.
+Then we just need to call the function
+in the physics
+process. And you can now use the turn
+keys to rotate the wheels. But right now
+it doesn't do anything. And we are still
+hard coding which wheels need turning
+which is not good. But we'll fix that
+later. To make the car turn, let's
+create a new function named do single
+wheel traction that takes a raycast
+wheel. And if the ray is not colliding,
+we return. Here's where we'll add the
+lateral and friction forces over the
+wheels. For this to work, it's important
+to have the wheels ray cast correctly
+rotated. You can check their local
+rotations by toggling the local
+transform button and selecting each
+recast. You need to have the brad arrow
+pointing towards the side of the tire.
+Now back to our
+code. We can get the steer side
+direction, the local x-axis of the wheel
+with the array. global basis.x, X the
+global tire velocity with our get point
+velocity of the wheel and the steering X
+velocity the local velocity of the tire
+X-axis with the steer side direction dot
+dot product of the tire velocity. Now
+that we have all the information we want
+we will also declare a X direction of
+1.0. This is going to be how grippy our
+tires currently are. Now to properly
+calculate the lateral force we need to
+remember a common physics formula. Force
+equals mass time acceleration which we
+can change to force domass time the
+variation of velocity over time. So to
+get our force we need to calculate our
+desired acceleration which is the
+lateral velocity of the wheel time our
+grip x direction divided by delta time.
+And our x force is going to be minus the
+steering side direction time the desired
+acceleration time the mass divided by 4.
+The number of our wheels. The mass in
+the formula is the tire mass that
+represents the load of the car the tire
+is supporting. So if you want to get
+really precise, you could probably use
+the spring compression and the center of
+mass to try and figure out the exact
+dynamic mass needed. But that's a bit
+overkill for our simulation. And the
+results are not that much different. In
+fact, we don't even need such physics
+intensive calculations. We just need to
+have some value that loosely gives us
+lateral forces based on how the wheels
+are turned. So I ended up using a
+different value that I found works quite
+well. So my X force is actually minus
+the steering side direction time the
+steering X velocity time the weight the
+mass time the gravity divided by 4 the
+amount of wheels and we can get the
+gravity from the project settings with
+project settings dot get setting default
+gravity. Now all that's left is apply
+the forces. So just like before our
+force position is the wheel global
+position where you want to apply the
+force minus the riged body global
+position and call apply force passing
+the X force and the force
+position. Then you can call a debug draw
+if you have one to draw the force
+arrows. Now we just need to call our new
+function with the others in the physics
+process and our car
+turns. But if we fully accelerate it
+flips. There's a couple of reasons for
+that. One reason is that our wheels are
+turning really fast and really far at
+high speeds, making the sudden changing
+forces very drastic. Another reason is
+that our back wheels are bigger and we
+are using them to accelerate, making it
+easier to flip. So, if you select the
+back wheels and disable the is motor and
+select our front wheels, making them
+accelerate
+instead, the car is now much harder to
+flip.
+But let's go back and make it drive from
+the back wheels
+again. To fix this flip problem, select
+all of the wheels and let's give them
+the slightest bit of overextend. This
+will extend the spring recast and push
+our car towards the ground, making it
+harder to flip. And now our car is
+almost impossible to flip. Even at high
+speeds, you need to try really hard to
+make it roll. You can play around with
+these values and make the car feel the
+way we want to, making it impossible to
+flip or more realistic and prone to
+flipping at high speeds. You can also
+improve the wheel turning and make it
+turn slower at high speeds. This way, it
+will feel more realistic and will not
+flip the car as easily. But this all
+depends on what type of game you want to
+make. Another change you can do is
+instead of applying a lateral force to
+the wheels local X-axis, you apply
+directly to the car's local X-axis. You
+can do that by using the minus global
+basis.x. This is less realistic, but it
+will make your car turn much more
+responsively. This way you have more
+control in adjusting the handling of the
+car and compress the springs more while
+turning. It might be a good choice for
+some types of arcade racing games. But
+let's undo that and go back to our
+realistic forces. And now let's add
+friction to our wheels which is by
+applying a local Z force towards the
+back of the tires. We can get the tire
+local forward direction with minus ray.
+global basis dot dotproduct of the tire
+velocity. And we declare the Z direction
+of 0.05. 05 how much traction each wheel
+has. And our final Z force is the global
+basis Z time the F velocity time the Z
+direction traction times the tire
+weight. You can also use the rate.global
+basis.z here instead of the car's global
+basis to a more realistic traction force
+which can affect the handling depending
+on how the wheels are steered. But I'm
+going with the simpler approach here of
+just reducing the speed in the car's
+direction. Then like before we call
+apply force, but this time with the Z
+force. Now our car stops faster anyways.
+But because we are now fighting with
+attrition, our car will accelerate
+slower. So you need to adjust the
+acceleration if you want to keep the
+same speeds as before. Now you can use
+the type of terrain the tire is on to
+adjust the Z traction, but we'll play
+with that later. Our turning is still
+very far from realistic. So we'll fix
+that. But first, let's try to add a
+handbrake action to our car and make it
+drift.
+and we'll use the space key for
+that. We'll add a new variable called
+handbreak and set it to false. And in
+our input function, we'll check if the
+handbreak action is
+pressed. And if it is, we set the
+handbreak action to
+true. When it's
+released, we set it to
+false. Now, here's what we are going to
+do. When we press the handbrake key, we
+will change the extraction value to a
+smaller one and that will make the car
+drift. So if the handbrake is true, we
+set the extraction to
+0.1. And I'll also show a yellow arrow
+to show the direction the car is
+moving. Now let's try some drifting. It
+works, but when we release the button,
+the car jerks really
+aggressively. That's because it's go
+from very little force to a sudden high
+force. If you decrease our normal
+traction to 0.7, it's a little better.
+And reducing it even further to 0.2. Now
+it's almost not there. To fix that and
+make the car behave more realistic, we
+are going to use curves to control how
+our traction changed dynamically.
+Depending on the slip angle, let's go
+over our wheel script and add a new
+export variable called grip curve of
+type curve. This curve will represent
+how much grip the tires have. If you
+remember the cornering stiffness graph,
+the slip angle is used to tell how
+aligned the tire is to the car's speed
+direction and the lateral force applied
+changes based on that. So, let's start
+at 100 grip and then lose almost all the
+grip at the end. Let's copy this curve
+and paste it in the other wheels. With
+these grip curves, you can change how
+your car handles and drifts by giving
+each wheel a different grip curve. Now,
+let's go back to our car and make it
+work. We'll get the grip factor the x
+value on the curve by getting the
+absolute value of the lateral velocity
+divided by the velocity's length. And
+our extraction is now the ray.grip curve
+dot sample baked of that. And now things
+are a bit better. But we still got some
+strange behavior. We can probably play
+around with the curve values and try to
+improve that. And talking about that, be
+careful when changing these
+values. Changing curve values does not
+work with multis select. You might think
+you changed all of them when in fact you
+changed just one. One thing you can do
+is copy the curve and paste it over the
+others. This will make the paste curve a
+reference of the original one. So when
+we change one, all of them will also
+change. And if you want to make them
+different again, you can use the make
+unique option. But anyways, with this
+new curve now, the car's light is way
+too much. So let's adjust that a bit.
+Now things are not perfect yet. And one
+reason for that is that the tires behave
+differently when drifting. But to help
+visualize things better, let's create
+some simple drift marks for the tires.
+Let's give the car a new node 3D and
+call it skid marks. And add a new GPU
+particle 3D node. Now under the draw
+passes, create a new quad mesh. Click to
+open it and let's make it face the Y
+direction pointing up and create a
+material. Now go back up and create a
+process material tool. And let's move it
+to the side so we can see it. We'll
+disable the gravity acceleration so it
+just spawns in place. Now when the car
+moves, it will keep creating these
+squares and they will become our skid
+marks. Let's go back to our draw pass
+material. Enable alpha transparency and
+invertex color enable use as albido.
+This will let us change the color of the
+mesh with the particles. Now back to the
+particle, open display and create a new
+color ramp. Open the gradient and let's
+make the mark black at the
+start. And it's still black at the end,
+but with less alpha
+transparency, making it vanish over
+time. Then let's set the time to
+1.5, the FPS to 60, and the amount 150.
+And now we got something that look like
+skid marks. Disable emitting. And let's
+duplicate this three
+times. Inside our car script, let's
+create a new export variable skid marks
+of type array of GPU particle 3D and add
+them in in the
+inspector. Now let's add an ID variable
+and pass it over to the wheel traction
+function and increase it at the end of
+the loop. This is just so we have a
+reference of what skid mark belongs to
+what wheel.
+Finally, we are going to add a new is
+slipping variable and we are going to
+set it to true when we first enable our
+handbreak inside our wheel traction
+function. Let's first position the skid
+mark at where the tires hit the ground
+and that is just the ray get collision
+point and we move it just slightly up so
+it doesn't zite with the ground for the
+position. Then we rotate the skid marks
+to the direction of the car with look at
+the current position plus the back
+direction of the car.
+Let's set the X direction to 0.01 to
+lose almost all directionction. And if
+the skid mark is not emitting particles,
+we enable it drawing the drifting marks.
+And to make the transition from the
+handbrake more smoothly, we'll check if
+the handbrake is released but the car is
+still sleeping and set the X direction
+to 0.1. And if we are not pressing the
+handbrake and the grip factor is less
+than 0.2, to meaning the velocity of the
+wheel kind of aligns with the car speed
+again. We set the isipping to false and
+go back to our normal gripping curves
+while also disabling the skid
+marks. Now the feeling of our car is
+much better and the drifting feels
+okay. Another thing we can do is make
+the skid marks skinnier. So let's open
+the draw pass of our particles and set
+the X size to
+0.6. And now it looks much better. There
+are better ways to make skid marks, but
+particle skid marks are very simple to
+make, and they usually look okay at an
+angle. But that's it. Our car can now
+steer and even make drifts. There are
+still a lot of things we can improve and
+fix in our car, but the basics are all
+here. Usually, games use two grip
+curves, one when driving and another
+grip curve for when the car starts
+slipping. But we already got so many
+curves in this tutorial that I used a
+simpler approach here. Our lateral force
+calculations here are a bit problematic,
+too.
+The cornering stiffness usually tapers
+off at very low slipping angles, but in
+our code, the lateral force curve only
+maxes at 90°, which is not ideal. And we
+are also using a variable force
+depending on the speed of the car
+instead of just the angle. So if the car
+is really fast, the forces are really
+extreme, and that is one of the biggest
+reasons of our problems. So we can
+probably improve on that. In the next
+video, we'll tie everything together,
+fixing a few problems and cleaning up
+the code. Then we'll finally set our car
+with a proper car mesh. And if there is
+time, we can talk about a better way to
+turn the wheels that is better to
+prevent slipping. As always, if you want
+to, you can check the project files by
+supporting me on Patreon. But that's
+really it. You now have all the tools to
+play around and start making your own
+car feeling the way you want it to. I
+hope you have fun making your games and
+until next time.

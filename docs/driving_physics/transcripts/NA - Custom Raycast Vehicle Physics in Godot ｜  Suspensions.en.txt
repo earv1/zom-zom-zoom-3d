@@ -1,0 +1,322 @@
+Kind: captions
+Language: en
+Have you ever wondered how to make your
+own physics simulated vehicles? Raycast
+vehicles are often used in games to
+simulate cars very well while being
+simple and very performance at the same
+time. Understanding and implementing
+your own is very useful because you can
+then adapt to any situation you might
+need. So, let's take a look at how they
+work and make our very own arcade style
+car controller. In this first step,
+we'll take a look at how the car
+suspension works. First, let's take a
+look at how a real spring works. A
+spring is very simple. It has a rest
+position where it wants to stay and it
+applies a force trying to push or pull
+it towards that rest position. This
+force is given by the offset distance
+times the spring stiffness. That's how
+powerful or beefy the spring usually is.
+The stronger it is, the higher the
+force. Applying this force now our
+spring will keep oscillating up and
+down. To prevent they from being so
+bouncy, real car suspensions uses what
+is called a depth spring. You can think
+of this as if the spring have to pass
+through a very viscous liquid. The
+faster the spring is moving, the harder
+it makes it to move. So reduce the
+spring force by the dumping strength,
+how viscous this liquid is, times how
+fast the spring is moving. A high
+damping value will make it stop faster.
+But make it too high and it will
+actually slow down the speed the spring
+returns to its rest position, which is
+what's called an overdamped spring.
+There is a way to know how high these
+values can be before it affects the
+returning speed, but we'll look at that
+later. So playing around with these
+values, we can create a very
+good-looking damp spring that looks very
+similar to a car suspension. A raycast
+car is called like that because it uses
+raycast pointing down instead of wheels
+to simulate the spring suspension
+interaction. The car itself is just a
+block and the suspension forces are wet
+at actually keeping them above the
+ground. Now knowing that, let's start
+making our car. Here's our humble scene.
+Just a floor and some cameras. A raycast
+car is completely physics based. So,
+let's start by creating a new rigid body
+3D. Let's put it above the ground and
+create a mesh instance 3D to display the
+car. Create a box
+mesh and we'll be using two for X, 0.5
+for Y, and four for Z. Making it about
+the shape of a car. I'll also add a
+material just so we can have some colors
+to look at. Then, let's make another
+mesh instance
+3D and put it at the back of the
+car. I will use 0.65. 65 0.4 and 1.8 for
+the size. This is just so we can know
+which way is the front and which way is
+the back of the
+vehicle. Then let's add a collision
+shape 3D for the actual collision of the
+rigid
+body. Create a box
+shape and set the size to two 0.5 and
+four the same as the car body's
+mesh. Now it's time to create our
+suspensions.
+Start by creating a new raycast
+3D. Put it in the front of the car about
+where the wheel spring would be. Here
+I'm using minus 1.1 for the X and minus
+1.3 for the Z position. And let's rename
+it wheel L for front left. Then
+duplicate it to create the back wheel.
+I'll put this one in Z 1.3 and rename it
+wheel RL for rear left.
+Now let's duplicate both of the wheels
+and put them on the other side and
+rename them to FR for front right and RR
+for rear left. With the car setup done,
+let's create a new script for the car
+and let's call it raycast
+car. We'll start by declaring an export
+variable wheels which is an array of
+raycast 3D to keep track of our wheels.
+For now, we'll also declare a variable
+for the spring strength of 100 and
+another one for the spring damping of
+two. And finally, the one for the rest
+position at 0.5. Since our targets
+position has a length of one, the rest
+position of 0.5 will make it stay in the
+middle of that. Then let's create a
+function called do single wheel
+suspension that uses array cast. And on
+the physics process, we'll iterate over
+all of our wheels and call that. Now
+save the file and add our wheels to the
+script. Click on the add element four
+times and select each of the wheels to
+add them to the script. You can also
+drag and drop them if you prefer. Now
+let's begin with the physics. First, we
+need to check if the wheel ray cast is
+colliding. If it is, then we will apply
+forces to the car using the spring
+formula we just saw. We can get the
+contact hit point where the raycast hits
+the ground with suspension ray get
+collision
+point. We can get the spring up
+direction be suspension ray. global
+transform.basis.y. This is the direction
+vector that will always point up from
+the wheels perspective which is the
+direction that the spring can move. And
+to get how long the spring currently is,
+we use spring length equals suspension
+rate. global position distance to
+contact.
+And our offset is the rest distance
+minus the spring
+length. So using the spring formula, our
+spring force is the spring strength
+times the
+offset. We convert that force value to a
+3D directional vector by multiplying the
+spring force by the spring up direction.
+And we'll use that to apply forces to
+the car. Now go apply forces uses an
+offset position instead of a global
+point. So our force offset position is
+the actual point we want to apply the
+force to minus the global position of
+the rigid body. And now we can use apply
+force to apply our spring force to our
+suspension at the position where it hits
+the ground. Let's activate the debug
+collision shapes and play the game now.
+And we have a very bouncy
+car. You might have noticed a few
+problems with this. We can change the
+forces and see the results change. But
+first let's implement our dumping force
+like our 2D example. The dumping force
+is the damp strength times the relative
+velocity, which is how fast the spring
+is moving. You can calculate the
+relative velocity by saving the previous
+spring position and calculate how fast
+it has moved. But physics already has a
+way to calculate that instantly. GDO
+unfortunately doesn't expose this
+function to dig this descript. But we
+can easily make our own. So let's create
+a function named get point velocity that
+receives a point and returns a velocity
+that point is moving at. This function
+just returns the linear velocity plus
+angular velocity dot crossc crossroduct
+of the point minus the global position.
+Don't worry about these values too much.
+This is just a commonly used physics
+formula. And let's make it return a
+vector
+tree. Now for our dumping force, we can
+get a word velocity by using the get
+point velocity with the contact
+point. And we can calculate our relative
+velocity. how much it has moved relative
+to the wheels y-axis by using spring up
+direction dot dot product word velocity
+and our spring dumping force is the
+spring dumping times the relative
+velocity of the
+spring. Now we just need to update the
+force factor to subtract the dumping
+force of the spring force before
+multiplying it for the spring up
+direction. And that's it for the main
+physics part of the code. Now our car
+bounces into a stop. We can adjust the
+values and see how it changes.
+Now, there's still one more problem we
+need to fix. You might have realized,
+but by using the spring formula as is,
+our car is pushed down when the raycast
+has hit the ground after the rest
+distance. This gives the effect of
+making the car stick to the ground. And
+while some old arcade games use this
+style, you might not want that. This is
+especially bad if you have ramps or
+loops in your game. When your car leaves
+a ramp, the back wheels ray cast might
+pull the car at the back, making it flip
+more easily, or you might stay stick to
+loops even if the car is not moving. To
+remove that effect, you just need to
+make sure your arrest distance is the
+same as the recast target distance. This
+way, the raycast will only detect when
+the offset is negative. We'll take a
+closer look at this later, but first,
+let's give our car some real wheels.
+Select the wheel ray cast and add a new
+3D. Create a cylinder
+mesh and set the top and bottom radius
+to
+0.4 and the height to
+0.15. Then rotate it into the correct
+orientation and move the real mesh to
+the position where the rest distance is.
+So minus 0.5 in the Y. You can also
+favorite a property if you are using
+Godo 4.4. This will put the position
+always at the top in the inspector panel
+which is very helpful. I'll put the
+material here just so it has some
+colors. Now copy the wheel mesh and
+paste it inside all the other ray
+casts. And there it is. Now we have
+wheels. So let's hop back to the script
+and make some changes. The modification
+here is very simple. We need a new
+variable for the wheel
+radius and we need to subtract the
+spring length with that.
+Now we just need to position the wheel
+visuals into the correct position. So
+first let's rename all the wheels
+instance mesh 3D to wheel. Then we can
+find each ray cast wheels by calling
+suspension ray.get node wheel and change
+its
+position. The spring
+length using get node each frame is not
+very good practice. We'll be changing
+that in the second part when we refactor
+the wheels into its own class. I have
+also added a debug arrow here that I
+made just so we can see it better, but
+they are not needed. And let's also
+rename some notes so it's easier to
+read. In testing the game, our car has
+working wheels. Now, this brake gas car
+is completely physics based. So, to make
+the car collisions react properly, we
+want to make sure it has a proper mass
+value. Let's change the mass to 50 kilos
+and see what happens. Yeah, now our
+springs are too weak. So, we need to
+adjust the spring strength.
+And that might have been too much. About
+5,000 seems
+right. And to fix the bounce, we also
+increase the
+damping. While trying random values
+might be fun, there is an actual physics
+formula that can get us a range of
+damping values based on how springy we
+want our car to be. After rearranging
+the formula, we can get the damping
+value based on the mass and the spring
+force. It sounds complicated, but we
+basically just need to change the ZA
+value between 0 and one based on how
+damp the spring is, and we get a dumping
+force for that. You can use the formula
+on W from alpha and change the values
+for the mass and spring strength to get
+the results. For very springy arcade
+cars, I found the values between 0.1 and
+0.2 are very nice, but more realistic
+cars suspensions will probably use
+values between 0.2 and 1.0. Now, the
+last thing we need to do here is remove
+the pulling force of the car. To do
+that, let's just set the suspension
+rate.target position.y to be minus the
+rest distance plus the wheel radius.
+This will make the rakecast works only
+on negative offsets, completely removing
+the pulling
+force. But because we don't have that
+pulling force anymore, now the car is a
+lot more bouncy. So, we need to increase
+our dumping force to counteract that. By
+changing the raycast length dynamically,
+we can change the car's rest position at
+runtime and see its effect.
+And if you want to, we can add a small
+pulling force to the car, just enough to
+make it stick to the ground a bit. It's
+as easy as adding an offset here that
+will allow the spring to extend over its
+rest distance. And we now got a small
+ground pulling force. But let's remove
+that. And that's it. That's the
+suspension part of the Raycast car done.
+Next part, we'll take a look at the
+acceleration of our car and we will
+refactor the wheels into its own
+component to make custom modifications
+later easier. If you'd like to support
+me, you can get all the files used in
+this tutorials on Patreon. I hope you
+like this video and until next time.
