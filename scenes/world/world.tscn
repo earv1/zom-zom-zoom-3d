@@ -1,13 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://bfk70k3q8woou"]
+[gd_scene format=3 uid="uid://bfk70k3q8woou"]
 
 [ext_resource type="PackedScene" uid="uid://cmpcr4wp2d8gk" path="res://scenes/environment_and_light.tscn" id="1_q1xh4"]
-[ext_resource type="Script" uid="uid://dksmntt24x1d" path="res://tutorial/5 ramps and shapecasts/raycast_car.gd" id="5_7l6n7"]
-[ext_resource type="Script" uid="uid://j125m66y81e6" path="res://tutorial/5 ramps and shapecasts/raycast_wheel.gd" id="7_xcooo"]
-[ext_resource type="Curve" uid="uid://d3nv4w51hbb4y" path="res://tutorial/4 finishing basics/car_tire_BACK.tres" id="8_01vg6"]
+[ext_resource type="Script" uid="uid://dksmntt24x1d" path="res://scenes/world/raycast_car.gd" id="5_7l6n7"]
+[ext_resource type="Script" uid="uid://j125m66y81e6" path="res://scenes/world/raycast_wheel.gd" id="7_xcooo"]
+[ext_resource type="Curve" uid="uid://d3nv4w51hbb4y" path="res://scenes/world/car_tire_BACK.tres" id="8_01vg6"]
 [ext_resource type="PackedScene" uid="uid://cbund3287huk5" path="res://assets/car/nissan35/wheel_nissan.glb" id="9_hcxv8"]
-[ext_resource type="Curve" uid="uid://s7soqbgm8k37" path="res://tutorial/4 finishing basics/car_tire_FRONT.tres" id="10_wcsa3"]
+[ext_resource type="Curve" uid="uid://s7soqbgm8k37" path="res://scenes/world/car_tire_FRONT.tres" id="10_wcsa3"]
 [ext_resource type="PackedScene" uid="uid://vae1yu2flf4a" path="res://assets/car/nissan35/nissan_skyliner35.glb" id="11_ojl4o"]
-[ext_resource type="Script" uid="uid://socgkim3vuae" path="res://tutorial/4 finishing basics/car_follow_camera.gd" id="12_mcko3"]
+[ext_resource type="Script" uid="uid://socgkim3vuae" path="res://scenes/world/car_follow_camera.gd" id="12_mcko3"]
 [ext_resource type="Script" path="res://scenes/world/chunk_manager.gd" id="20_chkmgr"]
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="21_world"]
 [ext_resource type="Script" path="res://scenes/zombie/zombie_spawner.gd" id="22_spawner"]
@@ -63,6 +63,7 @@ mass = 50.0
 physics_material_override = SubResource("PhysicsMaterial_qm2o8")
 linear_damp_mode = 1
 script = ExtResource("5_7l6n7")
+show_debug = true
 wheels = [NodePath("WheelFL"), NodePath("WheelFR"), NodePath("WheelRL"), NodePath("WheelRR")]
 acceleration = 550.0
 max_speed = 60.0
@@ -78,6 +79,7 @@ shape = SubResource("ConvexPolygonShape3D_2r6vf")
 process_physics_priority = -1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, -0.163, -1.407)
 script = ExtResource("7_xcooo")
+show_debug = true
 shapecast = NodePath("ShapeCast3D")
 spring_strength = 5000.0
 spring_damping = 120.0
@@ -102,6 +104,7 @@ max_results = 3
 process_physics_priority = -1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, -0.163, -1.407)
 script = ExtResource("7_xcooo")
+show_debug = true
 shapecast = NodePath("ShapeCast3D")
 spring_strength = 5000.0
 spring_damping = 120.0
@@ -125,6 +128,7 @@ max_results = 3
 process_physics_priority = -1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, -0.163, 1.383)
 script = ExtResource("7_xcooo")
+show_debug = true
 shapecast = NodePath("ShapeCast3D")
 spring_strength = 5000.0
 spring_damping = 120.0
@@ -149,6 +153,7 @@ max_results = 3
 process_physics_priority = -1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, -0.163, 1.383)
 script = ExtResource("7_xcooo")
+show_debug = true
 shapecast = NodePath("ShapeCast3D")
 spring_strength = 5000.0
 spring_damping = 120.0
