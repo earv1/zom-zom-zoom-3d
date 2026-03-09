@@ -13,4 +13,7 @@ else
   echo "✅ Committed fresh build."
 fi
 
+echo "📦 Pushing LFS objects..."
+git lfs push --all origin
+
 exit 0
