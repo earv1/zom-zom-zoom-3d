@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://bkxls8gi3be75" path="res://scenes/weapons/weapon_manager.gd" id="23_wm"]
 [ext_resource type="PackedScene" path="res://scenes/weapons/front_gun.tscn" id="24_fg"]
 [ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="25_hud"]
+[ext_resource type="AudioStream" path="res://assets/music/Dark Start Hope.mp3" id="26_music"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qm2o8"]
 friction = 0.0
@@ -242,6 +243,10 @@ script = ExtResource("22_spawner")
 car = NodePath("../Car")
 
 [node name="HUD" parent="." unique_id=2065781473 instance=ExtResource("25_hud")]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_music")
+autoplay = true
 
 [editable path="DirectionalLight3D"]
 [editable path="Car/nissan_skyliner35"]
