@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'build/build.zip'
+  workflow_dispatch:
 
 permissions:
   contents: read
