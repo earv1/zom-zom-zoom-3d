@@ -3,7 +3,7 @@ class_name ChunkManager
 
 @export var tracked_node: Node3D
 @export var chunk_size: float = 64.0
-@export var tiles_per_chunk: int = 4          # 4x4 tiles per chunk (matching Rust impl)
+@export var tiles_per_chunk: int = 40         # 40x40 tiles per chunk → 1.6 unit tiles
 @export var view_distance: int = 3
 
 # Tile atlas: tiles_x2.png is 192x32 (6 tiles of 32x32 each, single row)
