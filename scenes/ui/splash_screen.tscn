@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/splash_screen.gd" id="1_splash"]
+
+[node name="SplashScreen" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_splash")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.05, 0.05, 0.08, 0.97)
+
+[node name="Center" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+theme_override_constants/separation = 24
+
+[node name="Title" type="Label" parent="Center/VBox"]
+text = "ZOM ZOM ZOOM"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 48
+
+[node name="Prompt" type="Label" parent="Center/VBox"]
+text = "TAP TO START"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 24

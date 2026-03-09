@@ -10,7 +10,7 @@ func _ready() -> void:
 
 	var music := $MusicPlayer as AudioStreamPlayer
 	(music.stream as AudioStreamMP3).loop = true
-	music.play()
+	$SplashScreen.game_started.connect(music.play)
 
 
 func _on_game_over() -> void:

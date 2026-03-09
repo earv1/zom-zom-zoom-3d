@@ -22,6 +22,11 @@ func _input(event: InputEvent) -> void:
 	if not _is_mobile:
 		return
 
+	# Consume emulated mouse button events so touch doesn't trigger brake/reverse.
+	if event is InputEventMouseButton:
+		get_viewport().set_input_as_handled()
+		return
+
 	if event is InputEventScreenTouch:
 		var half := get_viewport().get_visible_rect().size.x * 0.5
 		var side := "left" if event.position.x < half else "right"
