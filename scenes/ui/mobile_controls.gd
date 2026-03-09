@@ -8,10 +8,13 @@ var _is_mobile := false
 
 func _ready() -> void:
 	_is_mobile = DisplayServer.is_touchscreen_available()
+
+
+func _process(_delta: float) -> void:
 	if not _is_mobile:
 		return
-
-	# Auto-accelerate — fire the event so raycast_car's _unhandled_input picks it up.
+	# Continuously re-send accelerate so the car always moves on mobile.
+	# Fires every frame after the tree unpauses (splash dismissed).
 	var ev := InputEventAction.new()
 	ev.action = "accelerate"
 	ev.pressed = true
