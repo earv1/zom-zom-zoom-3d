@@ -10,8 +10,6 @@ extends Camera3D
 
 
 func _input(event: InputEvent) -> void:
-	if DisplayServer.is_touchscreen_available():
-		return
 	if event is InputEventMouseMotion:
 		top_level = false
 		get_parent().rotate_y(-event.relative.x * camera_sensibility)
