@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://scenes/ui/hud.gd" id="1_hud"]
+[ext_resource type="Script" path="res://scenes/ui/mobile_controls.gd" id="4_mob"]
 [ext_resource type="PackedScene" path="res://scenes/ui/level_up_screen.tscn" id="2_lus"]
 [ext_resource type="PackedScene" path="res://scenes/ui/game_over_screen.tscn" id="3_gos"]
 
@@ -54,6 +55,9 @@ custom_minimum_size = Vector2(120, 14)
 max_value = 1.0
 value = 0.0
 show_percentage = false
+
+[node name="MobileControls" type="Node" parent="."]
+script = ExtResource("4_mob")
 
 [node name="LevelUpScreen" parent="." instance=ExtResource("2_lus")]
 
