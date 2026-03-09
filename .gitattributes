@@ -4,3 +4,5 @@
 build/build.zip filter=lfs diff=lfs merge=lfs -text
 assets filter=lfs diff=lfs merge=lfs -text
 build filter=lfs diff=lfs merge=lfs -text
+# SHA tracking file must NOT go through LFS (it's just a text file)
+build/build.sha filter= diff= merge= text eol=lf

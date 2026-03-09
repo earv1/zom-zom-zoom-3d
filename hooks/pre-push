@@ -1,17 +1,29 @@
 #!/bin/bash
-# Pre-push hook: rebuilds the web export and commits it before pushing.
+# Pre-push hook: blocks push if the web build is stale.
+#
+# build_web.sh records the latest non-build commit SHA into build/build.sha.
+# This hook checks that SHA against the current latest non-build commit.
+# If they differ, there are code changes that haven't been built yet.
 
-echo "🔨 Building web export before push..."
-./build_web.sh || { echo "❌ Build failed — push aborted."; exit 1; }
+BUILD_SHA_FILE="build/build.sha"
 
-git add build/build.zip
-
-if git diff --cached --quiet; then
-  echo "✅ Build unchanged, nothing to commit."
-else
-  git commit -m "build: update web export"
-  echo "✅ Committed fresh build."
+if [ ! -f "$BUILD_SHA_FILE" ]; then
+  echo "❌ Web build is missing. Run: ./build_web.sh"
+  exit 1
 fi
+
+BUILT_SHA=$(cat "$BUILD_SHA_FILE")
+CURRENT_SHA=$(git log --format="%H" --grep="^build: " --invert-grep -1 2>/dev/null)
+
+if [ "$BUILT_SHA" != "$CURRENT_SHA" ]; then
+  echo "❌ Web build is stale."
+  echo "   Built from: ${BUILT_SHA:0:7}"
+  echo "   Latest code: ${CURRENT_SHA:0:7}"
+  echo "   Run: ./build_web.sh"
+  exit 1
+fi
+
+echo "✅ Web build is up to date (${BUILT_SHA:0:7})."
 
 echo "📦 Pushing LFS objects..."
 git lfs push --all origin

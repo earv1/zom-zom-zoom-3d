@@ -83,10 +83,29 @@ zip -r build/build.zip "$OUT_DIR/" -x "*.DS_Store"
 rm -rf "$OUT_DIR"
 echo "Zipped: $(du -sh build/build.zip | cut -f1)"
 
+# --- Record source SHA for staleness check ----------------------------------
+# Store the latest non-build commit SHA so the pre-push hook can verify
+# the build is current before allowing a push.
+LAST_CODE_SHA=$(git log --format="%H" --grep="^build: " --invert-grep -1 2>/dev/null)
+echo "$LAST_CODE_SHA" > build/build.sha
+echo "Recorded source SHA: $LAST_CODE_SHA"
+
+# --- Commit build artifacts -------------------------------------------------
+git add build/build.zip build/build.sha
+
+if git diff --cached --quiet; then
+  echo "Build unchanged, nothing to commit."
+else
+  LAST_MSG=$(git log -1 --format="%s" 2>/dev/null)
+  if [[ "$LAST_MSG" == build:* ]]; then
+    git commit --amend --no-edit
+    echo "Amended previous build commit."
+  else
+    git commit -m "build: update web export"
+    echo "Committed build artifacts."
+  fi
+fi
+
 # --- Summary ----------------------------------------------------------------
 echo ""
-echo "Done!"
-echo ""
-echo "Next steps:"
-echo "  1. git add build/build.zip && git commit -m 'build: update web export'"
-echo "  2. git push"
+echo "Done! Run: git push"
