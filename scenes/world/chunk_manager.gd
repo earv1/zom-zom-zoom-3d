@@ -3,26 +3,30 @@ class_name ChunkManager
 
 @export var tracked_node: Node3D
 @export var chunk_size: float = 64.0
-@export var subdivisions: int = 32
+@export var tiles_per_chunk: int = 4          # 4x4 tiles per chunk (matching Rust impl)
 @export var view_distance: int = 3
-@export var height_scale: float = 0.5
-@export var noise_frequency: float = 0.015
 
-var _noise: FastNoiseLite
+# Tile atlas: tiles_x2.png is 192x32 (6 tiles of 32x32 each, single row)
+const TILE_COLS := 6
+const TILE_ROWS := 1
+
+# Weighted tile indices matching Rust: [0.70, 0.01, 0.01, 0.18, 0.05, 0.05]
+const TILE_WEIGHTS: Array[float] = [0.70, 0.01, 0.01, 0.18, 0.05, 0.05]
+
+var _texture: Texture2D
+var _material: StandardMaterial3D
 var _loaded_chunks: Dictionary = {}
 var _last_chunk_coord: Vector2i = Vector2i(99999, 99999)
-var _material: StandardMaterial3D
+var _noise_seed: int = 0
 
 
 func _ready() -> void:
-	_noise = FastNoiseLite.new()
-	_noise.noise_type = FastNoiseLite.TYPE_SIMPLEX_SMOOTH
-	_noise.frequency = noise_frequency
-	_noise.fractal_octaves = 4
-	_noise.seed = randi()
+	_noise_seed = randi()
+	_texture = load("res://assets/textures/tiles_x2.png")
 
 	_material = StandardMaterial3D.new()
-	_material.albedo_color = Color(0.35, 0.55, 0.25)
+	_material.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
+	_material.albedo_texture = _texture
 
 	_update_chunks()
 
@@ -59,50 +63,70 @@ func _update_chunks() -> void:
 			_loaded_chunks[coord] = _create_chunk(coord)
 
 
-func _get_height(world_x: float, world_z: float) -> float:
-	return _noise.get_noise_2d(world_x, world_z) * height_scale
+# Pick a weighted random tile index, seeded by tile world position for determinism.
+func _pick_tile(tile_world_x: int, tile_world_z: int) -> int:
+	# Deterministic hash from tile coordinates + seed
+	var h := hash(Vector3i(tile_world_x, tile_world_z, _noise_seed))
+	var rng := RandomNumberGenerator.new()
+	rng.seed = h
+	var r := rng.randf()
+	var cumulative := 0.0
+	for i in TILE_WEIGHTS.size():
+		cumulative += TILE_WEIGHTS[i]
+		if r < cumulative:
+			return i
+	return TILE_WEIGHTS.size() - 1
 
 
 func _create_chunk(coord: Vector2i) -> StaticBody3D:
-	var verts_per_side := subdivisions + 1
-	var step := chunk_size / subdivisions
+	var tile_size := chunk_size / tiles_per_chunk
 	var origin_x := coord.x * chunk_size
 	var origin_z := coord.y * chunk_size
 
-	# Sample heights
-	var heights: Array[float] = []
-	heights.resize(verts_per_side * verts_per_side)
-	for z in verts_per_side:
-		for x in verts_per_side:
-			heights[z * verts_per_side + x] = _get_height(origin_x + x * step, origin_z + z * step)
+	var u_step := 1.0 / TILE_COLS
+	var v_step := 1.0 / TILE_ROWS
 
-	# Build visual mesh
 	var st := SurfaceTool.new()
 	st.begin(Mesh.PRIMITIVE_TRIANGLES)
-	for z in subdivisions:
-		for x in subdivisions:
-			var i00 := z * verts_per_side + x
-			var i10 := i00 + 1
-			var i01 := i00 + verts_per_side
-			var i11 := i01 + 1
 
-			var v00 := Vector3(origin_x + x * step,       heights[i00], origin_z + z * step)
-			var v10 := Vector3(origin_x + (x + 1) * step, heights[i10], origin_z + z * step)
-			var v01 := Vector3(origin_x + x * step,       heights[i01], origin_z + (z + 1) * step)
-			var v11 := Vector3(origin_x + (x + 1) * step, heights[i11], origin_z + (z + 1) * step)
+	for tz in tiles_per_chunk:
+		for tx in tiles_per_chunk:
+			# Tile world indices (for deterministic seeding)
+			var tile_wx := coord.x * tiles_per_chunk + tx
+			var tile_wz := coord.y * tiles_per_chunk + tz
 
-			st.add_vertex(v00); st.add_vertex(v10); st.add_vertex(v01)
-			st.add_vertex(v10); st.add_vertex(v11); st.add_vertex(v01)
+			var tile_idx := _pick_tile(tile_wx, tile_wz)
+			var tile_col := tile_idx % TILE_COLS
+			var tile_row := tile_idx / TILE_COLS
 
-	st.generate_normals()
+			var u0 := tile_col * u_step
+			var u1 := u0 + u_step
+			var v0 := tile_row * v_step
+			var v1 := v0 + v_step
+
+			var x0 := origin_x + tx * tile_size
+			var x1 := x0 + tile_size
+			var z0 := origin_z + tz * tile_size
+			var z1 := z0 + tile_size
+
+			# Two triangles per tile (flat, y=0)
+			var v00 := Vector3(x0, 0.0, z0)
+			var v10 := Vector3(x1, 0.0, z0)
+			var v01 := Vector3(x0, 0.0, z1)
+			var v11 := Vector3(x1, 0.0, z1)
+
+			var normal := Vector3.UP
+
+			st.set_normal(normal); st.set_uv(Vector2(u0, v0)); st.add_vertex(v00)
+			st.set_normal(normal); st.set_uv(Vector2(u1, v0)); st.add_vertex(v10)
+			st.set_normal(normal); st.set_uv(Vector2(u0, v1)); st.add_vertex(v01)
+
+			st.set_normal(normal); st.set_uv(Vector2(u1, v0)); st.add_vertex(v10)
+			st.set_normal(normal); st.set_uv(Vector2(u1, v1)); st.add_vertex(v11)
+			st.set_normal(normal); st.set_uv(Vector2(u0, v1)); st.add_vertex(v01)
+
 	st.set_material(_material)
 	var mesh := st.commit()
-
-	# Build collision (HeightMapShape3D is centered; scale x/z per step, position at chunk center)
-	var hm := HeightMapShape3D.new()
-	hm.map_width = verts_per_side
-	hm.map_depth = verts_per_side
-	hm.map_data = PackedFloat32Array(heights)
 
 	var body := StaticBody3D.new()
 
@@ -110,10 +134,12 @@ func _create_chunk(coord: Vector2i) -> StaticBody3D:
 	mi.mesh = mesh
 	body.add_child(mi)
 
+	# Flat collision: single BoxShape3D covering the whole chunk at ground level
 	var cs := CollisionShape3D.new()
-	cs.shape = hm
-	cs.position = Vector3(origin_x + chunk_size * 0.5, 0.0, origin_z + chunk_size * 0.5)
-	cs.scale = Vector3(step, 1.0, step)
+	var box := BoxShape3D.new()
+	box.size = Vector3(chunk_size, 0.1, chunk_size)
+	cs.shape = box
+	cs.position = Vector3(origin_x + chunk_size * 0.5, -0.05, origin_z + chunk_size * 0.5)
 	body.add_child(cs)
 
 	add_child(body)
