@@ -10,7 +10,7 @@ extends Camera3D
 
 
 func _input(event: InputEvent) -> void:
-	if OS.has_touchscreen_ui_hint():
+	if DisplayServer.is_touchscreen_available():
 		return
 	if event is InputEventMouseMotion:
 		top_level = false

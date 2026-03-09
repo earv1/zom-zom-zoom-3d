@@ -1,0 +1,17 @@
+curl 'https://account.xiaomi.com/pass2/profile/updateBaseInfo?userId=6859519282' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: en-GB,en-US;q=0.9,en;q=0.8' \
+  -H 'content-type: application/x-www-form-urlencoded; charset=UTF-8' \
+  -b 'deviceId=wb_458655e9-1236-4dde-8cac-77c4aa778a4f; pass_ua=web; _ga=GA1.1.435433884.1773080048; uLocale=en_US; tick=5843912931039612008; passToken=V1:DXmurwq2/R1BHTELu6obCWWkvmgggRT/AXMtNe8nOTRadQVaxJOcnJgquLNFZ7feuvH9nLdlitxv4kn4QmAn2Lp8haoX69Ru9s5unkwNZxg8F9z+SfzorV0Uahw8MmPJLvqs2GdBWktigMdMcBjxfbwi7kyTwXKN+op3whkV9llCXJthvYZlGtGNr1bpZIR3NRGzWrtkk62Z/cWYt9/P6Ry8tByb5VakbYRovKQ0JF8EdcOQFKYliJ7pBffmioUT5eBjOSh+XF8otmE3Bzc69B0Q+t7bedjWjTRzHGBEEGmItxsQ+lhgJ5wv4CreUEsAkhkm+ObLRYbwU0RwSmiMPg==; cUserId=XJI-fjf0RS3KLWeF8LCbmYDivA0; cUserId=XJI-fjf0RS3KLWeF8LCbmYDivA0; userId=6859519282; passInfo=login-end; serviceToken=2.0&V1_passport&1:SZ5jpoLnJAFwTXeaDSFFfg:79yjDcI8XQUlNrEx2KNXVW3WZHhxAfVndiRg0AV9pZI0nEb7xBCYt+KJ10Q7ZdxaxsvmmLO1XBwl8aszKRSNgqZBScWqR7WyE9xgSpN9sdYyYDoLXL7e7WSGQOGNJkjigRaC8os9vgtMrAWyj4Gu6r6ObIk67le3fdRpAVxd0impVzG3Ias1ppfwvwsYtz3uz2FhFC7z/LEiJ/TWWyI0n9IlQ6H0RnPUi4NYm3qjJ11JrZ6bwCBNS+kxXyjbL8wMbIHOajWofgTV60uZGKk/l0o8Bjr55YZ7mLBl/gf8AXS3QhDoEfHCcZLdB+xtT9Q7XHGmpg2cTsHqFrtAKgBnRCedhpRm1RUDCvlexHXL9sQ=&SC7NuEJ24b/YQjYFw0VKUQ==; passport_slh=XwpGfueQzSeTrM8HEFZ9JJ07vFU=; passport_ph=dafEFuHdUH+WAq8K/PuZAg==; sns_bind_ph=tFiOO8LWwuHbCLJJAV6TrQshYLROo4wOltyIivlsRAb9B7x9EzkVBs0AF3Rlm39y; _ga_XWN774PE8J=GS2.1.s1773080047$o1$g1$t1773080147$j60$l0$h0' \
+  -H 'origin: https://account.xiaomi.com' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://account.xiaomi.com/fe/service/account/profile?cUserId=XJI-fjf0RS3KLWeF8LCbmYDivA0&userId=6859519282&_locale=en_US' \
+  -H 'sec-ch-ua: "Not:A-Brand";v="99", "Google Chrome";v="145", "Chromium";v="145"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36' \
+  -H 'x-requested-with: XMLHttpRequest' \
+  --data-raw 'userId=6859519282&nickname=Emmanuel%20Arvanitis&gender=m&region=CN&passport_ph=dafEFuHdUH%2BWAq8K%2FPuZAg%3D%3D&passportsecurity_ph=&usercenter_ph=&passportapi_ph=&passport_h5_ph=&passToken='

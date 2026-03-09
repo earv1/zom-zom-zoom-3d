@@ -7,7 +7,7 @@ var _is_mobile := false
 
 
 func _ready() -> void:
-	_is_mobile = OS.has_touchscreen_ui_hint()
+	_is_mobile = DisplayServer.is_touchscreen_available()
 	if not _is_mobile:
 		return
 
