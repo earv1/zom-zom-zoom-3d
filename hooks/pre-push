@@ -1,0 +1,16 @@
+#!/bin/bash
+# Pre-push hook: rebuilds the web export and amends it into the current commit.
+
+echo "🔨 Building web export before push..."
+./build_web.sh || { echo "❌ Build failed — push aborted."; exit 1; }
+
+git add build/build.zip
+
+if git diff --cached --quiet; then
+  echo "✅ Build unchanged, nothing to amend."
+else
+  git commit --amend --no-edit
+  echo "✅ Amended commit with fresh build."
+fi
+
+exit 0
