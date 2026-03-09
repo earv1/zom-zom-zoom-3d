@@ -9,6 +9,8 @@ class_name RaycastCar
 @export var tire_max_turn_degrees := 25
 
 @export var skid_marks: Array[GPUParticles3D]
+@export var anti_roll_strength := 3000.0
+@export var roll_damping := 20.0
 @export var show_debug := false
 
 @onready var total_wheels := wheels.size()
@@ -95,6 +97,31 @@ func _physics_process(delta: float) -> void:
 
 	if grounded:
 		center_of_mass = Vector3.ZERO
+
+		# Roll/pitch damping: resist tipping without affecting yaw (turning)
+		apply_torque(Vector3(-angular_velocity.x, 0.0, -angular_velocity.z) * mass * roll_damping)
+
+		# Anti-roll bars: compare compression between paired wheels per axle
+		# wheels order: FL, FR, RL, RR
+		if wheels.size() == 4:
+			_apply_anti_roll(wheels[0], wheels[1])  # front axle
+			_apply_anti_roll(wheels[2], wheels[3])  # rear axle
 	else:
 		center_of_mass_mode = RigidBody3D.CENTER_OF_MASS_MODE_CUSTOM
 		center_of_mass = Vector3.DOWN*1.5
+
+
+func _apply_anti_roll(left: RaycastWheel, right: RaycastWheel) -> void:
+	var left_grounded  := left.is_colliding() or (left.shapecast != null and left.shapecast.is_colliding())
+	var right_grounded := right.is_colliding() or (right.shapecast != null and right.shapecast.is_colliding())
+
+	var left_travel  := left.spring_compression  if left_grounded  else -1.0
+	var right_travel := right.spring_compression if right_grounded else -1.0
+
+	var diff := left_travel - right_travel
+	var force := diff * anti_roll_strength
+
+	if left_grounded:
+		apply_force( left.global_basis.y *  force, left.global_position  - global_position)
+	if right_grounded:
+		apply_force(right.global_basis.y * -force, right.global_position - global_position)

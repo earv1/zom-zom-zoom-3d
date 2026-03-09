@@ -27,6 +27,7 @@ class_name RaycastWheel
 var engine_force := 0.0
 var grip_factor  := 0.0
 var is_braking   := false
+var spring_compression: float = 0.0  # exposed for anti-roll bar
 
 
 func _ready() -> void:
@@ -57,6 +58,7 @@ func apply_wheel_physics(car: RaycastCar) -> void:
 		contact = shapecast.get_collision_point(0)
 	var spring_len    := maxf(0.0, global_position.distance_to(contact) - wheel_radius)
 	var offset        := rest_dist - spring_len
+	spring_compression = offset / rest_dist  # 0 = fully extended, 1 = fully compressed
 
 	wheel.position.y = -spring_len # move_toward(wheel.position.y, -spring_len, 5 * get_physics_process_delta_time()) # Local y position of the wheel
 	contact = wheel.global_position # Contact is now the wheel origin point

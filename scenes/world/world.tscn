@@ -8,11 +8,11 @@
 [ext_resource type="Curve" uid="uid://s7soqbgm8k37" path="res://scenes/world/car_tire_FRONT.tres" id="10_wcsa3"]
 [ext_resource type="PackedScene" uid="uid://vae1yu2flf4a" path="res://assets/car/nissan35/nissan_skyliner35.glb" id="11_ojl4o"]
 [ext_resource type="Script" uid="uid://socgkim3vuae" path="res://scenes/world/car_follow_camera.gd" id="12_mcko3"]
-[ext_resource type="Script" path="res://scenes/world/chunk_manager.gd" id="20_chkmgr"]
-[ext_resource type="Script" path="res://scenes/world/world.gd" id="21_world"]
-[ext_resource type="Script" path="res://scenes/world/car_boost.gd" id="21_boost"]
-[ext_resource type="Script" path="res://scenes/enemy/enemy_spawner.gd" id="22_spawner"]
-[ext_resource type="Script" path="res://scenes/weapons/weapon_manager.gd" id="23_wm"]
+[ext_resource type="Script" uid="uid://1e2y8ottpr2h" path="res://scenes/world/chunk_manager.gd" id="20_chkmgr"]
+[ext_resource type="Script" uid="uid://cimd0teonnksx" path="res://scenes/world/car_boost.gd" id="21_boost"]
+[ext_resource type="Script" uid="uid://bk63etuxod2bm" path="res://scenes/world/world.gd" id="21_world"]
+[ext_resource type="Script" uid="uid://2207p3v4dhmi" path="res://scenes/enemy/enemy_spawner.gd" id="22_spawner"]
+[ext_resource type="Script" uid="uid://bkxls8gi3be75" path="res://scenes/weapons/weapon_manager.gd" id="23_wm"]
 [ext_resource type="PackedScene" path="res://scenes/weapons/front_gun.tscn" id="24_fg"]
 [ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="25_hud"]
 
@@ -50,39 +50,39 @@ material = SubResource("StandardMaterial3D_o6rug")
 size = Vector2(0.6, 1)
 orientation = 1
 
-[node name="World" type="Node3D" node_paths=PackedStringArray("car")]
+[node name="World" type="Node3D" unique_id=374402073 node_paths=PackedStringArray("car")]
 script = ExtResource("21_world")
 car = NodePath("Car")
 
-[node name="DirectionalLight3D" parent="." instance=ExtResource("1_q1xh4")]
+[node name="DirectionalLight3D" parent="." unique_id=653090562 instance=ExtResource("1_q1xh4")]
 
-[node name="ChunkManager" type="Node3D" parent="." node_paths=PackedStringArray("tracked_node")]
+[node name="ChunkManager" type="Node3D" parent="." unique_id=454054743 node_paths=PackedStringArray("tracked_node")]
 script = ExtResource("20_chkmgr")
 tracked_node = NodePath("../Car")
 
-[node name="Car" type="RigidBody3D" parent="." node_paths=PackedStringArray("wheels", "skid_marks")]
+[node name="Car" type="RigidBody3D" parent="." unique_id=1719167903 node_paths=PackedStringArray("wheels", "skid_marks")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 mass = 50.0
 physics_material_override = SubResource("PhysicsMaterial_qm2o8")
 linear_damp_mode = 1
 script = ExtResource("5_7l6n7")
-show_debug = true
 wheels = [NodePath("WheelFL"), NodePath("WheelFR"), NodePath("WheelRL"), NodePath("WheelRR")]
-acceleration = 1000.0
+acceleration = 2000.0
 max_speed = 60.0
 accel_curve = SubResource("Curve_xmp6s")
 tire_max_turn_degrees = 30
 skid_marks = [NodePath("SkidMarks/GPUParticles3D"), NodePath("SkidMarks/GPUParticles3D2"), NodePath("SkidMarks/GPUParticles3D3"), NodePath("SkidMarks/GPUParticles3D4")]
+roll_damping = 10.0
+show_debug = true
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Car"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Car" unique_id=1582658167]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.385903, 0)
 shape = SubResource("ConvexPolygonShape3D_2r6vf")
 
-[node name="WheelFL" type="RayCast3D" parent="Car" node_paths=PackedStringArray("shapecast")]
+[node name="WheelFL" type="RayCast3D" parent="Car" unique_id=1604900101 node_paths=PackedStringArray("shapecast")]
 process_physics_priority = -1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, -0.163, -1.407)
 script = ExtResource("7_xcooo")
-show_debug = true
 shapecast = NodePath("ShapeCast3D")
 spring_strength = 5000.0
 spring_damping = 120.0
@@ -92,22 +92,22 @@ wheel_radius = 0.33
 z_brake_traction = 0.5
 is_steer = true
 grip_curve = ExtResource("8_01vg6")
+show_debug = true
 
-[node name="wheel_nissan2" parent="Car/WheelFL" instance=ExtResource("9_hcxv8")]
+[node name="wheel_nissan2" parent="Car/WheelFL" unique_id=764648957 instance=ExtResource("9_hcxv8")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 
-[node name="ShapeCast3D" type="ShapeCast3D" parent="Car/WheelFL"]
+[node name="ShapeCast3D" type="ShapeCast3D" parent="Car/WheelFL" unique_id=1771572652]
 process_physics_priority = -1
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CylinderShape3D_lhijp")
 target_position = Vector3(0, 0, 0)
 max_results = 3
 
-[node name="WheelFR" type="RayCast3D" parent="Car" node_paths=PackedStringArray("shapecast")]
+[node name="WheelFR" type="RayCast3D" parent="Car" unique_id=1205170352 node_paths=PackedStringArray("shapecast")]
 process_physics_priority = -1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, -0.163, -1.407)
 script = ExtResource("7_xcooo")
-show_debug = true
 shapecast = NodePath("ShapeCast3D")
 spring_strength = 5000.0
 spring_damping = 120.0
@@ -117,21 +117,21 @@ wheel_radius = 0.33
 z_brake_traction = 0.5
 is_steer = true
 grip_curve = ExtResource("10_wcsa3")
+show_debug = true
 
-[node name="wheel_nissan2" parent="Car/WheelFR" instance=ExtResource("9_hcxv8")]
+[node name="wheel_nissan2" parent="Car/WheelFR" unique_id=2036329967 instance=ExtResource("9_hcxv8")]
 
-[node name="ShapeCast3D" type="ShapeCast3D" parent="Car/WheelFR"]
+[node name="ShapeCast3D" type="ShapeCast3D" parent="Car/WheelFR" unique_id=157462337]
 process_physics_priority = -1
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CylinderShape3D_lhijp")
 target_position = Vector3(0, 0, 0)
 max_results = 3
 
-[node name="WheelRL" type="RayCast3D" parent="Car" node_paths=PackedStringArray("shapecast")]
+[node name="WheelRL" type="RayCast3D" parent="Car" unique_id=1173024723 node_paths=PackedStringArray("shapecast")]
 process_physics_priority = -1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, -0.163, 1.383)
 script = ExtResource("7_xcooo")
-show_debug = true
 shapecast = NodePath("ShapeCast3D")
 spring_strength = 5000.0
 spring_damping = 120.0
@@ -141,22 +141,22 @@ wheel_radius = 0.33
 z_brake_traction = 0.5
 is_motor = true
 grip_curve = ExtResource("8_01vg6")
+show_debug = true
 
-[node name="wheel_nissan2" parent="Car/WheelRL" instance=ExtResource("9_hcxv8")]
+[node name="wheel_nissan2" parent="Car/WheelRL" unique_id=128874881 instance=ExtResource("9_hcxv8")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 
-[node name="ShapeCast3D" type="ShapeCast3D" parent="Car/WheelRL"]
+[node name="ShapeCast3D" type="ShapeCast3D" parent="Car/WheelRL" unique_id=309496914]
 process_physics_priority = -1
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CylinderShape3D_lhijp")
 target_position = Vector3(0, 0, 0)
 max_results = 3
 
-[node name="WheelRR" type="RayCast3D" parent="Car" node_paths=PackedStringArray("shapecast")]
+[node name="WheelRR" type="RayCast3D" parent="Car" unique_id=1225055064 node_paths=PackedStringArray("shapecast")]
 process_physics_priority = -1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, -0.163, 1.383)
 script = ExtResource("7_xcooo")
-show_debug = true
 shapecast = NodePath("ShapeCast3D")
 spring_strength = 5000.0
 spring_damping = 120.0
@@ -166,19 +166,20 @@ wheel_radius = 0.33
 z_brake_traction = 0.5
 is_motor = true
 grip_curve = ExtResource("8_01vg6")
+show_debug = true
 
-[node name="wheel_nissan2" parent="Car/WheelRR" instance=ExtResource("9_hcxv8")]
+[node name="wheel_nissan2" parent="Car/WheelRR" unique_id=379612013 instance=ExtResource("9_hcxv8")]
 
-[node name="ShapeCast3D" type="ShapeCast3D" parent="Car/WheelRR"]
+[node name="ShapeCast3D" type="ShapeCast3D" parent="Car/WheelRR" unique_id=1976812501]
 process_physics_priority = -1
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CylinderShape3D_lhijp")
 target_position = Vector3(0, 0, 0)
 max_results = 3
 
-[node name="SkidMarks" type="Node3D" parent="Car"]
+[node name="SkidMarks" type="Node3D" parent="Car" unique_id=141766451]
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="Car/SkidMarks"]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Car/SkidMarks" unique_id=1673374856]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16986, -0.85232, 0.224953)
 emitting = false
 amount = 150
@@ -187,7 +188,7 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_7w1kq")
 draw_pass_1 = SubResource("QuadMesh_u7ljy")
 
-[node name="GPUParticles3D2" type="GPUParticles3D" parent="Car/SkidMarks"]
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Car/SkidMarks" unique_id=2118915598]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16986, -0.85232, 0.224953)
 emitting = false
 amount = 150
@@ -196,7 +197,7 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_7w1kq")
 draw_pass_1 = SubResource("QuadMesh_u7ljy")
 
-[node name="GPUParticles3D3" type="GPUParticles3D" parent="Car/SkidMarks"]
+[node name="GPUParticles3D3" type="GPUParticles3D" parent="Car/SkidMarks" unique_id=1723393135]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16986, -0.85232, 0.224953)
 emitting = false
 amount = 150
@@ -205,7 +206,7 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_7w1kq")
 draw_pass_1 = SubResource("QuadMesh_u7ljy")
 
-[node name="GPUParticles3D4" type="GPUParticles3D" parent="Car/SkidMarks"]
+[node name="GPUParticles3D4" type="GPUParticles3D" parent="Car/SkidMarks" unique_id=421196037]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16986, -0.85232, 0.224953)
 emitting = false
 amount = 150
@@ -214,33 +215,33 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_7w1kq")
 draw_pass_1 = SubResource("QuadMesh_u7ljy")
 
-[node name="nissan_skyliner35" parent="Car" instance=ExtResource("11_ojl4o")]
+[node name="nissan_skyliner35" parent="Car" unique_id=856888086 instance=ExtResource("11_ojl4o")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.476322, 0)
 
-[node name="CameraPivot" type="Node3D" parent="Car"]
+[node name="CameraPivot" type="Node3D" parent="Car" unique_id=1192797217]
 
-[node name="Camera3D" type="Camera3D" parent="Car/CameraPivot"]
+[node name="Camera3D" type="Camera3D" parent="Car/CameraPivot" unique_id=2018472639]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.77849, 5.01415)
 top_level = true
 current = true
 script = ExtResource("12_mcko3")
-min_distance = 6.0
-max_distance = 10.0
-height = 4.0
+min_distance = 21.0
+max_distance = 27.0
+height = 30.0
 
-[node name="CarBoost" type="Node" parent="Car"]
+[node name="CarBoost" type="Node" parent="Car" unique_id=942216162]
 script = ExtResource("21_boost")
 
-[node name="WeaponManager" type="Node3D" parent="Car"]
+[node name="WeaponManager" type="Node3D" parent="Car" unique_id=295886195]
 script = ExtResource("23_wm")
 
-[node name="FrontGun" parent="Car/WeaponManager" instance=ExtResource("24_fg")]
+[node name="FrontGun" parent="Car/WeaponManager" unique_id=2031334866 instance=ExtResource("24_fg")]
 
-[node name="EnemySpawner" type="Node3D" parent="." node_paths=PackedStringArray("car")]
+[node name="EnemySpawner" type="Node3D" parent="." unique_id=1213304828 node_paths=PackedStringArray("car")]
 script = ExtResource("22_spawner")
 car = NodePath("../Car")
 
-[node name="HUD" parent="." instance=ExtResource("25_hud")]
+[node name="HUD" parent="." unique_id=2065781473 instance=ExtResource("25_hud")]
 
 [editable path="DirectionalLight3D"]
 [editable path="Car/nissan_skyliner35"]
