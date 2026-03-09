@@ -34,6 +34,27 @@ offset_top = -20.0
 offset_bottom = 0.0
 max_value = 100.0
 
+[node name="BoostContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_right = 60.0
+offset_top = -58.0
+offset_bottom = -10.0
+alignment = 1
+
+[node name="BoostLabel" type="Label" parent="BoostContainer"]
+text = "BOOST"
+horizontal_alignment = 1
+
+[node name="BoostBar" type="ProgressBar" parent="BoostContainer"]
+custom_minimum_size = Vector2(120, 14)
+max_value = 1.0
+value = 0.0
+show_percentage = false
+
 [node name="LevelUpScreen" parent="." instance=ExtResource("2_lus")]
 
 [node name="GameOverScreen" parent="." instance=ExtResource("3_gos")]

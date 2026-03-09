@@ -5,7 +5,7 @@ class_name RaycastCar
 @export var acceleration := 600.0
 @export var max_speed := 20.0
 @export var accel_curve : Curve
-@export var tire_turn_speed := 2.0
+@export var tire_turn_speed := 4.0
 @export var tire_max_turn_degrees := 25
 
 @export var skid_marks: Array[GPUParticles3D]
@@ -16,6 +16,7 @@ class_name RaycastCar
 var motor_input := 0
 var hand_break := false
 var is_slipping := false
+var _prev_hand_break := false
 
 func _get_point_velocity(point: Vector3) -> Vector3:
 	return linear_velocity + angular_velocity.cross(point - to_global(center_of_mass))
@@ -26,6 +27,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		is_slipping = true
 	elif event.is_action_released("handbreak"):
 		hand_break = false
+		is_slipping = false
 
 	if event.is_action_pressed("accelerate"):
 		motor_input = 1
@@ -79,8 +81,20 @@ func _physics_process(delta: float) -> void:
 
 		id += 1
 
+	var turn_input := Input.get_axis("turn_right", "turn_left")
+
+	# Drift kick: snap rear out when handbrake first pressed while moving and turning
+	if hand_break and not _prev_hand_break and linear_velocity.length() > 4.0 and absf(turn_input) > 0.1:
+		apply_torque_impulse(global_basis.y * turn_input * mass * 1.8)
+
+	# Drift steering: direct rotational control during drift so arrow keys steer the arc
+	if hand_break and grounded:
+		apply_torque(global_basis.y * turn_input * mass * 3.6)
+
+	_prev_hand_break = hand_break
+
 	if grounded:
 		center_of_mass = Vector3.ZERO
 	else:
 		center_of_mass_mode = RigidBody3D.CENTER_OF_MASS_MODE_CUSTOM
-		center_of_mass = Vector3.DOWN*0.5
+		center_of_mass = Vector3.DOWN*1.5

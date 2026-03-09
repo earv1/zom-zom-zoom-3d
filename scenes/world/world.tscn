@@ -68,10 +68,10 @@ linear_damp_mode = 1
 script = ExtResource("5_7l6n7")
 show_debug = true
 wheels = [NodePath("WheelFL"), NodePath("WheelFR"), NodePath("WheelRL"), NodePath("WheelRR")]
-acceleration = 550.0
+acceleration = 1000.0
 max_speed = 60.0
 accel_curve = SubResource("Curve_xmp6s")
-tire_max_turn_degrees = 12
+tire_max_turn_degrees = 30
 skid_marks = [NodePath("SkidMarks/GPUParticles3D"), NodePath("SkidMarks/GPUParticles3D2"), NodePath("SkidMarks/GPUParticles3D3"), NodePath("SkidMarks/GPUParticles3D4")]
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Car"]
