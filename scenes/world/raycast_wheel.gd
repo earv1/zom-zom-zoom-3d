@@ -94,9 +94,9 @@ func apply_wheel_physics(car: RaycastCar) -> void:
 		car.is_slipping = false
 	if car.hand_break:
 		if is_steer:
-			x_traction = 0.45  # front stays planted — steerable through the drift
+			x_traction = 0.35  # front stays planted — steerable through the drift
 		else:
-			x_traction = 0.05  # rear slides freely
+			x_traction = 0.2  # rear slides freely
 	elif car.is_slipping:
 		x_traction = 0.3
 
