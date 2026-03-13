@@ -16,11 +16,25 @@ var _original_acceleration: float
 func _ready() -> void:
 	add_to_group("car_boost")
 	_car = get_parent() as RaycastCar
+	if not _car:
+		call_deferred(&"_init_car")
+		return
+	_init_car()
+
+
+func _init_car() -> void:
+	if not _car:
+		_car = get_parent() as RaycastCar
+	if not _car:
+		push_error("CarBoost: parent is not RaycastCar")
+		return
 	_original_max_speed = _car.max_speed
 	_original_acceleration = _car.acceleration
 
 
 func _process(delta: float) -> void:
+	if not _car:
+		return
 	if Input.is_action_pressed("handbreak"):
 		if not is_boosting:
 			hold_time = minf(hold_time + delta, HOLD_REQUIRED)
