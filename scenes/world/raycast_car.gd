@@ -45,7 +45,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _basic_steering_rotation(wheel: RaycastWheel, delta: float) -> void:
 	if not wheel.is_steer: return
 
-	var turn_input := Input.get_axis("turn_right", "turn_left") * tire_turn_speed
+	var turn_input := Input.get_axis("turn_right", "turn_left") * tire_turn_speed * 0.5
 	if turn_input:
 		wheel.rotation.y = clampf(wheel.rotation.y + turn_input * delta,
 			deg_to_rad(-tire_max_turn_degrees), deg_to_rad(tire_max_turn_degrees))
@@ -87,11 +87,11 @@ func _physics_process(delta: float) -> void:
 
 	# Drift kick: snap rear out when handbrake first pressed while moving and turning
 	if hand_break and not _prev_hand_break and linear_velocity.length() > 4.0 and absf(turn_input) > 0.1:
-		apply_torque_impulse(global_basis.y * turn_input * mass * 1.8)
+		apply_torque_impulse(global_basis.y * turn_input * mass * 0.001)
 
 	# Drift steering: direct rotational control during drift so arrow keys steer the arc
 	if hand_break and grounded:
-		apply_torque(global_basis.y * turn_input * mass * 3.6)
+		apply_torque(global_basis.y * turn_input * mass * 0.09)
 
 	_prev_hand_break = hand_break
 

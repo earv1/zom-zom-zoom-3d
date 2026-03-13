@@ -1,7 +1,7 @@
 class_name HUD
 extends CanvasLayer
 
-@onready var _health_bar: ProgressBar = $TopBar/HealthBar
+@onready var _health_bar: ProgressBar = $HealthBar
 @onready var _timer_label: Label = $TopBar/TimerLabel
 @onready var _level_label: Label = $TopBar/LevelLabel
 @onready var _xp_bar: ProgressBar = $XPBar

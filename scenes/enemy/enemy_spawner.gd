@@ -9,6 +9,7 @@ var _pool: Array = []
 
 
 func _ready() -> void:
+	add_to_group("enemy_spawner")
 	_pool = [
 		{scene = load("res://scenes/enemy/zombie.tscn"), weight = 1.0, unlock_time = 0.0},
 		{scene = load("res://scenes/enemy/runner.tscn"), weight = 0.6, unlock_time = 60.0},
@@ -46,7 +47,7 @@ func _spawn() -> void:
 			break
 
 	var angle := randf() * TAU
-	var offset := Vector3(cos(angle), 0.0, sin(angle)) * spawn_radius
+	var offset := Vector3(cos(angle), 0.0, sin(angle)) * spawn_radius * 3.0
 	var pos := car.global_position + offset
 	pos.y += 10.0
 

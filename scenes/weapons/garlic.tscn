@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/weapons/garlic.gd" id="1_garlic"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_garlic"]
+radius = 6.0
+
+[node name="Garlic" type="Node3D"]
+script = ExtResource("1_garlic")
+weapon_id = &"garlic"
+
+[node name="Area3D" type="Area3D" parent="."]
+monitoring = true
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_garlic")
+
+[node name="Disc" type="MeshInstance3D" parent="."]

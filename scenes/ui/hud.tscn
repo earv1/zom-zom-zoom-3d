@@ -1,24 +1,37 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://scenes/ui/hud.gd" id="1_hud"]
 [ext_resource type="Script" path="res://scenes/ui/mobile_controls.gd" id="4_mob"]
 [ext_resource type="PackedScene" path="res://scenes/ui/level_up_screen.tscn" id="2_lus"]
 [ext_resource type="PackedScene" path="res://scenes/ui/game_over_screen.tscn" id="3_gos"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_health"]
+bg_color = Color(0.85, 0.15, 0.15, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xp"]
+bg_color = Color(0.2, 0.6, 1.0, 1)
+
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_hud")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -480.0
+offset_right = 480.0
+offset_top = 8.0
+offset_bottom = 40.0
+max_value = 100.0
+value = 100.0
+show_percentage = false
+theme_override_styles/fill = SubResource("StyleBoxFlat_health")
 
 [node name="TopBar" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 offset_left = 8.0
-offset_top = 8.0
+offset_top = 44.0
 offset_right = -8.0
-offset_bottom = 40.0
-
-[node name="HealthBar" type="ProgressBar" parent="TopBar"]
-custom_minimum_size = Vector2(200, 24)
-max_value = 100.0
-value = 100.0
+offset_bottom = 64.0
 
 [node name="TimerLabel" type="Label" parent="TopBar"]
 text = "  00:00"
@@ -31,9 +44,11 @@ anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -20.0
+offset_top = -18.0
 offset_bottom = 0.0
 max_value = 100.0
+show_percentage = false
+theme_override_styles/fill = SubResource("StyleBoxFlat_xp")
 
 [node name="BoostContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5

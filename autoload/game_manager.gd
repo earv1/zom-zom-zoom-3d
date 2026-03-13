@@ -8,7 +8,7 @@ var max_health: int = 100
 var enemies_killed: int = 0
 
 var speed_multiplier: float = 1.0
-var pickup_radius: float = 18.0
+var pickup_radius: float = 36.0
 var damage_multiplier: float = 1.0
 var fire_rate_multiplier: float = 1.0
 
@@ -18,9 +18,9 @@ var weapon_levels: Dictionary = {}
 var all_upgrades: Array = [
 	preload("res://data/upgrades/upgrade_front_gun_lvl2.tres"),
 	preload("res://data/upgrades/upgrade_front_gun_lvl3.tres"),
-	preload("res://data/upgrades/unlock_ring_fire.tres"),
-	preload("res://data/upgrades/upgrade_ring_fire_lvl2.tres"),
-	preload("res://data/upgrades/upgrade_ring_fire_lvl3.tres"),
+	preload("res://data/upgrades/unlock_garlic.tres"),
+	preload("res://data/upgrades/upgrade_garlic_lvl2.tres"),
+	preload("res://data/upgrades/upgrade_garlic_lvl3.tres"),
 	preload("res://data/upgrades/unlock_side_rockets.tres"),
 	preload("res://data/upgrades/upgrade_side_rockets_lvl2.tres"),
 	preload("res://data/upgrades/stat_max_health.tres"),
@@ -51,7 +51,7 @@ func _process(delta: float) -> void:
 
 
 func _xp_to_next() -> int:
-	return int(100 * pow(1.4, current_level - 1))
+	return int(500 * pow(1.4, current_level - 1))
 
 
 func add_xp(amount: int) -> void:
@@ -121,7 +121,7 @@ func reset() -> void:
 	max_health = 100
 	enemies_killed = 0
 	speed_multiplier = 1.0
-	pickup_radius = 6.0
+	pickup_radius = 36.0
 	damage_multiplier = 1.0
 	fire_rate_multiplier = 1.0
 	unlocked_weapons = [&"front_gun"]
