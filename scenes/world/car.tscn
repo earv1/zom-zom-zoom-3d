@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" path="res://assets/car/nissan35/nissan_skyliner35.glb" id="6_carglb"]
 [ext_resource type="Script" path="res://scenes/world/car_follow_camera.gd" id="7_cam"]
 [ext_resource type="Script" path="res://scenes/world/car_boost.gd" id="8_boost"]
+[ext_resource type="Script" path="res://scenes/world/car_air_control.gd" id="11_air"]
 [ext_resource type="Script" path="res://scenes/weapons/weapon_manager.gd" id="9_wm"]
 [ext_resource type="PackedScene" path="res://scenes/weapons/front_gun.tscn" id="10_fg"]
 
@@ -216,6 +217,9 @@ height = 30.0
 
 [node name="CarBoost" type="Node" parent="."]
 script = ExtResource("8_boost")
+
+[node name="CarAirControl" type="Node" parent="."]
+script = ExtResource("11_air")
 
 [node name="WeaponManager" type="Node3D" parent="."]
 script = ExtResource("9_wm")

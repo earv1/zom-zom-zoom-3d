@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/level_select.gd" id="1_ls"]
+
+[node name="LevelSelect" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_ls")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.05, 0.05, 0.08, 1.0)
+
+[node name="Center" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+theme_override_constants/separation = 24
+
+[node name="Title" type="Label" parent="Center/VBox"]
+text = "ZOM ZOM ZOOM"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 48
+
+[node name="Subtitle" type="Label" parent="Center/VBox"]
+text = "SELECT LEVEL"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 24
+
+[node name="Spacer" type="Control" parent="Center/VBox"]
+custom_minimum_size = Vector2(0, 16)
+
+[node name="MainGame" type="Button" parent="Center/VBox"]
+text = "MAIN GAME"
+theme_override_font_sizes/font_size = 22
+
+[node name="TestTrack" type="Button" parent="Center/VBox"]
+text = "TEST TRACK"
+theme_override_font_sizes/font_size = 22
+
+[connection signal="pressed" from="Center/VBox/MainGame" to="." method="_on_main_game_pressed"]
+[connection signal="pressed" from="Center/VBox/TestTrack" to="." method="_on_test_track_pressed"]
