@@ -16,6 +16,8 @@ var _dead: bool = false
 var _lifetime: float = 0.0
 var _blink_mat: StandardMaterial3D
 var _original_color: Color
+var _spawner: EnemySpawner
+var pool_key: String
 
 const LIFETIME := 30.0
 const BLINK_START := 25.0
@@ -43,7 +45,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	_lifetime += delta
 	if _lifetime >= LIFETIME:
-		queue_free()
+		_return_to_pool()
 		return
 
 	# Warp back toward the car if the enemy has wandered too far.
@@ -56,7 +58,8 @@ func _process(delta: float) -> void:
 			var angle := randf() * TAU
 			var offset := Vector3(cos(angle), 0.0, sin(angle)) * spawn_dist
 			global_position = car.global_position + offset
-			global_position.y += 10.0  # same drop height as normal spawn
+			global_position.y += 10.0
+			linear_velocity = Vector3.ZERO  # drop cleanly from spawn height
 
 	if _blink_mat and _lifetime >= BLINK_START:
 		# Speed up blink rate as expiry approaches: 2 Hz → 10 Hz over 5 seconds.
@@ -105,10 +108,36 @@ func die() -> void:
 	_spawn_fragments()
 	_spawn_xp_orb()
 	_on_die()
-	queue_free()
+	_return_to_pool()
+
+
+func reset_for_spawn(pos: Vector3, car_ref: Node3D) -> void:
+	# Position while still frozen so physics doesn't interfere.
+	global_position = pos
+	linear_velocity = Vector3.ZERO
+	angular_velocity = Vector3.ZERO
+	car = car_ref
+	_health = max_health
+	_dead = false
+	_lifetime = 0.0
+	if _blink_mat:
+		_blink_mat.albedo_color = _original_color
+	# Enable after positioning.
+	freeze = false
+	visible = true
+	process_mode = PROCESS_MODE_INHERIT
+
+
+func _return_to_pool() -> void:
+	if _spawner:
+		_spawner.recycle(self)
+	else:
+		queue_free()
 
 
 func _on_body_entered(body: Node) -> void:
+	if not visible or _dead:
+		return
 	if body == car:
 		GameManager.take_damage(contact_damage)
 		die()

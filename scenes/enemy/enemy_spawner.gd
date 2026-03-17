@@ -4,8 +4,12 @@ extends Node3D
 @export var car: Node3D
 @export var spawn_radius: float = 40.0
 
+const MAX_ENEMIES := 200
+
 var _timer: float = 0.0
 var _pool: Array = []
+var _inactive: Dictionary = {}  # pool_key (scene path) -> Array[BaseEnemy]
+var _active_count: int = 0
 
 
 func _ready() -> void:
@@ -28,6 +32,9 @@ func _process(delta: float) -> void:
 
 
 func _spawn() -> void:
+	if _active_count >= MAX_ENEMIES:
+		return
+
 	var available: Array = _pool.filter(
 		func(e: Variant) -> bool: return GameManager.elapsed_time >= (e as Dictionary).get("unlock_time", 0.0)
 	)
@@ -51,8 +58,30 @@ func _spawn() -> void:
 	var pos := car.global_position + offset
 	pos.y += 10.0
 
-	var enemy_scene := chosen.get("scene") as PackedScene
-	var enemy := enemy_scene.instantiate() as BaseEnemy
-	enemy.car = car
-	add_child(enemy)
-	enemy.global_position = pos
+	var key: String = (chosen.get("scene") as PackedScene).resource_path
+	var enemy: BaseEnemy
+
+	if _inactive.has(key) and not (_inactive[key] as Array).is_empty():
+		enemy = (_inactive[key] as Array).pop_back() as BaseEnemy
+		enemy.reset_for_spawn(pos, car)
+	else:
+		var enemy_scene := chosen.get("scene") as PackedScene
+		enemy = enemy_scene.instantiate() as BaseEnemy
+		enemy._spawner = self
+		enemy.pool_key = key
+		enemy.car = car
+		add_child(enemy)
+		enemy.global_position = pos
+
+	_active_count += 1
+
+
+func recycle(enemy: BaseEnemy) -> void:
+	_active_count = maxi(0, _active_count - 1)
+	enemy.visible = false
+	enemy.process_mode = PROCESS_MODE_DISABLED
+	enemy.freeze = true
+	var key := enemy.pool_key
+	if not _inactive.has(key):
+		_inactive[key] = []
+	(_inactive[key] as Array).append(enemy)
