@@ -3,9 +3,12 @@ extends Control
 
 signal piece_selected(piece_name: String)
 signal erase_mode_toggled(active: bool)
+signal edit_mode_changed(active: bool)
 
 var _erase_btn: Button
+var _edit_btn: Button
 var _piece_buttons: Dictionary = {}
+var edit_mode := false
 
 func _ready() -> void:
 	_build_ui()
@@ -19,6 +22,14 @@ func _build_ui() -> void:
 	title.text = "Track Editor"
 	title.add_theme_font_size_override("font_size", 16)
 	root.add_child(title)
+
+	root.add_child(HSeparator.new())
+
+	_edit_btn = Button.new()
+	_edit_btn.text = "● Edit Mode OFF"
+	_edit_btn.toggle_mode = true
+	_edit_btn.toggled.connect(_on_edit_toggled)
+	root.add_child(_edit_btn)
 
 	root.add_child(HSeparator.new())
 
@@ -81,3 +92,8 @@ func _on_erase_toggled(active: bool) -> void:
 		for key in _piece_buttons:
 			_piece_buttons[key].button_pressed = false
 	emit_signal("erase_mode_toggled", active)
+
+func _on_edit_toggled(active: bool) -> void:
+	edit_mode = active
+	_edit_btn.text = "● Edit Mode ON" if active else "● Edit Mode OFF"
+	emit_signal("edit_mode_changed", active)

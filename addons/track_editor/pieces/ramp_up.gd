@@ -1,53 +1,58 @@
-## Ramp piece: flat entry, rises one full cell height (4m) over 8m length.
-## Exit connects to an elevated straight.
+## Ramp: rises one full cell height (4m) over 8m.
+## Entry: south face (z=+4, y=0). Exit: north face (z=-4, y=+4).
 @tool
 extends Node3D
+
+const STEPS  := 6
+const ROAD_W := 6.0
+const SLAB_T := 0.3
+const RISE   := 4.0   # total height gain
+const RUN    := 8.0   # total horizontal length
 
 func _ready() -> void:
 	_build()
 
 func _build() -> void:
+	var pitch := atan2(RISE, RUN)   # ~26.6°
+
 	var road_mat := StandardMaterial3D.new()
 	road_mat.albedo_color = Color(0.28, 0.22, 0.22)
+	var rail_mat := StandardMaterial3D.new()
+	rail_mat.albedo_color = Color(0.8, 0.2, 0.2)
 
-	# 4 stepped sections approximating the slope
-	var steps := 5
-	for i in range(steps):
-		var t := (i + 0.5) / steps
-		var z_pos := -4.0 + (float(i) / steps) * 8.0 + (8.0 / steps) * 0.5
-		var y_pos := t * 4.0  # rises to 4m
-		var pitch := atan2(4.0, 8.0)  # ~26.6 degrees
+	var sb := StaticBody3D.new()
+	add_child(sb)
+
+	for i in range(STEPS):
+		var tmid := (float(i) + 0.5) / STEPS
+		var z_world := 4.0 - tmid * RUN          # +4 → -4
+		var y_world := tmid * RISE                # 0  →  4
+		var seg_len := RUN / STEPS + 0.05
 
 		var mi := MeshInstance3D.new()
 		var bm := BoxMesh.new()
-		bm.size = Vector3(6.0, 0.3, 8.0 / steps + 0.05)
+		bm.size = Vector3(ROAD_W, SLAB_T, seg_len)
 		mi.mesh = bm
 		mi.material_override = road_mat.duplicate()
-		mi.position = Vector3(0, y_pos - 0.15, z_pos)
-		mi.rotation.x = -pitch
+		mi.position = Vector3(0, y_world, z_world)
+		mi.rotation.x = pitch
 		add_child(mi)
 
-	# Collision ramp box — rotated
-	var sb := StaticBody3D.new()
-	var cs := CollisionShape3D.new()
-	var bs := BoxShape3D.new()
-	bs.size = Vector3(6.0, 0.3, 8.6)
-	cs.shape = bs
-	var pitch := atan2(4.0, 8.0)
-	cs.rotation.x = -pitch
-	cs.position = Vector3(0, 2.0 - 0.15, 0)
-	sb.add_child(cs)
-	add_child(sb)
+		var cs := CollisionShape3D.new()
+		var bs := BoxShape3D.new()
+		bs.size = Vector3(ROAD_W, SLAB_T, seg_len)
+		cs.shape = bs
+		cs.position = Vector3(0, y_world, z_world)
+		cs.rotation.x = pitch
+		sb.add_child(cs)
 
 	# Guard rails
-	var rail_mat := StandardMaterial3D.new()
-	rail_mat.albedo_color = Color(0.8, 0.2, 0.2)
 	for side in [-1, 1]:
 		var r := MeshInstance3D.new()
 		var rm := BoxMesh.new()
-		rm.size = Vector3(0.15, 4.0, 0.15)
+		rm.size = Vector3(0.15, 0.5, sqrt(RUN * RUN + RISE * RISE) + 0.1)
 		r.mesh = rm
 		r.material_override = rail_mat.duplicate()
-		r.position = Vector3(side * 3.1, 2.0, 0)
-		r.rotation.x = -atan2(4.0, 8.0)
+		r.position = Vector3(side * (ROAD_W * 0.5 + 0.1), RISE * 0.5, 0)
+		r.rotation.x = pitch
 		add_child(r)

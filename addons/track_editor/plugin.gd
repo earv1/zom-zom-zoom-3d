@@ -13,6 +13,7 @@ var _track_root: Node3D = null
 var _ghost: Node3D = null
 var _erase_mode := false
 var _last_grid_pos := Vector3.ZERO  # remembered so ghost snaps on piece-change
+var _edit_mode := false
 
 var PIECE_SCENES := {
 	"straight": "res://addons/track_editor/pieces/straight.tscn",
@@ -27,6 +28,7 @@ func _enter_tree() -> void:
 	dock = DOCK_SCENE.instantiate()
 	dock.piece_selected.connect(_on_piece_selected)
 	dock.erase_mode_toggled.connect(_on_erase_toggled)
+	dock.edit_mode_changed.connect(_on_edit_mode_changed)
 	add_control_to_dock(DOCK_SLOT_RIGHT_UL, dock)
 
 func _exit_tree() -> void:
@@ -49,6 +51,11 @@ func _on_piece_selected(piece_name: String) -> void:
 	_erase_mode = false
 	_rebuild_ghost()
 
+func _on_edit_mode_changed(active: bool) -> void:
+	_edit_mode = active
+	if not active:
+		_destroy_ghost()
+
 func _on_erase_toggled(active: bool) -> void:
 	_erase_mode = active
 	if active:
@@ -59,6 +66,9 @@ func _on_erase_toggled(active: bool) -> void:
 # ── viewport input ────────────────────────────────────────────────────────────
 
 func _forward_3d_gui_input(viewport_camera: Camera3D, event: InputEvent) -> int:
+	if not _edit_mode:
+		return EditorPlugin.AFTER_GUI_INPUT_PASS
+
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_R:
 			_rotation_y = (_rotation_y + 1) % 4

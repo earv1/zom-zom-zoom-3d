@@ -1,45 +1,97 @@
-## Full vertical loop. Spans 1 cell wide, ~3 cells tall.
-## 12 segments of 30° each approximate a circle of radius ~5m.
+## Full vertical loop — helical so exit is offset by one cell (8 m in Z).
+## Entry: east face  (x=+4, y=0, z=0)
+## Exit:  west face  (x=-4, y=0, z=+8)  →  place next piece one cell over in Z.
 @tool
 extends Node3D
+
+const RADIUS  := 20.0   # big enough to drive at speed
+const Z_SHIFT := 8.0    # one cell offset between entry and exit
+const STEPS   := 28     # arc segments (more = smoother)
+const ROAD_W  := 6.0
+const SLAB_T  := 0.3
 
 func _ready() -> void:
 	_build()
 
 func _build() -> void:
-	var road_mat := StandardMaterial3D.new()
-	road_mat.albedo_color = Color(0.18, 0.28, 0.18)
+	var mat := StandardMaterial3D.new()
+	mat.albedo_color = Color(0.18, 0.35, 0.18)
 
-	var radius := 5.0
-	var centre_y := radius + 0.0  # loop centre sits at radius height
-	var seg_count := 12
+	var sb := StaticBody3D.new()
+	add_child(sb)
 
-	for i in range(seg_count):
-		var angle := (float(i) / seg_count) * TAU
-		var next_angle := (float(i + 1) / seg_count) * TAU
-		var mid_angle := (angle + next_angle) * 0.5
+	# ── flat approach  x = +4 → 0,  z = 0 ───────────────────────────────────
+	_add_slab(sb, Vector3(4.0, SLAB_T, ROAD_W),
+		Vector3(2.0, -SLAB_T * 0.5, 0.0), _flat_basis(), mat)
 
-		var cy := centre_y + sin(mid_angle) * radius
-		var cz := cos(mid_angle) * radius
+	# ── helix loop ────────────────────────────────────────────────────────────
+	for i in range(STEPS):
+		var t0   := float(i)       / STEPS
+		var t1   := float(i + 1)   / STEPS
+		var tmid := (t0 + t1) * 0.5
 
-		var mi := MeshInstance3D.new()
-		var bm := BoxMesh.new()
-		var seg_len := 2.0 * radius * sin(PI / seg_count) + 0.1
-		bm.size = Vector3(6.0, 0.3, seg_len)
-		mi.mesh = bm
-		mi.material_override = road_mat.duplicate()
-		mi.position = Vector3(0, cy, cz)
-		# pitch: tangent of circle
-		mi.rotation.x = -mid_angle
-		add_child(mi)
+		var a0   := TAU * t0
+		var a1   := TAU * t1
+		var amid := TAU * tmid
 
-	# Simple collision — two boxes for entry/exit, loop body approximated
-	for side in [-1, 1]:
-		var sb := StaticBody3D.new()
-		var cs := CollisionShape3D.new()
-		var bs := BoxShape3D.new()
-		bs.size = Vector3(6.0, 0.3, 3.5)
-		cs.shape = bs
-		cs.position = Vector3(0, -0.15, side * (radius - 0.5))
-		sb.add_child(cs)
-		add_child(sb)
+		var p0   := _arc(a0)
+		var p1   := _arc(a1)
+		var pmid := _arc(amid)
+		var seg_len := (p1 - p0).length() + 0.02
+
+		# inward normal — same as a pure circle (helix curvature points to axis)
+		var inward := Vector3(sin(amid), cos(amid), 0.0)
+		# slab centre sits just outward of the road surface by half thickness
+		var centre := pmid - inward * (SLAB_T * 0.5)
+
+		_add_slab(sb, Vector3(seg_len, SLAB_T, ROAD_W),
+			centre, _helix_basis(amid), mat)
+
+	# ── flat exit  x = 0 → -4,  z = +8 ──────────────────────────────────────
+	_add_slab(sb, Vector3(4.0, SLAB_T, ROAD_W),
+		Vector3(-2.0, -SLAB_T * 0.5, Z_SHIFT), _flat_basis(), mat)
+
+# ── arc helpers ───────────────────────────────────────────────────────────────
+
+## Helix arc position.  At a=0: (0,0,0) heading west. At a=TAU: (0,0,Z_SHIFT).
+func _arc(a: float) -> Vector3:
+	return Vector3(
+		-RADIUS * sin(a),
+		 RADIUS * (1.0 - cos(a)),
+		 Z_SHIFT * a / TAU
+	)
+
+## Basis for a helix slab at arc angle `a`.
+##   local X (seg_len) → helix tangent
+##   local Y (SLAB_T)  → inward normal
+##   local Z (ROAD_W)  → road-width direction (perpendicular to both)
+func _helix_basis(a: float) -> Basis:
+	var tangent := Vector3(-RADIUS * cos(a), RADIUS * sin(a), Z_SHIFT / TAU).normalized()
+	var inward  := Vector3(sin(a), cos(a), 0.0)
+	var width   := tangent.cross(inward).normalized()
+	return Basis(tangent, inward, width)
+
+## Flat-section basis: length along -X, thickness along +Y, width along +Z.
+func _flat_basis() -> Basis:
+	return Basis(Vector3(-1, 0, 0), Vector3(0, 1, 0), Vector3(0, 0, 1))
+
+# ── slab factory ──────────────────────────────────────────────────────────────
+
+func _add_slab(sb: StaticBody3D, size: Vector3, pos: Vector3,
+		basis: Basis, mat: StandardMaterial3D) -> void:
+	var xform := Transform3D(basis, pos)
+
+	var mi := MeshInstance3D.new()
+	var bm := BoxMesh.new()
+	bm.size = size
+	mi.mesh = bm
+	mi.material_override = mat.duplicate()
+	mi.transform = xform
+	add_child(mi)
+
+	var cs := CollisionShape3D.new()
+	var bs := BoxShape3D.new()
+	bs.size = size
+	cs.shape = bs
+	cs.transform = xform
+	sb.add_child(cs)

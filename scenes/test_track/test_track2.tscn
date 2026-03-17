@@ -5,13 +5,11 @@
 [ext_resource type="PackedScene" path="res://addons/track_editor/pieces/straight.tscn" id="2_khyy7"]
 [ext_resource type="Script" uid="uid://bpcxurflb1ppq" path="res://addons/track_editor/pieces/straight.gd" id="3_mvlp2"]
 [ext_resource type="PackedScene" path="res://addons/track_editor/pieces/ramp_up.tscn" id="4_b84ki"]
-[ext_resource type="Script" uid="uid://itey218t1n0w" path="res://addons/track_editor/pieces/ramp_up.gd" id="5_hamww"]
 [ext_resource type="PackedScene" path="res://addons/track_editor/pieces/curve.tscn" id="6_gp4ju"]
-[ext_resource type="Script" uid="uid://y0oo1mxa5lij" path="res://addons/track_editor/pieces/curve.gd" id="7_8lmsn"]
 [ext_resource type="PackedScene" path="res://addons/track_editor/pieces/bank.tscn" id="8_63vn4"]
-[ext_resource type="Script" uid="uid://dhf5qyspoasr8" path="res://addons/track_editor/pieces/bank.gd" id="9_dxpm2"]
 [ext_resource type="PackedScene" path="res://addons/track_editor/pieces/jump.tscn" id="10_d53lx"]
-[ext_resource type="Script" uid="uid://bl1hhqsjyktnc" path="res://addons/track_editor/pieces/jump.gd" id="11_48sv6"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/loop.tscn" id="12_63vn4"]
+[ext_resource type="Script" uid="uid://dv8s1dmyjp0gg" path="res://addons/track_editor/pieces/loop.gd" id="13_dxpm2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ground"]
 size = Vector3(500, 0.2, 500)
@@ -54,33 +52,60 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
 [node name="straight_20_-4" parent="TrackRoot" unique_id=886336864 instance=ExtResource("2_khyy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -4)
 
-[node name="straight_20_4" type="Node3D" parent="TrackRoot" unique_id=2122193536 instance=ExtResource("2_khyy7")]
+[node name="straight_20_4" parent="TrackRoot" unique_id=2122193536 instance=ExtResource("2_khyy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 4)
-script = ExtResource("3_mvlp2")
 
-[node name="straight_12_-4" type="Node3D" parent="TrackRoot" unique_id=1492535805 instance=ExtResource("2_khyy7")]
+[node name="straight_12_-4" parent="TrackRoot" unique_id=1492535805 instance=ExtResource("2_khyy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -4)
+
+[node name="ramp_up_20_-12" parent="TrackRoot" unique_id=1238515901 instance=ExtResource("4_b84ki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -12)
+
+[node name="ramp_up_4_-36" parent="TrackRoot" unique_id=314288054 instance=ExtResource("4_b84ki")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4, 0, -36)
+
+[node name="curve_12_-12" parent="TrackRoot" unique_id=36414185 instance=ExtResource("6_gp4ju")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 12, 0, -12)
+
+[node name="bank_20_-36" parent="TrackRoot" unique_id=1277671366 instance=ExtResource("8_63vn4")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 20, 0, -36)
+
+[node name="jump_4_-60" parent="TrackRoot" unique_id=374720810 instance=ExtResource("10_d53lx")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4, 0, -60)
+
+[node name="bank_52_20" parent="TrackRoot" unique_id=424536826 instance=ExtResource("8_63vn4")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 52, 0, 20)
+
+[node name="bank_60_4" parent="TrackRoot" unique_id=1644504654 instance=ExtResource("8_63vn4")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 60, 0, 4)
+
+[node name="curve_20_12" parent="TrackRoot" unique_id=1605123170 instance=ExtResource("6_gp4ju")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 20, 0, 12)
+
+[node name="loop_28_4" parent="TrackRoot" unique_id=744648312 instance=ExtResource("12_63vn4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 4)
+
+[node name="curve_12_12" parent="TrackRoot" unique_id=762413585 instance=ExtResource("6_gp4ju")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="loop_-44_-12" parent="TrackRoot" unique_id=1918686643 instance=ExtResource("12_63vn4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, -12)
+
+[node name="straight_-4_12" type="Node3D" parent="TrackRoot" unique_id=1277556322 instance=ExtResource("2_khyy7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 12)
 script = ExtResource("3_mvlp2")
 
-[node name="ramp_up_20_-12" type="Node3D" parent="TrackRoot" unique_id=1238515901 instance=ExtResource("4_b84ki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -12)
-script = ExtResource("5_hamww")
+[node name="straight_4_36" type="Node3D" parent="TrackRoot" unique_id=2116785640 instance=ExtResource("2_khyy7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 36)
+script = ExtResource("3_mvlp2")
 
-[node name="ramp_up_4_-36" type="Node3D" parent="TrackRoot" unique_id=314288054 instance=ExtResource("4_b84ki")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4, 0, -36)
-script = ExtResource("5_hamww")
+[node name="loop_28_12" type="Node3D" parent="TrackRoot" unique_id=1554678074 instance=ExtResource("12_63vn4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 12)
+script = ExtResource("13_dxpm2")
 
-[node name="curve_12_-12" type="Node3D" parent="TrackRoot" unique_id=36414185 instance=ExtResource("6_gp4ju")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 12, 0, -12)
-script = ExtResource("7_8lmsn")
-
-[node name="bank_20_-36" type="Node3D" parent="TrackRoot" unique_id=1277671366 instance=ExtResource("8_63vn4")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 20, 0, -36)
-script = ExtResource("9_dxpm2")
-
-[node name="jump_4_-60" type="Node3D" parent="TrackRoot" unique_id=374720810 instance=ExtResource("10_d53lx")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4, 0, -60)
-script = ExtResource("11_48sv6")
+[node name="loop_28_20" type="Node3D" parent="TrackRoot" unique_id=1422356795 instance=ExtResource("12_63vn4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 20)
+script = ExtResource("13_dxpm2")
 
 [node name="Car" parent="." unique_id=702484831 instance=ExtResource("2_car")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
