@@ -24,7 +24,7 @@ world:
 
 # Check for script compilation errors (headless, no window)
 check:
-    "{{godot}}" --path "{{project}}" --headless --quit 2>&1 || true
+    "{{godot}}" --path "{{project}}" --headless --quit-after 5 2>&1 || true
 
 # Export web build
 export:
