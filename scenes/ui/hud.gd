@@ -2,16 +2,18 @@ class_name HUD
 extends CanvasLayer
 
 @onready var _health_bar: ProgressBar = $HealthBar
-@onready var _timer_label: Label = $TopBar/TimerLabel
-@onready var _level_label: Label = $TopBar/LevelLabel
+@onready var _timer_label: Label = $XPLabels/TimerLabel
+@onready var _level_label: Label = $XPLabels/LevelLabel
 @onready var _xp_bar: ProgressBar = $XPBar
 @onready var _boost_container: VBoxContainer = $BoostContainer
 @onready var _boost_bar: ProgressBar = $BoostContainer/BoostBar
 @onready var _boost_label: Label = $BoostContainer/BoostLabel
 @onready var _level_up_screen: LevelUpScreen = $LevelUpScreen
 @onready var _game_over_screen: GameOverScreen = $GameOverScreen
+@onready var _speed_label: Label = $SpeedLabel
 
 var _car_boost: CarBoost
+var _car: RigidBody3D
 
 
 func _ready() -> void:
@@ -29,13 +31,16 @@ func _ready() -> void:
 	var boosts := get_tree().get_nodes_in_group("car_boost")
 	if boosts.size() > 0:
 		_car_boost = boosts[0] as CarBoost
+		_car = _car_boost.get_parent() as RigidBody3D
 	_boost_container.visible = false
 
 
 func _process(_delta: float) -> void:
 	var secs := int(GameManager.elapsed_time)
-	_timer_label.text = "  %02d:%02d" % [secs / 60, secs % 60]
+	_timer_label.text = "%02d:%02d" % [secs / 60, secs % 60]
 	_update_boost_bar()
+	if _car:
+		_speed_label.text = "%d km/h" % int(_car.linear_velocity.length() * 3.6)
 
 
 func _update_boost_bar() -> void:

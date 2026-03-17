@@ -4,7 +4,7 @@ extends Node3D
 @export var car: Node3D
 @export var spawn_radius: float = 40.0
 
-const MAX_ENEMIES := 200
+const MAX_ENEMIES := 400
 
 var _timer: float = 0.0
 var _pool: Array = []

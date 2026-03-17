@@ -26,29 +26,37 @@ value = 100.0
 show_percentage = false
 theme_override_styles/fill = SubResource("StyleBoxFlat_health")
 
-[node name="TopBar" type="HBoxContainer" parent="."]
-anchor_right = 1.0
-offset_left = 8.0
-offset_top = 44.0
-offset_right = -8.0
-offset_bottom = 64.0
-
-[node name="TimerLabel" type="Label" parent="TopBar"]
-text = "  00:00"
-
-[node name="LevelLabel" type="Label" parent="TopBar"]
-text = "  Lv 1"
-
 [node name="XPBar" type="ProgressBar" parent="."]
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -18.0
+offset_top = -60.0
 offset_bottom = 0.0
 max_value = 100.0
 show_percentage = false
 theme_override_styles/fill = SubResource("StyleBoxFlat_xp")
+
+[node name="XPLabels" type="HBoxContainer" parent="."]
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -56.0
+offset_right = -12.0
+offset_bottom = -4.0
+mouse_filter = 2
+
+[node name="TimerLabel" type="Label" parent="XPLabels"]
+text = "00:00"
+theme_override_font_sizes/font_size = 28
+vertical_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="XPLabels"]
+text = "Lv 1"
+theme_override_font_sizes/font_size = 28
+vertical_alignment = 1
 
 [node name="BoostContainer" type="VBoxContainer" parent="."]
 anchor_left = 1.0
@@ -71,6 +79,17 @@ fill_mode = 3
 max_value = 1.0
 value = 0.0
 show_percentage = false
+
+[node name="SpeedLabel" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -340.0
+offset_right = -8.0
+offset_top = 8.0
+offset_bottom = 108.0
+horizontal_alignment = 2
+text = "0 km/h"
+theme_override_font_sizes/font_size = 80
 
 [node name="MobileControls" type="Node" parent="."]
 script = ExtResource("4_mob")

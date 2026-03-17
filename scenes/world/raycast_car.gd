@@ -3,8 +3,9 @@ class_name RaycastCar
 
 @export var wheels: Array[RaycastWheel]
 @export var acceleration := 600.0
-@export var max_speed := 20.0
-@export var accel_curve : Curve
+@export var max_speed := 60.0
+@export var accel_curve: Curve
+@export var steer_curve: Curve
 @export var tire_turn_speed := 4.0
 @export var tire_max_turn_degrees := 25
 
@@ -45,10 +46,13 @@ func _unhandled_input(event: InputEvent) -> void:
 func _basic_steering_rotation(wheel: RaycastWheel, delta: float) -> void:
 	if not wheel.is_steer: return
 
+	var speed_ratio := clampf(linear_velocity.length() / max_speed, 0.0, 1.0)
+	var steer_mult := steer_curve.sample_baked(speed_ratio) if steer_curve else 1.0
+	var max_angle := deg_to_rad(tire_max_turn_degrees * steer_mult)
+
 	var turn_input := Input.get_axis("turn_right", "turn_left") * tire_turn_speed * 0.5
 	if turn_input:
-		wheel.rotation.y = clampf(wheel.rotation.y + turn_input * delta,
-			deg_to_rad(-tire_max_turn_degrees), deg_to_rad(tire_max_turn_degrees))
+		wheel.rotation.y = clampf(wheel.rotation.y + turn_input * delta, -max_angle, max_angle)
 	else:
 		wheel.rotation.y = move_toward(wheel.rotation.y, 0, tire_turn_speed * delta)
 
@@ -94,6 +98,12 @@ func _physics_process(delta: float) -> void:
 		apply_torque(global_basis.y * turn_input * mass * 0.0)
 
 	_prev_hand_break = hand_break
+
+	# Hard-cap horizontal speed so max_speed is actually respected.
+	var hvel := Vector3(linear_velocity.x, 0.0, linear_velocity.z)
+	if hvel.length() > max_speed:
+		hvel = hvel.normalized() * max_speed
+		linear_velocity = Vector3(hvel.x, linear_velocity.y, hvel.z)
 
 	if grounded:
 		center_of_mass = Vector3.ZERO

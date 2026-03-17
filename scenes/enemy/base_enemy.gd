@@ -130,9 +130,9 @@ func reset_for_spawn(pos: Vector3, car_ref: Node3D) -> void:
 
 func _return_to_pool() -> void:
 	if _spawner:
-		_spawner.recycle(self)
+		_spawner.recycle.call_deferred(self)
 	else:
-		queue_free()
+		queue_free.call_deferred()
 
 
 func _on_body_entered(body: Node) -> void:
