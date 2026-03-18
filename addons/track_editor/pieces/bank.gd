@@ -2,8 +2,8 @@
 @tool
 extends Node3D
 
-var road_width := 6.0
-var bank_angle := 30.0
+@export_storage var road_width := 6.0
+@export_storage var bank_angle := 30.0
 
 func _ready() -> void:
 	_build()

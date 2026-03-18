@@ -7,8 +7,8 @@ const STEPS  := 6
 const SLAB_T := 0.3
 const RUN    := 8.0   # total horizontal length (fixed to cell depth)
 
-var road_width := 6.0
-var pitch_deg  := 30.0   # rise = RUN * tan(pitch)
+@export_storage var road_width := 6.0
+@export_storage var pitch_deg  := 30.0   # rise = RUN * tan(pitch)
 
 func _ready() -> void:
 	_build()

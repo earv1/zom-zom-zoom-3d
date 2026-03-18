@@ -1,9 +1,9 @@
 @tool
 extends Node3D
 
-var _has_left  := false
-var _has_right := false
-var road_width := 6.0
+@export_storage var _has_left  := false
+@export_storage var _has_right := false
+@export_storage var road_width := 6.0
 
 func _ready() -> void:
 	_build()

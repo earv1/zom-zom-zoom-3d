@@ -65,6 +65,8 @@ func _on_edit_mode_changed(active: bool) -> void:
 	_edit_mode = active
 	if active:
 		_rebuild_ghost()
+		if is_instance_valid(_ghost) and _ghost.has_method("get_param_defs"):
+			dock.show_params(_ghost.get_param_defs(), _ghost.get_config())
 	else:
 		_destroy_ghost()
 		_selected_placed_piece = null
@@ -98,7 +100,6 @@ func _forward_3d_gui_input(viewport_camera: Camera3D, event: InputEvent) -> int:
 			return EditorPlugin.AFTER_GUI_INPUT_STOP
 
 	if not _ensure_track_root():
-		print("[TrackEditor] _ensure_track_root() failed")
 		return EditorPlugin.AFTER_GUI_INPUT_PASS
 
 	if event is InputEventMouseMotion:
@@ -110,9 +111,7 @@ func _forward_3d_gui_input(viewport_camera: Camera3D, event: InputEvent) -> int:
 
 	if event is InputEventMouseButton and event.pressed:
 		var pos := _raycast_to_grid(viewport_camera, event.position)
-		print("[TrackEditor] LMB at screen=%s → grid=%s" % [event.position, pos])
 		if pos == NO_HIT:
-			print("[TrackEditor] NO_HIT — raycast failed")
 			return EditorPlugin.AFTER_GUI_INPUT_PASS
 
 		if event.button_index == MOUSE_BUTTON_LEFT:
@@ -120,7 +119,6 @@ func _forward_3d_gui_input(viewport_camera: Camera3D, event: InputEvent) -> int:
 				_erase_at(pos)
 			else:
 				var occupied := _get_piece_at(pos)
-				print("[TrackEditor] occupied=%s" % occupied)
 				if occupied != null:
 					_select_placed_piece(occupied)
 				else:
@@ -172,9 +170,10 @@ func _rebuild_ghost() -> void:
 	_ghost = packed.instantiate()
 	_ghost.position = _last_grid_pos   # snap to last known cursor position
 	_ghost.rotation_degrees.y = _rotation_y * 90.0
+	# Pre-set vars before entering tree so _ready()→_build() uses them (no double-build)
+	for key in _piece_params:
+		_ghost.set(key, _piece_params[key])
 	scene_root.add_child(_ghost)
-	if _piece_params.size() > 0 and _ghost.has_method("configure"):
-		_ghost.configure(_piece_params)
 	_set_ghost_alpha(_ghost, 0.4)
 
 func _move_ghost(pos: Vector3) -> void:
@@ -220,6 +219,9 @@ func _place_piece(grid_pos: Vector3) -> void:
 	piece.position = grid_pos
 	piece.rotation_degrees.y = _rotation_y * 90.0
 	piece.name = _selected_piece + "_" + str(snappedi(grid_pos.x, 1)) + "_" + str(snappedi(grid_pos.z, 1))
+	# Pre-set vars before entering tree so _ready()→_build() uses them (no double-build)
+	for key in _piece_params:
+		piece.set(key, _piece_params[key])
 
 	var undo := get_undo_redo()
 	undo.create_action("Place Track Piece")
@@ -228,8 +230,6 @@ func _place_piece(grid_pos: Vector3) -> void:
 	undo.add_undo_method(_track_root, "remove_child", piece)
 	undo.commit_action()
 
-	if _piece_params.size() > 0 and piece.has_method("configure"):
-		piece.configure(_piece_params)
 	_refresh_neighbors()
 
 func _erase_at(grid_pos: Vector3) -> void:

@@ -2,8 +2,8 @@
 @tool
 extends Node3D
 
-var road_width := 6.0
-var lip_angle  := 18.0
+@export_storage var road_width := 6.0
+@export_storage var lip_angle  := 18.0
 
 func _ready() -> void:
 	_build()

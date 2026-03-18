@@ -9,8 +9,8 @@ const PIVOT := Vector3(-4.0, 0.0, 4.0)   # NW corner
 const THICK := 0.3
 const SWEEP := -PI * 0.5   # 0 → -90° (east to south from pivot)
 
-var radius     := 6.0
-var road_width := 6.0
+@export_storage var radius     := 6.0
+@export_storage var road_width := 6.0
 
 func _ready() -> void:
 	_build()
