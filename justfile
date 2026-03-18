@@ -26,6 +26,11 @@ world:
 check:
     "{{godot}}" --path "{{project}}" --headless --quit-after 5 2>&1 || true
 
+# Run headless unit tests via GUT
+test:
+    "{{godot}}" --path "{{project}}" --headless --import 2>&1 || true
+    "{{godot}}" --path "{{project}}" --headless --script addons/gut/gut_cmdln.gd -- -gdir=res://tests -gexit 2>&1
+
 # Export web build
 export:
     @bash build_web.sh

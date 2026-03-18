@@ -4,19 +4,37 @@
 @tool
 extends Node3D
 
-const STEPS   := 10
-const PIVOT   := Vector3(-4.0, 0.0, 4.0)   # NW corner
-const RADIUS  := 4.0
-const ROAD_W  := 6.0
-const INNER_R := RADIUS - ROAD_W * 0.5     # 1.0
-const OUTER_R := RADIUS + ROAD_W * 0.5     # 7.0
-const THICK   := 0.3
-const SWEEP   := -PI * 0.5   # 0 → -90° (east to south from pivot)
+const STEPS := 10
+const PIVOT := Vector3(-4.0, 0.0, 4.0)   # NW corner
+const THICK := 0.3
+const SWEEP := -PI * 0.5   # 0 → -90° (east to south from pivot)
+
+var radius     := 6.0
+var road_width := 6.0
 
 func _ready() -> void:
 	_build()
 
+func configure(params: Dictionary) -> void:
+	radius     = params.get("radius",     radius)
+	road_width = params.get("road_width", road_width)
+	for child in get_children():
+		child.queue_free()
+	_build()
+
+func get_config() -> Dictionary:
+	return {road_width = road_width, radius = radius}
+
+func get_param_defs() -> Array:
+	return [
+		{name = "road_width", label = "Width",  min = 6.0, max = 12.0, step = 6.0, default = 6.0},
+		{name = "radius",     label = "Radius", min = 6.0, max = 12.0, step = 6.0, default = 6.0},
+	]
+
 func _build() -> void:
+	var inner_r := radius - road_width * 0.5
+	var outer_r := radius + road_width * 0.5
+
 	var road_mat := StandardMaterial3D.new()
 	road_mat.albedo_color = Color(0.22, 0.22, 0.22)
 	var kerb_mat := StandardMaterial3D.new()
@@ -33,10 +51,10 @@ func _build() -> void:
 		var d1 := Vector3(cos(a1), 0.0, sin(a1))
 
 		# four corners of this trapezoid slab (top face at y=0)
-		var pi0 := PIVOT + d0 * INNER_R   # inner start
-		var po0 := PIVOT + d0 * OUTER_R   # outer start
-		var pi1 := PIVOT + d1 * INNER_R   # inner end
-		var po1 := PIVOT + d1 * OUTER_R   # outer end
+		var pi0 := PIVOT + d0 * inner_r   # inner start
+		var po0 := PIVOT + d0 * outer_r   # outer start
+		var pi1 := PIVOT + d1 * inner_r   # inner end
+		var po1 := PIVOT + d1 * outer_r   # outer end
 
 		# road slab
 		var mi := MeshInstance3D.new()
@@ -45,8 +63,8 @@ func _build() -> void:
 		add_child(mi)
 
 		# outer kerb strip
-		var kerb_inner_r := OUTER_R + 0.05
-		var kerb_outer_r := OUTER_R + 0.45
+		var kerb_inner_r := outer_r + 0.05
+		var kerb_outer_r := outer_r + 0.45
 		var ki0 := PIVOT + d0 * kerb_inner_r
 		var ko0 := PIVOT + d0 * kerb_outer_r
 		var ki1 := PIVOT + d1 * kerb_inner_r

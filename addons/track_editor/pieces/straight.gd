@@ -3,6 +3,7 @@ extends Node3D
 
 var _has_left  := false
 var _has_right := false
+var road_width := 6.0
 
 func _ready() -> void:
 	_build()
@@ -16,11 +17,26 @@ func set_neighbors(has_left: bool, has_right: bool) -> void:
 		child.queue_free()
 	_build()
 
+func configure(params: Dictionary) -> void:
+	road_width = params.get("road_width", road_width)
+	for child in get_children():
+		child.queue_free()
+	_build()
+
+func get_config() -> Dictionary:
+	return {road_width = road_width}
+
+func get_param_defs() -> Array:
+	return [
+		{name = "road_width", label = "Width",  min = 6.0, max = 12.0, step = 6.0, default = 6.0},
+	]
+
 func _build() -> void:
-	# Road extends to full cell edge on any side that has a neighbour,
+	# Road extends to full cell half (4 m) on any side that has a neighbour,
 	# giving a seamless 2x-wide surface when two straights are placed side-by-side.
-	var left_w  := 4.0 if _has_left  else 3.0  # half-widths from centre
-	var right_w := 4.0 if _has_right else 3.0
+	var hw      := road_width * 0.5
+	var left_w  := 4.0 if _has_left  else hw
+	var right_w := 4.0 if _has_right else hw
 	var road_w  := left_w + right_w
 	var road_ox := (right_w - left_w) * 0.5    # x offset to keep road centred in its actual span
 

@@ -4,14 +4,31 @@
 @tool
 extends Node3D
 
-const RADIUS  := 20.0   # big enough to drive at speed
 const Z_SHIFT := 8.0    # one cell offset between entry and exit
 const STEPS   := 28     # arc segments (more = smoother)
-const ROAD_W  := 6.0
 const SLAB_T  := 0.3
+
+var radius     := 18.0
+var road_width := 6.0
 
 func _ready() -> void:
 	_build()
+
+func configure(params: Dictionary) -> void:
+	radius     = params.get("radius",     radius)
+	road_width = params.get("road_width", road_width)
+	for child in get_children():
+		child.queue_free()
+	_build()
+
+func get_config() -> Dictionary:
+	return {road_width = road_width, radius = radius}
+
+func get_param_defs() -> Array:
+	return [
+		{name = "road_width", label = "Width",  min = 6.0, max = 12.0, step = 6.0, default = 6.0},
+		{name = "radius",     label = "Radius", min = 6.0, max = 42.0, step = 6.0, default = 18.0},
+	]
 
 func _build() -> void:
 	var mat := StandardMaterial3D.new()
@@ -21,7 +38,7 @@ func _build() -> void:
 	add_child(sb)
 
 	# ── flat approach  x = +4 → 0,  z = 0 ───────────────────────────────────
-	_add_slab(sb, Vector3(4.0, SLAB_T, ROAD_W),
+	_add_slab(sb, Vector3(4.0, SLAB_T, road_width),
 		Vector3(2.0, -SLAB_T * 0.5, 0.0), _flat_basis(), mat)
 
 	# ── helix loop ────────────────────────────────────────────────────────────
@@ -44,11 +61,11 @@ func _build() -> void:
 		# slab centre sits just outward of the road surface by half thickness
 		var centre := pmid - inward * (SLAB_T * 0.5)
 
-		_add_slab(sb, Vector3(seg_len, SLAB_T, ROAD_W),
+		_add_slab(sb, Vector3(seg_len, SLAB_T, road_width),
 			centre, _helix_basis(amid), mat)
 
 	# ── flat exit  x = 0 → -4,  z = +8 ──────────────────────────────────────
-	_add_slab(sb, Vector3(4.0, SLAB_T, ROAD_W),
+	_add_slab(sb, Vector3(4.0, SLAB_T, road_width),
 		Vector3(-2.0, -SLAB_T * 0.5, Z_SHIFT), _flat_basis(), mat)
 
 # ── arc helpers ───────────────────────────────────────────────────────────────
@@ -56,17 +73,17 @@ func _build() -> void:
 ## Helix arc position.  At a=0: (0,0,0) heading west. At a=TAU: (0,0,Z_SHIFT).
 func _arc(a: float) -> Vector3:
 	return Vector3(
-		-RADIUS * sin(a),
-		 RADIUS * (1.0 - cos(a)),
+		-radius * sin(a),
+		 radius * (1.0 - cos(a)),
 		 Z_SHIFT * a / TAU
 	)
 
 ## Basis for a helix slab at arc angle `a`.
 ##   local X (seg_len) → helix tangent
 ##   local Y (SLAB_T)  → inward normal
-##   local Z (ROAD_W)  → road-width direction (perpendicular to both)
+##   local Z (road_width) → road-width direction (perpendicular to both)
 func _helix_basis(a: float) -> Basis:
-	var tangent := Vector3(-RADIUS * cos(a), RADIUS * sin(a), Z_SHIFT / TAU).normalized()
+	var tangent := Vector3(-radius * cos(a), radius * sin(a), Z_SHIFT / TAU).normalized()
 	var inward  := Vector3(sin(a), cos(a), 0.0)
 	var width   := tangent.cross(inward).normalized()
 	return Basis(tangent, inward, width)

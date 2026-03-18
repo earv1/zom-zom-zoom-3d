@@ -4,11 +4,14 @@ extends Control
 signal piece_selected(piece_name: String)
 signal erase_mode_toggled(active: bool)
 signal edit_mode_changed(active: bool)
+signal piece_params_changed(params: Dictionary)
 
 var _erase_btn: Button
 var _edit_btn: Button
 var _piece_buttons: Dictionary = {}
 var edit_mode := false
+var _props_container: VBoxContainer
+var _current_params: Dictionary = {}
 
 func _ready() -> void:
 	_build_ui()
@@ -74,6 +77,15 @@ func _build_ui() -> void:
 	_erase_btn.toggled.connect(_on_erase_toggled)
 	root.add_child(_erase_btn)
 
+	root.add_child(HSeparator.new())
+
+	var props_label := Label.new()
+	props_label.text = "Properties"
+	root.add_child(props_label)
+
+	_props_container = VBoxContainer.new()
+	root.add_child(_props_container)
+
 	# select straight by default
 	_select_piece("straight")
 
@@ -97,3 +109,50 @@ func _on_edit_toggled(active: bool) -> void:
 	edit_mode = active
 	_edit_btn.text = "● Edit Mode ON" if active else "● Edit Mode OFF"
 	emit_signal("edit_mode_changed", active)
+
+# ── property sliders ──────────────────────────────────────────────────────────
+
+func show_params(param_defs: Array, current: Dictionary) -> void:
+	_current_params = current.duplicate()
+	clear_params()
+	for def in param_defs:
+		var hbox := HBoxContainer.new()
+
+		var lbl := Label.new()
+		lbl.text = def.label
+		lbl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		hbox.add_child(lbl)
+
+		var slider := HSlider.new()
+		slider.min_value = def.min
+		slider.max_value = def.max
+		slider.step = def.step
+		slider.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		slider.custom_minimum_size.x = 80
+		hbox.add_child(slider)
+
+		var val_lbl := Label.new()
+		val_lbl.text = "%.1f" % current.get(def.name, def.default)
+		val_lbl.custom_minimum_size.x = 36
+		hbox.add_child(val_lbl)
+
+		# Set value before connecting to avoid triggering value_changed on init
+		slider.value = current.get(def.name, def.default)
+
+		var param_name: String = def.name
+		slider.value_changed.connect(func(v: float) -> void:
+			val_lbl.text = "%.1f" % v
+			_current_params[param_name] = v
+			_emit_params()
+		)
+
+		_props_container.add_child(hbox)
+
+func clear_params() -> void:
+	if _props_container == null:
+		return
+	for child in _props_container.get_children():
+		child.queue_free()
+
+func _emit_params() -> void:
+	emit_signal("piece_params_changed", _current_params)

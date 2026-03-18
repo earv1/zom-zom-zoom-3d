@@ -14,6 +14,9 @@ var _ghost: Node3D = null
 var _erase_mode := false
 var _last_grid_pos := Vector3.ZERO  # remembered so ghost snaps on piece-change
 var _edit_mode := false
+var _selected_placed_piece: Node3D = null
+var _piece_params: Dictionary = {}
+var _scene_cache: Dictionary = {}
 
 var PIECE_SCENES := {
 	"straight": "res://addons/track_editor/pieces/straight.tscn",
@@ -29,6 +32,7 @@ func _enter_tree() -> void:
 	dock.piece_selected.connect(_on_piece_selected)
 	dock.erase_mode_toggled.connect(_on_erase_toggled)
 	dock.edit_mode_changed.connect(_on_edit_mode_changed)
+	dock.piece_params_changed.connect(_on_piece_params_changed)
 	add_control_to_dock(DOCK_SLOT_RIGHT_UL, dock)
 
 func _exit_tree() -> void:
@@ -49,18 +53,36 @@ func _make_visible(_visible: bool) -> void:
 func _on_piece_selected(piece_name: String) -> void:
 	_selected_piece = piece_name
 	_erase_mode = false
+	_piece_params = {}
+	_selected_placed_piece = null
+	if not _edit_mode:
+		return
 	_rebuild_ghost()
+	if is_instance_valid(_ghost) and _ghost.has_method("get_param_defs"):
+		dock.show_params(_ghost.get_param_defs(), _ghost.get_config())
 
 func _on_edit_mode_changed(active: bool) -> void:
 	_edit_mode = active
-	if not active:
+	if active:
+		_rebuild_ghost()
+	else:
 		_destroy_ghost()
+		_selected_placed_piece = null
+		dock.clear_params()
 
 func _on_erase_toggled(active: bool) -> void:
 	_erase_mode = active
 	if active:
 		_destroy_ghost()
 	else:
+		_rebuild_ghost()
+
+func _on_piece_params_changed(params: Dictionary) -> void:
+	_piece_params = params
+	if is_instance_valid(_selected_placed_piece):
+		_selected_placed_piece.configure(params)
+		_refresh_neighbors()
+	if _edit_mode:
 		_rebuild_ghost()
 
 # ── viewport input ────────────────────────────────────────────────────────────
@@ -76,6 +98,7 @@ func _forward_3d_gui_input(viewport_camera: Camera3D, event: InputEvent) -> int:
 			return EditorPlugin.AFTER_GUI_INPUT_STOP
 
 	if not _ensure_track_root():
+		print("[TrackEditor] _ensure_track_root() failed")
 		return EditorPlugin.AFTER_GUI_INPUT_PASS
 
 	if event is InputEventMouseMotion:
@@ -87,14 +110,22 @@ func _forward_3d_gui_input(viewport_camera: Camera3D, event: InputEvent) -> int:
 
 	if event is InputEventMouseButton and event.pressed:
 		var pos := _raycast_to_grid(viewport_camera, event.position)
+		print("[TrackEditor] LMB at screen=%s → grid=%s" % [event.position, pos])
 		if pos == NO_HIT:
+			print("[TrackEditor] NO_HIT — raycast failed")
 			return EditorPlugin.AFTER_GUI_INPUT_PASS
 
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if _erase_mode:
 				_erase_at(pos)
 			else:
-				_place_piece(pos)
+				var occupied := _get_piece_at(pos)
+				print("[TrackEditor] occupied=%s" % occupied)
+				if occupied != null:
+					_select_placed_piece(occupied)
+				else:
+					_deselect_placed_piece()
+					_place_piece(pos)
 			return EditorPlugin.AFTER_GUI_INPUT_STOP
 
 		if event.button_index == MOUSE_BUTTON_RIGHT:
@@ -131,13 +162,19 @@ func _rebuild_ghost() -> void:
 	var scene_root := _get_scene_root()
 	if scene_root == null:
 		return
-	var packed: PackedScene = load(PIECE_SCENES.get(_selected_piece, ""))
+	var scene_path: String = PIECE_SCENES.get(_selected_piece, "")
+	var packed: PackedScene = _scene_cache.get(scene_path)
 	if packed == null:
-		return
+		packed = load(scene_path)
+		if packed == null:
+			return
+		_scene_cache[scene_path] = packed
 	_ghost = packed.instantiate()
 	_ghost.position = _last_grid_pos   # snap to last known cursor position
 	_ghost.rotation_degrees.y = _rotation_y * 90.0
 	scene_root.add_child(_ghost)
+	if _piece_params.size() > 0 and _ghost.has_method("configure"):
+		_ghost.configure(_piece_params)
 	_set_ghost_alpha(_ghost, 0.4)
 
 func _move_ghost(pos: Vector3) -> void:
@@ -165,13 +202,16 @@ func _set_ghost_alpha(node: Node, alpha: float) -> void:
 func _place_piece(grid_pos: Vector3) -> void:
 	if not _ensure_track_root():
 		return
-	for child in _track_root.get_children():
-		if child.position.is_equal_approx(grid_pos):
-			return  # cell occupied
+	if _get_piece_at(grid_pos) != null:
+		return  # cell occupied
 
-	var packed: PackedScene = load(PIECE_SCENES.get(_selected_piece, ""))
+	var scene_path: String = PIECE_SCENES.get(_selected_piece, "")
+	var packed: PackedScene = _scene_cache.get(scene_path)
 	if packed == null:
-		return
+		packed = load(scene_path)
+		if packed == null:
+			return
+		_scene_cache[scene_path] = packed
 	var scene_root := _get_scene_root()
 	if scene_root == null:
 		return
@@ -188,6 +228,8 @@ func _place_piece(grid_pos: Vector3) -> void:
 	undo.add_undo_method(_track_root, "remove_child", piece)
 	undo.commit_action()
 
+	if _piece_params.size() > 0 and piece.has_method("configure"):
+		piece.configure(_piece_params)
 	_refresh_neighbors()
 
 func _erase_at(grid_pos: Vector3) -> void:
@@ -203,8 +245,29 @@ func _erase_at(grid_pos: Vector3) -> void:
 			if scene_root:
 				undo.add_undo_method(child, "set_owner", scene_root)
 			undo.commit_action()
+			if _selected_placed_piece == child:
+				_deselect_placed_piece()
 			_refresh_neighbors()
 			return
+
+# ── piece selection ───────────────────────────────────────────────────────────
+
+func _select_placed_piece(piece: Node3D) -> void:
+	_selected_placed_piece = piece
+	if piece.has_method("get_param_defs"):
+		dock.show_params(piece.get_param_defs(), piece.get_config())
+
+func _deselect_placed_piece() -> void:
+	_selected_placed_piece = null
+	dock.clear_params()
+
+func _get_piece_at(grid_pos: Vector3) -> Node3D:
+	if not is_instance_valid(_track_root):
+		return null
+	for child in _track_root.get_children():
+		if child.position.is_equal_approx(grid_pos):
+			return child as Node3D
+	return null
 
 # ── neighbor widening ─────────────────────────────────────────────────────────
 

@@ -28,7 +28,7 @@ window/size/always_on_top=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/debugdraw/plugin.cfg", "res://addons/track_editor/plugin.cfg")
+enabled=PackedStringArray("res://addons/debugdraw/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/track_editor/plugin.cfg")
 
 [input]
 
