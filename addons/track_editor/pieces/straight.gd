@@ -1,6 +1,8 @@
 @tool
 extends Node3D
 
+const TrackTheme = preload("res://addons/track_editor/track_theme.gd")
+
 @export_storage var _has_left  := false
 @export_storage var _has_right := false
 @export_storage var road_width := 6.0
@@ -41,13 +43,13 @@ func _build() -> void:
 	var road_ox := (right_w - left_w) * 0.5    # x offset to keep road centred in its actual span
 
 	# Road slab
-	_add_mesh(Vector3(road_w, 0.3, 8.0), Vector3(road_ox, -0.15, 0), Color(0.22, 0.22, 0.22))
+	_add_mesh(Vector3(road_w, 0.3, 8.0), Vector3(road_ox, -0.15, 0), TrackTheme.ROAD_COLOR)
 
 	# Kerbs — only on open sides
 	if not _has_left:
-		_add_mesh(Vector3(0.4, 0.4, 8.0), Vector3(road_ox - road_w * 0.5 - 0.2, -0.1, 0), Color(0.9, 0.9, 0.2))
+		_add_mesh(Vector3(0.4, 0.4, 8.0), Vector3(road_ox - road_w * 0.5 - 0.2, -0.1, 0), TrackTheme.KERB_COLOR)
 	if not _has_right:
-		_add_mesh(Vector3(0.4, 0.4, 8.0), Vector3(road_ox + road_w * 0.5 + 0.2, -0.1, 0), Color(0.9, 0.9, 0.2))
+		_add_mesh(Vector3(0.4, 0.4, 8.0), Vector3(road_ox + road_w * 0.5 + 0.2, -0.1, 0), TrackTheme.KERB_COLOR)
 
 	# Collision
 	var sb := StaticBody3D.new()

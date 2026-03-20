@@ -4,6 +4,8 @@
 @tool
 extends Node3D
 
+const TrackTheme = preload("res://addons/track_editor/track_theme.gd")
+
 const STEPS := 10
 const PIVOT := Vector3(-4.0, 0.0, 4.0)   # NW corner
 const THICK := 0.3
@@ -35,10 +37,8 @@ func _build() -> void:
 	var inner_r := radius - road_width * 0.5
 	var outer_r := radius + road_width * 0.5
 
-	var road_mat := StandardMaterial3D.new()
-	road_mat.albedo_color = Color(0.22, 0.22, 0.22)
-	var kerb_mat := StandardMaterial3D.new()
-	kerb_mat.albedo_color = Color(0.9, 0.9, 0.2)
+	var road_mat := TrackTheme.road_material()
+	var kerb_mat := TrackTheme.kerb_material()
 
 	var sb := StaticBody3D.new()
 	add_child(sb)
