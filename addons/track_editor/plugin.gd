@@ -19,6 +19,7 @@ var _piece_params: Dictionary = {}
 var _scene_cache: Dictionary = {}
 var _connect_mode := false
 var _connect_first: Node3D = null
+var _current_layer := 0
 
 var PIECE_SCENES := {
 	"straight": "res://addons/track_editor/pieces/straight.tscn",
@@ -42,7 +43,9 @@ func _enter_tree() -> void:
 	dock.test_requested.connect(_on_test_requested)
 	dock.connect_from_selection_requested.connect(_on_connect_from_selection_requested)
 	dock.cancel_requested.connect(_on_cancel_requested)
+	dock.layer_changed.connect(_on_layer_changed)
 	add_control_to_dock(DOCK_SLOT_RIGHT_UL, dock)
+	dock.set_layer(_current_layer, _current_layer * CELL.y)
 	_update_context_ui(NO_HIT)
 
 func _exit_tree() -> void:
@@ -141,6 +144,7 @@ func _on_test_requested() -> void:
 func _on_connect_from_selection_requested() -> void:
 	if not is_instance_valid(_selected_placed_piece):
 		return
+	_set_current_layer(roundi(_selected_placed_piece.position.y / CELL.y), false)
 	_connect_mode = true
 	_connect_first = _selected_placed_piece
 	dock.set_connect_active(true)
@@ -150,6 +154,9 @@ func _on_connect_from_selection_requested() -> void:
 
 func _on_cancel_requested() -> void:
 	_cancel_active_mode()
+
+func _on_layer_changed(delta: int) -> void:
+	_set_current_layer(_current_layer + delta)
 
 # ── viewport input ────────────────────────────────────────────────────────────
 
@@ -185,13 +192,14 @@ func _forward_3d_gui_input(viewport_camera: Camera3D, event: InputEvent) -> int:
 		return EditorPlugin.AFTER_GUI_INPUT_PASS
 
 	if event is InputEventMouseButton and event.pressed:
+		var picked_piece := _pick_piece_from_cursor(viewport_camera, event.position)
 		var pos := _raycast_to_grid(viewport_camera, event.position)
-		if pos == NO_HIT:
+		if pos == NO_HIT and picked_piece == null:
 			return EditorPlugin.AFTER_GUI_INPUT_PASS
 
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if _connect_mode:
-				var hit := _get_piece_at(pos)
+				var hit := picked_piece
 				if hit != null:
 					if _connect_first == null:
 						_connect_first = hit
@@ -204,21 +212,27 @@ func _forward_3d_gui_input(viewport_camera: Camera3D, event: InputEvent) -> int:
 						dock.set_connect_active(false)
 						dock.set_status("Connector created.")
 						dock.set_selection_info("Nothing selected", false)
-						_update_context_ui(pos)
+						_update_context_ui(pos if pos != NO_HIT else _last_grid_pos)
 				return EditorPlugin.AFTER_GUI_INPUT_STOP
 			elif _erase_mode:
-				_erase_at(pos)
+				if picked_piece != null:
+					_erase_piece(picked_piece)
+				elif pos != NO_HIT:
+					_erase_at(pos)
 			else:
-				var occupied := _get_piece_at(pos)
+				var occupied := picked_piece if picked_piece != null else _get_piece_at(pos)
 				if occupied != null:
 					_select_placed_piece(occupied)
-				else:
+				elif pos != NO_HIT:
 					_deselect_placed_piece()
 					_place_piece(pos)
 			return EditorPlugin.AFTER_GUI_INPUT_STOP
 
 		if event.button_index == MOUSE_BUTTON_RIGHT:
-			_erase_at(pos)
+			if picked_piece != null:
+				_erase_piece(picked_piece)
+			elif pos != NO_HIT:
+				_erase_at(pos)
 			return EditorPlugin.AFTER_GUI_INPUT_STOP
 
 	return EditorPlugin.AFTER_GUI_INPUT_PASS
@@ -230,7 +244,8 @@ func _raycast_to_grid(cam: Camera3D, screen_pos: Vector2) -> Vector3:
 	var dir    := cam.project_ray_normal(screen_pos)
 	if abs(dir.y) < 0.001:
 		return NO_HIT
-	var t := -origin.y / dir.y
+	var plane_y := _current_layer * CELL.y
+	var t := (plane_y - origin.y) / dir.y
 	if t < 0.0:
 		return NO_HIT
 	return _snap(origin + dir * t)
@@ -238,7 +253,7 @@ func _raycast_to_grid(cam: Camera3D, screen_pos: Vector2) -> Vector3:
 func _snap(world_pos: Vector3) -> Vector3:
 	return Vector3(
 		floorf(world_pos.x / CELL.x) * CELL.x + CELL.x * 0.5,
-		0.0,
+		_current_layer * CELL.y,
 		floorf(world_pos.z / CELL.z) * CELL.z + CELL.z * 0.5
 	)
 
@@ -309,7 +324,7 @@ func _place_piece(grid_pos: Vector3) -> void:
 	var piece: Node3D = packed.instantiate()
 	piece.position = grid_pos
 	piece.rotation_degrees.y = _rotation_y * 90.0
-	piece.name = _selected_piece + "_" + str(snappedi(grid_pos.x, 1)) + "_" + str(snappedi(grid_pos.z, 1))
+	piece.name = _selected_piece + "_" + str(snappedi(grid_pos.x, 1)) + "_" + str(snappedi(grid_pos.y, 1)) + "_" + str(snappedi(grid_pos.z, 1))
 	# Pre-set vars before entering tree so _ready()→_build() uses them (no double-build)
 	for key in _piece_params:
 		piece.set(key, _piece_params[key])
@@ -365,6 +380,7 @@ func _select_placed_piece(piece: Node3D) -> void:
 		dock.show_params(piece.get_param_defs(), piece.get_config())
 	dock.set_selection_info(_describe_piece(piece), true)
 	dock.set_status("Selected %s" % _describe_piece(piece))
+	_set_current_layer(roundi(piece.position.y / CELL.y), false)
 	_update_context_ui(piece.position)
 
 func _deselect_placed_piece() -> void:
@@ -478,7 +494,7 @@ func _create_connector(piece_a: Node3D, piece_b: Node3D) -> void:
 
 	var conn: Node3D = packed.instantiate()
 	conn.position = face_a
-	conn.name = "connector_" + str(snappedi(face_a.x, 1)) + "_" + str(snappedi(face_a.z, 1))
+	conn.name = "connector_" + str(snappedi(face_a.x, 1)) + "_" + str(snappedi(face_a.y, 1)) + "_" + str(snappedi(face_a.z, 1))
 	conn.set("start_pos",  face_a)
 	conn.set("start_dir",  start_dir)
 	conn.set("end_pos",    face_b)
@@ -543,6 +559,51 @@ func _describe_piece(piece: Node3D) -> String:
 func _grid_to_text(pos: Vector3) -> String:
 	return "(%.0f, %.0f, %.0f)" % [pos.x, pos.y, pos.z]
 
+func _set_current_layer(layer: int, refresh_ghost: bool = true) -> void:
+	_current_layer = max(layer, 0)
+	if dock:
+		dock.set_layer(_current_layer, _current_layer * CELL.y)
+	if refresh_ghost and _edit_mode and not _connect_mode and not _erase_mode:
+		_last_grid_pos.y = _current_layer * CELL.y
+		_rebuild_ghost()
+	_update_context_ui(_last_grid_pos if _edit_mode else NO_HIT)
+
+func _pick_piece_from_cursor(cam: Camera3D, screen_pos: Vector2) -> Node3D:
+	if not is_instance_valid(_track_root):
+		return null
+	var origin := cam.project_ray_origin(screen_pos)
+	var end := origin + cam.project_ray_normal(screen_pos) * 2048.0
+	var excludes: Array[RID] = []
+	_append_collision_rids(_ghost, excludes)
+
+	for _attempt in range(12):
+		var query := PhysicsRayQueryParameters3D.create(origin, end)
+		query.collide_with_bodies = true
+		query.collide_with_areas = false
+		query.exclude = excludes
+		var result := cam.get_world_3d().direct_space_state.intersect_ray(query)
+		if result.is_empty():
+			return null
+		var collider = result.get("collider")
+		if collider != null and collider is CollisionObject3D:
+			excludes.append((collider as CollisionObject3D).get_rid())
+		if collider == null or not (collider is Node):
+			continue
+		var node := collider as Node
+		while node != null and node.get_parent() != _track_root:
+			node = node.get_parent()
+		if node != null and node is Node3D and node.get_parent() == _track_root:
+			return node as Node3D
+	return null
+
+func _append_collision_rids(node: Node, excludes: Array[RID]) -> void:
+	if node == null:
+		return
+	if node is CollisionObject3D:
+		excludes.append((node as CollisionObject3D).get_rid())
+	for child in node.get_children():
+		_append_collision_rids(child, excludes)
+
 func _cancel_active_mode() -> void:
 	if _connect_mode:
 		_connect_mode = false
@@ -571,7 +632,7 @@ func _update_context_ui(hover_pos: Vector3) -> void:
 	if not _edit_mode:
 		title = "Enable edit mode, choose a piece, then place from the palette."
 	elif hover_pos == NO_HIT:
-		title = "Move over the ground plane to place pieces."
+		title = "Move over the active build layer to place pieces."
 	else:
 		var hovered_piece := _get_piece_at(hover_pos)
 		if _connect_mode:
@@ -594,6 +655,7 @@ func _update_context_ui(hover_pos: Vector3) -> void:
 		can_cancel = true
 	if _connect_mode:
 		can_connect = false
+	title += " Active layer %d." % _current_layer
 
 	dock.set_context_state({
 		"title": title,

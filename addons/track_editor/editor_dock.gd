@@ -13,6 +13,7 @@ signal test_requested()
 signal category_changed(category_name: String)
 signal connect_from_selection_requested()
 signal cancel_requested()
+signal layer_changed(delta: int)
 
 const PIECES := [
 	{"name": "straight", "label": "Straight", "tag": "Core", "desc": "Fast starter"},
@@ -30,6 +31,7 @@ var _connect_label: Label
 var _mode_label: Label
 var _selection_label: Label
 var _rotation_label: Label
+var _layer_label: Label
 var _status_label: Label
 var _hover_label: Label
 var _context_label: Label
@@ -146,6 +148,29 @@ func _build_ui() -> void:
 	_rotation_label = Label.new()
 	_rotation_label.text = "Facing: North"
 	root.add_child(_rotation_label)
+
+	var layer_row := HBoxContainer.new()
+	root.add_child(layer_row)
+
+	var layer_down := Button.new()
+	layer_down.text = "Layer -"
+	layer_down.pressed.connect(func() -> void:
+		emit_signal("layer_changed", -1)
+	)
+	layer_row.add_child(layer_down)
+
+	_layer_label = Label.new()
+	_layer_label.text = "Layer: 0 (0m)"
+	_layer_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_layer_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	layer_row.add_child(_layer_label)
+
+	var layer_up := Button.new()
+	layer_up.text = "Layer +"
+	layer_up.pressed.connect(func() -> void:
+		emit_signal("layer_changed", 1)
+	)
+	layer_row.add_child(layer_up)
 
 	_context_label = Label.new()
 	_context_label.text = "Enable edit mode to start building."
@@ -352,6 +377,10 @@ func set_rotation_turns(turns: int) -> void:
 		return
 	var names := ["North", "East", "South", "West"]
 	_rotation_label.text = "Facing: %s" % names[_rotation_turns]
+
+func set_layer(layer_index: int, world_y: float) -> void:
+	if _layer_label:
+		_layer_label.text = "Layer: %d (%.0fm)" % [layer_index, world_y]
 
 func set_selection_info(text: String, has_selection: bool) -> void:
 	if _selection_label:
