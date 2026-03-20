@@ -5,9 +5,12 @@ signal piece_selected(piece_name: String)
 signal erase_mode_toggled(active: bool)
 signal edit_mode_changed(active: bool)
 signal piece_params_changed(params: Dictionary)
+signal connect_mode_toggled(active: bool)
 
 var _erase_btn: Button
 var _edit_btn: Button
+var _connect_btn: Button
+var _connect_label: Label
 var _piece_buttons: Dictionary = {}
 var edit_mode := false
 var _props_container: VBoxContainer
@@ -77,6 +80,17 @@ func _build_ui() -> void:
 	_erase_btn.toggled.connect(_on_erase_toggled)
 	root.add_child(_erase_btn)
 
+	_connect_btn = Button.new()
+	_connect_btn.text = "Connect Pieces"
+	_connect_btn.toggle_mode = true
+	_connect_btn.toggled.connect(_on_connect_toggled)
+	root.add_child(_connect_btn)
+
+	_connect_label = Label.new()
+	_connect_label.text = ""
+	_connect_label.add_theme_color_override("font_color", Color(0.5, 0.9, 0.5))
+	root.add_child(_connect_label)
+
 	root.add_child(HSeparator.new())
 
 	var props_label := Label.new()
@@ -103,7 +117,28 @@ func _on_erase_toggled(active: bool) -> void:
 	if active:
 		for key in _piece_buttons:
 			_piece_buttons[key].button_pressed = false
+		if _connect_btn:
+			_connect_btn.button_pressed = false
 	emit_signal("erase_mode_toggled", active)
+
+func _on_connect_toggled(active: bool) -> void:
+	if active:
+		if _erase_btn:
+			_erase_btn.button_pressed = false
+		_connect_label.text = "Click first piece"
+	else:
+		_connect_label.text = ""
+	emit_signal("connect_mode_toggled", active)
+
+func set_connect_status(text: String) -> void:
+	if _connect_label:
+		_connect_label.text = text
+
+func set_connect_active(active: bool) -> void:
+	if _connect_btn:
+		_connect_btn.button_pressed = active
+	if not active and _connect_label:
+		_connect_label.text = ""
 
 func _on_edit_toggled(active: bool) -> void:
 	edit_mode = active

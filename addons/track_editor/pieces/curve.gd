@@ -1,6 +1,6 @@
 ## 90-degree right turn.
 ## Entry: south face (z=+4), Exit: west face (x=-4).
-## Built with trapezoidal prism segments (no gaps).
+## Built with triangular prism segments (apex at inner arc, base at outer arc).
 @tool
 extends Node3D
 
@@ -47,77 +47,73 @@ func _build() -> void:
 		var a0 := SWEEP * float(i)       / STEPS
 		var a1 := SWEEP * float(i + 1)   / STEPS
 
-		var d0 := Vector3(cos(a0), 0.0, sin(a0))
-		var d1 := Vector3(cos(a1), 0.0, sin(a1))
+		var d0  := Vector3(cos(a0), 0.0, sin(a0))
+		var d1  := Vector3(cos(a1), 0.0, sin(a1))
+		var dm  := (d0 + d1).normalized()  # midpoint direction
 
-		# four corners of this trapezoid slab (top face at y=0)
-		var pi0 := PIVOT + d0 * inner_r   # inner start
-		var po0 := PIVOT + d0 * outer_r   # outer start
-		var pi1 := PIVOT + d1 * inner_r   # inner end
-		var po1 := PIVOT + d1 * outer_r   # outer end
+		# triangle: apex at inner-arc midpoint, base at outer arc
+		var pi_mid := PIVOT + dm * inner_r  # inner apex
+		var po0    := PIVOT + d0 * outer_r  # outer start
+		var po1    := PIVOT + d1 * outer_r  # outer end
 
 		# road slab
 		var mi := MeshInstance3D.new()
-		mi.mesh = _trapezoid_mesh(pi0, po0, po1, pi1, THICK)
+		mi.mesh = _triangle_mesh(pi_mid, po0, po1, THICK)
 		mi.material_override = road_mat.duplicate()
 		add_child(mi)
 
-		# outer kerb strip
+		# outer kerb strip (triangle, slightly wider)
 		var kerb_inner_r := outer_r + 0.05
 		var kerb_outer_r := outer_r + 0.45
-		var ki0 := PIVOT + d0 * kerb_inner_r
-		var ko0 := PIVOT + d0 * kerb_outer_r
-		var ki1 := PIVOT + d1 * kerb_inner_r
-		var ko1 := PIVOT + d1 * kerb_outer_r
-		var mk  := MeshInstance3D.new()
-		mk.mesh = _trapezoid_mesh(ki0, ko0, ko1, ki1, THICK + 0.1)
+		var ki_mid := PIVOT + dm * kerb_inner_r
+		var ko0    := PIVOT + d0 * kerb_outer_r
+		var ko1    := PIVOT + d1 * kerb_outer_r
+		var mk := MeshInstance3D.new()
+		mk.mesh = _triangle_mesh(ki_mid, ko0, ko1, THICK + 0.1)
 		mk.material_override = kerb_mat.duplicate()
 		add_child(mk)
 
-		# collision (convex hull of 8 corners)
+		# collision (convex hull of 6 corners — triangular prism)
 		var cs  := CollisionShape3D.new()
 		var cps := ConvexPolygonShape3D.new()
 		cps.points = PackedVector3Array([
-			pi0, po0, pi1, po1,
-			pi0 - Vector3(0, THICK, 0),
-			po0 - Vector3(0, THICK, 0),
-			pi1 - Vector3(0, THICK, 0),
-			po1 - Vector3(0, THICK, 0),
+			pi_mid, po0, po1,
+			pi_mid - Vector3(0, THICK, 0),
+			po0    - Vector3(0, THICK, 0),
+			po1    - Vector3(0, THICK, 0),
 		])
 		cs.shape = cps
 		sb.add_child(cs)
 
 # ── mesh builder ──────────────────────────────────────────────────────────────
 
-## Builds a trapezoidal prism from four top-face points (all at y=0),
+## Builds a triangular prism from three top-face points (all at y=0),
 ## extruded downward by `thick`.
-## Winding: pi0 = inner-start, po0 = outer-start, po1 = outer-end, pi1 = inner-end
-func _trapezoid_mesh(pi0: Vector3, po0: Vector3, po1: Vector3, pi1: Vector3,
+## apex = inner midpoint, base0/base1 = outer arc endpoints.
+func _triangle_mesh(apex: Vector3, base0: Vector3, base1: Vector3,
 		thick: float) -> ArrayMesh:
-	var bi0 := pi0 - Vector3(0, thick, 0)
-	var bo0 := po0 - Vector3(0, thick, 0)
-	var bi1 := pi1 - Vector3(0, thick, 0)
-	var bo1 := po1 - Vector3(0, thick, 0)
+	var ba  := apex  - Vector3(0, thick, 0)
+	var bb0 := base0 - Vector3(0, thick, 0)
+	var bb1 := base1 - Vector3(0, thick, 0)
+
+	var centroid := (apex + base0 + base1) / 3.0
 
 	var verts := PackedVector3Array()
 	var norms := PackedVector3Array()
 
-	# top
-	_quad(verts, norms, pi0, pi1, po1, po0, Vector3.UP)
-	# bottom
-	_quad(verts, norms, bo0, bo1, bi1, bi0, Vector3.DOWN)
-	# inner side
-	_quad(verts, norms, pi1, pi0, bi0, bi1,
-		_side_normal(pi0, pi1, true))
-	# outer side
-	_quad(verts, norms, po0, po1, bo1, bo0,
-		_side_normal(po0, po1, false))
-	# start cap
-	_quad(verts, norms, po0, pi0, bi0, bo0,
-		_cap_normal(pi0, po0, true))
-	# end cap
-	_quad(verts, norms, pi1, po1, bo1, bi1,
-		_cap_normal(pi1, po1, false))
+	# top face
+	_tri(verts, norms, apex, base1, base0, Vector3.UP)
+	# bottom face (reversed)
+	_tri(verts, norms, ba, bb0, bb1, Vector3.DOWN)
+	# side: apex → base0
+	_quad(verts, norms, apex, base0, bb0, ba,
+		_outward_normal(apex, base0, centroid))
+	# side: base0 → base1  (outer edge)
+	_quad(verts, norms, base0, base1, bb1, bb0,
+		_outward_normal(base0, base1, centroid))
+	# side: base1 → apex
+	_quad(verts, norms, base1, apex, ba, bb1,
+		_outward_normal(base1, apex, centroid))
 
 	var arr := []
 	arr.resize(Mesh.ARRAY_MAX)
@@ -128,18 +124,23 @@ func _trapezoid_mesh(pi0: Vector3, po0: Vector3, po1: Vector3, pi1: Vector3,
 	mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arr)
 	return mesh
 
+func _tri(verts: PackedVector3Array, norms: PackedVector3Array,
+		a: Vector3, b: Vector3, c: Vector3, n: Vector3) -> void:
+	verts.append_array([a, b, c])
+	for _i in range(3):
+		norms.append(n)
+
 func _quad(verts: PackedVector3Array, norms: PackedVector3Array,
 		a: Vector3, b: Vector3, c: Vector3, d: Vector3, n: Vector3) -> void:
 	verts.append_array([a, b, c,  a, c, d])
 	for _i in range(6):
 		norms.append(n)
 
-func _side_normal(from: Vector3, to: Vector3, inward: bool) -> Vector3:
+func _outward_normal(from: Vector3, to: Vector3, centroid: Vector3) -> Vector3:
 	var edge := (to - from).normalized()
 	var n    := edge.cross(Vector3.UP).normalized()
-	return n if not inward else -n
-
-func _cap_normal(inner: Vector3, outer: Vector3, start: bool) -> Vector3:
-	var edge := (outer - inner).normalized()
-	var n    := Vector3.UP.cross(edge).normalized()
-	return n if start else -n
+	var mid  := (from + to) * 0.5
+	# flip if pointing toward centroid instead of away
+	if n.dot(mid - centroid) < 0.0:
+		n = -n
+	return n

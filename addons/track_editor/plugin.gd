@@ -17,6 +17,8 @@ var _edit_mode := false
 var _selected_placed_piece: Node3D = null
 var _piece_params: Dictionary = {}
 var _scene_cache: Dictionary = {}
+var _connect_mode := false
+var _connect_first: Node3D = null
 
 var PIECE_SCENES := {
 	"straight": "res://addons/track_editor/pieces/straight.tscn",
@@ -33,6 +35,7 @@ func _enter_tree() -> void:
 	dock.erase_mode_toggled.connect(_on_erase_toggled)
 	dock.edit_mode_changed.connect(_on_edit_mode_changed)
 	dock.piece_params_changed.connect(_on_piece_params_changed)
+	dock.connect_mode_toggled.connect(_on_connect_mode_changed)
 	add_control_to_dock(DOCK_SLOT_RIGHT_UL, dock)
 
 func _exit_tree() -> void:
@@ -71,6 +74,21 @@ func _on_edit_mode_changed(active: bool) -> void:
 		_destroy_ghost()
 		_selected_placed_piece = null
 		dock.clear_params()
+		_connect_mode = false
+		_connect_first = null
+		dock.set_connect_active(false)
+
+func _on_connect_mode_changed(active: bool) -> void:
+	_connect_mode = active
+	_connect_first = null
+	if active:
+		_destroy_ghost()
+		dock.clear_params()
+	else:
+		if not _erase_mode:
+			_rebuild_ghost()
+			if is_instance_valid(_ghost) and _ghost.has_method("get_param_defs"):
+				dock.show_params(_ghost.get_param_defs(), _ghost.get_config())
 
 func _on_erase_toggled(active: bool) -> void:
 	_erase_mode = active
@@ -115,7 +133,19 @@ func _forward_3d_gui_input(viewport_camera: Camera3D, event: InputEvent) -> int:
 			return EditorPlugin.AFTER_GUI_INPUT_PASS
 
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			if _erase_mode:
+			if _connect_mode:
+				var hit := _get_piece_at(pos)
+				if hit != null:
+					if _connect_first == null:
+						_connect_first = hit
+						dock.set_connect_status("Now click second piece")
+					elif hit != _connect_first:
+						_create_connector(_connect_first, hit)
+						_connect_first = null
+						_connect_mode = false
+						dock.set_connect_active(false)
+				return EditorPlugin.AFTER_GUI_INPUT_STOP
+			elif _erase_mode:
 				_erase_at(pos)
 			else:
 				var occupied := _get_piece_at(pos)
@@ -315,6 +345,63 @@ func _ensure_track_root() -> bool:
 	scene_root.add_child(_track_root)
 	_track_root.set_owner(scene_root)
 	return true
+
+func _create_connector(piece_a: Node3D, piece_b: Node3D) -> void:
+	if not _ensure_track_root():
+		return
+	var scene_root := _get_scene_root()
+	if scene_root == null:
+		return
+
+	# Axis each piece runs along (Z-axis rotated by rotation_degrees.y)
+	var rot_a  := deg_to_rad(piece_a.rotation_degrees.y)
+	var rot_b  := deg_to_rad(piece_b.rotation_degrees.y)
+	var axis_a := Vector3(sin(rot_a), 0.0, cos(rot_a))
+	var axis_b := Vector3(sin(rot_b), 0.0, cos(rot_b))
+
+	# Exit face of A: whichever face is closer to B
+	var fa_p := piece_a.position + axis_a * 4.0
+	var fa_n := piece_a.position - axis_a * 4.0
+	var face_a := fa_p if fa_p.distance_to(piece_b.position) < fa_n.distance_to(piece_b.position) else fa_n
+
+	# Entry face of B: whichever face is closer to face_a
+	var fb_p := piece_b.position + axis_b * 4.0
+	var fb_n := piece_b.position - axis_b * 4.0
+	var face_b := fb_p if fb_p.distance_to(face_a) < fb_n.distance_to(face_a) else fb_n
+
+	# Tangent directions: away from A through face_a, into B through face_b
+	var start_dir := (face_a - piece_a.position).normalized()
+	var end_dir   := (piece_b.position - face_b).normalized()
+
+	# Inherit road_width from piece A if it has one
+	var rw := 6.0
+	var rw_val = piece_a.get("road_width")
+	if rw_val != null:
+		rw = rw_val
+
+	var scene_path := "res://addons/track_editor/pieces/connector.tscn"
+	var packed: PackedScene = _scene_cache.get(scene_path)
+	if packed == null:
+		packed = load(scene_path)
+		if packed == null:
+			return
+		_scene_cache[scene_path] = packed
+
+	var conn: Node3D = packed.instantiate()
+	conn.position = face_a
+	conn.name = "connector_" + str(snappedi(face_a.x, 1)) + "_" + str(snappedi(face_a.z, 1))
+	conn.set("start_pos",  face_a)
+	conn.set("start_dir",  start_dir)
+	conn.set("end_pos",    face_b)
+	conn.set("end_dir",    end_dir)
+	conn.set("road_width", rw)
+
+	var undo := get_undo_redo()
+	undo.create_action("Connect Track Pieces")
+	undo.add_do_method(_track_root, "add_child", conn)
+	undo.add_do_method(conn, "set_owner", scene_root)
+	undo.add_undo_method(_track_root, "remove_child", conn)
+	undo.commit_action()
 
 func _get_scene_root() -> Node:
 	var ei := get_editor_interface()
