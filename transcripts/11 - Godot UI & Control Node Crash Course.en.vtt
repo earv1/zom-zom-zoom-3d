@@ -1,0 +1,3848 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.470 align:start position:0%
+ 
+[Music]
+
+00:00:03.470 --> 00:00:03.480 align:start position:0%
+[Music]
+ 
+
+00:00:03.480 --> 00:00:05.190 align:start position:0%
+[Music]
+hey<00:00:03.639><c> everyone</c><00:00:03.959><c> welcome</c><00:00:04.200><c> to</c><00:00:04.359><c> a</c><00:00:04.560><c> brand</c><00:00:04.920><c> new</c>
+
+00:00:05.190 --> 00:00:05.200 align:start position:0%
+hey everyone welcome to a brand new
+ 
+
+00:00:05.200 --> 00:00:07.710 align:start position:0%
+hey everyone welcome to a brand new
+tutorial<00:00:05.720><c> series</c><00:00:06.279><c> dedicated</c><00:00:06.919><c> to</c><00:00:07.399><c> user</c>
+
+00:00:07.710 --> 00:00:07.720 align:start position:0%
+tutorial series dedicated to user
+ 
+
+00:00:07.720 --> 00:00:10.030 align:start position:0%
+tutorial series dedicated to user
+interfaces<00:00:08.480><c> and</c><00:00:08.679><c> control</c><00:00:09.040><c> nodes</c><00:00:09.679><c> within</c><00:00:09.920><c> the</c>
+
+00:00:10.030 --> 00:00:10.040 align:start position:0%
+interfaces and control nodes within the
+ 
+
+00:00:10.040 --> 00:00:12.230 align:start position:0%
+interfaces and control nodes within the
+GTO<00:00:10.360><c> engine</c><00:00:10.639><c> it's</c><00:00:10.759><c> going</c><00:00:10.840><c> to</c><00:00:10.960><c> be</c><00:00:11.280><c> very</c><00:00:11.679><c> similar</c>
+
+00:00:12.230 --> 00:00:12.240 align:start position:0%
+GTO engine it's going to be very similar
+ 
+
+00:00:12.240 --> 00:00:14.150 align:start position:0%
+GTO engine it's going to be very similar
+to<00:00:12.559><c> the</c><00:00:12.759><c> firstperson</c><00:00:13.280><c> shooter</c><00:00:13.679><c> tutorial</c>
+
+00:00:14.150 --> 00:00:14.160 align:start position:0%
+to the firstperson shooter tutorial
+ 
+
+00:00:14.160 --> 00:00:16.269 align:start position:0%
+to the firstperson shooter tutorial
+series<00:00:14.799><c> that's</c><00:00:15.040><c> already</c><00:00:15.360><c> on</c><00:00:15.519><c> my</c><00:00:15.679><c> channel</c><00:00:16.080><c> and</c>
+
+00:00:16.269 --> 00:00:16.279 align:start position:0%
+series that's already on my channel and
+ 
+
+00:00:16.279 --> 00:00:18.470 align:start position:0%
+series that's already on my channel and
+ongoing<00:00:17.119><c> so</c><00:00:17.320><c> if</c><00:00:17.400><c> you're</c><00:00:17.680><c> familiar</c><00:00:18.160><c> with</c><00:00:18.320><c> that</c>
+
+00:00:18.470 --> 00:00:18.480 align:start position:0%
+ongoing so if you're familiar with that
+ 
+
+00:00:18.480 --> 00:00:20.550 align:start position:0%
+ongoing so if you're familiar with that
+it's<00:00:18.600><c> a</c><00:00:18.760><c> very</c><00:00:19.039><c> similar</c><00:00:19.520><c> setup</c><00:00:20.240><c> we're</c><00:00:20.359><c> going</c><00:00:20.439><c> to</c>
+
+00:00:20.550 --> 00:00:20.560 align:start position:0%
+it's a very similar setup we're going to
+ 
+
+00:00:20.560 --> 00:00:22.349 align:start position:0%
+it's a very similar setup we're going to
+be<00:00:20.640><c> doing</c><00:00:20.920><c> things</c><00:00:21.439><c> step</c><00:00:21.720><c> by</c><00:00:21.920><c> step</c><00:00:22.160><c> we're</c><00:00:22.279><c> going</c>
+
+00:00:22.349 --> 00:00:22.359 align:start position:0%
+be doing things step by step we're going
+ 
+
+00:00:22.359 --> 00:00:24.630 align:start position:0%
+be doing things step by step we're going
+to<00:00:22.480><c> start</c><00:00:22.800><c> very</c><00:00:23.119><c> basic</c><00:00:23.720><c> and</c><00:00:24.080><c> try</c><00:00:24.240><c> to</c><00:00:24.400><c> move</c>
+
+00:00:24.630 --> 00:00:24.640 align:start position:0%
+to start very basic and try to move
+ 
+
+00:00:24.640 --> 00:00:26.349 align:start position:0%
+to start very basic and try to move
+through<00:00:24.880><c> all</c><00:00:25.119><c> the</c><00:00:25.279><c> different</c><00:00:25.640><c> aspects</c><00:00:26.119><c> of</c><00:00:26.199><c> the</c>
+
+00:00:26.349 --> 00:00:26.359 align:start position:0%
+through all the different aspects of the
+ 
+
+00:00:26.359 --> 00:00:28.790 align:start position:0%
+through all the different aspects of the
+control<00:00:26.720><c> node</c><00:00:27.039><c> user</c><00:00:27.320><c> interface</c><00:00:27.800><c> system</c><00:00:28.240><c> like</c>
+
+00:00:28.790 --> 00:00:28.800 align:start position:0%
+control node user interface system like
+ 
+
+00:00:28.800 --> 00:00:31.630 align:start position:0%
+control node user interface system like
+themes<00:00:29.439><c> different</c><00:00:30.240><c> setups</c><00:00:30.679><c> like</c><00:00:31.000><c> menus</c>
+
+00:00:31.630 --> 00:00:31.640 align:start position:0%
+themes different setups like menus
+ 
+
+00:00:31.640 --> 00:00:34.190 align:start position:0%
+themes different setups like menus
+settings<00:00:32.599><c> heads</c><00:00:32.800><c> up</c><00:00:33.040><c> displays</c><00:00:33.680><c> we'll</c><00:00:33.879><c> try</c><00:00:34.040><c> to</c>
+
+00:00:34.190 --> 00:00:34.200 align:start position:0%
+settings heads up displays we'll try to
+ 
+
+00:00:34.200 --> 00:00:36.350 align:start position:0%
+settings heads up displays we'll try to
+touch<00:00:34.399><c> on</c><00:00:34.879><c> as</c><00:00:35.040><c> much</c><00:00:35.280><c> as</c><00:00:35.559><c> possible</c><00:00:36.120><c> and</c><00:00:36.239><c> just</c>
+
+00:00:36.350 --> 00:00:36.360 align:start position:0%
+touch on as much as possible and just
+ 
+
+00:00:36.360 --> 00:00:37.830 align:start position:0%
+touch on as much as possible and just
+kind<00:00:36.480><c> of</c><00:00:36.559><c> learn</c><00:00:36.920><c> together</c><00:00:37.200><c> about</c><00:00:37.399><c> how</c><00:00:37.559><c> all</c><00:00:37.719><c> of</c>
+
+00:00:37.830 --> 00:00:37.840 align:start position:0%
+kind of learn together about how all of
+ 
+
+00:00:37.840 --> 00:00:39.190 align:start position:0%
+kind of learn together about how all of
+these<00:00:38.040><c> things</c><00:00:38.280><c> work</c><00:00:38.559><c> and</c><00:00:38.760><c> what</c><00:00:38.879><c> you</c><00:00:38.960><c> can</c>
+
+00:00:39.190 --> 00:00:39.200 align:start position:0%
+these things work and what you can
+ 
+
+00:00:39.200 --> 00:00:41.830 align:start position:0%
+these things work and what you can
+actually<00:00:39.520><c> do</c><00:00:40.039><c> with</c><00:00:40.239><c> control</c><00:00:40.600><c> nodes</c><00:00:41.320><c> and</c><00:00:41.520><c> user</c>
+
+00:00:41.830 --> 00:00:41.840 align:start position:0%
+actually do with control nodes and user
+ 
+
+00:00:41.840 --> 00:00:44.470 align:start position:0%
+actually do with control nodes and user
+interfaces<00:00:42.640><c> within</c><00:00:42.879><c> the</c><00:00:43.000><c> goto</c><00:00:43.320><c> engine</c><00:00:43.960><c> today</c>
+
+00:00:44.470 --> 00:00:44.480 align:start position:0%
+interfaces within the goto engine today
+ 
+
+00:00:44.480 --> 00:00:45.950 align:start position:0%
+interfaces within the goto engine today
+we're<00:00:44.600><c> going</c><00:00:44.719><c> to</c><00:00:44.800><c> be</c><00:00:44.960><c> focusing</c><00:00:45.320><c> on</c><00:00:45.520><c> just</c><00:00:45.719><c> a</c>
+
+00:00:45.950 --> 00:00:45.960 align:start position:0%
+we're going to be focusing on just a
+ 
+
+00:00:45.960 --> 00:00:49.310 align:start position:0%
+we're going to be focusing on just a
+very<00:00:46.399><c> basic</c><00:00:47.399><c> main</c><00:00:47.760><c> menu</c><00:00:48.199><c> setup</c><00:00:48.960><c> it's</c><00:00:49.120><c> going</c><00:00:49.199><c> to</c>
+
+00:00:49.310 --> 00:00:49.320 align:start position:0%
+very basic main menu setup it's going to
+ 
+
+00:00:49.320 --> 00:00:50.790 align:start position:0%
+very basic main menu setup it's going to
+be<00:00:49.440><c> sort</c><00:00:49.559><c> of</c><00:00:49.680><c> a</c><00:00:49.840><c> crash</c><00:00:50.199><c> course</c><00:00:50.480><c> we're</c><00:00:50.600><c> going</c><00:00:50.719><c> to</c>
+
+00:00:50.790 --> 00:00:50.800 align:start position:0%
+be sort of a crash course we're going to
+ 
+
+00:00:50.800 --> 00:00:53.029 align:start position:0%
+be sort of a crash course we're going to
+try<00:00:50.960><c> to</c><00:00:51.120><c> touch</c><00:00:51.360><c> on</c><00:00:51.920><c> little</c><00:00:52.160><c> bits</c><00:00:52.520><c> of</c><00:00:52.800><c> of</c>
+
+00:00:53.029 --> 00:00:53.039 align:start position:0%
+try to touch on little bits of of
+ 
+
+00:00:53.039 --> 00:00:54.990 align:start position:0%
+try to touch on little bits of of
+everything<00:00:53.719><c> familiarize</c><00:00:54.399><c> ourselves</c><00:00:54.800><c> with</c><00:00:54.879><c> a</c>
+
+00:00:54.990 --> 00:00:55.000 align:start position:0%
+everything familiarize ourselves with a
+ 
+
+00:00:55.000 --> 00:00:57.069 align:start position:0%
+everything familiarize ourselves with a
+control<00:00:55.320><c> node</c><00:00:55.600><c> system</c><00:00:55.920><c> so</c><00:00:56.079><c> we</c><00:00:56.199><c> have</c><00:00:56.359><c> a</c><00:00:56.559><c> a</c><00:00:56.719><c> solid</c>
+
+00:00:57.069 --> 00:00:57.079 align:start position:0%
+control node system so we have a a solid
+ 
+
+00:00:57.079 --> 00:00:59.110 align:start position:0%
+control node system so we have a a solid
+foundation<00:00:57.760><c> to</c><00:00:58.199><c> start</c><00:00:58.480><c> making</c><00:00:58.719><c> some</c><00:00:58.920><c> really</c>
+
+00:00:59.110 --> 00:00:59.120 align:start position:0%
+foundation to start making some really
+ 
+
+00:00:59.120 --> 00:01:01.189 align:start position:0%
+foundation to start making some really
+cool<00:00:59.359><c> stuff</c><00:00:59.559><c> later</c><00:00:59.800><c> on</c><00:01:00.039><c> on</c><00:01:00.359><c> for</c><00:01:00.640><c> this</c><00:01:00.879><c> video</c>
+
+00:01:01.189 --> 00:01:01.199 align:start position:0%
+cool stuff later on on for this video
+ 
+
+00:01:01.199 --> 00:01:02.830 align:start position:0%
+cool stuff later on on for this video
+and<00:01:01.399><c> any</c><00:01:01.600><c> videos</c><00:01:02.039><c> going</c><00:01:02.280><c> forward</c><00:01:02.680><c> I'm</c><00:01:02.760><c> going</c>
+
+00:01:02.830 --> 00:01:02.840 align:start position:0%
+and any videos going forward I'm going
+ 
+
+00:01:02.840 --> 00:01:06.950 align:start position:0%
+and any videos going forward I'm going
+to<00:01:02.960><c> be</c><00:01:03.079><c> working</c><00:01:03.480><c> from</c><00:01:04.119><c> G</c><00:01:04.760><c> 4.3</c><00:01:05.760><c> I'm</c><00:01:05.880><c> on</c><00:01:06.159><c> the</c><00:01:06.600><c> dev</c>
+
+00:01:06.950 --> 00:01:06.960 align:start position:0%
+to be working from G 4.3 I'm on the dev
+ 
+
+00:01:06.960 --> 00:01:09.350 align:start position:0%
+to be working from G 4.3 I'm on the dev
+6<00:01:07.560><c> version</c><00:01:07.840><c> of</c><00:01:08.119><c> that</c><00:01:08.640><c> and</c><00:01:08.799><c> we'll</c><00:01:09.040><c> probably</c>
+
+00:01:09.350 --> 00:01:09.360 align:start position:0%
+6 version of that and we'll probably
+ 
+
+00:01:09.360 --> 00:01:11.390 align:start position:0%
+6 version of that and we'll probably
+update<00:01:09.680><c> to</c><00:01:09.840><c> stable</c><00:01:10.280><c> once</c><00:01:10.520><c> that's</c><00:01:10.759><c> released</c><00:01:11.320><c> I</c>
+
+00:01:11.390 --> 00:01:11.400 align:start position:0%
+update to stable once that's released I
+ 
+
+00:01:11.400 --> 00:01:13.030 align:start position:0%
+update to stable once that's released I
+have<00:01:11.479><c> a</c><00:01:11.600><c> completely</c><00:01:12.040><c> empty</c><00:01:12.479><c> project</c><00:01:12.840><c> but</c><00:01:12.960><c> you</c>
+
+00:01:13.030 --> 00:01:13.040 align:start position:0%
+have a completely empty project but you
+ 
+
+00:01:13.040 --> 00:01:14.749 align:start position:0%
+have a completely empty project but you
+can<00:01:13.159><c> work</c><00:01:13.320><c> from</c><00:01:13.520><c> your</c><00:01:13.680><c> own</c><00:01:14.320><c> if</c><00:01:14.479><c> that's</c><00:01:14.640><c> what</c>
+
+00:01:14.749 --> 00:01:14.759 align:start position:0%
+can work from your own if that's what
+ 
+
+00:01:14.759 --> 00:01:16.710 align:start position:0%
+can work from your own if that's what
+you're<00:01:14.960><c> doing</c><00:01:15.520><c> or</c><00:01:15.640><c> you</c><00:01:15.759><c> can</c><00:01:15.960><c> start</c><00:01:16.119><c> a</c><00:01:16.240><c> new</c><00:01:16.360><c> one</c>
+
+00:01:16.710 --> 00:01:16.720 align:start position:0%
+you're doing or you can start a new one
+ 
+
+00:01:16.720 --> 00:01:18.390 align:start position:0%
+you're doing or you can start a new one
+that<00:01:16.840><c> works</c><00:01:17.119><c> too</c><00:01:17.479><c> and</c><00:01:17.600><c> if</c><00:01:17.680><c> you'd</c><00:01:17.880><c> like</c><00:01:18.040><c> to</c><00:01:18.200><c> grab</c>
+
+00:01:18.390 --> 00:01:18.400 align:start position:0%
+that works too and if you'd like to grab
+ 
+
+00:01:18.400 --> 00:01:20.109 align:start position:0%
+that works too and if you'd like to grab
+the<00:01:18.520><c> source</c><00:01:18.840><c> files</c><00:01:19.159><c> for</c><00:01:19.360><c> this</c><00:01:19.520><c> video</c><00:01:19.759><c> or</c><00:01:19.920><c> any</c>
+
+00:01:20.109 --> 00:01:20.119 align:start position:0%
+the source files for this video or any
+ 
+
+00:01:20.119 --> 00:01:22.310 align:start position:0%
+the source files for this video or any
+future<00:01:20.479><c> videos</c><00:01:20.840><c> in</c><00:01:20.960><c> the</c><00:01:21.119><c> series</c><00:01:21.720><c> you</c><00:01:21.840><c> can</c><00:01:22.040><c> grab</c>
+
+00:01:22.310 --> 00:01:22.320 align:start position:0%
+future videos in the series you can grab
+ 
+
+00:01:22.320 --> 00:01:24.630 align:start position:0%
+future videos in the series you can grab
+those<00:01:22.479><c> on</c><00:01:22.640><c> my</c><00:01:23.000><c> patreon</c><00:01:24.000><c> all</c><00:01:24.079><c> right</c><00:01:24.240><c> let's</c><00:01:24.439><c> get</c>
+
+00:01:24.630 --> 00:01:24.640 align:start position:0%
+those on my patreon all right let's get
+ 
+
+00:01:24.640 --> 00:01:26.670 align:start position:0%
+those on my patreon all right let's get
+started<00:01:25.040><c> the</c><00:01:25.159><c> first</c><00:01:25.320><c> thing</c><00:01:25.479><c> we</c><00:01:25.600><c> need</c><00:01:25.720><c> to</c><00:01:25.960><c> do</c><00:01:26.360><c> is</c>
+
+00:01:26.670 --> 00:01:26.680 align:start position:0%
+started the first thing we need to do is
+ 
+
+00:01:26.680 --> 00:01:29.030 align:start position:0%
+started the first thing we need to do is
+create<00:01:27.560><c> a</c><00:01:27.799><c> a</c><00:01:27.920><c> new</c><00:01:28.119><c> scene</c><00:01:28.560><c> that's</c><00:01:28.720><c> going</c><00:01:28.799><c> to</c><00:01:28.920><c> be</c>
+
+00:01:29.030 --> 00:01:29.040 align:start position:0%
+create a a new scene that's going to be
+ 
+
+00:01:29.040 --> 00:01:31.149 align:start position:0%
+create a a new scene that's going to be
+for<00:01:29.200><c> our</c><00:01:29.439><c> main</c><00:01:30.159><c> menu</c><00:01:30.560><c> and</c><00:01:30.640><c> we're</c><00:01:30.759><c> going</c><00:01:30.880><c> to</c><00:01:30.960><c> be</c>
+
+00:01:31.149 --> 00:01:31.159 align:start position:0%
+for our main menu and we're going to be
+ 
+
+00:01:31.159 --> 00:01:34.749 align:start position:0%
+for our main menu and we're going to be
+using<00:01:32.159><c> a</c><00:01:32.520><c> uh</c><00:01:32.640><c> not</c><00:01:32.799><c> the</c><00:01:32.960><c> user</c><00:01:33.640><c> interface</c><00:01:34.640><c> uh</c>
+
+00:01:34.749 --> 00:01:34.759 align:start position:0%
+using a uh not the user interface uh
+ 
+
+00:01:34.759 --> 00:01:36.550 align:start position:0%
+using a uh not the user interface uh
+root<00:01:35.040><c> node</c><00:01:35.399><c> because</c><00:01:35.640><c> that's</c><00:01:35.840><c> just</c><00:01:36.000><c> a</c><00:01:36.159><c> control</c>
+
+00:01:36.550 --> 00:01:36.560 align:start position:0%
+root node because that's just a control
+ 
+
+00:01:36.560 --> 00:01:38.389 align:start position:0%
+root node because that's just a control
+node<00:01:36.960><c> we'll</c><00:01:37.159><c> get</c><00:01:37.280><c> into</c><00:01:37.520><c> that</c><00:01:37.600><c> in</c><00:01:37.720><c> a</c><00:01:37.880><c> little</c><00:01:38.079><c> bit</c>
+
+00:01:38.389 --> 00:01:38.399 align:start position:0%
+node we'll get into that in a little bit
+ 
+
+00:01:38.399 --> 00:01:40.149 align:start position:0%
+node we'll get into that in a little bit
+we're<00:01:38.520><c> going</c><00:01:38.600><c> to</c><00:01:38.759><c> click</c><00:01:38.960><c> on</c><00:01:39.159><c> this</c><00:01:39.479><c> other</c><00:01:39.799><c> node</c>
+
+00:01:40.149 --> 00:01:40.159 align:start position:0%
+we're going to click on this other node
+ 
+
+00:01:40.159 --> 00:01:41.910 align:start position:0%
+we're going to click on this other node
+button<00:01:40.640><c> and</c><00:01:40.880><c> let's</c><00:01:41.119><c> take</c><00:01:41.240><c> a</c><00:01:41.399><c> look</c><00:01:41.560><c> at</c><00:01:41.759><c> the</c>
+
+00:01:41.910 --> 00:01:41.920 align:start position:0%
+button and let's take a look at the
+ 
+
+00:01:41.920 --> 00:01:43.510 align:start position:0%
+button and let's take a look at the
+different<00:01:42.240><c> control</c><00:01:42.560><c> nodes</c><00:01:42.880><c> that</c><00:01:43.040><c> we</c><00:01:43.200><c> have</c>
+
+00:01:43.510 --> 00:01:43.520 align:start position:0%
+different control nodes that we have
+ 
+
+00:01:43.520 --> 00:01:46.030 align:start position:0%
+different control nodes that we have
+available<00:01:44.000><c> to</c><00:01:44.240><c> us</c><00:01:45.079><c> now</c><00:01:45.360><c> typically</c><00:01:45.880><c> when</c>
+
+00:01:46.030 --> 00:01:46.040 align:start position:0%
+available to us now typically when
+ 
+
+00:01:46.040 --> 00:01:49.030 align:start position:0%
+available to us now typically when
+you're<00:01:46.680><c> organizing</c><00:01:47.680><c> your</c><00:01:48.280><c> control</c><00:01:48.680><c> nodes</c>
+
+00:01:49.030 --> 00:01:49.040 align:start position:0%
+you're organizing your control nodes
+ 
+
+00:01:49.040 --> 00:01:51.069 align:start position:0%
+you're organizing your control nodes
+your<00:01:49.240><c> user</c><00:01:49.560><c> interfaces</c><00:01:50.520><c> you're</c><00:01:50.680><c> going</c><00:01:50.799><c> to</c><00:01:50.920><c> be</c>
+
+00:01:51.069 --> 00:01:51.079 align:start position:0%
+your user interfaces you're going to be
+ 
+
+00:01:51.079 --> 00:01:53.469 align:start position:0%
+your user interfaces you're going to be
+using<00:01:51.560><c> container</c><00:01:52.159><c> nodes</c><00:01:52.799><c> now</c><00:01:53.000><c> each</c><00:01:53.159><c> one</c><00:01:53.360><c> of</c>
+
+00:01:53.469 --> 00:01:53.479 align:start position:0%
+using container nodes now each one of
+ 
+
+00:01:53.479 --> 00:01:56.670 align:start position:0%
+using container nodes now each one of
+these<00:01:53.640><c> containers</c><00:01:54.159><c> has</c><00:01:54.280><c> a</c><00:01:54.520><c> specific</c><00:01:55.360><c> use</c><00:01:55.799><c> case</c>
+
+00:01:56.670 --> 00:01:56.680 align:start position:0%
+these containers has a specific use case
+ 
+
+00:01:56.680 --> 00:01:59.590 align:start position:0%
+these containers has a specific use case
+and<00:01:57.119><c> in</c><00:01:57.280><c> our</c><00:01:57.640><c> case</c><00:01:57.880><c> we're</c><00:01:58.159><c> trying</c><00:01:58.520><c> to</c><00:01:59.000><c> recreate</c>
+
+00:01:59.590 --> 00:01:59.600 align:start position:0%
+and in our case we're trying to recreate
+ 
+
+00:01:59.600 --> 00:02:01.469 align:start position:0%
+and in our case we're trying to recreate
+this<00:02:00.280><c> menu</c><00:02:00.640><c> that's</c><00:02:00.799><c> in</c><00:02:00.880><c> the</c><00:02:01.000><c> center</c><00:02:01.240><c> of</c><00:02:01.360><c> our</c>
+
+00:02:01.469 --> 00:02:01.479 align:start position:0%
+this menu that's in the center of our
+ 
+
+00:02:01.479 --> 00:02:04.230 align:start position:0%
+this menu that's in the center of our
+screen<00:02:01.799><c> a</c><00:02:02.000><c> very</c><00:02:02.560><c> basic</c><00:02:02.960><c> main</c><00:02:03.240><c> menu</c><00:02:03.640><c> style</c><00:02:04.119><c> to</c>
+
+00:02:04.230 --> 00:02:04.240 align:start position:0%
+screen a very basic main menu style to
+ 
+
+00:02:04.240 --> 00:02:05.749 align:start position:0%
+screen a very basic main menu style to
+do<00:02:04.399><c> that</c><00:02:04.479><c> we're</c><00:02:04.600><c> going</c><00:02:04.680><c> to</c><00:02:04.799><c> use</c><00:02:05.000><c> this</c><00:02:05.159><c> Center</c>
+
+00:02:05.749 --> 00:02:05.759 align:start position:0%
+do that we're going to use this Center
+ 
+
+00:02:05.759 --> 00:02:08.790 align:start position:0%
+do that we're going to use this Center
+container<00:02:06.280><c> node</c><00:02:06.640><c> now</c><00:02:06.799><c> what</c><00:02:06.960><c> this</c><00:02:07.320><c> does</c><00:02:08.119><c> is</c><00:02:08.280><c> it</c>
+
+00:02:08.790 --> 00:02:08.800 align:start position:0%
+container node now what this does is it
+ 
+
+00:02:08.800 --> 00:02:10.830 align:start position:0%
+container node now what this does is it
+takes<00:02:09.119><c> anything</c><00:02:09.520><c> that's</c><00:02:09.679><c> a</c><00:02:09.959><c> child</c><00:02:10.440><c> and</c><00:02:10.599><c> It</c>
+
+00:02:10.830 --> 00:02:10.840 align:start position:0%
+takes anything that's a child and It
+ 
+
+00:02:10.840 --> 00:02:13.110 align:start position:0%
+takes anything that's a child and It
+Centers<00:02:11.319><c> it</c><00:02:11.800><c> within</c><00:02:12.120><c> whatever</c><00:02:12.440><c> the</c><00:02:12.680><c> size</c><00:02:12.959><c> of</c>
+
+00:02:13.110 --> 00:02:13.120 align:start position:0%
+Centers it within whatever the size of
+ 
+
+00:02:13.120 --> 00:02:15.110 align:start position:0%
+Centers it within whatever the size of
+this<00:02:13.280><c> container</c><00:02:13.760><c> is</c><00:02:14.000><c> so</c><00:02:14.360><c> let's</c><00:02:14.640><c> use</c><00:02:14.879><c> that</c><00:02:15.040><c> as</c>
+
+00:02:15.110 --> 00:02:15.120 align:start position:0%
+this container is so let's use that as
+ 
+
+00:02:15.120 --> 00:02:17.150 align:start position:0%
+this container is so let's use that as
+our<00:02:15.400><c> parent</c><00:02:15.959><c> the</c><00:02:16.080><c> first</c><00:02:16.280><c> thing</c><00:02:16.440><c> we</c><00:02:16.560><c> need</c><00:02:16.680><c> to</c><00:02:16.840><c> do</c>
+
+00:02:17.150 --> 00:02:17.160 align:start position:0%
+our parent the first thing we need to do
+ 
+
+00:02:17.160 --> 00:02:19.190 align:start position:0%
+our parent the first thing we need to do
+is<00:02:17.680><c> obviously</c><00:02:18.080><c> this</c><00:02:18.200><c> is</c><00:02:18.360><c> not</c><00:02:18.599><c> very</c><00:02:18.879><c> big</c><00:02:19.120><c> we</c>
+
+00:02:19.190 --> 00:02:19.200 align:start position:0%
+is obviously this is not very big we
+ 
+
+00:02:19.200 --> 00:02:22.030 align:start position:0%
+is obviously this is not very big we
+need<00:02:19.440><c> this</c><00:02:19.640><c> to</c><00:02:19.920><c> stretch</c><00:02:20.800><c> across</c><00:02:21.200><c> the</c><00:02:21.400><c> entirety</c>
+
+00:02:22.030 --> 00:02:22.040 align:start position:0%
+need this to stretch across the entirety
+ 
+
+00:02:22.040 --> 00:02:25.350 align:start position:0%
+need this to stretch across the entirety
+of<00:02:22.160><c> our</c><00:02:22.440><c> screen</c><00:02:23.160><c> now</c><00:02:23.599><c> on</c><00:02:23.760><c> the</c><00:02:24.000><c> right</c><00:02:24.239><c> hand</c><00:02:24.560><c> side</c>
+
+00:02:25.350 --> 00:02:25.360 align:start position:0%
+of our screen now on the right hand side
+ 
+
+00:02:25.360 --> 00:02:27.990 align:start position:0%
+of our screen now on the right hand side
+you'll<00:02:25.640><c> notice</c><00:02:26.040><c> our</c><00:02:26.560><c> control</c><00:02:27.200><c> class</c><00:02:27.800><c> uh</c>
+
+00:02:27.990 --> 00:02:28.000 align:start position:0%
+you'll notice our control class uh
+ 
+
+00:02:28.000 --> 00:02:29.390 align:start position:0%
+you'll notice our control class uh
+options<00:02:28.440><c> over</c><00:02:28.640><c> here</c><00:02:28.840><c> now</c><00:02:28.959><c> these</c><00:02:29.080><c> are</c><00:02:29.200><c> going</c><00:02:29.280><c> to</c>
+
+00:02:29.390 --> 00:02:29.400 align:start position:0%
+options over here now these are going to
+ 
+
+00:02:29.400 --> 00:02:32.030 align:start position:0%
+options over here now these are going to
+be<00:02:29.519><c> available</c><00:02:29.879><c> able</c><00:02:30.239><c> for</c><00:02:30.599><c> every</c><00:02:31.519><c> uh</c><00:02:31.640><c> control</c>
+
+00:02:32.030 --> 00:02:32.040 align:start position:0%
+be available able for every uh control
+ 
+
+00:02:32.040 --> 00:02:33.869 align:start position:0%
+be available able for every uh control
+node<00:02:32.519><c> that</c><00:02:32.720><c> that</c><00:02:32.800><c> you</c><00:02:33.040><c> use</c><00:02:33.560><c> and</c><00:02:33.680><c> we're</c><00:02:33.800><c> going</c>
+
+00:02:33.869 --> 00:02:33.879 align:start position:0%
+node that that you use and we're going
+ 
+
+00:02:33.879 --> 00:02:35.949 align:start position:0%
+node that that you use and we're going
+to<00:02:33.959><c> be</c><00:02:34.080><c> looking</c><00:02:34.319><c> at</c><00:02:34.560><c> layout</c><00:02:35.200><c> now</c><00:02:35.360><c> in</c><00:02:35.560><c> layout</c>
+
+00:02:35.949 --> 00:02:35.959 align:start position:0%
+to be looking at layout now in layout
+ 
+
+00:02:35.959 --> 00:02:38.150 align:start position:0%
+to be looking at layout now in layout
+there's<00:02:36.160><c> a</c><00:02:36.360><c> lot</c><00:02:36.480><c> of</c><00:02:36.879><c> different</c><00:02:37.239><c> options</c><00:02:38.080><c> the</c>
+
+00:02:38.150 --> 00:02:38.160 align:start position:0%
+there's a lot of different options the
+ 
+
+00:02:38.160 --> 00:02:39.869 align:start position:0%
+there's a lot of different options the
+one<00:02:38.319><c> we're</c><00:02:38.440><c> going</c><00:02:38.519><c> to</c><00:02:38.640><c> be</c><00:02:38.840><c> focusing</c><00:02:39.319><c> on</c><00:02:39.680><c> right</c>
+
+00:02:39.869 --> 00:02:39.879 align:start position:0%
+one we're going to be focusing on right
+ 
+
+00:02:39.879 --> 00:02:42.910 align:start position:0%
+one we're going to be focusing on right
+now<00:02:40.159><c> is</c><00:02:40.360><c> this</c><00:02:40.800><c> anchors</c><00:02:41.800><c> preset</c><00:02:42.599><c> what</c><00:02:42.760><c> this</c>
+
+00:02:42.910 --> 00:02:42.920 align:start position:0%
+now is this anchors preset what this
+ 
+
+00:02:42.920 --> 00:02:45.550 align:start position:0%
+now is this anchors preset what this
+anchor<00:02:43.360><c> does</c><00:02:43.640><c> is</c><00:02:43.800><c> it</c><00:02:44.000><c> it</c><00:02:44.159><c> stretches</c><00:02:44.720><c> the</c><00:02:44.920><c> Box</c>
+
+00:02:45.550 --> 00:02:45.560 align:start position:0%
+anchor does is it it stretches the Box
+ 
+
+00:02:45.560 --> 00:02:47.630 align:start position:0%
+anchor does is it it stretches the Box
+according<00:02:46.000><c> to</c><00:02:46.440><c> where</c><00:02:46.680><c> you</c><00:02:46.800><c> want</c><00:02:47.000><c> your</c><00:02:47.200><c> anchors</c>
+
+00:02:47.630 --> 00:02:47.640 align:start position:0%
+according to where you want your anchors
+ 
+
+00:02:47.640 --> 00:02:49.790 align:start position:0%
+according to where you want your anchors
+to<00:02:47.800><c> be</c><00:02:48.239><c> now</c><00:02:48.360><c> you</c><00:02:48.440><c> can</c><00:02:48.640><c> anchor</c><00:02:48.920><c> it</c><00:02:49.080><c> to</c><00:02:49.319><c> the</c><00:02:49.519><c> top</c>
+
+00:02:49.790 --> 00:02:49.800 align:start position:0%
+to be now you can anchor it to the top
+ 
+
+00:02:49.800 --> 00:02:52.149 align:start position:0%
+to be now you can anchor it to the top
+left<00:02:50.000><c> to</c><00:02:50.120><c> the</c><00:02:50.239><c> bottom</c><00:02:50.599><c> right</c><00:02:51.239><c> or</c><00:02:51.599><c> top</c><00:02:51.840><c> left</c><00:02:52.040><c> to</c>
+
+00:02:52.149 --> 00:02:52.159 align:start position:0%
+left to the bottom right or top left to
+ 
+
+00:02:52.159 --> 00:02:54.470 align:start position:0%
+left to the bottom right or top left to
+the<00:02:52.280><c> lower</c><00:02:52.640><c> right</c><00:02:53.360><c> for</c><00:02:53.519><c> example</c><00:02:54.000><c> if</c><00:02:54.120><c> I</c><00:02:54.239><c> wanted</c>
+
+00:02:54.470 --> 00:02:54.480 align:start position:0%
+the lower right for example if I wanted
+ 
+
+00:02:54.480 --> 00:02:57.229 align:start position:0%
+the lower right for example if I wanted
+to<00:02:54.720><c> do</c><00:02:55.200><c> just</c><00:02:55.400><c> the</c><00:02:55.640><c> left</c><00:02:56.080><c> side</c><00:02:56.319><c> of</c><00:02:56.440><c> the</c><00:02:56.599><c> screen</c><00:02:57.159><c> I</c>
+
+00:02:57.229 --> 00:02:57.239 align:start position:0%
+to do just the left side of the screen I
+ 
+
+00:02:57.239 --> 00:02:59.550 align:start position:0%
+to do just the left side of the screen I
+could<00:02:57.400><c> do</c><00:02:57.920><c> left</c><00:02:58.280><c> wide</c><00:02:59.040><c> and</c><00:02:59.159><c> you'll</c><00:02:59.319><c> notice</c>
+
+00:02:59.550 --> 00:02:59.560 align:start position:0%
+could do left wide and you'll notice
+ 
+
+00:02:59.560 --> 00:03:01.630 align:start position:0%
+could do left wide and you'll notice
+that<00:02:59.680><c> it's</c><00:02:59.959><c> stretched</c><00:03:00.440><c> now</c><00:03:00.959><c> to</c><00:03:01.159><c> the</c><00:03:01.280><c> left</c><00:03:01.480><c> side</c>
+
+00:03:01.630 --> 00:03:01.640 align:start position:0%
+that it's stretched now to the left side
+ 
+
+00:03:01.640 --> 00:03:03.630 align:start position:0%
+that it's stretched now to the left side
+of<00:03:01.760><c> that</c><00:03:01.879><c> viewport</c><00:03:02.560><c> we</c><00:03:02.680><c> want</c><00:03:02.920><c> this</c><00:03:03.040><c> to</c><00:03:03.200><c> stretch</c>
+
+00:03:03.630 --> 00:03:03.640 align:start position:0%
+of that viewport we want this to stretch
+ 
+
+00:03:03.640 --> 00:03:06.149 align:start position:0%
+of that viewport we want this to stretch
+the<00:03:03.879><c> entirety</c><00:03:04.519><c> of</c><00:03:04.640><c> the</c><00:03:04.760><c> viewport</c><00:03:05.760><c> and</c><00:03:05.879><c> we</c><00:03:06.000><c> can</c>
+
+00:03:06.149 --> 00:03:06.159 align:start position:0%
+the entirety of the viewport and we can
+ 
+
+00:03:06.159 --> 00:03:08.830 align:start position:0%
+the entirety of the viewport and we can
+use<00:03:06.440><c> what</c><00:03:06.560><c> is</c><00:03:06.720><c> called</c><00:03:06.959><c> the</c><00:03:07.120><c> full</c><00:03:07.440><c> wct</c><00:03:08.200><c> option</c>
+
+00:03:08.830 --> 00:03:08.840 align:start position:0%
+use what is called the full wct option
+ 
+
+00:03:08.840 --> 00:03:10.470 align:start position:0%
+use what is called the full wct option
+now<00:03:09.000><c> that</c><00:03:09.120><c> has</c><00:03:09.280><c> stretched</c><00:03:09.640><c> it</c><00:03:09.760><c> to</c><00:03:09.920><c> the</c><00:03:10.120><c> size</c><00:03:10.319><c> of</c>
+
+00:03:10.470 --> 00:03:10.480 align:start position:0%
+now that has stretched it to the size of
+ 
+
+00:03:10.480 --> 00:03:12.589 align:start position:0%
+now that has stretched it to the size of
+our<00:03:10.680><c> screen</c><00:03:11.400><c> and</c><00:03:11.519><c> now</c><00:03:11.680><c> if</c><00:03:11.760><c> I</c><00:03:11.840><c> were</c><00:03:12.000><c> to</c><00:03:12.200><c> create</c><00:03:12.400><c> a</c>
+
+00:03:12.589 --> 00:03:12.599 align:start position:0%
+our screen and now if I were to create a
+ 
+
+00:03:12.599 --> 00:03:14.309 align:start position:0%
+our screen and now if I were to create a
+child<00:03:12.959><c> within</c><00:03:13.200><c> this</c><00:03:13.360><c> node</c><00:03:13.920><c> it's</c><00:03:14.040><c> going</c><00:03:14.159><c> to</c>
+
+00:03:14.309 --> 00:03:14.319 align:start position:0%
+child within this node it's going to
+ 
+
+00:03:14.319 --> 00:03:15.949 align:start position:0%
+child within this node it's going to
+make<00:03:14.480><c> it</c><00:03:14.879><c> right</c><00:03:15.120><c> there</c><00:03:15.319><c> in</c><00:03:15.440><c> the</c><00:03:15.519><c> center</c><00:03:15.840><c> in</c>
+
+00:03:15.949 --> 00:03:15.959 align:start position:0%
+make it right there in the center in
+ 
+
+00:03:15.959 --> 00:03:17.869 align:start position:0%
+make it right there in the center in
+fact<00:03:16.120><c> let's</c><00:03:16.319><c> go</c><00:03:16.440><c> ahead</c><00:03:16.599><c> and</c><00:03:16.799><c> do</c><00:03:17.040><c> that</c><00:03:17.599><c> so</c><00:03:17.760><c> you</c>
+
+00:03:17.869 --> 00:03:17.879 align:start position:0%
+fact let's go ahead and do that so you
+ 
+
+00:03:17.879 --> 00:03:20.589 align:start position:0%
+fact let's go ahead and do that so you
+can<00:03:18.000><c> see</c><00:03:18.239><c> how</c><00:03:18.400><c> that</c><00:03:18.560><c> works</c><00:03:19.000><c> let's</c><00:03:19.480><c> take</c><00:03:20.480><c> what</c>
+
+00:03:20.589 --> 00:03:20.599 align:start position:0%
+can see how that works let's take what
+ 
+
+00:03:20.599 --> 00:03:22.670 align:start position:0%
+can see how that works let's take what
+is<00:03:20.720><c> called</c><00:03:20.920><c> a</c><00:03:21.120><c> label</c><00:03:21.599><c> node</c><00:03:22.040><c> which</c><00:03:22.159><c> is</c><00:03:22.319><c> just</c><00:03:22.440><c> a</c>
+
+00:03:22.670 --> 00:03:22.680 align:start position:0%
+is called a label node which is just a
+ 
+
+00:03:22.680 --> 00:03:27.390 align:start position:0%
+is called a label node which is just a
+plain<00:03:23.159><c> text</c><00:03:23.599><c> node</c><00:03:24.599><c> add</c><00:03:24.799><c> that</c><00:03:24.920><c> as</c><00:03:25.040><c> a</c><00:03:25.720><c> child</c>
+
+00:03:27.390 --> 00:03:27.400 align:start position:0%
+plain text node add that as a child
+ 
+
+00:03:27.400 --> 00:03:30.070 align:start position:0%
+plain text node add that as a child
+and<00:03:28.400><c> I'm</c><00:03:28.640><c> at</c><00:03:28.879><c> the</c><00:03:29.040><c> center</c><00:03:29.400><c> you'll</c><00:03:29.560><c> notice</c><00:03:29.959><c> that</c>
+
+00:03:30.070 --> 00:03:30.080 align:start position:0%
+and I'm at the center you'll notice that
+ 
+
+00:03:30.080 --> 00:03:31.869 align:start position:0%
+and I'm at the center you'll notice that
+this<00:03:30.200><c> is</c><00:03:30.360><c> centered</c><00:03:31.120><c> again</c><00:03:31.480><c> right</c><00:03:31.680><c> in</c><00:03:31.799><c> the</c>
+
+00:03:31.869 --> 00:03:31.879 align:start position:0%
+this is centered again right in the
+ 
+
+00:03:31.879 --> 00:03:33.190 align:start position:0%
+this is centered again right in the
+middle<00:03:32.120><c> of</c><00:03:32.239><c> that</c><00:03:32.360><c> screen</c><00:03:32.840><c> now</c><00:03:32.959><c> we're</c><00:03:33.080><c> not</c>
+
+00:03:33.190 --> 00:03:33.200 align:start position:0%
+middle of that screen now we're not
+ 
+
+00:03:33.200 --> 00:03:35.070 align:start position:0%
+middle of that screen now we're not
+going<00:03:33.319><c> to</c><00:03:33.400><c> use</c><00:03:33.560><c> a</c><00:03:33.760><c> label</c><00:03:34.080><c> note</c><00:03:34.360><c> as</c><00:03:34.480><c> a</c><00:03:34.680><c> child</c>
+
+00:03:35.070 --> 00:03:35.080 align:start position:0%
+going to use a label note as a child
+ 
+
+00:03:35.080 --> 00:03:37.470 align:start position:0%
+going to use a label note as a child
+what<00:03:35.200><c> we're</c><00:03:35.319><c> going</c><00:03:35.439><c> to</c><00:03:35.680><c> do</c><00:03:36.200><c> is</c><00:03:36.720><c> grab</c><00:03:37.080><c> another</c>
+
+00:03:37.470 --> 00:03:37.480 align:start position:0%
+what we're going to do is grab another
+ 
+
+00:03:37.480 --> 00:03:41.229 align:start position:0%
+what we're going to do is grab another
+container<00:03:38.480><c> called</c><00:03:39.360><c> a</c><00:03:39.760><c> panel</c><00:03:40.280><c> container</c><00:03:41.040><c> so</c>
+
+00:03:41.229 --> 00:03:41.239 align:start position:0%
+container called a panel container so
+ 
+
+00:03:41.239 --> 00:03:45.030 align:start position:0%
+container called a panel container so
+this<00:03:41.360><c> is</c><00:03:41.599><c> another</c><00:03:42.319><c> container</c><00:03:43.319><c> but</c><00:03:43.760><c> it</c><00:03:43.959><c> uses</c><00:03:44.519><c> a</c>
+
+00:03:45.030 --> 00:03:45.040 align:start position:0%
+this is another container but it uses a
+ 
+
+00:03:45.040 --> 00:03:47.149 align:start position:0%
+this is another container but it uses a
+style<00:03:45.439><c> box</c><00:03:45.840><c> What's</c><00:03:46.040><c> called</c><00:03:46.200><c> the</c><00:03:46.360><c> style</c><00:03:46.680><c> box</c><00:03:47.000><c> to</c>
+
+00:03:47.149 --> 00:03:47.159 align:start position:0%
+style box What's called the style box to
+ 
+
+00:03:47.159 --> 00:03:48.949 align:start position:0%
+style box What's called the style box to
+create<00:03:47.560><c> a</c><00:03:47.799><c> panel</c><00:03:48.200><c> now</c><00:03:48.319><c> you</c><00:03:48.439><c> can't</c><00:03:48.599><c> see</c><00:03:48.799><c> the</c>
+
+00:03:48.949 --> 00:03:48.959 align:start position:0%
+create a panel now you can't see the
+ 
+
+00:03:48.959 --> 00:03:50.670 align:start position:0%
+create a panel now you can't see the
+panel<00:03:49.360><c> yet</c><00:03:49.599><c> because</c><00:03:49.799><c> we</c><00:03:49.920><c> don't</c><00:03:50.120><c> have</c><00:03:50.280><c> anything</c>
+
+00:03:50.670 --> 00:03:50.680 align:start position:0%
+panel yet because we don't have anything
+ 
+
+00:03:50.680 --> 00:03:52.750 align:start position:0%
+panel yet because we don't have anything
+inside<00:03:51.519><c> so</c><00:03:51.680><c> let's</c><00:03:51.879><c> go</c><00:03:52.000><c> ahead</c><00:03:52.200><c> and</c><00:03:52.400><c> add</c><00:03:52.560><c> our</c>
+
+00:03:52.750 --> 00:03:52.760 align:start position:0%
+inside so let's go ahead and add our
+ 
+
+00:03:52.760 --> 00:03:55.869 align:start position:0%
+inside so let's go ahead and add our
+label
+
+00:03:55.869 --> 00:03:55.879 align:start position:0%
+ 
+ 
+
+00:03:55.879 --> 00:03:58.869 align:start position:0%
+ 
+again<00:03:56.879><c> we</c><00:03:57.040><c> zoom</c><00:03:57.319><c> in</c><00:03:57.560><c> you</c><00:03:57.640><c> can</c><00:03:57.879><c> see</c><00:03:58.200><c> we've</c><00:03:58.439><c> got</c><00:03:58.640><c> a</c>
+
+00:03:58.869 --> 00:03:58.879 align:start position:0%
+again we zoom in you can see we've got a
+ 
+
+00:03:58.879 --> 00:04:00.710 align:start position:0%
+again we zoom in you can see we've got a
+a<00:03:59.120><c> panel</c><00:03:59.519><c> now</c>
+
+00:04:00.710 --> 00:04:00.720 align:start position:0%
+a panel now
+ 
+
+00:04:00.720 --> 00:04:03.589 align:start position:0%
+a panel now
+that's<00:04:01.040><c> containing</c><00:04:02.040><c> our</c><00:04:02.400><c> our</c><00:04:02.599><c> label</c><00:04:02.959><c> node</c><00:04:03.480><c> the</c>
+
+00:04:03.589 --> 00:04:03.599 align:start position:0%
+that's containing our our label node the
+ 
+
+00:04:03.599 --> 00:04:06.190 align:start position:0%
+that's containing our our label node the
+next<00:04:03.840><c> thing</c><00:04:04.000><c> we</c><00:04:04.200><c> need</c><00:04:04.760><c> is</c><00:04:05.040><c> another</c><00:04:05.599><c> container</c>
+
+00:04:06.190 --> 00:04:06.200 align:start position:0%
+next thing we need is another container
+ 
+
+00:04:06.200 --> 00:04:09.589 align:start position:0%
+next thing we need is another container
+type<00:04:06.480><c> called</c><00:04:06.720><c> a</c><00:04:07.280><c> vbox</c><00:04:08.280><c> container</c><00:04:09.079><c> now</c><00:04:09.400><c> what</c>
+
+00:04:09.589 --> 00:04:09.599 align:start position:0%
+type called a vbox container now what
+ 
+
+00:04:09.599 --> 00:04:12.110 align:start position:0%
+type called a vbox container now what
+this<00:04:09.760><c> container</c><00:04:10.200><c> does</c><00:04:10.439><c> is</c><00:04:10.599><c> it</c><00:04:10.799><c> arranges</c><00:04:11.439><c> its</c>
+
+00:04:12.110 --> 00:04:12.120 align:start position:0%
+this container does is it arranges its
+ 
+
+00:04:12.120 --> 00:04:14.509 align:start position:0%
+this container does is it arranges its
+children<00:04:13.120><c> vertically</c><00:04:13.640><c> it's</c><00:04:13.760><c> going</c><00:04:13.879><c> to</c><00:04:14.079><c> stack</c>
+
+00:04:14.509 --> 00:04:14.519 align:start position:0%
+children vertically it's going to stack
+ 
+
+00:04:14.519 --> 00:04:16.870 align:start position:0%
+children vertically it's going to stack
+them<00:04:14.840><c> so</c><00:04:15.120><c> one</c><00:04:15.519><c> after</c><00:04:15.920><c> another</c><00:04:16.519><c> now</c><00:04:16.639><c> at</c><00:04:16.759><c> this</c>
+
+00:04:16.870 --> 00:04:16.880 align:start position:0%
+them so one after another now at this
+ 
+
+00:04:16.880 --> 00:04:19.310 align:start position:0%
+them so one after another now at this
+point<00:04:17.079><c> we</c><00:04:17.160><c> can</c><00:04:17.320><c> start</c><00:04:17.680><c> adding</c><00:04:18.040><c> some</c><00:04:18.320><c> children</c>
+
+00:04:19.310 --> 00:04:19.320 align:start position:0%
+point we can start adding some children
+ 
+
+00:04:19.320 --> 00:04:21.349 align:start position:0%
+point we can start adding some children
+to<00:04:19.560><c> this</c><00:04:19.759><c> vbox</c><00:04:20.199><c> container</c><00:04:20.639><c> and</c><00:04:20.759><c> and</c><00:04:20.919><c> fill</c><00:04:21.160><c> out</c>
+
+00:04:21.349 --> 00:04:21.359 align:start position:0%
+to this vbox container and and fill out
+ 
+
+00:04:21.359 --> 00:04:24.230 align:start position:0%
+to this vbox container and and fill out
+our<00:04:21.840><c> menu</c><00:04:22.840><c> the</c><00:04:23.000><c> first</c><00:04:23.240><c> thing</c><00:04:23.400><c> I</c><00:04:23.520><c> want</c><00:04:23.840><c> is</c><00:04:23.960><c> a</c>
+
+00:04:24.230 --> 00:04:24.240 align:start position:0%
+our menu the first thing I want is a
+ 
+
+00:04:24.240 --> 00:04:26.629 align:start position:0%
+our menu the first thing I want is a
+title<00:04:24.800><c> so</c><00:04:25.000><c> I'm</c><00:04:25.080><c> going</c><00:04:25.199><c> to</c><00:04:25.320><c> use</c><00:04:25.479><c> a</c><00:04:25.720><c> label</c><00:04:26.400><c> now</c><00:04:26.560><c> a</c>
+
+00:04:26.629 --> 00:04:26.639 align:start position:0%
+title so I'm going to use a label now a
+ 
+
+00:04:26.639 --> 00:04:29.870 align:start position:0%
+title so I'm going to use a label now a
+label<00:04:26.960><c> node</c><00:04:27.479><c> has</c><00:04:27.919><c> a</c><00:04:28.400><c> text</c><00:04:28.720><c> box</c><00:04:29.160><c> up</c><00:04:29.320><c> here</c><00:04:29.720><c> and</c>
+
+00:04:29.870 --> 00:04:29.880 align:start position:0%
+label node has a text box up here and
+ 
+
+00:04:29.880 --> 00:04:32.350 align:start position:0%
+label node has a text box up here and
+the<00:04:30.039><c> inspector</c><00:04:30.639><c> that</c><00:04:30.759><c> we</c><00:04:30.880><c> can</c><00:04:31.199><c> add</c><00:04:31.400><c> in</c><00:04:32.000><c> some</c>
+
+00:04:32.350 --> 00:04:32.360 align:start position:0%
+the inspector that we can add in some
+ 
+
+00:04:32.360 --> 00:04:34.670 align:start position:0%
+the inspector that we can add in some
+text<00:04:33.080><c> we'll</c><00:04:33.320><c> type</c><00:04:33.520><c> in</c><00:04:33.680><c> main</c>
+
+00:04:34.670 --> 00:04:34.680 align:start position:0%
+text we'll type in main
+ 
+
+00:04:34.680 --> 00:04:37.270 align:start position:0%
+text we'll type in main
+menu<00:04:35.680><c> next</c><00:04:36.199><c> we're</c><00:04:36.360><c> going</c><00:04:36.479><c> to</c><00:04:36.680><c> add</c><00:04:36.880><c> some</c>
+
+00:04:37.270 --> 00:04:37.280 align:start position:0%
+menu next we're going to add some
+ 
+
+00:04:37.280 --> 00:04:39.590 align:start position:0%
+menu next we're going to add some
+buttons<00:04:38.000><c> again</c><00:04:38.199><c> these</c><00:04:38.360><c> nodes</c><00:04:38.759><c> have</c><00:04:38.880><c> a</c><00:04:39.280><c> very</c>
+
+00:04:39.590 --> 00:04:39.600 align:start position:0%
+buttons again these nodes have a very
+ 
+
+00:04:39.600 --> 00:04:41.749 align:start position:0%
+buttons again these nodes have a very
+specific<00:04:40.440><c> use</c><00:04:40.840><c> case</c><00:04:41.080><c> and</c><00:04:41.240><c> I</c><00:04:41.320><c> think</c><00:04:41.479><c> part</c><00:04:41.639><c> of</c>
+
+00:04:41.749 --> 00:04:41.759 align:start position:0%
+specific use case and I think part of
+ 
+
+00:04:41.759 --> 00:04:43.710 align:start position:0%
+specific use case and I think part of
+the<00:04:41.919><c> issue</c><00:04:42.280><c> is</c><00:04:42.520><c> knowing</c><00:04:42.960><c> what</c><00:04:43.080><c> to</c><00:04:43.280><c> use</c><00:04:43.560><c> and</c>
+
+00:04:43.710 --> 00:04:43.720 align:start position:0%
+the issue is knowing what to use and
+ 
+
+00:04:43.720 --> 00:04:45.350 align:start position:0%
+the issue is knowing what to use and
+when<00:04:43.880><c> to</c><00:04:44.080><c> use</c><00:04:44.240><c> it</c><00:04:44.600><c> we're</c><00:04:44.759><c> just</c><00:04:44.880><c> going</c><00:04:44.960><c> to</c><00:04:45.080><c> use</c><00:04:45.199><c> a</c>
+
+00:04:45.350 --> 00:04:45.360 align:start position:0%
+when to use it we're just going to use a
+ 
+
+00:04:45.360 --> 00:04:48.310 align:start position:0%
+when to use it we're just going to use a
+very<00:04:45.759><c> basic</c><00:04:46.360><c> button</c><00:04:47.360><c> We'll</c><00:04:47.600><c> add</c><00:04:47.800><c> that</c><00:04:47.960><c> as</c><00:04:48.080><c> a</c>
+
+00:04:48.310 --> 00:04:48.320 align:start position:0%
+very basic button We'll add that as a
+ 
+
+00:04:48.320 --> 00:04:50.870 align:start position:0%
+very basic button We'll add that as a
+child<00:04:48.960><c> and</c><00:04:49.320><c> like</c><00:04:49.600><c> the</c><00:04:49.840><c> label</c><00:04:50.199><c> node</c><00:04:50.560><c> you</c><00:04:50.639><c> can</c>
+
+00:04:50.870 --> 00:04:50.880 align:start position:0%
+child and like the label node you can
+ 
+
+00:04:50.880 --> 00:04:53.189 align:start position:0%
+child and like the label node you can
+add<00:04:51.160><c> text</c><00:04:51.680><c> to</c><00:04:51.880><c> that</c><00:04:52.080><c> button</c><00:04:52.360><c> and</c><00:04:52.479><c> for</c><00:04:52.680><c> our</c><00:04:52.880><c> text</c>
+
+00:04:53.189 --> 00:04:53.199 align:start position:0%
+add text to that button and for our text
+ 
+
+00:04:53.199 --> 00:04:56.110 align:start position:0%
+add text to that button and for our text
+let's<00:04:53.400><c> call</c><00:04:53.720><c> this</c><00:04:54.639><c> new</c><00:04:54.960><c> game</c><00:04:55.520><c> so</c><00:04:55.680><c> we</c><00:04:55.800><c> have</c><00:04:55.919><c> our</c>
+
+00:04:56.110 --> 00:04:56.120 align:start position:0%
+let's call this new game so we have our
+ 
+
+00:04:56.120 --> 00:04:58.629 align:start position:0%
+let's call this new game so we have our
+button<00:04:56.800><c> we</c><00:04:56.919><c> have</c><00:04:57.039><c> our</c><00:04:57.240><c> label</c><00:04:57.919><c> it</c><00:04:58.080><c> doesn't</c><00:04:58.360><c> look</c>
+
+00:04:58.629 --> 00:04:58.639 align:start position:0%
+button we have our label it doesn't look
+ 
+
+00:04:58.639 --> 00:05:00.629 align:start position:0%
+button we have our label it doesn't look
+very<00:04:58.960><c> good</c><00:04:59.280><c> but</c><00:04:59.759><c> we'll</c><00:05:00.000><c> get</c><00:05:00.120><c> to</c><00:05:00.280><c> that</c><00:05:00.400><c> in</c><00:05:00.520><c> a</c>
+
+00:05:00.629 --> 00:05:00.639 align:start position:0%
+very good but we'll get to that in a
+ 
+
+00:05:00.639 --> 00:05:02.790 align:start position:0%
+very good but we'll get to that in a
+second<00:05:00.919><c> when</c><00:05:01.080><c> we</c><00:05:01.199><c> talk</c><00:05:01.440><c> about</c><00:05:01.639><c> some</c><00:05:02.000><c> themes</c>
+
+00:05:02.790 --> 00:05:02.800 align:start position:0%
+second when we talk about some themes
+ 
+
+00:05:02.800 --> 00:05:06.990 align:start position:0%
+second when we talk about some themes
+let's<00:05:02.960><c> fill</c><00:05:03.240><c> this</c><00:05:03.400><c> out</c><00:05:03.720><c> with</c><00:05:04.039><c> a</c><00:05:04.199><c> few</c><00:05:04.479><c> more</c>
+
+00:05:06.990 --> 00:05:07.000 align:start position:0%
+ 
+ 
+
+00:05:07.000 --> 00:05:10.350 align:start position:0%
+ 
+buttons<00:05:08.000><c> we'll</c><00:05:08.199><c> make</c><00:05:08.440><c> this</c><00:05:08.639><c> one</c><00:05:09.560><c> a</c><00:05:09.759><c> continue</c>
+
+00:05:10.350 --> 00:05:10.360 align:start position:0%
+buttons we'll make this one a continue
+ 
+
+00:05:10.360 --> 00:05:12.950 align:start position:0%
+buttons we'll make this one a continue
+button<00:05:11.360><c> and</c><00:05:11.479><c> if</c><00:05:11.560><c> you</c><00:05:11.639><c> want</c><00:05:11.759><c> to</c><00:05:12.120><c> duplicate</c><00:05:12.759><c> that</c>
+
+00:05:12.950 --> 00:05:12.960 align:start position:0%
+button and if you want to duplicate that
+ 
+
+00:05:12.960 --> 00:05:15.830 align:start position:0%
+button and if you want to duplicate that
+you<00:05:13.080><c> can</c><00:05:13.280><c> click</c><00:05:13.560><c> this</c><00:05:13.840><c> node</c><00:05:14.840><c> right</c><00:05:15.120><c> click</c><00:05:15.600><c> and</c>
+
+00:05:15.830 --> 00:05:15.840 align:start position:0%
+you can click this node right click and
+ 
+
+00:05:15.840 --> 00:05:18.350 align:start position:0%
+you can click this node right click and
+duplicate<00:05:16.479><c> or</c><00:05:16.840><c> press</c><00:05:17.160><c> contrl</c>
+
+00:05:18.350 --> 00:05:18.360 align:start position:0%
+duplicate or press contrl
+ 
+
+00:05:18.360 --> 00:05:21.870 align:start position:0%
+duplicate or press contrl
+D<00:05:19.360><c> then</c><00:05:19.520><c> for</c><00:05:19.720><c> this</c><00:05:19.880><c> one</c><00:05:20.160><c> let's</c><00:05:20.479><c> add</c><00:05:20.800><c> this</c><00:05:21.039><c> be</c><00:05:21.680><c> a</c>
+
+00:05:21.870 --> 00:05:21.880 align:start position:0%
+D then for this one let's add this be a
+ 
+
+00:05:21.880 --> 00:05:24.070 align:start position:0%
+D then for this one let's add this be a
+settings<00:05:22.360><c> button</c><00:05:22.960><c> and</c><00:05:23.080><c> then</c><00:05:23.240><c> our</c><00:05:23.479><c> last</c><00:05:23.800><c> one</c>
+
+00:05:24.070 --> 00:05:24.080 align:start position:0%
+settings button and then our last one
+ 
+
+00:05:24.080 --> 00:05:28.309 align:start position:0%
+settings button and then our last one
+can<00:05:24.560><c> be</c><00:05:25.840><c> quit</c><00:05:26.840><c> all</c><00:05:26.960><c> right</c><00:05:27.160><c> so</c><00:05:27.319><c> we</c><00:05:27.560><c> have</c><00:05:27.840><c> our</c>
+
+00:05:28.309 --> 00:05:28.319 align:start position:0%
+can be quit all right so we have our
+ 
+
+00:05:28.319 --> 00:05:30.830 align:start position:0%
+can be quit all right so we have our
+title<00:05:29.080><c> for</c><00:05:29.280><c> our</c><00:05:29.720><c> menu</c><00:05:30.000><c> we</c><00:05:30.120><c> have</c><00:05:30.240><c> our</c><00:05:30.440><c> four</c>
+
+00:05:30.830 --> 00:05:30.840 align:start position:0%
+title for our menu we have our four
+ 
+
+00:05:30.840 --> 00:05:33.950 align:start position:0%
+title for our menu we have our four
+buttons<00:05:31.600><c> Let's</c><00:05:31.880><c> test</c><00:05:32.160><c> this</c><00:05:32.360><c> out</c><00:05:32.639><c> let's</c><00:05:33.000><c> save</c>
+
+00:05:33.950 --> 00:05:33.960 align:start position:0%
+buttons Let's test this out let's save
+ 
+
+00:05:33.960 --> 00:05:37.710 align:start position:0%
+buttons Let's test this out let's save
+our<00:05:34.240><c> control</c><00:05:34.639><c> node</c><00:05:35.000><c> we'll</c><00:05:35.199><c> call</c><00:05:35.880><c> this</c><00:05:36.880><c> main</c>
+
+00:05:37.710 --> 00:05:37.720 align:start position:0%
+our control node we'll call this main
+ 
+
+00:05:37.720 --> 00:05:41.790 align:start position:0%
+our control node we'll call this main
+menu<00:05:38.720><c> and</c><00:05:39.479><c> let's</c><00:05:39.800><c> test</c><00:05:40.080><c> it</c><00:05:40.520><c> we'll</c><00:05:40.800><c> run</c><00:05:41.000><c> it</c><00:05:41.639><c> and</c>
+
+00:05:41.790 --> 00:05:41.800 align:start position:0%
+menu and let's test it we'll run it and
+ 
+
+00:05:41.800 --> 00:05:43.469 align:start position:0%
+menu and let's test it we'll run it and
+there's<00:05:41.960><c> our</c><00:05:42.120><c> menu</c><00:05:42.479><c> you'll</c><00:05:42.680><c> notice</c><00:05:42.960><c> that</c><00:05:43.160><c> the</c>
+
+00:05:43.469 --> 00:05:43.479 align:start position:0%
+there's our menu you'll notice that the
+ 
+
+00:05:43.479 --> 00:05:46.270 align:start position:0%
+there's our menu you'll notice that the
+size<00:05:44.479><c> matches</c><00:05:44.960><c> that</c><00:05:45.160><c> that</c><00:05:45.240><c> viewport</c><00:05:45.720><c> box</c><00:05:46.120><c> and</c>
+
+00:05:46.270 --> 00:05:46.280 align:start position:0%
+size matches that that viewport box and
+ 
+
+00:05:46.280 --> 00:05:48.270 align:start position:0%
+size matches that that viewport box and
+we've<00:05:46.440><c> got</c><00:05:46.600><c> our</c><00:05:46.840><c> title</c><00:05:47.680><c> and</c><00:05:47.800><c> all</c><00:05:47.960><c> of</c><00:05:48.080><c> our</c>
+
+00:05:48.270 --> 00:05:48.280 align:start position:0%
+we've got our title and all of our
+ 
+
+00:05:48.280 --> 00:05:49.950 align:start position:0%
+we've got our title and all of our
+buttons<00:05:48.759><c> the</c><00:05:48.840><c> buttons</c><00:05:49.120><c> are</c><00:05:49.400><c> actually</c>
+
+00:05:49.950 --> 00:05:49.960 align:start position:0%
+buttons the buttons are actually
+ 
+
+00:05:49.960 --> 00:05:51.629 align:start position:0%
+buttons the buttons are actually
+operable<00:05:50.479><c> because</c><00:05:50.720><c> the</c><00:05:50.840><c> nodes</c><00:05:51.199><c> are</c><00:05:51.319><c> built</c>
+
+00:05:51.629 --> 00:05:51.639 align:start position:0%
+operable because the nodes are built
+ 
+
+00:05:51.639 --> 00:05:53.350 align:start position:0%
+operable because the nodes are built
+that<00:05:51.800><c> way</c><00:05:52.240><c> we</c><00:05:52.360><c> just</c><00:05:52.440><c> need</c><00:05:52.600><c> to</c><00:05:52.759><c> make</c><00:05:52.880><c> it</c><00:05:53.080><c> look</c><00:05:53.240><c> a</c>
+
+00:05:53.350 --> 00:05:53.360 align:start position:0%
+that way we just need to make it look a
+ 
+
+00:05:53.360 --> 00:05:55.189 align:start position:0%
+that way we just need to make it look a
+little<00:05:53.680><c> bit</c><00:05:53.919><c> better</c><00:05:54.400><c> let's</c><00:05:54.560><c> click</c><00:05:54.759><c> on</c><00:05:54.880><c> our</c>
+
+00:05:55.189 --> 00:05:55.199 align:start position:0%
+little bit better let's click on our
+ 
+
+00:05:55.199 --> 00:05:57.070 align:start position:0%
+little bit better let's click on our
+panel<00:05:55.560><c> container</c><00:05:56.120><c> and</c><00:05:56.319><c> head</c><00:05:56.520><c> over</c><00:05:56.680><c> to</c><00:05:56.880><c> the</c>
+
+00:05:57.070 --> 00:05:57.080 align:start position:0%
+panel container and head over to the
+ 
+
+00:05:57.080 --> 00:06:00.070 align:start position:0%
+panel container and head over to the
+right<00:05:57.440><c> side</c><00:05:57.840><c> in</c><00:05:57.960><c> the</c><00:05:58.120><c> inspector</c><00:05:58.600><c> Tab</c><00:05:59.440><c> and</c><00:05:59.680><c> and</c>
+
+00:06:00.070 --> 00:06:00.080 align:start position:0%
+right side in the inspector Tab and and
+ 
+
+00:06:00.080 --> 00:06:02.270 align:start position:0%
+right side in the inspector Tab and and
+in<00:06:00.199><c> our</c><00:06:00.479><c> control</c><00:06:01.000><c> settings</c><00:06:01.440><c> you'll</c><00:06:01.720><c> notice</c><00:06:02.120><c> we</c>
+
+00:06:02.270 --> 00:06:02.280 align:start position:0%
+in our control settings you'll notice we
+ 
+
+00:06:02.280 --> 00:06:04.469 align:start position:0%
+in our control settings you'll notice we
+have<00:06:02.520><c> this</c><00:06:02.919><c> theme</c><00:06:03.400><c> option</c><00:06:03.759><c> now</c><00:06:03.960><c> this</c><00:06:04.280><c> this</c>
+
+00:06:04.469 --> 00:06:04.479 align:start position:0%
+have this theme option now this this
+ 
+
+00:06:04.479 --> 00:06:06.830 align:start position:0%
+have this theme option now this this
+option<00:06:04.800><c> is</c><00:06:05.080><c> kind</c><00:06:05.199><c> of</c><00:06:05.440><c> hidden</c><00:06:05.759><c> away</c><00:06:06.560><c> but</c><00:06:06.759><c> this</c>
+
+00:06:06.830 --> 00:06:06.840 align:start position:0%
+option is kind of hidden away but this
+ 
+
+00:06:06.840 --> 00:06:09.430 align:start position:0%
+option is kind of hidden away but this
+is<00:06:07.039><c> where</c><00:06:07.240><c> you</c><00:06:07.360><c> can</c><00:06:07.639><c> control</c><00:06:08.280><c> the</c><00:06:08.479><c> look</c><00:06:09.000><c> of</c>
+
+00:06:09.430 --> 00:06:09.440 align:start position:0%
+is where you can control the look of
+ 
+
+00:06:09.440 --> 00:06:11.710 align:start position:0%
+is where you can control the look of
+every<00:06:10.039><c> aspect</c><00:06:10.360><c> of</c><00:06:10.479><c> your</c><00:06:10.599><c> control</c><00:06:10.919><c> node</c>
+
+00:06:11.710 --> 00:06:11.720 align:start position:0%
+every aspect of your control node
+ 
+
+00:06:11.720 --> 00:06:13.150 align:start position:0%
+every aspect of your control node
+sometimes<00:06:12.039><c> people</c><00:06:12.280><c> will</c><00:06:12.479><c> tell</c><00:06:12.680><c> you</c><00:06:12.800><c> to</c><00:06:13.000><c> look</c>
+
+00:06:13.150 --> 00:06:13.160 align:start position:0%
+sometimes people will tell you to look
+ 
+
+00:06:13.160 --> 00:06:15.870 align:start position:0%
+sometimes people will tell you to look
+to<00:06:13.400><c> this</c><00:06:13.720><c> theme</c><00:06:14.120><c> overrides</c><00:06:14.919><c> and</c><00:06:15.400><c> it</c><00:06:15.599><c> can</c><00:06:15.720><c> be</c>
+
+00:06:15.870 --> 00:06:15.880 align:start position:0%
+to this theme overrides and it can be
+ 
+
+00:06:15.880 --> 00:06:17.390 align:start position:0%
+to this theme overrides and it can be
+enticing<00:06:16.400><c> because</c><00:06:16.639><c> it</c><00:06:16.759><c> kind</c><00:06:16.880><c> of</c><00:06:17.039><c> gives</c><00:06:17.240><c> you</c>
+
+00:06:17.390 --> 00:06:17.400 align:start position:0%
+enticing because it kind of gives you
+ 
+
+00:06:17.400 --> 00:06:19.790 align:start position:0%
+enticing because it kind of gives you
+what<00:06:17.520><c> you</c><00:06:17.680><c> want</c><00:06:18.080><c> right</c><00:06:18.240><c> away</c><00:06:19.199><c> my</c>
+
+00:06:19.790 --> 00:06:19.800 align:start position:0%
+what you want right away my
+ 
+
+00:06:19.800 --> 00:06:22.950 align:start position:0%
+what you want right away my
+recommendation<00:06:20.759><c> would</c><00:06:20.960><c> be</c><00:06:21.319><c> to</c><00:06:21.800><c> avoid</c><00:06:22.800><c> uh</c>
+
+00:06:22.950 --> 00:06:22.960 align:start position:0%
+recommendation would be to avoid uh
+ 
+
+00:06:22.960 --> 00:06:25.230 align:start position:0%
+recommendation would be to avoid uh
+overrides<00:06:23.639><c> unless</c><00:06:24.000><c> absolutely</c><00:06:24.520><c> necessary</c>
+
+00:06:25.230 --> 00:06:25.240 align:start position:0%
+overrides unless absolutely necessary
+ 
+
+00:06:25.240 --> 00:06:26.589 align:start position:0%
+overrides unless absolutely necessary
+using<00:06:25.560><c> theme</c><00:06:25.840><c> is</c><00:06:25.960><c> going</c><00:06:26.039><c> to</c><00:06:26.160><c> give</c><00:06:26.240><c> you</c><00:06:26.360><c> a</c><00:06:26.479><c> lot</c>
+
+00:06:26.589 --> 00:06:26.599 align:start position:0%
+using theme is going to give you a lot
+ 
+
+00:06:26.599 --> 00:06:28.710 align:start position:0%
+using theme is going to give you a lot
+more<00:06:26.840><c> control</c><00:06:27.759><c> and</c><00:06:27.919><c> it's</c><00:06:28.199><c> it's</c><00:06:28.319><c> going</c><00:06:28.440><c> to</c><00:06:28.560><c> make</c>
+
+00:06:28.710 --> 00:06:28.720 align:start position:0%
+more control and it's it's going to make
+ 
+
+00:06:28.720 --> 00:06:30.510 align:start position:0%
+more control and it's it's going to make
+things<00:06:29.039><c> replicable</c><00:06:29.880><c> and</c><00:06:30.000><c> you</c><00:06:30.080><c> won't</c><00:06:30.360><c> have</c>
+
+00:06:30.510 --> 00:06:30.520 align:start position:0%
+things replicable and you won't have
+ 
+
+00:06:30.520 --> 00:06:33.150 align:start position:0%
+things replicable and you won't have
+some<00:06:30.759><c> item</c><00:06:31.160><c> that</c><00:06:31.440><c> didn't</c><00:06:31.880><c> magically</c><00:06:32.440><c> change</c>
+
+00:06:33.150 --> 00:06:33.160 align:start position:0%
+some item that didn't magically change
+ 
+
+00:06:33.160 --> 00:06:35.230 align:start position:0%
+some item that didn't magically change
+because<00:06:33.400><c> you</c><00:06:33.560><c> used</c><00:06:33.880><c> an</c><00:06:34.120><c> override</c><00:06:34.759><c> so</c><00:06:35.000><c> I</c><00:06:35.080><c> would</c>
+
+00:06:35.230 --> 00:06:35.240 align:start position:0%
+because you used an override so I would
+ 
+
+00:06:35.240 --> 00:06:37.550 align:start position:0%
+because you used an override so I would
+avoid<00:06:35.560><c> overrides</c><00:06:36.560><c> and</c><00:06:36.720><c> I</c><00:06:36.840><c> would</c><00:06:37.080><c> go</c><00:06:37.240><c> for</c>
+
+00:06:37.550 --> 00:06:37.560 align:start position:0%
+avoid overrides and I would go for
+ 
+
+00:06:37.560 --> 00:06:39.629 align:start position:0%
+avoid overrides and I would go for
+themes<00:06:38.160><c> speaking</c><00:06:38.479><c> of</c><00:06:38.680><c> themes</c><00:06:39.160><c> let's</c><00:06:39.360><c> go</c><00:06:39.479><c> ahead</c>
+
+00:06:39.629 --> 00:06:39.639 align:start position:0%
+themes speaking of themes let's go ahead
+ 
+
+00:06:39.639 --> 00:06:41.510 align:start position:0%
+themes speaking of themes let's go ahead
+and<00:06:39.840><c> create</c><00:06:40.160><c> one</c><00:06:40.520><c> you</c><00:06:40.639><c> can</c><00:06:40.800><c> click</c><00:06:41.080><c> that</c><00:06:41.280><c> you'll</c>
+
+00:06:41.510 --> 00:06:41.520 align:start position:0%
+and create one you can click that you'll
+ 
+
+00:06:41.520 --> 00:06:44.270 align:start position:0%
+and create one you can click that you'll
+click<00:06:41.960><c> new</c><00:06:42.479><c> theme</c><00:06:43.479><c> and</c><00:06:43.599><c> a</c><00:06:43.759><c> step</c><00:06:44.000><c> that</c><00:06:44.120><c> some</c>
+
+00:06:44.270 --> 00:06:44.280 align:start position:0%
+click new theme and a step that some
+ 
+
+00:06:44.280 --> 00:06:46.950 align:start position:0%
+click new theme and a step that some
+people<00:06:44.599><c> kind</c><00:06:44.720><c> of</c><00:06:44.919><c> forget</c><00:06:45.599><c> is</c><00:06:46.080><c> when</c><00:06:46.240><c> you</c><00:06:46.479><c> create</c>
+
+00:06:46.950 --> 00:06:46.960 align:start position:0%
+people kind of forget is when you create
+ 
+
+00:06:46.960 --> 00:06:49.790 align:start position:0%
+people kind of forget is when you create
+a<00:06:47.199><c> resource</c><00:06:47.720><c> like</c><00:06:47.919><c> that</c><00:06:48.599><c> you</c><00:06:48.720><c> can</c><00:06:48.960><c> save</c><00:06:49.240><c> it</c><00:06:49.639><c> and</c>
+
+00:06:49.790 --> 00:06:49.800 align:start position:0%
+a resource like that you can save it and
+ 
+
+00:06:49.800 --> 00:06:51.270 align:start position:0%
+a resource like that you can save it and
+if<00:06:49.919><c> you</c><00:06:50.199><c> save</c>
+
+00:06:51.270 --> 00:06:51.280 align:start position:0%
+if you save
+ 
+
+00:06:51.280 --> 00:06:54.430 align:start position:0%
+if you save
+it<00:06:52.280><c> you</c><00:06:52.400><c> can</c><00:06:52.599><c> always</c><00:06:52.880><c> reload</c><00:06:53.319><c> it</c><00:06:53.840><c> now</c><00:06:54.039><c> that</c><00:06:54.199><c> I</c>
+
+00:06:54.430 --> 00:06:54.440 align:start position:0%
+it you can always reload it now that I
+ 
+
+00:06:54.440 --> 00:06:56.589 align:start position:0%
+it you can always reload it now that I
+have<00:06:54.599><c> a</c><00:06:54.840><c> theme</c><00:06:55.639><c> what</c><00:06:55.800><c> the</c><00:06:55.919><c> heck</c><00:06:56.080><c> do</c><00:06:56.199><c> I</c><00:06:56.319><c> do</c><00:06:56.479><c> with</c>
+
+00:06:56.589 --> 00:06:56.599 align:start position:0%
+have a theme what the heck do I do with
+ 
+
+00:06:56.599 --> 00:06:58.909 align:start position:0%
+have a theme what the heck do I do with
+her<00:06:56.879><c> right</c><00:06:57.080><c> you've</c><00:06:57.440><c> probably</c><00:06:58.000><c> had</c><00:06:58.319><c> this</c><00:06:58.680><c> en</c>
+
+00:06:58.909 --> 00:06:58.919 align:start position:0%
+her right you've probably had this en
+ 
+
+00:06:58.919 --> 00:07:01.510 align:start position:0%
+her right you've probably had this en
+countered<00:06:59.319><c> this</c><00:06:59.599><c> screen</c><00:07:00.000><c> before</c><00:07:00.599><c> and</c><00:07:00.960><c> had</c><00:07:01.240><c> no</c>
+
+00:07:01.510 --> 00:07:01.520 align:start position:0%
+countered this screen before and had no
+ 
+
+00:07:01.520 --> 00:07:04.670 align:start position:0%
+countered this screen before and had no
+idea<00:07:02.120><c> what</c><00:07:02.280><c> to</c><00:07:02.440><c> do</c><00:07:02.639><c> with</c><00:07:02.759><c> it</c><00:07:03.520><c> and</c><00:07:03.720><c> I</c><00:07:03.879><c> admit</c><00:07:04.319><c> it's</c>
+
+00:07:04.670 --> 00:07:04.680 align:start position:0%
+idea what to do with it and I admit it's
+ 
+
+00:07:04.680 --> 00:07:06.950 align:start position:0%
+idea what to do with it and I admit it's
+it's<00:07:04.879><c> a</c><00:07:05.120><c> little</c><00:07:05.479><c> bit</c><00:07:06.080><c> um</c><00:07:06.520><c> it's</c><00:07:06.680><c> a</c><00:07:06.759><c> little</c>
+
+00:07:06.950 --> 00:07:06.960 align:start position:0%
+it's a little bit um it's a little
+ 
+
+00:07:06.960 --> 00:07:09.510 align:start position:0%
+it's a little bit um it's a little
+unclear<00:07:07.720><c> this</c><00:07:07.840><c> is</c><00:07:07.960><c> a</c><00:07:08.160><c> preview</c><00:07:08.599><c> of</c><00:07:08.840><c> a</c><00:07:09.120><c> a</c><00:07:09.280><c> good</c>
+
+00:07:09.510 --> 00:07:09.520 align:start position:0%
+unclear this is a preview of a a good
+ 
+
+00:07:09.520 --> 00:07:13.189 align:start position:0%
+unclear this is a preview of a a good
+variety<00:07:10.039><c> of</c><00:07:10.319><c> control</c><00:07:11.160><c> nodes</c><00:07:12.160><c> that</c><00:07:12.720><c> uh</c><00:07:12.919><c> and</c><00:07:13.080><c> how</c>
+
+00:07:13.189 --> 00:07:13.199 align:start position:0%
+variety of control nodes that uh and how
+ 
+
+00:07:13.199 --> 00:07:14.830 align:start position:0%
+variety of control nodes that uh and how
+they<00:07:13.360><c> look</c><00:07:13.520><c> within</c><00:07:13.800><c> this</c><00:07:14.000><c> theme</c><00:07:14.560><c> we</c><00:07:14.680><c> don't</c>
+
+00:07:14.830 --> 00:07:14.840 align:start position:0%
+they look within this theme we don't
+ 
+
+00:07:14.840 --> 00:07:16.350 align:start position:0%
+they look within this theme we don't
+want<00:07:15.000><c> it</c><00:07:15.120><c> to</c><00:07:15.240><c> look</c><00:07:15.400><c> like</c><00:07:15.680><c> this</c><00:07:15.800><c> and</c><00:07:15.919><c> we</c><00:07:16.039><c> want</c><00:07:16.120><c> to</c>
+
+00:07:16.350 --> 00:07:16.360 align:start position:0%
+want it to look like this and we want to
+ 
+
+00:07:16.360 --> 00:07:19.869 align:start position:0%
+want it to look like this and we want to
+customize<00:07:16.919><c> it</c><00:07:17.240><c> so</c><00:07:17.840><c> let's</c><00:07:18.280><c> start</c><00:07:19.280><c> with</c><00:07:19.560><c> the</c>
+
+00:07:19.869 --> 00:07:19.879 align:start position:0%
+customize it so let's start with the
+ 
+
+00:07:19.879 --> 00:07:22.270 align:start position:0%
+customize it so let's start with the
+panel<00:07:20.240><c> container</c><00:07:21.000><c> we've</c><00:07:21.240><c> got</c><00:07:21.520><c> my</c><00:07:21.759><c> theme</c><00:07:22.039><c> is</c>
+
+00:07:22.270 --> 00:07:22.280 align:start position:0%
+panel container we've got my theme is
+ 
+
+00:07:22.280 --> 00:07:25.230 align:start position:0%
+panel container we've got my theme is
+applied<00:07:22.720><c> to</c><00:07:23.080><c> panel</c><00:07:23.879><c> container</c><00:07:24.879><c> and</c><00:07:25.000><c> we</c><00:07:25.080><c> need</c>
+
+00:07:25.230 --> 00:07:25.240 align:start position:0%
+applied to panel container and we need
+ 
+
+00:07:25.240 --> 00:07:28.230 align:start position:0%
+applied to panel container and we need
+to<00:07:25.400><c> go</c><00:07:25.520><c> to</c><00:07:25.840><c> this</c><00:07:26.240><c> field</c><00:07:27.080><c> right</c><00:07:27.440><c> here</c><00:07:28.120><c> we're</c>
+
+00:07:28.230 --> 00:07:28.240 align:start position:0%
+to go to this field right here we're
+ 
+
+00:07:28.240 --> 00:07:30.350 align:start position:0%
+to go to this field right here we're
+going<00:07:28.319><c> to</c><00:07:28.560><c> add</c><00:07:28.960><c> Plus</c><00:07:29.639><c> and</c><00:07:29.759><c> we're</c><00:07:29.879><c> going</c><00:07:29.960><c> to</c><00:07:30.160><c> add</c>
+
+00:07:30.350 --> 00:07:30.360 align:start position:0%
+going to add Plus and we're going to add
+ 
+
+00:07:30.360 --> 00:07:34.270 align:start position:0%
+going to add Plus and we're going to add
+a<00:07:30.879><c> new</c><00:07:31.879><c> type</c><00:07:32.599><c> that</c><00:07:32.840><c> this</c><00:07:33.280><c> theme</c><00:07:33.840><c> is</c><00:07:34.000><c> going</c><00:07:34.080><c> to</c>
+
+00:07:34.270 --> 00:07:34.280 align:start position:0%
+a new type that this theme is going to
+ 
+
+00:07:34.280 --> 00:07:36.550 align:start position:0%
+a new type that this theme is going to
+control<00:07:35.280><c> basically</c><00:07:35.720><c> it</c><00:07:35.879><c> means</c><00:07:36.240><c> that</c><00:07:36.400><c> we're</c>
+
+00:07:36.550 --> 00:07:36.560 align:start position:0%
+control basically it means that we're
+ 
+
+00:07:36.560 --> 00:07:40.070 align:start position:0%
+control basically it means that we're
+going<00:07:36.639><c> to</c><00:07:36.919><c> make</c><00:07:37.280><c> this</c><00:07:37.680><c> node</c><00:07:38.680><c> have</c><00:07:39.199><c> uh</c><00:07:39.479><c> new</c>
+
+00:07:40.070 --> 00:07:40.080 align:start position:0%
+going to make this node have uh new
+ 
+
+00:07:40.080 --> 00:07:42.710 align:start position:0%
+going to make this node have uh new
+defaults<00:07:41.080><c> within</c><00:07:41.440><c> this</c><00:07:41.639><c> theme</c><00:07:42.120><c> now</c><00:07:42.400><c> if</c><00:07:42.479><c> you</c>
+
+00:07:42.710 --> 00:07:42.720 align:start position:0%
+defaults within this theme now if you
+ 
+
+00:07:42.720 --> 00:07:45.110 align:start position:0%
+defaults within this theme now if you
+don't<00:07:43.360><c> add</c><00:07:43.599><c> this</c><00:07:43.800><c> node</c><00:07:44.560><c> it's</c><00:07:44.720><c> just</c><00:07:44.879><c> going</c><00:07:45.000><c> to</c>
+
+00:07:45.110 --> 00:07:45.120 align:start position:0%
+don't add this node it's just going to
+ 
+
+00:07:45.120 --> 00:07:47.510 align:start position:0%
+don't add this node it's just going to
+pull<00:07:45.319><c> from</c><00:07:45.560><c> the</c><00:07:45.759><c> default</c><00:07:46.560><c> theme</c><00:07:47.240><c> which</c><00:07:47.400><c> we</c>
+
+00:07:47.510 --> 00:07:47.520 align:start position:0%
+pull from the default theme which we
+ 
+
+00:07:47.520 --> 00:07:50.110 align:start position:0%
+pull from the default theme which we
+don't<00:07:47.720><c> want</c><00:07:48.440><c> so</c><00:07:48.639><c> we'll</c><00:07:49.080><c> take</c><00:07:49.280><c> the</c><00:07:49.440><c> panel</c>
+
+00:07:50.110 --> 00:07:50.120 align:start position:0%
+don't want so we'll take the panel
+ 
+
+00:07:50.120 --> 00:07:53.469 align:start position:0%
+don't want so we'll take the panel
+container<00:07:51.120><c> We'll</c><00:07:51.599><c> add</c><00:07:51.960><c> that</c><00:07:52.319><c> as</c><00:07:52.520><c> a</c><00:07:52.759><c> a</c><00:07:53.000><c> type</c>
+
+00:07:53.469 --> 00:07:53.479 align:start position:0%
+container We'll add that as a a type
+ 
+
+00:07:53.479 --> 00:07:54.869 align:start position:0%
+container We'll add that as a a type
+you'll<00:07:53.720><c> notice</c><00:07:54.000><c> that</c><00:07:54.120><c> it's</c><00:07:54.240><c> in</c><00:07:54.400><c> this</c><00:07:54.560><c> drop</c>
+
+00:07:54.869 --> 00:07:54.879 align:start position:0%
+you'll notice that it's in this drop
+ 
+
+00:07:54.879 --> 00:07:59.510 align:start position:0%
+you'll notice that it's in this drop
+down<00:07:55.159><c> now</c><00:07:55.919><c> you</c><00:07:56.039><c> can</c><00:07:56.360><c> also</c><00:07:56.720><c> go</c><00:07:56.919><c> to</c><00:07:57.520><c> manage</c><00:07:58.440><c> items</c>
+
+00:07:59.510 --> 00:07:59.520 align:start position:0%
+down now you can also go to manage items
+ 
+
+00:07:59.520 --> 00:08:01.149 align:start position:0%
+down now you can also go to manage items
+and<00:07:59.599><c> you'll</c><00:07:59.759><c> see</c><00:07:59.919><c> it</c><00:08:00.120><c> here</c><00:08:00.280><c> on</c><00:08:00.440><c> the</c><00:08:00.639><c> left</c><00:08:00.919><c> side</c>
+
+00:08:01.149 --> 00:08:01.159 align:start position:0%
+and you'll see it here on the left side
+ 
+
+00:08:01.159 --> 00:08:04.749 align:start position:0%
+and you'll see it here on the left side
+of<00:08:01.800><c> types</c><00:08:02.800><c> open</c><00:08:03.120><c> this</c><00:08:03.360><c> up</c><00:08:03.520><c> a</c><00:08:03.680><c> little</c><00:08:03.919><c> bit</c><00:08:04.560><c> or</c>
+
+00:08:04.749 --> 00:08:04.759 align:start position:0%
+of types open this up a little bit or
+ 
+
+00:08:04.759 --> 00:08:06.309 align:start position:0%
+of types open this up a little bit or
+you<00:08:04.840><c> can</c><00:08:05.039><c> go</c><00:08:05.199><c> through</c><00:08:05.479><c> any</c><00:08:05.680><c> of</c><00:08:05.800><c> the</c><00:08:05.960><c> control</c>
+
+00:08:06.309 --> 00:08:06.319 align:start position:0%
+you can go through any of the control
+ 
+
+00:08:06.319 --> 00:08:09.430 align:start position:0%
+you can go through any of the control
+nodes<00:08:06.840><c> or</c><00:08:07.120><c> presets</c><00:08:07.919><c> and</c><00:08:08.080><c> simply</c><00:08:08.560><c> import</c>
+
+00:08:09.430 --> 00:08:09.440 align:start position:0%
+nodes or presets and simply import
+ 
+
+00:08:09.440 --> 00:08:11.790 align:start position:0%
+nodes or presets and simply import
+whatever<00:08:09.840><c> those</c><00:08:10.039><c> settings</c><00:08:10.560><c> are</c><00:08:11.319><c> with</c><00:08:11.479><c> the</c>
+
+00:08:11.790 --> 00:08:11.800 align:start position:0%
+whatever those settings are with the
+ 
+
+00:08:11.800 --> 00:08:13.869 align:start position:0%
+whatever those settings are with the
+data<00:08:12.800><c> this</c><00:08:12.919><c> is</c><00:08:13.039><c> going</c><00:08:13.120><c> to</c><00:08:13.240><c> bring</c><00:08:13.479><c> a</c><00:08:13.599><c> lot</c><00:08:13.720><c> of</c>
+
+00:08:13.869 --> 00:08:13.879 align:start position:0%
+data this is going to bring a lot of
+ 
+
+00:08:13.879 --> 00:08:16.270 align:start position:0%
+data this is going to bring a lot of
+stuff<00:08:14.120><c> into</c><00:08:14.319><c> your</c><00:08:14.639><c> theme</c><00:08:15.639><c> so</c><00:08:15.800><c> I</c><00:08:15.879><c> would</c><00:08:16.080><c> kind</c><00:08:16.159><c> of</c>
+
+00:08:16.270 --> 00:08:16.280 align:start position:0%
+stuff into your theme so I would kind of
+ 
+
+00:08:16.280 --> 00:08:17.950 align:start position:0%
+stuff into your theme so I would kind of
+do<00:08:16.440><c> it</c><00:08:16.599><c> piece</c><00:08:16.840><c> by</c><00:08:17.080><c> piece</c><00:08:17.440><c> so</c><00:08:17.560><c> we</c><00:08:17.680><c> have</c><00:08:17.800><c> our</c>
+
+00:08:17.950 --> 00:08:17.960 align:start position:0%
+do it piece by piece so we have our
+ 
+
+00:08:17.960 --> 00:08:20.270 align:start position:0%
+do it piece by piece so we have our
+panel<00:08:18.280><c> container</c><00:08:18.800><c> the</c><00:08:19.039><c> next</c><00:08:19.759><c> part</c><00:08:20.080><c> that</c><00:08:20.199><c> we</c>
+
+00:08:20.270 --> 00:08:20.280 align:start position:0%
+panel container the next part that we
+ 
+
+00:08:20.280 --> 00:08:22.430 align:start position:0%
+panel container the next part that we
+want<00:08:20.400><c> to</c><00:08:20.599><c> look</c><00:08:20.759><c> at</c><00:08:21.199><c> is</c><00:08:21.680><c> this</c><00:08:21.879><c> stuff</c><00:08:22.120><c> over</c><00:08:22.319><c> here</c>
+
+00:08:22.430 --> 00:08:22.440 align:start position:0%
+want to look at is this stuff over here
+ 
+
+00:08:22.440 --> 00:08:24.950 align:start position:0%
+want to look at is this stuff over here
+on<00:08:22.560><c> the</c><00:08:22.720><c> right</c><00:08:23.000><c> you</c><00:08:23.159><c> have</c><00:08:23.319><c> different</c><00:08:23.919><c> tabs</c>
+
+00:08:24.950 --> 00:08:24.960 align:start position:0%
+on the right you have different tabs
+ 
+
+00:08:24.960 --> 00:08:27.869 align:start position:0%
+on the right you have different tabs
+here<00:08:25.960><c> and</c><00:08:26.120><c> Within</c><00:08:26.440><c> These</c><00:08:26.680><c> Tabs</c><00:08:27.120><c> are</c><00:08:27.560><c> the</c>
+
+00:08:27.869 --> 00:08:27.879 align:start position:0%
+here and Within These Tabs are the
+ 
+
+00:08:27.879 --> 00:08:30.629 align:start position:0%
+here and Within These Tabs are the
+options<00:08:28.520><c> the</c><00:08:28.720><c> settings</c><00:08:29.120><c> that</c><00:08:29.240><c> you</c><00:08:29.520><c> can</c><00:08:29.720><c> adjust</c>
+
+00:08:30.629 --> 00:08:30.639 align:start position:0%
+options the settings that you can adjust
+ 
+
+00:08:30.639 --> 00:08:33.230 align:start position:0%
+options the settings that you can adjust
+within<00:08:31.039><c> this</c><00:08:31.240><c> node</c><00:08:31.720><c> type</c><00:08:32.200><c> now</c><00:08:32.399><c> a</c><00:08:32.519><c> lot</c><00:08:32.680><c> of</c><00:08:32.919><c> these</c>
+
+00:08:33.230 --> 00:08:33.240 align:start position:0%
+within this node type now a lot of these
+ 
+
+00:08:33.240 --> 00:08:36.310 align:start position:0%
+within this node type now a lot of these
+are<00:08:33.680><c> are</c><00:08:33.959><c> empty</c><00:08:34.519><c> for</c><00:08:34.800><c> panel</c><00:08:35.120><c> container</c>
+
+00:08:36.310 --> 00:08:36.320 align:start position:0%
+are are empty for panel container
+ 
+
+00:08:36.320 --> 00:08:39.670 align:start position:0%
+are are empty for panel container
+except<00:08:37.320><c> for</c><00:08:37.640><c> this</c><00:08:38.039><c> style</c><00:08:38.519><c> box</c><00:08:38.959><c> option</c><00:08:39.440><c> and</c>
+
+00:08:39.670 --> 00:08:39.680 align:start position:0%
+except for this style box option and
+ 
+
+00:08:39.680 --> 00:08:42.389 align:start position:0%
+except for this style box option and
+this<00:08:39.880><c> style</c><00:08:40.279><c> box</c><00:08:40.640><c> option</c><00:08:41.080><c> is</c><00:08:41.440><c> where</c><00:08:41.760><c> the</c><00:08:42.000><c> panel</c>
+
+00:08:42.389 --> 00:08:42.399 align:start position:0%
+this style box option is where the panel
+ 
+
+00:08:42.399 --> 00:08:45.150 align:start position:0%
+this style box option is where the panel
+is<00:08:42.959><c> getting</c><00:08:43.959><c> its</c><00:08:44.240><c> visuals</c><00:08:44.880><c> where</c><00:08:45.000><c> it's</c>
+
+00:08:45.150 --> 00:08:45.160 align:start position:0%
+is getting its visuals where it's
+ 
+
+00:08:45.160 --> 00:08:48.070 align:start position:0%
+is getting its visuals where it's
+getting<00:08:45.399><c> its</c><00:08:45.720><c> look</c><00:08:46.399><c> so</c><00:08:46.839><c> if</c><00:08:46.959><c> we</c><00:08:47.120><c> want</c><00:08:47.279><c> to</c><00:08:47.560><c> change</c>
+
+00:08:48.070 --> 00:08:48.080 align:start position:0%
+getting its look so if we want to change
+ 
+
+00:08:48.080 --> 00:08:50.829 align:start position:0%
+getting its look so if we want to change
+that<00:08:48.800><c> using</c><00:08:49.160><c> our</c><00:08:49.519><c> theme</c><00:08:50.160><c> we</c><00:08:50.320><c> go</c><00:08:50.440><c> to</c><00:08:50.640><c> the</c>
+
+00:08:50.829 --> 00:08:50.839 align:start position:0%
+that using our theme we go to the
+ 
+
+00:08:50.839 --> 00:08:53.150 align:start position:0%
+that using our theme we go to the
+stylebox<00:08:51.640><c> tab</c><00:08:52.360><c> right</c><00:08:52.519><c> now</c><00:08:52.680><c> we</c><00:08:52.800><c> just</c><00:08:52.920><c> have</c>
+
+00:08:53.150 --> 00:08:53.160 align:start position:0%
+stylebox tab right now we just have
+ 
+
+00:08:53.160 --> 00:08:54.829 align:start position:0%
+stylebox tab right now we just have
+panel<00:08:53.519><c> in</c><00:08:53.640><c> the</c><00:08:53.720><c> future</c><00:08:54.040><c> there</c><00:08:54.200><c> might</c><00:08:54.360><c> be</c><00:08:54.560><c> other</c>
+
+00:08:54.829 --> 00:08:54.839 align:start position:0%
+panel in the future there might be other
+ 
+
+00:08:54.839 --> 00:08:57.030 align:start position:0%
+panel in the future there might be other
+options<00:08:55.240><c> so</c><00:08:55.440><c> we're</c><00:08:55.600><c> going</c><00:08:55.680><c> to</c><00:08:55.920><c> click</c><00:08:56.360><c> the</c><00:08:56.720><c> plus</c>
+
+00:08:57.030 --> 00:08:57.040 align:start position:0%
+options so we're going to click the plus
+ 
+
+00:08:57.040 --> 00:09:00.590 align:start position:0%
+options so we're going to click the plus
+button<00:08:58.040><c> that's</c><00:08:58.200><c> going</c><00:08:58.320><c> to</c><00:08:58.519><c> create</c><00:08:59.000><c> a</c><00:08:59.839><c> override</c>
+
+00:09:00.590 --> 00:09:00.600 align:start position:0%
+button that's going to create a override
+ 
+
+00:09:00.600 --> 00:09:02.470 align:start position:0%
+button that's going to create a override
+here<00:09:01.079><c> well</c><00:09:01.240><c> I</c><00:09:01.320><c> shouldn't</c><00:09:01.600><c> say</c><00:09:01.839><c> override</c><00:09:02.360><c> it's</c>
+
+00:09:02.470 --> 00:09:02.480 align:start position:0%
+here well I shouldn't say override it's
+ 
+
+00:09:02.480 --> 00:09:04.910 align:start position:0%
+here well I shouldn't say override it's
+not<00:09:02.640><c> really</c><00:09:02.839><c> an</c><00:09:03.000><c> override</c><00:09:04.000><c> it's</c><00:09:04.279><c> a</c><00:09:04.480><c> a</c><00:09:04.640><c> new</c>
+
+00:09:04.910 --> 00:09:04.920 align:start position:0%
+not really an override it's a a new
+ 
+
+00:09:04.920 --> 00:09:07.389 align:start position:0%
+not really an override it's a a new
+default<00:09:05.519><c> within</c><00:09:05.760><c> this</c><00:09:05.920><c> theme</c><00:09:06.600><c> and</c><00:09:06.839><c> with</c><00:09:07.079><c> that</c>
+
+00:09:07.389 --> 00:09:07.399 align:start position:0%
+default within this theme and with that
+ 
+
+00:09:07.399 --> 00:09:11.630 align:start position:0%
+default within this theme and with that
+we<00:09:07.560><c> can</c><00:09:07.760><c> add</c><00:09:08.000><c> our</c><00:09:08.360><c> own</c><00:09:09.360><c> style</c><00:09:09.760><c> boox</c><00:09:10.399><c> flat</c><00:09:11.399><c> and</c>
+
+00:09:11.630 --> 00:09:11.640 align:start position:0%
+we can add our own style boox flat and
+ 
+
+00:09:11.640 --> 00:09:13.269 align:start position:0%
+we can add our own style boox flat and
+if<00:09:11.760><c> I</c><00:09:11.880><c> do</c><00:09:12.160><c> that</c><00:09:12.320><c> you'll</c><00:09:12.560><c> notice</c><00:09:12.880><c> that</c><00:09:13.040><c> we've</c>
+
+00:09:13.269 --> 00:09:13.279 align:start position:0%
+if I do that you'll notice that we've
+ 
+
+00:09:13.279 --> 00:09:16.790 align:start position:0%
+if I do that you'll notice that we've
+already<00:09:13.600><c> changed</c><00:09:14.040><c> the</c><00:09:14.480><c> look</c><00:09:15.480><c> of</c><00:09:15.640><c> our</c><00:09:15.880><c> panel</c>
+
+00:09:16.790 --> 00:09:16.800 align:start position:0%
+already changed the look of our panel
+ 
+
+00:09:16.800 --> 00:09:18.829 align:start position:0%
+already changed the look of our panel
+now<00:09:17.279><c> this</c><00:09:17.399><c> is</c><00:09:17.640><c> another</c><00:09:18.040><c> thing</c><00:09:18.240><c> that</c><00:09:18.360><c> you</c><00:09:18.519><c> can</c>
+
+00:09:18.829 --> 00:09:18.839 align:start position:0%
+now this is another thing that you can
+ 
+
+00:09:18.839 --> 00:09:20.790 align:start position:0%
+now this is another thing that you can
+save<00:09:19.440><c> in</c><00:09:19.560><c> fact</c><00:09:19.800><c> I</c><00:09:19.880><c> would</c><00:09:20.120><c> recommend</c><00:09:20.519><c> it</c><00:09:20.680><c> and</c>
+
+00:09:20.790 --> 00:09:20.800 align:start position:0%
+save in fact I would recommend it and
+ 
+
+00:09:20.800 --> 00:09:22.509 align:start position:0%
+save in fact I would recommend it and
+you<00:09:20.920><c> can</c><00:09:21.079><c> have</c><00:09:21.200><c> a</c><00:09:21.320><c> folder</c><00:09:21.760><c> of</c><00:09:21.959><c> all</c><00:09:22.279><c> these</c>
+
+00:09:22.509 --> 00:09:22.519 align:start position:0%
+you can have a folder of all these
+ 
+
+00:09:22.519 --> 00:09:25.910 align:start position:0%
+you can have a folder of all these
+different<00:09:23.399><c> UI</c><00:09:24.279><c> resources</c><00:09:25.279><c> that</c><00:09:25.360><c> you</c><00:09:25.480><c> can</c><00:09:25.640><c> pull</c>
+
+00:09:25.910 --> 00:09:25.920 align:start position:0%
+different UI resources that you can pull
+ 
+
+00:09:25.920 --> 00:09:27.910 align:start position:0%
+different UI resources that you can pull
+from<00:09:26.560><c> you</c><00:09:26.680><c> don't</c><00:09:26.839><c> want</c><00:09:26.959><c> to</c><00:09:27.200><c> create</c><00:09:27.600><c> something</c>
+
+00:09:27.910 --> 00:09:27.920 align:start position:0%
+from you don't want to create something
+ 
+
+00:09:27.920 --> 00:09:30.110 align:start position:0%
+from you don't want to create something
+and<00:09:28.079><c> then</c><00:09:28.240><c> lose</c><00:09:28.519><c> it</c><00:09:28.800><c> because</c><00:09:29.040><c> you</c><00:09:29.560><c> unloaded</c>
+
+00:09:30.110 --> 00:09:30.120 align:start position:0%
+and then lose it because you unloaded
+ 
+
+00:09:30.120 --> 00:09:32.110 align:start position:0%
+and then lose it because you unloaded
+something<00:09:30.519><c> or</c><00:09:30.680><c> or</c><00:09:30.880><c> deleted</c><00:09:31.279><c> it</c><00:09:31.839><c> that</c><00:09:31.959><c> would</c>
+
+00:09:32.110 --> 00:09:32.120 align:start position:0%
+something or or deleted it that would
+ 
+
+00:09:32.120 --> 00:09:33.670 align:start position:0%
+something or or deleted it that would
+not<00:09:32.279><c> be</c><00:09:32.480><c> good</c><00:09:32.680><c> so</c><00:09:32.800><c> let's</c><00:09:33.000><c> go</c><00:09:33.079><c> ahead</c><00:09:33.240><c> and</c><00:09:33.399><c> save</c>
+
+00:09:33.670 --> 00:09:33.680 align:start position:0%
+not be good so let's go ahead and save
+ 
+
+00:09:33.680 --> 00:09:36.790 align:start position:0%
+not be good so let's go ahead and save
+this<00:09:33.839><c> we'll</c><00:09:34.079><c> call</c><00:09:34.360><c> this</c><00:09:35.320><c> um</c><00:09:36.320><c> in</c><00:09:36.480><c> fact</c><00:09:36.640><c> let's</c>
+
+00:09:36.790 --> 00:09:36.800 align:start position:0%
+this we'll call this um in fact let's
+ 
+
+00:09:36.800 --> 00:09:39.190 align:start position:0%
+this we'll call this um in fact let's
+create<00:09:37.040><c> a</c><00:09:37.160><c> new</c><00:09:37.480><c> folder</c><00:09:38.160><c> so</c><00:09:38.360><c> let's</c><00:09:38.560><c> set</c><00:09:38.720><c> up</c><00:09:38.920><c> a</c>
+
+00:09:39.190 --> 00:09:39.200 align:start position:0%
+create a new folder so let's set up a
+ 
+
+00:09:39.200 --> 00:09:41.630 align:start position:0%
+create a new folder so let's set up a
+primary<00:09:40.160><c> and</c><00:09:40.360><c> now</c><00:09:40.519><c> we</c><00:09:40.680><c> can</c><00:09:40.959><c> we</c><00:09:41.040><c> can</c><00:09:41.240><c> make</c><00:09:41.399><c> some</c>
+
+00:09:41.630 --> 00:09:41.640 align:start position:0%
+primary and now we can we can make some
+ 
+
+00:09:41.640 --> 00:09:45.030 align:start position:0%
+primary and now we can we can make some
+edits<00:09:42.200><c> and</c><00:09:42.440><c> this</c><00:09:42.560><c> is</c><00:09:42.959><c> probably</c><00:09:43.720><c> the</c><00:09:44.000><c> area</c><00:09:44.600><c> that</c>
+
+00:09:45.030 --> 00:09:45.040 align:start position:0%
+edits and this is probably the area that
+ 
+
+00:09:45.040 --> 00:09:46.829 align:start position:0%
+edits and this is probably the area that
+some<00:09:45.240><c> of</c><00:09:45.440><c> you</c><00:09:45.640><c> want</c><00:09:45.839><c> to</c><00:09:46.040><c> get</c><00:09:46.160><c> to</c><00:09:46.399><c> but</c><00:09:46.519><c> you</c><00:09:46.680><c> don't</c>
+
+00:09:46.829 --> 00:09:46.839 align:start position:0%
+some of you want to get to but you don't
+ 
+
+00:09:46.839 --> 00:09:48.990 align:start position:0%
+some of you want to get to but you don't
+know<00:09:47.040><c> how</c><00:09:47.120><c> to</c><00:09:47.320><c> get</c><00:09:47.440><c> to</c><00:09:48.360><c> because</c><00:09:48.640><c> this</c><00:09:48.720><c> is</c><00:09:48.880><c> where</c>
+
+00:09:48.990 --> 00:09:49.000 align:start position:0%
+know how to get to because this is where
+ 
+
+00:09:49.000 --> 00:09:50.790 align:start position:0%
+know how to get to because this is where
+we<00:09:49.120><c> can</c><00:09:49.240><c> add</c><00:09:49.399><c> some</c><00:09:49.640><c> padding</c><00:09:50.160><c> and</c><00:09:50.320><c> adjust</c><00:09:50.680><c> some</c>
+
+00:09:50.790 --> 00:09:50.800 align:start position:0%
+we can add some padding and adjust some
+ 
+
+00:09:50.800 --> 00:09:53.710 align:start position:0%
+we can add some padding and adjust some
+of<00:09:50.920><c> the</c><00:09:51.079><c> look</c><00:09:51.640><c> real</c><00:09:52.079><c> easily</c><00:09:53.079><c> so</c><00:09:53.279><c> in</c><00:09:53.440><c> our</c>
+
+00:09:53.710 --> 00:09:53.720 align:start position:0%
+of the look real easily so in our
+ 
+
+00:09:53.720 --> 00:09:55.790 align:start position:0%
+of the look real easily so in our
+stylebox<00:09:54.399><c> setting</c><00:09:54.959><c> let's</c><00:09:55.200><c> go</c><00:09:55.320><c> ahead</c><00:09:55.480><c> and</c><00:09:55.640><c> add</c>
+
+00:09:55.790 --> 00:09:55.800 align:start position:0%
+stylebox setting let's go ahead and add
+ 
+
+00:09:55.800 --> 00:09:57.870 align:start position:0%
+stylebox setting let's go ahead and add
+some<00:09:56.000><c> padding</c><00:09:56.399><c> because</c><00:09:56.760><c> that</c><00:09:56.959><c> looks</c><00:09:57.519><c> pretty</c>
+
+00:09:57.870 --> 00:09:57.880 align:start position:0%
+some padding because that looks pretty
+ 
+
+00:09:57.880 --> 00:10:01.630 align:start position:0%
+some padding because that looks pretty
+rough<00:09:58.880><c> the</c><00:09:59.040><c> padding</c><00:09:59.560><c> is</c><00:09:59.720><c> in</c><00:10:00.160><c> content</c><00:10:01.000><c> margins</c>
+
+00:10:01.630 --> 00:10:01.640 align:start position:0%
+rough the padding is in content margins
+ 
+
+00:10:01.640 --> 00:10:03.829 align:start position:0%
+rough the padding is in content margins
+maybe<00:10:01.880><c> not</c><00:10:02.000><c> the</c><00:10:02.120><c> best</c><00:10:02.320><c> word</c><00:10:02.640><c> choice</c><00:10:03.640><c> but</c>
+
+00:10:03.829 --> 00:10:03.839 align:start position:0%
+maybe not the best word choice but
+ 
+
+00:10:03.839 --> 00:10:05.550 align:start position:0%
+maybe not the best word choice but
+that's<00:10:04.000><c> where</c><00:10:04.120><c> the</c><00:10:04.279><c> padding</c><00:10:04.640><c> is</c><00:10:04.959><c> so</c><00:10:05.120><c> let's</c><00:10:05.360><c> add</c>
+
+00:10:05.550 --> 00:10:05.560 align:start position:0%
+that's where the padding is so let's add
+ 
+
+00:10:05.560 --> 00:10:08.550 align:start position:0%
+that's where the padding is so let's add
+some<00:10:05.839><c> padding</c><00:10:06.200><c> let's</c><00:10:06.360><c> do</c><00:10:06.640><c> 50</c><00:10:06.959><c> pixels</c><00:10:07.959><c> on</c><00:10:08.160><c> all</c>
+
+00:10:08.550 --> 00:10:08.560 align:start position:0%
+some padding let's do 50 pixels on all
+ 
+
+00:10:08.560 --> 00:10:10.630 align:start position:0%
+some padding let's do 50 pixels on all
+sides<00:10:09.560><c> and</c><00:10:09.680><c> we're</c><00:10:09.839><c> already</c><00:10:10.120><c> getting</c><00:10:10.399><c> some</c>
+
+00:10:10.630 --> 00:10:10.640 align:start position:0%
+sides and we're already getting some
+ 
+
+00:10:10.640 --> 00:10:14.870 align:start position:0%
+sides and we're already getting some
+spacing<00:10:11.200><c> there</c><00:10:11.680><c> you</c><00:10:11.800><c> can</c><00:10:12.120><c> add</c><00:10:12.560><c> a</c><00:10:13.160><c> border</c>
+
+00:10:14.870 --> 00:10:14.880 align:start position:0%
+spacing there you can add a border
+ 
+
+00:10:14.880 --> 00:10:17.590 align:start position:0%
+spacing there you can add a border
+width<00:10:15.880><c> which</c><00:10:16.079><c> adds</c><00:10:16.279><c> a</c><00:10:16.399><c> border</c><00:10:16.760><c> to</c><00:10:16.920><c> your</c><00:10:17.160><c> box</c>
+
+00:10:17.590 --> 00:10:17.600 align:start position:0%
+width which adds a border to your box
+ 
+
+00:10:17.600 --> 00:10:21.269 align:start position:0%
+width which adds a border to your box
+you<00:10:17.720><c> can</c><00:10:18.040><c> add</c><00:10:18.640><c> a</c><00:10:18.959><c> uh</c><00:10:19.120><c> a</c><00:10:19.320><c> blend</c><00:10:19.959><c> which</c><00:10:20.200><c> sort</c><00:10:20.480><c> of</c>
+
+00:10:21.269 --> 00:10:21.279 align:start position:0%
+you can add a uh a blend which sort of
+ 
+
+00:10:21.279 --> 00:10:23.590 align:start position:0%
+you can add a uh a blend which sort of
+gradually<00:10:22.120><c> goes</c><00:10:22.519><c> from</c><00:10:22.839><c> the</c><00:10:23.040><c> the</c><00:10:23.160><c> background</c>
+
+00:10:23.590 --> 00:10:23.600 align:start position:0%
+gradually goes from the the background
+ 
+
+00:10:23.600 --> 00:10:25.910 align:start position:0%
+gradually goes from the the background
+color<00:10:23.839><c> to</c><00:10:24.040><c> the</c><00:10:24.240><c> Border</c><00:10:24.600><c> color</c><00:10:25.279><c> sort</c><00:10:25.480><c> of</c><00:10:25.600><c> like</c><00:10:25.760><c> a</c>
+
+00:10:25.910 --> 00:10:25.920 align:start position:0%
+color to the Border color sort of like a
+ 
+
+00:10:25.920 --> 00:10:28.590 align:start position:0%
+color to the Border color sort of like a
+a<00:10:26.040><c> bevel</c><00:10:26.560><c> effect</c><00:10:27.440><c> you</c><00:10:27.519><c> can</c><00:10:27.720><c> add</c><00:10:27.880><c> a</c><00:10:28.079><c> corner</c>
+
+00:10:28.590 --> 00:10:28.600 align:start position:0%
+a bevel effect you can add a corner
+ 
+
+00:10:28.600 --> 00:10:31.990 align:start position:0%
+a bevel effect you can add a corner
+radius
+
+00:10:31.990 --> 00:10:32.000 align:start position:0%
+ 
+ 
+
+00:10:32.000 --> 00:10:34.150 align:start position:0%
+ 
+now<00:10:32.200><c> we</c><00:10:32.360><c> have</c><00:10:32.640><c> rounded</c><00:10:33.120><c> Corners</c><00:10:33.839><c> now</c><00:10:34.000><c> the</c>
+
+00:10:34.150 --> 00:10:34.160 align:start position:0%
+now we have rounded Corners now the
+ 
+
+00:10:34.160 --> 00:10:36.790 align:start position:0%
+now we have rounded Corners now the
+expand<00:10:34.560><c> margin</c><00:10:35.040><c> option</c><00:10:35.399><c> is</c><00:10:35.600><c> going</c><00:10:35.760><c> to</c><00:10:36.000><c> sort</c><00:10:36.200><c> of</c>
+
+00:10:36.790 --> 00:10:36.800 align:start position:0%
+expand margin option is going to sort of
+ 
+
+00:10:36.800 --> 00:10:40.389 align:start position:0%
+expand margin option is going to sort of
+Bring<00:10:37.079><c> It</c><00:10:37.440><c> Outside</c><00:10:38.240><c> of</c><00:10:38.399><c> its</c><00:10:38.760><c> container</c><00:10:39.399><c> box</c>
+
+00:10:40.389 --> 00:10:40.399 align:start position:0%
+Bring It Outside of its container box
+ 
+
+00:10:40.399 --> 00:10:43.190 align:start position:0%
+Bring It Outside of its container box
+like<00:10:40.760><c> that</c><00:10:41.760><c> which</c><00:10:42.240><c> there's</c><00:10:42.440><c> some</c><00:10:42.600><c> use</c><00:10:42.920><c> cases</c>
+
+00:10:43.190 --> 00:10:43.200 align:start position:0%
+like that which there's some use cases
+ 
+
+00:10:43.200 --> 00:10:45.030 align:start position:0%
+like that which there's some use cases
+for<00:10:43.440><c> that</c><00:10:43.639><c> but</c><00:10:43.880><c> for</c><00:10:44.160><c> what</c><00:10:44.320><c> we're</c><00:10:44.480><c> doing</c><00:10:44.800><c> we</c><00:10:44.959><c> we</c>
+
+00:10:45.030 --> 00:10:45.040 align:start position:0%
+for that but for what we're doing we we
+ 
+
+00:10:45.040 --> 00:10:48.230 align:start position:0%
+for that but for what we're doing we we
+don't<00:10:45.200><c> need</c><00:10:45.519><c> that</c><00:10:46.040><c> and</c><00:10:46.200><c> you</c><00:10:46.279><c> can</c><00:10:46.480><c> add</c><00:10:46.600><c> a</c>
+
+00:10:48.230 --> 00:10:48.240 align:start position:0%
+don't need that and you can add a
+ 
+
+00:10:48.240 --> 00:10:51.750 align:start position:0%
+don't need that and you can add a
+shadow<00:10:49.240><c> change</c><00:10:49.639><c> the</c><00:10:49.839><c> color</c><00:10:50.399><c> or</c><00:10:50.920><c> the</c><00:10:51.160><c> alpha</c><00:10:51.560><c> of</c>
+
+00:10:51.750 --> 00:10:51.760 align:start position:0%
+shadow change the color or the alpha of
+ 
+
+00:10:51.760 --> 00:10:54.590 align:start position:0%
+shadow change the color or the alpha of
+that<00:10:52.160><c> shadow</c><00:10:53.160><c> or</c><00:10:53.399><c> you</c><00:10:53.519><c> can</c><00:10:53.800><c> offset</c><00:10:54.160><c> it</c><00:10:54.320><c> to</c><00:10:54.480><c> make</c>
+
+00:10:54.590 --> 00:10:54.600 align:start position:0%
+that shadow or you can offset it to make
+ 
+
+00:10:54.600 --> 00:10:56.910 align:start position:0%
+that shadow or you can offset it to make
+it<00:10:54.760><c> a</c><00:10:55.279><c> drop</c><00:10:55.600><c> down</c><00:10:55.839><c> Shadow</c><00:10:56.480><c> and</c><00:10:56.560><c> then</c><00:10:56.680><c> we</c><00:10:56.800><c> have</c>
+
+00:10:56.910 --> 00:10:56.920 align:start position:0%
+it a drop down Shadow and then we have
+ 
+
+00:10:56.920 --> 00:10:59.829 align:start position:0%
+it a drop down Shadow and then we have
+an<00:10:57.160><c> anti-aliasing</c><00:10:58.160><c> option</c><00:10:58.560><c> which</c><00:10:59.360><c> generally</c>
+
+00:10:59.829 --> 00:10:59.839 align:start position:0%
+an anti-aliasing option which generally
+ 
+
+00:10:59.839 --> 00:11:01.790 align:start position:0%
+an anti-aliasing option which generally
+would<00:11:00.000><c> be</c><00:11:00.279><c> be</c><00:11:00.440><c> turned</c><00:11:00.760><c> on</c><00:11:01.360><c> so</c><00:11:01.519><c> I'm</c><00:11:01.600><c> going</c><00:11:01.680><c> to</c>
+
+00:11:01.790 --> 00:11:01.800 align:start position:0%
+would be be turned on so I'm going to
+ 
+
+00:11:01.800 --> 00:11:04.230 align:start position:0%
+would be be turned on so I'm going to
+put<00:11:01.959><c> some</c><00:11:02.160><c> settings</c><00:11:02.519><c> in</c><00:11:02.760><c> here</c><00:11:03.040><c> feel</c><00:11:03.279><c> free</c><00:11:03.600><c> to</c>
+
+00:11:04.230 --> 00:11:04.240 align:start position:0%
+put some settings in here feel free to
+ 
+
+00:11:04.240 --> 00:11:06.710 align:start position:0%
+put some settings in here feel free to
+you<00:11:04.360><c> know</c><00:11:04.560><c> make</c><00:11:04.720><c> your</c><00:11:04.880><c> own</c><00:11:05.279><c> look</c><00:11:06.279><c> um</c><00:11:06.519><c> I'm</c><00:11:06.600><c> not</c>
+
+00:11:06.710 --> 00:11:06.720 align:start position:0%
+you know make your own look um I'm not
+ 
+
+00:11:06.720 --> 00:11:08.590 align:start position:0%
+you know make your own look um I'm not
+going<00:11:06.839><c> to</c><00:11:06.920><c> have</c><00:11:07.040><c> a</c><00:11:07.160><c> border</c><00:11:08.000><c> for</c><00:11:08.200><c> our</c><00:11:08.360><c> color</c>
+
+00:11:08.590 --> 00:11:08.600 align:start position:0%
+going to have a border for our color
+ 
+
+00:11:08.600 --> 00:11:09.430 align:start position:0%
+going to have a border for our color
+we're<00:11:08.720><c> going</c><00:11:08.800><c> to</c><00:11:08.880><c> do</c><00:11:08.959><c> something</c><00:11:09.160><c> that's</c><00:11:09.279><c> sort</c>
+
+00:11:09.430 --> 00:11:09.440 align:start position:0%
+we're going to do something that's sort
+ 
+
+00:11:09.440 --> 00:11:14.110 align:start position:0%
+we're going to do something that's sort
+of<00:11:09.560><c> a</c><00:11:10.160><c> darker</c><00:11:11.160><c> darker</c><00:11:11.560><c> gray</c><00:11:11.920><c> like</c><00:11:12.519><c> that</c><00:11:13.519><c> and</c><00:11:13.920><c> I</c>
+
+00:11:14.110 --> 00:11:14.120 align:start position:0%
+of a darker darker gray like that and I
+ 
+
+00:11:14.120 --> 00:11:18.629 align:start position:0%
+of a darker darker gray like that and I
+don't<00:11:14.399><c> want</c><00:11:14.760><c> rounded</c><00:11:15.800><c> corners</c><00:11:16.800><c> and</c><00:11:17.160><c> Shadow</c><00:11:17.800><c> is</c>
+
+00:11:18.629 --> 00:11:18.639 align:start position:0%
+don't want rounded corners and Shadow is
+ 
+
+00:11:18.639 --> 00:11:20.430 align:start position:0%
+don't want rounded corners and Shadow is
+that's<00:11:18.880><c> fine</c><00:11:19.079><c> we</c><00:11:19.200><c> can</c><00:11:19.320><c> keep</c><00:11:19.519><c> the</c><00:11:19.639><c> Shadow</c><00:11:20.240><c> and</c>
+
+00:11:20.430 --> 00:11:20.440 align:start position:0%
+that's fine we can keep the Shadow and
+ 
+
+00:11:20.440 --> 00:11:22.230 align:start position:0%
+that's fine we can keep the Shadow and
+content<00:11:20.800><c> margins</c><00:11:21.240><c> that's</c><00:11:21.600><c> that's</c><00:11:21.839><c> okay</c><00:11:22.000><c> for</c>
+
+00:11:22.230 --> 00:11:22.240 align:start position:0%
+content margins that's that's okay for
+ 
+
+00:11:22.240 --> 00:11:25.470 align:start position:0%
+content margins that's that's okay for
+now<00:11:22.720><c> so</c><00:11:22.880><c> we</c><00:11:23.040><c> set</c><00:11:23.200><c> up</c><00:11:23.360><c> our</c><00:11:23.519><c> new</c><00:11:23.839><c> panel</c><00:11:24.480><c> container</c>
+
+00:11:25.470 --> 00:11:25.480 align:start position:0%
+now so we set up our new panel container
+ 
+
+00:11:25.480 --> 00:11:28.150 align:start position:0%
+now so we set up our new panel container
+uh<00:11:25.680><c> theme</c><00:11:26.279><c> within</c><00:11:26.560><c> our</c><00:11:26.839><c> custom</c><00:11:27.240><c> theme</c><00:11:27.959><c> it's</c>
+
+00:11:28.150 --> 00:11:28.160 align:start position:0%
+uh theme within our custom theme it's
+ 
+
+00:11:28.160 --> 00:11:30.269 align:start position:0%
+uh theme within our custom theme it's
+working<00:11:28.600><c> great</c><00:11:28.920><c> if</c><00:11:29.040><c> I</c><00:11:29.360><c> added</c><00:11:29.639><c> another</c><00:11:29.959><c> panel</c>
+
+00:11:30.269 --> 00:11:30.279 align:start position:0%
+working great if I added another panel
+ 
+
+00:11:30.279 --> 00:11:31.750 align:start position:0%
+working great if I added another panel
+container<00:11:30.720><c> and</c><00:11:30.839><c> use</c><00:11:31.079><c> the</c><00:11:31.240><c> theme</c><00:11:31.480><c> it</c><00:11:31.560><c> would</c>
+
+00:11:31.750 --> 00:11:31.760 align:start position:0%
+container and use the theme it would
+ 
+
+00:11:31.760 --> 00:11:33.629 align:start position:0%
+container and use the theme it would
+automatically<00:11:32.399><c> look</c><00:11:32.639><c> like</c><00:11:32.880><c> that</c><00:11:33.399><c> that's</c><00:11:33.519><c> the</c>
+
+00:11:33.629 --> 00:11:33.639 align:start position:0%
+automatically look like that that's the
+ 
+
+00:11:33.639 --> 00:11:35.430 align:start position:0%
+automatically look like that that's the
+whole<00:11:33.800><c> point</c><00:11:33.959><c> of</c><00:11:34.120><c> themes</c><00:11:34.519><c> right</c><00:11:35.079><c> so</c><00:11:35.240><c> let's</c>
+
+00:11:35.430 --> 00:11:35.440 align:start position:0%
+whole point of themes right so let's
+ 
+
+00:11:35.440 --> 00:11:38.829 align:start position:0%
+whole point of themes right so let's
+adjust<00:11:35.839><c> these</c><00:11:36.079><c> buttons</c><00:11:37.000><c> next</c><00:11:38.000><c> let's</c><00:11:38.480><c> uh</c><00:11:38.639><c> click</c>
+
+00:11:38.829 --> 00:11:38.839 align:start position:0%
+adjust these buttons next let's uh click
+ 
+
+00:11:38.839 --> 00:11:41.870 align:start position:0%
+adjust these buttons next let's uh click
+on<00:11:39.000><c> our</c><00:11:39.160><c> main</c><00:11:39.519><c> button</c><00:11:40.200><c> and</c><00:11:40.440><c> we'll</c><00:11:40.720><c> go</c><00:11:41.040><c> down</c><00:11:41.399><c> to</c>
+
+00:11:41.870 --> 00:11:41.880 align:start position:0%
+on our main button and we'll go down to
+ 
+
+00:11:41.880 --> 00:11:45.910 align:start position:0%
+on our main button and we'll go down to
+our<00:11:43.160><c> layout</c><00:11:44.160><c> go</c><00:11:44.279><c> to</c><00:11:44.440><c> our</c><00:11:44.639><c> theme</c><00:11:45.320><c> let's</c><00:11:45.480><c> load</c><00:11:45.720><c> up</c>
+
+00:11:45.910 --> 00:11:45.920 align:start position:0%
+our layout go to our theme let's load up
+ 
+
+00:11:45.920 --> 00:11:48.110 align:start position:0%
+our layout go to our theme let's load up
+the<00:11:46.200><c> theme</c><00:11:46.680><c> that</c><00:11:46.880><c> we</c>
+
+00:11:48.110 --> 00:11:48.120 align:start position:0%
+the theme that we
+ 
+
+00:11:48.120 --> 00:11:50.509 align:start position:0%
+the theme that we
+created<00:11:49.120><c> and</c><00:11:49.279><c> do</c><00:11:49.480><c> the</c><00:11:49.680><c> same</c><00:11:50.040><c> process</c><00:11:50.360><c> we're</c>
+
+00:11:50.509 --> 00:11:50.519 align:start position:0%
+created and do the same process we're
+ 
+
+00:11:50.519 --> 00:11:54.389 align:start position:0%
+created and do the same process we're
+going<00:11:50.600><c> to</c><00:11:50.839><c> go</c><00:11:51.200><c> and</c><00:11:51.839><c> add</c><00:11:52.839><c> Button</c><00:11:53.360><c> as</c><00:11:53.440><c> a</c><00:11:53.720><c> type</c><00:11:54.160><c> now</c>
+
+00:11:54.389 --> 00:11:54.399 align:start position:0%
+going to go and add Button as a type now
+ 
+
+00:11:54.399 --> 00:11:56.350 align:start position:0%
+going to go and add Button as a type now
+we've<00:11:54.600><c> got</c><00:11:54.720><c> a</c><00:11:54.920><c> whole</c><00:11:55.160><c> bunch</c><00:11:55.360><c> of</c><00:11:55.600><c> new</c><00:11:55.880><c> options</c>
+
+00:11:56.350 --> 00:11:56.360 align:start position:0%
+we've got a whole bunch of new options
+ 
+
+00:11:56.360 --> 00:11:58.670 align:start position:0%
+we've got a whole bunch of new options
+because<00:11:56.959><c> buttons</c><00:11:57.279><c> a</c><00:11:57.440><c> different</c><00:11:57.680><c> type</c><00:11:57.880><c> of</c><00:11:58.040><c> node</c>
+
+00:11:58.670 --> 00:11:58.680 align:start position:0%
+because buttons a different type of node
+ 
+
+00:11:58.680 --> 00:12:00.110 align:start position:0%
+because buttons a different type of node
+it<00:11:58.839><c> has</c><00:11:58.959><c> different</c><00:11:59.399><c> presets</c><00:11:59.839><c> different</c>
+
+00:12:00.110 --> 00:12:00.120 align:start position:0%
+it has different presets different
+ 
+
+00:12:00.120 --> 00:12:01.870 align:start position:0%
+it has different presets different
+things<00:12:00.279><c> that</c><00:12:00.440><c> we</c><00:12:00.519><c> can</c><00:12:00.680><c> change</c><00:12:01.320><c> we've</c><00:12:01.560><c> got</c><00:12:01.680><c> some</c>
+
+00:12:01.870 --> 00:12:01.880 align:start position:0%
+things that we can change we've got some
+ 
+
+00:12:01.880 --> 00:12:04.310 align:start position:0%
+things that we can change we've got some
+colors<00:12:02.680><c> that</c><00:12:02.760><c> we</c><00:12:02.880><c> can</c><00:12:03.040><c> adjust</c><00:12:03.639><c> constants</c><00:12:04.200><c> that</c>
+
+00:12:04.310 --> 00:12:04.320 align:start position:0%
+colors that we can adjust constants that
+ 
+
+00:12:04.320 --> 00:12:08.269 align:start position:0%
+colors that we can adjust constants that
+we<00:12:04.440><c> can</c><00:12:04.600><c> adjust</c><00:12:05.399><c> the</c><00:12:05.639><c> font</c><00:12:06.440><c> font</c><00:12:06.839><c> size</c><00:12:07.680><c> an</c><00:12:07.920><c> icon</c>
+
+00:12:08.269 --> 00:12:08.279 align:start position:0%
+we can adjust the font font size an icon
+ 
+
+00:12:08.279 --> 00:12:11.069 align:start position:0%
+we can adjust the font font size an icon
+if<00:12:08.399><c> we</c><00:12:08.519><c> added</c><00:12:08.839><c> an</c><00:12:09.160><c> icon</c><00:12:10.160><c> and</c><00:12:10.399><c> then</c><00:12:10.560><c> we</c><00:12:10.720><c> have</c><00:12:10.959><c> all</c>
+
+00:12:11.069 --> 00:12:11.079 align:start position:0%
+if we added an icon and then we have all
+ 
+
+00:12:11.079 --> 00:12:13.230 align:start position:0%
+if we added an icon and then we have all
+of<00:12:11.240><c> these</c><00:12:11.399><c> stylebox</c><00:12:12.120><c> options</c><00:12:12.760><c> base</c><00:12:13.040><c> type</c>
+
+00:12:13.230 --> 00:12:13.240 align:start position:0%
+of these stylebox options base type
+ 
+
+00:12:13.240 --> 00:12:15.470 align:start position:0%
+of these stylebox options base type
+we'll<00:12:13.440><c> get</c><00:12:13.560><c> to</c><00:12:14.040><c> in</c><00:12:14.279><c> just</c><00:12:14.480><c> a</c><00:12:14.680><c> second</c><00:12:15.360><c> because</c>
+
+00:12:15.470 --> 00:12:15.480 align:start position:0%
+we'll get to in just a second because
+ 
+
+00:12:15.480 --> 00:12:17.430 align:start position:0%
+we'll get to in just a second because
+it's<00:12:15.600><c> a</c><00:12:15.720><c> really</c><00:12:15.920><c> Nifty</c><00:12:16.279><c> tool</c><00:12:16.639><c> it's</c><00:12:16.880><c> just</c><00:12:17.279><c> it's</c>
+
+00:12:17.430 --> 00:12:17.440 align:start position:0%
+it's a really Nifty tool it's just it's
+ 
+
+00:12:17.440 --> 00:12:20.710 align:start position:0%
+it's a really Nifty tool it's just it's
+not<00:12:17.680><c> explained</c><00:12:18.360><c> super</c><00:12:18.720><c> great</c><00:12:19.639><c> okay</c><00:12:19.880><c> so</c><00:12:20.199><c> let's</c>
+
+00:12:20.710 --> 00:12:20.720 align:start position:0%
+not explained super great okay so let's
+ 
+
+00:12:20.720 --> 00:12:23.550 align:start position:0%
+not explained super great okay so let's
+set<00:12:20.920><c> up</c><00:12:21.199><c> a</c><00:12:21.440><c> new</c><00:12:22.120><c> button</c><00:12:22.519><c> style</c><00:12:22.920><c> box</c><00:12:23.320><c> because</c><00:12:23.480><c> I</c>
+
+00:12:23.550 --> 00:12:23.560 align:start position:0%
+set up a new button style box because I
+ 
+
+00:12:23.560 --> 00:12:25.710 align:start position:0%
+set up a new button style box because I
+don't<00:12:23.760><c> like</c><00:12:23.920><c> this</c><00:12:24.160><c> default</c><00:12:24.560><c> color</c><00:12:25.440><c> we're</c>
+
+00:12:25.710 --> 00:12:25.720 align:start position:0%
+don't like this default color we're
+ 
+
+00:12:25.720 --> 00:12:26.870 align:start position:0%
+don't like this default color we're
+looking
+
+00:12:26.870 --> 00:12:26.880 align:start position:0%
+looking
+ 
+
+00:12:26.880 --> 00:12:30.670 align:start position:0%
+looking
+at<00:12:27.880><c> normal</c><00:12:29.279><c> which</c><00:12:29.440><c> is</c><00:12:29.720><c> the</c><00:12:29.959><c> the</c><00:12:30.079><c> normal</c><00:12:30.440><c> state</c>
+
+00:12:30.670 --> 00:12:30.680 align:start position:0%
+at normal which is the the normal state
+ 
+
+00:12:30.680 --> 00:12:32.670 align:start position:0%
+at normal which is the the normal state
+of<00:12:30.839><c> our</c><00:12:31.040><c> button</c><00:12:31.639><c> and</c><00:12:31.839><c> let's</c><00:12:32.040><c> create</c><00:12:32.320><c> a</c><00:12:32.440><c> new</c>
+
+00:12:32.670 --> 00:12:32.680 align:start position:0%
+of our button and let's create a new
+ 
+
+00:12:32.680 --> 00:12:34.069 align:start position:0%
+of our button and let's create a new
+style<00:12:33.040><c> box</c><00:12:33.560><c> I'm</c><00:12:33.639><c> going</c><00:12:33.720><c> to</c><00:12:33.839><c> put</c><00:12:33.959><c> your</c>
+
+00:12:34.069 --> 00:12:34.079 align:start position:0%
+style box I'm going to put your
+ 
+
+00:12:34.079 --> 00:12:35.910 align:start position:0%
+style box I'm going to put your
+attention<00:12:34.360><c> to</c><00:12:34.639><c> this</c><00:12:35.040><c> right</c><00:12:35.240><c> here</c><00:12:35.440><c> this</c><00:12:35.560><c> is</c><00:12:35.639><c> a</c>
+
+00:12:35.910 --> 00:12:35.920 align:start position:0%
+attention to this right here this is a
+ 
+
+00:12:35.920 --> 00:12:38.150 align:start position:0%
+attention to this right here this is a
+pin<00:12:36.320><c> button</c><00:12:37.199><c> and</c><00:12:37.360><c> what</c><00:12:37.480><c> this</c><00:12:37.560><c> is</c><00:12:37.720><c> going</c><00:12:37.800><c> to</c><00:12:37.959><c> do</c>
+
+00:12:38.150 --> 00:12:38.160 align:start position:0%
+pin button and what this is going to do
+ 
+
+00:12:38.160 --> 00:12:40.310 align:start position:0%
+pin button and what this is going to do
+is<00:12:38.279><c> it's</c><00:12:38.440><c> going</c><00:12:38.519><c> to</c><00:12:38.720><c> make</c><00:12:39.040><c> any</c><00:12:39.360><c> changes</c><00:12:40.160><c> that</c>
+
+00:12:40.310 --> 00:12:40.320 align:start position:0%
+is it's going to make any changes that
+ 
+
+00:12:40.320 --> 00:12:43.750 align:start position:0%
+is it's going to make any changes that
+we<00:12:40.480><c> do</c><00:12:40.839><c> within</c><00:12:41.320><c> this</c><00:12:41.680><c> normal</c><00:12:42.160><c> states</c><00:12:43.120><c> and</c><00:12:43.320><c> any</c>
+
+00:12:43.750 --> 00:12:43.760 align:start position:0%
+we do within this normal states and any
+ 
+
+00:12:43.760 --> 00:12:45.470 align:start position:0%
+we do within this normal states and any
+style<00:12:44.120><c> box</c><00:12:44.519><c> that</c><00:12:44.639><c> set</c><00:12:44.800><c> up</c><00:12:44.920><c> that</c><00:12:45.040><c> we</c><00:12:45.160><c> use</c><00:12:45.360><c> it's</c>
+
+00:12:45.470 --> 00:12:45.480 align:start position:0%
+style box that set up that we use it's
+ 
+
+00:12:45.480 --> 00:12:48.910 align:start position:0%
+style box that set up that we use it's
+going<00:12:45.560><c> to</c><00:12:45.680><c> make</c><00:12:45.800><c> it</c><00:12:46.360><c> apply</c><00:12:47.360><c> to</c><00:12:48.120><c> all</c><00:12:48.240><c> of</c><00:12:48.399><c> these</c>
+
+00:12:48.910 --> 00:12:48.920 align:start position:0%
+going to make it apply to all of these
+ 
+
+00:12:48.920 --> 00:12:52.430 align:start position:0%
+going to make it apply to all of these
+other<00:12:49.920><c> um</c><00:12:50.160><c> States</c><00:12:50.959><c> if</c><00:12:51.079><c> we</c><00:12:51.279><c> make</c><00:12:51.760><c> style</c><00:12:52.079><c> boxes</c>
+
+00:12:52.430 --> 00:12:52.440 align:start position:0%
+other um States if we make style boxes
+ 
+
+00:12:52.440 --> 00:12:55.870 align:start position:0%
+other um States if we make style boxes
+for<00:12:52.639><c> them</c><00:12:52.839><c> so</c><00:12:53.000><c> we</c><00:12:53.160><c> want</c><00:12:53.279><c> to</c><00:12:53.959><c> pin</c><00:12:54.360><c> this</c><00:12:55.279><c> because</c>
+
+00:12:55.870 --> 00:12:55.880 align:start position:0%
+for them so we want to pin this because
+ 
+
+00:12:55.880 --> 00:12:57.350 align:start position:0%
+for them so we want to pin this because
+uh<00:12:56.000><c> we're</c><00:12:56.160><c> going</c><00:12:56.240><c> to</c><00:12:56.360><c> use</c><00:12:56.560><c> this</c><00:12:56.760><c> as</c><00:12:56.959><c> the</c><00:12:57.160><c> sort</c>
+
+00:12:57.350 --> 00:12:57.360 align:start position:0%
+uh we're going to use this as the sort
+ 
+
+00:12:57.360 --> 00:12:58.110 align:start position:0%
+uh we're going to use this as the sort
+of
+
+00:12:58.110 --> 00:12:58.120 align:start position:0%
+of
+ 
+
+00:12:58.120 --> 00:13:01.150 align:start position:0%
+of
+default<00:12:59.160><c> setting</c><00:12:59.440><c> for</c><00:12:59.600><c> our</c><00:12:59.880><c> buttons</c><00:13:00.800><c> created</c>
+
+00:13:01.150 --> 00:13:01.160 align:start position:0%
+default setting for our buttons created
+ 
+
+00:13:01.160 --> 00:13:03.870 align:start position:0%
+default setting for our buttons created
+a<00:13:01.320><c> new</c><00:13:01.839><c> style</c><00:13:02.199><c> box</c><00:13:02.480><c> so</c><00:13:02.680><c> let's</c><00:13:03.040><c> save</c><00:13:03.519><c> that</c>
+
+00:13:03.870 --> 00:13:03.880 align:start position:0%
+a new style box so let's save that
+ 
+
+00:13:03.880 --> 00:13:06.710 align:start position:0%
+a new style box so let's save that
+because<00:13:04.440><c> we</c><00:13:04.560><c> want</c><00:13:04.680><c> to</c><00:13:04.920><c> keep</c><00:13:05.199><c> that</c><00:13:05.519><c> right</c><00:13:06.480><c> we'll</c>
+
+00:13:06.710 --> 00:13:06.720 align:start position:0%
+because we want to keep that right we'll
+ 
+
+00:13:06.720 --> 00:13:10.350 align:start position:0%
+because we want to keep that right we'll
+call<00:13:06.920><c> this</c><00:13:07.360><c> button</c><00:13:08.360><c> and</c><00:13:08.600><c> we'll</c><00:13:08.839><c> call</c><00:13:09.160><c> this</c>
+
+00:13:10.350 --> 00:13:10.360 align:start position:0%
+call this button and we'll call this
+ 
+
+00:13:10.360 --> 00:13:14.670 align:start position:0%
+call this button and we'll call this
+primary<00:13:11.360><c> and</c><00:13:11.680><c> let's</c><00:13:12.120><c> adjust</c><00:13:12.560><c> it</c><00:13:12.760><c> so</c><00:13:13.680><c> we're</c>
+
+00:13:14.670 --> 00:13:14.680 align:start position:0%
+primary and let's adjust it so we're
+ 
+
+00:13:14.680 --> 00:13:18.550 align:start position:0%
+primary and let's adjust it so we're
+maybe<00:13:15.079><c> like</c><00:13:15.480><c> a</c><00:13:16.399><c> medium</c><00:13:17.240><c> gray</c><00:13:18.240><c> and</c><00:13:18.320><c> then</c><00:13:18.440><c> we</c>
+
+00:13:18.550 --> 00:13:18.560 align:start position:0%
+maybe like a medium gray and then we
+ 
+
+00:13:18.560 --> 00:13:20.509 align:start position:0%
+maybe like a medium gray and then we
+need<00:13:18.680><c> to</c><00:13:18.880><c> add</c><00:13:19.079><c> some</c><00:13:19.399><c> content</c><00:13:19.800><c> margins</c><00:13:20.320><c> because</c>
+
+00:13:20.509 --> 00:13:20.519 align:start position:0%
+need to add some content margins because
+ 
+
+00:13:20.519 --> 00:13:22.949 align:start position:0%
+need to add some content margins because
+it<00:13:20.639><c> is</c><00:13:21.519><c> way</c><00:13:21.800><c> too</c><00:13:22.079><c> tight</c><00:13:22.279><c> we</c><00:13:22.399><c> need</c><00:13:22.519><c> to</c><00:13:22.639><c> breathe</c><00:13:22.880><c> a</c>
+
+00:13:22.949 --> 00:13:22.959 align:start position:0%
+it is way too tight we need to breathe a
+ 
+
+00:13:22.959 --> 00:13:24.509 align:start position:0%
+it is way too tight we need to breathe a
+little<00:13:23.240><c> bit</c><00:13:23.639><c> there</c><00:13:23.760><c> are</c><00:13:23.920><c> a</c><00:13:24.000><c> couple</c><00:13:24.320><c> things</c>
+
+00:13:24.509 --> 00:13:24.519 align:start position:0%
+little bit there are a couple things
+ 
+
+00:13:24.519 --> 00:13:27.150 align:start position:0%
+little bit there are a couple things
+that<00:13:24.680><c> I'd</c><00:13:24.800><c> like</c><00:13:24.959><c> to</c><00:13:25.160><c> change</c><00:13:25.720><c> real</c><00:13:26.040><c> quick</c><00:13:26.639><c> and</c>
+
+00:13:27.150 --> 00:13:27.160 align:start position:0%
+that I'd like to change real quick and
+ 
+
+00:13:27.160 --> 00:13:29.629 align:start position:0%
+that I'd like to change real quick and
+that's<00:13:27.800><c> the</c><00:13:28.040><c> the</c><00:13:28.320><c> overall</c><00:13:28.760><c> width</c>
+
+00:13:29.629 --> 00:13:29.639 align:start position:0%
+that's the the overall width
+ 
+
+00:13:29.639 --> 00:13:32.389 align:start position:0%
+that's the the overall width
+of<00:13:29.760><c> our</c><00:13:29.959><c> menu</c><00:13:30.320><c> is</c><00:13:30.440><c> a</c><00:13:30.639><c> is</c><00:13:30.760><c> a</c><00:13:30.920><c> little</c><00:13:31.279><c> thin</c><00:13:32.079><c> so</c><00:13:32.240><c> I'd</c>
+
+00:13:32.389 --> 00:13:32.399 align:start position:0%
+of our menu is a is a little thin so I'd
+ 
+
+00:13:32.399 --> 00:13:34.750 align:start position:0%
+of our menu is a is a little thin so I'd
+like<00:13:32.519><c> to</c><00:13:32.639><c> set</c><00:13:32.880><c> a</c><00:13:33.199><c> default</c><00:13:33.680><c> minimum</c><00:13:34.199><c> size</c><00:13:34.480><c> for</c>
+
+00:13:34.750 --> 00:13:34.760 align:start position:0%
+like to set a default minimum size for
+ 
+
+00:13:34.760 --> 00:13:36.389 align:start position:0%
+like to set a default minimum size for
+that<00:13:35.079><c> and</c><00:13:35.279><c> then</c><00:13:35.560><c> let's</c><00:13:35.760><c> get</c><00:13:35.920><c> a</c><00:13:36.040><c> little</c><00:13:36.199><c> bit</c>
+
+00:13:36.389 --> 00:13:36.399 align:start position:0%
+that and then let's get a little bit
+ 
+
+00:13:36.399 --> 00:13:39.030 align:start position:0%
+that and then let's get a little bit
+more<00:13:36.680><c> space</c><00:13:37.160><c> in</c><00:13:37.320><c> between</c><00:13:37.760><c> our</c><00:13:38.000><c> our</c><00:13:38.240><c> buttons</c><00:13:38.880><c> so</c>
+
+00:13:39.030 --> 00:13:39.040 align:start position:0%
+more space in between our our buttons so
+ 
+
+00:13:39.040 --> 00:13:40.629 align:start position:0%
+more space in between our our buttons so
+for<00:13:39.160><c> the</c><00:13:39.279><c> first</c><00:13:39.480><c> thing</c><00:13:39.600><c> we</c><00:13:39.680><c> need</c><00:13:39.800><c> to</c><00:13:39.959><c> go</c><00:13:40.079><c> to</c><00:13:40.360><c> the</c>
+
+00:13:40.629 --> 00:13:40.639 align:start position:0%
+for the first thing we need to go to the
+ 
+
+00:13:40.639 --> 00:13:43.269 align:start position:0%
+for the first thing we need to go to the
+panel<00:13:41.360><c> container</c><00:13:41.959><c> node</c><00:13:42.680><c> and</c><00:13:42.839><c> let's</c><00:13:43.040><c> go</c><00:13:43.120><c> ahead</c>
+
+00:13:43.269 --> 00:13:43.279 align:start position:0%
+panel container node and let's go ahead
+ 
+
+00:13:43.279 --> 00:13:44.430 align:start position:0%
+panel container node and let's go ahead
+and<00:13:43.399><c> close</c><00:13:43.639><c> that</c><00:13:43.800><c> theme</c><00:13:44.079><c> because</c><00:13:44.240><c> we</c><00:13:44.320><c> don't</c>
+
+00:13:44.430 --> 00:13:44.440 align:start position:0%
+and close that theme because we don't
+ 
+
+00:13:44.440 --> 00:13:47.990 align:start position:0%
+and close that theme because we don't
+need<00:13:44.600><c> it</c><00:13:44.800><c> right</c><00:13:45.279><c> now</c><00:13:46.279><c> and</c><00:13:46.720><c> in</c><00:13:46.880><c> our</c><00:13:47.240><c> our</c><00:13:47.480><c> layout</c>
+
+00:13:47.990 --> 00:13:48.000 align:start position:0%
+need it right now and in our our layout
+ 
+
+00:13:48.000 --> 00:13:50.389 align:start position:0%
+need it right now and in our our layout
+settings<00:13:48.440><c> we</c><00:13:48.560><c> have</c><00:13:48.760><c> this</c><00:13:48.959><c> option</c><00:13:49.199><c> for</c><00:13:49.560><c> custom</c>
+
+00:13:50.389 --> 00:13:50.399 align:start position:0%
+settings we have this option for custom
+ 
+
+00:13:50.399 --> 00:13:53.110 align:start position:0%
+settings we have this option for custom
+minimum<00:13:51.079><c> size</c><00:13:51.519><c> now</c><00:13:51.720><c> I</c><00:13:51.800><c> want</c><00:13:52.040><c> the</c><00:13:52.240><c> minimum</c><00:13:52.759><c> size</c>
+
+00:13:53.110 --> 00:13:53.120 align:start position:0%
+minimum size now I want the minimum size
+ 
+
+00:13:53.120 --> 00:13:55.870 align:start position:0%
+minimum size now I want the minimum size
+to<00:13:53.240><c> be</c><00:13:53.399><c> a</c><00:13:53.519><c> little</c><00:13:53.720><c> bit</c><00:13:54.240><c> bigger</c><00:13:55.240><c> obviously</c><00:13:55.639><c> than</c>
+
+00:13:55.870 --> 00:13:55.880 align:start position:0%
+to be a little bit bigger obviously than
+ 
+
+00:13:55.880 --> 00:13:59.790 align:start position:0%
+to be a little bit bigger obviously than
+zero<00:13:56.480><c> uh</c><00:13:56.600><c> so</c><00:13:56.800><c> let's</c><00:13:57.000><c> set</c><00:13:57.199><c> it</c><00:13:57.680><c> to</c><00:13:58.680><c> 3</c><00:13:59.079><c> 00</c><00:13:59.480><c> maybe</c><00:13:59.720><c> a</c>
+
+00:13:59.790 --> 00:13:59.800 align:start position:0%
+zero uh so let's set it to 3 00 maybe a
+ 
+
+00:13:59.800 --> 00:14:03.069 align:start position:0%
+zero uh so let's set it to 3 00 maybe a
+little<00:14:00.000><c> bit</c><00:14:00.240><c> bigger</c><00:14:01.240><c> 400</c><00:14:02.240><c> there</c><00:14:02.360><c> we</c><00:14:02.560><c> go</c><00:14:03.000><c> and</c>
+
+00:14:03.069 --> 00:14:03.079 align:start position:0%
+little bit bigger 400 there we go and
+ 
+
+00:14:03.079 --> 00:14:04.350 align:start position:0%
+little bit bigger 400 there we go and
+then<00:14:03.240><c> the</c><00:14:03.399><c> other</c><00:14:03.600><c> thing</c><00:14:03.759><c> that</c><00:14:03.880><c> I</c><00:14:03.959><c> wanted</c><00:14:04.199><c> to</c>
+
+00:14:04.350 --> 00:14:04.360 align:start position:0%
+then the other thing that I wanted to
+ 
+
+00:14:04.360 --> 00:14:06.389 align:start position:0%
+then the other thing that I wanted to
+change<00:14:04.720><c> is</c><00:14:04.959><c> the</c><00:14:05.199><c> spacing</c><00:14:05.639><c> here</c><00:14:05.880><c> between</c><00:14:06.199><c> these</c>
+
+00:14:06.389 --> 00:14:06.399 align:start position:0%
+change is the spacing here between these
+ 
+
+00:14:06.399 --> 00:14:09.110 align:start position:0%
+change is the spacing here between these
+buttons<00:14:07.079><c> now</c><00:14:08.079><c> remember</c><00:14:08.399><c> we</c><00:14:08.519><c> use</c><00:14:08.839><c> this</c>
+
+00:14:09.110 --> 00:14:09.120 align:start position:0%
+buttons now remember we use this
+ 
+
+00:14:09.120 --> 00:14:11.870 align:start position:0%
+buttons now remember we use this
+vertical<00:14:09.720><c> box</c><00:14:10.240><c> container</c><00:14:11.079><c> this</c><00:14:11.240><c> is</c><00:14:11.560><c> taking</c>
+
+00:14:11.870 --> 00:14:11.880 align:start position:0%
+vertical box container this is taking
+ 
+
+00:14:11.880 --> 00:14:14.430 align:start position:0%
+vertical box container this is taking
+all<00:14:12.120><c> the</c><00:14:12.320><c> children</c><00:14:13.160><c> nodes</c><00:14:13.639><c> that</c><00:14:13.759><c> we</c><00:14:13.880><c> set</c><00:14:14.120><c> up</c>
+
+00:14:14.430 --> 00:14:14.440 align:start position:0%
+all the children nodes that we set up
+ 
+
+00:14:14.440 --> 00:14:18.269 align:start position:0%
+all the children nodes that we set up
+and<00:14:15.079><c> layering</c><00:14:15.680><c> them</c><00:14:16.199><c> in</c><00:14:16.320><c> a</c><00:14:16.519><c> vertical</c><00:14:17.279><c> fashion</c>
+
+00:14:18.269 --> 00:14:18.279 align:start position:0%
+and layering them in a vertical fashion
+ 
+
+00:14:18.279 --> 00:14:21.990 align:start position:0%
+and layering them in a vertical fashion
+there's<00:14:18.480><c> an</c><00:14:18.759><c> option</c><00:14:19.160><c> in</c><00:14:19.399><c> these</c><00:14:19.720><c> vbox</c><00:14:20.240><c> and</c><00:14:20.600><c> hbox</c>
+
+00:14:21.990 --> 00:14:22.000 align:start position:0%
+there's an option in these vbox and hbox
+ 
+
+00:14:22.000 --> 00:14:24.030 align:start position:0%
+there's an option in these vbox and hbox
+containers<00:14:23.000><c> and</c><00:14:23.199><c> it's</c><00:14:23.519><c> it's</c><00:14:23.639><c> in</c><00:14:23.800><c> this</c>
+
+00:14:24.030 --> 00:14:24.040 align:start position:0%
+containers and it's it's in this
+ 
+
+00:14:24.040 --> 00:14:26.310 align:start position:0%
+containers and it's it's in this
+override<00:14:24.759><c> right</c><00:14:24.959><c> here</c><00:14:25.440><c> so</c><00:14:25.680><c> let's</c><00:14:25.959><c> go</c><00:14:26.079><c> ahead</c>
+
+00:14:26.310 --> 00:14:26.320 align:start position:0%
+override right here so let's go ahead
+ 
+
+00:14:26.320 --> 00:14:29.829 align:start position:0%
+override right here so let's go ahead
+and<00:14:27.160><c> load</c><00:14:27.480><c> our</c><00:14:27.800><c> theme</c>
+
+00:14:29.829 --> 00:14:29.839 align:start position:0%
+and load our theme
+ 
+
+00:14:29.839 --> 00:14:34.310 align:start position:0%
+and load our theme
+and<00:14:30.839><c> add</c><00:14:31.160><c> a</c><00:14:31.480><c> new</c><00:14:32.079><c> type</c><00:14:32.560><c> for</c><00:14:32.800><c> our</c><00:14:33.040><c> vbox</c>
+
+00:14:34.310 --> 00:14:34.320 align:start position:0%
+and add a new type for our vbox
+ 
+
+00:14:34.320 --> 00:14:37.590 align:start position:0%
+and add a new type for our vbox
+container<00:14:35.320><c> there</c><00:14:35.480><c> we</c><00:14:36.079><c> go</c><00:14:37.079><c> and</c><00:14:37.199><c> then</c><00:14:37.320><c> we</c><00:14:37.440><c> have</c>
+
+00:14:37.590 --> 00:14:37.600 align:start position:0%
+container there we go and then we have
+ 
+
+00:14:37.600 --> 00:14:39.949 align:start position:0%
+container there we go and then we have
+an<00:14:37.880><c> option</c><00:14:38.279><c> here</c><00:14:38.639><c> in</c><00:14:38.800><c> our</c><00:14:39.160><c> constants</c><00:14:39.720><c> and</c><00:14:39.839><c> we</c>
+
+00:14:39.949 --> 00:14:39.959 align:start position:0%
+an option here in our constants and we
+ 
+
+00:14:39.959 --> 00:14:41.749 align:start position:0%
+an option here in our constants and we
+want<00:14:40.120><c> to</c><00:14:40.480><c> change</c><00:14:40.959><c> the</c><00:14:41.199><c> the</c><00:14:41.320><c> amount</c><00:14:41.519><c> of</c>
+
+00:14:41.749 --> 00:14:41.759 align:start position:0%
+want to change the the amount of
+ 
+
+00:14:41.759 --> 00:14:44.110 align:start position:0%
+want to change the the amount of
+separation<00:14:42.320><c> between</c><00:14:42.600><c> our</c><00:14:42.759><c> buttons</c><00:14:43.639><c> so</c><00:14:43.839><c> let's</c>
+
+00:14:44.110 --> 00:14:44.120 align:start position:0%
+separation between our buttons so let's
+ 
+
+00:14:44.120 --> 00:14:47.030 align:start position:0%
+separation between our buttons so let's
+add<00:14:44.440><c> that</c><00:14:45.000><c> to</c><00:14:45.199><c> our</c><00:14:45.480><c> theme</c><00:14:46.480><c> and</c><00:14:46.600><c> then</c><00:14:46.800><c> let's</c>
+
+00:14:47.030 --> 00:14:47.040 align:start position:0%
+add that to our theme and then let's
+ 
+
+00:14:47.040 --> 00:14:50.550 align:start position:0%
+add that to our theme and then let's
+make<00:14:47.240><c> this</c><00:14:47.920><c> bigger</c><00:14:48.920><c> maybe</c>
+
+00:14:50.550 --> 00:14:50.560 align:start position:0%
+make this bigger maybe
+ 
+
+00:14:50.560 --> 00:14:53.910 align:start position:0%
+make this bigger maybe
+10<00:14:51.560><c> maybe</c><00:14:51.839><c> 20</c><00:14:52.199><c> that</c><00:14:52.320><c> looks</c><00:14:52.600><c> pretty</c><00:14:52.880><c> good</c><00:14:53.800><c> all</c>
+
+00:14:53.910 --> 00:14:53.920 align:start position:0%
+10 maybe 20 that looks pretty good all
+ 
+
+00:14:53.920 --> 00:14:56.389 align:start position:0%
+10 maybe 20 that looks pretty good all
+right<00:14:54.079><c> now</c><00:14:54.199><c> we've</c><00:14:54.399><c> got</c><00:14:54.519><c> some</c><00:14:54.720><c> more</c><00:14:55.399><c> separation</c>
+
+00:14:56.389 --> 00:14:56.399 align:start position:0%
+right now we've got some more separation
+ 
+
+00:14:56.399 --> 00:14:58.870 align:start position:0%
+right now we've got some more separation
+in<00:14:56.560><c> our</c><00:14:56.800><c> buttons</c><00:14:57.399><c> all</c><00:14:57.480><c> right</c><00:14:57.639><c> our</c><00:14:57.920><c> label</c><00:14:58.720><c> it's</c>
+
+00:14:58.870 --> 00:14:58.880 align:start position:0%
+in our buttons all right our label it's
+ 
+
+00:14:58.880 --> 00:15:00.389 align:start position:0%
+in our buttons all right our label it's
+not<00:14:59.040><c> not</c><00:14:59.160><c> looking</c><00:14:59.360><c> so</c><00:14:59.600><c> hot</c><00:14:59.839><c> so</c><00:14:59.959><c> let's</c><00:15:00.160><c> go</c><00:15:00.279><c> to</c>
+
+00:15:00.389 --> 00:15:00.399 align:start position:0%
+not not looking so hot so let's go to
+ 
+
+00:15:00.399 --> 00:15:02.670 align:start position:0%
+not not looking so hot so let's go to
+our<00:15:00.600><c> label</c><00:15:01.360><c> let's</c><00:15:01.600><c> Center</c><00:15:02.040><c> this</c><00:15:02.320><c> like</c><00:15:02.480><c> we've</c>
+
+00:15:02.670 --> 00:15:02.680 align:start position:0%
+our label let's Center this like we've
+ 
+
+00:15:02.680 --> 00:15:04.269 align:start position:0%
+our label let's Center this like we've
+centered<00:15:03.079><c> the</c><00:15:03.160><c> rest</c><00:15:03.320><c> of</c><00:15:03.440><c> our</c><00:15:03.560><c> buttons</c><00:15:03.959><c> so</c><00:15:04.120><c> in</c>
+
+00:15:04.269 --> 00:15:04.279 align:start position:0%
+centered the rest of our buttons so in
+ 
+
+00:15:04.279 --> 00:15:06.150 align:start position:0%
+centered the rest of our buttons so in
+our<00:15:04.600><c> our</c><00:15:04.839><c> label</c><00:15:05.279><c> settings</c><00:15:05.680><c> there's</c><00:15:05.880><c> a</c>
+
+00:15:06.150 --> 00:15:06.160 align:start position:0%
+our our label settings there's a
+ 
+
+00:15:06.160 --> 00:15:09.030 align:start position:0%
+our our label settings there's a
+horizontal<00:15:06.839><c> and</c><00:15:07.079><c> vertical</c><00:15:07.880><c> alignment</c><00:15:08.880><c> just</c>
+
+00:15:09.030 --> 00:15:09.040 align:start position:0%
+horizontal and vertical alignment just
+ 
+
+00:15:09.040 --> 00:15:11.230 align:start position:0%
+horizontal and vertical alignment just
+like<00:15:09.199><c> any</c><00:15:09.399><c> other</c><00:15:09.880><c> text</c><00:15:10.160><c> editor</c><00:15:10.639><c> we</c><00:15:10.720><c> want</c><00:15:10.839><c> to</c>
+
+00:15:11.230 --> 00:15:11.240 align:start position:0%
+like any other text editor we want to
+ 
+
+00:15:11.240 --> 00:15:14.150 align:start position:0%
+like any other text editor we want to
+set<00:15:11.519><c> this</c><00:15:11.680><c> to</c><00:15:12.600><c> Center</c><00:15:13.440><c> and</c><00:15:13.800><c> now</c><00:15:13.959><c> we've</c>
+
+00:15:14.150 --> 00:15:14.160 align:start position:0%
+set this to Center and now we've
+ 
+
+00:15:14.160 --> 00:15:16.829 align:start position:0%
+set this to Center and now we've
+centered<00:15:14.560><c> it</c><00:15:14.920><c> and</c><00:15:15.360><c> let's</c><00:15:15.680><c> also</c><00:15:16.440><c> make</c><00:15:16.600><c> some</c>
+
+00:15:16.829 --> 00:15:16.839 align:start position:0%
+centered it and let's also make some
+ 
+
+00:15:16.839 --> 00:15:18.790 align:start position:0%
+centered it and let's also make some
+theme<00:15:17.079><c> adjustments</c><00:15:17.560><c> so</c><00:15:17.720><c> we'll</c><00:15:17.920><c> sign</c><00:15:18.240><c> our</c>
+
+00:15:18.790 --> 00:15:18.800 align:start position:0%
+theme adjustments so we'll sign our
+ 
+
+00:15:18.800 --> 00:15:23.949 align:start position:0%
+theme adjustments so we'll sign our
+theme<00:15:19.800><c> go</c><00:15:19.959><c> in</c><00:15:20.279><c> here</c><00:15:20.880><c> add</c><00:15:21.839><c> label</c><00:15:22.839><c> and</c><00:15:23.279><c> let's</c>
+
+00:15:23.949 --> 00:15:23.959 align:start position:0%
+theme go in here add label and let's
+ 
+
+00:15:23.959 --> 00:15:27.990 align:start position:0%
+theme go in here add label and let's
+adjust<00:15:24.959><c> the</c><00:15:25.920><c> font</c><00:15:26.920><c> size</c><00:15:27.360><c> let's</c><00:15:27.600><c> make</c><00:15:27.759><c> this</c>
+
+00:15:27.990 --> 00:15:28.000 align:start position:0%
+adjust the font size let's make this
+ 
+
+00:15:28.000 --> 00:15:29.790 align:start position:0%
+adjust the font size let's make this
+bigger
+
+00:15:29.790 --> 00:15:29.800 align:start position:0%
+bigger
+ 
+
+00:15:29.800 --> 00:15:33.189 align:start position:0%
+bigger
+maybe<00:15:30.199><c> like</c><00:15:31.120><c> 30</c><00:15:31.600><c> pixels</c><00:15:32.519><c> now</c><00:15:32.720><c> let's</c><00:15:32.880><c> say</c><00:15:33.079><c> you</c>
+
+00:15:33.189 --> 00:15:33.199 align:start position:0%
+maybe like 30 pixels now let's say you
+ 
+
+00:15:33.199 --> 00:15:36.590 align:start position:0%
+maybe like 30 pixels now let's say you
+wanted<00:15:33.519><c> to</c><00:15:34.040><c> adjust</c><00:15:34.959><c> the</c><00:15:35.319><c> the</c><00:15:35.560><c> spacing</c><00:15:36.240><c> around</c>
+
+00:15:36.590 --> 00:15:36.600 align:start position:0%
+wanted to adjust the the spacing around
+ 
+
+00:15:36.600 --> 00:15:38.990 align:start position:0%
+wanted to adjust the the spacing around
+this<00:15:36.800><c> label</c><00:15:37.360><c> now</c><00:15:37.560><c> this</c><00:15:37.800><c> sort</c><00:15:38.000><c> of</c><00:15:38.240><c> a</c><00:15:38.560><c> a</c>
+
+00:15:38.990 --> 00:15:39.000 align:start position:0%
+this label now this sort of a a
+ 
+
+00:15:39.000 --> 00:15:42.150 align:start position:0%
+this label now this sort of a a
+roundabout<00:15:39.480><c> way</c><00:15:39.600><c> to</c><00:15:39.800><c> do</c><00:15:40.240><c> this</c><00:15:41.240><c> but</c><00:15:41.880><c> this</c><00:15:42.000><c> is</c>
+
+00:15:42.150 --> 00:15:42.160 align:start position:0%
+roundabout way to do this but this is
+ 
+
+00:15:42.160 --> 00:15:44.470 align:start position:0%
+roundabout way to do this but this is
+how<00:15:42.240><c> you're</c><00:15:42.399><c> supposed</c><00:15:42.639><c> to</c><00:15:42.759><c> do</c><00:15:42.920><c> it</c><00:15:43.839><c> so</c><00:15:44.079><c> in</c><00:15:44.279><c> the</c>
+
+00:15:44.470 --> 00:15:44.480 align:start position:0%
+how you're supposed to do it so in the
+ 
+
+00:15:44.480 --> 00:15:47.509 align:start position:0%
+how you're supposed to do it so in the
+the<00:15:44.600><c> label</c><00:15:45.079><c> options</c><00:15:45.720><c> there's</c><00:15:46.560><c> another</c><00:15:47.079><c> style</c>
+
+00:15:47.509 --> 00:15:47.519 align:start position:0%
+the label options there's another style
+ 
+
+00:15:47.519 --> 00:15:50.350 align:start position:0%
+the label options there's another style
+box<00:15:48.199><c> setting</c><00:15:48.959><c> so</c><00:15:49.120><c> we</c><00:15:49.240><c> need</c><00:15:49.360><c> to</c><00:15:49.560><c> add</c><00:15:49.800><c> a</c><00:15:50.000><c> style</c>
+
+00:15:50.350 --> 00:15:50.360 align:start position:0%
+box setting so we need to add a style
+ 
+
+00:15:50.360 --> 00:15:54.110 align:start position:0%
+box setting so we need to add a style
+box<00:15:51.000><c> and</c><00:15:51.079><c> it's</c><00:15:51.240><c> going</c><00:15:51.319><c> to</c><00:15:51.440><c> be</c><00:15:51.680><c> style</c><00:15:52.160><c> box</c><00:15:53.160><c> empty</c>
+
+00:15:54.110 --> 00:15:54.120 align:start position:0%
+box and it's going to be style box empty
+ 
+
+00:15:54.120 --> 00:15:56.949 align:start position:0%
+box and it's going to be style box empty
+now<00:15:54.360><c> empty</c><00:15:54.759><c> is</c><00:15:54.959><c> different</c><00:15:55.440><c> from</c><00:15:55.839><c> flat</c><00:15:56.600><c> or</c>
+
+00:15:56.949 --> 00:15:56.959 align:start position:0%
+now empty is different from flat or
+ 
+
+00:15:56.959 --> 00:15:59.550 align:start position:0%
+now empty is different from flat or
+Texture<00:15:57.480><c> and</c><00:15:57.720><c> that</c><00:15:58.440><c> it</c><00:15:58.600><c> there's</c><00:15:59.120><c> no</c><00:15:59.360><c> there's</c>
+
+00:15:59.550 --> 00:15:59.560 align:start position:0%
+Texture and that it there's no there's
+ 
+
+00:15:59.560 --> 00:16:01.389 align:start position:0%
+Texture and that it there's no there's
+no<00:15:59.720><c> background</c><00:16:00.160><c> there's</c><00:16:00.360><c> no</c><00:16:00.560><c> color</c><00:16:01.160><c> there's</c>
+
+00:16:01.389 --> 00:16:01.399 align:start position:0%
+no background there's no color there's
+ 
+
+00:16:01.399 --> 00:16:04.550 align:start position:0%
+no background there's no color there's
+none<00:16:01.560><c> of</c><00:16:01.759><c> that</c><00:16:01.959><c> there's</c><00:16:02.160><c> no</c><00:16:02.360><c> border</c><00:16:03.199><c> it's</c><00:16:03.639><c> just</c>
+
+00:16:04.550 --> 00:16:04.560 align:start position:0%
+none of that there's no border it's just
+ 
+
+00:16:04.560 --> 00:16:07.030 align:start position:0%
+none of that there's no border it's just
+padding<00:16:05.480><c> okay</c><00:16:05.680><c> so</c><00:16:05.880><c> we</c><00:16:06.040><c> have</c><00:16:06.160><c> our</c><00:16:06.360><c> style</c><00:16:06.680><c> box</c>
+
+00:16:07.030 --> 00:16:07.040 align:start position:0%
+padding okay so we have our style box
+ 
+
+00:16:07.040 --> 00:16:10.030 align:start position:0%
+padding okay so we have our style box
+empty<00:16:07.800><c> and</c><00:16:07.920><c> we</c><00:16:08.040><c> have</c><00:16:08.160><c> our</c><00:16:08.440><c> content</c><00:16:08.839><c> margins</c><00:16:09.759><c> so</c>
+
+00:16:10.030 --> 00:16:10.040 align:start position:0%
+empty and we have our content margins so
+ 
+
+00:16:10.040 --> 00:16:12.550 align:start position:0%
+empty and we have our content margins so
+let's<00:16:10.360><c> add</c><00:16:10.639><c> to</c><00:16:10.959><c> the</c><00:16:11.240><c> the</c><00:16:11.440><c> bottom</c><00:16:11.920><c> here</c><00:16:12.319><c> and</c>
+
+00:16:12.550 --> 00:16:12.560 align:start position:0%
+let's add to the the bottom here and
+ 
+
+00:16:12.560 --> 00:16:15.309 align:start position:0%
+let's add to the the bottom here and
+make<00:16:12.680><c> it</c><00:16:12.839><c> a</c><00:16:13.079><c> little</c><00:16:13.440><c> bit</c><00:16:13.600><c> more</c><00:16:14.160><c> spacing</c><00:16:15.160><c> there</c>
+
+00:16:15.309 --> 00:16:15.319 align:start position:0%
+make it a little bit more spacing there
+ 
+
+00:16:15.319 --> 00:16:18.550 align:start position:0%
+make it a little bit more spacing there
+we<00:16:15.519><c> go</c><00:16:15.959><c> if</c><00:16:16.079><c> you've</c><00:16:16.279><c> ever</c><00:16:16.480><c> done</c><00:16:17.480><c> cascading</c>
+
+00:16:18.550 --> 00:16:18.560 align:start position:0%
+we go if you've ever done cascading
+ 
+
+00:16:18.560 --> 00:16:21.790 align:start position:0%
+we go if you've ever done cascading
+stylesheets<00:16:19.560><c> this</c><00:16:19.759><c> is</c><00:16:20.560><c> feels</c><00:16:21.040><c> very</c><00:16:21.279><c> similar</c>
+
+00:16:21.790 --> 00:16:21.800 align:start position:0%
+stylesheets this is feels very similar
+ 
+
+00:16:21.800 --> 00:16:23.710 align:start position:0%
+stylesheets this is feels very similar
+we're<00:16:22.040><c> almost</c><00:16:22.440><c> there</c><00:16:22.720><c> there's</c><00:16:23.079><c> one</c><00:16:23.440><c> other</c>
+
+00:16:23.710 --> 00:16:23.720 align:start position:0%
+we're almost there there's one other
+ 
+
+00:16:23.720 --> 00:16:26.710 align:start position:0%
+we're almost there there's one other
+change<00:16:24.079><c> that</c><00:16:24.240><c> I'd</c><00:16:24.440><c> like</c><00:16:24.560><c> to</c><00:16:24.800><c> make</c><00:16:25.160><c> and</c><00:16:25.720><c> that's</c>
+
+00:16:26.710 --> 00:16:26.720 align:start position:0%
+change that I'd like to make and that's
+ 
+
+00:16:26.720 --> 00:16:28.189 align:start position:0%
+change that I'd like to make and that's
+what<00:16:26.839><c> if</c><00:16:26.959><c> I</c><00:16:27.079><c> want</c><00:16:27.199><c> to</c><00:16:27.319><c> have</c><00:16:27.440><c> a</c><00:16:27.600><c> different</c><00:16:27.839><c> color</c>
+
+00:16:28.189 --> 00:16:28.199 align:start position:0%
+what if I want to have a different color
+ 
+
+00:16:28.199 --> 00:16:31.069 align:start position:0%
+what if I want to have a different color
+button<00:16:28.560><c> for</c><00:16:29.040><c> my</c><00:16:29.199><c> buttons</c><00:16:29.839><c> currently</c><00:16:30.759><c> all</c><00:16:30.959><c> the</c>
+
+00:16:31.069 --> 00:16:31.079 align:start position:0%
+button for my buttons currently all the
+ 
+
+00:16:31.079 --> 00:16:33.629 align:start position:0%
+button for my buttons currently all the
+buttons<00:16:31.440><c> are</c><00:16:31.600><c> using</c><00:16:31.959><c> the</c><00:16:32.160><c> same</c><00:16:32.959><c> style</c><00:16:33.399><c> and</c><00:16:33.519><c> we</c>
+
+00:16:33.629 --> 00:16:33.639 align:start position:0%
+buttons are using the same style and we
+ 
+
+00:16:33.639 --> 00:16:35.670 align:start position:0%
+buttons are using the same style and we
+don't<00:16:33.800><c> want</c><00:16:34.079><c> that</c><00:16:34.880><c> so</c><00:16:35.120><c> this</c><00:16:35.199><c> is</c><00:16:35.399><c> where</c><00:16:35.519><c> we're</c>
+
+00:16:35.670 --> 00:16:35.680 align:start position:0%
+don't want that so this is where we're
+ 
+
+00:16:35.680 --> 00:16:38.030 align:start position:0%
+don't want that so this is where we're
+going<00:16:35.759><c> to</c><00:16:35.959><c> go</c><00:16:36.160><c> back</c><00:16:36.319><c> to</c><00:16:36.560><c> this</c><00:16:36.959><c> base</c><00:16:37.680><c> type</c>
+
+00:16:38.030 --> 00:16:38.040 align:start position:0%
+going to go back to this base type
+ 
+
+00:16:38.040 --> 00:16:40.670 align:start position:0%
+going to go back to this base type
+setting<00:16:38.600><c> it's</c><00:16:38.759><c> kind</c><00:16:38.880><c> of</c><00:16:39.000><c> a</c><00:16:39.160><c> weird</c><00:16:39.519><c> way</c><00:16:39.959><c> to</c><00:16:40.440><c> set</c>
+
+00:16:40.670 --> 00:16:40.680 align:start position:0%
+setting it's kind of a weird way to set
+ 
+
+00:16:40.680 --> 00:16:42.949 align:start position:0%
+setting it's kind of a weird way to set
+this<00:16:40.839><c> up</c><00:16:41.440><c> but</c><00:16:41.600><c> it</c><00:16:41.720><c> does</c><00:16:41.959><c> make</c><00:16:42.240><c> sense</c><00:16:42.600><c> as</c><00:16:42.720><c> soon</c>
+
+00:16:42.949 --> 00:16:42.959 align:start position:0%
+this up but it does make sense as soon
+ 
+
+00:16:42.959 --> 00:16:44.749 align:start position:0%
+this up but it does make sense as soon
+as<00:16:43.160><c> you</c><00:16:43.399><c> you</c><00:16:43.519><c> do</c><00:16:43.680><c> it</c><00:16:43.759><c> a</c><00:16:43.880><c> couple</c><00:16:44.079><c> of</c><00:16:44.240><c> times</c><00:16:44.600><c> now</c>
+
+00:16:44.749 --> 00:16:44.759 align:start position:0%
+as you you do it a couple of times now
+ 
+
+00:16:44.759 --> 00:16:46.910 align:start position:0%
+as you you do it a couple of times now
+the<00:16:44.880><c> base</c><00:16:45.120><c> type</c><00:16:45.319><c> is</c><00:16:45.440><c> not</c><00:16:45.639><c> available</c><00:16:46.199><c> if</c><00:16:46.360><c> we're</c>
+
+00:16:46.910 --> 00:16:46.920 align:start position:0%
+the base type is not available if we're
+ 
+
+00:16:46.920 --> 00:16:50.110 align:start position:0%
+the base type is not available if we're
+using<00:16:47.440><c> the</c><00:16:48.360><c> the</c><00:16:48.519><c> base</c><00:16:48.880><c> type</c><00:16:49.560><c> we</c><00:16:49.680><c> need</c><00:16:49.839><c> to</c>
+
+00:16:50.110 --> 00:16:50.120 align:start position:0%
+using the the base type we need to
+ 
+
+00:16:50.120 --> 00:16:53.309 align:start position:0%
+using the the base type we need to
+create<00:16:50.480><c> our</c><00:16:50.839><c> own</c><00:16:51.360><c> type</c><00:16:52.000><c> okay</c><00:16:52.399><c> so</c><00:16:52.600><c> if</c><00:16:52.720><c> we</c><00:16:53.040><c> go</c>
+
+00:16:53.309 --> 00:16:53.319 align:start position:0%
+create our own type okay so if we go
+ 
+
+00:16:53.319 --> 00:16:55.230 align:start position:0%
+create our own type okay so if we go
+into<00:16:54.120><c> manage</c>
+
+00:16:55.230 --> 00:16:55.240 align:start position:0%
+into manage
+ 
+
+00:16:55.240 --> 00:16:58.509 align:start position:0%
+into manage
+items<00:16:56.240><c> and</c><00:16:56.560><c> go</c><00:16:56.720><c> to</c><00:16:57.000><c> edit</c><00:16:57.319><c> items</c><00:16:58.160><c> you</c><00:16:58.279><c> can</c>
+
+00:16:58.509 --> 00:16:58.519 align:start position:0%
+items and go to edit items you can
+ 
+
+00:16:58.519 --> 00:17:01.470 align:start position:0%
+items and go to edit items you can
+actually<00:16:59.079><c> add</c><00:16:59.240><c> your</c><00:16:59.480><c> own</c><00:17:00.319><c> type</c><00:17:00.920><c> so</c><00:17:01.120><c> let's</c><00:17:01.279><c> say</c>
+
+00:17:01.470 --> 00:17:01.480 align:start position:0%
+actually add your own type so let's say
+ 
+
+00:17:01.480 --> 00:17:03.549 align:start position:0%
+actually add your own type so let's say
+I<00:17:01.600><c> wanted</c><00:17:01.839><c> to</c><00:17:02.199><c> add</c>
+
+00:17:03.549 --> 00:17:03.559 align:start position:0%
+I wanted to add
+ 
+
+00:17:03.559 --> 00:17:09.309 align:start position:0%
+I wanted to add
+a<00:17:04.559><c> new</c><00:17:05.679><c> game</c><00:17:06.679><c> button</c><00:17:07.240><c> type</c><00:17:08.240><c> we'll</c><00:17:08.480><c> click</c><00:17:08.880><c> that</c>
+
+00:17:09.309 --> 00:17:09.319 align:start position:0%
+a new game button type we'll click that
+ 
+
+00:17:09.319 --> 00:17:12.429 align:start position:0%
+a new game button type we'll click that
+we'll<00:17:09.520><c> close</c><00:17:10.079><c> that</c><00:17:11.079><c> go</c><00:17:11.240><c> to</c><00:17:11.439><c> our</c><00:17:11.720><c> new</c><00:17:12.160><c> game</c>
+
+00:17:12.429 --> 00:17:12.439 align:start position:0%
+we'll close that go to our new game
+ 
+
+00:17:12.439 --> 00:17:15.230 align:start position:0%
+we'll close that go to our new game
+button<00:17:13.120><c> type</c><00:17:14.120><c> and</c><00:17:14.319><c> now</c><00:17:14.520><c> we</c><00:17:14.640><c> can</c><00:17:15.000><c> make</c>
+
+00:17:15.230 --> 00:17:15.240 align:start position:0%
+button type and now we can make
+ 
+
+00:17:15.240 --> 00:17:17.350 align:start position:0%
+button type and now we can make
+adjustments<00:17:16.000><c> except</c><00:17:16.679><c> it</c><00:17:16.799><c> doesn't</c><00:17:17.079><c> know</c><00:17:17.240><c> what</c>
+
+00:17:17.350 --> 00:17:17.360 align:start position:0%
+adjustments except it doesn't know what
+ 
+
+00:17:17.360 --> 00:17:19.949 align:start position:0%
+adjustments except it doesn't know what
+our<00:17:17.559><c> adjustments</c><00:17:18.079><c> are</c><00:17:19.079><c> we</c><00:17:19.199><c> need</c><00:17:19.360><c> to</c><00:17:19.520><c> set</c><00:17:19.760><c> the</c>
+
+00:17:19.949 --> 00:17:19.959 align:start position:0%
+our adjustments are we need to set the
+ 
+
+00:17:19.959 --> 00:17:22.630 align:start position:0%
+our adjustments are we need to set the
+base<00:17:20.360><c> type</c><00:17:20.880><c> now</c><00:17:21.039><c> the</c><00:17:21.199><c> base</c><00:17:21.559><c> type</c><00:17:21.880><c> for</c><00:17:22.079><c> our</c><00:17:22.319><c> new</c>
+
+00:17:22.630 --> 00:17:22.640 align:start position:0%
+base type now the base type for our new
+ 
+
+00:17:22.640 --> 00:17:27.069 align:start position:0%
+base type now the base type for our new
+game<00:17:23.079><c> button</c><00:17:23.679><c> would</c><00:17:24.000><c> be</c><00:17:25.000><c> a</c><00:17:25.160><c> button</c><00:17:26.039><c> if</c><00:17:26.160><c> we</c><00:17:26.319><c> set</c>
+
+00:17:27.069 --> 00:17:27.079 align:start position:0%
+game button would be a button if we set
+ 
+
+00:17:27.079 --> 00:17:29.590 align:start position:0%
+game button would be a button if we set
+that<00:17:28.079><c> now</c><00:17:28.280><c> we</c><00:17:28.439><c> have</c><00:17:28.600><c> all</c><00:17:28.919><c> all</c><00:17:29.120><c> the</c><00:17:29.240><c> button</c>
+
+00:17:29.590 --> 00:17:29.600 align:start position:0%
+that now we have all all the button
+ 
+
+00:17:29.600 --> 00:17:32.549 align:start position:0%
+that now we have all all the button
+options<00:17:30.240><c> for</c><00:17:30.480><c> our</c><00:17:30.679><c> new</c><00:17:31.000><c> game</c><00:17:31.240><c> button</c><00:17:31.679><c> type</c><00:17:32.400><c> and</c>
+
+00:17:32.549 --> 00:17:32.559 align:start position:0%
+options for our new game button type and
+ 
+
+00:17:32.559 --> 00:17:34.590 align:start position:0%
+options for our new game button type and
+we<00:17:32.640><c> can</c><00:17:32.840><c> make</c><00:17:33.039><c> those</c><00:17:33.240><c> adjustments</c><00:17:34.039><c> the</c><00:17:34.200><c> second</c>
+
+00:17:34.590 --> 00:17:34.600 align:start position:0%
+we can make those adjustments the second
+ 
+
+00:17:34.600 --> 00:17:36.950 align:start position:0%
+we can make those adjustments the second
+part<00:17:34.799><c> to</c><00:17:35.000><c> this</c><00:17:35.240><c> is</c><00:17:35.360><c> you</c><00:17:35.480><c> need</c><00:17:35.679><c> to</c><00:17:35.960><c> assign</c><00:17:36.520><c> this</c>
+
+00:17:36.950 --> 00:17:36.960 align:start position:0%
+part to this is you need to assign this
+ 
+
+00:17:36.960 --> 00:17:39.950 align:start position:0%
+part to this is you need to assign this
+custom<00:17:37.440><c> type</c><00:17:38.240><c> to</c><00:17:38.600><c> the</c><00:17:38.840><c> actual</c><00:17:39.200><c> control</c><00:17:39.559><c> node</c>
+
+00:17:39.950 --> 00:17:39.960 align:start position:0%
+custom type to the actual control node
+ 
+
+00:17:39.960 --> 00:17:43.990 align:start position:0%
+custom type to the actual control node
+so<00:17:40.200><c> if</c><00:17:40.360><c> I'm</c><00:17:40.640><c> in</c><00:17:41.240><c> my</c><00:17:42.240><c> uh</c><00:17:42.360><c> scene</c><00:17:43.200><c> tree</c><00:17:43.600><c> over</c><00:17:43.799><c> here</c>
+
+00:17:43.990 --> 00:17:44.000 align:start position:0%
+so if I'm in my uh scene tree over here
+ 
+
+00:17:44.000 --> 00:17:46.430 align:start position:0%
+so if I'm in my uh scene tree over here
+I'll<00:17:44.160><c> click</c><00:17:44.480><c> the</c><00:17:44.880><c> new</c><00:17:45.120><c> game</c><00:17:45.679><c> button</c><00:17:46.120><c> that</c><00:17:46.280><c> I</c>
+
+00:17:46.430 --> 00:17:46.440 align:start position:0%
+I'll click the new game button that I
+ 
+
+00:17:46.440 --> 00:17:49.549 align:start position:0%
+I'll click the new game button that I
+created<00:17:47.200><c> and</c><00:17:47.360><c> let's</c><00:17:47.559><c> go</c><00:17:47.720><c> down</c><00:17:48.000><c> here</c><00:17:48.240><c> to</c><00:17:48.799><c> theme</c>
+
+00:17:49.549 --> 00:17:49.559 align:start position:0%
+created and let's go down here to theme
+ 
+
+00:17:49.559 --> 00:17:52.310 align:start position:0%
+created and let's go down here to theme
+variation<00:17:50.360><c> now</c><00:17:50.520><c> we</c><00:17:50.679><c> don't</c><00:17:50.880><c> have</c><00:17:51.039><c> them</c><00:17:51.799><c> preset</c>
+
+00:17:52.310 --> 00:17:52.320 align:start position:0%
+variation now we don't have them preset
+ 
+
+00:17:52.320 --> 00:17:54.150 align:start position:0%
+variation now we don't have them preset
+we'd<00:17:52.520><c> have</c><00:17:52.640><c> to</c><00:17:52.880><c> set</c><00:17:53.039><c> our</c><00:17:53.280><c> theme</c><00:17:53.559><c> and</c><00:17:53.760><c> our</c><00:17:54.000><c> our</c>
+
+00:17:54.150 --> 00:17:54.160 align:start position:0%
+we'd have to set our theme and our our
+ 
+
+00:17:54.160 --> 00:17:56.470 align:start position:0%
+we'd have to set our theme and our our
+settings<00:17:54.520><c> to</c><00:17:54.679><c> do</c><00:17:54.880><c> that</c><00:17:55.760><c> but</c><00:17:55.880><c> you</c><00:17:56.000><c> can</c><00:17:56.159><c> type</c><00:17:56.360><c> it</c>
+
+00:17:56.470 --> 00:17:56.480 align:start position:0%
+settings to do that but you can type it
+ 
+
+00:17:56.480 --> 00:18:01.909 align:start position:0%
+settings to do that but you can type it
+in<00:17:57.360><c> so</c><00:17:58.360><c> if</c><00:17:58.480><c> I</c><00:17:58.600><c> type</c><00:17:58.880><c> type</c><00:17:59.080><c> in</c><00:17:59.520><c> new</c><00:18:00.360><c> game</c><00:18:01.159><c> button</c>
+
+00:18:01.909 --> 00:18:01.919 align:start position:0%
+in so if I type type in new game button
+ 
+
+00:18:01.919 --> 00:18:04.149 align:start position:0%
+in so if I type type in new game button
+and<00:18:02.080><c> select</c><00:18:02.400><c> that</c><00:18:02.520><c> as</c><00:18:02.679><c> my</c><00:18:02.840><c> type</c><00:18:03.159><c> variation</c>
+
+00:18:04.149 --> 00:18:04.159 align:start position:0%
+and select that as my type variation
+ 
+
+00:18:04.159 --> 00:18:06.710 align:start position:0%
+and select that as my type variation
+then<00:18:04.400><c> any</c><00:18:04.679><c> changes</c><00:18:05.080><c> that</c><00:18:05.200><c> I</c><00:18:05.360><c> make</c><00:18:05.640><c> with</c><00:18:05.919><c> this</c>
+
+00:18:06.710 --> 00:18:06.720 align:start position:0%
+then any changes that I make with this
+ 
+
+00:18:06.720 --> 00:18:08.669 align:start position:0%
+then any changes that I make with this
+is<00:18:06.880><c> going</c><00:18:07.000><c> to</c><00:18:07.159><c> show</c><00:18:07.440><c> up</c><00:18:07.720><c> in</c><00:18:07.880><c> my</c><00:18:08.039><c> control</c><00:18:08.360><c> node</c>
+
+00:18:08.669 --> 00:18:08.679 align:start position:0%
+is going to show up in my control node
+ 
+
+00:18:08.679 --> 00:18:11.669 align:start position:0%
+is going to show up in my control node
+so<00:18:08.880><c> let's</c><00:18:09.120><c> add</c><00:18:09.280><c> a</c><00:18:09.520><c> new</c><00:18:10.440><c> normal</c><00:18:11.159><c> let's</c><00:18:11.320><c> add</c><00:18:11.480><c> a</c>
+
+00:18:11.669 --> 00:18:11.679 align:start position:0%
+so let's add a new normal let's add a
+ 
+
+00:18:11.679 --> 00:18:14.510 align:start position:0%
+so let's add a new normal let's add a
+new<00:18:12.240><c> stylebox</c><00:18:12.880><c> flat</c><00:18:13.760><c> and</c><00:18:13.880><c> you</c><00:18:13.960><c> can</c><00:18:14.080><c> see</c><00:18:14.320><c> we</c>
+
+00:18:14.510 --> 00:18:14.520 align:start position:0%
+new stylebox flat and you can see we
+ 
+
+00:18:14.520 --> 00:18:17.470 align:start position:0%
+new stylebox flat and you can see we
+have<00:18:15.360><c> a</c><00:18:15.520><c> different</c><00:18:15.799><c> button</c><00:18:16.159><c> type</c><00:18:17.039><c> it</c><00:18:17.159><c> is</c><00:18:17.320><c> a</c>
+
+00:18:17.470 --> 00:18:17.480 align:start position:0%
+have a different button type it is a
+ 
+
+00:18:17.480 --> 00:18:20.430 align:start position:0%
+have a different button type it is a
+little<00:18:17.679><c> bit</c><00:18:17.840><c> of</c><00:18:17.960><c> a</c><00:18:18.240><c> pain</c><00:18:18.960><c> to</c><00:18:19.320><c> get</c><00:18:19.840><c> the</c><00:18:20.000><c> settings</c>
+
+00:18:20.430 --> 00:18:20.440 align:start position:0%
+little bit of a pain to get the settings
+ 
+
+00:18:20.440 --> 00:18:22.430 align:start position:0%
+little bit of a pain to get the settings
+that<00:18:20.559><c> you</c><00:18:20.720><c> were</c><00:18:21.039><c> using</c><00:18:21.520><c> into</c><00:18:21.840><c> the</c><00:18:22.000><c> settings</c>
+
+00:18:22.430 --> 00:18:22.440 align:start position:0%
+that you were using into the settings
+ 
+
+00:18:22.440 --> 00:18:24.789 align:start position:0%
+that you were using into the settings
+that<00:18:22.559><c> you</c><00:18:23.000><c> want</c><00:18:23.200><c> to</c><00:18:23.480><c> use</c><00:18:24.120><c> I</c><00:18:24.240><c> think</c><00:18:24.679><c> a</c>
+
+00:18:24.789 --> 00:18:24.799 align:start position:0%
+that you want to use I think a
+ 
+
+00:18:24.799 --> 00:18:27.789 align:start position:0%
+that you want to use I think a
+workaround<00:18:25.400><c> for</c><00:18:25.640><c> this</c><00:18:26.080><c> is</c><00:18:26.240><c> to</c><00:18:26.799><c> actually</c>
+
+00:18:27.789 --> 00:18:27.799 align:start position:0%
+workaround for this is to actually
+ 
+
+00:18:27.799 --> 00:18:30.630 align:start position:0%
+workaround for this is to actually
+quickload<00:18:28.880><c> our</c><00:18:29.400><c> button</c>
+
+00:18:30.630 --> 00:18:30.640 align:start position:0%
+quickload our button
+ 
+
+00:18:30.640 --> 00:18:34.350 align:start position:0%
+quickload our button
+primary<00:18:31.640><c> and</c><00:18:32.360><c> then</c><00:18:33.360><c> resave</c><00:18:33.960><c> this</c><00:18:34.120><c> as</c><00:18:34.200><c> a</c>
+
+00:18:34.350 --> 00:18:34.360 align:start position:0%
+primary and then resave this as a
+ 
+
+00:18:34.360 --> 00:18:36.190 align:start position:0%
+primary and then resave this as a
+different<00:18:34.640><c> type</c><00:18:34.960><c> so</c><00:18:35.080><c> we'll</c><00:18:35.280><c> do</c>
+
+00:18:36.190 --> 00:18:36.200 align:start position:0%
+different type so we'll do
+ 
+
+00:18:36.200 --> 00:18:37.789 align:start position:0%
+different type so we'll do
+button
+
+00:18:37.789 --> 00:18:37.799 align:start position:0%
+button
+ 
+
+00:18:37.799 --> 00:18:41.110 align:start position:0%
+button
+secondary<00:18:38.799><c> we'll</c><00:18:39.080><c> save</c><00:18:39.520><c> that</c><00:18:40.120><c> and</c><00:18:40.280><c> then</c><00:18:40.840><c> let's</c>
+
+00:18:41.110 --> 00:18:41.120 align:start position:0%
+secondary we'll save that and then let's
+ 
+
+00:18:41.120 --> 00:18:44.510 align:start position:0%
+secondary we'll save that and then let's
+go<00:18:41.440><c> back</c><00:18:41.720><c> to</c><00:18:41.960><c> our</c><00:18:42.280><c> button</c><00:18:42.679><c> here</c><00:18:43.679><c> into</c><00:18:44.080><c> our</c>
+
+00:18:44.510 --> 00:18:44.520 align:start position:0%
+go back to our button here into our
+ 
+
+00:18:44.520 --> 00:18:46.909 align:start position:0%
+go back to our button here into our
+theme<00:18:45.520><c> and</c><00:18:45.679><c> now</c><00:18:45.799><c> we</c><00:18:45.919><c> can</c><00:18:46.039><c> make</c><00:18:46.240><c> adjustments</c><00:18:46.760><c> to</c>
+
+00:18:46.909 --> 00:18:46.919 align:start position:0%
+theme and now we can make adjustments to
+ 
+
+00:18:46.919 --> 00:18:49.789 align:start position:0%
+theme and now we can make adjustments to
+our<00:18:47.400><c> secondary</c><00:18:47.960><c> button</c><00:18:48.320><c> style</c><00:18:48.720><c> box</c><00:18:49.480><c> we</c><00:18:49.600><c> can</c>
+
+00:18:49.789 --> 00:18:49.799 align:start position:0%
+our secondary button style box we can
+ 
+
+00:18:49.799 --> 00:18:52.789 align:start position:0%
+our secondary button style box we can
+make<00:18:50.080><c> this</c><00:18:50.320><c> say</c><00:18:50.600><c> more</c><00:18:50.760><c> of</c><00:18:50.919><c> an</c><00:18:51.120><c> orangey</c><00:18:51.960><c> looking</c>
+
+00:18:52.789 --> 00:18:52.799 align:start position:0%
+make this say more of an orangey looking
+ 
+
+00:18:52.799 --> 00:18:55.870 align:start position:0%
+make this say more of an orangey looking
+thing<00:18:53.799><c> kind</c><00:18:53.919><c> of</c><00:18:54.120><c> like</c><00:18:54.440><c> that</c><00:18:55.440><c> and</c><00:18:55.600><c> that's</c><00:18:55.760><c> how</c>
+
+00:18:55.870 --> 00:18:55.880 align:start position:0%
+thing kind of like that and that's how
+ 
+
+00:18:55.880 --> 00:18:58.029 align:start position:0%
+thing kind of like that and that's how
+you<00:18:56.039><c> make</c><00:18:56.360><c> different</c><00:18:56.760><c> variations</c><00:18:57.679><c> of</c><00:18:57.919><c> the</c>
+
+00:18:58.029 --> 00:18:58.039 align:start position:0%
+you make different variations of the
+ 
+
+00:18:58.039 --> 00:18:59.990 align:start position:0%
+you make different variations of the
+same<00:18:58.400><c> control</c><00:18:59.000><c> node</c><00:18:59.400><c> all</c><00:18:59.480><c> right</c><00:18:59.600><c> I</c><00:18:59.720><c> know</c><00:18:59.880><c> that</c>
+
+00:18:59.990 --> 00:19:00.000 align:start position:0%
+same control node all right I know that
+ 
+
+00:19:00.000 --> 00:19:02.149 align:start position:0%
+same control node all right I know that
+was<00:19:00.120><c> a</c><00:19:00.280><c> lot</c><00:19:00.440><c> and</c><00:19:00.559><c> it</c><00:19:00.720><c> wasn't</c><00:19:01.440><c> extremely</c>
+
+00:19:02.149 --> 00:19:02.159 align:start position:0%
+was a lot and it wasn't extremely
+ 
+
+00:19:02.159 --> 00:19:04.270 align:start position:0%
+was a lot and it wasn't extremely
+specific<00:19:02.679><c> about</c><00:19:03.320><c> most</c><00:19:03.520><c> of</c><00:19:03.679><c> it</c><00:19:03.840><c> but</c><00:19:03.960><c> I</c><00:19:04.039><c> wanted</c>
+
+00:19:04.270 --> 00:19:04.280 align:start position:0%
+specific about most of it but I wanted
+ 
+
+00:19:04.280 --> 00:19:06.750 align:start position:0%
+specific about most of it but I wanted
+to<00:19:04.480><c> touch</c><00:19:04.679><c> on</c><00:19:05.320><c> just</c><00:19:05.679><c> the</c><00:19:05.919><c> process</c><00:19:06.240><c> of</c><00:19:06.400><c> creating</c>
+
+00:19:06.750 --> 00:19:06.760 align:start position:0%
+to touch on just the process of creating
+ 
+
+00:19:06.760 --> 00:19:09.789 align:start position:0%
+to touch on just the process of creating
+a<00:19:07.080><c> very</c><00:19:07.400><c> very</c><00:19:07.760><c> basic</c><00:19:08.480><c> user</c><00:19:08.840><c> interface</c><00:19:09.400><c> and</c>
+
+00:19:09.789 --> 00:19:09.799 align:start position:0%
+a very very basic user interface and
+ 
+
+00:19:09.799 --> 00:19:11.470 align:start position:0%
+a very very basic user interface and
+what<00:19:10.000><c> goes</c><00:19:10.280><c> into</c><00:19:10.640><c> that</c><00:19:10.880><c> and</c><00:19:11.039><c> all</c><00:19:11.159><c> the</c><00:19:11.280><c> things</c>
+
+00:19:11.470 --> 00:19:11.480 align:start position:0%
+what goes into that and all the things
+ 
+
+00:19:11.480 --> 00:19:13.430 align:start position:0%
+what goes into that and all the things
+that<00:19:11.600><c> you</c><00:19:11.720><c> can</c><00:19:11.880><c> change</c><00:19:12.679><c> going</c><00:19:12.919><c> forward</c><00:19:13.280><c> we're</c>
+
+00:19:13.430 --> 00:19:13.440 align:start position:0%
+that you can change going forward we're
+ 
+
+00:19:13.440 --> 00:19:15.470 align:start position:0%
+that you can change going forward we're
+going<00:19:13.520><c> to</c><00:19:13.679><c> be</c><00:19:14.039><c> very</c><00:19:14.280><c> focused</c><00:19:14.840><c> on</c><00:19:15.159><c> what</c><00:19:15.280><c> we're</c>
+
+00:19:15.470 --> 00:19:15.480 align:start position:0%
+going to be very focused on what we're
+ 
+
+00:19:15.480 --> 00:19:17.270 align:start position:0%
+going to be very focused on what we're
+working<00:19:15.760><c> on</c><00:19:16.039><c> the</c><00:19:16.200><c> first</c><00:19:16.480><c> step</c><00:19:16.760><c> I</c><00:19:16.880><c> believe</c><00:19:17.159><c> is</c>
+
+00:19:17.270 --> 00:19:17.280 align:start position:0%
+working on the first step I believe is
+ 
+
+00:19:17.280 --> 00:19:19.070 align:start position:0%
+working on the first step I believe is
+going<00:19:17.360><c> to</c><00:19:17.480><c> be</c><00:19:17.640><c> an</c><00:19:17.799><c> animation</c><00:19:18.320><c> setup</c><00:19:18.840><c> and</c><00:19:18.960><c> then</c>
+
+00:19:19.070 --> 00:19:19.080 align:start position:0%
+going to be an animation setup and then
+ 
+
+00:19:19.080 --> 00:19:21.149 align:start position:0%
+going to be an animation setup and then
+we'll<00:19:19.240><c> move</c><00:19:19.480><c> into</c><00:19:20.039><c> different</c><00:19:20.360><c> user</c><00:19:20.640><c> interface</c>
+
+00:19:21.149 --> 00:19:21.159 align:start position:0%
+we'll move into different user interface
+ 
+
+00:19:21.159 --> 00:19:23.270 align:start position:0%
+we'll move into different user interface
+types<00:19:21.440><c> setting</c><00:19:21.720><c> up</c><00:19:22.000><c> settings</c><00:19:22.799><c> saving</c><00:19:23.120><c> and</c>
+
+00:19:23.270 --> 00:19:23.280 align:start position:0%
+types setting up settings saving and
+ 
+
+00:19:23.280 --> 00:19:25.350 align:start position:0%
+types setting up settings saving and
+loading<00:19:23.760><c> continue</c><00:19:24.120><c> screens</c><00:19:24.640><c> new</c><00:19:24.840><c> games</c>
+
+00:19:25.350 --> 00:19:25.360 align:start position:0%
+loading continue screens new games
+ 
+
+00:19:25.360 --> 00:19:27.390 align:start position:0%
+loading continue screens new games
+quitting<00:19:26.360><c> um</c><00:19:26.520><c> and</c><00:19:26.679><c> different</c><00:19:26.960><c> heads</c><00:19:27.200><c> up</c>
+
+00:19:27.390 --> 00:19:27.400 align:start position:0%
+quitting um and different heads up
+ 
+
+00:19:27.400 --> 00:19:29.070 align:start position:0%
+quitting um and different heads up
+displays<00:19:28.039><c> as</c><00:19:28.120><c> much</c><00:19:28.280><c> as</c><00:19:28.360><c> we</c><00:19:28.480><c> can</c><00:19:28.760><c> touch</c><00:19:28.919><c> on</c>
+
+00:19:29.070 --> 00:19:29.080 align:start position:0%
+displays as much as we can touch on
+ 
+
+00:19:29.080 --> 00:19:31.350 align:start position:0%
+displays as much as we can touch on
+within<00:19:29.360><c> user</c><00:19:29.679><c> interfaces</c><00:19:30.679><c> and</c><00:19:30.880><c> and</c><00:19:31.000><c> see</c><00:19:31.200><c> where</c>
+
+00:19:31.350 --> 00:19:31.360 align:start position:0%
+within user interfaces and and see where
+ 
+
+00:19:31.360 --> 00:19:33.270 align:start position:0%
+within user interfaces and and see where
+we<00:19:31.559><c> go</c><00:19:31.919><c> so</c><00:19:32.240><c> so</c><00:19:32.440><c> thanks</c><00:19:32.600><c> for</c><00:19:32.760><c> watching</c><00:19:33.080><c> I'm</c>
+
+00:19:33.270 --> 00:19:33.280 align:start position:0%
+we go so so thanks for watching I'm
+ 
+
+00:19:33.280 --> 00:19:35.230 align:start position:0%
+we go so so thanks for watching I'm
+really<00:19:33.480><c> excited</c><00:19:33.840><c> to</c><00:19:34.159><c> really</c><00:19:34.440><c> dive</c><00:19:34.720><c> deep</c><00:19:34.919><c> into</c>
+
+00:19:35.230 --> 00:19:35.240 align:start position:0%
+really excited to really dive deep into
+ 
+
+00:19:35.240 --> 00:19:38.070 align:start position:0%
+really excited to really dive deep into
+this<00:19:35.600><c> user</c><00:19:35.880><c> interface</c><00:19:36.360><c> stuff</c><00:19:37.000><c> and</c><00:19:37.559><c> um</c><00:19:37.919><c> as</c>
+
+00:19:38.070 --> 00:19:38.080 align:start position:0%
+this user interface stuff and um as
+ 
+
+00:19:38.080 --> 00:19:40.669 align:start position:0%
+this user interface stuff and um as
+always<00:19:39.000><c> keep</c><00:19:39.200><c> creating</c><00:19:40.039><c> all</c><00:19:40.159><c> right</c><00:19:40.360><c> guys</c><00:19:40.520><c> if</c>
+
+00:19:40.669 --> 00:19:40.679 align:start position:0%
+always keep creating all right guys if
+ 
+
+00:19:40.679 --> 00:19:42.549 align:start position:0%
+always keep creating all right guys if
+this<00:19:40.880><c> tutorial</c><00:19:41.320><c> was</c><00:19:41.480><c> helpful</c><00:19:41.880><c> consider</c><00:19:42.200><c> it</c><00:19:42.320><c> a</c>
+
+00:19:42.549 --> 00:19:42.559 align:start position:0%
+this tutorial was helpful consider it a
+ 
+
+00:19:42.559 --> 00:19:44.190 align:start position:0%
+this tutorial was helpful consider it a
+like<00:19:42.919><c> And</c><00:19:43.120><c> subscribe</c><00:19:43.520><c> to</c><00:19:43.640><c> the</c><00:19:43.760><c> channel</c><00:19:44.080><c> as</c>
+
+00:19:44.190 --> 00:19:44.200 align:start position:0%
+like And subscribe to the channel as
+ 
+
+00:19:44.200 --> 00:19:46.470 align:start position:0%
+like And subscribe to the channel as
+we're<00:19:44.320><c> going</c><00:19:44.400><c> to</c><00:19:44.480><c> be</c><00:19:44.679><c> covering</c><00:19:45.159><c> a</c><00:19:45.360><c> lot</c><00:19:45.720><c> more</c>
+
+00:19:46.470 --> 00:19:46.480 align:start position:0%
+we're going to be covering a lot more
+ 
+
+00:19:46.480 --> 00:19:48.230 align:start position:0%
+we're going to be covering a lot more
+thanks<00:19:46.720><c> to</c><00:19:47.080><c> all</c><00:19:47.240><c> of</c><00:19:47.360><c> my</c><00:19:47.520><c> patrons</c><00:19:47.880><c> who</c><00:19:48.039><c> keep</c>
+
+00:19:48.230 --> 00:19:48.240 align:start position:0%
+thanks to all of my patrons who keep
+ 
+
+00:19:48.240 --> 00:19:50.750 align:start position:0%
+thanks to all of my patrons who keep
+this<00:19:48.360><c> series</c><00:19:48.720><c> going</c><00:19:49.440><c> you</c><00:19:49.679><c> too</c><00:19:50.000><c> can</c><00:19:50.200><c> get</c><00:19:50.520><c> access</c>
+
+00:19:50.750 --> 00:19:50.760 align:start position:0%
+this series going you too can get access
+ 
+
+00:19:50.760 --> 00:19:52.830 align:start position:0%
+this series going you too can get access
+to<00:19:50.919><c> the</c><00:19:51.120><c> project</c><00:19:51.440><c> source</c><00:19:51.799><c> files</c><00:19:52.280><c> by</c><00:19:52.440><c> joining</c>
+
+00:19:52.830 --> 00:19:52.840 align:start position:0%
+to the project source files by joining
+ 
+
+00:19:52.840 --> 00:19:55.430 align:start position:0%
+to the project source files by joining
+my<00:19:53.120><c> patreon</c><00:19:54.120><c> you</c><00:19:54.240><c> can</c><00:19:54.440><c> download</c><00:19:54.919><c> everything</c>
+
+00:19:55.430 --> 00:19:55.440 align:start position:0%
+my patreon you can download everything
+ 
+
+00:19:55.440 --> 00:19:57.230 align:start position:0%
+my patreon you can download everything
+there<00:19:55.720><c> and</c><00:19:55.840><c> you'll</c><00:19:56.120><c> also</c><00:19:56.360><c> get</c><00:19:56.559><c> early</c><00:19:56.960><c> access</c>
+
+00:19:57.230 --> 00:19:57.240 align:start position:0%
+there and you'll also get early access
+ 
+
+00:19:57.240 --> 00:19:59.789 align:start position:0%
+there and you'll also get early access
+to<00:19:57.400><c> my</c><00:19:57.559><c> videos</c><00:19:58.039><c> and</c><00:19:58.200><c> sneak</c><00:19:58.720><c> Peaks</c><00:19:59.039><c> at</c><00:19:59.200><c> Future</c>
+
+00:19:59.789 --> 00:19:59.799 align:start position:0%
+to my videos and sneak Peaks at Future
+ 
+
+00:19:59.799 --> 00:20:02.230 align:start position:0%
+to my videos and sneak Peaks at Future
+tutorials<00:20:00.799><c> thanks</c><00:20:01.039><c> for</c><00:20:01.240><c> watching</c><00:20:01.919><c> and</c><00:20:02.080><c> as</c>
+
+00:20:02.230 --> 00:20:02.240 align:start position:0%
+tutorials thanks for watching and as
+ 
+
+00:20:02.240 --> 00:20:05.250 align:start position:0%
+tutorials thanks for watching and as
+always<00:20:02.840><c> keep</c><00:20:03.080><c> creating</c>
+
+00:20:05.250 --> 00:20:05.260 align:start position:0%
+always keep creating
+ 
+
+00:20:05.260 --> 00:20:11.000 align:start position:0%
+always keep creating
+[Music]
+

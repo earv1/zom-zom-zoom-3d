@@ -1,0 +1,998 @@
+Kind: captions
+Language: en
+ 
+[Music]
+today<00:00:03.840><c> we're</c><00:00:03.959><c> going</c><00:00:04.080><c> to</c><00:00:04.240><c> make</c><00:00:04.400><c> it</c><00:00:04.560><c> so</c><00:00:04.720><c> we</c><00:00:04.839><c> can</c>
+today we're going to make it so we can
+do<00:00:05.720><c> multiple</c><00:00:06.279><c> animations</c><00:00:06.879><c> so</c><00:00:07.240><c> animate</c>
+do multiple animations so animate
+multiple<00:00:08.440><c> properties</c><00:00:08.960><c> of</c><00:00:09.080><c> our</c><00:00:09.240><c> control</c><00:00:09.559><c> nodes</c>
+multiple properties of our control nodes
+and<00:00:10.360><c> we</c><00:00:10.480><c> can</c><00:00:10.599><c> do</c><00:00:10.759><c> it</c><00:00:11.360><c> simultaneously</c><00:00:12.360><c> or</c>
+and we can do it simultaneously or
+sequentially<00:00:13.400><c> and</c><00:00:13.519><c> before</c><00:00:13.719><c> I</c><00:00:13.880><c> forget</c><00:00:14.200><c> you</c><00:00:14.280><c> can</c>
+sequentially and before I forget you can
+also<00:00:15.000><c> get</c><00:00:15.400><c> uh</c><00:00:15.480><c> the</c><00:00:15.559><c> source</c><00:00:15.920><c> files</c><00:00:16.440><c> for</c><00:00:16.720><c> what</c>
+also get uh the source files for what
+we're<00:00:17.039><c> doing</c><00:00:17.520><c> on</c><00:00:17.760><c> my</c><00:00:18.000><c> patreon</c><00:00:18.680><c> as</c><00:00:18.800><c> well</c><00:00:18.960><c> as</c><00:00:19.080><c> a</c>
+we're doing on my patreon as well as a
+bunch<00:00:19.359><c> of</c><00:00:19.520><c> other</c><00:00:20.279><c> G</c><00:00:20.600><c> based</c><00:00:20.920><c> projects</c><00:00:21.359><c> so</c><00:00:21.840><c> you</c>
+bunch of other G based projects so you
+can<00:00:22.080><c> check</c><00:00:22.279><c> that</c><00:00:22.439><c> out</c><00:00:22.680><c> in</c><00:00:22.800><c> the</c><00:00:22.960><c> description</c>
+can check that out in the description
+now<00:00:23.680><c> in</c><00:00:23.800><c> our</c><00:00:24.000><c> current</c><00:00:24.279><c> setup</c><00:00:24.640><c> we've</c><00:00:24.920><c> created</c>
+now in our current setup we've created
+an<00:00:25.800><c> add</c><00:00:26.119><c> tween</c><00:00:26.840><c> function</c><00:00:27.480><c> that</c><00:00:28.119><c> creates</c><00:00:28.560><c> a</c><00:00:28.800><c> a</c>
+an add tween function that creates a a
+new<00:00:29.119><c> tween</c><00:00:29.560><c> and</c><00:00:29.679><c> then</c><00:00:30.119><c> a</c><00:00:30.240><c> tween</c><00:00:30.560><c> property</c>
+new tween and then a tween property
+we're<00:00:31.080><c> going</c><00:00:31.160><c> to</c><00:00:31.279><c> build</c><00:00:31.560><c> upon</c><00:00:31.880><c> this</c><00:00:32.040><c> so</c><00:00:32.200><c> it's</c>
+we're going to build upon this so it's
+more<00:00:32.599><c> of</c><00:00:32.759><c> a</c><00:00:33.120><c> all</c><00:00:33.559><c> powerful</c><00:00:34.480><c> add</c><00:00:34.760><c> tween</c>
+more of a all powerful add tween
+function<00:00:35.640><c> and</c><00:00:35.800><c> in</c><00:00:36.000><c> that</c><00:00:36.320><c> process</c><00:00:36.840><c> we're</c>
+function and in that process we're
+actually<00:00:37.960><c> going</c><00:00:38.160><c> to</c><00:00:38.320><c> be</c><00:00:38.680><c> cleaning</c><00:00:39.079><c> up</c><00:00:39.360><c> quite</c><00:00:39.559><c> a</c>
+actually going to be cleaning up quite a
+bit<00:00:39.800><c> of</c><00:00:40.039><c> this</c><00:00:40.239><c> code</c><00:00:40.640><c> so</c><00:00:40.800><c> let's</c><00:00:41.000><c> jump</c><00:00:41.239><c> down</c><00:00:41.399><c> to</c>
+bit of this code so let's jump down to
+our<00:00:41.920><c> our</c><00:00:42.160><c> ad</c><00:00:42.440><c> tween</c><00:00:42.879><c> function</c><00:00:43.280><c> right</c><00:00:43.399><c> here</c><00:00:43.559><c> in</c>
+our our ad tween function right here in
+fact<00:00:43.840><c> let</c><00:00:43.920><c> me</c><00:00:44.079><c> get</c><00:00:44.200><c> some</c><00:00:44.360><c> more</c><00:00:44.719><c> space</c><00:00:45.680><c> so</c><00:00:45.840><c> it's</c>
+fact let me get some more space so it's
+a<00:00:46.120><c> little</c><00:00:46.320><c> bit</c><00:00:46.480><c> easier</c><00:00:46.800><c> to</c><00:00:46.960><c> see</c><00:00:47.640><c> and</c><00:00:48.440><c> blow</c><00:00:48.840><c> that</c>
+a little bit easier to see and blow that
+up<00:00:49.360><c> just</c><00:00:49.600><c> a</c><00:00:49.800><c> tad</c><00:00:50.280><c> now</c><00:00:50.440><c> our</c><00:00:50.920><c> parameters</c><00:00:51.399><c> are</c><00:00:51.600><c> are</c>
+up just a tad now our parameters are are
+going<00:00:51.800><c> to</c><00:00:51.960><c> change</c><00:00:52.399><c> because</c><00:00:52.600><c> we're</c><00:00:52.760><c> going</c><00:00:52.840><c> to</c>
+going to change because we're going to
+we're<00:00:53.120><c> going</c><00:00:53.199><c> to</c><00:00:53.280><c> fill</c><00:00:53.520><c> this</c><00:00:53.640><c> out</c><00:00:53.840><c> quite</c><00:00:54.039><c> a</c><00:00:54.160><c> bit</c>
+we're going to fill this out quite a bit
+we<00:00:54.399><c> want</c><00:00:54.520><c> to</c><00:00:54.640><c> have</c><00:00:54.760><c> a</c><00:00:54.920><c> lot</c><00:00:55.039><c> of</c><00:00:55.719><c> different</c>
+we want to have a lot of different
+options<00:00:56.559><c> when</c><00:00:56.719><c> we</c><00:00:56.840><c> are</c><00:00:57.000><c> doing</c><00:00:57.280><c> our</c><00:00:57.480><c> new</c><00:00:58.000><c> twins</c>
+options when we are doing our new twins
+uh<00:00:59.120><c> but</c><00:00:59.239><c> for</c><00:00:59.440><c> right</c><00:00:59.559><c> now</c><00:00:59.680><c> we're</c><00:01:00.039><c> just</c><00:01:00.120><c> going</c><00:01:00.199><c> to</c>
+uh but for right now we're just going to
+leave<00:01:00.480><c> this</c><00:01:00.640><c> B</c><00:01:01.480><c> our</c><00:01:01.680><c> first</c><00:01:01.960><c> line</c><00:01:02.160><c> is</c><00:01:02.280><c> going</c><00:01:02.399><c> to</c>
+leave this B our first line is going to
+stay<00:01:02.719><c> the</c><00:01:02.840><c> same</c><00:01:03.280><c> because</c><00:01:03.440><c> we're</c><00:01:03.600><c> still</c><00:01:03.800><c> going</c>
+stay the same because we're still going
+to<00:01:04.040><c> create</c><00:01:04.360><c> a</c><00:01:04.519><c> tween</c><00:01:05.040><c> anytime</c><00:01:05.400><c> we</c><00:01:05.560><c> run</c><00:01:05.799><c> this</c>
+to create a tween anytime we run this
+function<00:01:06.320><c> then</c><00:01:06.400><c> we're</c><00:01:06.520><c> going</c><00:01:06.600><c> to</c><00:01:06.799><c> delete</c><00:01:07.799><c> this</c>
+function then we're going to delete this
+line<00:01:08.640><c> right</c><00:01:08.840><c> here</c><00:01:09.040><c> because</c><00:01:09.240><c> we're</c><00:01:09.400><c> going</c><00:01:09.479><c> to</c>
+line right here because we're going to
+do<00:01:09.960><c> our</c><00:01:10.280><c> properties</c><00:01:11.080><c> in</c><00:01:11.240><c> a</c><00:01:11.400><c> little</c><00:01:11.600><c> bit</c><00:01:11.759><c> of</c><00:01:11.880><c> a</c>
+do our properties in a little bit of a
+different<00:01:12.400><c> way</c><00:01:12.840><c> for</c><00:01:13.040><c> our</c><00:01:13.320><c> next</c><00:01:13.600><c> line</c><00:01:13.960><c> we're</c>
+different way for our next line we're
+going<00:01:14.200><c> to</c><00:01:14.400><c> use</c><00:01:14.920><c> what</c><00:01:15.080><c> is</c><00:01:15.280><c> called</c><00:01:15.680><c> the</c><00:01:16.200><c> set</c>
+going to use what is called the set
+parallel<00:01:17.720><c> function</c><00:01:18.040><c> within</c><00:01:18.280><c> the</c><00:01:18.400><c> tween</c><00:01:18.880><c> now</c>
+parallel function within the tween now
+what<00:01:19.400><c> this</c><00:01:19.720><c> does</c><00:01:20.240><c> if</c><00:01:20.360><c> set</c><00:01:20.640><c> parallel</c><00:01:21.079><c> is</c><00:01:21.240><c> true</c>
+what this does if set parallel is true
+it<00:01:21.560><c> means</c><00:01:21.799><c> we're</c><00:01:21.960><c> going</c><00:01:22.040><c> to</c><00:01:22.159><c> do</c><00:01:22.479><c> all</c><00:01:22.640><c> of</c><00:01:22.880><c> those</c>
+it means we're going to do all of those
+animations<00:01:23.799><c> at</c><00:01:24.119><c> the</c><00:01:24.320><c> same</c><00:01:24.880><c> time</c><00:01:25.560><c> and</c><00:01:25.680><c> if</c><00:01:25.759><c> it's</c>
+animations at the same time and if it's
+set<00:01:26.119><c> the</c><00:01:26.280><c> false</c><00:01:26.640><c> it</c><00:01:26.759><c> means</c><00:01:26.960><c> it's</c><00:01:27.119><c> going</c><00:01:27.200><c> to</c><00:01:27.320><c> be</c>
+set the false it means it's going to be
+sequential<00:01:28.119><c> meaning</c><00:01:28.840><c> one</c><00:01:29.079><c> animation</c><00:01:29.640><c> play</c>
+sequential meaning one animation play
+plays<00:01:30.360><c> finishes</c><00:01:31.159><c> and</c><00:01:31.280><c> then</c><00:01:31.400><c> the</c><00:01:31.560><c> next</c><00:01:31.720><c> one</c>
+plays finishes and then the next one
+starts<00:01:32.560><c> we</c><00:01:32.640><c> want</c><00:01:32.759><c> to</c><00:01:32.920><c> be</c><00:01:33.040><c> able</c><00:01:33.320><c> to</c><00:01:33.920><c> decide</c><00:01:34.920><c> if</c>
+starts we want to be able to decide if
+we<00:01:35.119><c> want</c><00:01:35.240><c> to</c><00:01:35.360><c> do</c><00:01:35.600><c> parallel</c><00:01:36.439><c> or</c><00:01:36.680><c> not</c><00:01:37.280><c> in</c><00:01:37.439><c> our</c>
+we want to do parallel or not in our
+inspector<00:01:38.560><c> so</c><00:01:38.680><c> we're</c><00:01:38.799><c> going</c><00:01:38.880><c> to</c><00:01:39.000><c> create</c><00:01:39.159><c> an</c>
+inspector so we're going to create an
+export<00:01:39.640><c> function</c><00:01:39.880><c> for</c><00:01:40.079><c> that</c><00:01:40.280><c> and</c><00:01:40.360><c> then</c><00:01:40.479><c> we're</c>
+export function for that and then we're
+going<00:01:40.680><c> to</c><00:01:40.840><c> run</c><00:01:41.079><c> that</c><00:01:41.320><c> through</c><00:01:42.079><c> whenever</c><00:01:42.439><c> we</c>
+going to run that through whenever we
+run<00:01:42.920><c> this</c><00:01:43.119><c> function</c><00:01:43.680><c> we</c><00:01:43.880><c> set</c><00:01:44.159><c> this</c><00:01:44.360><c> to</c>
+run this function we set this to
+parallel<00:01:46.000><c> and</c><00:01:46.159><c> then</c><00:01:46.360><c> this</c><00:01:46.439><c> will</c><00:01:46.640><c> be</c><00:01:46.880><c> one</c><00:01:47.040><c> of</c>
+parallel and then this will be one of
+our<00:01:47.600><c> our</c><00:01:47.799><c> new</c><00:01:48.200><c> properties</c><00:01:48.680><c> up</c>
+our our new properties up
+here<00:01:50.479><c> and</c><00:01:50.640><c> that'll</c><00:01:51.000><c> simply</c><00:01:51.399><c> just</c><00:01:51.600><c> be</c><00:01:52.040><c> a</c>
+here and that'll simply just be a
+Boolean<00:01:52.960><c> now</c><00:01:53.159><c> these</c><00:01:53.280><c> are</c><00:01:53.439><c> going</c><00:01:53.520><c> to</c><00:01:53.920><c> freak</c><00:01:54.240><c> out</c>
+Boolean now these are going to freak out
+up<00:01:54.719><c> here</c><00:01:54.880><c> and</c><00:01:55.000><c> that's</c><00:01:55.320><c> okay</c><00:01:55.600><c> because</c><00:01:55.840><c> we're</c>
+up here and that's okay because we're
+actually<00:01:57.680><c> we're</c><00:01:57.840><c> going</c><00:01:57.960><c> to</c><00:01:58.079><c> delete</c><00:01:58.399><c> those</c>
+actually we're going to delete those
+eventually<00:01:59.000><c> anyway</c><00:01:59.399><c> and</c><00:01:59.520><c> before</c><00:01:59.680><c> we</c><00:02:00.039><c> just</c>
+eventually anyway and before we just
+tweened<00:02:00.799><c> our</c><00:02:01.320><c> scale</c><00:02:01.840><c> property</c><00:02:02.439><c> we</c><00:02:02.520><c> want</c><00:02:02.680><c> to</c><00:02:02.840><c> be</c>
+tweened our scale property we want to be
+able<00:02:03.200><c> to</c><00:02:03.360><c> Tween</c><00:02:03.960><c> a</c><00:02:04.119><c> lot</c><00:02:04.280><c> of</c><00:02:04.479><c> different</c>
+able to Tween a lot of different
+properties<00:02:05.360><c> and</c><00:02:05.600><c> to</c><00:02:06.039><c> expand</c><00:02:06.680><c> that</c><00:02:07.280><c> list</c><00:02:07.759><c> in</c>
+properties and to expand that list in
+the<00:02:08.080><c> inspector</c><00:02:08.599><c> so</c><00:02:08.800><c> to</c><00:02:09.000><c> do</c><00:02:09.280><c> that</c><00:02:09.440><c> we're</c><00:02:09.599><c> going</c>
+the inspector so to do that we're going
+to<00:02:09.920><c> create</c><00:02:10.280><c> a</c><00:02:10.520><c> new</c><00:02:11.080><c> variable</c><00:02:11.599><c> called</c>
+to create a new variable called
+properties<00:02:12.879><c> and</c><00:02:13.000><c> this</c><00:02:13.120><c> is</c><00:02:13.239><c> going</c><00:02:13.360><c> to</c><00:02:13.480><c> be</c><00:02:13.680><c> a</c><00:02:13.879><c> new</c>
+properties and this is going to be a new
+export<00:02:14.959><c> variable</c><00:02:15.560><c> called</c><00:02:16.480><c> properties</c><00:02:17.480><c> this</c>
+export variable called properties this
+will<00:02:17.879><c> be</c><00:02:18.160><c> an</c><00:02:18.400><c> array</c><00:02:19.239><c> and</c><00:02:19.400><c> within</c><00:02:19.800><c> this</c><00:02:20.000><c> we're</c>
+will be an array and within this we're
+going<00:02:20.360><c> to</c><00:02:21.360><c> put</c><00:02:21.640><c> some</c><00:02:22.160><c> uh</c><00:02:22.360><c> properties</c><00:02:22.800><c> that</c><00:02:22.920><c> are</c>
+going to put some uh properties that are
+typical<00:02:23.680><c> of</c><00:02:23.800><c> a</c><00:02:23.959><c> control</c><00:02:24.239><c> node</c><00:02:24.560><c> that</c><00:02:24.720><c> includes</c>
+typical of a control node that includes
+scale<00:02:26.239><c> position</c>
+scale position
+rotation<00:02:28.920><c> size</c>
+rotation size
+and<00:02:31.519><c> self</c><00:02:32.200><c> modulate</c><00:02:32.760><c> if</c><00:02:32.879><c> you've</c><00:02:33.120><c> not</c><00:02:33.519><c> used</c>
+and self modulate if you've not used
+self<00:02:34.239><c> modulate</c><00:02:34.640><c> or</c><00:02:34.800><c> modulate</c><00:02:35.360><c> before</c><00:02:36.120><c> it</c><00:02:36.400><c> it</c>
+self modulate or modulate before it it
+adjusts<00:02:37.000><c> the</c><00:02:37.120><c> color</c><00:02:37.800><c> of</c><00:02:38.239><c> uh</c><00:02:38.400><c> the</c><00:02:38.480><c> control</c><00:02:38.800><c> node</c>
+adjusts the color of uh the control node
+but<00:02:39.159><c> you</c><00:02:39.239><c> can</c><00:02:39.400><c> also</c><00:02:39.680><c> adjust</c><00:02:40.159><c> the</c><00:02:40.400><c> alpha</c>
+but you can also adjust the alpha
+transparency<00:02:42.000><c> and</c><00:02:42.400><c> I</c><00:02:42.480><c> think</c><00:02:42.599><c> that's</c><00:02:42.760><c> a</c><00:02:42.879><c> pretty</c>
+transparency and I think that's a pretty
+useful<00:02:43.640><c> feature</c><00:02:44.040><c> so</c><00:02:44.239><c> we're</c><00:02:44.360><c> going</c><00:02:44.480><c> to</c><00:02:44.599><c> add</c>
+useful feature so we're going to add
+that<00:02:44.920><c> into</c><00:02:45.159><c> our</c><00:02:45.440><c> property</c><00:02:45.920><c> list</c><00:02:46.680><c> and</c><00:02:46.840><c> now</c><00:02:47.000><c> that</c>
+that into our property list and now that
+that's<00:02:47.480><c> all</c><00:02:47.760><c> set</c><00:02:48.080><c> up</c><00:02:48.440><c> we</c><00:02:48.519><c> can</c><00:02:48.720><c> go</c><00:02:49.040><c> back</c><00:02:49.400><c> down</c><00:02:50.080><c> to</c>
+that's all set up we can go back down to
+our<00:02:50.599><c> tween</c><00:02:51.040><c> function</c><00:02:51.440><c> and</c><00:02:51.560><c> we're</c><00:02:51.680><c> going</c><00:02:51.760><c> to</c>
+our tween function and we're going to
+run<00:02:52.280><c> through</c><00:02:52.640><c> these</c><00:02:53.400><c> properties</c><00:02:53.959><c> we're</c><00:02:54.040><c> going</c>
+run through these properties we're going
+to<00:02:54.239><c> run</c><00:02:54.400><c> through</c><00:02:54.599><c> that</c><00:02:54.760><c> array</c><00:02:55.599><c> with</c><00:02:55.760><c> a</c><00:02:55.879><c> for</c>
+to run through that array with a for
+Loop<00:02:58.159><c> and</c><00:02:58.480><c> for</c><00:02:58.760><c> each</c><00:02:59.200><c> property</c><00:02:59.680><c> and</c><00:02:59.840><c> in</c><00:02:59.959><c> our</c>
+Loop and for each property and in our
+properties<00:03:02.000><c> list</c><00:03:03.000><c> we</c><00:03:03.120><c> want</c><00:03:03.239><c> to</c><00:03:03.440><c> add</c><00:03:03.680><c> our</c><00:03:03.920><c> tween</c>
+properties list we want to add our tween
+property<00:03:05.040><c> function</c><00:03:05.640><c> so</c><00:03:05.799><c> for</c><00:03:06.000><c> each</c><00:03:06.319><c> property</c>
+property function so for each property
+in<00:03:06.959><c> our</c><00:03:07.319><c> properties</c><00:03:07.879><c> array</c><00:03:08.680><c> we're</c><00:03:08.799><c> going</c><00:03:08.920><c> to</c>
+in our properties array we're going to
+add<00:03:09.200><c> a</c><00:03:09.720><c> tween</c><00:03:10.720><c> property</c><00:03:11.200><c> line</c><00:03:11.959><c> our</c><00:03:12.239><c> Target</c>
+add a tween property line our Target
+will<00:03:12.879><c> be</c><00:03:13.360><c> the</c><00:03:13.920><c> objects</c><00:03:14.920><c> our</c><00:03:15.319><c> property</c><00:03:16.159><c> will</c>
+will be the objects our property will
+actually<00:03:16.920><c> be</c><00:03:17.239><c> our</c><00:03:18.200><c> property</c><00:03:18.640><c> now</c><00:03:18.799><c> we</c><00:03:19.080><c> actually</c>
+actually be our property now we actually
+have<00:03:19.760><c> to</c><00:03:20.080><c> use</c><00:03:20.920><c> this</c><00:03:21.280><c> Str</c><00:03:22.000><c> Str</c><00:03:23.280><c> function</c><00:03:24.280><c> to</c>
+have to use this Str Str function to
+make<00:03:24.680><c> sure</c><00:03:25.040><c> that</c><00:03:25.319><c> whatever</c><00:03:25.760><c> is</c><00:03:26.159><c> spit</c><00:03:26.480><c> out</c><00:03:26.720><c> here</c>
+make sure that whatever is spit out here
+is<00:03:27.080><c> a</c><00:03:27.319><c> string</c><00:03:27.879><c> because</c><00:03:28.080><c> it</c><00:03:28.239><c> has</c><00:03:28.400><c> to</c><00:03:28.599><c> be</c><00:03:29.080><c> a</c>
+is a string because it has to be a
+string<00:03:29.439><c> for</c><00:03:29.760><c> to</c><00:03:29.959><c> match</c><00:03:30.159><c> a</c><00:03:30.439><c> property</c><00:03:31.280><c> and</c><00:03:31.360><c> so</c>
+string for to match a property and so
+that's<00:03:31.760><c> what</c><00:03:31.959><c> this</c><00:03:32.159><c> Str</c><00:03:32.400><c> Str</c><00:03:33.159><c> this</c><00:03:33.519><c> string</c>
+that's what this Str Str this string
+function<00:03:34.519><c> does</c><00:03:34.720><c> it</c><00:03:34.840><c> takes</c><00:03:35.080><c> whatever</c><00:03:35.480><c> this</c><00:03:35.680><c> is</c>
+function does it takes whatever this is
+and<00:03:36.720><c> it</c><00:03:36.840><c> turns</c><00:03:37.080><c> it</c><00:03:37.200><c> into</c><00:03:37.400><c> a</c><00:03:37.920><c> string</c><00:03:38.920><c> next</c><00:03:39.120><c> we</c>
+and it turns it into a string next we
+need<00:03:39.439><c> our</c><00:03:39.760><c> value</c><00:03:40.159><c> and</c><00:03:40.280><c> now</c><00:03:40.360><c> we're</c><00:03:40.480><c> going</c><00:03:40.560><c> to</c>
+need our value and now we're going to
+come<00:03:40.920><c> back</c><00:03:41.080><c> to</c><00:03:41.319><c> this</c><00:03:41.640><c> because</c><00:03:41.840><c> we</c><00:03:42.000><c> need</c><00:03:42.120><c> to</c>
+come back to this because we need to
+adjust<00:03:43.200><c> how</c><00:03:43.319><c> we're</c><00:03:43.519><c> doing</c><00:03:43.840><c> our</c><00:03:44.080><c> values</c><00:03:44.959><c> for</c>
+adjust how we're doing our values for
+now<00:03:45.480><c> we're</c><00:03:45.640><c> going</c><00:03:45.760><c> to</c><00:03:46.040><c> put</c><00:03:47.040><c> values</c><00:03:48.000><c> which</c><00:03:48.120><c> is</c>
+now we're going to put values which is
+going<00:03:48.319><c> to</c><00:03:48.439><c> give</c><00:03:48.599><c> an</c><00:03:48.720><c> error</c><00:03:49.080><c> but</c><00:03:49.239><c> that's</c><00:03:49.439><c> fine</c>
+going to give an error but that's fine
+and<00:03:50.400><c> then</c><00:03:51.280><c> seconds</c><00:03:52.280><c> which</c><00:03:52.439><c> will</c><00:03:52.599><c> be</c><00:03:52.799><c> another</c>
+and then seconds which will be another
+parameter<00:03:53.879><c> within</c><00:03:54.159><c> our</c><00:03:54.439><c> our</c>
+parameter within our our
+tween<00:03:56.519><c> and</c><00:03:56.680><c> then</c><00:03:56.799><c> we're</c><00:03:56.920><c> going</c><00:03:57.040><c> to</c><00:03:57.200><c> set</c><00:03:57.439><c> a</c>
+tween and then we're going to set a
+transition<00:03:58.680><c> and</c><00:03:58.920><c> that</c><00:03:59.120><c> transition</c><00:03:59.560><c> is</c><00:03:59.879><c> going</c>
+transition and that transition is going
+to<00:04:00.120><c> use</c><00:04:00.400><c> another</c><00:04:00.760><c> parameter</c><00:04:01.599><c> within</c><00:04:01.840><c> our</c>
+to use another parameter within our
+tween<00:04:02.879><c> function</c><00:04:03.760><c> and</c><00:04:03.879><c> then</c><00:04:04.000><c> we're</c><00:04:04.280><c> also</c><00:04:04.640><c> going</c>
+tween function and then we're also going
+to<00:04:05.840><c> set</c><00:04:06.519><c> e</c><00:04:07.239><c> and</c><00:04:07.360><c> that's</c><00:04:07.519><c> going</c><00:04:07.599><c> to</c><00:04:07.840><c> contain</c><00:04:08.319><c> the</c>
+to set e and that's going to contain the
+easing<00:04:09.079><c> parameter</c><00:04:09.680><c> which</c><00:04:10.360><c> again</c><00:04:10.560><c> will</c><00:04:10.680><c> be</c>
+easing parameter which again will be
+another<00:04:11.120><c> parameter</c><00:04:11.519><c> so</c><00:04:11.680><c> let's</c><00:04:11.879><c> add</c><00:04:12.040><c> our</c>
+another parameter so let's add our
+seconds<00:04:12.840><c> parameter</c><00:04:13.599><c> so</c><00:04:13.760><c> what</c><00:04:13.920><c> the</c><00:04:14.079><c> seconds</c>
+seconds parameter so what the seconds
+parameter<00:04:15.239><c> does</c><00:04:15.519><c> is</c><00:04:16.199><c> it</c><00:04:16.400><c> tells</c><00:04:16.720><c> us</c><00:04:17.239><c> how</c><00:04:17.479><c> long</c>
+parameter does is it tells us how long
+we<00:04:17.880><c> want</c><00:04:18.160><c> these</c><00:04:18.400><c> tween</c><00:04:19.280><c> to</c><00:04:19.560><c> take</c><00:04:19.959><c> and</c><00:04:20.120><c> if</c><00:04:20.239><c> we</c>
+we want these tween to take and if we
+run<00:04:20.639><c> these</c><00:04:20.799><c> in</c><00:04:21.040><c> parallel</c><00:04:21.680><c> or</c><00:04:21.840><c> at</c><00:04:21.959><c> the</c><00:04:22.079><c> same</c>
+run these in parallel or at the same
+time<00:04:22.520><c> that's</c><00:04:22.759><c> how</c><00:04:22.919><c> long</c><00:04:23.120><c> the</c><00:04:23.360><c> total</c><00:04:23.840><c> animation</c>
+time that's how long the total animation
+is<00:04:24.840><c> going</c><00:04:24.919><c> to</c><00:04:25.120><c> take</c><00:04:25.520><c> because</c><00:04:25.720><c> we're</c><00:04:25.919><c> putting</c>
+is going to take because we're putting
+this<00:04:26.520><c> as</c><00:04:26.639><c> a</c><00:04:26.759><c> parameter</c><00:04:27.320><c> we</c><00:04:27.440><c> can</c><00:04:28.000><c> set</c><00:04:28.240><c> this</c>
+this as a parameter we can set this
+individually<00:04:28.960><c> for</c><00:04:29.720><c> every</c><00:04:29.880><c> twe</c><00:04:30.160><c> we</c><00:04:30.240><c> ever</c><00:04:30.440><c> do</c>
+individually for every twe we ever do
+then<00:04:30.919><c> we</c><00:04:31.039><c> have</c><00:04:31.199><c> our</c><00:04:31.759><c> transition</c><00:04:32.880><c> parameter</c>
+then we have our transition parameter
+and<00:04:34.080><c> that's</c><00:04:34.280><c> going</c><00:04:34.360><c> to</c><00:04:34.639><c> take</c><00:04:35.039><c> a</c>
+and that's going to take a
+tween<00:04:38.120><c> transition</c><00:04:39.280><c> type</c><00:04:40.280><c> which</c><00:04:40.440><c> we've</c>
+tween transition type which we've
+already<00:04:41.080><c> done</c><00:04:42.080><c> I</c><00:04:42.199><c> believe</c><00:04:42.639><c> yeah</c><00:04:42.800><c> up</c><00:04:42.960><c> here</c><00:04:43.039><c> in</c>
+already done I believe yeah up here in
+our<00:04:43.400><c> export</c><00:04:44.000><c> remember</c><00:04:44.400><c> we</c><00:04:44.560><c> could</c><00:04:45.000><c> uh</c><00:04:45.240><c> take</c><00:04:45.440><c> our</c>
+our export remember we could uh take our
+little<00:04:46.880><c> enumeration</c><00:04:47.600><c> here</c><00:04:47.840><c> and</c><00:04:48.000><c> set</c><00:04:48.280><c> our</c>
+little enumeration here and set our
+transition<00:04:49.320><c> we're</c><00:04:49.440><c> going</c><00:04:49.560><c> to</c><00:04:49.680><c> do</c><00:04:49.960><c> that</c><00:04:50.759><c> within</c>
+transition we're going to do that within
+our<00:04:51.280><c> parameters</c><00:04:51.919><c> and</c><00:04:52.000><c> then</c><00:04:52.120><c> we're</c><00:04:52.320><c> also</c>
+our parameters and then we're also
+adding<00:04:52.919><c> our</c><00:04:53.160><c> easing</c><00:04:53.800><c> which</c><00:04:54.400><c> is</c><00:04:54.600><c> the</c><00:04:54.759><c> same</c>
+adding our easing which is the same
+process<00:04:55.479><c> so</c><00:04:55.639><c> it's</c><00:04:55.759><c> a</c><00:04:56.080><c> tween</c><00:04:57.080><c> and</c><00:04:57.479><c> ease</c><00:04:58.360><c> type</c><00:04:58.759><c> so</c>
+process so it's a tween and ease type so
+this<00:04:59.000><c> is</c><00:04:59.080><c> going</c><00:04:59.160><c> to</c><00:04:59.280><c> throw</c><00:04:59.440><c> an</c><00:04:59.720><c> error</c>
+this is going to throw an error
+obviously<00:05:00.320><c> because</c><00:05:00.479><c> we</c><00:05:00.600><c> don't</c><00:05:00.880><c> have</c><00:05:01.280><c> this</c>
+obviously because we don't have this
+this<00:05:01.919><c> values</c><00:05:02.639><c> thing</c><00:05:02.919><c> so</c><00:05:03.120><c> this</c><00:05:03.440><c> values</c><00:05:04.240><c> is</c>
+this values thing so this values is
+actually<00:05:04.639><c> going</c><00:05:04.720><c> to</c><00:05:04.840><c> be</c><00:05:05.000><c> another</c><00:05:05.360><c> parameter</c>
+actually going to be another parameter
+this<00:05:06.400><c> one's</c><00:05:06.720><c> going</c><00:05:06.880><c> to</c><00:05:07.080><c> be</c><00:05:07.440><c> a</c><00:05:08.360><c> dictionary</c>
+this one's going to be a dictionary
+parameter<00:05:10.120><c> and</c><00:05:10.240><c> what</c><00:05:10.360><c> we're</c><00:05:10.479><c> going</c><00:05:10.560><c> to</c><00:05:10.720><c> do</c><00:05:11.000><c> is</c>
+parameter and what we're going to do is
+we're<00:05:11.240><c> going</c><00:05:11.360><c> to</c><00:05:11.600><c> create</c><00:05:12.600><c> um</c><00:05:13.039><c> separate</c>
+we're going to create um separate
+dictionaries<00:05:14.560><c> for</c><00:05:15.520><c> hovering</c><00:05:16.280><c> hovering</c><00:05:16.840><c> off</c>
+dictionaries for hovering hovering off
+uh<00:05:17.880><c> eventually</c><00:05:18.360><c> for</c><00:05:18.680><c> whenever</c><00:05:19.000><c> we</c><00:05:19.160><c> enter</c><00:05:19.440><c> in</c>
+uh eventually for whenever we enter in
+the<00:05:19.919><c> animation</c><00:05:20.919><c> and</c><00:05:21.080><c> we</c><00:05:21.199><c> need</c><00:05:21.360><c> to</c><00:05:21.479><c> set</c><00:05:21.800><c> exactly</c>
+the animation and we need to set exactly
+what<00:05:22.440><c> those</c><00:05:22.720><c> values</c><00:05:23.080><c> should</c><00:05:23.280><c> be</c><00:05:23.440><c> and</c><00:05:23.680><c> some</c>
+what those values should be and some
+cases<00:05:24.160><c> it</c><00:05:24.319><c> might</c><00:05:24.560><c> just</c><00:05:24.759><c> be</c><00:05:25.440><c> a</c><00:05:25.560><c> new</c><00:05:25.840><c> scale</c><00:05:26.520><c> it</c>
+cases it might just be a new scale it
+might<00:05:26.919><c> be</c><00:05:27.319><c> the</c><00:05:27.680><c> current</c><00:05:28.039><c> scale</c><00:05:28.560><c> plus</c>
+might be the current scale plus
+something<00:05:29.120><c> else</c><00:05:29.720><c> we</c><00:05:29.800><c> need</c><00:05:29.919><c> to</c><00:05:30.000><c> be</c><00:05:30.120><c> able</c><00:05:30.319><c> to</c>
+something else we need to be able to
+really<00:05:31.560><c> fine-tune</c><00:05:32.199><c> those</c><00:05:32.400><c> things</c><00:05:32.639><c> so</c><00:05:32.880><c> we're</c>
+really fine-tune those things so we're
+going<00:05:33.120><c> to</c><00:05:33.240><c> do</c><00:05:33.440><c> those</c><00:05:33.720><c> by</c><00:05:33.960><c> hand</c><00:05:34.880><c> uh</c><00:05:34.960><c> in</c><00:05:35.080><c> fact</c>
+going to do those by hand uh in fact
+let's<00:05:35.360><c> go</c><00:05:35.440><c> ahead</c><00:05:35.600><c> and</c><00:05:35.680><c> do</c><00:05:35.840><c> that</c><00:05:36.039><c> right</c><00:05:36.199><c> now</c><00:05:36.800><c> so</c>
+let's go ahead and do that right now so
+there's<00:05:37.120><c> a</c><00:05:37.319><c> weird</c><00:05:37.880><c> thing</c><00:05:38.520><c> about</c><00:05:39.520><c> um</c><00:05:39.840><c> control</c>
+there's a weird thing about um control
+nodes<00:05:40.960><c> and</c><00:05:41.960><c> especially</c><00:05:42.400><c> when</c><00:05:42.520><c> you</c><00:05:42.800><c> have</c><00:05:43.680><c> uh</c>
+nodes and especially when you have uh
+control<00:05:44.080><c> nodes</c><00:05:44.360><c> that</c><00:05:44.479><c> are</c><00:05:44.800><c> children</c><00:05:45.800><c> of</c><00:05:46.160><c> a</c>
+control nodes that are children of a
+parent<00:05:46.960><c> control</c><00:05:47.280><c> node</c><00:05:47.600><c> and</c><00:05:47.680><c> it's</c><00:05:47.880><c> getting</c><00:05:48.199><c> its</c>
+parent control node and it's getting its
+layout<00:05:49.560><c> its</c><00:05:49.880><c> size</c><00:05:50.319><c> its</c><00:05:50.560><c> scale</c><00:05:51.160><c> everything</c>
+layout its size its scale everything
+from<00:05:52.280><c> the</c><00:05:52.479><c> parents</c><00:05:53.400><c> there's</c><00:05:53.680><c> sort</c><00:05:53.800><c> of</c><00:05:54.120><c> a</c><00:05:54.319><c> weird</c>
+from the parents there's sort of a weird
+what<00:05:55.240><c> comes</c><00:05:55.639><c> first</c><00:05:56.400><c> issue</c><00:05:56.800><c> whenever</c><00:05:57.199><c> you</c><00:05:57.479><c> you</c>
+what comes first issue whenever you you
+run<00:05:58.440><c> the</c><00:05:58.600><c> scene</c><00:05:59.759><c> so</c><00:05:59.919><c> when</c><00:06:00.039><c> you</c><00:06:00.160><c> run</c><00:06:00.360><c> the</c><00:06:00.479><c> scene</c>
+run the scene so when you run the scene
+initially<00:06:01.319><c> it</c><00:06:01.560><c> does</c><00:06:01.880><c> not</c><00:06:02.880><c> um</c><00:06:03.440><c> have</c><00:06:03.639><c> the</c><00:06:03.840><c> proper</c>
+initially it does not um have the proper
+scale<00:06:04.639><c> it's</c><00:06:04.880><c> it's</c><00:06:05.319><c> incorrect</c><00:06:06.319><c> it</c><00:06:06.479><c> needs</c><00:06:06.720><c> to</c><00:06:07.160><c> to</c>
+scale it's it's incorrect it needs to to
+load<00:06:07.840><c> everything</c><00:06:08.280><c> and</c><00:06:08.440><c> the</c><00:06:08.560><c> way</c><00:06:08.759><c> that</c><00:06:09.199><c> the</c><00:06:09.360><c> G</c>
+load everything and the way that the G
+engine<00:06:09.960><c> loads</c><00:06:10.360><c> things</c><00:06:10.599><c> it's</c><00:06:10.759><c> sort</c><00:06:10.919><c> of</c>
+engine loads things it's sort of
+backwards<00:06:11.919><c> in</c><00:06:12.039><c> the</c><00:06:12.199><c> tree</c><00:06:12.800><c> we're</c><00:06:13.039><c> already</c>
+backwards in the tree we're already
+doing<00:06:13.840><c> a</c><00:06:14.199><c> call</c><00:06:14.639><c> deferred</c><00:06:15.400><c> meaning</c><00:06:15.880><c> we're</c>
+doing a call deferred meaning we're
+we're<00:06:16.319><c> waiting</c><00:06:16.599><c> till</c><00:06:16.960><c> everything</c><00:06:17.319><c> is</c><00:06:17.560><c> done</c>
+we're waiting till everything is done
+we've<00:06:18.319><c> had</c><00:06:18.440><c> to</c><00:06:18.639><c> use</c><00:06:19.000><c> this</c><00:06:19.360><c> because</c><00:06:20.039><c> of</c><00:06:20.280><c> this</c>
+we've had to use this because of this
+from<00:06:20.840><c> Center</c><00:06:21.400><c> and</c><00:06:21.520><c> and</c><00:06:21.639><c> changing</c><00:06:22.000><c> the</c><00:06:22.160><c> pivot</c>
+from Center and and changing the pivot
+offset<00:06:23.120><c> we're</c><00:06:23.240><c> going</c><00:06:23.319><c> to</c><00:06:23.440><c> have</c><00:06:23.560><c> to</c><00:06:23.759><c> do</c><00:06:23.960><c> this</c>
+offset we're going to have to do this
+again<00:06:25.639><c> in</c><00:06:25.800><c> order</c><00:06:26.080><c> to</c><00:06:26.280><c> get</c><00:06:26.440><c> the</c><00:06:26.639><c> proper</c><00:06:26.960><c> scaling</c>
+again in order to get the proper scaling
+and<00:06:27.800><c> sizing</c><00:06:28.199><c> and</c><00:06:28.400><c> everything</c><00:06:28.759><c> else</c><00:06:29.080><c> so</c><00:06:29.199><c> let's</c>
+and sizing and everything else so let's
+jump<00:06:29.759><c> down</c><00:06:30.000><c> into</c><00:06:30.440><c> our</c><00:06:30.840><c> our</c><00:06:31.160><c> setup</c><00:06:31.840><c> function</c>
+jump down into our our setup function
+which<00:06:32.520><c> is</c><00:06:32.800><c> again</c><00:06:33.080><c> being</c><00:06:33.319><c> run</c><00:06:33.599><c> with</c><00:06:33.720><c> our</c><00:06:33.919><c> called</c>
+which is again being run with our called
+deferred<00:06:35.199><c> and</c><00:06:35.440><c> here</c><00:06:35.560><c> we're</c><00:06:35.680><c> going</c><00:06:35.800><c> to</c><00:06:36.000><c> set</c><00:06:36.479><c> two</c>
+deferred and here we're going to set two
+new<00:06:37.360><c> dictionaries</c><00:06:38.199><c> one</c><00:06:38.520><c> for</c><00:06:39.440><c> our</c><00:06:39.800><c> default</c>
+new dictionaries one for our default
+value<00:06:41.160><c> and</c><00:06:41.280><c> then</c><00:06:41.440><c> one</c><00:06:41.639><c> for</c><00:06:41.880><c> our</c><00:06:42.199><c> hover</c><00:06:42.599><c> values</c>
+value and then one for our hover values
+and<00:06:43.360><c> in</c><00:06:43.520><c> fact</c><00:06:43.759><c> we</c><00:06:43.840><c> should</c>
+and in fact we should
+probably<00:06:45.919><c> uh</c><00:06:46.160><c> set</c><00:06:46.440><c> these</c><00:06:46.759><c> up</c><00:06:47.520><c> as</c><00:06:47.800><c> variables</c><00:06:48.319><c> up</c>
+probably uh set these up as variables up
+here<00:06:48.759><c> so</c><00:06:49.000><c> let's</c><00:06:49.280><c> do</c><00:06:49.919><c> that</c><00:06:50.319><c> we'll</c><00:06:50.560><c> add</c><00:06:50.680><c> a</c>
+here so let's do that we'll add a
+variable<00:06:52.960><c> hover</c><00:06:53.960><c> values</c><00:06:54.720><c> this</c><00:06:54.840><c> will</c><00:06:55.039><c> be</c><00:06:55.360><c> a</c>
+variable hover values this will be a
+dictionary<00:06:56.800><c> then</c><00:06:57.039><c> another</c><00:06:57.520><c> variable</c><00:06:57.960><c> for</c><00:06:58.199><c> our</c>
+dictionary then another variable for our
+default<00:06:59.080><c> values</c>
+default values
+and<00:07:00.280><c> that</c><00:07:00.440><c> will</c><00:07:00.680><c> also</c><00:07:01.000><c> be</c><00:07:01.280><c> a</c><00:07:01.479><c> dictionary</c><00:07:02.120><c> then</c>
+and that will also be a dictionary then
+down<00:07:02.400><c> in</c><00:07:02.520><c> our</c><00:07:02.759><c> setup</c><00:07:03.080><c> function</c><00:07:03.360><c> we're</c><00:07:03.479><c> going</c>
+down in our setup function we're going
+to<00:07:03.919><c> populate</c><00:07:04.479><c> these</c><00:07:04.720><c> variables</c><00:07:05.120><c> a</c><00:07:05.240><c> little</c><00:07:05.400><c> bit</c>
+to populate these variables a little bit
+for<00:07:05.800><c> our</c><00:07:06.080><c> default</c><00:07:06.720><c> values</c><00:07:07.400><c> we're</c><00:07:07.560><c> going</c><00:07:07.639><c> to</c>
+for our default values we're going to
+run<00:07:08.240><c> through</c><00:07:09.080><c> each</c><00:07:09.560><c> of</c><00:07:09.879><c> the</c><00:07:10.400><c> properties</c><00:07:11.400><c> that</c>
+run through each of the properties that
+we're<00:07:12.240><c> adjusting</c><00:07:12.680><c> or</c><00:07:12.840><c> that</c><00:07:12.960><c> we</c><00:07:13.080><c> could</c><00:07:13.319><c> adjust</c>
+we're adjusting or that we could adjust
+now<00:07:14.080><c> we've</c><00:07:14.280><c> already</c><00:07:14.560><c> set</c><00:07:14.840><c> these</c><00:07:15.080><c> properties</c>
+now we've already set these properties
+up<00:07:15.840><c> here</c><00:07:16.599><c> in</c><00:07:16.800><c> fact</c><00:07:17.000><c> we</c><00:07:17.120><c> can</c><00:07:17.479><c> just</c><00:07:18.479><c> copy</c><00:07:18.879><c> these</c>
+up here in fact we can just copy these
+and<00:07:20.360><c> bring</c><00:07:20.599><c> them</c><00:07:20.759><c> on</c>
+and bring them on
+down<00:07:23.360><c> just</c><00:07:23.680><c> like</c><00:07:23.919><c> that</c><00:07:24.160><c> and</c><00:07:24.280><c> so</c><00:07:24.440><c> we're</c>
+down just like that and so we're
+adjusting<00:07:25.080><c> scale</c><00:07:25.879><c> position</c><00:07:26.319><c> rotation</c><00:07:26.960><c> size</c>
+adjusting scale position rotation size
+self<00:07:27.800><c> modulates</c><00:07:28.800><c> and</c><00:07:28.879><c> we're</c><00:07:29.000><c> going</c><00:07:29.080><c> to</c><00:07:29.160><c> turn</c>
+self modulates and we're going to turn
+these<00:07:29.680><c> into</c><00:07:30.160><c> a</c><00:07:30.639><c> dictionary</c><00:07:31.639><c> value</c><00:07:32.280><c> so</c><00:07:32.560><c> for</c><00:07:32.759><c> our</c>
+these into a dictionary value so for our
+scale<00:07:34.199><c> for</c><00:07:34.360><c> our</c><00:07:34.599><c> default</c><00:07:35.039><c> value</c><00:07:35.440><c> we</c><00:07:35.599><c> just</c><00:07:35.759><c> want</c>
+scale for our default value we just want
+to<00:07:36.520><c> take</c><00:07:36.759><c> our</c><00:07:37.000><c> our</c>
+to take our our
+Target<00:07:39.479><c> scale</c><00:07:39.919><c> value</c><00:07:40.479><c> and</c><00:07:40.639><c> the</c><00:07:40.759><c> same</c><00:07:41.080><c> for</c><00:07:41.360><c> our</c>
+Target scale value and the same for our
+position<00:07:43.000><c> which</c><00:07:43.120><c> will</c><00:07:43.319><c> be</c><00:07:43.759><c> the</c><00:07:44.159><c> position</c><00:07:44.479><c> of</c>
+position which will be the position of
+our<00:07:44.800><c> targets</c><00:07:45.479><c> and</c><00:07:45.599><c> then</c><00:07:45.720><c> we'll</c><00:07:45.919><c> just</c><00:07:46.080><c> run</c>
+our targets and then we'll just run
+through<00:07:46.680><c> and</c><00:07:46.879><c> and</c><00:07:47.000><c> set</c><00:07:47.319><c> these</c><00:07:47.639><c> also</c><00:07:48.240><c> to</c><00:07:49.240><c> Target</c>
+through and and set these also to Target
+rotation<00:07:52.120><c> the</c><00:07:52.360><c> size</c><00:07:52.680><c> will</c><00:07:52.879><c> be</c><00:07:53.400><c> the</c><00:07:54.400><c> target</c>
+rotation the size will be the target
+size<00:07:56.360><c> and</c><00:07:57.080><c> then</c><00:07:57.919><c> Target</c>
+size and then Target
+modulates<00:08:01.560><c> now</c><00:08:01.720><c> if</c><00:08:01.879><c> you</c><00:08:02.360><c> don't</c><00:08:02.639><c> remember</c><00:08:03.159><c> or</c>
+modulates now if you don't remember or
+this<00:08:03.520><c> is</c><00:08:03.639><c> a</c><00:08:03.759><c> new</c><00:08:03.960><c> tutorial</c><00:08:04.360><c> for</c><00:08:04.520><c> you</c><00:08:04.960><c> target</c><00:08:05.599><c> is</c>
+this is a new tutorial for you target is
+the<00:08:06.280><c> the</c><00:08:06.440><c> parent</c><00:08:06.840><c> object</c><00:08:07.599><c> the</c><00:08:07.800><c> object</c><00:08:08.120><c> that</c><00:08:08.240><c> we</c>
+the the parent object the object that we
+are<00:08:08.599><c> animating</c><00:08:09.599><c> that</c><00:08:09.800><c> we</c><00:08:09.919><c> we've</c><00:08:10.120><c> already</c><00:08:10.319><c> set</c>
+are animating that we we've already set
+that<00:08:10.960><c> in</c><00:08:11.120><c> our</c><00:08:11.400><c> our</c><00:08:11.560><c> ready</c><00:08:11.840><c> function</c><00:08:12.120><c> up</c><00:08:12.360><c> there</c>
+that in our our ready function up there
+and<00:08:13.120><c> so</c><00:08:13.520><c> what</c><00:08:13.680><c> the</c><00:08:13.879><c> default</c><00:08:14.360><c> values</c><00:08:14.960><c> is</c><00:08:15.479><c> it's</c>
+and so what the default values is it's
+going<00:08:15.680><c> to</c><00:08:15.800><c> be</c><00:08:15.919><c> the</c><00:08:16.039><c> values</c><00:08:16.400><c> we</c><00:08:16.520><c> want</c><00:08:16.639><c> to</c><00:08:16.840><c> go</c>
+going to be the values we want to go
+back<00:08:17.240><c> to</c><00:08:17.680><c> after</c><00:08:18.000><c> we</c><00:08:18.199><c> say</c><00:08:18.759><c> hover</c><00:08:19.159><c> off</c><00:08:19.639><c> it's</c>
+back to after we say hover off it's
+going<00:08:19.879><c> to</c><00:08:20.199><c> be</c><00:08:21.199><c> home</c><00:08:21.440><c> base</c><00:08:21.840><c> we're</c><00:08:21.960><c> going</c><00:08:22.080><c> to</c><00:08:22.159><c> do</c>
+going to be home base we're going to do
+the<00:08:22.560><c> same</c><00:08:23.000><c> thing</c><00:08:23.520><c> for</c><00:08:24.039><c> our</c><00:08:25.039><c> hover</c><00:08:25.720><c> values</c><00:08:26.720><c> so</c>
+the same thing for our hover values so
+what<00:08:27.039><c> this</c><00:08:27.159><c> is</c><00:08:27.360><c> allowing</c><00:08:27.759><c> me</c><00:08:27.919><c> to</c><00:08:28.159><c> do</c><00:08:28.639><c> is</c><00:08:28.919><c> to</c>
+what this is allowing me to do is to
+really<00:08:30.759><c> specify</c><00:08:31.520><c> how</c><00:08:31.680><c> I</c><00:08:31.800><c> want</c><00:08:32.080><c> these</c>
+really specify how I want these
+parameters<00:08:33.279><c> these</c><00:08:33.560><c> properties</c><00:08:34.120><c> to</c><00:08:34.399><c> to</c><00:08:34.640><c> be</c>
+parameters these properties to to be
+adjusted<00:08:35.719><c> instead</c><00:08:35.959><c> of</c><00:08:36.120><c> just</c><00:08:36.279><c> setting</c><00:08:36.560><c> them</c><00:08:36.680><c> to</c>
+adjusted instead of just setting them to
+one<00:08:37.080><c> value</c><00:08:37.399><c> I</c><00:08:37.599><c> could</c><00:08:38.000><c> add</c><00:08:39.000><c> a</c><00:08:39.159><c> value</c><00:08:39.440><c> to</c><00:08:39.599><c> the</c>
+one value I could add a value to the
+Target<00:08:40.039><c> position</c><00:08:40.440><c> which</c><00:08:40.680><c> is</c><00:08:40.839><c> what</c><00:08:40.959><c> we're</c>
+Target position which is what we're
+going<00:08:41.159><c> to</c><00:08:41.240><c> do</c><00:08:41.360><c> in</c><00:08:41.479><c> our</c><00:08:41.640><c> hover</c><00:08:41.919><c> values</c><00:08:42.640><c> I'll</c>
+going to do in our hover values I'll
+actually<00:08:43.039><c> just</c><00:08:43.200><c> type</c><00:08:43.440><c> this</c><00:08:43.560><c> out</c><00:08:43.800><c> this</c><00:08:43.959><c> time</c><00:08:44.279><c> so</c>
+actually just type this out this time so
+for<00:08:44.600><c> our</c><00:08:44.760><c> hover</c><00:08:45.080><c> scale</c><00:08:45.480><c> we</c><00:08:45.600><c> just</c><00:08:45.720><c> want</c><00:08:46.160><c> to</c><00:08:47.160><c> like</c>
+for our hover scale we just want to like
+we<00:08:47.440><c> did</c><00:08:47.600><c> in</c><00:08:47.680><c> the</c><00:08:47.920><c> last</c>
+we did in the last
+episode<00:08:49.959><c> get</c><00:08:50.160><c> our</c><00:08:50.600><c> our</c><00:08:50.760><c> scale</c><00:08:51.200><c> value</c><00:08:51.519><c> that</c>
+episode get our our scale value that
+we've<00:08:51.760><c> set</c><00:08:52.000><c> in</c><00:08:52.120><c> the</c><00:08:52.279><c> inspector</c><00:08:53.040><c> then</c><00:08:53.200><c> for</c><00:08:53.480><c> our</c>
+we've set in the inspector then for our
+position<00:08:55.080><c> we're</c><00:08:55.240><c> going</c><00:08:55.320><c> to</c><00:08:55.480><c> take</c><00:08:55.720><c> the</c><00:08:56.000><c> target</c>
+position we're going to take the target
+position<00:08:57.360><c> as</c><00:08:57.680><c> the</c><00:08:57.959><c> the</c><00:08:58.160><c> base</c><00:08:59.040><c> and</c><00:08:59.120><c> then</c><00:08:59.200><c> we're</c>
+position as the the base and then we're
+going<00:08:59.480><c> going</c><00:08:59.560><c> to</c><00:08:59.880><c> add</c><00:09:00.440><c> to</c><00:09:00.680><c> it</c><00:09:01.320><c> whatever</c><00:09:01.839><c> hover</c>
+going going to add to it whatever hover
+position<00:09:02.720><c> we've</c><00:09:03.079><c> set</c><00:09:03.360><c> in</c><00:09:03.519><c> the</c><00:09:03.680><c> inspector</c><00:09:04.160><c> so</c>
+position we've set in the inspector so
+if<00:09:04.399><c> we</c><00:09:04.560><c> want</c><00:09:05.000><c> the</c><00:09:06.000><c> um</c><00:09:06.240><c> control</c><00:09:06.640><c> node</c><00:09:06.920><c> to</c><00:09:07.079><c> move</c>
+if we want the um control node to move
+20<00:09:08.120><c> pixels</c><00:09:08.480><c> to</c><00:09:08.640><c> the</c><00:09:08.800><c> right</c><00:09:09.519><c> then</c><00:09:09.720><c> it's</c><00:09:09.880><c> going</c>
+20 pixels to the right then it's going
+to<00:09:10.040><c> be</c><00:09:10.200><c> the</c><00:09:10.320><c> target</c><00:09:10.680><c> position</c><00:09:11.399><c> plus</c><00:09:12.000><c> 20</c><00:09:12.320><c> pixels</c>
+to be the target position plus 20 pixels
+to<00:09:12.800><c> the</c><00:09:12.920><c> right</c><00:09:13.279><c> that's</c><00:09:13.399><c> all</c><00:09:13.600><c> that</c><00:09:13.720><c> means</c><00:09:14.399><c> so</c><00:09:14.560><c> we</c>
+to the right that's all that means so we
+do<00:09:15.160><c> Target</c><00:09:15.640><c> position</c>
+do Target position
+plus<00:09:18.200><c> hover</c><00:09:18.680><c> position</c><00:09:19.240><c> now</c><00:09:19.360><c> we</c><00:09:19.440><c> don't</c>
+plus hover position now we don't
+actually<00:09:20.000><c> have</c><00:09:20.279><c> these</c><00:09:20.519><c> yet</c><00:09:20.640><c> so</c><00:09:20.800><c> we're</c><00:09:20.880><c> going</c>
+actually have these yet so we're going
+to<00:09:21.120><c> create</c><00:09:21.480><c> these</c><00:09:22.040><c> in</c><00:09:22.440><c> export</c><00:09:22.920><c> variables</c>
+to create these in export variables
+we're<00:09:23.720><c> going</c><00:09:23.839><c> to</c><00:09:24.000><c> do</c><00:09:24.200><c> the</c><00:09:24.360><c> same</c><00:09:24.680><c> for</c><00:09:24.920><c> our</c>
+we're going to do the same for our
+rotation<00:09:26.680><c> we're</c><00:09:26.839><c> going</c><00:09:26.920><c> to</c><00:09:27.079><c> get</c><00:09:27.320><c> the</c><00:09:27.920><c> target</c>
+rotation we're going to get the target
+rotation
+plus<00:09:31.399><c> we're</c><00:09:31.560><c> going</c><00:09:31.640><c> to</c><00:09:31.839><c> get</c><00:09:32.160><c> the</c><00:09:32.519><c> uh</c><00:09:32.600><c> we're</c>
+plus we're going to get the uh we're
+going<00:09:32.800><c> to</c><00:09:32.880><c> use</c><00:09:33.000><c> a</c><00:09:33.320><c> degree</c><00:09:33.800><c> to</c><00:09:34.079><c> radian</c><00:09:34.959><c> function</c>
+going to use a degree to radian function
+so<00:09:35.519><c> we</c><00:09:35.600><c> can</c><00:09:35.760><c> set</c><00:09:35.959><c> the</c><00:09:36.160><c> degrees</c><00:09:37.000><c> in</c><00:09:37.120><c> our</c><00:09:37.360><c> export</c>
+so we can set the degrees in our export
+variable<00:09:38.560><c> degrees</c><00:09:39.000><c> to</c><00:09:39.240><c> radian</c><00:09:39.640><c> function</c><00:09:40.000><c> and</c>
+variable degrees to radian function and
+then<00:09:40.200><c> we</c><00:09:40.279><c> need</c><00:09:40.399><c> a</c><00:09:40.560><c> float</c><00:09:41.560><c> and</c><00:09:41.720><c> that's</c><00:09:41.880><c> going</c><00:09:41.959><c> to</c>
+then we need a float and that's going to
+be<00:09:42.760><c> hover</c>
+be hover
+rotation<00:09:46.000><c> then</c><00:09:46.120><c> we're</c><00:09:46.320><c> also</c><00:09:46.560><c> going</c><00:09:46.680><c> to</c><00:09:46.839><c> adjust</c>
+rotation then we're also going to adjust
+the<00:09:47.720><c> size</c><00:09:48.440><c> now</c><00:09:48.600><c> the</c><00:09:48.680><c> cool</c><00:09:48.920><c> thing</c><00:09:49.120><c> about</c><00:09:49.440><c> twins</c>
+the size now the cool thing about twins
+is<00:09:50.200><c> that</c><00:09:50.360><c> you</c><00:09:50.680><c> normally</c><00:09:51.079><c> can't</c><00:09:51.360><c> adjust</c><00:09:51.760><c> the</c>
+is that you normally can't adjust the
+size<00:09:52.560><c> of</c><00:09:52.839><c> a</c><00:09:53.600><c> child</c><00:09:54.160><c> control</c><00:09:54.519><c> node</c><00:09:54.839><c> that's</c>
+size of a child control node that's
+within<00:09:55.240><c> a</c><00:09:55.399><c> parent</c><00:09:55.680><c> control</c><00:09:56.000><c> node</c><00:09:56.760><c> it's</c><00:09:57.000><c> it's</c>
+within a parent control node it's it's
+set<00:09:57.399><c> by</c><00:09:57.519><c> the</c><00:09:57.640><c> parent</c><00:09:57.959><c> and</c><00:09:58.079><c> you</c><00:09:58.200><c> can't</c><00:09:58.440><c> adjust</c>
+set by the parent and you can't adjust
+that<00:09:58.880><c> within</c><00:09:59.040><c> the</c><00:09:59.399><c> Vector</c><00:10:00.040><c> but</c><00:10:00.160><c> you</c><00:10:00.360><c> can</c>
+that within the Vector but you can
+adjust<00:10:00.920><c> it</c><00:10:01.480><c> in</c><00:10:01.760><c> code</c><00:10:02.240><c> and</c><00:10:02.360><c> you</c><00:10:02.440><c> can</c><00:10:02.600><c> do</c><00:10:02.760><c> it</c><00:10:02.880><c> in</c><00:10:03.000><c> a</c>
+adjust it in code and you can do it in a
+tween<00:10:03.800><c> so</c><00:10:04.519><c> that's</c><00:10:04.680><c> a</c><00:10:04.800><c> cool</c><00:10:05.000><c> thing</c><00:10:05.120><c> to</c><00:10:05.279><c> know</c><00:10:05.880><c> and</c>
+tween so that's a cool thing to know and
+we<00:10:06.160><c> will</c><00:10:06.600><c> add</c><00:10:06.959><c> our</c><00:10:07.360><c> hover</c><00:10:07.800><c> size</c><00:10:08.880><c> option</c><00:10:09.880><c> and</c>
+we will add our hover size option and
+the<00:10:10.560><c> last</c><00:10:10.760><c> one</c><00:10:11.000><c> will</c><00:10:11.160><c> be</c><00:10:11.320><c> our</c><00:10:11.560><c> self</c>
+the last one will be our self
+modulate<00:10:14.079><c> and</c><00:10:14.440><c> we're</c><00:10:14.640><c> just</c><00:10:14.760><c> going</c><00:10:14.880><c> to</c><00:10:15.000><c> set</c><00:10:15.200><c> it</c>
+modulate and we're just going to set it
+to
+our<00:10:17.200><c> hover</c><00:10:17.880><c> modulate</c><00:10:18.880><c> option</c><00:10:19.279><c> all</c><00:10:19.399><c> right</c><00:10:19.600><c> so</c>
+our hover modulate option all right so
+let's<00:10:20.560><c> fill</c><00:10:20.839><c> out</c><00:10:21.079><c> these</c><00:10:21.279><c> export</c><00:10:21.640><c> variables</c>
+let's fill out these export variables
+now<00:10:22.200><c> that</c><00:10:22.320><c> we've</c><00:10:22.519><c> created</c><00:10:22.920><c> these</c><00:10:23.120><c> two</c><00:10:24.120><c> uh</c>
+now that we've created these two uh
+dictionaries<00:10:24.800><c> that</c><00:10:24.920><c> we'll</c><00:10:25.120><c> use</c><00:10:25.560><c> now</c><00:10:25.720><c> we</c>
+dictionaries that we'll use now we
+already<00:10:26.320><c> have</c><00:10:26.760><c> a</c><00:10:27.000><c> a</c><00:10:27.160><c> hover</c><00:10:27.519><c> scale</c><00:10:28.120><c> and</c><00:10:28.480><c> time</c>
+already have a a hover scale and time
+and<00:10:29.079><c> trans</c><00:10:29.320><c> transition</c><00:10:29.760><c> type</c><00:10:30.399><c> we're</c><00:10:30.560><c> going</c><00:10:30.640><c> to</c>
+and trans transition type we're going to
+get<00:10:30.839><c> rid</c><00:10:31.000><c> of</c><00:10:31.160><c> those</c><00:10:31.399><c> because</c><00:10:31.560><c> we're</c><00:10:31.680><c> going</c><00:10:31.760><c> to</c>
+get rid of those because we're going to
+make<00:10:32.079><c> them</c><00:10:32.440><c> specific</c><00:10:33.200><c> to</c><00:10:34.160><c> our</c><00:10:34.440><c> hover</c><00:10:34.880><c> settings</c>
+make them specific to our hover settings
+because<00:10:36.040><c> we're</c><00:10:36.160><c> going</c><00:10:36.279><c> to</c><00:10:36.360><c> be</c><00:10:36.519><c> adding</c><00:10:36.880><c> other</c>
+because we're going to be adding other
+uh<00:10:37.639><c> animation</c><00:10:38.240><c> types</c><00:10:38.680><c> like</c><00:10:39.040><c> um</c><00:10:39.279><c> entering</c><00:10:39.959><c> or</c>
+uh animation types like um entering or
+maybe<00:10:40.399><c> a</c><00:10:40.519><c> loop</c><00:10:40.880><c> animation</c><00:10:41.639><c> and</c><00:10:41.760><c> we</c><00:10:41.880><c> want</c><00:10:41.959><c> to</c>
+maybe a loop animation and we want to
+have<00:10:42.279><c> different</c><00:10:42.760><c> options</c><00:10:43.760><c> so</c><00:10:44.279><c> we're</c><00:10:44.440><c> just</c>
+have different options so we're just
+going<00:10:44.680><c> to</c><00:10:45.320><c> delete</c><00:10:45.880><c> those</c><00:10:46.880><c> okay</c><00:10:47.040><c> and</c><00:10:47.160><c> we've</c><00:10:47.320><c> got</c>
+going to delete those okay and we've got
+our<00:10:47.560><c> from</c><00:10:47.839><c> Center</c><00:10:48.560><c> we've</c><00:10:48.760><c> got</c><00:10:48.920><c> our</c><00:10:49.320><c> properties</c>
+our from Center we've got our properties
+uh<00:10:50.519><c> one</c><00:10:50.760><c> thing</c><00:10:50.920><c> that</c><00:10:51.040><c> I</c><00:10:51.160><c> did</c><00:10:51.360><c> talk</c><00:10:51.600><c> about</c>
+uh one thing that I did talk about
+before<00:10:53.079><c> was</c><00:10:53.480><c> the</c><00:10:53.720><c> the</c><00:10:54.000><c> parallel</c><00:10:55.000><c> animations</c>
+before was the the parallel animations
+so<00:10:55.839><c> what</c><00:10:55.920><c> we</c><00:10:56.000><c> can</c><00:10:56.120><c> do</c><00:10:56.240><c> is</c><00:10:56.399><c> add</c><00:10:56.560><c> an</c><00:10:56.760><c> export</c>
+so what we can do is add an export
+variable<00:10:57.600><c> for</c><00:10:57.920><c> that</c><00:10:58.920><c> we'll</c><00:10:59.079><c> call</c><00:10:59.360><c> call</c><00:10:59.880><c> this</c>
+variable for that we'll call call this
+Papa<00:11:02.160><c> call</c><00:11:02.320><c> it</c>
+Papa call it
+parallel<00:11:04.880><c> animations</c><00:11:05.880><c> this</c><00:11:06.000><c> will</c><00:11:06.200><c> be</c><00:11:06.480><c> a</c>
+parallel animations this will be a
+Boolean<00:11:08.360><c> and</c><00:11:08.760><c> we'll</c><00:11:08.959><c> set</c><00:11:09.120><c> it</c><00:11:09.279><c> to</c><00:11:09.680><c> True</c><00:11:10.079><c> by</c>
+Boolean and we'll set it to True by
+default<00:11:11.000><c> and</c><00:11:11.160><c> we've</c><00:11:11.320><c> got</c><00:11:11.480><c> our</c><00:11:11.760><c> properties</c><00:11:12.600><c> and</c>
+default and we've got our properties and
+in<00:11:13.519><c> fact</c><00:11:13.839><c> let's</c><00:11:14.360><c> um</c><00:11:14.639><c> let's</c><00:11:14.839><c> use</c><00:11:15.079><c> the</c>
+in fact let's um let's use the
+export<00:11:17.279><c> group</c><00:11:17.760><c> option</c>
+export group option
+here<00:11:19.880><c> so</c><00:11:20.040><c> you</c><00:11:20.160><c> can</c><00:11:20.279><c> do</c><00:11:20.480><c> export</c><00:11:20.839><c> variables</c><00:11:21.279><c> you</c>
+here so you can do export variables you
+can<00:11:21.639><c> also</c><00:11:22.079><c> add</c><00:11:22.399><c> this</c><00:11:23.040><c> export</c><00:11:24.040><c> group</c><00:11:24.440><c> and</c><00:11:24.600><c> what</c>
+can also add this export group and what
+this<00:11:24.839><c> is</c><00:11:24.959><c> going</c><00:11:25.079><c> to</c><00:11:25.279><c> do</c><00:11:25.480><c> is</c><00:11:25.680><c> kind</c><00:11:25.760><c> of</c><00:11:26.040><c> separate</c>
+this is going to do is kind of separate
+out<00:11:27.519><c> your</c><00:11:28.519><c> your</c><00:11:28.720><c> variables</c><00:11:29.120><c> here</c><00:11:29.320><c> here</c><00:11:29.480><c> and</c>
+out your your variables here here and
+make<00:11:29.760><c> it</c><00:11:29.880><c> a</c><00:11:30.040><c> little</c><00:11:30.320><c> bit</c><00:11:30.839><c> uh</c><00:11:31.000><c> cleaner</c><00:11:31.399><c> a</c><00:11:31.480><c> little</c>
+make it a little bit uh cleaner a little
+bit<00:11:31.760><c> more</c>
+bit more
+organized<00:11:33.639><c> so</c><00:11:33.839><c> we'll</c><00:11:34.079><c> set</c><00:11:34.519><c> uh</c><00:11:34.639><c> just</c><00:11:34.760><c> a</c><00:11:34.959><c> basic</c>
+organized so we'll set uh just a basic
+options<00:11:36.200><c> group</c><00:11:37.560><c> and</c><00:11:38.560><c> we'll</c><00:11:38.839><c> call</c><00:11:39.560><c> this</c><00:11:40.560><c> hover</c>
+options group and we'll call this hover
+settings<00:11:41.880><c> and</c><00:11:42.160><c> then</c><00:11:42.760><c> fact</c><00:11:43.600><c> save</c><00:11:44.079><c> that</c>
+settings and then fact save that
+although<00:11:44.839><c> I</c><00:11:44.920><c> think</c><00:11:45.079><c> I</c><00:11:45.279><c> do</c><00:11:45.399><c> have</c><00:11:45.519><c> some</c><00:11:45.680><c> errors</c>
+although I think I do have some errors
+so<00:11:46.360><c> not</c><00:11:46.519><c> not</c><00:11:46.680><c> be</c><00:11:46.880><c> happy</c><00:11:47.360><c> yeah</c><00:11:48.040><c> it's</c><00:11:48.160><c> not</c><00:11:48.360><c> happy</c>
+so not not be happy yeah it's not happy
+yet<00:11:48.920><c> comment</c><00:11:49.600><c> that</c><00:11:49.920><c> out</c><00:11:50.440><c> at</c><00:11:50.639><c> a</c>
+yet comment that out at a
+pass<00:11:52.959><c> and</c><00:11:53.160><c> then</c><00:11:54.160><c> hover</c><00:11:54.440><c> scale</c><00:11:54.760><c> we</c><00:11:54.839><c> haven't</c>
+pass and then hover scale we haven't
+done<00:11:55.200><c> those</c><00:11:55.399><c> all</c><00:11:55.519><c> right</c><00:11:55.680><c> let's</c><00:11:55.920><c> finish</c><00:11:56.200><c> up</c><00:11:56.360><c> our</c>
+done those all right let's finish up our
+export<00:11:56.920><c> variables</c><00:11:57.320><c> and</c><00:11:57.480><c> then</c><00:11:57.600><c> I</c><00:11:57.680><c> can</c><00:11:57.839><c> show</c><00:11:58.040><c> you</c>
+export variables and then I can show you
+how<00:11:58.399><c> cool</c><00:11:58.720><c> the</c><00:11:59.320><c> export</c><00:11:59.720><c> group</c><00:12:00.000><c> stuff</c><00:12:00.279><c> is</c><00:12:00.639><c> all</c>
+how cool the export group stuff is all
+right<00:12:00.880><c> so</c><00:12:01.000><c> there's</c><00:12:01.240><c> quite</c><00:12:01.399><c> a</c><00:12:01.480><c> few</c><00:12:01.880><c> that</c><00:12:02.000><c> we</c>
+right so there's quite a few that we
+need<00:12:02.240><c> to</c><00:12:02.440><c> add</c><00:12:02.839><c> the</c><00:12:03.000><c> first</c><00:12:03.240><c> one</c><00:12:03.760><c> would</c><00:12:04.000><c> be</c><00:12:04.920><c> hover</c>
+need to add the first one would be hover
+time<00:12:07.120><c> which</c><00:12:07.320><c> will</c><00:12:07.440><c> be</c><00:12:07.560><c> a</c><00:12:07.680><c> float</c><00:12:08.600><c> set</c><00:12:08.839><c> this</c><00:12:09.000><c> to</c>
+time which will be a float set this to
+0.1
+seconds<00:12:12.120><c> that</c><00:12:12.240><c> will</c><00:12:12.360><c> be</c><00:12:12.560><c> how</c><00:12:12.760><c> long</c><00:12:13.120><c> the</c><00:12:13.320><c> the</c>
+seconds that will be how long the the
+tween<00:12:14.399><c> lasts</c><00:12:15.399><c> and</c><00:12:15.600><c> then</c><00:12:15.800><c> we're</c><00:12:15.959><c> going</c><00:12:16.040><c> to</c><00:12:16.360><c> add</c>
+tween lasts and then we're going to add
+hover<00:12:18.120><c> transition</c><00:12:19.120><c> this</c><00:12:19.240><c> will</c><00:12:19.440><c> be</c><00:12:19.680><c> a</c><00:12:20.079><c> tween</c>
+hover transition this will be a tween
+transition<00:12:21.440><c> type</c><00:12:21.760><c> that'll</c><00:12:22.199><c> populate</c><00:12:22.680><c> our</c>
+transition type that'll populate our
+dropdown<00:12:25.040><c> then</c><00:12:25.160><c> we're</c><00:12:25.320><c> going</c><00:12:25.399><c> to</c><00:12:25.639><c> add</c><00:12:26.199><c> hover</c>
+dropdown then we're going to add hover
+easing<00:12:28.800><c> this</c><00:12:28.920><c> will</c><00:12:29.320><c> between</c><00:12:30.320><c> e</c><00:12:30.800><c> type</c><00:12:31.560><c> and</c>
+easing this will between e type and
+we're<00:12:31.760><c> going</c><00:12:31.880><c> to</c><00:12:32.040><c> add</c><00:12:32.639><c> hover</c><00:12:33.639><c> forgot</c><00:12:33.959><c> my</c><00:12:34.360><c> VAR</c>
+we're going to add hover forgot my VAR
+hover
+position<00:12:38.440><c> that</c><00:12:38.519><c> will</c><00:12:38.680><c> be</c><00:12:38.920><c> a</c><00:12:39.120><c> vector</c><00:12:39.519><c> 2</c><00:12:40.519><c> next</c>
+position that will be a vector 2 next
+one<00:12:41.920><c> done</c><00:12:42.279><c> position</c><00:12:42.760><c> so</c><00:12:42.920><c> we're</c><00:12:43.040><c> going</c><00:12:43.120><c> to</c><00:12:43.279><c> do</c>
+one done position so we're going to do
+scale<00:12:45.920><c> that</c><00:12:46.040><c> will</c><00:12:46.199><c> be</c><00:12:46.360><c> a</c><00:12:46.560><c> vector</c><00:12:46.839><c> 2</c><00:12:47.560><c> and</c><00:12:47.839><c> we</c>
+scale that will be a vector 2 and we
+will<00:12:48.320><c> set</c><00:12:48.519><c> a</c><00:12:49.199><c> default</c><00:12:50.480><c> here</c><00:12:51.480><c> just</c><00:12:51.600><c> so</c><00:12:51.760><c> we</c><00:12:51.880><c> don't</c>
+will set a default here just so we don't
+get<00:12:52.399><c> you</c><00:12:52.519><c> know</c><00:12:52.880><c> zero</c><00:12:53.320><c> out</c><00:12:54.000><c> and</c><00:12:54.199><c> then</c><00:12:54.399><c> we</c><00:12:54.519><c> need</c>
+get you know zero out and then we need
+our
+rotation<00:12:57.519><c> this</c><00:12:57.600><c> will</c><00:12:57.800><c> be</c><00:12:58.000><c> a</c><00:12:58.199><c> float</c>
+rotation this will be a float
+we<00:12:59.959><c> also</c><00:13:00.320><c> need</c><00:13:00.680><c> our</c>
+we also need our
+size<00:13:03.440><c> that's</c><00:13:03.560><c> a</c><00:13:03.760><c> vector</c><00:13:04.120><c> two</c><00:13:04.880><c> and</c><00:13:05.199><c> finally</c><00:13:05.880><c> our</c>
+size that's a vector two and finally our
+hover<00:13:08.440><c> modulates</c><00:13:09.440><c> and</c><00:13:09.720><c> that</c><00:13:09.920><c> will</c><00:13:10.199><c> be</c><00:13:10.519><c> a</c><00:13:10.800><c> color</c>
+hover modulates and that will be a color
+and<00:13:11.600><c> I'm</c><00:13:11.680><c> going</c><00:13:11.760><c> to</c><00:13:11.920><c> set</c><00:13:12.240><c> this</c>
+and I'm going to set this
+to<00:13:14.720><c> white</c><00:13:15.720><c> as</c><00:13:16.000><c> the</c><00:13:16.360><c> the</c><00:13:16.519><c> default</c><00:13:17.079><c> because</c><00:13:17.279><c> if</c>
+to white as the the default because if
+you<00:13:17.519><c> just</c><00:13:17.720><c> multiply</c><00:13:18.399><c> by</c><00:13:18.720><c> by</c><00:13:18.880><c> white</c><00:13:19.079><c> you're</c>
+you just multiply by by white you're
+multiplying<00:13:19.760><c> by</c><00:13:19.920><c> one</c><00:13:20.800><c> uh</c><00:13:20.880><c> so</c><00:13:21.240><c> just</c><00:13:21.480><c> it'll</c><00:13:21.720><c> keep</c>
+multiplying by one uh so just it'll keep
+the<00:13:22.199><c> existing</c><00:13:22.560><c> color</c><00:13:22.880><c> we</c><00:13:22.959><c> won't</c><00:13:23.199><c> make</c><00:13:23.360><c> any</c>
+the existing color we won't make any
+changes<00:13:24.160><c> all</c><00:13:24.279><c> right</c><00:13:24.399><c> so</c><00:13:24.600><c> that's</c><00:13:24.880><c> a</c><00:13:25.079><c> a</c><00:13:25.399><c> lot</c><00:13:26.079><c> of</c>
+changes all right so that's a a lot of
+uh<00:13:27.199><c> export</c><00:13:27.560><c> variables</c><00:13:28.440><c> we</c><00:13:28.560><c> have</c><00:13:28.720><c> one</c><00:13:28.839><c> more</c>
+uh export variables we have one more
+error<00:13:29.880><c> down</c><00:13:30.120><c> here</c><00:13:30.320><c> and</c><00:13:30.519><c> I</c><00:13:30.639><c> think</c><00:13:30.839><c> it's</c><00:13:31.720><c> yeah</c><00:13:31.839><c> I</c>
+error down here and I think it's yeah I
+didn't<00:13:32.360><c> type</c><00:13:33.360><c> an</c><00:13:33.639><c> S</c><00:13:34.160><c> got</c><00:13:34.240><c> to</c><00:13:34.440><c> type</c><00:13:34.600><c> your</c><00:13:34.760><c> s</c><00:13:34.959><c> in</c>
+didn't type an S got to type your s in
+the<00:13:35.199><c> ad</c><00:13:35.440><c> twen</c><00:13:36.079><c> so</c><00:13:37.079><c> if</c><00:13:37.199><c> you</c><00:13:37.360><c> have</c><00:13:37.480><c> something</c>
+the ad twen so if you have something
+that<00:13:37.839><c> doesn't</c><00:13:38.120><c> work</c><00:13:38.480><c> that</c><00:13:38.639><c> might</c><00:13:38.760><c> have</c><00:13:38.920><c> been</c>
+that doesn't work that might have been
+it<00:13:39.440><c> I</c><00:13:39.959><c> apologize</c><00:13:40.959><c> all</c><00:13:41.079><c> right</c><00:13:41.199><c> so</c><00:13:41.320><c> we</c><00:13:41.399><c> don't</c>
+it I apologize all right so we don't
+have<00:13:41.720><c> any</c><00:13:41.839><c> more</c><00:13:42.199><c> errors</c><00:13:43.199><c> now</c><00:13:43.399><c> we</c><00:13:43.480><c> should</c><00:13:43.800><c> save</c>
+have any more errors now we should save
+it<00:13:44.360><c> and</c><00:13:44.600><c> let's</c><00:13:44.920><c> look</c><00:13:45.360><c> at</c><00:13:45.639><c> our</c><00:13:45.959><c> cool</c><00:13:46.959><c> groups</c><00:13:47.399><c> now</c>
+it and let's look at our cool groups now
+so<00:13:48.079><c> we</c><00:13:48.199><c> created</c><00:13:48.519><c> an</c><00:13:48.680><c> options</c><00:13:49.120><c> group</c><00:13:49.720><c> and</c><00:13:49.800><c> I</c>
+so we created an options group and I
+know<00:13:50.040><c> it's</c><00:13:50.120><c> a</c><00:13:50.240><c> little</c><00:13:50.399><c> bit</c><00:13:50.600><c> small</c><00:13:50.920><c> to</c><00:13:51.079><c> see</c><00:13:51.320><c> on</c>
+know it's a little bit small to see on
+the<00:13:51.560><c> screen</c><00:13:51.880><c> maybe</c><00:13:52.240><c> but</c><00:13:52.480><c> we</c><00:13:52.600><c> have</c><00:13:52.680><c> an</c><00:13:52.839><c> options</c>
+the screen maybe but we have an options
+group<00:13:53.560><c> and</c><00:13:53.680><c> we</c><00:13:53.800><c> have</c><00:13:53.920><c> our</c><00:13:54.040><c> hover</c><00:13:54.320><c> settings</c>
+group and we have our hover settings
+group<00:13:55.560><c> everything's</c><00:13:56.160><c> nice</c><00:13:56.480><c> and</c><00:13:56.639><c> organized</c><00:13:57.120><c> we</c>
+group everything's nice and organized we
+even<00:13:57.399><c> have</c><00:13:57.519><c> our</c><00:13:57.759><c> properties</c><00:13:58.160><c> array</c><00:13:59.120><c> we're</c>
+even have our properties array we're
+good<00:13:59.440><c> to</c><00:13:59.639><c> go</c><00:13:59.959><c> all</c><00:14:00.079><c> right</c><00:14:00.199><c> so</c><00:14:00.320><c> we've</c><00:14:00.600><c> created</c>
+good to go all right so we've created
+our<00:14:02.120><c> export</c><00:14:02.600><c> variables</c><00:14:03.560><c> we've</c><00:14:03.720><c> got</c><00:14:03.880><c> all</c><00:14:04.000><c> the</c>
+our export variables we've got all the
+things<00:14:04.279><c> we</c><00:14:04.399><c> want</c><00:14:04.519><c> to</c><00:14:04.680><c> change</c><00:14:05.320><c> we've</c><00:14:05.880><c> uh</c>
+things we want to change we've uh
+created<00:14:06.600><c> a</c><00:14:06.920><c> default</c><00:14:07.600><c> hover</c><00:14:07.959><c> values</c><00:14:08.839><c> they're</c>
+created a default hover values they're
+ready<00:14:09.279><c> to</c><00:14:09.560><c> go</c><00:14:10.360><c> and</c><00:14:10.600><c> we've</c><00:14:10.839><c> created</c><00:14:11.240><c> our</c><00:14:11.519><c> new</c><00:14:12.079><c> ad</c>
+ready to go and we've created our new ad
+tween<00:14:13.079><c> super</c><00:14:13.480><c> function</c><00:14:14.160><c> we</c><00:14:14.279><c> just</c><00:14:14.399><c> need</c><00:14:14.519><c> to</c>
+tween super function we just need to
+connect<00:14:15.120><c> this</c><00:14:15.320><c> to</c><00:14:15.560><c> our</c><00:14:16.120><c> our</c><00:14:16.320><c> signals</c><00:14:16.880><c> which</c><00:14:17.040><c> is</c>
+connect this to our our signals which is
+the<00:14:17.720><c> mouse</c><00:14:18.000><c> on</c><00:14:18.399><c> mouse</c><00:14:18.720><c> off</c><00:14:19.199><c> what</c><00:14:19.320><c> we</c><00:14:19.440><c> did</c><00:14:19.600><c> in</c>
+the mouse on mouse off what we did in
+the<00:14:19.920><c> last</c><00:14:20.199><c> episode</c><00:14:20.680><c> was</c><00:14:21.040><c> take</c><00:14:21.320><c> those</c><00:14:21.519><c> signals</c>
+the last episode was take those signals
+connected<00:14:22.639><c> them</c><00:14:22.800><c> to</c><00:14:22.959><c> our</c><00:14:23.480><c> onhover</c><00:14:24.480><c> and</c><00:14:24.759><c> that</c>
+connected them to our onhover and that
+worked<00:14:25.360><c> fine</c><00:14:26.160><c> we</c><00:14:26.320><c> could</c><00:14:26.600><c> do</c><00:14:26.920><c> that</c><00:14:27.680><c> um</c><00:14:28.519><c> but</c><00:14:28.639><c> you</c>
+worked fine we could do that um but you
+can<00:14:28.839><c> also</c><00:14:29.120><c> Al</c><00:14:29.360><c> just</c><00:14:29.839><c> bind</c><00:14:30.440><c> these</c><00:14:31.040><c> to</c><00:14:31.519><c> our</c><00:14:31.800><c> at</c>
+can also Al just bind these to our at
+tween<00:14:33.000><c> and</c><00:14:33.199><c> and</c><00:14:33.399><c> skip</c><00:14:33.759><c> that</c><00:14:33.959><c> step</c><00:14:34.320><c> you</c><00:14:34.440><c> know</c>
+tween and and skip that step you know
+why<00:14:35.160><c> create</c><00:14:35.440><c> another</c><00:14:35.759><c> step</c><00:14:36.639><c> so</c><00:14:37.560><c> we're</c>
+why create another step so we're
+actually<00:14:37.959><c> going</c><00:14:38.040><c> to</c><00:14:38.279><c> delete</c><00:14:38.759><c> these</c><00:14:39.120><c> we</c><00:14:39.279><c> don't</c>
+actually going to delete these we don't
+need<00:14:39.839><c> these</c><00:14:40.079><c> anymore</c><00:14:41.000><c> a</c><00:14:41.079><c> little</c><00:14:41.240><c> bit</c><00:14:41.399><c> cleaner</c>
+need these anymore a little bit cleaner
+code<00:14:43.680><c> and</c><00:14:43.880><c> we're</c><00:14:44.120><c> going</c><00:14:44.360><c> to</c>
+code and we're going to
+connect<00:14:46.720><c> these</c><00:14:47.320><c> uh</c><00:14:47.480><c> signals</c><00:14:48.120><c> to</c><00:14:48.320><c> our</c><00:14:48.519><c> ad</c><00:14:48.759><c> tween</c>
+connect these uh signals to our ad tween
+except<00:14:49.759><c> we're</c><00:14:49.920><c> going</c><00:14:50.000><c> to</c><00:14:50.120><c> need</c><00:14:50.240><c> to</c><00:14:50.440><c> add</c><00:14:50.639><c> all</c><00:14:50.759><c> of</c>
+except we're going to need to add all of
+these<00:14:51.160><c> parameters</c><00:14:52.120><c> because</c><00:14:52.440><c> we've</c><00:14:52.759><c> we've</c>
+these parameters because we've we've
+created<00:14:53.360><c> it</c><00:14:54.320><c> it's</c><00:14:54.560><c> actually</c><00:14:54.880><c> really</c><00:14:55.199><c> easy</c><00:14:55.480><c> to</c>
+created it it's actually really easy to
+do<00:14:55.920><c> that</c><00:14:56.079><c> if</c><00:14:56.160><c> you</c><00:14:56.279><c> haven't</c><00:14:56.560><c> done</c><00:14:56.759><c> that</c><00:14:57.000><c> before</c>
+do that if you haven't done that before
+so<00:14:57.480><c> when</c><00:14:57.600><c> we</c><00:14:57.759><c> enter</c><00:14:58.240><c> our</c><00:14:58.480><c> Mouse</c><00:14:59.040><c> we're</c><00:14:59.120><c> going</c>
+so when we enter our Mouse we're going
+to<00:14:59.360><c> do</c><00:14:59.720><c> add</c><00:15:00.199><c> tween</c><00:15:01.199><c> for</c><00:15:01.440><c> our</c><00:15:01.720><c> cable</c><00:15:02.320><c> and</c><00:15:02.440><c> then</c>
+to do add tween for our cable and then
+we<00:15:02.959><c> do</c><00:15:03.959><c> a</c><00:15:04.279><c> bind</c><00:15:05.279><c> function</c><00:15:06.279><c> and</c><00:15:06.440><c> we</c><00:15:06.759><c> probably</c>
+we do a bind function and we probably
+should<00:15:07.839><c> uh</c><00:15:08.240><c> enter</c><00:15:08.639><c> this</c><00:15:08.839><c> out</c><00:15:09.240><c> because</c><00:15:10.240><c> the</c>
+should uh enter this out because the
+list<00:15:10.639><c> is</c><00:15:10.800><c> going</c><00:15:10.880><c> to</c><00:15:11.040><c> get</c><00:15:11.199><c> long</c><00:15:11.639><c> so</c><00:15:11.759><c> when</c><00:15:11.880><c> you</c>
+list is going to get long so when you
+bind<00:15:12.519><c> you</c><00:15:12.639><c> can</c><00:15:12.880><c> just</c><00:15:13.199><c> list</c><00:15:14.120><c> um</c><00:15:14.360><c> parameters</c><00:15:15.000><c> as</c>
+bind you can just list um parameters as
+if<00:15:15.240><c> it</c><00:15:15.440><c> were</c><00:15:16.440><c> U</c><00:15:16.560><c> you</c><00:15:16.639><c> know</c><00:15:16.800><c> calling</c><00:15:17.040><c> the</c>
+if it were U you know calling the
+function<00:15:18.440><c> and</c><00:15:18.680><c> this</c><00:15:18.800><c> is</c><00:15:18.959><c> where</c><00:15:19.120><c> we're</c><00:15:19.279><c> going</c>
+function and this is where we're going
+to<00:15:19.720><c> fill</c><00:15:20.000><c> out</c><00:15:20.480><c> all</c><00:15:20.680><c> of</c><00:15:20.959><c> these</c><00:15:21.360><c> add</c><00:15:21.839><c> twe</c><00:15:22.839><c> values</c>
+to fill out all of these add twe values
+parallel<00:15:23.920><c> seconds</c><00:15:24.279><c> transition</c><00:15:24.920><c> all</c><00:15:25.040><c> this</c>
+parallel seconds transition all this
+other<00:15:25.600><c> stuff</c><00:15:26.600><c> so</c><00:15:27.360><c> the</c><00:15:27.519><c> issue</c><00:15:27.839><c> is</c><00:15:28.000><c> with</c><00:15:28.120><c> the</c>
+other stuff so the issue is with the
+bind<00:15:28.480><c> you</c><00:15:28.600><c> don't</c><00:15:28.720><c> get</c><00:15:28.839><c> the</c>
+bind you don't get the
+autofill<00:15:30.839><c> so</c><00:15:30.959><c> we're</c><00:15:31.079><c> just</c><00:15:31.199><c> going</c><00:15:31.279><c> to</c><00:15:31.360><c> have</c><00:15:31.480><c> to</c>
+autofill so we're just going to have to
+remember<00:15:31.959><c> what</c><00:15:32.040><c> we</c><00:15:32.160><c> need</c><00:15:32.279><c> to</c><00:15:32.399><c> put</c><00:15:32.560><c> in</c><00:15:32.800><c> so</c><00:15:32.959><c> the</c>
+remember what we need to put in so the
+first<00:15:33.360><c> thing</c><00:15:33.600><c> we</c><00:15:33.839><c> need</c><00:15:34.800><c> in</c><00:15:34.959><c> fact</c><00:15:35.319><c> let's</c><00:15:36.160><c> make</c>
+first thing we need in fact let's make
+that<00:15:36.560><c> small</c><00:15:37.000><c> now</c><00:15:37.079><c> we</c><00:15:37.199><c> can</c><00:15:37.279><c> see</c><00:15:37.519><c> everything</c>
+that small now we can see everything
+nice<00:15:38.680><c> so</c><00:15:38.839><c> the</c><00:15:38.959><c> first</c><00:15:39.160><c> thing</c><00:15:39.279><c> we</c><00:15:39.440><c> need</c><00:15:39.720><c> is</c><00:15:39.839><c> our</c>
+nice so the first thing we need is our
+values<00:15:40.560><c> so</c><00:15:40.680><c> when</c><00:15:40.839><c> we</c><00:15:41.040><c> enter</c><00:15:42.000><c> when</c><00:15:42.160><c> we</c><00:15:42.360><c> hover</c>
+values so when we enter when we hover
+over<00:15:43.040><c> our</c><00:15:43.360><c> object</c><00:15:43.720><c> we</c><00:15:43.839><c> want</c><00:15:44.000><c> to</c><00:15:44.279><c> get</c><00:15:44.800><c> our</c><00:15:45.120><c> hover</c>
+over our object we want to get our hover
+values<00:15:46.360><c> so</c><00:15:46.519><c> we're</c><00:15:46.639><c> going</c><00:15:46.720><c> to</c><00:15:46.920><c> pass</c><00:15:47.199><c> that</c><00:15:47.600><c> in</c>
+values so we're going to pass that in
+just<00:15:48.880><c> like</c>
+just like
+that<00:15:51.600><c> the</c><00:15:51.720><c> next</c><00:15:51.880><c> one</c><00:15:52.079><c> we</c><00:15:52.199><c> need</c><00:15:52.560><c> is</c><00:15:53.000><c> whether</c><00:15:53.160><c> or</c>
+that the next one we need is whether or
+not<00:15:53.480><c> we're</c><00:15:53.680><c> in</c><00:15:53.839><c> our</c><00:15:54.160><c> parallel</c><00:15:54.800><c> so</c><00:15:54.959><c> we</c><00:15:55.079><c> can</c><00:15:55.279><c> run</c>
+not we're in our parallel so we can run
+parallel<00:15:58.319><c> animations</c>
+parallel animations
+variable<00:15:59.880><c> we're</c><00:16:00.040><c> not</c><00:16:00.160><c> running</c><00:16:00.440><c> it</c><00:16:00.560><c> we're</c>
+variable we're not running it we're
+calling<00:16:01.040><c> it</c><00:16:01.600><c> that's</c><00:16:01.759><c> going</c><00:16:01.839><c> to</c><00:16:01.920><c> be</c><00:16:02.000><c> our</c><00:16:02.160><c> true</c>
+calling it that's going to be our true
+and<00:16:02.560><c> false</c><00:16:03.000><c> now</c><00:16:03.120><c> you</c><00:16:03.399><c> could</c><00:16:04.399><c> really</c><00:16:05.120><c> you</c><00:16:05.319><c> know</c>
+and false now you could really you know
+make<00:16:06.079><c> an</c><00:16:06.399><c> individual</c><00:16:07.399><c> parallel</c><00:16:07.959><c> Boolean</c><00:16:08.480><c> for</c>
+make an individual parallel Boolean for
+each<00:16:09.560><c> you</c><00:16:09.680><c> know</c><00:16:09.880><c> the</c><00:16:10.000><c> hover</c><00:16:10.639><c> the</c><00:16:10.880><c> off</c><00:16:11.120><c> hover</c>
+each you know the hover the off hover
+you<00:16:11.839><c> could</c><00:16:12.000><c> do</c><00:16:12.120><c> that</c><00:16:12.240><c> if</c><00:16:12.360><c> you</c><00:16:12.440><c> wanted</c><00:16:12.680><c> to</c><00:16:13.319><c> I've</c>
+you could do that if you wanted to I've
+just<00:16:14.000><c> made</c><00:16:14.199><c> it</c><00:16:14.319><c> a</c><00:16:14.519><c> global</c><00:16:15.319><c> Boolean</c><00:16:16.319><c> you</c><00:16:16.399><c> can</c>
+just made it a global Boolean you can
+decide<00:16:16.880><c> how</c><00:16:16.959><c> you</c><00:16:17.040><c> want</c><00:16:17.160><c> to</c><00:16:17.279><c> do</c><00:16:17.399><c> it</c><00:16:17.680><c> all</c><00:16:17.800><c> right</c>
+decide how you want to do it all right
+the<00:16:18.079><c> next</c><00:16:18.240><c> one</c><00:16:18.440><c> we</c><00:16:18.639><c> need</c><00:16:19.120><c> is</c><00:16:19.399><c> our</c><00:16:19.759><c> seconds</c><00:16:20.399><c> and</c>
+the next one we need is our seconds and
+that<00:16:20.639><c> will</c><00:16:20.800><c> be</c><00:16:21.000><c> our</c><00:16:21.199><c> hover</c>
+that will be our hover
+time<00:16:23.240><c> and</c><00:16:23.839><c> the</c><00:16:24.040><c> next</c><00:16:24.399><c> is</c><00:16:24.680><c> transition</c><00:16:25.680><c> that's</c>
+time and the next is transition that's
+transition<00:16:28.360><c> it's</c><00:16:28.560><c> nice</c><00:16:28.800><c> when</c><00:16:28.920><c> when</c><00:16:29.040><c> the</c>
+transition it's nice when when the
+variables<00:16:29.560><c> make</c><00:16:29.800><c> sense</c><00:16:30.440><c> and</c><00:16:30.639><c> then</c><00:16:30.880><c> easing</c>
+variables make sense and then easing
+which<00:16:32.000><c> would</c><00:16:32.199><c> be</c><00:16:33.079><c> hover</c><00:16:33.399><c> easing</c><00:16:34.120><c> missed</c><00:16:34.399><c> my</c><00:16:34.560><c> S</c>
+which would be hover easing missed my S
+there<00:16:35.160><c> we</c><00:16:35.319><c> go</c><00:16:36.120><c> twice</c><00:16:36.440><c> I've</c><00:16:36.600><c> done</c><00:16:36.759><c> that</c><00:16:37.040><c> all</c>
+there we go twice I've done that all
+right<00:16:37.279><c> so</c><00:16:37.440><c> now</c><00:16:37.639><c> we've</c><00:16:38.480><c> connected</c><00:16:39.040><c> our</c><00:16:39.279><c> and</c>
+right so now we've connected our and
+tween<00:16:40.360><c> function</c><00:16:41.360><c> with</c><00:16:41.519><c> our</c><00:16:41.759><c> parameter</c><00:16:42.240><c> values</c>
+tween function with our parameter values
+we're<00:16:43.279><c> good</c><00:16:43.399><c> to</c><00:16:43.600><c> go</c><00:16:43.839><c> let's</c><00:16:44.000><c> do</c><00:16:44.199><c> the</c><00:16:44.319><c> same</c><00:16:44.560><c> thing</c>
+we're good to go let's do the same thing
+for<00:16:45.040><c> our</c><00:16:45.720><c> hover</c><00:16:46.160><c> off</c><00:16:47.079><c> just</c><00:16:47.240><c> so</c><00:16:47.480><c> we</c><00:16:47.639><c> can</c>
+for our hover off just so we can
+actually<00:16:48.480><c> test</c><00:16:48.920><c> this</c><00:16:49.720><c> and</c><00:16:49.880><c> it's</c><00:16:50.000><c> the</c><00:16:50.160><c> same</c>
+actually test this and it's the same
+process<00:16:50.839><c> so</c><00:16:51.160><c> instead</c><00:16:51.720><c> though</c><00:16:51.959><c> we're</c><00:16:52.160><c> going</c><00:16:52.319><c> to</c>
+process so instead though we're going to
+be<00:16:52.600><c> using</c><00:16:53.000><c> our</c><00:16:53.319><c> default</c>
+values<00:16:58.360><c> we'll</c><00:16:58.560><c> call</c><00:16:59.000><c> the</c><00:16:59.120><c> parallel</c>
+values we'll call the parallel
+animations<00:17:00.279><c> Boolean</c><00:17:00.880><c> again</c><00:17:01.839><c> and</c><00:17:01.959><c> we'll</c><00:17:02.240><c> keep</c>
+animations Boolean again and we'll keep
+the<00:17:03.120><c> uh</c><00:17:03.240><c> the</c><00:17:03.360><c> hover</c>
+the uh the hover
+time<00:17:06.120><c> the</c><00:17:06.319><c> same</c><00:17:07.079><c> and</c><00:17:07.319><c> again</c><00:17:07.640><c> you</c><00:17:07.880><c> could</c><00:17:08.640><c> create</c>
+time the same and again you could create
+different<00:17:09.439><c> export</c><00:17:09.880><c> variables</c><00:17:10.400><c> for</c><00:17:10.679><c> when</c><00:17:10.839><c> you</c>
+different export variables for when you
+hover<00:17:11.720><c> on</c><00:17:12.439><c> when</c><00:17:12.559><c> you</c><00:17:12.679><c> hover</c><00:17:13.039><c> off</c><00:17:13.360><c> and</c><00:17:13.520><c> and</c><00:17:13.640><c> have</c>
+hover on when you hover off and and have
+those<00:17:14.000><c> be</c><00:17:14.240><c> different</c><00:17:14.919><c> totally</c><00:17:15.360><c> fine</c><00:17:16.039><c> um</c><00:17:16.439><c> hover</c>
+those be different totally fine um hover
+transition<00:17:19.120><c> and</c>
+transition and
+then<00:17:21.240><c> hover</c><00:17:22.240><c> easing</c><00:17:22.880><c> all</c><00:17:22.959><c> right</c><00:17:23.079><c> so</c><00:17:23.199><c> we've</c><00:17:23.400><c> got</c>
+then hover easing all right so we've got
+five<00:17:23.839><c> parameters</c><00:17:24.600><c> we've</c><00:17:24.880><c> got</c><00:17:25.160><c> one</c><00:17:25.919><c> two</c><00:17:26.360><c> three</c>
+five parameters we've got one two three
+four<00:17:27.480><c> five</c><00:17:27.840><c> parameters</c><00:17:28.919><c> we</c><00:17:29.000><c> should</c><00:17:29.160><c> be</c><00:17:29.320><c> good</c>
+four five parameters we should be good
+to<00:17:29.640><c> go</c><00:17:30.000><c> actually</c><00:17:30.280><c> we</c><00:17:30.400><c> can</c><00:17:30.600><c> actually</c><00:17:30.840><c> move</c><00:17:31.200><c> that</c>
+to go actually we can actually move that
+into<00:17:33.640><c> into</c><00:17:34.000><c> there</c><00:17:34.200><c> too</c><00:17:34.880><c> let's</c><00:17:35.080><c> move</c><00:17:35.440><c> that</c>
+into into there too let's move that
+we're<00:17:35.720><c> going</c><00:17:35.799><c> to</c><00:17:35.919><c> move</c><00:17:36.120><c> our</c><00:17:36.919><c> connect</c><00:17:37.280><c> signals</c>
+we're going to move our connect signals
+let's<00:17:38.280><c> just</c><00:17:39.120><c> do</c><00:17:39.320><c> it</c><00:17:40.000><c> after</c><00:17:40.840><c> everything</c><00:17:41.840><c> to</c><00:17:42.000><c> be</c>
+let's just do it after everything to be
+safe<00:17:42.919><c> there</c><00:17:43.039><c> we</c><00:17:43.200><c> go</c><00:17:43.480><c> that's</c><00:17:43.720><c> cleaner</c><00:17:44.360><c> Okay</c><00:17:44.880><c> so</c>
+safe there we go that's cleaner Okay so
+we've<00:17:45.760><c> got</c><00:17:45.880><c> our</c><00:17:46.000><c> signals</c><00:17:46.720><c> connected</c><00:17:47.120><c> to</c><00:17:47.240><c> our</c>
+we've got our signals connected to our
+tween<00:17:47.640><c> function</c><00:17:48.440><c> within</c><00:17:48.640><c> our</c><00:17:48.760><c> tween</c><00:17:49.120><c> function</c>
+tween function within our tween function
+we<00:17:49.640><c> are</c><00:17:49.919><c> running</c><00:17:50.360><c> through</c><00:17:51.000><c> these</c><00:17:51.480><c> uh</c><00:17:51.720><c> value</c>
+we are running through these uh value
+dictionaries<00:17:53.120><c> so</c><00:17:53.400><c> it's</c><00:17:53.559><c> going</c><00:17:53.679><c> to</c><00:17:53.919><c> go</c><00:17:54.600><c> okay</c><00:17:54.880><c> we</c>
+dictionaries so it's going to go okay we
+need<00:17:55.120><c> to</c><00:17:55.280><c> create</c><00:17:55.480><c> a</c><00:17:55.600><c> tween</c><00:17:55.960><c> property</c><00:17:56.280><c> for</c>
+need to create a tween property for
+scale<00:17:57.039><c> and</c><00:17:57.159><c> then</c><00:17:57.320><c> that's</c><00:17:57.480><c> going</c><00:17:57.559><c> to</c><00:17:57.679><c> be</c><00:17:57.840><c> our</c>
+scale and then that's going to be our
+value<00:17:59.200><c> position</c><00:17:59.880><c> that's</c><00:18:00.000><c> our</c><00:18:00.200><c> value</c><00:18:00.640><c> rotation</c>
+value position that's our value rotation
+that's<00:18:01.480><c> our</c><00:18:01.679><c> value</c><00:18:02.440><c> but</c><00:18:02.559><c> we're</c><00:18:02.760><c> only</c><00:18:03.120><c> running</c>
+that's our value but we're only running
+through<00:18:05.080><c> um</c><00:18:05.360><c> the</c><00:18:05.559><c> properties</c><00:18:06.480><c> within</c><00:18:07.480><c> uh</c><00:18:07.600><c> that</c>
+through um the properties within uh that
+we've<00:18:07.960><c> set</c><00:18:08.400><c> in</c><00:18:08.559><c> the</c><00:18:08.720><c> inspector</c><00:18:09.320><c> now</c><00:18:09.440><c> we</c><00:18:09.600><c> could</c>
+we've set in the inspector now we could
+turn<00:18:10.200><c> off</c><00:18:10.640><c> you</c><00:18:10.799><c> know</c><00:18:11.240><c> scale</c><00:18:11.799><c> or</c><00:18:12.120><c> position</c><00:18:12.640><c> or</c>
+turn off you know scale or position or
+whatever<00:18:13.159><c> you</c><00:18:13.280><c> wanted</c><00:18:13.480><c> to</c><00:18:13.640><c> do</c><00:18:13.960><c> all</c><00:18:14.080><c> right</c><00:18:14.200><c> so</c>
+whatever you wanted to do all right so
+let's<00:18:15.000><c> test</c><00:18:15.400><c> this</c><00:18:15.799><c> out</c><00:18:16.799><c> we</c><00:18:16.919><c> have</c><00:18:17.039><c> an</c><00:18:17.240><c> error</c>
+let's test this out we have an error
+let's<00:18:18.159><c> go</c><00:18:18.280><c> see</c><00:18:18.480><c> what</c><00:18:18.679><c> this</c><00:18:18.799><c> is</c><00:18:19.039><c> complaining</c>
+let's go see what this is complaining
+about<00:18:19.919><c> I</c><00:18:20.000><c> usually</c><00:18:20.320><c> don't</c><00:18:20.559><c> have</c><00:18:20.760><c> errors</c><00:18:21.080><c> when</c>
+about I usually don't have errors when
+I'm<00:18:21.320><c> running</c><00:18:21.640><c> through</c><00:18:21.919><c> this</c><00:18:22.799><c> um</c><00:18:23.799><c> but</c>
+I'm running through this um but
+sometimes<00:18:25.000><c> you</c><00:18:25.200><c> do</c><00:18:25.520><c> and</c><00:18:25.600><c> I</c><00:18:25.720><c> think</c><00:18:25.880><c> it's</c>
+sometimes you do and I think it's
+important<00:18:26.559><c> to</c><00:18:26.880><c> show</c><00:18:27.280><c> that</c><00:18:28.080><c> because</c><00:18:28.520><c> sometimes</c>
+important to show that because sometimes
+s<00:18:29.640><c> things</c><00:18:30.200><c> screw</c><00:18:30.600><c> up</c><00:18:30.840><c> so</c><00:18:31.000><c> I'll</c><00:18:31.159><c> explain</c><00:18:31.480><c> what's</c>
+s things screw up so I'll explain what's
+going<00:18:31.880><c> on</c><00:18:32.039><c> here</c><00:18:32.159><c> we're</c><00:18:32.320><c> running</c><00:18:32.600><c> through</c><00:18:32.840><c> our</c>
+going on here we're running through our
+properties<00:18:34.400><c> and</c><00:18:34.520><c> then</c><00:18:34.679><c> for</c><00:18:34.960><c> each</c><00:18:35.480><c> property</c>
+properties and then for each property
+we're<00:18:36.320><c> adding</c><00:18:36.600><c> this</c><00:18:36.960><c> tween</c><00:18:37.480><c> property</c>
+we're adding this tween property
+function<00:18:38.720><c> and</c><00:18:38.960><c> that's</c><00:18:39.280><c> that's</c><00:18:39.440><c> going</c><00:18:39.559><c> to</c><00:18:39.640><c> be</c>
+function and that's that's going to be
+our<00:18:39.840><c> tween</c><00:18:40.159><c> animation</c><00:18:41.120><c> we've</c><00:18:41.520><c> got</c><00:18:41.720><c> our</c><00:18:41.919><c> Target</c>
+our tween animation we've got our Target
+we've<00:18:42.720><c> got</c><00:18:42.880><c> our</c><00:18:43.200><c> our</c><00:18:43.400><c> string</c><00:18:44.000><c> property</c><00:18:44.640><c> which</c>
+we've got our our string property which
+again<00:18:45.760><c> is</c><00:18:46.520><c> running</c><00:18:46.880><c> through</c><00:18:47.200><c> those</c><00:18:47.600><c> so</c><00:18:47.840><c> scale</c>
+again is running through those so scale
+position<00:18:48.520><c> rotation</c><00:18:49.000><c> size</c><00:18:49.440><c> self</c><00:18:50.039><c> modulates</c>
+position rotation size self modulates
+and<00:18:51.159><c> then</c><00:18:51.280><c> we're</c><00:18:51.679><c> getting</c><00:18:51.919><c> a</c><00:18:52.159><c> value</c><00:18:52.600><c> but</c><00:18:53.360><c> we're</c>
+and then we're getting a value but we're
+just<00:18:53.760><c> passing</c><00:18:54.039><c> the</c><00:18:54.200><c> entire</c><00:18:54.559><c> dictionary</c><00:18:55.080><c> if</c><00:18:55.240><c> we</c>
+just passing the entire dictionary if we
+just<00:18:55.600><c> run</c><00:18:56.200><c> values</c><00:18:56.640><c> what</c><00:18:56.760><c> we</c><00:18:56.919><c> need</c><00:18:57.120><c> to</c><00:18:57.360><c> do</c><00:18:57.880><c> is</c><00:18:58.200><c> is</c>
+just run values what we need to do is is
+call<00:18:58.919><c> the</c><00:18:59.200><c> actual</c><00:19:00.200><c> um</c><00:19:00.960><c> key</c><00:19:01.559><c> which</c><00:19:01.760><c> we</c><00:19:01.919><c> haven't</c>
+call the actual um key which we haven't
+done<00:19:02.400><c> so</c><00:19:02.559><c> we</c><00:19:02.679><c> just</c><00:19:02.799><c> need</c><00:19:02.960><c> to</c><00:19:03.280><c> add</c><00:19:03.760><c> the</c><00:19:04.240><c> uh</c>
+done so we just need to add the uh
+whatever<00:19:05.679><c> property</c><00:19:06.080><c> we're</c><00:19:06.320><c> in</c><00:19:06.919><c> scale</c>
+whatever property we're in scale
+position<00:19:07.720><c> rotation</c><00:19:08.480><c> what</c><00:19:08.720><c> have</c><00:19:08.919><c> you</c><00:19:09.799><c> we'll</c>
+position rotation what have you we'll
+get<00:19:10.200><c> that</c><00:19:10.480><c> value</c><00:19:10.919><c> instead</c><00:19:11.440><c> so</c><00:19:11.640><c> let's</c><00:19:11.880><c> try</c><00:19:12.240><c> that</c>
+get that value instead so let's try that
+and<00:19:13.240><c> see</c><00:19:13.840><c> uh</c><00:19:14.120><c> if</c><00:19:14.200><c> it</c><00:19:14.320><c> does</c><00:19:14.480><c> a</c><00:19:14.600><c> little</c><00:19:14.840><c> bit</c>
+and see uh if it does a little bit
+better<00:19:15.840><c> all</c><00:19:16.000><c> right</c><00:19:16.400><c> there</c><00:19:16.799><c> we</c><00:19:17.480><c> go</c><00:19:18.400><c> let's</c>
+better all right there we go let's
+adjust<00:19:18.960><c> some</c><00:19:19.080><c> of</c><00:19:19.280><c> these</c><00:19:19.559><c> values</c><00:19:20.080><c> just</c><00:19:20.200><c> to</c><00:19:20.400><c> show</c>
+adjust some of these values just to show
+you<00:19:21.520><c> what</c><00:19:21.640><c> we</c><00:19:21.760><c> can</c><00:19:21.919><c> do</c><00:19:22.120><c> now</c><00:19:22.360><c> so</c><00:19:22.559><c> we're</c><00:19:22.799><c> we're</c>
+you what we can do now so we're we're
+doing<00:19:23.120><c> a</c><00:19:23.200><c> hover</c><00:19:23.559><c> time</c><00:19:23.840><c> of</c><00:19:24.520><c> 0.1</c><00:19:25.520><c> for</c><00:19:25.760><c> our</c><00:19:26.000><c> new</c>
+doing a hover time of 0.1 for our new
+game<00:19:26.640><c> button</c><00:19:27.039><c> let's</c><00:19:27.280><c> make</c><00:19:27.520><c> that</c><00:19:28.039><c> 0.5</c>
+game button let's make that 0.5
+make<00:19:29.640><c> the</c><00:19:29.799><c> transition</c>
+make the transition
+to<00:19:32.240><c> um</c><00:19:32.600><c> back</c><00:19:33.080><c> we'll</c><00:19:33.280><c> ease</c><00:19:33.559><c> in</c><00:19:33.880><c> ease</c><00:19:34.320><c> out</c><00:19:35.320><c> we'll</c>
+to um back we'll ease in ease out we'll
+make<00:19:35.679><c> the</c><00:19:35.840><c> hper</c><00:19:36.240><c> position</c><00:19:36.880><c> go</c><00:19:37.480><c> 20</c><00:19:37.799><c> pixels</c><00:19:38.159><c> to</c>
+make the hper position go 20 pixels to
+the<00:19:38.440><c> right</c><00:19:39.320><c> scale</c><00:19:39.640><c> is</c><00:19:40.200><c> fine</c><00:19:41.200><c> let's</c><00:19:41.400><c> just</c><00:19:41.520><c> do</c><00:19:41.679><c> a</c>
+the right scale is fine let's just do a
+rotation<00:19:42.400><c> for</c><00:19:42.799><c> for</c><00:19:43.440><c> kicks</c><00:19:44.679><c> and</c><00:19:45.880><c> size</c><00:19:46.880><c> um</c><00:19:47.799><c> yeah</c>
+rotation for for kicks and size um yeah
+let's<00:19:48.360><c> do</c><00:19:48.880><c> let's</c><00:19:49.080><c> do</c><00:19:49.679><c> -20</c><00:19:50.120><c> on</c><00:19:50.240><c> the</c><00:19:50.400><c> size</c><00:19:50.960><c> there</c>
+let's do let's do -20 on the size there
+you<00:19:51.280><c> go</c><00:19:51.760><c> I</c><00:19:51.840><c> think</c><00:19:52.000><c> the</c><00:19:52.159><c> rotation</c><00:19:52.679><c> kind</c><00:19:52.799><c> of</c>
+you go I think the rotation kind of
+makes<00:19:53.039><c> it</c><00:19:53.159><c> hard</c><00:19:53.360><c> to</c><00:19:53.520><c> see</c><00:19:53.919><c> we're</c><00:19:54.080><c> running</c><00:19:54.520><c> all</c>
+makes it hard to see we're running all
+of<00:19:54.840><c> these</c><00:19:55.039><c> animations</c><00:19:55.600><c> now</c><00:19:55.799><c> we're</c><00:19:55.960><c> running</c><00:19:56.280><c> a</c>
+of these animations now we're running a
+position<00:19:57.080><c> scale</c><00:19:57.559><c> rotation</c><00:19:58.240><c> well</c><00:19:58.440><c> not</c>
+position scale rotation well not
+rotation<00:19:59.080><c> anymore</c><00:19:59.919><c> but</c><00:20:00.159><c> size</c><00:20:01.080><c> and</c><00:20:01.440><c> it's</c>
+rotation anymore but size and it's
+running<00:20:01.880><c> all</c><00:20:02.039><c> at</c><00:20:02.159><c> the</c><00:20:02.240><c> same</c><00:20:02.480><c> time</c><00:20:02.720><c> now</c><00:20:02.840><c> if</c><00:20:02.919><c> I</c>
+running all at the same time now if I
+turn<00:20:03.480><c> off</c><00:20:04.320><c> the</c><00:20:04.559><c> parallel</c><00:20:05.039><c> animations</c><00:20:05.919><c> these</c>
+turn off the parallel animations these
+will<00:20:06.320><c> run</c><00:20:07.000><c> one</c><00:20:07.240><c> at</c><00:20:07.360><c> a</c><00:20:07.640><c> time</c><00:20:08.520><c> just</c><00:20:08.720><c> like</c><00:20:09.000><c> that</c>
+will run one at a time just like that
+and<00:20:09.720><c> then</c><00:20:09.840><c> we</c><00:20:09.960><c> hover</c><00:20:10.320><c> off</c><00:20:10.919><c> pretty</c><00:20:11.200><c> cool</c><00:20:11.559><c> so</c><00:20:11.760><c> you</c>
+and then we hover off pretty cool so you
+could<00:20:12.360><c> want</c><00:20:12.600><c> to</c><00:20:13.080><c> to</c><00:20:13.240><c> do</c><00:20:13.480><c> that</c><00:20:13.679><c> individually</c><00:20:14.240><c> or</c>
+could want to to do that individually or
+all<00:20:14.880><c> together</c><00:20:15.720><c> and</c><00:20:15.880><c> then</c><00:20:16.120><c> let's</c><00:20:16.360><c> do</c><00:20:16.600><c> the</c><00:20:16.919><c> um</c>
+all together and then let's do the um
+modulates<00:20:19.520><c> just</c>
+modulates just
+to<00:20:21.440><c> show</c><00:20:21.919><c> in</c><00:20:22.080><c> fact</c><00:20:22.280><c> let's</c><00:20:22.440><c> make</c><00:20:22.679><c> it</c><00:20:23.039><c> change</c>
+to show in fact let's make it change
+colors<00:20:24.080><c> do</c><00:20:24.280><c> a</c><00:20:24.480><c> blue</c><00:20:25.240><c> or</c><00:20:25.440><c> something</c><00:20:26.200><c> now</c><00:20:26.360><c> it's</c>
+colors do a blue or something now it's
+multiplying<00:20:27.240><c> or</c><00:20:27.440><c> it's</c><00:20:27.600><c> adding</c><00:20:27.880><c> to</c><00:20:28.120><c> whatever</c>
+multiplying or it's adding to whatever
+it<00:20:28.919><c> already</c><00:20:29.360><c> was</c><00:20:29.679><c> which</c><00:20:29.799><c> is</c><00:20:29.960><c> orange</c><00:20:30.240><c> and</c>
+it already was which is orange and
+that's<00:20:30.520><c> why</c><00:20:30.600><c> we're</c><00:20:30.720><c> getting</c><00:20:30.919><c> a</c><00:20:31.120><c> green</c><00:20:31.720><c> but</c><00:20:31.840><c> you</c>
+that's why we're getting a green but you
+do<00:20:32.080><c> see</c><00:20:32.320><c> that</c><00:20:32.559><c> the</c><00:20:32.799><c> the</c><00:20:32.919><c> white</c><00:20:33.120><c> text</c><00:20:33.320><c> is</c><00:20:33.960><c> blue</c>
+do see that the the white text is blue
+turn<00:20:35.240><c> that</c><00:20:35.480><c> back</c><00:20:35.679><c> to</c><00:20:36.360><c> parallel</c><00:20:37.360><c> and</c><00:20:37.559><c> let's</c><00:20:37.960><c> do</c>
+turn that back to parallel and let's do
+transparency<00:20:40.320><c> run</c><00:20:40.720><c> that</c><00:20:41.480><c> and</c><00:20:41.640><c> there</c><00:20:41.760><c> you</c><00:20:41.960><c> go</c>
+transparency run that and there you go
+so<00:20:42.679><c> with</c><00:20:42.799><c> a</c><00:20:42.919><c> little</c><00:20:43.080><c> bit</c><00:20:43.200><c> of</c><00:20:43.480><c> work</c><00:20:44.080><c> in</c><00:20:44.360><c> the</c><00:20:44.640><c> uh</c>
+so with a little bit of work in the uh
+animation<00:20:45.280><c> component</c><00:20:45.880><c> and</c><00:20:46.240><c> thinking</c><00:20:46.679><c> through</c>
+animation component and thinking through
+the<00:20:47.400><c> process</c><00:20:47.720><c> a</c><00:20:47.840><c> little</c><00:20:48.039><c> bit</c><00:20:48.840><c> we</c><00:20:49.000><c> now</c><00:20:49.240><c> have</c>
+the process a little bit we now have
+really<00:20:50.679><c> easy</c><00:20:51.080><c> to</c><00:20:51.320><c> get</c><00:20:51.480><c> to</c><00:20:51.720><c> settings</c><00:20:52.200><c> for</c><00:20:52.480><c> all</c>
+really easy to get to settings for all
+of<00:20:52.840><c> these</c><00:20:53.039><c> different</c><00:20:53.280><c> animation</c><00:20:53.760><c> types</c><00:20:54.440><c> and</c><00:20:55.200><c> I</c>
+of these different animation types and I
+mean<00:20:56.240><c> it</c><00:20:56.400><c> takes</c><00:20:56.679><c> two</c><00:20:56.960><c> seconds</c><00:20:57.400><c> to</c><00:20:57.919><c> to</c><00:20:58.080><c> add</c>
+mean it takes two seconds to to add
+these<00:20:58.360><c> an</c><00:20:58.919><c> thanks</c><00:20:59.120><c> for</c><00:20:59.320><c> watching</c><00:20:59.960><c> and</c><00:21:00.520><c> as</c>
+these an thanks for watching and as
+always<00:21:01.400><c> keep</c><00:21:02.000><c> creating</c><00:21:03.000><c> all</c><00:21:03.120><c> right</c><00:21:03.320><c> guys</c><00:21:03.520><c> if</c>
+always keep creating all right guys if
+this<00:21:03.840><c> tutorial</c><00:21:04.280><c> was</c><00:21:04.440><c> helpful</c><00:21:04.880><c> consider</c><00:21:05.159><c> it</c><00:21:05.320><c> a</c>
+this tutorial was helpful consider it a
+like<00:21:05.880><c> And</c><00:21:06.080><c> subscribe</c><00:21:06.440><c> to</c><00:21:06.600><c> the</c><00:21:06.720><c> channel</c><00:21:07.039><c> as</c>
+like And subscribe to the channel as
+we're<00:21:07.280><c> going</c><00:21:07.400><c> to</c><00:21:07.480><c> be</c><00:21:07.600><c> covering</c><00:21:08.120><c> a</c><00:21:08.320><c> lot</c><00:21:08.679><c> more</c>
+we're going to be covering a lot more
+thanks<00:21:09.679><c> to</c><00:21:10.039><c> all</c><00:21:10.200><c> of</c><00:21:10.320><c> my</c><00:21:10.480><c> patrons</c><00:21:10.840><c> who</c><00:21:11.000><c> keep</c><00:21:11.200><c> the</c>
+thanks to all of my patrons who keep the
+series<00:21:11.679><c> going</c><00:21:12.400><c> you</c><00:21:12.640><c> too</c><00:21:12.960><c> can</c><00:21:13.159><c> get</c><00:21:13.480><c> access</c><00:21:13.720><c> to</c>
+series going you too can get access to
+the<00:21:14.039><c> project</c><00:21:14.400><c> source</c><00:21:14.799><c> files</c><00:21:15.279><c> by</c><00:21:15.440><c> joining</c><00:21:15.799><c> my</c>
+the project source files by joining my
+patreon<00:21:17.080><c> you</c><00:21:17.200><c> can</c><00:21:17.440><c> download</c><00:21:17.880><c> everything</c>
+patreon you can download everything
+there<00:21:18.679><c> and</c><00:21:18.799><c> you'll</c><00:21:19.080><c> also</c><00:21:19.320><c> get</c><00:21:19.520><c> early</c><00:21:19.919><c> access</c>
+there and you'll also get early access
+to<00:21:20.360><c> my</c><00:21:20.520><c> videos</c><00:21:21.039><c> and</c><00:21:21.200><c> sneak</c><00:21:21.600><c> peeks</c><00:21:21.919><c> at</c><00:21:22.120><c> Future</c>
+to my videos and sneak peeks at Future
+tutorials<00:21:23.760><c> thanks</c><00:21:24.000><c> for</c><00:21:24.200><c> watching</c><00:21:24.880><c> and</c><00:21:25.039><c> as</c>
+tutorials thanks for watching and as
+always<00:21:25.760><c> keep</c><00:21:26.039><c> creating</c>
+always keep creating

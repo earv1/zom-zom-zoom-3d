@@ -8,7 +8,7 @@ var _upgrade: Resource
 
 func setup(upgrade: Resource) -> void:
 	_upgrade = upgrade
-	custom_minimum_size = Vector2(200, 300)
+	custom_minimum_size = Vector2(260, 380)
 
 	# Build inner layout manually so text wraps nicely
 	var vbox := VBoxContainer.new()
@@ -65,3 +65,16 @@ func setup(upgrade: Resource) -> void:
 	add_theme_stylebox_override("pressed", pressed_style)
 
 	pressed.connect(func() -> void: card_selected.emit(_upgrade))
+	mouse_entered.connect(_on_hover)
+	mouse_exited.connect(_on_hover_exit)
+
+
+func _on_hover() -> void:
+	pivot_offset = size / 2.0
+	create_tween().tween_property(self, "scale", Vector2(1.06, 1.06), 0.12) \
+		.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+
+
+func _on_hover_exit() -> void:
+	create_tween().tween_property(self, "scale", Vector2.ONE, 0.12) \
+		.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)

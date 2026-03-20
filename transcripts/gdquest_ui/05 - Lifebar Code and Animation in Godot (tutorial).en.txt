@@ -1,0 +1,952 @@
+Kind: captions
+Language: en
+ 
+in<00:00:01.550><c> this</c><00:00:02.420><c> example</c><00:00:02.780><c> we're</c><00:00:03.380><c> going</c><00:00:03.560><c> to</c><00:00:03.649><c> see</c><00:00:04.010><c> how</c>
+in this example we're going to see how
+to<00:00:04.430><c> control</c><00:00:05.120><c> user</c><00:00:05.809><c> interface</c><00:00:06.529><c> with</c><00:00:06.800><c> code</c><00:00:07.069><c> and</c>
+to control user interface with code and
+how<00:00:07.700><c> to</c><00:00:07.729><c> make</c><00:00:08.029><c> it</c><00:00:08.210><c> react</c><00:00:08.690><c> to</c><00:00:09.080><c> events</c><00:00:09.230><c> that</c>
+how to make it react to events that
+appear<00:00:10.429><c> in</c><00:00:10.580><c> the</c><00:00:10.790><c> world</c><00:00:11.000><c> things</c><00:00:11.540><c> like</c><00:00:11.780><c> picking</c>
+appear in the world things like picking
+up<00:00:12.440><c> a</c><00:00:12.679><c> rupee</c><00:00:13.190><c> so</c><00:00:13.400><c> look</c><00:00:13.549><c> at</c><00:00:13.669><c> the</c><00:00:13.790><c> rupee</c><00:00:14.299><c> counter</c>
+up a rupee so look at the rupee counter
+in<00:00:14.780><c> the</c><00:00:14.929><c> top</c><00:00:15.139><c> right</c><00:00:15.379><c> right</c><00:00:15.740><c> pick</c><00:00:16.039><c> them</c><00:00:16.219><c> up</c><00:00:16.340><c> and</c>
+in the top right right pick them up and
+when<00:00:17.300><c> the</c><00:00:17.420><c> character</c><00:00:17.840><c> takes</c><00:00:18.260><c> damage</c><00:00:18.650><c> we</c><00:00:19.250><c> have</c>
+when the character takes damage we have
+some<00:00:19.640><c> animation</c><00:00:20.420><c> on</c><00:00:20.599><c> the</c><00:00:20.929><c> light</c><00:00:21.170><c> bar</c><00:00:21.470><c> that</c>
+some animation on the light bar that
+reacts<00:00:22.550><c> to</c><00:00:22.820><c> the</c><00:00:23.029><c> characters</c><00:00:23.539><c> health</c><00:00:24.019><c> note</c>
+reacts to the characters health note
+being<00:00:24.859><c> updated</c><00:00:25.449><c> so</c><00:00:26.449><c> the</c><00:00:26.599><c> characters</c><00:00:27.080><c> health</c>
+being updated so the characters health
+that<00:00:28.009><c> can</c><00:00:28.250><c> see</c><00:00:28.550><c> in</c><00:00:28.789><c> the</c><00:00:29.420><c> scene</c><00:00:29.810><c> tree</c><00:00:30.199><c> here</c><00:00:30.529><c> gets</c>
+that can see in the scene tree here gets
+updated<00:00:31.699><c> when</c><00:00:32.060><c> the</c><00:00:32.210><c> character</c><00:00:32.780><c> takes</c><00:00:33.050><c> a</c><00:00:33.200><c> hit</c>
+updated when the character takes a hit
+and<00:00:33.670><c> the</c><00:00:34.670><c> interface</c><00:00:35.300><c> is</c><00:00:35.540><c> in</c><00:00:35.810><c> a</c><00:00:35.990><c> remote</c><00:00:36.710><c> part</c><00:00:37.220><c> of</c>
+and the interface is in a remote part of
+our<00:00:37.820><c> node</c><00:00:38.180><c> tree</c><00:00:38.630><c> it</c><00:00:39.080><c> doesn't</c><00:00:39.650><c> directly</c><00:00:39.770><c> get</c>
+our node tree it doesn't directly get
+the<00:00:40.730><c> value</c><00:00:40.850><c> from</c><00:00:41.510><c> the</c><00:00:41.630><c> health</c><00:00:41.960><c> node</c><00:00:42.200><c> we</c><00:00:42.920><c> are</c>
+the value from the health node we are
+using<00:00:43.310><c> signals</c><00:00:44.240><c> here</c><00:00:44.540><c> to</c><00:00:44.990><c> send</c><00:00:45.470><c> the</c><00:00:45.890><c> piece</c><00:00:46.130><c> of</c>
+using signals here to send the piece of
+information<00:00:46.690><c> when</c><00:00:47.690><c> the</c><00:00:47.900><c> help</c><00:00:48.110><c> changes</c><00:00:48.740><c> to</c><00:00:49.220><c> V</c>
+information when the help changes to V
+UI<00:00:49.520><c> and</c><00:00:49.850><c> then</c><00:00:50.120><c> there's</c><00:00:50.510><c> some</c><00:00:50.690><c> code</c><00:00:50.900><c> on</c><00:00:51.080><c> the</c><00:00:51.410><c> UI</c>
+UI and then there's some code on the UI
+that's<00:00:52.070><c> going</c><00:00:52.370><c> to</c><00:00:52.550><c> process</c><00:00:53.120><c> it</c><00:00:53.180><c> we</c><00:00:53.960><c> want</c><00:00:54.230><c> to</c>
+that's going to process it we want to
+separate<00:00:55.100><c> the</c><00:00:55.520><c> interface</c><00:00:56.210><c> from</c><00:00:56.480><c> the</c>
+separate the interface from the
+characters<00:00:57.170><c> you</c><00:00:58.070><c> don't</c><00:00:58.280><c> want</c><00:00:58.550><c> a</c><00:00:58.700><c> change</c><00:00:59.180><c> on</c>
+characters you don't want a change on
+the<00:00:59.780><c> character</c><00:01:00.260><c> say</c><00:01:00.950><c> someday</c><00:01:01.550><c> you</c><00:01:01.790><c> don't</c><00:01:02.390><c> want</c>
+the character say someday you don't want
+the<00:01:02.750><c> help</c><00:01:02.990><c> to</c><00:01:03.200><c> work</c><00:01:03.440><c> the</c><00:01:03.770><c> same</c><00:01:04.100><c> way</c><00:01:04.129><c> so</c><00:01:04.369><c> you</c><00:01:04.670><c> you</c>
+the help to work the same way so you you
+start<00:01:05.390><c> to</c><00:01:05.479><c> add</c><00:01:05.710><c> statuses</c><00:01:06.710><c> you</c><00:01:07.250><c> incorporate</c>
+start to add statuses you incorporate
+new<00:01:08.420><c> variables</c><00:01:08.990><c> and</c><00:01:09.200><c> all</c><00:01:09.320><c> those</c><00:01:09.560><c> things</c><00:01:09.829><c> you</c>
+new variables and all those things you
+don't<00:01:10.369><c> want</c><00:01:10.700><c> that</c><00:01:10.850><c> to</c><00:01:11.270><c> break</c><00:01:11.630><c> your</c><00:01:11.869><c> interface</c>
+don't want that to break your interface
+and<00:01:12.619><c> if</c><00:01:13.280><c> the</c><00:01:13.429><c> life</c><00:01:13.759><c> bar</c><00:01:14.060><c> was</c><00:01:14.509><c> inside</c><00:01:15.109><c> the</c>
+and if the life bar was inside the
+character<00:01:15.619><c> scene</c><00:01:16.070><c> this</c><00:01:16.579><c> is</c><00:01:16.640><c> bound</c><00:01:17.060><c> to</c><00:01:17.240><c> happen</c>
+character scene this is bound to happen
+so<00:01:18.350><c> that's</c><00:01:18.530><c> why</c><00:01:18.679><c> you</c><00:01:18.740><c> want</c><00:01:19.039><c> to</c><00:01:19.100><c> use</c><00:01:19.189><c> signals</c><00:01:20.090><c> to</c>
+so that's why you want to use signals to
+only<00:01:20.990><c> send</c><00:01:21.350><c> some</c><00:01:21.950><c> pieces</c><00:01:22.219><c> of</c><00:01:22.460><c> information</c><00:01:22.729><c> to</c>
+only send some pieces of information to
+the<00:01:23.749><c> interface</c><00:01:24.259><c> it</c><00:01:24.799><c> just</c><00:01:25.159><c> receives</c><00:01:25.640><c> the</c>
+the interface it just receives the
+information<00:01:26.600><c> and</c><00:01:26.869><c> it</c><00:01:27.439><c> can</c><00:01:27.499><c> update</c><00:01:28.100><c> based</c><00:01:28.820><c> on</c>
+information and it can update based on
+it<00:01:29.270><c> inside</c><00:01:30.170><c> the</c><00:01:30.439><c> interface</c><00:01:30.829><c> scene</c><00:01:31.429><c> on</c><00:01:31.670><c> the</c>
+it inside the interface scene on the
+light<00:01:32.179><c> bar</c><00:01:32.450><c> we</c><00:01:32.780><c> can</c><00:01:32.810><c> get</c><00:01:33.409><c> the</c><00:01:33.950><c> new</c><00:01:34.280><c> value</c><00:01:34.789><c> and</c>
+light bar we can get the new value and
+run<00:01:35.569><c> some</c><00:01:35.810><c> animation</c><00:01:36.560><c> that's</c><00:01:37.159><c> what</c><00:01:37.369><c> we're</c>
+run some animation that's what we're
+going<00:01:37.819><c> to</c><00:01:37.999><c> do</c><00:01:38.149><c> in</c><00:01:38.359><c> this</c><00:01:38.539><c> demo</c><00:01:38.840><c> to</c><00:01:39.560><c> get</c><00:01:39.710><c> started</c>
+going to do in this demo to get started
+head<00:01:40.640><c> to</c><00:01:40.909><c> github</c><00:01:41.509><c> the</c><00:01:41.869><c> link</c><00:01:42.109><c> is</c><00:01:42.229><c> in</c><00:01:42.259><c> the</c>
+head to github the link is in the
+description<00:01:43.039><c> you</c><00:01:43.460><c> will</c><00:01:43.609><c> find</c><00:01:43.670><c> the</c><00:01:44.329><c> source</c>
+description you will find the source
+code<00:01:44.990><c> for</c><00:01:45.409><c> the</c><00:01:45.710><c> starting</c><00:01:46.189><c> project</c><00:01:46.639><c> so</c><00:01:46.759><c> you</c><00:01:46.789><c> can</c>
+code for the starting project so you can
+follow<00:01:47.299><c> along</c><00:01:47.450><c> this</c><00:01:48.200><c> tutorial</c><00:01:48.710><c> is</c><00:01:48.859><c> part</c><00:01:49.100><c> of</c><00:01:49.310><c> a</c>
+follow along this tutorial is part of a
+series<00:01:49.909><c> to</c><00:01:50.600><c> learn</c><00:01:50.810><c> how</c><00:01:51.049><c> to</c><00:01:51.079><c> design</c><00:01:51.819><c> interface</c>
+series to learn how to design interface
+and<00:01:53.270><c> this</c><00:01:53.869><c> GUI</c><00:01:54.499><c> can</c><00:01:55.100><c> look</c><00:01:55.249><c> at</c><00:01:55.369><c> the</c><00:01:55.490><c> previous</c>
+and this GUI can look at the previous
+tutorial<00:01:56.509><c> about</c><00:01:56.689><c> interface</c><00:01:57.499><c> design</c><00:01:57.920><c> in</c><00:01:58.189><c> Godot</c>
+tutorial about interface design in Godot
+now<00:01:59.539><c> we</c><00:01:59.600><c> have</c><00:02:00.049><c> all</c><00:02:00.350><c> the</c><00:02:00.499><c> objects</c><00:02:00.979><c> setup</c><00:02:01.459><c> or</c><00:02:01.819><c> the</c>
+now we have all the objects setup or the
+character<00:02:03.020><c> to</c><00:02:03.200><c> pick</c><00:02:03.409><c> up</c><00:02:03.590><c> and</c><00:02:03.829><c> if</c><00:02:04.520><c> I</c><00:02:04.609><c> play</c><00:02:04.909><c> the</c>
+character to pick up and if I play the
+star<00:02:05.420><c> demo</c><00:02:05.749><c> you</c><00:02:06.139><c> do</c><00:02:06.380><c> get</c><00:02:06.649><c> this</c><00:02:07.159><c> little</c><00:02:07.520><c> widget</c>
+star demo you do get this little widget
+to<00:02:08.360><c> pick</c><00:02:08.780><c> up</c><00:02:08.990><c> items</c><00:02:09.530><c> and</c><00:02:09.830><c> you</c><00:02:10.100><c> can</c><00:02:10.130><c> pick</c><00:02:10.580><c> them</c>
+to pick up items and you can pick them
+up<00:02:10.820><c> but</c><00:02:11.750><c> there's</c><00:02:11.990><c> no</c><00:02:12.410><c> code</c><00:02:12.650><c> on</c><00:02:12.830><c> the</c><00:02:12.950><c> interface</c>
+up but there's no code on the interface
+we<00:02:13.640><c> Ruby</c><00:02:14.090><c> counter</c><00:02:14.540><c> will</c><00:02:14.720><c> not</c><00:02:14.900><c> update</c>
+we Ruby counter will not update
+if<00:02:15.710><c> I</c><00:02:15.890><c> press</c><00:02:16.160><c> X</c><00:02:16.430><c> to</c><00:02:17.030><c> simulate</c><00:02:17.300><c> damage</c><00:02:17.930><c> on</c><00:02:18.110><c> the</c>
+if I press X to simulate damage on the
+character<00:02:18.740><c> its</c><00:02:19.040><c> health</c><00:02:19.670><c> changes</c><00:02:20.390><c> on</c><00:02:20.600><c> the</c>
+character its health changes on the
+players<00:02:21.290><c> scene</c><00:02:21.530><c> but</c><00:02:21.920><c> the</c><00:02:22.100><c> light</c><00:02:22.340><c> bar</c><00:02:22.610><c> doesn't</c>
+players scene but the light bar doesn't
+update<00:02:23.450><c> so</c><00:02:23.960><c> that's</c><00:02:24.140><c> what</c><00:02:24.350><c> we're</c><00:02:24.560><c> going</c><00:02:24.740><c> to</c>
+update so that's what we're going to
+work<00:02:25.130><c> on</c><00:02:25.370><c> now</c>
+work on now
+to<00:02:27.770><c> start</c><00:02:28.069><c> with</c><00:02:28.340><c> we're</c><00:02:28.760><c> going</c><00:02:28.940><c> to</c><00:02:29.120><c> collect</c><00:02:29.569><c> the</c>
+to start with we're going to collect the
+information<00:02:30.560><c> we</c><00:02:30.920><c> need</c><00:02:31.550><c> to</c><00:02:31.760><c> get</c><00:02:31.970><c> about</c><00:02:32.330><c> the</c>
+information we need to get about the
+world<00:02:32.750><c> we</c><00:02:33.650><c> want</c><00:02:33.890><c> to</c><00:02:33.980><c> know</c><00:02:34.250><c> when</c><00:02:34.520><c> a</c><00:02:34.550><c> rupee</c><00:02:35.060><c> gets</c>
+world we want to know when a rupee gets
+picked<00:02:35.989><c> up</c><00:02:36.170><c> and</c><00:02:36.410><c> when</c><00:02:36.620><c> the</c><00:02:36.800><c> characters</c><00:02:37.459><c> health</c>
+picked up and when the characters health
+gets<00:02:38.180><c> updated</c><00:02:38.569><c> when</c><00:02:39.170><c> it</c><00:02:39.319><c> takes</c><00:02:39.500><c> a</c><00:02:39.709><c> hit</c><00:02:39.890><c> we're</c>
+gets updated when it takes a hit we're
+going<00:02:40.670><c> to</c><00:02:40.910><c> send</c><00:02:41.450><c> these</c><00:02:42.020><c> pieces</c><00:02:42.380><c> of</c>
+going to send these pieces of
+information<00:02:42.890><c> to</c><00:02:43.640><c> the</c><00:02:43.790><c> interface</c><00:02:44.360><c> the</c>
+information to the interface the
+interface<00:02:44.989><c> is</c><00:02:45.620><c> a</c><00:02:45.680><c> scene</c><00:02:46.370><c> that's</c><00:02:47.110><c> instantiated</c>
+interface is a scene that's instantiated
+in<00:02:48.620><c> the</c><00:02:49.250><c> demo</c><00:02:49.489><c> scene</c><00:02:49.880><c> but</c><00:02:50.330><c> it</c><00:02:50.480><c> contains</c><00:02:50.959><c> our</c>
+in the demo scene but it contains our
+life<00:02:51.920><c> bar</c><00:02:52.190><c> and</c><00:02:52.489><c> the</c><00:02:52.910><c> rupee</c><00:02:53.390><c> counter</c><00:02:53.840><c> it</c><00:02:54.080><c> will</c>
+life bar and the rupee counter it will
+act<00:02:54.800><c> as</c><00:02:55.069><c> a</c><00:02:55.430><c> funnel</c><00:02:55.910><c> the</c><00:02:56.269><c> interface</c><00:02:56.660><c> is</c><00:02:56.870><c> gonna</c>
+act as a funnel the interface is gonna
+receive<00:02:57.560><c> the</c><00:02:57.800><c> information</c><00:02:58.040><c> and</c><00:02:58.610><c> it's</c><00:02:58.760><c> going</c>
+receive the information and it's going
+to<00:02:59.000><c> forward</c><00:02:59.540><c> it</c><00:02:59.750><c> just</c><00:02:59.900><c> to</c><00:03:00.709><c> the</c><00:03:00.920><c> light</c><00:03:01.100><c> bar</c><00:03:01.400><c> in</c>
+to forward it just to the light bar in
+the<00:03:01.819><c> case</c><00:03:02.030><c> of</c><00:03:02.209><c> losing</c><00:03:02.450><c> health</c><00:03:02.810><c> and</c><00:03:03.050><c> when</c><00:03:03.739><c> the</c>
+the case of losing health and when the
+character<00:03:04.580><c> picks</c><00:03:04.880><c> up</c><00:03:05.060><c> a</c><00:03:05.209><c> rupee</c><00:03:05.600><c> it</c><00:03:05.810><c> will</c><00:03:06.080><c> send</c>
+character picks up a rupee it will send
+it<00:03:06.620><c> to</c><00:03:06.950><c> the</c><00:03:07.069><c> rupee</c><00:03:07.459><c> counter</c><00:03:07.880><c> to</c><00:03:08.600><c> do</c><00:03:08.750><c> that</c><00:03:08.959><c> we're</c>
+it to the rupee counter to do that we're
+going<00:03:09.530><c> to</c><00:03:09.620><c> connect</c><00:03:10.160><c> signals</c><00:03:10.819><c> from</c><00:03:11.360><c> the</c><00:03:11.540><c> player</c>
+going to connect signals from the player
+to<00:03:12.230><c> the</c><00:03:12.350><c> interface</c><00:03:12.830><c> so</c><00:03:13.370><c> by</c><00:03:13.580><c> default</c><00:03:13.970><c> the</c>
+to the interface so by default the
+player<00:03:14.870><c> is</c><00:03:15.200><c> also</c><00:03:15.410><c> a</c><00:03:15.560><c> scene</c><00:03:16.040><c> and</c><00:03:16.340><c> you</c><00:03:16.819><c> won't</c><00:03:17.030><c> be</c>
+player is also a scene and you won't be
+able<00:03:17.269><c> to</c><00:03:17.450><c> access</c><00:03:17.840><c> the</c><00:03:18.650><c> health</c><00:03:19.040><c> change</c><00:03:19.430><c> and</c><00:03:19.730><c> the</c>
+able to access the health change and the
+rupee<00:03:21.170><c> count</c><00:03:21.410><c> change</c><00:03:21.830><c> signals</c><00:03:22.790><c> on</c><00:03:23.090><c> the</c><00:03:23.269><c> purse</c>
+rupee count change signals on the purse
+so<00:03:24.200><c> you</c><00:03:24.260><c> have</c><00:03:24.590><c> to</c><00:03:24.709><c> right-click</c><00:03:24.980><c> on</c><00:03:25.280><c> it</c><00:03:25.340><c> and</c>
+so you have to right-click on it and
+select<00:03:26.239><c> edit</c><00:03:26.510><c> ball</c><00:03:27.019><c> children</c><00:03:27.650><c> to</c><00:03:27.950><c> access</c><00:03:28.549><c> the</c>
+select edit ball children to access the
+child<00:03:29.180><c> nodes</c><00:03:29.569><c> in</c><00:03:29.959><c> the</c><00:03:30.500><c> scene</c><00:03:30.769><c> in</c><00:03:31.340><c> order</c><00:03:31.609><c> to</c>
+child nodes in the scene in order to
+connect<00:03:32.390><c> these</c><00:03:32.540><c> signals</c><00:03:32.989><c> from</c><00:03:33.230><c> the</c><00:03:33.410><c> health</c>
+connect these signals from the health
+and<00:03:33.950><c> purse</c><00:03:34.340><c> notes</c><00:03:34.700><c> we'll</c><00:03:35.000><c> find</c><00:03:35.299><c> there</c><00:03:35.540><c> we</c><00:03:35.959><c> need</c>
+and purse notes we'll find there we need
+to<00:03:36.109><c> add</c><00:03:36.410><c> a</c><00:03:36.440><c> script</c><00:03:37.010><c> to</c><00:03:37.160><c> our</c><00:03:37.280><c> interface</c><00:03:37.850><c> so</c>
+to add a script to our interface so
+let's<00:03:38.930><c> do</c><00:03:39.200><c> that</c>
+let's do that
+we're<00:03:40.070><c> going</c><00:03:40.310><c> to</c><00:03:40.430><c> create</c><00:03:40.670><c> an</c><00:03:40.880><c> interface</c><00:03:41.390><c> tar</c>
+we're going to create an interface tar
+GED<00:03:42.260><c> script</c><00:03:42.650><c> in</c><00:03:42.859><c> the</c><00:03:43.100><c> interface</c><00:03:43.459><c> folder</c><00:03:44.000><c> you</c>
+GED script in the interface folder you
+can<00:03:44.870><c> use</c><00:03:45.109><c> the</c><00:03:45.320><c> empty</c><00:03:45.829><c> template</c><00:03:46.340><c> so</c><00:03:46.970><c> you</c><00:03:47.030><c> don't</c>
+can use the empty template so you don't
+have<00:03:47.510><c> comments</c><00:03:48.170><c> or</c><00:03:48.350><c> anything</c><00:03:48.890><c> inside</c><00:03:49.820><c> of</c><00:03:49.880><c> the</c>
+have comments or anything inside of the
+script<00:03:50.450><c> and</c><00:03:50.709><c> we're</c><00:03:51.709><c> going</c><00:03:51.890><c> to</c><00:03:51.950><c> select</c><00:03:52.370><c> the</c>
+script and we're going to select the
+health<00:03:52.910><c> node</c><00:03:53.180><c> and</c><00:03:53.420><c> connect</c><00:03:54.109><c> the</c><00:03:54.260><c> health</c>
+health node and connect the health
+change<00:03:54.859><c> signal</c><00:03:55.370><c> to</c><00:03:56.000><c> the</c><00:03:56.180><c> interface</c><00:03:56.799><c> then</c>
+change signal to the interface then
+we're<00:03:58.250><c> going</c><00:03:58.459><c> to</c><00:03:58.549><c> do</c><00:03:58.700><c> the</c><00:03:58.820><c> same</c><00:03:59.060><c> for</c><00:03:59.420><c> the</c><00:03:59.600><c> purse</c>
+we're going to do the same for the purse
+we<00:04:00.590><c> are</c><00:04:00.650><c> going</c><00:04:00.859><c> to</c><00:04:01.010><c> connect</c><00:04:01.400><c> rupee</c><00:04:01.970><c> change</c><00:04:02.359><c> to</c>
+we are going to connect rupee change to
+the<00:04:03.200><c> interface</c><00:04:03.880><c> from</c><00:04:04.880><c> there</c><00:04:05.180><c> we</c><00:04:05.720><c> are</c><00:04:05.750><c> going</c><00:04:06.049><c> to</c>
+the interface from there we are going to
+send<00:04:07.070><c> this</c><00:04:07.609><c> data</c><00:04:07.850><c> to</c><00:04:08.510><c> the</c><00:04:09.049><c> light</c><00:04:09.620><c> bar</c><00:04:09.920><c> that</c><00:04:10.370><c> we</c>
+send this data to the light bar that we
+have<00:04:10.700><c> on</c><00:04:10.819><c> the</c><00:04:10.970><c> interface</c><00:04:11.299><c> scene</c><00:04:11.630><c> and</c><00:04:11.840><c> the</c>
+have on the interface scene and the
+rupees<00:04:12.829><c> to</c><00:04:13.310><c> the</c><00:04:13.459><c> camp</c><00:04:13.640><c> so</c><00:04:14.209><c> let's</c><00:04:14.390><c> open</c><00:04:14.600><c> the</c>
+rupees to the camp so let's open the
+interface<00:04:15.440><c> scene</c><00:04:15.799><c> and</c><00:04:16.039><c> we</c><00:04:16.850><c> want</c><00:04:17.090><c> to</c><00:04:17.209><c> add</c>
+interface scene and we want to add
+scripts<00:04:17.930><c> to</c><00:04:18.380><c> the</c><00:04:18.620><c> light</c><00:04:18.890><c> bar</c><00:04:19.160><c> enter</c><00:04:19.640><c> the</c><00:04:19.789><c> rupee</c>
+scripts to the light bar enter the rupee
+counters<00:04:20.690><c> as</c><00:04:20.900><c> well</c><00:04:20.930><c> so</c><00:04:21.470><c> that</c><00:04:21.620><c> we</c><00:04:21.769><c> can</c><00:04:21.919><c> forward</c>
+counters as well so that we can forward
+the<00:04:22.880><c> information</c><00:04:23.350><c> let's</c><00:04:24.350><c> do</c><00:04:24.560><c> just</c><00:04:24.770><c> that</c>
+the information let's do just that
+create<00:04:25.700><c> the</c><00:04:25.880><c> scripts</c><00:04:26.180><c> because</c><00:04:27.050><c> I'm</c><00:04:27.380><c> using</c>
+create the scripts because I'm using
+scenes<00:04:28.100><c> you</c><00:04:28.430><c> can</c><00:04:28.580><c> see</c><00:04:28.789><c> when</c><00:04:29.000><c> I</c><00:04:29.030><c> add</c><00:04:29.330><c> a</c><00:04:29.360><c> script</c>
+scenes you can see when I add a script
+it<00:04:30.080><c> ends</c><00:04:30.830><c> up</c><00:04:30.919><c> in</c><00:04:31.130><c> the</c><00:04:31.400><c> right</c><00:04:31.580><c> folder</c><00:04:31.910><c> where</c>
+it ends up in the right folder where
+those<00:04:33.110><c> scenes</c><00:04:33.470><c> come</c><00:04:33.889><c> from</c>
+those scenes come from
+now<00:04:35.689><c> I</c><00:04:35.989><c> said</c><00:04:36.319><c> the</c><00:04:36.499><c> interface</c><00:04:36.919><c> would</c><00:04:37.129><c> act</c><00:04:37.399><c> as</c><00:04:37.669><c> a</c>
+now I said the interface would act as a
+funnel<00:04:38.239><c> it</c><00:04:38.449><c> receives</c><00:04:39.019><c> information</c><00:04:39.259><c> and</c><00:04:40.099><c> it's</c>
+funnel it receives information and it's
+going<00:04:40.999><c> to</c><00:04:41.089><c> forward</c><00:04:41.779><c> the</c><00:04:42.049><c> message</c><00:04:42.079><c> so</c><00:04:42.769><c> we're</c>
+going to forward the message so we're
+going<00:04:43.069><c> to</c><00:04:43.159><c> create</c><00:04:43.399><c> two</c><00:04:43.549><c> signals</c><00:04:44.269><c> to</c><00:04:44.689><c> forward</c>
+going to create two signals to forward
+the<00:04:45.499><c> health</c><00:04:45.799><c> and</c><00:04:46.039><c> the</c><00:04:46.069><c> rupee's</c><00:04:46.879><c> to</c><00:04:47.329><c> the</c><00:04:47.839><c> light</c>
+the health and the rupee's to the light
+bar<00:04:48.349><c> and</c><00:04:48.379><c> rupee</c><00:04:48.769><c> count</c><00:04:49.009><c> two</c><00:04:49.189><c> sins</c><00:04:49.519><c> let's</c>
+bar and rupee count two sins let's
+create<00:04:50.779><c> them</c><00:04:50.989><c> at</c><00:04:51.199><c> the</c><00:04:51.499><c> start</c><00:04:51.860><c> of</c><00:04:52.009><c> the</c>
+create them at the start of the
+interface<00:04:52.939><c> script</c><00:04:53.659><c> so</c><00:04:54.199><c> health</c><00:04:54.799><c> changed</c><00:04:55.639><c> and</c>
+interface script so health changed and
+we're<00:04:56.299><c> going</c><00:04:56.509><c> to</c><00:04:56.539><c> pass</c><00:04:56.839><c> in</c><00:04:57.079><c> the</c><00:04:57.259><c> new</c><00:04:57.829><c> health</c>
+we're going to pass in the new health
+and<00:04:58.869><c> we'll</c><00:04:59.869><c> call</c><00:05:00.139><c> the</c><00:05:00.319><c> other</c><00:05:00.639><c> rupees</c><00:05:01.719><c> changed</c>
+and we'll call the other rupees changed
+and<00:05:02.899><c> we're</c><00:05:03.769><c> going</c><00:05:03.949><c> to</c><00:05:04.009><c> pass</c><00:05:04.279><c> in</c><00:05:04.549><c> the</c><00:05:05.029><c> new</c><00:05:05.269><c> count</c>
+and we're going to pass in the new count
+when<00:05:06.469><c> the</c><00:05:06.649><c> health</c><00:05:07.159><c> changed</c><00:05:07.759><c> callback</c><00:05:08.329><c> method</c>
+when the health changed callback method
+is<00:05:08.989><c> called</c><00:05:09.319><c> we're</c><00:05:09.860><c> going</c><00:05:10.039><c> to</c><00:05:10.189><c> omit</c><00:05:10.729><c> the</c><00:05:10.759><c> help</c>
+is called we're going to omit the help
+change<00:05:11.689><c> signal</c><00:05:12.139><c> and</c><00:05:12.349><c> we're</c><00:05:13.279><c> going</c><00:05:13.489><c> to</c><00:05:13.519><c> pass</c><00:05:13.939><c> in</c>
+change signal and we're going to pass in
+the<00:05:14.509><c> help</c><00:05:15.079><c> can</c><00:05:15.829><c> copy</c><00:05:16.099><c> the</c><00:05:16.339><c> line</c><00:05:16.519><c> with</c><00:05:16.759><c> control</c>
+the help can copy the line with control
+C<00:05:17.539><c> if</c><00:05:17.719><c> you</c><00:05:18.019><c> have</c><00:05:18.139><c> nothing</c><00:05:18.499><c> selected</c><00:05:18.860><c> on</c><00:05:19.279><c> the</c>
+C if you have nothing selected on the
+line<00:05:19.579><c> and</c><00:05:19.789><c> paste</c><00:05:20.209><c> it</c><00:05:20.539><c> with</c><00:05:20.839><c> control</c><00:05:21.319><c> V</c><00:05:21.349><c> because</c>
+line and paste it with control V because
+we<00:05:22.249><c> are</c><00:05:22.519><c> going</c><00:05:22.909><c> to</c><00:05:23.059><c> use</c><00:05:23.269><c> emit</c><00:05:23.659><c> signal</c><00:05:24.019><c> again</c><00:05:24.379><c> we</c>
+we are going to use emit signal again we
+just<00:05:25.159><c> want</c><00:05:25.339><c> to</c><00:05:25.459><c> change</c><00:05:25.639><c> health</c><00:05:26.029><c> with</c><00:05:26.509><c> rupees</c>
+just want to change health with rupees
+and<00:05:27.469><c> the</c><00:05:28.429><c> health</c><00:05:28.849><c> variable</c><00:05:29.569><c> name</c><00:05:29.809><c> with</c><00:05:30.289><c> count</c>
+and the health variable name with count
+as<00:05:30.829><c> I</c><00:05:31.729><c> added</c><00:05:32.299><c> the</c><00:05:32.869><c> script</c><00:05:33.289><c> inside</c><00:05:34.249><c> of</c><00:05:34.519><c> the</c><00:05:34.729><c> demo</c>
+as I added the script inside of the demo
+scene<00:05:35.569><c> it</c><00:05:35.869><c> doesn't</c><00:05:36.439><c> exist</c><00:05:36.829><c> inside</c><00:05:37.249><c> the</c>
+scene it doesn't exist inside the
+interface<00:05:37.639><c> sensor</c><00:05:38.239><c> it's</c><00:05:38.449><c> head</c><00:05:38.689><c> to</c><00:05:38.809><c> the</c>
+interface sensor it's head to the
+interface<00:05:39.439><c> folder</c><00:05:39.919><c> and</c><00:05:40.069><c> drag</c><00:05:40.550><c> and</c><00:05:40.849><c> drop</c><00:05:40.879><c> it</c>
+interface folder and drag and drop it
+here<00:05:41.619><c> now</c><00:05:42.619><c> I'm</c><00:05:42.889><c> going</c><00:05:43.129><c> to</c><00:05:43.279><c> go</c><00:05:43.909><c> to</c><00:05:43.969><c> the</c><00:05:44.269><c> node</c><00:05:44.599><c> tab</c>
+here now I'm going to go to the node tab
+change<00:05:45.649><c> the</c><00:05:45.979><c> selected</c><00:05:46.459><c> node</c><00:05:46.849><c> just</c><00:05:47.089><c> so</c><00:05:47.269><c> that</c>
+change the selected node just so that
+the<00:05:47.629><c> signal</c><00:05:48.110><c> refresh</c><00:05:48.529><c> and</c><00:05:48.769><c> we</c><00:05:49.429><c> want</c><00:05:49.639><c> to</c>
+the signal refresh and we want to
+connect<00:05:50.149><c> health</c><00:05:50.509><c> change</c><00:05:50.869><c> to</c><00:05:51.409><c> our</c><00:05:51.439><c> life</c><00:05:51.860><c> bar</c>
+connect health change to our life bar
+which<00:05:52.579><c> has</c><00:05:52.849><c> a</c><00:05:52.879><c> script</c><00:05:53.300><c> attached</c><00:05:53.659><c> to</c><00:05:53.869><c> it</c><00:05:53.989><c> right</c>
+which has a script attached to it right
+so<00:05:54.499><c> it's</c><00:05:54.619><c> going</c><00:05:54.919><c> to</c><00:05:55.069><c> add</c><00:05:55.249><c> the</c><00:05:55.909><c> method</c><00:05:56.360><c> to</c><00:05:56.659><c> that</c>
+so it's going to add the method to that
+script<00:05:57.259><c> and</c><00:05:57.439><c> we</c><00:05:58.069><c> also</c><00:05:58.309><c> want</c><00:05:58.819><c> to</c><00:05:58.969><c> connect</c>
+script and we also want to connect
+rupees<00:06:00.079><c> change</c><00:06:00.409><c> to</c><00:06:00.949><c> the</c><00:06:01.159><c> rupee</c><00:06:01.579><c> counter</c><00:06:02.059><c> so</c><00:06:02.869><c> we</c>
+rupees change to the rupee counter so we
+have<00:06:03.199><c> the</c><00:06:03.439><c> base</c><00:06:03.679><c> setup</c><00:06:04.249><c> where</c><00:06:04.759><c> the</c>
+have the base setup where the
+information<00:06:05.299><c> gets</c><00:06:05.899><c> sent</c><00:06:06.110><c> from</c><00:06:06.649><c> the</c><00:06:06.769><c> player</c><00:06:06.949><c> to</c>
+information gets sent from the player to
+the<00:06:07.519><c> interface</c><00:06:07.939><c> and</c><00:06:08.209><c> send</c><00:06:08.659><c> down</c><00:06:08.869><c> to</c><00:06:09.110><c> be</c><00:06:09.199><c> light</c>
+the interface and send down to be light
+bar<00:06:09.709><c> and</c><00:06:09.949><c> rupee</c><00:06:10.249><c> Kanter</c><00:06:10.669><c> now</c><00:06:11.569><c> as</c><00:06:11.869><c> we</c><00:06:12.169><c> are</c><00:06:12.319><c> on</c>
+bar and rupee Kanter now as we are on
+the<00:06:12.709><c> rupee</c><00:06:13.009><c> counter</c><00:06:13.369><c> script</c><00:06:13.699><c> let's</c><00:06:14.119><c> tackle</c>
+the rupee counter script let's tackle
+this<00:06:15.019><c> because</c><00:06:15.409><c> it's</c><00:06:15.589><c> the</c><00:06:15.799><c> easiest</c><00:06:16.339><c> one</c><00:06:16.669><c> to</c><00:06:16.699><c> do</c>
+this because it's the easiest one to do
+the<00:06:17.569><c> rupee</c><00:06:18.019><c> counter</c><00:06:18.409><c> scene</c><00:06:18.739><c> has</c><00:06:19.339><c> two</c><00:06:19.969><c> nodes</c>
+the rupee counter scene has two nodes
+and<00:06:20.659><c> the</c><00:06:21.319><c> background</c><00:06:22.129><c> element</c><00:06:22.789><c> there's</c><00:06:23.269><c> an</c>
+and the background element there's an
+icon<00:06:23.869><c> that's</c><00:06:24.469><c> not</c><00:06:24.679><c> going</c><00:06:24.860><c> to</c><00:06:24.949><c> change</c><00:06:25.039><c> but</c>
+icon that's not going to change but
+there's<00:06:25.849><c> also</c><00:06:26.029><c> the</c><00:06:26.479><c> label</c><00:06:27.409><c> name</c><00:06:27.919><c> number</c><00:06:28.339><c> and</c>
+there's also the label name number and
+when<00:06:29.989><c> we</c><00:06:30.199><c> update</c><00:06:30.559><c> this</c><00:06:31.399><c> Ruby</c><00:06:31.819><c> count</c><00:06:32.119><c> we</c><00:06:32.419><c> want</c>
+when we update this Ruby count we want
+to<00:06:32.719><c> change</c><00:06:33.079><c> the</c><00:06:33.529><c> text</c><00:06:33.949><c> in</c><00:06:34.009><c> that</c><00:06:34.429><c> label</c><00:06:34.939><c> from</c>
+to change the text in that label from
+the<00:06:36.039><c> rupee</c><00:06:37.039><c> counter</c><00:06:37.429><c> script</c><00:06:37.849><c> we're</c><00:06:38.389><c> going</c><00:06:38.599><c> to</c>
+the rupee counter script we're going to
+get<00:06:38.959><c> the</c><00:06:39.110><c> number</c><00:06:39.499><c> node</c><00:06:39.709><c> and</c><00:06:40.009><c> set</c><00:06:40.789><c> its</c><00:06:41.059><c> text</c><00:06:41.389><c> to</c>
+get the number node and set its text to
+the<00:06:42.589><c> count</c><00:06:42.889><c> value</c><00:06:43.159><c> but</c><00:06:43.819><c> as</c><00:06:43.969><c> the</c><00:06:44.240><c> counts</c><00:06:44.689><c> is</c><00:06:44.809><c> an</c>
+the count value but as the counts is an
+integer<00:06:45.589><c> value</c><00:06:45.889><c> we</c><00:06:46.339><c> need</c><00:06:46.429><c> to</c><00:06:46.610><c> convert</c><00:06:47.029><c> it</c><00:06:47.089><c> to</c><00:06:47.509><c> a</c>
+integer value we need to convert it to a
+string<00:06:48.139><c> for</c>
+string for
+that<00:06:48.889><c> we</c><00:06:49.099><c> use</c><00:06:49.280><c> the</c><00:06:49.430><c> STR</c><00:06:50.090><c> function</c><00:06:50.870><c> that's</c>
+that we use the STR function that's
+built<00:06:51.349><c> into</c><00:06:51.620><c> GD</c><00:06:52.039><c> script</c><00:06:52.310><c> and</c><00:06:52.490><c> that</c><00:06:52.520><c> is</c><00:06:53.270><c> it</c><00:06:53.419><c> for</c>
+built into GD script and that is it for
+the<00:06:53.990><c> rupee</c><00:06:54.319><c> counter</c><00:06:54.770><c> the</c><00:06:55.400><c> life</c><00:06:55.580><c> bar</c><00:06:55.819><c> is</c><00:06:56.090><c> going</c>
+the rupee counter the life bar is going
+to<00:06:56.419><c> be</c><00:06:56.539><c> a</c><00:06:56.840><c> little</c><00:06:57.139><c> more</c><00:06:57.440><c> complex</c><00:06:57.830><c> we're</c><00:06:58.430><c> going</c>
+to be a little more complex we're going
+to<00:06:58.759><c> enter</c><00:06:59.270><c> the</c><00:06:59.539><c> light</c><00:07:00.050><c> bar</c><00:07:00.319><c> scene</c>
+to enter the light bar scene
+because<00:07:01.310><c> it</c><00:07:01.430><c> will</c><00:07:01.729><c> make</c><00:07:01.909><c> it</c><00:07:02.060><c> easier</c><00:07:02.509><c> to</c><00:07:02.569><c> work</c>
+because it will make it easier to work
+on<00:07:03.110><c> the</c><00:07:03.259><c> script</c><00:07:03.560><c> and</c><00:07:03.800><c> attach</c><00:07:04.580><c> the</c><00:07:05.120><c> light</c><00:07:05.569><c> bar</c>
+on the script and attach the light bar
+script<00:07:06.229><c> to</c><00:07:06.650><c> the</c><00:07:06.979><c> light</c><00:07:07.220><c> bar</c><00:07:07.460><c> note</c><00:07:07.669><c> so</c><00:07:07.849><c> we</c><00:07:07.879><c> have</c>
+script to the light bar note so we have
+to<00:07:08.240><c> go</c><00:07:08.360><c> to</c><00:07:08.419><c> the</c><00:07:08.629><c> interface</c><00:07:09.139><c> folder</c><00:07:09.620><c> bar</c>
+to go to the interface folder bar
+subfolder<00:07:11.000><c> where</c><00:07:11.389><c> we</c><00:07:11.539><c> have</c><00:07:11.720><c> our</c><00:07:12.199><c> life</c><00:07:12.560><c> bar</c>
+subfolder where we have our life bar
+script<00:07:13.280><c> stalled</c><00:07:14.650><c> we</c><00:07:15.650><c> attach</c><00:07:16.009><c> the</c><00:07:16.220><c> script</c><00:07:16.520><c> and</c>
+script stalled we attach the script and
+open<00:07:17.030><c> the</c><00:07:17.150><c> scene</c><00:07:17.449><c> just</c><00:07:18.139><c> so</c><00:07:18.319><c> that</c><00:07:18.470><c> when</c><00:07:18.680><c> we</c><00:07:18.830><c> use</c>
+open the scene just so that when we use
+B<00:07:19.250><c> dollar</c><00:07:19.550><c> notation</c><00:07:20.300><c> we</c><00:07:20.750><c> can</c><00:07:20.870><c> get</c><00:07:21.110><c> a</c><00:07:21.139><c> list</c><00:07:21.560><c> of</c>
+B dollar notation we can get a list of
+all<00:07:22.130><c> the</c><00:07:22.370><c> nodes</c><00:07:22.580><c> if</c><00:07:22.849><c> you</c><00:07:23.180><c> don't</c><00:07:23.389><c> have</c><00:07:23.569><c> the</c>
+all the nodes if you don't have the
+scene<00:07:23.870><c> open</c><00:07:24.289><c> you</c><00:07:24.560><c> won't</c><00:07:24.770><c> get</c><00:07:25.069><c> out</c><00:07:25.280><c> of</c>
+scene open you won't get out of
+completion<00:07:25.789><c> like</c><00:07:26.120><c> that</c><00:07:26.330><c> so</c><00:07:27.020><c> to</c><00:07:27.080><c> start</c><00:07:27.440><c> with</c>
+completion like that so to start with
+let<00:07:28.039><c> us</c><00:07:28.069><c> just</c><00:07:28.699><c> update</c><00:07:29.120><c> the</c><00:07:29.150><c> health</c><00:07:29.569><c> base</c><00:07:30.080><c> on</c>
+let us just update the health base on
+that<00:07:30.919><c> callback</c><00:07:31.490><c> the</c><00:07:32.300><c> light</c><00:07:32.599><c> bar</c><00:07:32.780><c> scene</c><00:07:33.050><c> is</c><00:07:33.229><c> a</c>
+that callback the light bar scene is a
+little<00:07:33.710><c> more</c><00:07:33.889><c> complex</c><00:07:34.340><c> than</c><00:07:34.520><c> the</c><00:07:34.669><c> counter</c>
+little more complex than the counter
+because<00:07:35.330><c> we</c><00:07:35.479><c> have</c><00:07:35.630><c> a</c><00:07:35.659><c> label</c><00:07:36.199><c> on</c><00:07:36.409><c> one</c><00:07:37.099><c> side</c>
+because we have a label on one side
+called<00:07:37.970><c> number</c><00:07:38.360><c> as</c><00:07:38.479><c> well</c><00:07:38.690><c> and</c><00:07:38.990><c> we</c><00:07:39.319><c> have</c><00:07:39.500><c> the</c>
+called number as well and we have the
+texture<00:07:39.979><c> progress</c><00:07:40.460><c> which</c><00:07:40.969><c> has</c><00:07:41.630><c> a</c><00:07:42.169><c> range</c>
+texture progress which has a range
+minimum<00:07:44.150><c> value</c><00:07:44.449><c> maximum</c><00:07:44.840><c> value</c><00:07:45.289><c> and</c><00:07:45.500><c> the</c>
+minimum value maximum value and the
+actual<00:07:46.430><c> value</c><00:07:46.840><c> that</c><00:07:47.840><c> sets</c><00:07:48.199><c> the</c><00:07:48.620><c> width</c><00:07:49.159><c> or</c><00:07:49.340><c> the</c>
+actual value that sets the width or the
+texture<00:07:50.030><c> when</c><00:07:50.719><c> I</c><00:07:50.750><c> change</c><00:07:51.139><c> it</c><00:07:51.349><c> you</c><00:07:51.469><c> can</c><00:07:51.620><c> see</c><00:07:51.770><c> the</c>
+texture when I change it you can see the
+texture<00:07:52.250><c> update</c><00:07:53.169><c> we're</c><00:07:54.169><c> going</c><00:07:54.409><c> to</c><00:07:54.530><c> update</c><00:07:54.740><c> the</c>
+texture update we're going to update the
+texture<00:07:56.120><c> progresses</c><00:07:56.719><c> value</c><00:07:57.259><c> and</c><00:07:57.669><c> set</c><00:07:58.669><c> it</c><00:07:58.880><c> to</c>
+texture progresses value and set it to
+our<00:07:59.479><c> health</c><00:07:59.840><c> value</c><00:08:00.380><c> then</c><00:08:01.099><c> we're</c><00:08:01.639><c> going</c><00:08:01.940><c> to</c><00:08:02.000><c> get</c>
+our health value then we're going to get
+the<00:08:02.900><c> number</c><00:08:03.139><c> node</c><00:08:03.500><c> and</c><00:08:03.830><c> the</c><00:08:04.699><c> count</c><00:08:05.150><c> container</c>
+the number node and the count container
+and<00:08:06.469><c> we're</c><00:08:07.460><c> going</c><00:08:07.699><c> to</c><00:08:07.759><c> update</c><00:08:08.060><c> the</c><00:08:08.569><c> text</c><00:08:08.840><c> so</c>
+and we're going to update the text so
+for<00:08:09.590><c> this</c><00:08:09.800><c> one</c><00:08:10.069><c> want</c><00:08:10.550><c> to</c><00:08:10.669><c> set</c><00:08:10.880><c> it</c><00:08:11.029><c> as</c><00:08:11.150><c> our</c>
+for this one want to set it as our
+health<00:08:12.020><c> value</c><00:08:12.500><c> divided</c><00:08:13.219><c> by</c><00:08:13.250><c> a</c><00:08:13.849><c> maximum</c><00:08:14.690><c> health</c>
+health value divided by a maximum health
+which<00:08:15.289><c> we</c><00:08:15.529><c> don't</c><00:08:15.710><c> have</c><00:08:15.860><c> just</c><00:08:16.250><c> yet</c>
+which we don't have just yet
+before<00:08:17.719><c> we</c><00:08:18.110><c> use</c><00:08:18.380><c> the</c><00:08:18.650><c> STR</c><00:08:19.310><c> function</c><00:08:20.060><c> now</c><00:08:20.599><c> we're</c>
+before we use the STR function now we're
+going<00:08:21.020><c> to</c><00:08:21.199><c> use</c><00:08:21.440><c> string</c><00:08:22.009><c> interpolation</c><00:08:22.389><c> of</c><00:08:23.389><c> a</c>
+going to use string interpolation of a
+notation<00:08:24.199><c> that's</c><00:08:24.440><c> similar</c><00:08:25.130><c> to</c><00:08:25.370><c> what</c><00:08:26.090><c> you</c>
+notation that's similar to what you
+found<00:08:26.449><c> in</c><00:08:26.719><c> Python</c><00:08:27.199><c> 2</c><00:08:27.469><c> you</c><00:08:28.250><c> use</c><00:08:28.550><c> the</c><00:08:28.789><c> modulo</c>
+found in Python 2 you use the modulo
+sign<00:08:29.659><c> followed</c><00:08:30.139><c> by</c><00:08:30.349><c> s</c><00:08:30.740><c> to</c><00:08:31.159><c> convert</c><00:08:31.550><c> a</c><00:08:31.759><c> value</c><00:08:32.240><c> to</c>
+sign followed by s to convert a value to
+a<00:08:32.479><c> string</c><00:08:32.870><c> you</c><00:08:33.740><c> add</c><00:08:33.919><c> the</c><00:08:34.190><c> modulo</c><00:08:34.669><c> sign</c><00:08:34.969><c> after</c>
+a string you add the modulo sign after
+your<00:08:36.380><c> quotes</c><00:08:36.800><c> and</c><00:08:37.219><c> you're</c><00:08:37.700><c> going</c><00:08:37.909><c> to</c><00:08:38.000><c> add</c><00:08:38.300><c> the</c>
+your quotes and you're going to add the
+value<00:08:39.560><c> that</c><00:08:39.829><c> you</c><00:08:40.010><c> want</c><00:08:40.159><c> to</c><00:08:40.370><c> convert</c><00:08:40.880><c> in</c><00:08:41.209><c> here</c>
+value that you want to convert in here
+the<00:08:42.110><c> advantage</c><00:08:42.560><c> of</c><00:08:42.709><c> this</c><00:08:42.890><c> method</c><00:08:42.950><c> is</c><00:08:43.550><c> that</c><00:08:43.610><c> we</c>
+the advantage of this method is that we
+can<00:08:44.240><c> write</c><00:08:44.600><c> other</c><00:08:44.899><c> things</c><00:08:45.440><c> inside</c><00:08:46.399><c> of</c><00:08:46.790><c> our</c>
+can write other things inside of our
+string<00:08:47.510><c> and</c><00:08:47.630><c> only</c><00:08:48.500><c> the</c><00:08:49.010><c> module</c><00:08:49.790><c> S</c><00:08:50.029><c> will</c><00:08:50.779><c> catch</c>
+string and only the module S will catch
+a<00:08:51.529><c> value</c><00:08:52.040><c> that's</c><00:08:52.250><c> after</c><00:08:53.060><c> our</c><00:08:53.329><c> quotes</c><00:08:53.750><c> so</c><00:08:54.649><c> we</c>
+a value that's after our quotes so we
+can<00:08:54.920><c> write</c><00:08:55.370><c> something</c><00:08:55.760><c> like</c><00:08:55.790><c> modulo</c><00:08:56.750><c> s</c><00:08:56.930><c> slash</c>
+can write something like modulo s slash
+we're<00:08:58.310><c> going</c><00:08:58.550><c> to</c><00:08:58.730><c> convert</c><00:08:59.120><c> a</c><00:08:59.329><c> second</c><00:08:59.930><c> value</c>
+we're going to convert a second value
+after<00:09:00.649><c> that</c>
+after that
+when<00:09:01.900><c> you</c><00:09:01.990><c> have</c><00:09:02.140><c> multiple</c><00:09:02.320><c> values</c><00:09:02.980><c> that</c><00:09:03.400><c> you</c>
+when you have multiple values that you
+want<00:09:03.880><c> to</c><00:09:04.000><c> convert</c><00:09:04.390><c> inside</c><00:09:04.840><c> of</c><00:09:04.960><c> your</c><00:09:05.140><c> string</c>
+want to convert inside of your string
+you<00:09:06.100><c> have</c><00:09:06.130><c> to</c><00:09:06.550><c> use</c><00:09:06.910><c> an</c><00:09:07.210><c> array</c><00:09:07.840><c> of</c><00:09:08.110><c> values</c><00:09:08.230><c> you</c>
+you have to use an array of values you
+have<00:09:09.310><c> to</c><00:09:09.460><c> pass</c><00:09:09.700><c> that</c><00:09:09.910><c> and</c><00:09:10.210><c> we're</c><00:09:10.660><c> going</c><00:09:10.840><c> to</c>
+have to pass that and we're going to
+pass<00:09:11.200><c> a</c><00:09:11.880><c> maximum</c><00:09:12.880><c> value</c><00:09:13.150><c> as</c><00:09:13.570><c> the</c><00:09:13.810><c> second</c>
+pass a maximum value as the second
+parameter<00:09:14.530><c> and</c><00:09:15.460><c> we'll</c><00:09:15.670><c> add</c><00:09:15.850><c> that</c><00:09:16.450><c> maximum</c>
+parameter and we'll add that maximum
+value<00:09:16.960><c> at</c><00:09:17.500><c> the</c><00:09:17.650><c> start</c><00:09:17.920><c> of</c><00:09:18.100><c> the</c><00:09:18.220><c> script</c><00:09:18.520><c> because</c>
+value at the start of the script because
+it<00:09:19.000><c> doesn't</c><00:09:19.390><c> exist</c><00:09:19.540><c> and</c><00:09:19.990><c> let's</c><00:09:20.710><c> set</c><00:09:20.950><c> it</c><00:09:20.980><c> to</c><00:09:21.310><c> an</c>
+it doesn't exist and let's set it to an
+arbitrary<00:09:22.420><c> integer</c><00:09:22.930><c> for</c><00:09:23.170><c> now</c><00:09:23.410><c> this</c><00:09:24.370><c> will</c><00:09:24.880><c> call</c>
+arbitrary integer for now this will call
+the<00:09:25.300><c> STR</c><00:09:25.930><c> function</c><00:09:26.230><c> on</c><00:09:26.710><c> the</c><00:09:27.190><c> health</c><00:09:27.430><c> and</c><00:09:27.730><c> on</c>
+the STR function on the health and on
+the<00:09:28.210><c> maximum</c><00:09:28.660><c> value</c><00:09:29.050><c> it</c><00:09:29.440><c> will</c><00:09:29.650><c> insert</c><00:09:30.310><c> them</c><00:09:30.610><c> in</c>
+the maximum value it will insert them in
+a<00:09:31.000><c> string</c><00:09:31.390><c> with</c><00:09:31.810><c> two</c><00:09:32.200><c> spaces</c><00:09:32.830><c> and</c><00:09:33.100><c> a</c><00:09:33.640><c> forward</c>
+a string with two spaces and a forward
+slash<00:09:34.540><c> in</c><00:09:35.050><c> the</c><00:09:35.110><c> middle</c><00:09:35.590><c> and</c><00:09:35.770><c> notes</c><00:09:36.460><c> I</c><00:09:36.700><c> made</c><00:09:37.060><c> a</c>
+slash in the middle and notes I made a
+typo<00:09:37.600><c> so</c><00:09:37.900><c> number</c><00:09:38.260><c> is</c><00:09:38.410><c> a</c><00:09:38.560><c> label</c><00:09:39.100><c> it</c><00:09:39.490><c> doesn't</c>
+typo so number is a label it doesn't
+have<00:09:40.060><c> a</c><00:09:40.090><c> value</c><00:09:40.600><c> member</c><00:09:41.170><c> but</c><00:09:41.410><c> instead</c><00:09:41.920><c> we</c><00:09:42.130><c> want</c>
+have a value member but instead we want
+to<00:09:42.490><c> assign</c><00:09:43.060><c> this</c><00:09:43.570><c> value</c><00:09:43.630><c> to</c><00:09:44.380><c> its</c><00:09:44.590><c> sex</c><00:09:45.130><c> property</c>
+to assign this value to its sex property
+let's<00:09:46.600><c> try</c><00:09:46.930><c> out</c><00:09:47.080><c> the</c><00:09:47.290><c> game</c><00:09:47.470><c> to</c><00:09:48.040><c> see</c><00:09:48.280><c> that</c><00:09:48.580><c> our</c>
+let's try out the game to see that our
+characters<00:09:49.990><c> HP</c><00:09:50.740><c> is</c><00:09:50.950><c> set</c><00:09:51.430><c> to</c><00:09:51.670><c> 18</c><00:09:52.180><c> so</c><00:09:52.480><c> that</c><00:09:52.510><c> is</c>
+characters HP is set to 18 so that is
+the<00:09:53.140><c> actual</c><00:09:53.410><c> HB</c><00:09:54.100><c> on</c><00:09:54.220><c> the</c><00:09:54.370><c> character</c><00:09:54.820><c> out</c><00:09:55.240><c> of</c><00:09:55.300><c> a</c>
+the actual HB on the character out of a
+maximum<00:09:56.260><c> of</c><00:09:56.380><c> 20</c><00:09:56.830><c> that's</c><00:09:57.130><c> hard-coded</c><00:09:57.970><c> in</c><00:09:58.120><c> the</c>
+maximum of 20 that's hard-coded in the
+script<00:09:58.510><c> for</c><00:09:58.720><c> now</c><00:09:58.960><c> and</c><00:09:59.170><c> if</c><00:09:59.560><c> you</c><00:09:59.740><c> go</c><00:10:00.130><c> ahead</c><00:10:00.250><c> and</c>
+script for now and if you go ahead and
+pick<00:10:00.940><c> up</c><00:10:01.120><c> rupees</c><00:10:01.570><c> you</c><00:10:02.050><c> will</c><00:10:02.230><c> see</c><00:10:02.500><c> the</c><00:10:02.860><c> rupee</c>
+pick up rupees you will see the rupee
+counts<00:10:03.730><c> updates</c><00:10:04.360><c> in</c><00:10:04.570><c> the</c><00:10:04.780><c> top</c><00:10:04.990><c> right</c><00:10:05.200><c> corner</c>
+counts updates in the top right corner
+now<00:10:06.040><c> we</c><00:10:06.100><c> want</c><00:10:06.490><c> to</c><00:10:06.700><c> set</c><00:10:07.300><c> the</c><00:10:07.720><c> maximum</c><00:10:07.960><c> in</c><00:10:08.500><c> our</c>
+now we want to set the maximum in our
+light<00:10:09.190><c> bar</c><00:10:09.430><c> and</c><00:10:09.700><c> then</c><00:10:10.030><c> we're</c><00:10:10.240><c> going</c><00:10:10.450><c> to</c>
+light bar and then we're going to
+animate<00:10:11.050><c> it</c><00:10:11.500><c> around</c><00:10:12.040><c> the</c><00:10:12.220><c> end</c><00:10:12.310><c> of</c><00:10:12.430><c> the</c>
+animate it around the end of the
+tutorial
+first<00:10:14.440><c> let</c><00:10:14.770><c> us</c><00:10:14.850><c> initialize</c><00:10:15.850><c> our</c><00:10:16.030><c> bars</c><00:10:16.480><c> maximum</c>
+first let us initialize our bars maximum
+value<00:10:17.920><c> so</c><00:10:18.130><c> to</c><00:10:18.550><c> do</c><00:10:18.910><c> that</c><00:10:18.940><c> we</c><00:10:19.630><c> are</c><00:10:19.780><c> going</c><00:10:20.020><c> to</c><00:10:20.110><c> use</c>
+value so to do that we are going to use
+a<00:10:20.830><c> method</c><00:10:21.810><c> we're</c><00:10:22.810><c> going</c><00:10:22.840><c> to</c><00:10:23.200><c> add</c><00:10:23.410><c> some</c>
+a method we're going to add some
+initialize<00:10:25.150><c> method</c><00:10:25.840><c> or</c><00:10:26.230><c> something</c><00:10:26.740><c> like</c><00:10:26.860><c> that</c>
+initialize method or something like that
+that<00:10:27.520><c> will</c><00:10:27.790><c> take</c><00:10:28.060><c> a</c><00:10:28.330><c> maximum</c><00:10:28.810><c> and</c><00:10:29.350><c> we</c><00:10:30.160><c> will</c>
+that will take a maximum and we will
+assign<00:10:30.730><c> it</c><00:10:30.790><c> to</c><00:10:31.120><c> our</c><00:10:31.240><c> maximum</c><00:10:31.750><c> value</c><00:10:32.200><c> so</c><00:10:32.380><c> we're</c>
+assign it to our maximum value so we're
+going<00:10:32.860><c> to</c><00:10:32.980><c> store</c><00:10:33.280><c> it</c><00:10:33.460><c> and</c><00:10:34.170><c> then</c><00:10:35.170><c> we'll</c><00:10:35.680><c> get</c><00:10:36.070><c> the</c>
+going to store it and then we'll get the
+texture<00:10:37.150><c> progress</c><00:10:37.570><c> so</c><00:10:38.080><c> I</c><00:10:38.110><c> will</c><00:10:38.380><c> bar</c><00:10:38.590><c> and</c><00:10:38.920><c> in</c>
+texture progress so I will bar and in
+the<00:10:40.060><c> range</c><00:10:40.420><c> category</c><00:10:41.290><c> we'll</c><00:10:41.590><c> update</c><00:10:41.830><c> its</c><00:10:42.460><c> max</c>
+the range category we'll update its max
+value<00:10:43.300><c> property</c><00:10:43.840><c> so</c><00:10:44.470><c> it's</c><00:10:44.800><c> max</c><00:10:45.400><c> underscore</c>
+value property so it's max underscore
+value<00:10:47.200><c> we'll</c><00:10:48.100><c> set</c><00:10:48.490><c> it</c><00:10:48.520><c> to</c><00:10:49.240><c> this</c><00:10:49.420><c> maximum</c><00:10:49.960><c> value</c>
+value we'll set it to this maximum value
+we<00:10:50.620><c> just</c><00:10:50.650><c> store</c><00:10:51.220><c> the</c><00:10:51.760><c> maximum</c><00:10:52.240><c> value</c><00:10:52.960><c> down</c><00:10:53.650><c> the</c>
+we just store the maximum value down the
+light<00:10:54.070><c> bar</c><00:10:54.370><c> because</c><00:10:54.910><c> we</c><00:10:54.940><c> want</c><00:10:55.570><c> to</c><00:10:55.900><c> use</c><00:10:56.110><c> the</c>
+light bar because we want to use the
+maximum<00:10:56.590><c> value</c><00:10:57.250><c> when</c><00:10:57.520><c> we</c><00:10:57.730><c> set</c><00:10:58.030><c> the</c><00:10:58.390><c> counts</c>
+maximum value when we set the counts
+text<00:10:59.680><c> for</c><00:11:00.070><c> now</c><00:11:00.310><c> at</c><00:11:00.460><c> least</c><00:11:00.490><c> now</c><00:11:01.450><c> we're</c><00:11:01.690><c> going</c><00:11:01.870><c> to</c>
+text for now at least now we're going to
+initialize<00:11:02.800><c> that</c><00:11:03.040><c> value</c><00:11:03.490><c> from</c><00:11:03.700><c> the</c><00:11:03.880><c> game</c><00:11:04.090><c> so</c>
+initialize that value from the game so
+we<00:11:04.420><c> have</c><00:11:04.600><c> to</c><00:11:04.780><c> go</c><00:11:04.990><c> back</c><00:11:05.260><c> to</c><00:11:05.500><c> the</c><00:11:05.620><c> demo</c><00:11:05.850><c> okay</c><00:11:06.850><c> we</c>
+we have to go back to the demo okay we
+have<00:11:07.360><c> a</c><00:11:07.390><c> few</c><00:11:07.450><c> options</c><00:11:07.720><c> on</c><00:11:08.260><c> how</c><00:11:08.800><c> to</c><00:11:08.830><c> get</c><00:11:09.370><c> the</c>
+have a few options on how to get the
+actual<00:11:09.970><c> value</c><00:11:10.060><c> we</c><00:11:10.750><c> could</c><00:11:10.930><c> use</c><00:11:11.080><c> a</c><00:11:11.110><c> signal</c><00:11:11.830><c> from</c>
+actual value we could use a signal from
+the<00:11:12.430><c> help</c><00:11:12.640><c> node</c><00:11:12.850><c> at</c><00:11:13.060><c> the</c><00:11:13.270><c> start</c><00:11:13.570><c> of</c><00:11:13.690><c> the</c><00:11:13.810><c> game</c>
+the help node at the start of the game
+send<00:11:14.800><c> it</c><00:11:14.950><c> to</c><00:11:15.130><c> the</c><00:11:15.250><c> end</c>
+send it to the end
+face<00:11:15.820><c> and</c><00:11:16.150><c> then</c><00:11:16.480><c> funnel</c><00:11:17.110><c> it</c><00:11:17.260><c> down</c><00:11:17.530><c> but</c><00:11:18.190><c> another</c>
+face and then funnel it down but another
+way<00:11:18.700><c> to</c><00:11:18.760><c> do</c><00:11:19.180><c> that</c><00:11:19.390><c> is</c><00:11:19.720><c> to</c><00:11:20.500><c> get</c><00:11:20.830><c> the</c><00:11:20.890><c> value</c><00:11:21.490><c> from</c>
+way to do that is to get the value from
+the<00:11:21.970><c> help</c><00:11:22.300><c> node</c><00:11:22.510><c> directly</c><00:11:23.130><c> so</c><00:11:24.130><c> from</c><00:11:24.370><c> the</c>
+the help node directly so from the
+interface<00:11:25.000><c> script</c><00:11:25.600><c> we're</c><00:11:26.170><c> going</c><00:11:26.410><c> to</c><00:11:26.650><c> look</c><00:11:27.250><c> at</c>
+interface script we're going to look at
+the<00:11:27.520><c> player</c><00:11:27.820><c> at</c><00:11:28.180><c> the</c><00:11:28.450><c> start</c><00:11:28.780><c> of</c><00:11:28.990><c> the</c><00:11:29.110><c> game</c><00:11:29.320><c> and</c>
+the player at the start of the game and
+to<00:11:30.310><c> get</c><00:11:30.820><c> the</c><00:11:31.180><c> player</c><00:11:31.420><c> node</c><00:11:31.720><c> we're</c><00:11:32.110><c> going</c><00:11:32.320><c> to</c>
+to get the player node we're going to
+look<00:11:32.650><c> into</c><00:11:33.160><c> the</c><00:11:33.550><c> node</c><00:11:34.030><c> group</c><00:11:34.360><c> called</c><00:11:34.720><c> actors</c>
+look into the node group called actors
+that<00:11:35.950><c> the</c><00:11:36.130><c> player</c><00:11:36.430><c> is</c><00:11:36.730><c> part</c><00:11:37.030><c> of</c><00:11:37.270><c> so</c><00:11:37.930><c> we're</c>
+that the player is part of so we're
+going<00:11:38.260><c> to</c><00:11:38.350><c> find</c><00:11:38.830><c> the</c><00:11:39.070><c> player</c><00:11:39.310><c> in</c><00:11:39.670><c> this</c><00:11:40.300><c> group</c>
+going to find the player in this group
+and<00:11:40.840><c> we're</c><00:11:41.650><c> going</c><00:11:41.860><c> to</c><00:11:41.920><c> access</c><00:11:42.490><c> its</c><00:11:42.790><c> health</c>
+and we're going to access its health
+node<00:11:43.480><c> directly</c><00:11:44.350><c> that's</c><00:11:44.920><c> one</c><00:11:45.640><c> way</c><00:11:45.820><c> to</c><00:11:45.850><c> do</c><00:11:46.180><c> it</c><00:11:46.330><c> in</c>
+node directly that's one way to do it in
+a<00:11:46.810><c> small</c><00:11:47.590><c> game</c><00:11:47.890><c> that's</c><00:11:48.340><c> not</c><00:11:48.490><c> too</c><00:11:48.820><c> big</c><00:11:48.940><c> of</c><00:11:49.090><c> a</c>
+a small game that's not too big of a
+deal<00:11:49.390><c> so</c><00:11:49.870><c> you</c><00:11:49.930><c> can</c><00:11:50.140><c> in</c><00:11:50.380><c> general</c><00:11:51.100><c> you'll</c><00:11:51.370><c> hear</c>
+deal so you can in general you'll hear
+me<00:11:51.820><c> say</c><00:11:52.090><c> I</c><00:11:52.120><c> use</c><00:11:52.420><c> signals</c><00:11:53.170><c> whenever</c><00:11:53.620><c> possible</c>
+me say I use signals whenever possible
+to<00:11:54.250><c> keep</c><00:11:54.550><c> things</c><00:11:54.910><c> separate</c><00:11:55.630><c> but</c><00:11:56.050><c> as</c><00:11:56.170><c> the</c>
+to keep things separate but as the
+interface<00:11:56.920><c> only</c><00:11:57.220><c> relates</c><00:11:57.940><c> to</c><00:11:58.120><c> the</c><00:11:58.360><c> player</c><00:11:58.630><c> in</c>
+interface only relates to the player in
+this<00:11:59.200><c> example</c><00:11:59.590><c> we</c><00:12:00.220><c> can</c><00:12:00.250><c> access</c><00:12:00.640><c> the</c><00:12:01.210><c> player</c>
+this example we can access the player
+directly<00:12:01.690><c> at</c><00:12:02.260><c> the</c><00:12:02.470><c> start</c><00:12:02.770><c> of</c><00:12:02.950><c> the</c><00:12:03.070><c> game</c><00:12:03.250><c> and</c><00:12:03.490><c> if</c>
+directly at the start of the game and if
+we<00:12:04.300><c> need</c><00:12:04.510><c> to</c><00:12:04.750><c> refactor</c><00:12:05.440><c> that</c><00:12:05.800><c> later</c><00:12:06.270><c> now</c><00:12:07.270><c> in</c>
+we need to refactor that later now in
+the<00:12:07.720><c> ready</c><00:12:08.050><c> function</c><00:12:08.320><c> we're</c><00:12:09.130><c> going</c><00:12:09.160><c> to</c><00:12:09.400><c> get</c>
+the ready function we're going to get
+the<00:12:10.330><c> nodes</c><00:12:10.720><c> and</c><00:12:11.230><c> the</c><00:12:11.290><c> actors</c><00:12:12.190><c> group</c><00:12:12.400><c> all</c><00:12:12.910><c> note</c>
+the nodes and the actors group all note
+in<00:12:13.530><c> we</c><00:12:14.530><c> need</c><00:12:14.740><c> to</c><00:12:14.920><c> get</c><00:12:15.160><c> the</c><00:12:15.340><c> tree</c><00:12:15.670><c> first</c><00:12:16.060><c> because</c>
+in we need to get the tree first because
+get<00:12:16.810><c> nodes</c><00:12:17.320><c> in</c><00:12:17.500><c> group</c><00:12:17.800><c> is</c><00:12:18.040><c> a</c><00:12:18.550><c> method</c><00:12:19.000><c> on</c><00:12:19.150><c> the</c>
+get nodes in group is a method on the
+tree<00:12:19.690><c> and</c><00:12:19.900><c> we</c><00:12:20.590><c> pass</c><00:12:20.860><c> in</c><00:12:21.130><c> the</c><00:12:21.160><c> name</c><00:12:22.120><c> of</c><00:12:22.420><c> the</c>
+tree and we pass in the name of the
+group<00:12:23.110><c> that</c><00:12:23.590><c> the</c><00:12:23.860><c> node</c><00:12:24.310><c> is</c><00:12:24.550><c> part</c><00:12:24.850><c> of</c><00:12:25.120><c> in</c><00:12:25.270><c> this</c>
+group that the node is part of in this
+case<00:12:25.780><c> it's</c><00:12:26.080><c> called</c>
+case it's called
+actors<00:12:26.890><c> for</c><00:12:27.760><c> each</c><00:12:28.060><c> node</c><00:12:28.480><c> in</c><00:12:28.720><c> that</c><00:12:28.780><c> group</c><00:12:29.290><c> we're</c>
+actors for each node in that group we're
+going<00:12:29.800><c> to</c><00:12:29.920><c> check</c><00:12:30.310><c> if</c><00:12:30.580><c> the</c><00:12:31.390><c> name</c><00:12:32.080><c> of</c><00:12:32.380><c> the</c><00:12:32.470><c> node</c>
+going to check if the name of the node
+so<00:12:33.430><c> node</c><00:12:33.670><c> name</c><00:12:34.360><c> is</c><00:12:35.040><c> layer</c><00:12:36.040><c> we</c><00:12:36.580><c> will</c><00:12:36.730><c> have</c><00:12:37.120><c> only</c>
+so node name is layer we will have only
+one<00:12:37.990><c> node</c><00:12:38.230><c> that's</c><00:12:38.680><c> called</c><00:12:38.950><c> player</c><00:12:39.280><c> in</c><00:12:39.580><c> this</c>
+one node that's called player in this
+case<00:12:40.410><c> so</c><00:12:41.410><c> if</c><00:12:41.620><c> the</c><00:12:41.860><c> nodes</c><00:12:42.130><c> name</c><00:12:42.460><c> is</c><00:12:42.700><c> layer</c><00:12:43.240><c> we</c>
+case so if the nodes name is layer we
+can<00:12:44.170><c> get</c><00:12:44.790><c> 1/2</c><00:12:45.790><c> node</c><00:12:46.180><c> so</c><00:12:46.600><c> we're</c><00:12:46.780><c> going</c><00:12:46.990><c> to</c><00:12:47.110><c> on</c>
+can get 1/2 node so we're going to on
+get<00:12:47.950><c> note</c><00:12:48.280><c> on</c><00:12:48.610><c> our</c><00:12:49.060><c> player</c><00:12:49.840><c> node</c><00:12:50.140><c> in</c><00:12:50.380><c> this</c><00:12:50.500><c> case</c>
+get note on our player node in this case
+and<00:12:51.100><c> we</c><00:12:51.340><c> can</c><00:12:51.580><c> get</c><00:12:51.880><c> the</c><00:12:52.240><c> health</c><00:12:52.480><c> node</c><00:12:52.720><c> because</c>
+and we can get the health node because
+we<00:12:53.680><c> know</c><00:12:54.070><c> that</c><00:12:54.100><c> the</c><00:12:54.550><c> player</c><00:12:54.820><c> scene</c><00:12:55.420><c> has</c><00:12:55.840><c> one</c>
+we know that the player scene has one
+we're<00:12:57.160><c> going</c><00:12:57.340><c> to</c><00:12:57.550><c> store</c><00:12:57.970><c> it</c><00:12:58.150><c> in</c><00:12:58.180><c> a</c><00:12:59.020><c> variable</c>
+we're going to store it in a variable
+that's<00:13:00.220><c> outside</c><00:13:00.910><c> the</c><00:13:01.090><c> loop</c><00:13:01.240><c> so</c><00:13:01.420><c> we</c><00:13:01.450><c> can</c><00:13:01.660><c> access</c>
+that's outside the loop so we can access
+it<00:13:02.290><c> after</c><00:13:02.800><c> the</c><00:13:02.920><c> loop</c><00:13:03.100><c> so</c><00:13:03.460><c> let's</c><00:13:03.490><c> call</c><00:13:03.850><c> that</c>
+it after the loop so let's call that
+half<00:13:04.450><c> node</c><00:13:04.810><c> it's</c><00:13:05.260><c> going</c><00:13:05.470><c> to</c><00:13:05.650><c> be</c><00:13:05.770><c> empty</c><00:13:05.980><c> to</c>
+half node it's going to be empty to
+start<00:13:06.880><c> with</c><00:13:07.150><c> and</c><00:13:07.420><c> who</c><00:13:07.990><c> will</c><00:13:08.170><c> store</c><00:13:08.650><c> our</c><00:13:08.950><c> help</c>
+start with and who will store our help
+node<00:13:09.850><c> in</c><00:13:10.060><c> there</c><00:13:10.480><c> then</c><00:13:11.140><c> break</c><00:13:11.590><c> out</c><00:13:11.830><c> of</c><00:13:12.130><c> the</c><00:13:12.250><c> loop</c>
+node in there then break out of the loop
+because<00:13:12.550><c> we</c><00:13:12.970><c> found</c><00:13:13.300><c> the</c><00:13:13.810><c> node</c><00:13:14.020><c> we</c><00:13:14.200><c> were</c>
+because we found the node we were
+looking<00:13:14.770><c> for</c><00:13:15.180><c> once</c><00:13:16.180><c> we</c><00:13:16.390><c> have</c><00:13:16.600><c> that</c><00:13:16.630><c> piece</c><00:13:17.110><c> of</c>
+looking for once we have that piece of
+information<00:13:17.380><c> we</c><00:13:18.250><c> want</c><00:13:18.460><c> to</c><00:13:18.700><c> get</c><00:13:19.360><c> our</c><00:13:19.630><c> life</c><00:13:20.230><c> bar</c>
+information we want to get our life bar
+and<00:13:20.860><c> we're</c><00:13:21.790><c> going</c><00:13:22.000><c> to</c><00:13:22.120><c> call</c><00:13:22.390><c> the</c><00:13:22.780><c> initialize</c>
+and we're going to call the initialize
+method<00:13:23.440><c> on</c><00:13:24.100><c> it</c><00:13:24.250><c> we're</c><00:13:24.760><c> going</c><00:13:24.970><c> to</c><00:13:25.150><c> pass</c><00:13:25.390><c> in</c><00:13:25.630><c> the</c>
+method on it we're going to pass in the
+Health's<00:13:26.380><c> node</c><00:13:26.620><c> maximum</c><00:13:27.490><c> help</c><00:13:27.820><c> so</c><00:13:28.180><c> that</c><00:13:28.330><c> I</c>
+Health's node maximum help so that I
+call
+max<00:13:29.440><c> underscore</c><00:13:30.279><c> health</c><00:13:30.610><c> and</c><00:13:30.880><c> you</c><00:13:31.300><c> can</c><00:13:31.329><c> check</c>
+max underscore health and you can check
+that<00:13:31.870><c> from</c><00:13:32.800><c> the</c><00:13:33.250><c> health</c><00:13:33.490><c> note</c><00:13:33.759><c> max</c><00:13:34.750><c> health</c>
+that from the health note max health
+here<00:13:35.310><c> so</c><00:13:36.310><c> this</c><00:13:36.490><c> is</c><00:13:36.639><c> going</c><00:13:36.820><c> to</c><00:13:37.029><c> initialize</c><00:13:37.779><c> our</c>
+here so this is going to initialize our
+bar<00:13:38.350><c> as</c><00:13:38.769><c> I</c><00:13:39.009><c> said</c><00:13:39.399><c> also</c><00:13:40.440><c> because</c><00:13:41.440><c> we</c><00:13:41.620><c> have</c><00:13:41.889><c> a</c>
+bar as I said also because we have a
+signal<00:13:42.970><c> emitted</c><00:13:43.240><c> at</c><00:13:43.839><c> the</c><00:13:44.079><c> start</c><00:13:44.410><c> of</c><00:13:44.560><c> the</c><00:13:44.740><c> game</c>
+signal emitted at the start of the game
+when<00:13:45.459><c> we</c><00:13:45.730><c> Spurs</c><00:13:46.120><c> set</c><00:13:46.480><c> the</c><00:13:46.810><c> help</c><00:13:47.019><c> note</c><00:13:47.259><c> health</c>
+when we Spurs set the help note health
+the<00:13:48.699><c> light</c><00:13:48.940><c> bar</c><00:13:49.209><c> will</c><00:13:49.569><c> also</c><00:13:49.990><c> have</c><00:13:50.170><c> the</c><00:13:50.350><c> right</c>
+the light bar will also have the right
+starting<00:13:51.880><c> health</c><00:13:52.300><c> value</c><00:13:52.839><c> so</c><00:13:53.199><c> you</c><00:13:53.290><c> can</c><00:13:53.440><c> play</c>
+starting health value so you can play
+the<00:13:53.949><c> game</c><00:13:54.160><c> and</c><00:13:54.399><c> you</c><00:13:54.459><c> will</c><00:13:55.269><c> see</c><00:13:55.630><c> our</c><00:13:55.750><c> light</c><00:13:56.079><c> bar</c>
+the game and you will see our light bar
+and<00:13:56.620><c> label</c><00:13:57.190><c> are</c><00:13:57.730><c> at</c><00:13:58.170><c> 18</c><00:13:59.170><c> out</c><00:13:59.470><c> of</c><00:13:59.889><c> 18</c><00:14:00.370><c> if</c><00:14:00.670><c> I</c><00:14:00.790><c> press</c>
+and label are at 18 out of 18 if I press
+X<00:14:01.420><c> you</c><00:14:02.410><c> will</c><00:14:02.529><c> see</c><00:14:02.769><c> the</c><00:14:02.920><c> character</c><00:14:03.459><c> lose</c><00:14:04.120><c> some</c>
+X you will see the character lose some
+health<00:14:04.750><c> every</c><00:14:05.350><c> time</c><00:14:05.620><c> here</c><00:14:06.550><c> we</c><00:14:06.819><c> are</c><00:14:06.850><c> getting</c>
+health every time here we are getting
+the<00:14:07.569><c> piece</c><00:14:07.870><c> of</c><00:14:08.050><c> information</c><00:14:08.730><c> directly</c><00:14:09.730><c> from</c>
+the piece of information directly from
+the<00:14:10.120><c> health</c><00:14:10.420><c> note</c><00:14:10.630><c> this</c><00:14:11.079><c> means</c><00:14:11.529><c> that</c><00:14:11.949><c> if</c><00:14:12.190><c> you</c>
+the health note this means that if you
+update<00:14:13.120><c> the</c><00:14:13.269><c> health</c><00:14:13.480><c> note</c><00:14:13.750><c> and</c><00:14:14.019><c> for</c><00:14:14.350><c> some</c>
+update the health note and for some
+reason<00:14:15.009><c> you</c><00:14:15.250><c> change</c><00:14:15.610><c> the</c><00:14:15.880><c> maximum</c><00:14:16.240><c> health</c>
+reason you change the maximum health
+property<00:14:17.259><c> this</c><00:14:17.860><c> is</c><00:14:18.040><c> going</c><00:14:18.279><c> to</c><00:14:18.399><c> break</c><00:14:18.670><c> the</c>
+property this is going to break the
+interface<00:14:19.300><c> script</c><00:14:19.569><c> so</c><00:14:19.990><c> you</c><00:14:20.079><c> may</c><00:14:20.290><c> want</c><00:14:20.529><c> to</c>
+interface script so you may want to
+consider<00:14:21.399><c> replacing</c><00:14:21.880><c> this</c><00:14:22.690><c> with</c><00:14:23.110><c> yet</c><00:14:23.470><c> another</c>
+consider replacing this with yet another
+signal<00:14:24.310><c> on</c><00:14:24.519><c> the</c><00:14:25.000><c> help</c><00:14:25.209><c> note</c><00:14:25.449><c> max</c><00:14:25.870><c> help</c><00:14:26.170><c> change</c>
+signal on the help note max help change
+and<00:14:26.980><c> to</c><00:14:27.819><c> use</c><00:14:28.120><c> it</c><00:14:28.329><c> to</c><00:14:28.750><c> update</c><00:14:29.019><c> the</c><00:14:29.829><c> interface</c><00:14:30.279><c> at</c>
+and to use it to update the interface at
+the<00:14:30.730><c> start</c><00:14:31.000><c> of</c><00:14:31.120><c> the</c><00:14:31.269><c> game</c><00:14:31.449><c> so</c><00:14:31.870><c> that</c><00:14:32.050><c> way</c><00:14:32.259><c> you</c>
+the start of the game so that way you
+don't<00:14:32.529><c> access</c><00:14:33.009><c> the</c><00:14:33.190><c> help</c><00:14:33.550><c> notes</c><00:14:33.790><c> max</c><00:14:34.209><c> health</c>
+don't access the help notes max health
+property<00:14:34.930><c> outside</c><00:14:35.170><c> of</c><00:14:35.649><c> the</c><00:14:35.769><c> health</c><00:14:36.010><c> notes</c>
+property outside of the health notes
+script<00:14:37.329><c> and</c><00:14:37.569><c> outside</c><00:14:38.410><c> of</c><00:14:38.589><c> the</c><00:14:38.709><c> players</c><00:14:39.250><c> scene</c>
+script and outside of the players scene
+well<00:14:40.930><c> the</c><00:14:41.079><c> last</c><00:14:41.260><c> part</c><00:14:41.410><c> of</c><00:14:41.860><c> this</c><00:14:42.040><c> tutorial</c>
+well the last part of this tutorial
+we're<00:14:42.850><c> going</c><00:14:43.029><c> to</c><00:14:43.149><c> add</c><00:14:43.300><c> some</c><00:14:43.569><c> animation</c><00:14:44.079><c> not</c>
+we're going to add some animation not
+only<00:14:44.620><c> to</c><00:14:44.769><c> the</c><00:14:44.889><c> gauge</c><00:14:45.130><c> but</c><00:14:45.550><c> also</c><00:14:45.760><c> to</c><00:14:46.089><c> the</c><00:14:46.389><c> HP</c>
+only to the gauge but also to the HP
+label<00:14:47.670><c> animation</c><00:14:48.670><c> that</c><00:14:49.060><c> gets</c><00:14:49.300><c> triggered</c><00:14:49.839><c> when</c>
+label animation that gets triggered when
+the<00:14:50.319><c> character</c><00:14:50.889><c> takes</c><00:14:51.160><c> a</c><00:14:51.339><c> hit</c><00:14:51.839><c> we're</c><00:14:52.839><c> going</c><00:14:53.019><c> to</c>
+the character takes a hit we're going to
+work<00:14:53.350><c> entirely</c><00:14:54.040><c> under</c><00:14:54.670><c> life</c><00:14:54.819><c> bar</c><00:14:55.089><c> now</c><00:14:55.300><c> because</c>
+work entirely under life bar now because
+we<00:14:55.899><c> receive</c><00:14:56.649><c> the</c><00:14:56.860><c> value</c><00:14:57.040><c> when</c><00:14:57.579><c> the</c><00:14:57.699><c> character</c>
+we receive the value when the character
+takes<00:14:58.360><c> a</c><00:14:58.569><c> hits</c><00:14:58.899><c> we</c><00:14:59.199><c> have</c><00:14:59.350><c> everything</c><00:14:59.680><c> we</c><00:14:59.920><c> need</c>
+takes a hits we have everything we need
+to<00:15:00.430><c> create</c><00:15:00.850><c> the</c><00:15:00.970><c> animation</c><00:15:01.540><c> so</c><00:15:01.990><c> open</c><00:15:02.440><c> the</c>
+to create the animation so open the
+interface<00:15:03.190><c> scene</c><00:15:03.579><c> followed</c><00:15:04.120><c> by</c><00:15:04.329><c> the</c><00:15:04.389><c> life</c><00:15:04.899><c> bar</c>
+interface scene followed by the life bar
+you're<00:15:05.740><c> going</c><00:15:06.069><c> to</c><00:15:06.250><c> work</c><00:15:06.579><c> with</c><00:15:07.240><c> the</c><00:15:07.540><c> script</c><00:15:08.160><c> we</c>
+you're going to work with the script we
+have<00:15:09.190><c> two</c><00:15:09.730><c> nodes</c><00:15:09.970><c> to</c><00:15:10.389><c> handle</c><00:15:10.990><c> animation</c><00:15:11.529><c> tween</c>
+have two nodes to handle animation tween
+and<00:15:12.370><c> the</c><00:15:12.819><c> animation</c><00:15:13.389><c> player</c><00:15:13.720><c> on</c><00:15:14.019><c> the</c>
+and the animation player on the
+animation<00:15:14.889><c> player</c><00:15:15.339><c> you</c><00:15:15.670><c> have</c><00:15:15.819><c> a</c><00:15:15.850><c> shake</c>
+animation player you have a shake
+animation<00:15:17.050><c> we're</c><00:15:17.410><c> going</c><00:15:17.439><c> to</c><00:15:17.680><c> use</c><00:15:18.010><c> on</c><00:15:18.220><c> the</c><00:15:18.850><c> HP</c>
+animation we're going to use on the HP
+label<00:15:19.810><c> this</c><00:15:20.199><c> one</c><00:15:20.470><c> is</c><00:15:20.680><c> hard-coded</c><00:15:21.040><c> it</c><00:15:21.490><c> moves</c><00:15:22.089><c> a</c>
+label this one is hard-coded it moves a
+label<00:15:22.899><c> from</c><00:15:23.139><c> left</c><00:15:23.500><c> to</c><00:15:23.560><c> right</c><00:15:23.829><c> and</c><00:15:24.189><c> animates</c><00:15:24.790><c> it</c>
+label from left to right and animates it
+red<00:15:25.389><c> we're</c><00:15:26.170><c> going</c><00:15:26.380><c> to</c><00:15:26.529><c> start</c><00:15:27.009><c> the</c><00:15:27.220><c> animation</c>
+red we're going to start the animation
+every<00:15:28.329><c> time</c><00:15:28.600><c> the</c><00:15:29.079><c> health</c><00:15:29.680><c> changed</c><00:15:30.310><c> so</c><00:15:30.579><c> every</c>
+every time the health changed so every
+time<00:15:31.089><c> the</c><00:15:31.300><c> character</c><00:15:31.779><c> 2k</c><00:15:32.319><c> hit</c><00:15:32.589><c> but</c><00:15:33.279><c> we</c><00:15:33.610><c> have</c><00:15:33.819><c> to</c>
+time the character 2k hit but we have to
+modify<00:15:34.240><c> the</c><00:15:34.420><c> code</c><00:15:34.810><c> a</c><00:15:35.110><c> little</c><00:15:35.139><c> bit</c><00:15:35.620><c> to</c>
+modify the code a little bit to
+accommodate<00:15:36.939><c> for</c><00:15:37.149><c> our</c><00:15:37.569><c> tweens</c><00:15:38.350><c> start</c><00:15:39.089><c> we're</c>
+accommodate for our tweens start we're
+going<00:15:40.240><c> to</c><00:15:40.329><c> add</c><00:15:40.569><c> a</c><00:15:40.600><c> new</c><00:15:40.990><c> function</c><00:15:41.260><c> to</c><00:15:41.860><c> animate</c>
+going to add a new function to animate
+it's<00:15:42.540><c> the</c><00:15:42.899><c> value</c><00:15:43.559><c> on</c><00:15:43.799><c> our</c><00:15:44.489><c> texture</c><00:15:45.179><c> progress</c>
+it's the value on our texture progress
+and<00:15:45.869><c> on</c><00:15:46.049><c> the</c><00:15:46.199><c> counter</c><00:15:46.679><c> but</c><00:15:47.489><c> we're</c><00:15:47.910><c> going</c><00:15:48.089><c> to</c>
+and on the counter but we're going to
+use<00:15:48.509><c> some</c><00:15:48.749><c> kind</c><00:15:48.779><c> of</c><00:15:49.079><c> range</c><00:15:49.439><c> so</c><00:15:49.709><c> we're</c><00:15:49.859><c> going</c><00:15:50.009><c> to</c>
+use some kind of range so we're going to
+give<00:15:50.759><c> it</c><00:15:50.790><c> a</c><00:15:51.379><c> starting</c><00:15:52.379><c> and</c><00:15:52.619><c> an</c><00:15:52.889><c> endpoint</c><00:15:53.309><c> and</c>
+give it a starting and an endpoint and
+this<00:15:54.660><c> function</c><00:15:54.869><c> will</c><00:15:55.230><c> only</c><00:15:55.439><c> contain</c><00:15:56.100><c> the</c>
+this function will only contain the
+animation<00:15:57.179><c> so</c><00:15:57.359><c> let's</c><00:15:57.540><c> call</c><00:15:57.720><c> it</c><00:15:57.869><c> animates</c>
+animation so let's call it animates
+value<00:15:59.160><c> and</c><00:15:59.399><c> we'll</c><00:15:59.759><c> take</c><00:15:59.970><c> a</c><00:16:00.209><c> start</c><00:16:00.749><c> and</c><00:16:01.079><c> an</c><00:16:01.259><c> end</c>
+value and we'll take a start and an end
+value<00:16:02.389><c> we're</c><00:16:03.389><c> going</c><00:16:03.509><c> to</c><00:16:03.629><c> call</c><00:16:03.899><c> it</c><00:16:04.079><c> from</c><00:16:04.619><c> The</c>
+value we're going to call it from The
+Onion's<00:16:05.549><c> face</c><00:16:05.759><c> health</c><00:16:06.089><c> change</c><00:16:06.449><c> callback</c>
+Onion's face health change callback
+because<00:16:07.350><c> this</c><00:16:07.919><c> is</c><00:16:08.100><c> when</c><00:16:08.429><c> we</c><00:16:08.759><c> change</c><00:16:09.119><c> the</c>
+because this is when we change the
+health<00:16:09.660><c> and</c><00:16:09.959><c> we're</c><00:16:10.799><c> going</c><00:16:11.129><c> to</c><00:16:11.309><c> animate</c><00:16:11.699><c> from</c>
+health and we're going to animate from
+the<00:16:12.749><c> current</c><00:16:13.139><c> health</c><00:16:13.379><c> that</c><00:16:13.649><c> will</c><00:16:13.859><c> have</c><00:16:14.040><c> to</c>
+the current health that will have to
+stall<00:16:14.549><c> to</c><00:16:14.879><c> the</c><00:16:15.149><c> new</c><00:16:15.359><c> help</c><00:16:15.629><c> we</c><00:16:16.259><c> have</c><00:16:16.439><c> to</c><00:16:16.499><c> add</c><00:16:16.769><c> a</c>
+stall to the new help we have to add a
+new<00:16:17.519><c> variable</c><00:16:17.819><c> at</c><00:16:18.329><c> the</c><00:16:18.449><c> top</c><00:16:18.629><c> of</c><00:16:18.749><c> the</c><00:16:18.899><c> script</c>
+new variable at the top of the script
+Karen<00:16:19.769><c> health</c><00:16:20.040><c> it's</c><00:16:20.910><c> going</c><00:16:21.119><c> to</c><00:16:21.239><c> start</c><00:16:21.569><c> at</c><00:16:21.839><c> zero</c>
+Karen health it's going to start at zero
+when<00:16:23.100><c> the</c><00:16:23.339><c> health</c><00:16:23.879><c> changes</c><00:16:24.569><c> we're</c><00:16:24.989><c> going</c><00:16:25.199><c> to</c>
+when the health changes we're going to
+update<00:16:25.829><c> your</c><00:16:26.279><c> current</c><00:16:26.639><c> health</c><00:16:26.819><c> to</c><00:16:27.119><c> be</c><00:16:27.239><c> equal</c>
+update your current health to be equal
+to<00:16:27.899><c> the</c><00:16:28.199><c> new</c><00:16:28.379><c> health</c><00:16:28.619><c> now</c><00:16:29.279><c> because</c><00:16:29.759><c> we</c><00:16:29.939><c> have</c>
+to the new health now because we have
+both<00:16:30.689><c> the</c><00:16:30.959><c> current</c><00:16:31.139><c> help</c><00:16:31.439><c> and</c><00:16:31.679><c> the</c><00:16:31.799><c> help</c><00:16:31.980><c> we</c>
+both the current help and the help we
+can<00:16:32.699><c> automate</c><00:16:33.209><c> the</c><00:16:33.389><c> value</c><00:16:33.779><c> from</c><00:16:34.169><c> the</c><00:16:34.529><c> current</c>
+can automate the value from the current
+health<00:16:35.040><c> and</c><00:16:35.279><c> the</c><00:16:35.549><c> endpoints</c><00:16:36.209><c> will</c><00:16:36.480><c> always</c><00:16:36.989><c> be</c>
+health and the endpoints will always be
+the<00:16:37.529><c> new</c><00:16:37.769><c> health</c><00:16:38.009><c> we're</c><00:16:38.639><c> going</c><00:16:38.850><c> to</c><00:16:38.939><c> remove</c><00:16:39.329><c> the</c>
+the new health we're going to remove the
+line<00:16:39.809><c> where</c><00:16:40.230><c> we</c><00:16:40.439><c> change</c><00:16:40.769><c> the</c><00:16:41.069><c> texture</c>
+line where we change the texture
+progress<00:16:41.910><c> value</c><00:16:42.299><c> directly</c><00:16:42.899><c> to</c><00:16:43.199><c> animate</c><00:16:43.799><c> it</c>
+progress value directly to animate it
+now<00:16:44.220><c> in</c><00:16:44.879><c> our</c><00:16:45.089><c> animate</c><00:16:45.689><c> value</c><00:16:46.470><c> method</c><00:16:47.100><c> we're</c>
+now in our animate value method we're
+going<00:16:47.429><c> to</c><00:16:47.669><c> use</c><00:16:47.999><c> the</c><00:16:48.179><c> tween</c><00:16:48.480><c> node</c><00:16:48.689><c> to</c>
+going to use the tween node to
+interpolate<00:16:50.309><c> our</c><00:16:50.669><c> value</c><00:16:51.329><c> property</c><00:16:51.809><c> on</c><00:16:52.049><c> the</c>
+interpolate our value property on the
+light<00:16:53.189><c> gauge</c><00:16:53.899><c> so</c><00:16:54.899><c> we</c><00:16:55.049><c> have</c><00:16:55.259><c> to</c><00:16:55.739><c> animate</c><00:16:56.129><c> the</c>
+light gauge so we have to animate the
+texture<00:16:57.600><c> progress</c><00:16:58.019><c> note</c><00:16:58.529><c> we're</c><00:16:59.309><c> going</c><00:16:59.579><c> to</c>
+texture progress note we're going to
+pass<00:17:00.089><c> in</c><00:17:00.389><c> the</c><00:17:00.569><c> value</c><00:17:01.199><c> property</c><00:17:01.739><c> that's</c><00:17:02.100><c> the</c>
+pass in the value property that's the
+one<00:17:02.489><c> we</c><00:17:02.699><c> want</c><00:17:02.970><c> to</c><00:17:03.179><c> modify</c><00:17:03.539><c> and</c><00:17:03.989><c> then</c><00:17:04.559><c> for</c><00:17:04.799><c> the</c>
+one we want to modify and then for the
+initial<00:17:05.549><c> and</c><00:17:05.789><c> final</c><00:17:05.850><c> value</c><00:17:06.689><c> we're</c><00:17:07.019><c> going</c><00:17:07.230><c> to</c>
+initial and final value we're going to
+use<00:17:07.529><c> start</c><00:17:07.949><c> and</c><00:17:08.220><c> end</c><00:17:08.429><c> or</c><00:17:08.970><c> the</c><00:17:09.209><c> duration</c><00:17:09.510><c> let's</c>
+use start and end or the duration let's
+enter<00:17:10.799><c> something</c><00:17:11.429><c> small</c><00:17:11.970><c> to</c><00:17:12.149><c> start</c><00:17:12.449><c> with</c><00:17:12.720><c> 0.3</c>
+enter something small to start with 0.3
+seconds<00:17:14.130><c> for</c><00:17:14.370><c> instance</c><00:17:14.730><c> and</c><00:17:14.939><c> for</c><00:17:15.870><c> the</c>
+seconds for instance and for the
+transition<00:17:16.709><c> type</c><00:17:16.889><c> on</c><00:17:17.159><c> the</c><00:17:17.610><c> demo</c><00:17:17.819><c> I've</c><00:17:18.120><c> been</c>
+transition type on the demo I've been
+using<00:17:18.600><c> elastic</c><00:17:19.230><c> which</c><00:17:19.829><c> will</c><00:17:20.309><c> give</c><00:17:20.549><c> the</c>
+using elastic which will give the
+animation<00:17:21.419><c> little</c><00:17:21.839><c> bit</c><00:17:22.019><c> of</c><00:17:22.199><c> bounciness</c><00:17:22.649><c> I</c>
+animation little bit of bounciness I
+just<00:17:23.760><c> recommend</c><00:17:24.269><c> to</c><00:17:24.419><c> pick</c><00:17:24.569><c> anything</c><00:17:24.959><c> but</c>
+just recommend to pick anything but
+linear<00:17:26.309><c> so</c><00:17:26.850><c> you</c><00:17:26.909><c> can</c><00:17:27.059><c> use</c><00:17:27.299><c> any</c><00:17:27.600><c> transition</c>
+linear so you can use any transition
+that's<00:17:28.830><c> going</c><00:17:29.130><c> to</c><00:17:29.309><c> add</c><00:17:29.610><c> a</c><00:17:30.120><c> bit</c><00:17:30.389><c> of</c><00:17:30.419><c> easing</c><00:17:31.080><c> to</c>
+that's going to add a bit of easing to
+your<00:17:31.620><c> motion</c><00:17:32.090><c> elastic</c><00:17:33.090><c> is</c><00:17:33.269><c> really</c><00:17:33.659><c> bouncy</c><00:17:34.169><c> and</c>
+your motion elastic is really bouncy and
+we<00:17:34.889><c> wanted</c><00:17:35.279><c> to</c><00:17:35.429><c> ease</c><00:17:35.700><c> out</c><00:17:36.029><c> this</c><00:17:36.720><c> is</c><00:17:36.870><c> going</c><00:17:37.080><c> to</c>
+we wanted to ease out this is going to
+make<00:17:37.500><c> the</c><00:17:37.740><c> animation</c><00:17:38.190><c> start</c><00:17:38.850><c> straightaway</c>
+make the animation start straightaway
+and<00:17:39.929><c> bounce</c><00:17:40.440><c> as</c><00:17:40.799><c> it</c><00:17:41.159><c> lands</c><00:17:41.730><c> on</c><00:17:41.850><c> the</c><00:17:42.210><c> end</c><00:17:42.510><c> value</c>
+and bounce as it lands on the end value
+but<00:17:44.190><c> that</c><00:17:44.220><c> we</c><00:17:44.880><c> have</c><00:17:45.090><c> to</c><00:17:45.120><c> start</c><00:17:45.750><c> our</c><00:17:46.230><c> tween</c>
+but that we have to start our tween
+we're<00:17:47.370><c> going</c><00:17:47.669><c> to</c><00:17:47.789><c> get</c><00:17:47.970><c> the</c><00:17:48.090><c> tween</c><00:17:48.360><c> node</c><00:17:48.539><c> again</c>
+we're going to get the tween node again
+and<00:17:49.110><c> call</c><00:17:49.289><c> it</c><00:17:49.440><c> start</c><00:17:49.980><c> method</c><00:17:50.429><c> and</c><00:17:50.580><c> you</c><00:17:50.820><c> can</c>
+and call it start method and you can
+already<00:17:51.210><c> try</c><00:17:51.960><c> your</c><00:17:52.409><c> animation</c><00:17:53.070><c> in</c><00:17:53.279><c> the</c><00:17:53.429><c> game</c>
+already try your animation in the game
+it<00:17:53.970><c> should</c><00:17:54.210><c> work</c><00:17:54.389><c> you</c><00:17:54.899><c> get</c><00:17:55.049><c> that</c><00:17:55.200><c> little</c>
+it should work you get that little
+bouncy<00:17:56.220><c> item</c>
+bouncy item
+on<00:17:56.909><c> the</c><00:17:57.330><c> gauge</c><00:17:57.590><c> because</c><00:17:58.590><c> I'm</c><00:17:58.860><c> using</c><00:17:59.100><c> the</c>
+on the gauge because I'm using the
+elastic<00:17:59.759><c> transition</c><00:18:00.629><c> 0.3</c><00:18:01.320><c> second</c><00:18:01.769><c> is</c><00:18:01.980><c> a</c>
+elastic transition 0.3 second is a
+little<00:18:03.119><c> too</c><00:18:03.419><c> small</c><00:18:03.779><c> so</c><00:18:04.049><c> can</c><00:18:04.499><c> increase</c><00:18:05.039><c> the</c>
+little too small so can increase the
+value<00:18:05.340><c> and</c><00:18:05.759><c> try</c><00:18:06.119><c> again</c><00:18:06.619><c> unfortunately</c>
+value and try again unfortunately
+there's<00:18:07.889><c> no</c><00:18:08.070><c> way</c><00:18:08.100><c> to</c><00:18:08.279><c> control</c><00:18:09.090><c> the</c><00:18:09.539><c> amount</c><00:18:10.169><c> of</c>
+there's no way to control the amount of
+elastic<00:18:11.249><c> all</c><00:18:11.490><c> the</c><00:18:11.669><c> amount</c><00:18:12.090><c> of</c><00:18:12.269><c> transition</c><00:18:12.960><c> or</c>
+elastic all the amount of transition or
+easing<00:18:13.830><c> in</c><00:18:14.009><c> godo</c><00:18:14.460><c> at</c><00:18:14.669><c> the</c><00:18:14.789><c> moment</c><00:18:15.179><c> if</c><00:18:15.360><c> it's</c><00:18:15.600><c> too</c>
+easing in godo at the moment if it's too
+much<00:18:15.869><c> you</c><00:18:16.259><c> just</c><00:18:16.559><c> have</c><00:18:16.710><c> to</c><00:18:16.889><c> use</c><00:18:17.340><c> a</c><00:18:17.369><c> different</c>
+much you just have to use a different
+easing<00:18:18.350><c> now</c><00:18:19.350><c> for</c><00:18:19.619><c> the</c><00:18:19.740><c> counter</c><00:18:20.249><c> we</c><00:18:20.700><c> have</c><00:18:21.119><c> to</c>
+easing now for the counter we have to
+set<00:18:21.990><c> the</c><00:18:22.230><c> value</c><00:18:22.710><c> using</c><00:18:23.159><c> a</c><00:18:23.549><c> string</c><00:18:24.090><c> so</c><00:18:24.899><c> we</c><00:18:25.019><c> can't</c>
+set the value using a string so we can't
+interpolate<00:18:25.889><c> the</c><00:18:26.279><c> tax</c><00:18:26.549><c> property</c><00:18:26.850><c> directly</c>
+interpolate the tax property directly
+we're<00:18:27.990><c> going</c><00:18:28.200><c> to</c><00:18:28.350><c> need</c><00:18:28.559><c> a</c><00:18:28.799><c> method</c><00:18:29.340><c> let's</c>
+we're going to need a method let's
+create<00:18:30.149><c> that</c><00:18:30.210><c> we're</c><00:18:31.139><c> going</c><00:18:31.320><c> to</c><00:18:31.409><c> call</c><00:18:31.830><c> it</c><00:18:32.039><c> set</c>
+create that we're going to call it set
+counts<00:18:33.690><c> texts</c><00:18:34.259><c> and</c><00:18:34.440><c> we're</c><00:18:35.340><c> going</c><00:18:35.549><c> to</c><00:18:35.580><c> pass</c><00:18:35.909><c> in</c>
+counts texts and we're going to pass in
+just<00:18:36.990><c> a</c><00:18:37.200><c> value</c><00:18:37.860><c> maybe</c><00:18:38.159><c> and</c><00:18:38.490><c> I'll</c><00:18:39.389><c> cut</c><00:18:39.960><c> the</c><00:18:40.200><c> line</c>
+just a value maybe and I'll cut the line
+where<00:18:40.679><c> we</c><00:18:41.039><c> edited</c><00:18:41.580><c> the</c><00:18:41.639><c> count</c><00:18:42.210><c> text</c><00:18:42.539><c> here</c><00:18:43.049><c> now</c>
+where we edited the count text here now
+we're<00:18:43.769><c> going</c><00:18:43.799><c> to</c><00:18:44.039><c> calculate</c><00:18:44.460><c> or</c><00:18:45.269><c> set</c><00:18:46.019><c> the</c><00:18:46.320><c> text</c>
+we're going to calculate or set the text
+little<00:18:47.070><c> differently</c><00:18:47.549><c> I'm</c><00:18:47.970><c> going</c><00:18:48.570><c> to</c><00:18:48.690><c> use</c>
+little differently I'm going to use
+functions<00:18:49.919><c> directly</c><00:18:50.399><c> to</c><00:18:50.970><c> build</c><00:18:51.210><c> the</c><00:18:51.360><c> text</c>
+functions directly to build the text
+we're<00:18:52.230><c> going</c><00:18:52.440><c> to</c><00:18:52.619><c> animate</c><00:18:53.039><c> this</c><00:18:53.429><c> value</c><00:18:53.850><c> with</c>
+we're going to animate this value with
+the<00:18:54.269><c> tween</c><00:18:54.570><c> node</c><00:18:54.779><c> the</c><00:18:55.019><c> thing</c><00:18:55.230><c> is</c><00:18:55.379><c> tween</c><00:18:55.769><c> is</c>
+the tween node the thing is tween is
+going<00:18:56.190><c> to</c><00:18:56.340><c> return</c><00:18:56.850><c> floating</c><00:18:57.299><c> point</c><00:18:57.570><c> values</c><00:18:57.990><c> so</c>
+going to return floating point values so
+we<00:18:58.619><c> may</c><00:18:58.889><c> may</c><00:18:59.519><c> get</c><00:18:59.730><c> a</c><00:18:59.970><c> very</c><00:19:00.299><c> long</c><00:19:00.539><c> floating</c>
+we may may get a very long floating
+point<00:19:01.350><c> value</c><00:19:01.769><c> so</c><00:19:02.070><c> we're</c><00:19:02.490><c> going</c><00:19:02.639><c> to</c><00:19:02.820><c> round</c><00:19:03.090><c> it</c>
+point value so we're going to round it
+first<00:19:03.899><c> and</c><00:19:04.460><c> because</c><00:19:05.460><c> we're</c><00:19:06.059><c> going</c><00:19:06.570><c> to</c><00:19:06.809><c> set</c><00:19:07.080><c> it</c>
+first and because we're going to set it
+on<00:19:07.350><c> the</c><00:19:07.559><c> text</c><00:19:08.100><c> property</c><00:19:08.669><c> of</c><00:19:08.700><c> our</c><00:19:08.940><c> number</c><00:19:09.899><c> node</c>
+on the text property of our number node
+we<00:19:10.740><c> need</c><00:19:10.950><c> to</c><00:19:11.070><c> convert</c><00:19:11.549><c> this</c><00:19:11.879><c> value</c><00:19:12.360><c> to</c><00:19:12.720><c> a</c>
+we need to convert this value to a
+string<00:19:13.230><c> then</c><00:19:14.070><c> you</c><00:19:14.549><c> can</c><00:19:14.700><c> use</c><00:19:14.970><c> plus</c><00:19:15.570><c> to</c><00:19:15.929><c> add</c><00:19:16.169><c> to</c><00:19:16.799><c> a</c>
+string then you can use plus to add to a
+string<00:19:17.340><c> we're</c><00:19:17.850><c> going</c><00:19:18.059><c> to</c><00:19:18.240><c> add</c><00:19:18.450><c> a</c><00:19:18.840><c> forward</c>
+string we're going to add a forward
+slash<00:19:19.619><c> and</c><00:19:20.070><c> we're</c><00:19:20.820><c> going</c><00:19:21.059><c> to</c><00:19:21.119><c> also</c><00:19:21.509><c> convert</c>
+slash and we're going to also convert
+our<00:19:22.940><c> maximum</c><00:19:23.940><c> value</c><00:19:24.149><c> to</c><00:19:25.139><c> a</c><00:19:25.169><c> string</c><00:19:25.289><c> and</c><00:19:25.919><c> this</c>
+our maximum value to a string and this
+way<00:19:27.059><c> we</c><00:19:27.269><c> will</c><00:19:27.419><c> get</c><00:19:27.629><c> our</c><00:19:28.110><c> rounded</c><00:19:29.070><c> number</c><00:19:29.610><c> as</c><00:19:29.879><c> we</c>
+way we will get our rounded number as we
+got<00:19:30.840><c> before</c><00:19:31.289><c> but</c><00:19:31.619><c> we</c><00:19:31.799><c> can</c><00:19:31.980><c> animate</c><00:19:32.399><c> it</c><00:19:32.749><c> using</c>
+got before but we can animate it using
+the<00:19:33.929><c> tween</c><00:19:34.200><c> node</c><00:19:34.409><c> it's</c><00:19:34.830><c> very</c><00:19:35.100><c> similar</c><00:19:35.460><c> to</c>
+the tween node it's very similar to
+interpolating<00:19:36.419><c> a</c><00:19:36.809><c> property</c><00:19:37.470><c> except</c><00:19:38.460><c> we</c><00:19:39.059><c> have</c>
+interpolating a property except we have
+to<00:19:39.480><c> use</c><00:19:39.690><c> interpolate</c><00:19:40.470><c> method</c><00:19:41.279><c> and</c><00:19:41.690><c> we're</c>
+to use interpolate method and we're
+going<00:19:42.929><c> to</c><00:19:43.009><c> interpolate</c><00:19:44.009><c> the</c><00:19:44.399><c> method</c><00:19:44.820><c> on</c><00:19:44.970><c> self</c>
+going to interpolate the method on self
+as<00:19:46.019><c> we're</c><00:19:46.649><c> using</c><00:19:46.889><c> this</c><00:19:47.580><c> nodes</c><00:19:47.909><c> set</c><00:19:48.509><c> count</c><00:19:48.899><c> text</c>
+as we're using this nodes set count text
+method<00:19:49.980><c> let's</c><00:19:50.730><c> pass</c><00:19:51.090><c> it</c><00:19:51.119><c> in</c><00:19:51.570><c> as</c><00:19:51.749><c> a</c><00:19:51.809><c> second</c>
+method let's pass it in as a second
+argument<00:19:52.799><c> and</c><00:19:53.399><c> the</c><00:19:53.879><c> rest</c><00:19:54.240><c> of</c><00:19:54.539><c> the</c><00:19:54.840><c> animation</c>
+argument and the rest of the animation
+is<00:19:55.559><c> going</c><00:19:55.860><c> to</c><00:19:56.070><c> be</c><00:19:56.249><c> similar</c><00:19:56.700><c> so</c><00:19:57.299><c> you</c><00:19:57.330><c> can</c><00:19:57.509><c> copy</c>
+is going to be similar so you can copy
+and<00:19:57.899><c> paste</c><00:19:58.049><c> all</c><00:19:58.470><c> the</c><00:19:58.799><c> parameters</c><00:19:59.309><c> but</c><00:19:59.940><c> we're</c>
+and paste all the parameters but we're
+not<00:20:00.450><c> going</c><00:20:00.659><c> to</c><00:20:00.720><c> use</c><00:20:00.840><c> elastic</c><00:20:01.350><c> transition</c>
+not going to use elastic transition
+because<00:20:02.639><c> it's</c><00:20:02.820><c> going</c><00:20:03.149><c> to</c><00:20:03.269><c> make</c><00:20:03.480><c> the</c><00:20:03.749><c> number</c>
+because it's going to make the number
+value<00:20:04.379><c> bounce</c><00:20:04.879><c> instead</c><00:20:05.879><c> we</c><00:20:06.359><c> can</c><00:20:06.509><c> use</c>
+value bounce instead we can use
+something<00:20:07.590><c> like</c><00:20:07.799><c> quartz</c><00:20:08.759><c> or</c>
+something like quartz or
+financial<00:20:10.300><c> to</c><00:20:10.780><c> make</c><00:20:10.960><c> the</c><00:20:11.080><c> number</c><00:20:11.440><c> update</c>
+financial to make the number update
+quickly<00:20:12.490><c> at</c><00:20:12.640><c> first</c><00:20:12.670><c> and</c><00:20:13.210><c> slow</c><00:20:13.750><c> down</c><00:20:14.080><c> as</c><00:20:14.320><c> it</c>
+quickly at first and slow down as it
+gets<00:20:14.920><c> closer</c><00:20:15.250><c> to</c><00:20:15.490><c> the</c><00:20:15.670><c> end</c><00:20:15.940><c> value</c><00:20:16.390><c> and</c><00:20:16.810><c> also</c>
+gets closer to the end value and also
+modify<00:20:17.650><c> the</c><00:20:17.790><c> duration</c><00:20:18.790><c> for</c><00:20:19.000><c> this</c><00:20:19.180><c> one</c><00:20:19.420><c> could</c>
+modify the duration for this one could
+be<00:20:20.020><c> a</c><00:20:20.200><c> little</c><00:20:20.440><c> faster</c><00:20:21.190><c> than</c><00:20:21.550><c> our</c><00:20:22.030><c> elastic</c>
+be a little faster than our elastic
+transition<00:20:23.410><c> and</c><00:20:23.620><c> the</c><00:20:24.550><c> last</c><00:20:24.730><c> thing</c><00:20:24.940><c> we</c><00:20:25.060><c> want</c><00:20:25.330><c> to</c>
+transition and the last thing we want to
+do<00:20:25.690><c> is</c><00:20:25.960><c> to</c><00:20:26.230><c> play</c><00:20:26.500><c> our</c><00:20:26.860><c> animation</c><00:20:27.340><c> to</c><00:20:28.210><c> make</c><00:20:28.750><c> the</c>
+do is to play our animation to make the
+counter<00:20:29.440><c> look</c><00:20:29.770><c> red</c><00:20:30.100><c> shake</c><00:20:30.640><c> animation</c><00:20:31.180><c> but</c><00:20:31.480><c> we</c>
+counter look red shake animation but we
+only<00:20:31.870><c> want</c><00:20:32.020><c> the</c><00:20:32.680><c> element</c><00:20:33.160><c> to</c><00:20:33.400><c> shake</c><00:20:33.700><c> when</c><00:20:33.970><c> the</c>
+only want the element to shake when the
+character<00:20:34.510><c> takes</c><00:20:34.810><c> a</c><00:20:34.990><c> hit</c><00:20:35.200><c> it'd</c><00:20:35.440><c> be</c><00:20:35.860><c> character</c>
+character takes a hit it'd be character
+gains<00:20:36.820><c> health</c><00:20:37.240><c> we</c><00:20:37.600><c> don't</c><00:20:37.810><c> want</c><00:20:38.020><c> this</c><00:20:38.230><c> red</c>
+gains health we don't want this red
+animation<00:20:39.280><c> we</c><00:20:39.430><c> may</c><00:20:39.610><c> want</c><00:20:39.970><c> a</c><00:20:40.150><c> green</c><00:20:40.660><c> healing</c>
+animation we may want a green healing
+animation<00:20:41.950><c> instead</c><00:20:42.480><c> we</c><00:20:43.480><c> have</c><00:20:43.720><c> our</c><00:20:43.840><c> start</c><00:20:44.290><c> and</c>
+animation instead we have our start and
+end<00:20:44.770><c> value</c><00:20:45.400><c> so</c><00:20:45.640><c> we</c><00:20:45.760><c> can</c><00:20:45.910><c> check</c><00:20:46.180><c> that</c><00:20:46.240><c> the</c><00:20:47.140><c> end</c>
+end value so we can check that the end
+value<00:20:48.100><c> is</c><00:20:48.280><c> lower</c><00:20:48.880><c> than</c><00:20:49.300><c> the</c><00:20:49.450><c> starting</c><00:20:49.990><c> value</c>
+value is lower than the starting value
+meaning<00:20:50.860><c> the</c><00:20:51.100><c> character</c><00:20:51.550><c> lost</c><00:20:51.850><c> health</c><00:20:52.180><c> so</c><00:20:52.540><c> in</c>
+meaning the character lost health so in
+this<00:20:52.840><c> case</c><00:20:53.110><c> we</c><00:20:53.590><c> can</c><00:20:53.770><c> get</c><00:20:53.950><c> the</c><00:20:54.190><c> animation</c>
+this case we can get the animation
+player<00:20:55.120><c> and</c><00:20:55.680><c> lay</c><00:20:56.680><c> our</c><00:20:57.330><c> shape</c><00:20:58.330><c> animation</c><00:20:59.050><c> you</c>
+player and lay our shape animation you
+can<00:20:59.500><c> try</c><00:20:59.890><c> the</c><00:20:59.950><c> game</c><00:21:00.220><c> now</c><00:21:00.610><c> and</c><00:21:00.850><c> see</c><00:21:01.630><c> all</c><00:21:01.900><c> your</c>
+can try the game now and see all your
+animations<00:21:02.980><c> lay</c><00:21:03.460><c> in</c><00:21:03.730><c> parallel</c><00:21:04.390><c> the</c><00:21:04.780><c> key</c>
+animations lay in parallel the key
+takeaway<00:21:05.500><c> here</c><00:21:05.530><c> is</c><00:21:05.980><c> that</c><00:21:06.070><c> our</c><00:21:06.600><c> animation</c><00:21:07.600><c> on</c>
+takeaway here is that our animation on
+the<00:21:08.080><c> UI</c><00:21:08.260><c> just</c><00:21:08.860><c> takes</c><00:21:09.340><c> the</c><00:21:09.610><c> values</c><00:21:10.120><c> that</c><00:21:10.600><c> we</c><00:21:10.990><c> got</c>
+the UI just takes the values that we got
+from<00:21:11.770><c> the</c><00:21:11.950><c> health</c><00:21:12.160><c> node</c><00:21:12.430><c> it</c><00:21:12.790><c> just</c><00:21:13.090><c> works</c><00:21:13.600><c> with</c>
+from the health node it just works with
+them<00:21:14.110><c> we</c><00:21:14.740><c> don't</c><00:21:14.980><c> change</c><00:21:15.340><c> the</c><00:21:15.640><c> states</c><00:21:16.000><c> of</c><00:21:16.300><c> the</c>
+them we don't change the states of the
+interface<00:21:17.020><c> the</c><00:21:17.320><c> animation</c><00:21:18.070><c> is</c><00:21:18.250><c> a</c><00:21:18.310><c> reaction</c><00:21:19.150><c> to</c>
+interface the animation is a reaction to
+a<00:21:19.510><c> change</c><00:21:20.020><c> in</c><00:21:20.320><c> the</c><00:21:20.830><c> interfaces</c><00:21:21.520><c> state</c><00:21:22.230><c> this</c>
+a change in the interfaces state this
+tutorial<00:21:23.710><c> is</c><00:21:23.830><c> part</c><00:21:24.070><c> of</c><00:21:24.400><c> a</c><00:21:24.610><c> series</c><00:21:24.940><c> of</c><00:21:25.150><c> a</c><00:21:25.480><c> free</c>
+tutorial is part of a series of a free
+stretch<00:21:26.080><c> goal</c><00:21:26.350><c> from</c><00:21:26.620><c> my</c><00:21:27.220><c> previous</c>
+stretch goal from my previous
+Kickstarter<00:21:28.480><c> you</c><00:21:29.080><c> can</c><00:21:29.230><c> find</c><00:21:29.530><c> a</c><00:21:29.770><c> link</c><00:21:30.100><c> to</c><00:21:30.220><c> the</c>
+Kickstarter you can find a link to the
+full<00:21:30.730><c> series</c><00:21:31.030><c> on</c><00:21:31.510><c> the</c><00:21:31.810><c> screen</c><00:21:32.110><c> in</c><00:21:32.380><c> the</c>
+full series on the screen in the
+description<00:21:33.190><c> and</c><00:21:33.430><c> now</c><00:21:34.000><c> GD</c><00:21:34.480><c> Quest</c><00:21:34.720><c> has</c><00:21:34.930><c> a</c>
+description and now GD Quest has a
+patreon<00:21:35.740><c> page</c><00:21:36.010><c> to</c><00:21:36.040><c> help</c><00:21:36.730><c> fund</c><00:21:37.090><c> more</c><00:21:37.600><c> content</c>
+patreon page to help fund more content
+to<00:21:38.260><c> keep</c><00:21:38.680><c> the</c><00:21:38.860><c> channel</c><00:21:39.250><c> alive</c><00:21:39.580><c> please</c><00:21:40.090><c> check</c>
+to keep the channel alive please check
+it<00:21:40.540><c> out</c><00:21:40.660><c> that</c><00:21:41.290><c> said</c><00:21:41.620><c> be</c><00:21:42.070><c> creative</c><00:21:42.220><c> have</c><00:21:42.730><c> fun</c>
+it out that said be creative have fun
+and<00:21:43.210><c> see</c><00:21:43.840><c> you</c><00:21:43.990><c> in</c><00:21:44.200><c> the</c><00:21:44.470><c> next</c><00:21:44.710><c> one</c><00:21:44.860><c> bye</c><00:21:45.070><c> bye</c>

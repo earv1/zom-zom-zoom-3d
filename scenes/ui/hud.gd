@@ -14,6 +14,7 @@ extends CanvasLayer
 
 var _car_boost: CarBoost
 var _car: RigidBody3D
+var _health_tween: Tween
 
 
 func _ready() -> void:
@@ -68,12 +69,21 @@ func _update_boost_bar() -> void:
 
 func _on_health_changed(current: int, maximum: int) -> void:
 	_health_bar.max_value = maximum
-	_health_bar.value = current
+	var took_damage := current < _health_bar.value
+	if _health_tween:
+		_health_tween.kill()
+	_health_tween = create_tween()
+	_health_tween.tween_property(_health_bar, "value", float(current), 0.4) \
+		.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	if took_damage:
+		_health_bar.modulate = Color(2.0, 0.4, 0.4)
+		create_tween().tween_property(_health_bar, "modulate", Color.WHITE, 0.4)
 
 
 func _on_xp_changed(current: int, to_next: int) -> void:
 	_xp_bar.max_value = to_next
-	_xp_bar.value = current
+	create_tween().tween_property(_xp_bar, "value", float(current), 0.25) \
+		.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 
 
 func _on_level_changed(new_level: int) -> void:

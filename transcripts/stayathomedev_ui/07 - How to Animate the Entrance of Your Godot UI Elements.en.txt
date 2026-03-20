@@ -1,0 +1,888 @@
+Kind: captions
+Language: en
+ 
+[Music]
+hey<00:00:03.560><c> everyone</c><00:00:03.879><c> welcome</c><00:00:04.160><c> to</c><00:00:04.359><c> another</c><00:00:04.720><c> user</c>
+hey everyone welcome to another user
+interface<00:00:05.680><c> tutorial</c><00:00:06.160><c> for</c><00:00:06.399><c> the</c><00:00:06.600><c> Gotto</c><00:00:06.960><c> engine</c>
+interface tutorial for the Gotto engine
+we're<00:00:07.560><c> going</c><00:00:07.640><c> to</c><00:00:07.720><c> be</c><00:00:07.839><c> doing</c><00:00:08.240><c> one</c><00:00:08.480><c> more</c>
+we're going to be doing one more
+animation<00:00:09.480><c> based</c><00:00:09.880><c> tutorial</c><00:00:10.800><c> before</c><00:00:11.080><c> we</c><00:00:11.240><c> get</c>
+animation based tutorial before we get
+into<00:00:11.719><c> some</c><00:00:12.000><c> other</c><00:00:12.599><c> UI</c><00:00:13.120><c> stuff</c><00:00:13.480><c> for</c><00:00:13.639><c> this</c><00:00:13.759><c> one</c>
+into some other UI stuff for this one
+we're<00:00:14.000><c> going</c><00:00:14.080><c> to</c><00:00:14.200><c> create</c><00:00:14.440><c> an</c><00:00:14.679><c> animation</c><00:00:15.599><c> when</c>
+we're going to create an animation when
+we<00:00:16.080><c> first</c><00:00:16.480><c> load</c><00:00:16.960><c> our</c><00:00:17.240><c> control</c><00:00:17.600><c> noes</c><00:00:18.279><c> this</c>
+we first load our control noes this
+could<00:00:18.640><c> be</c><00:00:19.039><c> when</c><00:00:19.359><c> the</c><00:00:19.760><c> uh</c><00:00:19.920><c> the</c><00:00:20.000><c> menu</c><00:00:20.400><c> pops</c><00:00:20.640><c> up</c>
+could be when the uh the menu pops up
+you<00:00:21.000><c> have</c><00:00:21.119><c> it</c><00:00:21.400><c> scale</c><00:00:21.880><c> up</c><00:00:22.199><c> or</c><00:00:22.439><c> fade</c><00:00:22.800><c> in</c><00:00:23.199><c> and</c><00:00:23.320><c> to</c>
+you have it scale up or fade in and to
+do<00:00:23.640><c> this</c><00:00:23.760><c> we</c><00:00:23.840><c> need</c><00:00:24.039><c> to</c><00:00:24.160><c> do</c><00:00:24.320><c> a</c><00:00:24.439><c> couple</c><00:00:24.680><c> of</c><00:00:24.840><c> things</c>
+do this we need to do a couple of things
+and<00:00:25.279><c> add</c><00:00:25.480><c> some</c><00:00:25.640><c> more</c><00:00:26.000><c> logic</c><00:00:26.640><c> to</c><00:00:26.880><c> our</c><00:00:27.160><c> animation</c>
+and add some more logic to our animation
+component<00:00:28.160><c> and</c><00:00:28.279><c> before</c><00:00:28.480><c> I</c><00:00:28.560><c> forget</c><00:00:29.039><c> as</c><00:00:29.160><c> always</c>
+component and before I forget as always
+if<00:00:29.519><c> you</c><00:00:29.640><c> want</c><00:00:29.759><c> to</c><00:00:30.039><c> just</c><00:00:30.279><c> grab</c><00:00:30.560><c> the</c><00:00:30.679><c> source</c>
+if you want to just grab the source
+files<00:00:31.480><c> and</c><00:00:31.640><c> and</c><00:00:31.800><c> take</c><00:00:31.960><c> it</c><00:00:32.119><c> from</c><00:00:32.320><c> there</c><00:00:32.559><c> you</c><00:00:32.640><c> can</c>
+files and and take it from there you can
+do<00:00:33.160><c> that</c><00:00:33.760><c> on</c><00:00:34.000><c> my</c><00:00:34.239><c> patreon</c><00:00:34.960><c> and</c><00:00:35.079><c> the</c><00:00:35.160><c> link</c><00:00:35.360><c> for</c>
+do that on my patreon and the link for
+that<00:00:35.680><c> is</c><00:00:35.800><c> in</c><00:00:35.920><c> the</c><00:00:36.079><c> description</c><00:00:36.719><c> there's</c><00:00:36.920><c> also</c>
+that is in the description there's also
+tons<00:00:37.399><c> of</c><00:00:37.559><c> other</c><00:00:37.719><c> stuff</c><00:00:38.000><c> on</c><00:00:38.200><c> there</c><00:00:38.440><c> from</c><00:00:38.640><c> the</c>
+tons of other stuff on there from the
+firstperson<00:00:39.280><c> shooter</c><00:00:39.680><c> tutorial</c><00:00:40.160><c> series</c><00:00:40.840><c> and</c>
+firstperson shooter tutorial series and
+some<00:00:41.200><c> other</c><00:00:41.360><c> things</c><00:00:41.520><c> that</c><00:00:41.640><c> I'm</c><00:00:41.760><c> working</c><00:00:42.000><c> on</c><00:00:42.280><c> so</c>
+some other things that I'm working on so
+check<00:00:43.079><c> that</c><00:00:43.239><c> out</c><00:00:43.480><c> now</c><00:00:43.640><c> before</c><00:00:43.879><c> we</c><00:00:44.120><c> jump</c><00:00:44.440><c> into</c>
+check that out now before we jump into
+the<00:00:45.399><c> the</c><00:00:45.559><c> logic</c><00:00:46.079><c> that</c><00:00:46.160><c> we're</c><00:00:46.360><c> adding</c><00:00:46.760><c> here</c>
+the the logic that we're adding here
+we're<00:00:47.399><c> going</c><00:00:47.520><c> to</c><00:00:47.680><c> create</c><00:00:48.000><c> some</c><00:00:48.320><c> some</c>
+we're going to create some some
+variables<00:00:49.079><c> and</c><00:00:49.199><c> then</c><00:00:49.320><c> we'll</c><00:00:49.640><c> be</c><00:00:49.760><c> able</c><00:00:49.960><c> to</c><00:00:50.120><c> work</c>
+variables and then we'll be able to work
+with<00:00:50.520><c> those</c><00:00:50.920><c> now</c><00:00:51.000><c> if</c><00:00:51.120><c> we</c><00:00:51.239><c> have</c><00:00:51.360><c> an</c><00:00:51.520><c> animation</c>
+with those now if we have an animation
+that<00:00:52.239><c> we</c><00:00:52.359><c> want</c><00:00:52.559><c> to</c><00:00:52.800><c> run</c><00:00:53.640><c> whenever</c><00:00:54.280><c> something</c>
+that we want to run whenever something
+first<00:00:55.000><c> loads</c><00:00:55.440><c> into</c><00:00:55.680><c> our</c><00:00:55.840><c> scene</c><00:00:56.640><c> we</c><00:00:56.760><c> want</c><00:00:56.879><c> to</c><00:00:56.960><c> be</c>
+first loads into our scene we want to be
+able<00:00:57.199><c> to</c><00:00:57.359><c> set</c><00:00:57.640><c> that</c><00:00:57.840><c> with</c><00:00:58.199><c> a</c><00:00:58.320><c> Boolean</c><00:00:58.719><c> so</c><00:00:58.840><c> we're</c>
+able to set that with a Boolean so we're
+going<00:00:59.000><c> to</c><00:00:59.120><c> add</c><00:00:59.239><c> another</c><00:00:59.519><c> export</c><00:01:00.199><c> variable</c>
+going to add another export variable
+here<00:01:01.359><c> at</c><00:01:01.480><c> the</c><00:01:01.680><c> top</c><00:01:01.960><c> in</c><00:01:02.079><c> our</c><00:01:02.559><c> settings</c><00:01:03.079><c> or</c><00:01:03.359><c> our</c>
+here at the top in our settings or our
+our<00:01:03.840><c> options</c><00:01:04.280><c> group</c><00:01:04.600><c> rather</c><00:01:05.519><c> and</c><00:01:05.640><c> we're</c><00:01:05.880><c> call</c>
+our options group rather and we're call
+this<00:01:07.600><c> enter</c><00:01:08.119><c> animation</c><00:01:08.840><c> and</c><00:01:09.000><c> this</c><00:01:09.119><c> is</c><00:01:09.280><c> just</c>
+this enter animation and this is just
+going<00:01:09.520><c> to</c><00:01:09.680><c> be</c><00:01:09.880><c> a</c><00:01:10.240><c> Boolean</c><00:01:11.240><c> we'll</c><00:01:11.400><c> set</c><00:01:11.560><c> this</c><00:01:11.680><c> to</c>
+going to be a Boolean we'll set this to
+false<00:01:12.360><c> by</c><00:01:12.560><c> default</c><00:01:13.400><c> so</c><00:01:13.520><c> we</c><00:01:13.640><c> can</c><00:01:13.759><c> turn</c><00:01:14.000><c> this</c><00:01:14.200><c> on</c>
+false by default so we can turn this on
+and<00:01:14.759><c> off</c><00:01:15.759><c> and</c><00:01:16.240><c> if</c><00:01:16.360><c> you</c><00:01:16.560><c> remember</c><00:01:17.000><c> from</c><00:01:17.240><c> our</c><00:01:17.520><c> our</c>
+and off and if you remember from our our
+hover<00:01:18.720><c> settings</c><00:01:19.159><c> from</c><00:01:19.320><c> our</c><00:01:19.520><c> multiple</c>
+hover settings from our multiple
+animation<00:01:20.680><c> episode</c><00:01:21.479><c> we</c><00:01:21.640><c> created</c><00:01:22.079><c> all</c><00:01:22.240><c> of</c>
+animation episode we created all of
+these<00:01:23.479><c> hovering</c><00:01:24.240><c> settings</c><00:01:24.640><c> all</c><00:01:24.799><c> these</c>
+these hovering settings all these
+variables<00:01:25.360><c> for</c><00:01:25.520><c> our</c><00:01:25.680><c> hover</c><00:01:26.200><c> we're</c><00:01:26.320><c> going</c><00:01:26.400><c> to</c>
+variables for our hover we're going to
+do<00:01:26.680><c> the</c><00:01:26.920><c> same</c><00:01:27.360><c> thing</c><00:01:28.320><c> for</c><00:01:28.600><c> our</c><00:01:29.119><c> enter</c>
+do the same thing for our enter
+animation<00:01:30.360><c> so</c><00:01:31.119><c> these</c><00:01:31.360><c> groups</c><00:01:31.759><c> are</c><00:01:32.040><c> sort</c><00:01:32.240><c> of</c>
+animation so these groups are sort of
+like<00:01:33.720><c> uh</c><00:01:33.840><c> you</c><00:01:33.960><c> know</c><00:01:34.240><c> different</c><00:01:34.600><c> animation</c>
+like uh you know different animation
+types<00:01:35.600><c> and</c><00:01:35.680><c> you</c><00:01:35.759><c> want</c><00:01:35.880><c> to</c><00:01:36.000><c> be</c><00:01:36.119><c> able</c><00:01:36.320><c> to</c><00:01:36.880><c> set</c>
+types and you want to be able to set
+each<00:01:37.920><c> of</c><00:01:38.159><c> these</c><00:01:38.640><c> differently</c><00:01:39.200><c> because</c><00:01:39.360><c> you</c>
+each of these differently because you
+don't<00:01:39.600><c> want</c><00:01:39.759><c> the</c><00:01:39.880><c> hover</c><00:01:40.320><c> necessarily</c><00:01:41.040><c> to</c><00:01:41.200><c> be</c>
+don't want the hover necessarily to be
+the<00:01:41.479><c> same</c><00:01:41.799><c> as</c><00:01:41.880><c> your</c><00:01:42.079><c> enter</c><00:01:42.439><c> animation</c><00:01:43.439><c> and</c><00:01:43.560><c> so</c>
+the same as your enter animation and so
+that's<00:01:43.920><c> why</c><00:01:44.040><c> we're</c><00:01:44.200><c> setting</c><00:01:44.520><c> these</c><00:01:44.719><c> apart</c>
+that's why we're setting these apart
+I'll<00:01:45.280><c> make</c><00:01:45.439><c> it</c><00:01:45.560><c> a</c><00:01:45.640><c> little</c><00:01:45.759><c> bit</c><00:01:46.000><c> easier</c><00:01:46.360><c> on</c><00:01:46.520><c> you</c>
+I'll make it a little bit easier on you
+we<00:01:46.880><c> can</c><00:01:47.119><c> just</c><00:01:47.560><c> copy</c><00:01:48.119><c> this</c><00:01:49.119><c> and</c><00:01:49.520><c> and</c><00:01:49.799><c> paste</c><00:01:50.040><c> it</c>
+we can just copy this and and paste it
+and<00:01:50.680><c> let's</c><00:01:51.119><c> rename</c><00:01:51.799><c> this</c><00:01:52.119><c> to</c><00:01:52.880><c> enter</c><00:01:53.360><c> settings</c>
+and let's rename this to enter settings
+and<00:01:54.520><c> obviously</c><00:01:54.840><c> it's</c><00:01:55.000><c> going</c><00:01:55.079><c> to</c><00:01:55.159><c> be</c><00:01:55.320><c> very</c>
+and obviously it's going to be very
+unhappy<00:01:56.119><c> because</c><00:01:56.360><c> we</c><00:01:56.520><c> have</c><00:01:57.000><c> copies</c><00:01:58.000><c> of</c><00:01:58.159><c> our</c>
+unhappy because we have copies of our
+variable<00:01:59.079><c> so</c><00:01:59.200><c> we're</c><00:01:59.360><c> just</c><00:01:59.439><c> going</c><00:01:59.560><c> to</c><00:01:59.960><c> rename</c>
+variable so we're just going to rename
+all<00:02:00.840><c> of</c><00:02:01.000><c> these</c><00:02:01.200><c> hovers</c><00:02:02.000><c> here</c><00:02:03.000><c> to</c><00:02:03.240><c> enter</c><00:02:04.000><c> there</c>
+all of these hovers here to enter there
+we<00:02:04.320><c> go</c><00:02:04.640><c> so</c><00:02:04.799><c> we</c><00:02:04.960><c> have</c><00:02:05.200><c> all</c><00:02:05.360><c> of</c><00:02:05.600><c> our</c><00:02:05.880><c> our</c><00:02:06.119><c> new</c>
+we go so we have all of our our new
+enter<00:02:07.560><c> variables</c><00:02:08.160><c> fact</c><00:02:08.440><c> we</c><00:02:08.640><c> save</c><00:02:09.319><c> that</c><00:02:10.319><c> go</c><00:02:10.440><c> to</c>
+enter variables fact we save that go to
+our<00:02:10.800><c> components</c><00:02:11.800><c> we've</c><00:02:12.000><c> got</c><00:02:12.080><c> a</c><00:02:12.200><c> brand</c><00:02:12.400><c> new</c>
+our components we've got a brand new
+group<00:02:13.000><c> and</c><00:02:13.239><c> there</c><00:02:13.400><c> are</c><00:02:13.680><c> our</c><00:02:14.160><c> separate</c>
+group and there are our separate
+animation<00:02:15.680><c> settings</c><00:02:16.319><c> now</c><00:02:16.440><c> we're</c><00:02:16.519><c> going</c><00:02:16.640><c> to</c>
+animation settings now we're going to
+add<00:02:17.080><c> one</c><00:02:17.560><c> more</c><00:02:18.560><c> um</c><00:02:19.280><c> to</c><00:02:19.560><c> this</c><00:02:19.840><c> group</c><00:02:20.840><c> and</c><00:02:21.000><c> I'll</c>
+add one more um to this group and I'll
+I'll<00:02:21.440><c> get</c><00:02:21.599><c> into</c><00:02:21.920><c> why</c><00:02:22.080><c> we</c><00:02:22.200><c> need</c><00:02:22.319><c> it</c><00:02:22.599><c> later</c><00:02:22.879><c> on</c>
+I'll get into why we need it later on
+but<00:02:24.680><c> you're</c><00:02:24.840><c> going</c><00:02:24.959><c> to</c><00:02:25.040><c> be</c><00:02:25.200><c> happy</c><00:02:25.400><c> you</c><00:02:25.560><c> have</c><00:02:25.720><c> it</c>
+but you're going to be happy you have it
+and<00:02:26.160><c> this</c><00:02:26.280><c> is</c><00:02:26.400><c> going</c><00:02:26.480><c> to</c><00:02:26.599><c> be</c><00:02:26.760><c> called</c><00:02:27.080><c> a</c><00:02:27.640><c> wait</c>
+and this is going to be called a wait
+for<00:02:29.480><c> variable</c>
+for variable
+and<00:02:31.440><c> for</c><00:02:31.760><c> our</c><00:02:32.280><c> type</c><00:02:33.280><c> we're</c><00:02:33.440><c> going</c><00:02:33.519><c> to</c><00:02:33.680><c> need</c>
+and for our type we're going to need
+another<00:02:34.640><c> animation</c><00:02:35.640><c> component</c><00:02:36.560><c> so</c><00:02:37.640><c> briefly</c>
+another animation component so briefly
+let's<00:02:38.879><c> say</c><00:02:39.200><c> you</c><00:02:39.519><c> wanted</c><00:02:40.319><c> to</c><00:02:41.319><c> have</c><00:02:41.640><c> each</c><00:02:41.800><c> of</c>
+let's say you wanted to have each of
+these<00:02:42.239><c> buttons</c><00:02:42.760><c> enter</c><00:02:43.120><c> in</c><00:02:43.959><c> at</c><00:02:44.080><c> a</c><00:02:44.239><c> different</c>
+these buttons enter in at a different
+time<00:02:45.040><c> now</c><00:02:45.440><c> you</c><00:02:45.680><c> could</c><00:02:46.120><c> use</c><00:02:46.480><c> the</c><00:02:46.760><c> delay</c><00:02:47.680><c> that</c><00:02:47.800><c> we</c>
+time now you could use the delay that we
+did<00:02:48.080><c> in</c><00:02:48.200><c> the</c><00:02:48.400><c> last</c><00:02:48.680><c> episode</c><00:02:49.120><c> and</c><00:02:49.319><c> just</c>
+did in the last episode and just
+manually<00:02:50.159><c> figure</c><00:02:50.480><c> out</c><00:02:51.120><c> how</c><00:02:51.280><c> long</c><00:02:51.480><c> it's</c><00:02:51.640><c> going</c>
+manually figure out how long it's going
+to<00:02:51.879><c> take</c><00:02:52.040><c> for</c><00:02:52.280><c> that</c><00:02:52.360><c> one</c><00:02:52.519><c> to</c><00:02:52.680><c> jump</c><00:02:52.920><c> in</c><00:02:53.519><c> delay</c><00:02:53.920><c> it</c>
+to take for that one to jump in delay it
+run<00:02:54.800><c> that</c><00:02:54.920><c> one</c><00:02:55.280><c> you</c><00:02:55.480><c> could</c><00:02:55.720><c> do</c><00:02:55.959><c> that</c><00:02:56.280><c> if</c><00:02:56.400><c> you</c>
+run that one you could do that if you
+just<00:02:56.840><c> wanted</c><00:02:57.159><c> to</c><00:02:57.400><c> wait</c><00:02:57.800><c> until</c><00:02:58.680><c> let's</c><00:02:58.959><c> say</c><00:02:59.319><c> the</c>
+just wanted to wait until let's say the
+new<00:02:59.920><c> game</c><00:03:00.200><c> button</c><00:03:00.560><c> here</c><00:03:01.400><c> animated</c><00:03:01.959><c> and</c><00:03:02.080><c> it</c>
+new game button here animated and it
+entered<00:03:02.879><c> into</c><00:03:03.280><c> the</c><00:03:03.519><c> uh</c><00:03:03.599><c> the</c><00:03:03.680><c> scene</c><00:03:04.239><c> and</c><00:03:04.440><c> then</c>
+entered into the uh the scene and then
+you<00:03:04.720><c> wanted</c><00:03:05.000><c> to</c><00:03:05.200><c> run</c><00:03:05.440><c> your</c><00:03:05.720><c> continue</c><00:03:06.200><c> button</c>
+you wanted to run your continue button
+animation<00:03:07.159><c> that's</c><00:03:07.319><c> why</c><00:03:07.400><c> we're</c><00:03:07.519><c> going</c><00:03:07.599><c> to</c><00:03:07.680><c> have</c>
+animation that's why we're going to have
+this<00:03:08.040><c> weight</c><00:03:08.280><c> for</c><00:03:08.920><c> variable</c><00:03:09.480><c> so</c><00:03:09.599><c> we've</c><00:03:09.840><c> got</c>
+this weight for variable so we've got
+that<00:03:10.400><c> added</c><00:03:11.400><c> we</c><00:03:11.599><c> also</c><00:03:11.840><c> need</c><00:03:12.040><c> to</c><00:03:12.400><c> add</c><00:03:12.720><c> a</c><00:03:13.400><c> new</c>
+that added we also need to add a new
+enters
+value<00:03:16.920><c> here</c><00:03:17.920><c> this</c><00:03:18.040><c> is</c><00:03:18.239><c> where</c><00:03:18.360><c> we're</c><00:03:18.599><c> setting</c>
+value here this is where we're setting
+uh<00:03:19.560><c> you</c><00:03:19.640><c> know</c><00:03:19.840><c> how</c><00:03:20.040><c> these</c><00:03:20.280><c> values</c><00:03:20.720><c> are</c><00:03:20.920><c> are</c>
+uh you know how these values are are
+being<00:03:21.400><c> adjusted</c><00:03:22.360><c> whenever</c><00:03:22.840><c> we</c><00:03:23.480><c> run</c><00:03:24.120><c> our</c><00:03:24.920><c> tween</c>
+being adjusted whenever we run our tween
+function<00:03:26.000><c> so</c><00:03:26.159><c> we'll</c><00:03:26.440><c> add</c><00:03:26.840><c> that</c><00:03:27.599><c> and</c><00:03:27.760><c> we're</c>
+function so we'll add that and we're
+also<00:03:28.200><c> going</c><00:03:28.319><c> to</c><00:03:28.519><c> add</c><00:03:28.959><c> a</c><00:03:29.200><c> constant</c>
+also going to add a constant
+here<00:03:31.959><c> just</c><00:03:32.120><c> to</c><00:03:32.319><c> make</c><00:03:32.560><c> this</c>
+here just to make this
+clean<00:03:34.360><c> and</c><00:03:34.480><c> we're</c><00:03:34.599><c> going</c><00:03:34.680><c> to</c><00:03:34.799><c> call</c><00:03:34.959><c> this</c>
+clean and we're going to call this
+immediate<00:03:36.120><c> transition</c><00:03:37.120><c> and</c><00:03:37.680><c> it's</c><00:03:37.840><c> going</c><00:03:37.920><c> to</c>
+immediate transition and it's going to
+make<00:03:38.640><c> sense</c><00:03:39.640><c> in</c><00:03:39.920><c> just</c><00:03:40.080><c> a</c><00:03:40.239><c> minute</c><00:03:40.599><c> why</c><00:03:40.760><c> we</c><00:03:40.959><c> need</c>
+make sense in just a minute why we need
+this<00:03:42.799><c> and</c><00:03:43.000><c> to</c><00:03:43.319><c> do</c><00:03:43.560><c> that</c><00:03:43.760><c> we'll</c><00:03:44.000><c> just</c><00:03:44.439><c> throw</c><00:03:44.760><c> in</c>
+this and to do that we'll just throw in
+the<00:03:45.560><c> uh</c>
+the uh
+translinear<00:03:47.280><c> type</c><00:03:48.200><c> next</c><00:03:48.480><c> let's</c><00:03:48.840><c> jump</c><00:03:49.400><c> down</c><00:03:50.400><c> to</c>
+translinear type next let's jump down to
+our<00:03:51.560><c> setup</c><00:03:52.040><c> function</c><00:03:53.040><c> and</c><00:03:53.280><c> as</c><00:03:53.400><c> a</c><00:03:53.519><c> reminder</c>
+our setup function and as a reminder
+we're<00:03:54.200><c> running</c><00:03:54.920><c> this</c><00:03:55.920><c> uh</c><00:03:56.280><c> as</c><00:03:56.400><c> a</c><00:03:56.840><c> deferred</c><00:03:57.920><c> call</c>
+we're running this uh as a deferred call
+so<00:03:59.360><c> we</c><00:03:59.480><c> don't</c><00:03:59.959><c> get</c><00:04:00.400><c> really</c><00:04:00.920><c> screwy</c><00:04:01.920><c> you</c><00:04:02.079><c> know</c>
+so we don't get really screwy you know
+size<00:04:03.319><c> and</c><00:04:03.599><c> scale</c><00:04:03.959><c> and</c><00:04:04.200><c> position</c><00:04:04.640><c> settings</c><00:04:05.040><c> for</c>
+size and scale and position settings for
+our<00:04:05.599><c> child</c><00:04:06.239><c> control</c><00:04:06.840><c> nodes</c><00:04:07.840><c> by</c><00:04:07.920><c> running</c><00:04:08.200><c> this</c>
+our child control nodes by running this
+called<00:04:08.560><c> the</c><00:04:08.680><c> furd</c><00:04:09.079><c> we're</c><00:04:09.360><c> getting</c><00:04:09.840><c> the</c><00:04:10.400><c> final</c>
+called the furd we're getting the final
+size<00:04:11.680><c> settings</c><00:04:12.680><c> and</c><00:04:12.840><c> if</c><00:04:12.920><c> you</c><00:04:13.120><c> don't</c><00:04:14.040><c> it's</c><00:04:14.319><c> it's</c>
+size settings and if you don't it's it's
+going<00:04:14.519><c> to</c><00:04:14.640><c> be</c><00:04:14.799><c> odd</c><00:04:15.079><c> it's</c><00:04:15.280><c> you're</c><00:04:15.400><c> not</c><00:04:15.519><c> going</c><00:04:15.599><c> to</c>
+going to be odd it's you're not going to
+get<00:04:16.160><c> what</c><00:04:16.320><c> you</c><00:04:16.440><c> think</c><00:04:16.600><c> you're</c><00:04:16.759><c> going</c><00:04:16.880><c> to</c><00:04:17.079><c> get</c>
+get what you think you're going to get
+so<00:04:17.759><c> we</c><00:04:17.919><c> have</c><00:04:18.079><c> one</c><00:04:18.280><c> for</c><00:04:18.600><c> our</c><00:04:18.959><c> our</c><00:04:19.160><c> default</c>
+so we have one for our our default
+values<00:04:19.959><c> we're</c><00:04:20.120><c> setting</c><00:04:20.479><c> these</c><00:04:20.680><c> dictionaries</c>
+values we're setting these dictionaries
+up<00:04:21.919><c> that</c><00:04:22.040><c> we're</c><00:04:22.160><c> going</c><00:04:22.240><c> to</c><00:04:22.440><c> run</c><00:04:22.759><c> through</c><00:04:23.400><c> and</c>
+up that we're going to run through and
+our<00:04:23.840><c> our</c><00:04:24.080><c> add</c><00:04:24.320><c> tween</c><00:04:24.720><c> function</c><00:04:25.120><c> we've</c><00:04:25.320><c> got</c><00:04:25.440><c> one</c>
+our our add tween function we've got one
+for<00:04:26.000><c> default</c><00:04:27.000><c> hover</c><00:04:27.840><c> and</c><00:04:27.960><c> now</c><00:04:28.080><c> we</c><00:04:28.199><c> need</c><00:04:28.320><c> to</c><00:04:28.520><c> add</c>
+for default hover and now we need to add
+one<00:04:29.000><c> for</c><00:04:29.240><c> our</c><00:04:29.720><c> inter</c>
+one for our inter
+values<00:04:31.639><c> so</c><00:04:31.800><c> this</c><00:04:31.880><c> will</c><00:04:32.039><c> be</c><00:04:32.120><c> a</c><00:04:32.240><c> new</c><00:04:33.039><c> dictionary</c>
+values so this will be a new dictionary
+and<00:04:34.560><c> we're</c><00:04:34.720><c> going</c><00:04:34.800><c> to</c><00:04:34.960><c> do</c><00:04:35.160><c> the</c><00:04:35.280><c> same</c><00:04:35.600><c> settings</c>
+and we're going to do the same settings
+we<00:04:36.680><c> have</c><00:04:37.400><c> scale</c><00:04:38.400><c> we're</c><00:04:38.520><c> going</c><00:04:38.600><c> to</c><00:04:38.759><c> use</c><00:04:39.000><c> our</c>
+we have scale we're going to use our
+inter<00:04:39.800><c> scale</c><00:04:40.560><c> we</c><00:04:40.759><c> have</c><00:04:41.479><c> position</c><00:04:42.479><c> we're</c><00:04:42.600><c> going</c>
+inter scale we have position we're going
+to<00:04:42.919><c> use</c><00:04:43.400><c> the</c><00:04:43.759><c> target</c><00:04:44.240><c> position</c><00:04:45.160><c> plus</c><00:04:45.520><c> our</c>
+to use the target position plus our
+inter<00:04:46.320><c> position</c><00:04:47.199><c> it's</c><00:04:47.479><c> very</c><00:04:47.720><c> similar</c><00:04:48.160><c> to</c><00:04:48.440><c> how</c>
+inter position it's very similar to how
+we<00:04:48.720><c> set</c><00:04:48.919><c> up</c><00:04:49.160><c> our</c><00:04:49.440><c> our</c><00:04:49.639><c> hover</c><00:04:50.000><c> values</c><00:04:50.639><c> and</c><00:04:50.840><c> our</c>
+we set up our our hover values and our
+rotation<00:04:51.960><c> we'll</c><00:04:52.120><c> do</c><00:04:52.280><c> the</c><00:04:52.440><c> same</c>
+rotation we'll do the same
+thing
+Target<00:04:56.039><c> rotation</c><00:04:57.360><c> plus</c><00:04:58.360><c> the</c><00:04:58.680><c> degree</c><00:04:59.080><c> to</c>
+Target rotation plus the degree to
+Radian<00:04:59.759><c> in</c><00:05:00.199><c> function</c><00:05:00.800><c> and</c><00:05:01.000><c> then</c><00:05:01.240><c> our</c><00:05:01.479><c> inter</c>
+Radian in function and then our inter
+rotation<00:05:02.680><c> variable</c><00:05:03.320><c> we'll</c><00:05:03.520><c> adjust</c><00:05:03.880><c> our</c>
+rotation variable we'll adjust our
+size<00:05:06.199><c> Target</c><00:05:06.840><c> size</c><00:05:07.880><c> plus</c><00:05:08.880><c> inter</c><00:05:09.880><c> size</c><00:05:10.400><c> and</c>
+size Target size plus inter size and
+then<00:05:10.680><c> the</c><00:05:10.800><c> self</c><00:05:11.120><c> modulate</c><00:05:11.720><c> with</c><00:05:11.880><c> our</c><00:05:12.680><c> inter</c>
+then the self modulate with our inter
+modulate<00:05:13.840><c> all</c><00:05:13.919><c> right</c><00:05:14.039><c> so</c><00:05:14.199><c> we</c><00:05:14.320><c> have</c><00:05:14.479><c> all</c><00:05:14.600><c> of</c>
+modulate all right so we have all of
+these<00:05:15.000><c> inter</c><00:05:15.360><c> values</c><00:05:16.280><c> that</c><00:05:16.360><c> means</c><00:05:16.639><c> we</c><00:05:16.759><c> can</c><00:05:17.000><c> run</c>
+these inter values that means we can run
+the<00:05:17.960><c> uh</c><00:05:18.240><c> tween</c><00:05:18.680><c> function</c><00:05:19.360><c> it's</c><00:05:19.520><c> unhappy</c><00:05:20.039><c> I</c>
+the uh tween function it's unhappy I
+forgot<00:05:20.360><c> a</c><00:05:20.720><c> comma</c><00:05:21.720><c> there</c><00:05:21.840><c> we</c><00:05:22.039><c> go</c><00:05:22.319><c> so</c><00:05:22.440><c> we</c><00:05:22.560><c> have</c>
+forgot a comma there we go so we have
+our<00:05:22.840><c> enter</c><00:05:23.360><c> values</c><00:05:24.080><c> for</c><00:05:24.280><c> now</c><00:05:24.560><c> we're</c><00:05:24.720><c> just</c>
+our enter values for now we're just
+going<00:05:25.000><c> to</c><00:05:25.199><c> get</c><00:05:25.440><c> the</c><00:05:25.720><c> enter</c><00:05:26.479><c> animation</c><00:05:27.039><c> working</c>
+going to get the enter animation working
+first<00:05:28.080><c> and</c><00:05:28.400><c> then</c><00:05:28.639><c> we're</c><00:05:28.800><c> going</c><00:05:28.919><c> to</c><00:05:29.280><c> do</c><00:05:29.479><c> the</c>
+first and then we're going to do the
+wait<00:05:30.039><c> for</c><00:05:30.560><c> fix</c><00:05:31.240><c> because</c><00:05:31.400><c> that's</c><00:05:31.600><c> more</c><00:05:31.759><c> of</c><00:05:31.840><c> a</c>
+wait for fix because that's more of a
+fix<00:05:32.440><c> issue</c><00:05:33.199><c> than</c><00:05:33.919><c> a</c><00:05:34.039><c> feature</c><00:05:34.400><c> I</c><00:05:34.479><c> mean</c><00:05:34.639><c> it</c><00:05:34.720><c> is</c><00:05:34.840><c> a</c>
+fix issue than a feature I mean it is a
+feature<00:05:35.560><c> but</c><00:05:36.319><c> it's</c><00:05:36.440><c> a</c><00:05:36.720><c> problem</c><00:05:37.080><c> that</c><00:05:37.199><c> we</c><00:05:37.319><c> need</c>
+feature but it's a problem that we need
+to<00:05:37.720><c> fix</c><00:05:38.000><c> later</c><00:05:38.240><c> on</c><00:05:38.919><c> so</c><00:05:39.080><c> we're</c><00:05:39.240><c> going</c><00:05:39.319><c> to</c><00:05:39.520><c> do</c><00:05:40.160><c> a</c>
+to fix later on so we're going to do a
+new<00:05:41.039><c> function</c><00:05:42.039><c> because</c><00:05:42.319><c> this</c><00:05:42.479><c> needs</c><00:05:42.720><c> to</c><00:05:42.880><c> be</c><00:05:43.039><c> a</c>
+new function because this needs to be a
+little<00:05:43.360><c> bit</c><00:05:43.520><c> more</c><00:05:43.759><c> individualized</c><00:05:44.600><c> for</c><00:05:44.840><c> our</c>
+little bit more individualized for our
+our<00:05:45.680><c> enter</c><00:05:46.680><c> so</c><00:05:46.840><c> we're</c><00:05:47.080><c> call</c><00:05:47.240><c> this</c><00:05:47.400><c> on</c>
+our enter so we're call this on
+enter<00:05:49.440><c> we're</c><00:05:49.600><c> not</c><00:05:49.720><c> returning</c><00:05:50.160><c> anything</c><00:05:50.479><c> so</c><00:05:50.639><c> we</c>
+enter we're not returning anything so we
+void<00:05:51.080><c> it</c><00:05:51.600><c> and</c><00:05:52.039><c> when</c><00:05:52.199><c> we</c><00:05:52.720><c> run</c><00:05:53.039><c> this</c><00:05:53.240><c> function</c><00:05:54.240><c> in</c>
+void it and when we run this function in
+fact<00:05:54.639><c> let's</c><00:05:54.960><c> pass</c><00:05:55.319><c> this</c><00:05:55.560><c> and</c><00:05:55.840><c> and</c><00:05:56.240><c> run</c><00:05:56.479><c> it</c>
+fact let's pass this and and run it
+first<00:05:57.639><c> so</c><00:05:57.800><c> in</c><00:05:57.960><c> our</c><00:05:58.319><c> setup</c><00:05:58.840><c> after</c><00:05:59.080><c> we've</c>
+first so in our setup after we've
+connected<00:05:59.880><c> our</c>
+connected our
+signals<00:06:01.560><c> if</c><00:06:02.080><c> we</c><00:06:02.280><c> are</c><00:06:03.039><c> wanting</c><00:06:03.319><c> to</c><00:06:03.440><c> do</c><00:06:03.560><c> an</c><00:06:03.680><c> inter</c>
+signals if we are wanting to do an inter
+animation<00:06:04.600><c> so</c><00:06:04.840><c> if</c><00:06:04.960><c> we've</c><00:06:05.319><c> checked</c><00:06:05.840><c> that</c><00:06:06.240><c> that</c>
+animation so if we've checked that that
+Boolean<00:06:07.360><c> in</c><00:06:07.479><c> our</c><00:06:07.720><c> inspector</c><00:06:08.680><c> then</c><00:06:08.840><c> we</c><00:06:08.919><c> want</c><00:06:09.039><c> to</c>
+Boolean in our inspector then we want to
+run<00:06:09.560><c> our</c><00:06:10.360><c> onenter</c><00:06:11.360><c> function</c><00:06:11.960><c> and</c><00:06:12.080><c> then</c><00:06:12.199><c> we're</c>
+run our onenter function and then we're
+going<00:06:12.400><c> to</c><00:06:12.520><c> add</c><00:06:12.680><c> to</c><00:06:12.800><c> this</c><00:06:13.000><c> later</c><00:06:13.360><c> but</c><00:06:13.639><c> for</c><00:06:13.960><c> now</c>
+going to add to this later but for now
+that's<00:06:14.639><c> all</c><00:06:14.759><c> we</c><00:06:14.919><c> need</c><00:06:15.240><c> so</c><00:06:15.400><c> then</c><00:06:15.599><c> in</c><00:06:15.720><c> our</c><00:06:15.880><c> Onin</c>
+that's all we need so then in our Onin
+function<00:06:16.880><c> we're</c><00:06:17.039><c> going</c><00:06:17.120><c> to</c><00:06:17.319><c> run</c><00:06:17.919><c> just</c><00:06:18.080><c> our</c>
+function we're going to run just our
+regular<00:06:19.000><c> tween</c><00:06:20.000><c> and</c><00:06:20.080><c> we're</c><00:06:20.199><c> going</c><00:06:20.319><c> to</c><00:06:20.440><c> fill</c><00:06:20.639><c> it</c>
+regular tween and we're going to fill it
+with<00:06:20.919><c> our</c><00:06:21.160><c> values</c><00:06:21.560><c> and</c><00:06:21.720><c> those</c><00:06:21.840><c> are</c><00:06:21.960><c> going</c><00:06:22.080><c> to</c>
+with our values and those are going to
+be<00:06:22.360><c> our</c><00:06:22.639><c> inter</c><00:06:23.319><c> values</c><00:06:24.319><c> we'll</c><00:06:24.520><c> make</c><00:06:24.680><c> these</c><00:06:24.880><c> run</c>
+be our inter values we'll make these run
+in<00:06:25.520><c> parallel</c><00:06:26.520><c> actually</c><00:06:26.880><c> this</c><00:06:27.039><c> should</c><00:06:27.440><c> be</c><00:06:28.440><c> this</c>
+in parallel actually this should be this
+should<00:06:28.800><c> always</c><00:06:29.080><c> be</c><00:06:29.240><c> true</c><00:06:29.800><c> I'll</c><00:06:30.000><c> explain</c><00:06:30.400><c> this</c>
+should always be true I'll explain this
+in<00:06:30.599><c> a</c><00:06:30.759><c> second</c><00:06:31.160><c> but</c><00:06:32.160><c> should</c><00:06:32.360><c> always</c><00:06:32.560><c> be</c><00:06:32.759><c> true</c><00:06:33.759><c> so</c>
+in a second but should always be true so
+when<00:06:34.360><c> we're</c><00:06:34.599><c> entering</c><00:06:35.080><c> in</c><00:06:35.880><c> um</c><00:06:36.160><c> imagine</c><00:06:37.160><c> you</c>
+when we're entering in um imagine you
+you've<00:06:37.560><c> loaded</c><00:06:37.840><c> your</c><00:06:38.000><c> control</c><00:06:38.400><c> node</c><00:06:38.880><c> it</c><00:06:39.039><c> has</c><00:06:39.120><c> a</c>
+you've loaded your control node it has a
+default<00:06:39.800><c> value</c><00:06:40.720><c> that's</c><00:06:40.919><c> how</c><00:06:41.039><c> it</c><00:06:41.199><c> loads</c><00:06:42.080><c> but</c><00:06:42.280><c> if</c>
+default value that's how it loads but if
+you're<00:06:43.039><c> making</c><00:06:43.319><c> it</c><00:06:43.560><c> scale</c><00:06:43.960><c> up</c><00:06:44.360><c> from</c><00:06:44.800><c> zero</c><00:06:45.759><c> you</c>
+you're making it scale up from zero you
+don't<00:06:46.000><c> want</c><00:06:46.120><c> to</c><00:06:46.319><c> scale</c><00:06:46.639><c> it</c><00:06:46.800><c> from</c><00:06:47.080><c> one</c><00:06:47.599><c> and</c><00:06:47.759><c> then</c>
+don't want to scale it from one and then
+scale<00:06:48.280><c> it</c><00:06:48.400><c> to</c><00:06:48.639><c> zero</c><00:06:49.080><c> that</c><00:06:49.319><c> that's</c><00:06:49.440><c> not</c><00:06:49.560><c> going</c>
+scale it to zero that that's not going
+to<00:06:49.800><c> look</c><00:06:50.000><c> good</c><00:06:50.199><c> you</c><00:06:50.280><c> want</c><00:06:50.440><c> it</c><00:06:50.560><c> to</c><00:06:50.840><c> start</c><00:06:51.599><c> as</c>
+to look good you want it to start as
+zero<00:06:52.240><c> and</c><00:06:52.319><c> we're</c><00:06:52.440><c> going</c><00:06:52.520><c> to</c><00:06:52.639><c> use</c><00:06:52.759><c> a</c><00:06:53.000><c> tween</c><00:06:53.960><c> to</c>
+zero and we're going to use a tween to
+do<00:06:54.479><c> that</c><00:06:54.759><c> and</c><00:06:54.880><c> we</c><00:06:55.000><c> can</c><00:06:55.240><c> do</c><00:06:55.479><c> that</c><00:06:56.440><c> by</c><00:06:56.560><c> setting</c>
+do that and we can do that by setting
+the<00:06:57.240><c> time</c><00:06:57.440><c> it</c><00:06:57.560><c> takes</c><00:06:57.759><c> to</c><00:06:57.879><c> do</c><00:06:58.000><c> the</c><00:06:58.120><c> tween</c><00:06:58.840><c> to</c><00:06:59.000><c> 0</c>
+the time it takes to do the tween to 0
+seconds
+and<00:07:00.520><c> that's</c><00:07:00.680><c> why</c><00:07:00.800><c> we</c><00:07:00.919><c> want</c><00:07:01.000><c> to</c><00:07:01.240><c> run</c><00:07:01.800><c> everything</c>
+and that's why we want to run everything
+at<00:07:02.479><c> the</c><00:07:02.599><c> same</c><00:07:02.919><c> time</c><00:07:03.199><c> we</c><00:07:03.360><c> just</c><00:07:03.479><c> want</c><00:07:03.599><c> to</c><00:07:04.039><c> reset</c>
+at the same time we just want to reset
+all<00:07:04.680><c> those</c><00:07:04.919><c> values</c><00:07:05.919><c> back</c><00:07:06.120><c> to</c><00:07:06.599><c> uh</c><00:07:06.879><c> whatever</c><00:07:07.160><c> our</c>
+all those values back to uh whatever our
+inter<00:07:07.759><c> values</c><00:07:08.240><c> are</c><00:07:09.240><c> and</c><00:07:09.680><c> do</c><00:07:09.840><c> it</c><00:07:10.199><c> immediately</c>
+inter values are and do it immediately
+so<00:07:11.360><c> we</c><00:07:11.520><c> set</c><00:07:11.720><c> that</c><00:07:11.840><c> to</c><00:07:12.120><c> zero</c><00:07:12.960><c> we</c><00:07:13.080><c> don't</c><00:07:13.240><c> want</c><00:07:13.599><c> any</c>
+so we set that to zero we don't want any
+delay<00:07:14.440><c> we</c><00:07:14.599><c> set</c><00:07:14.879><c> that</c><00:07:15.000><c> to</c><00:07:15.240><c> zero</c><00:07:15.960><c> and</c><00:07:16.160><c> then</c><00:07:16.400><c> this</c>
+delay we set that to zero and then this
+is<00:07:16.639><c> where</c><00:07:16.759><c> we're</c><00:07:16.919><c> going</c><00:07:17.000><c> to</c><00:07:17.160><c> use</c><00:07:17.639><c> our</c><00:07:18.639><c> um</c>
+is where we're going to use our um
+immediate<00:07:19.520><c> transition</c><00:07:20.360><c> constant</c><00:07:21.039><c> because</c><00:07:21.280><c> we</c>
+immediate transition constant because we
+don't<00:07:21.720><c> want</c><00:07:22.440><c> any</c><00:07:22.800><c> weird</c><00:07:23.479><c> um</c><00:07:24.479><c> bouncing</c><00:07:25.039><c> effect</c>
+don't want any weird um bouncing effect
+if<00:07:25.479><c> you</c><00:07:25.639><c> ever</c><00:07:25.879><c> look</c><00:07:26.039><c> at</c><00:07:26.240><c> the</c><00:07:26.960><c> transitions</c><00:07:27.960><c> uh</c>
+if you ever look at the transitions uh
+and<00:07:28.199><c> I</c><00:07:28.360><c> I'll</c><00:07:28.560><c> actually</c><00:07:28.840><c> leave</c><00:07:29.039><c> a</c><00:07:29.160><c> link</c><00:07:29.560><c> to</c><00:07:29.800><c> that</c>
+and I I'll actually leave a link to that
+in<00:07:30.120><c> the</c><00:07:30.560><c> description</c><00:07:31.560><c> if</c><00:07:31.639><c> you</c><00:07:31.840><c> ever</c><00:07:32.120><c> use</c><00:07:32.639><c> the</c>
+in the description if you ever use the
+uh<00:07:33.160><c> the</c><00:07:33.360><c> Transitions</c><00:07:33.879><c> and</c><00:07:34.039><c> look</c><00:07:34.199><c> at</c><00:07:34.400><c> the</c><00:07:34.720><c> graph</c>
+uh the Transitions and look at the graph
+some<00:07:35.720><c> of</c><00:07:35.879><c> them</c><00:07:36.280><c> kind</c><00:07:36.400><c> of</c><00:07:37.240><c> Bounce</c><00:07:38.240><c> above</c><00:07:38.479><c> and</c>
+some of them kind of Bounce above and
+below<00:07:39.199><c> zero</c><00:07:39.520><c> and</c><00:07:39.720><c> one</c><00:07:40.639><c> that's</c><00:07:40.879><c> going</c><00:07:40.960><c> to</c><00:07:41.599><c> uh</c>
+below zero and one that's going to uh
+kind<00:07:42.039><c> of</c><00:07:42.319><c> do</c><00:07:42.520><c> some</c><00:07:42.759><c> weird</c><00:07:43.120><c> stuff</c><00:07:43.520><c> we</c><00:07:43.639><c> just</c><00:07:43.759><c> want</c>
+kind of do some weird stuff we just want
+everything<00:07:44.319><c> to</c><00:07:44.440><c> be</c><00:07:44.639><c> zeroed</c><00:07:45.039><c> out</c><00:07:45.520><c> we</c><00:07:45.639><c> don't</c>
+everything to be zeroed out we don't
+want<00:07:45.960><c> anything</c><00:07:46.360><c> to</c><00:07:46.960><c> have</c><00:07:47.080><c> a</c><00:07:47.199><c> weird</c><00:07:47.479><c> bounce</c><00:07:47.840><c> in</c>
+want anything to have a weird bounce in
+between<00:07:48.400><c> those</c><00:07:48.639><c> values</c><00:07:49.400><c> so</c><00:07:49.560><c> that's</c><00:07:49.720><c> why</c><00:07:49.840><c> we're</c>
+between those values so that's why we're
+using<00:07:50.360><c> the</c><00:07:50.680><c> immediate</c><00:07:51.280><c> transition</c><00:07:52.280><c> and</c><00:07:52.599><c> we've</c>
+using the immediate transition and we've
+set<00:07:53.120><c> that</c><00:07:53.280><c> to</c><00:07:53.879><c> just</c><00:07:54.199><c> a</c><00:07:54.440><c> basic</c><00:07:55.120><c> linear</c>
+set that to just a basic linear
+transition<00:07:56.759><c> and</c><00:07:57.000><c> then</c><00:07:57.360><c> easing</c><00:07:58.319><c> easing</c>
+transition and then easing easing
+doesn't<00:07:58.960><c> really</c><00:07:59.159><c> matter</c><00:07:59.599><c> as</c><00:07:59.759><c> much</c><00:08:00.000><c> so</c><00:08:00.159><c> we</c><00:08:00.280><c> can</c>
+doesn't really matter as much so we can
+just<00:08:01.039><c> set</c><00:08:01.319><c> that</c><00:08:01.440><c> to</c><00:08:01.759><c> to</c><00:08:01.919><c> hover</c><00:08:02.440><c> easing</c><00:08:03.440><c> for</c>
+just set that to to hover easing for
+now<00:08:05.479><c> all</c><00:08:05.639><c> right</c><00:08:05.840><c> so</c><00:08:06.000><c> we've</c><00:08:06.280><c> got</c><00:08:06.560><c> our</c><00:08:07.280><c> our</c><00:08:07.800><c> tween</c>
+now all right so we've got our our tween
+it's<00:08:09.000><c> not</c><00:08:09.280><c> happy</c><00:08:09.560><c> with</c><00:08:09.720><c> me</c><00:08:10.120><c> enter</c><00:08:10.560><c> values</c><00:08:11.039><c> I</c>
+it's not happy with me enter values I
+forgot<00:08:11.520><c> this</c><00:08:11.639><c> s</c><00:08:11.960><c> again</c><00:08:12.560><c> I</c><00:08:12.720><c> always</c><00:08:13.039><c> I</c><00:08:13.120><c> should</c>
+forgot this s again I always I should
+just<00:08:13.479><c> call</c><00:08:13.680><c> them</c><00:08:13.879><c> value</c><00:08:14.720><c> enter</c><00:08:15.080><c> values</c><00:08:15.599><c> don't</c>
+just call them value enter values don't
+forget<00:08:16.080><c> your</c><00:08:16.560><c> s</c><00:08:17.560><c> all</c><00:08:17.720><c> right</c><00:08:18.080><c> now</c><00:08:18.240><c> the</c><00:08:18.400><c> case</c>
+forget your s all right now the case
+might<00:08:18.879><c> be</c><00:08:19.120><c> that</c><00:08:19.240><c> we're</c><00:08:19.479><c> waiting</c><00:08:20.000><c> for</c>
+might be that we're waiting for
+something<00:08:21.319><c> okay</c><00:08:21.599><c> so</c><00:08:22.520><c> think</c><00:08:22.720><c> of</c><00:08:23.159><c> we</c><00:08:23.360><c> we've</c><00:08:23.560><c> run</c>
+something okay so think of we we've run
+this<00:08:24.039><c> enter</c><00:08:24.639><c> function</c><00:08:25.479><c> we've</c><00:08:25.800><c> zeroed</c>
+this enter function we've zeroed
+everything<00:08:26.759><c> out</c><00:08:27.199><c> we've</c><00:08:27.720><c> gone</c><00:08:28.039><c> to</c><00:08:28.639><c> the</c><00:08:28.919><c> uh</c><00:08:29.000><c> the</c>
+everything out we've gone to the uh the
+value<00:08:29.680><c> that</c><00:08:29.800><c> we</c><00:08:29.919><c> want</c><00:08:30.280><c> to</c><00:08:30.520><c> enter</c><00:08:31.360><c> in</c><00:08:31.680><c> our</c>
+value that we want to enter in our
+initial<00:08:32.440><c> values</c><00:08:33.279><c> now</c><00:08:33.479><c> let's</c><00:08:33.640><c> say</c><00:08:33.839><c> we</c><00:08:34.000><c> wanted</c>
+initial values now let's say we wanted
+to<00:08:34.560><c> wait</c><00:08:35.519><c> right</c><00:08:35.719><c> we</c><00:08:35.839><c> wanted</c><00:08:36.080><c> to</c><00:08:36.320><c> wait</c><00:08:36.680><c> until</c>
+to wait right we wanted to wait until
+the<00:08:37.760><c> parent</c><00:08:38.039><c> loaded</c><00:08:38.519><c> and</c><00:08:38.640><c> it</c><00:08:38.880><c> animated</c><00:08:39.880><c> so</c>
+the parent loaded and it animated so
+we're<00:08:40.159><c> going</c><00:08:40.240><c> to</c><00:08:40.640><c> wait</c><00:08:41.399><c> if</c><00:08:41.519><c> we</c><00:08:41.640><c> are</c><00:08:42.200><c> waiting</c><00:08:43.200><c> if</c>
+we're going to wait if we are waiting if
+wait<00:08:43.680><c> for</c><00:08:44.360><c> we're</c><00:08:44.480><c> going</c><00:08:44.600><c> to</c><00:08:44.839><c> pass</c><00:08:45.760><c> we're</c><00:08:45.880><c> going</c>
+wait for we're going to pass we're going
+to<00:08:46.240><c> stop</c><00:08:47.200><c> right</c><00:08:47.440><c> there</c><00:08:47.640><c> because</c><00:08:47.839><c> we're</c><00:08:47.959><c> going</c>
+to stop right there because we're going
+to<00:08:48.240><c> do</c><00:08:48.519><c> our</c><00:08:48.920><c> actual</c><00:08:49.279><c> entering</c><00:08:49.800><c> animation</c><00:08:50.680><c> in</c><00:08:50.800><c> a</c>
+to do our actual entering animation in a
+different<00:08:51.320><c> way</c><00:08:52.279><c> but</c><00:08:52.720><c> if</c><00:08:52.880><c> we're</c><00:08:53.080><c> not</c><00:08:53.360><c> waiting</c>
+different way but if we're not waiting
+for<00:08:54.600><c> anything</c><00:08:55.640><c> then</c><00:08:56.640><c> we</c><00:08:56.800><c> want</c><00:08:56.920><c> to</c><00:08:57.120><c> run</c><00:08:57.399><c> our</c>
+for anything then we want to run our
+animation<00:08:58.920><c> and</c><00:08:59.040><c> that's</c><00:08:59.240><c> going</c><00:08:59.360><c> to</c><00:08:59.440><c> going</c><00:08:59.519><c> to</c>
+animation and that's going to going to
+be<00:08:59.760><c> just</c><00:08:59.920><c> another</c><00:09:00.200><c> add</c><00:09:00.800><c> tween</c><00:09:01.800><c> we're</c><00:09:01.959><c> going</c><00:09:02.040><c> to</c>
+be just another add tween we're going to
+go<00:09:02.320><c> to</c><00:09:02.480><c> our</c><00:09:02.839><c> default</c><00:09:03.399><c> values</c><00:09:03.959><c> so</c><00:09:04.120><c> we're</c><00:09:04.240><c> going</c>
+go to our default values so we're going
+to<00:09:04.480><c> go</c><00:09:04.760><c> back</c><00:09:04.959><c> to</c><00:09:05.240><c> our</c><00:09:05.519><c> our</c><00:09:05.720><c> home</c><00:09:05.959><c> base</c><00:09:06.360><c> our</c>
+to go back to our our home base our
+foundation<00:09:07.880><c> we'll</c><00:09:08.120><c> use</c><00:09:08.279><c> our</c><00:09:08.600><c> parallel</c>
+foundation we'll use our parallel
+animations
+value<00:09:11.600><c> we</c><00:09:11.720><c> will</c><00:09:12.000><c> use</c><00:09:12.720><c> our</c><00:09:12.920><c> enter</c><00:09:13.399><c> time</c><00:09:13.880><c> in</c><00:09:14.079><c> this</c>
+value we will use our enter time in this
+case<00:09:16.560><c> whoops</c><00:09:17.560><c> there</c><00:09:17.680><c> we</c><00:09:17.839><c> go</c><00:09:18.079><c> going</c><00:09:18.200><c> to</c><00:09:18.279><c> use</c><00:09:18.440><c> our</c>
+case whoops there we go going to use our
+enter<00:09:19.040><c> time</c><00:09:19.399><c> in</c><00:09:19.560><c> this</c><00:09:19.800><c> case</c><00:09:20.720><c> our</c><00:09:20.959><c> enter</c>
+enter time in this case our enter
+delay<00:09:23.399><c> because</c><00:09:23.519><c> we</c><00:09:23.640><c> did</c><00:09:23.839><c> add</c><00:09:24.040><c> that</c><00:09:24.600><c> right</c>
+delay because we did add that right
+pretty<00:09:25.800><c> sure</c><00:09:26.000><c> we</c><00:09:26.160><c> did</c><00:09:26.519><c> yes</c><00:09:26.680><c> we</c><00:09:26.880><c> did</c><00:09:27.480><c> we</c><00:09:27.600><c> have</c>
+pretty sure we did yes we did we have
+our<00:09:27.880><c> enter</c><00:09:28.279><c> delay</c><00:09:29.760><c> and</c><00:09:30.240><c> then</c><00:09:30.399><c> our</c><00:09:30.560><c> enter</c>
+our enter delay and then our enter
+transition<00:09:31.880><c> these</c><00:09:32.000><c> are</c><00:09:32.200><c> just</c><00:09:32.399><c> all</c><00:09:32.640><c> our</c><00:09:33.160><c> our</c>
+transition these are just all our our
+enter<00:09:34.079><c> variables</c><00:09:34.519><c> that</c><00:09:34.640><c> we</c>
+enter variables that we
+added<00:09:36.279><c> and</c><00:09:36.440><c> our</c><00:09:36.600><c> enter</c><00:09:36.920><c> easing</c><00:09:37.720><c> value</c><00:09:38.720><c> okay</c><00:09:39.079><c> so</c>
+added and our enter easing value okay so
+now<00:09:39.519><c> if</c><00:09:39.640><c> we're</c><00:09:39.839><c> not</c><00:09:40.040><c> waiting</c><00:09:40.320><c> for</c><00:09:40.519><c> anything</c><00:09:40.880><c> we</c>
+now if we're not waiting for anything we
+haven't<00:09:41.519><c> put</c><00:09:41.800><c> any</c><00:09:42.279><c> uh</c><00:09:42.760><c> value</c><00:09:43.079><c> within</c><00:09:43.320><c> that</c>
+haven't put any uh value within that
+variable<00:09:44.399><c> we're</c><00:09:44.560><c> going</c><00:09:44.640><c> to</c><00:09:44.800><c> just</c><00:09:44.920><c> run</c><00:09:45.160><c> our</c>
+variable we're going to just run our
+function<00:09:45.880><c> in</c><00:09:46.079><c> fact</c><00:09:46.240><c> we</c><00:09:46.360><c> should</c><00:09:46.560><c> be</c><00:09:46.720><c> able</c><00:09:46.920><c> to</c>
+function in fact we should be able to
+test<00:09:47.600><c> this</c><00:09:48.600><c> uh</c><00:09:48.800><c> as</c><00:09:48.920><c> it</c><00:09:49.519><c> stands</c><00:09:50.519><c> and</c><00:09:50.839><c> let's</c><00:09:51.120><c> go</c>
+test this uh as it stands and let's go
+to<00:09:51.560><c> our</c><00:09:52.279><c> our</c><00:09:52.480><c> new</c><00:09:52.760><c> game</c><00:09:53.040><c> and</c><00:09:53.200><c> let's</c><00:09:53.480><c> have</c><00:09:53.640><c> this</c>
+to our our new game and let's have this
+enter<00:09:55.720><c> in</c><00:09:56.720><c> let's</c><00:09:56.880><c> just</c><00:09:57.040><c> do</c><00:09:57.200><c> a</c><00:09:57.399><c> scale</c><00:09:57.920><c> so</c><00:09:58.040><c> we're</c>
+enter in let's just do a scale so we're
+going<00:09:58.279><c> to</c><00:09:58.440><c> zero</c><00:09:58.800><c> it</c><00:09:58.959><c> out</c><00:09:59.720><c> and</c><00:09:59.959><c> then</c><00:10:00.560><c> the</c>
+going to zero it out and then the
+transition<00:10:01.399><c> can</c><00:10:01.600><c> be</c><00:10:01.920><c> just</c><00:10:02.200><c> a</c><00:10:02.760><c> a</c><00:10:03.000><c> back</c><00:10:03.839><c> and</c><00:10:03.959><c> it's</c>
+transition can be just a a back and it's
+just<00:10:04.560><c> it's</c><00:10:04.640><c> going</c><00:10:04.760><c> to</c><00:10:05.079><c> pop</c><00:10:05.680><c> up</c><00:10:06.680><c> and</c><00:10:06.800><c> the</c><00:10:06.959><c> enter</c>
+just it's going to pop up and the enter
+time<00:10:08.120><c> let's</c><00:10:08.360><c> do</c><00:10:08.800><c> just</c><00:10:09.000><c> 0.</c><00:10:09.399><c> five</c><00:10:09.720><c> to</c><00:10:09.839><c> make</c><00:10:10.000><c> it</c>
+time let's do just 0. five to make it
+very<00:10:10.480><c> obvious</c><00:10:11.360><c> all</c><00:10:11.519><c> right</c><00:10:11.760><c> let's</c><00:10:11.959><c> run</c><00:10:12.320><c> that</c>
+very obvious all right let's run that
+and<00:10:13.200><c> it</c><00:10:13.320><c> didn't</c><00:10:13.560><c> do</c><00:10:13.760><c> anything</c><00:10:14.279><c> don't</c><00:10:14.480><c> forget</c>
+and it didn't do anything don't forget
+to<00:10:14.959><c> check</c><00:10:15.399><c> your</c><00:10:15.720><c> inter</c>
+to check your inter
+animation<00:10:17.839><c> let's</c><00:10:18.079><c> try</c><00:10:18.240><c> it</c><00:10:18.560><c> now</c><00:10:19.560><c> and</c><00:10:19.760><c> there</c><00:10:19.880><c> we</c>
+animation let's try it now and there we
+go<00:10:20.640><c> so</c><00:10:20.839><c> if</c><00:10:20.959><c> you</c><00:10:21.079><c> saw</c><00:10:21.480><c> that</c><00:10:21.880><c> had</c><00:10:22.000><c> a</c><00:10:22.160><c> little</c><00:10:22.360><c> bit</c>
+go so if you saw that had a little bit
+of<00:10:22.600><c> a</c><00:10:22.760><c> bounce</c><00:10:23.079><c> in</c><00:10:23.240><c> there</c><00:10:24.079><c> that's</c><00:10:24.440><c> that</c><00:10:24.920><c> um</c>
+of a bounce in there that's that um
+weird<00:10:26.640><c> effect</c><00:10:27.000><c> so</c><00:10:27.160><c> if</c><00:10:27.240><c> we</c><00:10:27.360><c> do</c><00:10:27.560><c> linear</c><00:10:28.079><c> then</c><00:10:28.279><c> it</c>
+weird effect so if we do linear then it
+it's<00:10:28.680><c> just</c><00:10:29.079><c> zero</c><00:10:29.279><c> 0</c><00:10:29.560><c> to</c><00:10:29.720><c> one</c><00:10:30.720><c> so</c><00:10:30.880><c> we</c><00:10:31.000><c> have</c><00:10:31.240><c> that</c>
+it's just zero 0 to one so we have that
+animation<00:10:32.519><c> we</c><00:10:32.640><c> can</c><00:10:32.920><c> delay</c><00:10:33.399><c> that</c><00:10:34.240><c> maybe</c><00:10:34.560><c> by</c><00:10:34.680><c> a</c>
+animation we can delay that maybe by a
+second<00:10:37.839><c> now</c><00:10:38.000><c> because</c><00:10:38.320><c> we've</c><00:10:38.720><c> we're</c><00:10:38.880><c> working</c>
+second now because we've we're working
+in<00:10:39.399><c> this</c><00:10:39.680><c> this</c><00:10:39.839><c> function</c><00:10:40.200><c> that</c><00:10:40.320><c> we've</c><00:10:40.519><c> created</c>
+in this this function that we've created
+and<00:10:41.120><c> added</c><00:10:41.480><c> these</c><00:10:42.120><c> you</c><00:10:42.200><c> know</c><00:10:42.440><c> delay</c><00:10:42.760><c> features</c>
+and added these you know delay features
+to<00:10:43.600><c> and</c><00:10:43.720><c> we're</c><00:10:43.959><c> cycling</c><00:10:44.320><c> through</c><00:10:44.519><c> all</c><00:10:44.639><c> these</c>
+to and we're cycling through all these
+properties<00:10:45.880><c> all</c><00:10:46.000><c> of</c><00:10:46.160><c> these</c><00:10:46.279><c> settings</c><00:10:46.639><c> are</c><00:10:46.880><c> are</c>
+properties all of these settings are are
+going<00:10:47.079><c> to</c><00:10:47.240><c> work</c><00:10:47.480><c> the</c><00:10:47.600><c> same</c><00:10:48.120><c> for</c><00:10:48.360><c> whatever</c><00:10:48.720><c> type</c>
+going to work the same for whatever type
+of<00:10:49.040><c> Animation</c><00:10:49.399><c> you</c><00:10:49.519><c> create</c><00:10:49.839><c> so</c><00:10:50.000><c> that's</c><00:10:50.160><c> why</c><00:10:50.279><c> we</c>
+of Animation you create so that's why we
+can<00:10:50.519><c> just</c><00:10:50.720><c> add</c><00:10:50.839><c> a</c><00:10:51.040><c> delay</c><00:10:52.040><c> to</c><00:10:52.279><c> this</c><00:10:52.560><c> ENT</c>
+can just add a delay to this ENT
+animation<00:10:53.519><c> because</c><00:10:53.800><c> we</c><00:10:54.079><c> created</c><00:10:54.399><c> the</c><00:10:54.600><c> delay</c>
+animation because we created the delay
+functionality<00:10:55.839><c> to</c><00:10:56.000><c> our</c><00:10:56.200><c> component</c><00:10:56.680><c> in</c><00:10:56.800><c> the</c>
+functionality to our component in the
+last<00:10:57.160><c> episode</c><00:10:57.680><c> so</c><00:10:57.839><c> that's</c><00:10:58.040><c> already</c><00:10:58.480><c> that's</c>
+last episode so that's already that's
+already<00:10:58.880><c> working</c><00:10:59.480><c> out</c><00:10:59.600><c> of</c><00:10:59.760><c> the</c><00:10:59.959><c> box</c><00:11:00.399><c> we're</c>
+already working out of the box we're
+good<00:11:00.760><c> to</c><00:11:00.959><c> go</c><00:11:01.120><c> with</c><00:11:01.320><c> that</c><00:11:01.639><c> now</c><00:11:01.839><c> let's</c><00:11:02.000><c> say</c><00:11:02.200><c> I</c>
+good to go with that now let's say I
+wanted<00:11:02.639><c> to</c><00:11:02.959><c> have</c><00:11:03.360><c> the</c><00:11:04.079><c> continue</c><00:11:04.600><c> button</c><00:11:05.480><c> enter</c>
+wanted to have the continue button enter
+in<00:11:06.839><c> after</c><00:11:07.639><c> the</c><00:11:07.800><c> new</c><00:11:08.040><c> game</c><00:11:08.279><c> button</c><00:11:09.079><c> they're</c>
+in after the new game button they're
+both<00:11:09.480><c> entering</c><00:11:10.000><c> they</c><00:11:10.120><c> both</c><00:11:10.279><c> have</c><00:11:10.440><c> those</c>
+both entering they both have those
+animations<00:11:11.680><c> and</c><00:11:11.839><c> if</c><00:11:11.959><c> I</c><00:11:12.120><c> just</c><00:11:12.320><c> play</c><00:11:12.519><c> it</c><00:11:13.200><c> they</c>
+animations and if I just play it they
+they<00:11:13.560><c> just</c><00:11:13.800><c> they</c><00:11:13.920><c> just</c><00:11:14.200><c> go</c><00:11:14.680><c> they</c><00:11:14.920><c> start</c><00:11:15.279><c> from</c>
+they just they just go they start from
+the<00:11:15.560><c> same</c><00:11:15.800><c> point</c><00:11:16.720><c> let's</c><00:11:16.839><c> say</c><00:11:16.959><c> I</c><00:11:17.040><c> wanted</c><00:11:17.279><c> to</c>
+the same point let's say I wanted to
+wait<00:11:18.320><c> that's</c><00:11:18.519><c> why</c><00:11:18.680><c> we</c><00:11:18.839><c> have</c><00:11:19.040><c> this</c><00:11:19.399><c> wait</c><00:11:19.959><c> for</c>
+wait that's why we have this wait for
+option<00:11:22.000><c> so</c><00:11:22.200><c> I</c><00:11:22.279><c> can</c><00:11:22.680><c> set</c><00:11:23.680><c> uh</c><00:11:23.760><c> to</c><00:11:23.920><c> the</c><00:11:24.079><c> animation</c>
+option so I can set uh to the animation
+component<00:11:25.079><c> the</c><00:11:25.240><c> animation</c><00:11:25.760><c> of</c><00:11:26.040><c> the</c><00:11:26.240><c> the</c><00:11:26.320><c> new</c>
+component the animation of the the new
+game<00:11:26.839><c> button</c><00:11:27.680><c> and</c><00:11:27.800><c> I</c><00:11:27.880><c> can</c><00:11:28.040><c> set</c><00:11:28.279><c> that</c><00:11:28.480><c> wait</c><00:11:28.720><c> for</c>
+game button and I can set that wait for
+to<00:11:29.600><c> to</c><00:11:29.760><c> load</c><00:11:30.000><c> to</c><00:11:30.279><c> that</c><00:11:30.519><c> and</c><00:11:30.600><c> we</c><00:11:30.760><c> got</c><00:11:30.839><c> to</c><00:11:30.959><c> do</c><00:11:31.120><c> a</c>
+to to load to that and we got to do a
+couple<00:11:31.440><c> of</c><00:11:31.560><c> things</c><00:11:31.720><c> in</c><00:11:31.839><c> our</c><00:11:32.079><c> code</c><00:11:32.880><c> and</c><00:11:32.959><c> we're</c>
+couple of things in our code and we're
+going<00:11:33.200><c> to</c><00:11:33.320><c> be</c><00:11:33.480><c> waiting</c><00:11:34.440><c> in</c><00:11:34.639><c> fact</c><00:11:35.440><c> if</c><00:11:35.560><c> I</c><00:11:35.720><c> run</c>
+going to be waiting in fact if I run
+that<00:11:36.160><c> right</c><00:11:36.360><c> now</c><00:11:36.680><c> because</c><00:11:36.880><c> we</c><00:11:37.040><c> set</c><00:11:37.600><c> that</c>
+that right now because we set that
+remember<00:11:38.839><c> we</c><00:11:39.040><c> we</c><00:11:39.320><c> passed</c><00:11:40.279><c> that</c><00:11:40.480><c> continue</c>
+remember we we passed that continue
+button<00:11:41.079><c> is</c><00:11:41.200><c> not</c><00:11:41.360><c> going</c><00:11:41.440><c> to</c><00:11:41.760><c> do</c><00:11:41.959><c> anything</c><00:11:42.720><c> it's</c>
+button is not going to do anything it's
+just<00:11:43.000><c> going</c><00:11:43.120><c> to</c><00:11:43.279><c> sit</c><00:11:43.519><c> there</c><00:11:44.320><c> so</c><00:11:44.480><c> we</c><00:11:44.600><c> need</c><00:11:44.720><c> to</c>
+just going to sit there so we need to
+run<00:11:45.360><c> that</c><00:11:45.600><c> animation</c><00:11:46.079><c> in</c><00:11:46.200><c> a</c><00:11:46.440><c> different</c><00:11:46.839><c> way</c>
+run that animation in a different way
+and<00:11:48.240><c> really</c><00:11:49.240><c> in</c><00:11:49.600><c> in</c><00:11:49.800><c> our</c><00:11:50.120><c> logic</c><00:11:50.680><c> it's</c><00:11:50.920><c> we</c><00:11:51.040><c> need</c>
+and really in in our logic it's we need
+to<00:11:51.399><c> run</c><00:11:51.600><c> that</c><00:11:51.800><c> animation</c><00:11:52.720><c> when</c><00:11:52.959><c> this</c>
+to run that animation when this
+animation<00:11:53.760><c> is</c><00:11:53.959><c> done</c><00:11:54.320><c> so</c><00:11:54.519><c> what</c><00:11:54.639><c> we</c><00:11:54.800><c> need</c><00:11:55.000><c> to</c><00:11:55.240><c> do</c>
+animation is done so what we need to do
+is<00:11:55.880><c> fire</c><00:11:56.279><c> a</c><00:11:56.600><c> signal</c><00:11:57.600><c> when</c><00:11:57.800><c> the</c><00:11:58.000><c> animation</c><00:11:58.440><c> is</c>
+is fire a signal when the animation is
+done<00:11:59.079><c> and</c><00:11:59.279><c> and</c><00:11:59.480><c> we'll</c><00:11:59.720><c> listen</c><00:12:00.000><c> for</c><00:12:00.360><c> it</c><00:12:01.360><c> so</c>
+done and and we'll listen for it so
+let's<00:12:01.720><c> go</c><00:12:01.839><c> to</c><00:12:02.000><c> the</c><00:12:02.200><c> top</c><00:12:02.399><c> we're</c><00:12:02.519><c> going</c><00:12:02.639><c> to</c><00:12:02.880><c> add</c><00:12:03.160><c> a</c>
+let's go to the top we're going to add a
+new
+signal<00:12:05.920><c> and</c><00:12:06.000><c> we'll</c><00:12:06.240><c> call</c><00:12:06.519><c> this</c><00:12:07.120><c> entered</c><00:12:07.959><c> again</c>
+signal and we'll call this entered again
+whenever<00:12:08.480><c> you</c><00:12:08.720><c> create</c><00:12:09.079><c> signals</c><00:12:09.560><c> try</c><00:12:09.720><c> to</c><00:12:09.880><c> do</c>
+whenever you create signals try to do
+like<00:12:10.480><c> a</c><00:12:10.720><c> past</c><00:12:10.959><c> tense</c><00:12:11.480><c> we</c><00:12:11.639><c> basically</c><00:12:12.040><c> have</c><00:12:12.200><c> two</c>
+like a past tense we basically have two
+situations<00:12:13.279><c> that</c><00:12:13.440><c> could</c><00:12:13.720><c> occur</c><00:12:14.279><c> either</c><00:12:14.519><c> the</c>
+situations that could occur either the
+parent<00:12:15.000><c> hasn't</c><00:12:15.399><c> enter</c><00:12:15.760><c> animation</c><00:12:16.320><c> or</c><00:12:16.480><c> it</c>
+parent hasn't enter animation or it
+doesn't<00:12:17.519><c> and</c><00:12:17.720><c> if</c><00:12:17.839><c> it</c><00:12:18.040><c> doesn't</c><00:12:18.560><c> we</c><00:12:18.720><c> just</c><00:12:18.880><c> want</c>
+doesn't and if it doesn't we just want
+to<00:12:19.240><c> say</c><00:12:19.639><c> it's</c><00:12:19.800><c> entered</c><00:12:20.399><c> it's</c><00:12:20.639><c> done</c><00:12:21.360><c> if</c><00:12:21.480><c> it</c><00:12:21.680><c> does</c>
+to say it's entered it's done if it does
+we<00:12:22.160><c> need</c><00:12:22.279><c> to</c><00:12:22.440><c> wait</c><00:12:22.600><c> for</c><00:12:22.760><c> that</c><00:12:22.880><c> twe</c><00:12:23.320><c> that</c>
+we need to wait for that twe that
+animation<00:12:23.920><c> to</c><00:12:24.120><c> finish</c><00:12:24.560><c> and</c><00:12:24.760><c> then</c><00:12:24.920><c> we're</c><00:12:25.040><c> going</c>
+animation to finish and then we're going
+to<00:12:25.360><c> emit</c><00:12:25.680><c> that</c><00:12:25.839><c> signal</c><00:12:26.800><c> so</c><00:12:27.160><c> if</c><00:12:27.279><c> we</c><00:12:27.480><c> go</c><00:12:27.800><c> up</c><00:12:28.440><c> to</c>
+to emit that signal so if we go up to
+our
+right<00:12:30.199><c> here</c><00:12:30.680><c> in</c><00:12:30.839><c> our</c><00:12:31.120><c> setup</c><00:12:31.880><c> we've</c><00:12:32.079><c> done</c><00:12:32.279><c> all</c>
+right here in our setup we've done all
+the<00:12:32.800><c> the</c><00:12:33.000><c> fancy</c><00:12:33.600><c> loading</c><00:12:33.959><c> of</c><00:12:34.040><c> the</c><00:12:34.120><c> variables</c>
+the the fancy loading of the variables
+we<00:12:34.720><c> connected</c><00:12:35.079><c> our</c><00:12:35.240><c> signals</c><00:12:36.240><c> we're</c><00:12:36.480><c> checking</c>
+we connected our signals we're checking
+if<00:12:36.920><c> we're</c><00:12:37.160><c> doing</c><00:12:37.320><c> an</c><00:12:37.399><c> enter</c><00:12:37.760><c> animation</c><00:12:38.360><c> and</c>
+if we're doing an enter animation and
+then<00:12:38.600><c> we're</c><00:12:38.720><c> running</c><00:12:39.000><c> that</c><00:12:39.160><c> on</c><00:12:39.360><c> enter</c><00:12:40.160><c> if</c>
+then we're running that on enter if
+we're<00:12:40.680><c> not</c><00:12:41.480><c> running</c><00:12:41.760><c> an</c><00:12:41.880><c> enter</c>
+we're not running an enter
+animation<00:12:43.959><c> then</c><00:12:44.480><c> let's</c><00:12:44.680><c> just</c><00:12:44.880><c> admit</c><00:12:45.199><c> our</c>
+animation then let's just admit our
+signal<00:12:46.120><c> because</c><00:12:46.320><c> we're</c><00:12:46.959><c> done</c><00:12:47.959><c> our</c><00:12:48.199><c> button</c><00:12:48.560><c> has</c>
+signal because we're done our button has
+loaded<00:12:49.279><c> it's</c><00:12:49.519><c> animated</c><00:12:50.079><c> whatever</c><00:12:50.360><c> it's</c><00:12:50.519><c> going</c>
+loaded it's animated whatever it's going
+to<00:12:50.760><c> do</c><00:12:51.079><c> it's</c><00:12:51.360><c> done</c><00:12:51.800><c> we'll</c><00:12:52.040><c> emit</c><00:12:52.279><c> it</c><00:12:52.720><c> there</c><00:12:53.320><c> and</c>
+to do it's done we'll emit it there and
+then<00:12:53.800><c> if</c><00:12:53.959><c> it</c><00:12:54.279><c> is</c><00:12:54.920><c> running</c><00:12:55.279><c> an</c><00:12:55.480><c> animation</c><00:12:56.160><c> let's</c>
+then if it is running an animation let's
+go<00:12:56.519><c> to</c><00:12:56.680><c> our</c><00:12:56.880><c> add</c><00:12:57.120><c> tween</c><00:12:57.399><c> animation</c><00:12:58.000><c> and</c><00:12:58.160><c> we</c>
+go to our add tween animation and we
+need<00:12:58.760><c> to</c><00:12:59.360><c> actually</c><00:12:59.639><c> create</c><00:13:00.000><c> another</c>
+need to actually create another
+parameter<00:13:01.079><c> because</c><00:13:01.360><c> we're</c><00:13:02.240><c> we're</c><00:13:02.480><c> creating</c><00:13:02.839><c> a</c>
+parameter because we're we're creating a
+different<00:13:03.399><c> type</c><00:13:03.600><c> of</c><00:13:03.800><c> Animation</c><00:13:04.320><c> here</c><00:13:04.480><c> and</c><00:13:04.560><c> we</c>
+different type of Animation here and we
+need<00:13:04.839><c> to</c><00:13:05.079><c> check</c><00:13:05.320><c> for</c><00:13:05.560><c> something</c><00:13:06.320><c> and</c><00:13:06.480><c> what</c><00:13:06.600><c> we</c>
+need to check for something and what we
+need<00:13:06.880><c> to</c><00:13:07.040><c> check</c><00:13:07.320><c> for</c><00:13:07.560><c> is</c><00:13:07.839><c> whether</c><00:13:08.040><c> or</c><00:13:08.240><c> not</c><00:13:08.800><c> this</c>
+need to check for is whether or not this
+animation<00:13:10.519><c> is</c><00:13:10.680><c> an</c><00:13:10.959><c> entering</c><00:13:11.560><c> animation</c><00:13:12.360><c> okay</c>
+animation is an entering animation okay
+that's<00:13:12.800><c> going</c><00:13:12.920><c> to</c><00:13:13.199><c> throw</c><00:13:13.440><c> all</c><00:13:13.680><c> these</c><00:13:13.839><c> errors</c>
+that's going to throw all these errors
+because<00:13:14.680><c> we</c><00:13:14.800><c> were</c><00:13:14.959><c> missing</c><00:13:15.279><c> a</c><00:13:15.480><c> parameter</c><00:13:16.360><c> and</c>
+because we were missing a parameter and
+our<00:13:16.760><c> our</c><00:13:17.000><c> other</c><00:13:17.279><c> things</c><00:13:17.839><c> so</c><00:13:18.440><c> we'll</c><00:13:18.639><c> fix</c><00:13:18.880><c> those</c>
+our our other things so we'll fix those
+in<00:13:19.120><c> a</c><00:13:19.279><c> second</c><00:13:19.560><c> in</c><00:13:19.720><c> our</c><00:13:19.920><c> animation</c><00:13:20.720><c> if</c><00:13:20.920><c> this</c><00:13:21.040><c> is</c>
+in a second in our animation if this is
+an<00:13:21.480><c> entering</c><00:13:22.040><c> animation</c><00:13:22.839><c> so</c><00:13:23.240><c> if</c><00:13:23.560><c> entering</c><00:13:24.040><c> is</c>
+an entering animation so if entering is
+true<00:13:25.760><c> then</c><00:13:25.920><c> we</c><00:13:26.079><c> need</c><00:13:26.279><c> to</c><00:13:26.680><c> await</c>
+tween<00:13:31.199><c> finished</c><00:13:32.199><c> and</c><00:13:32.320><c> when</c><00:13:32.480><c> it</c>
+tween finished and when it
+is<00:13:34.600><c> then</c><00:13:34.800><c> we</c>
+is then we
+emit<00:13:37.160><c> so</c><00:13:37.399><c> again</c><00:13:37.720><c> we're</c><00:13:38.720><c> we're</c><00:13:38.920><c> checking</c><00:13:39.279><c> if</c>
+emit so again we're we're checking if
+this<00:13:39.560><c> is</c><00:13:39.680><c> an</c><00:13:39.839><c> entering</c><00:13:40.360><c> animation</c><00:13:41.360><c> we're</c>
+this is an entering animation we're
+going<00:13:41.560><c> to</c><00:13:41.760><c> set</c><00:13:42.000><c> that</c><00:13:42.120><c> in</c><00:13:42.240><c> a</c><00:13:42.399><c> second</c><00:13:43.160><c> if</c><00:13:43.279><c> it</c><00:13:43.440><c> is</c>
+going to set that in a second if it is
+we're<00:13:43.800><c> going</c><00:13:43.880><c> to</c><00:13:44.040><c> wait</c><00:13:44.199><c> for</c><00:13:44.399><c> that</c><00:13:44.560><c> animation</c>
+we're going to wait for that animation
+to<00:13:45.199><c> finish</c><00:13:45.639><c> and</c><00:13:45.880><c> then</c><00:13:46.079><c> we</c><00:13:46.199><c> will</c><00:13:46.519><c> emit</c><00:13:47.519><c> the</c>
+to finish and then we will emit the
+entered<00:13:48.399><c> signal</c><00:13:48.959><c> and</c><00:13:49.079><c> that's</c><00:13:49.240><c> going</c><00:13:49.320><c> to</c>
+entered signal and that's going to
+Cascade<00:13:50.800><c> start</c><00:13:51.120><c> all</c><00:13:51.240><c> the</c><00:13:51.360><c> other</c><00:13:51.600><c> animations</c>
+Cascade start all the other animations
+that<00:13:52.160><c> are</c><00:13:52.399><c> waiting</c><00:13:52.680><c> for</c><00:13:52.839><c> this</c><00:13:52.920><c> one</c><00:13:53.120><c> to</c><00:13:53.279><c> finish</c>
+that are waiting for this one to finish
+let's<00:13:54.240><c> go</c><00:13:54.360><c> ahead</c><00:13:54.519><c> and</c><00:13:54.759><c> fix</c><00:13:55.079><c> all</c><00:13:55.199><c> of</c><00:13:55.320><c> these</c>
+let's go ahead and fix all of these
+other<00:13:55.639><c> ones</c><00:13:56.279><c> so</c><00:13:57.279><c> if</c><00:13:57.480><c> we</c><00:13:57.639><c> are</c><00:13:58.360><c> uh</c><00:13:58.519><c> on</c><00:13:58.759><c> ENT</c>
+other ones so if we are uh on ENT
+remember<00:13:59.759><c> this</c><00:13:59.880><c> is</c><00:14:00.040><c> our</c><00:14:00.480><c> reset</c><00:14:00.880><c> the</c><00:14:01.160><c> zero</c><00:14:01.560><c> or</c>
+remember this is our reset the zero or
+whatever<00:14:02.120><c> your</c><00:14:02.279><c> enter</c><00:14:02.680><c> settings</c><00:14:03.160><c> are</c><00:14:03.959><c> we</c>
+whatever your enter settings are we
+don't<00:14:04.320><c> need</c><00:14:04.560><c> this</c><00:14:04.680><c> to</c><00:14:04.839><c> be</c><00:14:04.959><c> an</c><00:14:05.079><c> entering</c>
+don't need this to be an entering
+animation<00:14:06.120><c> we</c><00:14:06.240><c> don't</c><00:14:06.399><c> want</c><00:14:06.519><c> to</c><00:14:06.800><c> emit</c><00:14:07.199><c> when</c>
+animation we don't want to emit when
+this<00:14:07.519><c> one's</c><00:14:07.800><c> done</c><00:14:08.079><c> so</c><00:14:08.240><c> we</c><00:14:08.360><c> set</c><00:14:08.560><c> that</c><00:14:08.680><c> to</c><00:14:09.120><c> false</c>
+this one's done so we set that to false
+and<00:14:10.279><c> we</c><00:14:10.480><c> do</c><00:14:10.880><c> have</c><00:14:11.160><c> to</c><00:14:11.800><c> uh</c><00:14:12.240><c> also</c><00:14:13.199><c> fix</c><00:14:13.480><c> our</c><00:14:13.720><c> our</c>
+and we do have to uh also fix our our
+binds<00:14:14.560><c> here</c><00:14:15.240><c> although</c><00:14:15.519><c> technically</c><00:14:16.000><c> I</c><00:14:16.120><c> guess</c>
+binds here although technically I guess
+you<00:14:16.440><c> could</c><00:14:16.920><c> just</c><00:14:17.079><c> set</c><00:14:17.240><c> it</c><00:14:17.360><c> to</c><00:14:17.600><c> false</c><00:14:18.519><c> um</c><00:14:18.959><c> but</c><00:14:19.680><c> if</c>
+you could just set it to false um but if
+we're<00:14:20.440><c> hovering</c><00:14:21.440><c> we</c><00:14:21.560><c> don't</c><00:14:21.720><c> need</c><00:14:21.839><c> to</c><00:14:22.120><c> set</c><00:14:22.399><c> this</c>
+we're hovering we don't need to set this
+as<00:14:22.839><c> an</c><00:14:23.000><c> entering</c><00:14:23.360><c> animation</c><00:14:23.959><c> we</c><00:14:24.079><c> set</c><00:14:24.320><c> that</c><00:14:24.440><c> to</c>
+as an entering animation we set that to
+false<00:14:25.720><c> and</c><00:14:26.160><c> if</c><00:14:26.320><c> we</c><00:14:26.440><c> are</c><00:14:27.199><c> UNH</c><00:14:27.440><c> hovering</c><00:14:28.360><c> we</c><00:14:28.480><c> set</c>
+false and if we are UNH hovering we set
+it<00:14:28.759><c> to</c><00:14:28.839><c> false</c><00:14:29.120><c> false</c><00:14:29.600><c> we're</c><00:14:29.800><c> not</c><00:14:29.959><c> entering</c><00:14:30.880><c> the</c>
+it to false false we're not entering the
+only<00:14:31.440><c> place</c><00:14:31.920><c> that</c><00:14:32.040><c> we</c><00:14:32.199><c> will</c><00:14:32.399><c> be</c><00:14:32.759><c> entering</c>
+only place that we will be entering
+using<00:14:34.079><c> this</c><00:14:34.240><c> entering</c><00:14:34.720><c> animation</c><00:14:35.440><c> is</c><00:14:35.959><c> right</c>
+using this entering animation is right
+here<00:14:36.560><c> so</c><00:14:37.079><c> onenter</c><00:14:37.720><c> function</c><00:14:38.600><c> reset</c>
+here so onenter function reset
+everything<00:14:39.399><c> to</c><00:14:39.600><c> our</c><00:14:40.000><c> zero</c><00:14:41.000><c> if</c><00:14:41.120><c> we're</c><00:14:41.320><c> waiting</c>
+everything to our zero if we're waiting
+for<00:14:41.839><c> something</c><00:14:42.759><c> then</c><00:14:43.399><c> we're</c><00:14:43.639><c> waiting</c><00:14:44.160><c> if</c><00:14:44.360><c> not</c>
+for something then we're waiting if not
+then<00:14:45.079><c> we're</c><00:14:45.759><c> running</c><00:14:46.079><c> our</c><00:14:46.240><c> entering</c>
+then we're running our entering
+animation<00:14:47.360><c> and</c><00:14:47.920><c> here</c><00:14:48.920><c> is</c><00:14:49.079><c> where</c><00:14:49.199><c> we</c><00:14:49.320><c> want</c><00:14:49.440><c> to</c>
+animation and here is where we want to
+set<00:14:49.720><c> it</c><00:14:49.800><c> to</c><00:14:49.959><c> true</c><00:14:50.519><c> so</c><00:14:50.759><c> this</c><00:14:50.880><c> will</c><00:14:51.399><c> run</c><00:14:52.399><c> this</c>
+set it to true so this will run this
+will<00:14:52.759><c> liit</c><00:14:53.759><c> everything</c><00:14:54.079><c> else</c><00:14:54.279><c> can</c><00:14:54.480><c> follow</c>
+will liit everything else can follow
+after<00:14:55.199><c> that</c><00:14:56.000><c> I</c><00:14:56.279><c> that</c><00:14:56.480><c> might</c><00:14:56.639><c> be</c><00:14:56.759><c> a</c><00:14:56.839><c> little</c>
+after that I that might be a little
+confusing<00:14:57.600><c> I</c><00:14:57.720><c> hope</c><00:14:58.000><c> not</c><00:14:58.759><c> trying</c><00:14:59.000><c> trying</c><00:14:59.160><c> to</c>
+confusing I hope not trying trying to
+explain<00:14:59.560><c> it</c><00:14:59.959><c> as</c><00:15:00.120><c> best</c><00:15:00.279><c> as</c><00:15:00.440><c> I</c><00:15:00.560><c> can</c><00:15:00.839><c> but</c><00:15:01.040><c> it'll</c>
+explain it as best as I can but it'll
+make<00:15:01.600><c> sense</c><00:15:01.959><c> when</c><00:15:02.079><c> it</c><00:15:02.240><c> runs</c><00:15:03.079><c> because</c><00:15:03.320><c> it</c><00:15:03.440><c> does</c>
+make sense when it runs because it does
+work<00:15:04.120><c> now</c><00:15:04.240><c> we're</c><00:15:04.399><c> not</c><00:15:04.639><c> actually</c><00:15:05.000><c> done</c><00:15:05.560><c> yet</c>
+work now we're not actually done yet
+because<00:15:06.120><c> we</c><00:15:06.240><c> are</c><00:15:06.600><c> emitting</c><00:15:07.040><c> this</c><00:15:07.199><c> signal</c><00:15:07.800><c> but</c>
+because we are emitting this signal but
+the<00:15:09.040><c> the</c><00:15:09.199><c> thing</c><00:15:09.480><c> that</c><00:15:09.639><c> the</c><00:15:09.720><c> thing</c><00:15:09.880><c> that's</c>
+the the thing that the thing that's
+waiting<00:15:10.399><c> for</c><00:15:10.600><c> this</c><00:15:10.759><c> to</c><00:15:11.000><c> emit</c><00:15:11.399><c> doesn't</c>
+waiting for this to emit doesn't
+actually<00:15:12.160><c> know</c><00:15:13.000><c> that</c><00:15:13.160><c> it's</c><00:15:13.320><c> doing</c><00:15:13.639><c> that</c><00:15:13.880><c> it</c>
+actually know that it's doing that it
+doesn't<00:15:14.279><c> know</c><00:15:14.399><c> what</c><00:15:14.519><c> to</c><00:15:14.680><c> do</c><00:15:15.000><c> so</c><00:15:15.199><c> we</c><00:15:15.320><c> need</c><00:15:15.480><c> to</c>
+doesn't know what to do so we need to
+make<00:15:15.880><c> another</c><00:15:16.320><c> signal</c><00:15:16.839><c> connection</c><00:15:17.839><c> with</c><00:15:18.040><c> this</c>
+make another signal connection with this
+entered<00:15:19.120><c> uh</c><00:15:19.279><c> signal</c><00:15:20.279><c> so</c><00:15:20.440><c> we'll</c><00:15:20.600><c> go</c><00:15:20.800><c> back</c><00:15:20.920><c> to</c>
+entered uh signal so we'll go back to
+our<00:15:21.560><c> connect</c><00:15:21.959><c> signals</c><00:15:22.440><c> function</c><00:15:22.800><c> up</c><00:15:23.040><c> here</c><00:15:23.639><c> and</c>
+our connect signals function up here and
+we're<00:15:23.880><c> going</c><00:15:24.000><c> to</c><00:15:24.240><c> add</c><00:15:24.680><c> a</c><00:15:25.759><c> if</c><00:15:26.759><c> we're</c><00:15:27.000><c> waiting</c>
+we're going to add a if we're waiting
+for<00:15:27.560><c> something</c><00:15:28.120><c> we</c><00:15:28.240><c> need</c><00:15:28.360><c> to</c><00:15:28.519><c> take</c><00:15:28.720><c> that</c><00:15:29.040><c> know</c>
+for something we need to take that know
+that<00:15:29.519><c> we're</c><00:15:29.720><c> we're</c><00:15:29.920><c> waiting</c><00:15:30.279><c> for</c><00:15:31.279><c> and</c><00:15:31.519><c> connect</c>
+that we're we're waiting for and connect
+its<00:15:32.399><c> entered</c><00:15:32.920><c> signal</c><00:15:33.360><c> that</c><00:15:33.480><c> we</c>
+its entered signal that we
+created<00:15:35.560><c> and</c><00:15:35.639><c> we</c><00:15:35.759><c> need</c><00:15:35.880><c> to</c><00:15:36.079><c> connect</c><00:15:36.360><c> it</c><00:15:36.519><c> to</c><00:15:36.680><c> our</c>
+created and we need to connect it to our
+add<00:15:37.680><c> twe</c><00:15:38.319><c> just</c><00:15:38.519><c> like</c><00:15:38.680><c> we</c><00:15:38.839><c> did</c><00:15:39.079><c> with</c><00:15:39.240><c> the</c><00:15:39.399><c> hover</c>
+add twe just like we did with the hover
+on<00:15:40.759><c> and</c><00:15:40.880><c> the</c><00:15:41.000><c> hover</c><00:15:41.560><c> off</c><00:15:42.560><c> and</c><00:15:42.639><c> we'll</c><00:15:42.839><c> make</c><00:15:43.040><c> this</c>
+on and the hover off and we'll make this
+nice<00:15:43.440><c> and</c><00:15:43.680><c> clean</c><00:15:44.519><c> like</c><00:15:44.639><c> we</c><00:15:44.759><c> did</c><00:15:44.880><c> with</c><00:15:45.040><c> the</c>
+nice and clean like we did with the
+other<00:15:45.399><c> ones</c><00:15:46.399><c> and</c><00:15:46.519><c> we'll</c><00:15:46.720><c> fill</c><00:15:46.920><c> out</c><00:15:47.120><c> our</c>
+other ones and we'll fill out our
+parameters<00:15:48.160><c> this</c><00:15:48.319><c> will</c><00:15:48.600><c> be</c><00:15:49.360><c> whoop</c><00:15:50.360><c> we'll</c><00:15:50.560><c> fill</c>
+parameters this will be whoop we'll fill
+out<00:15:51.079><c> our</c><00:15:51.440><c> parameters</c><00:15:52.120><c> this</c><00:15:52.240><c> will</c><00:15:52.399><c> be</c><00:15:52.639><c> default</c>
+out our parameters this will be default
+values<00:15:55.560><c> parallel</c>
+values parallel
+animations<00:15:57.959><c> enter</c><00:15:58.480><c> time</c><00:15:59.040><c> because</c><00:15:59.199><c> this</c><00:15:59.279><c> is</c>
+animations enter time because this is
+going<00:15:59.519><c> to</c><00:15:59.639><c> be</c><00:15:59.759><c> the</c><00:15:59.880><c> inter</c><00:16:00.160><c> animation</c><00:16:00.839><c> remember</c>
+going to be the inter animation remember
+enter
+delay<00:16:04.880><c> enter</c>
+delay enter
+transition<00:16:07.600><c> enter</c>
+transition enter
+easing<00:16:10.160><c> and</c><00:16:10.959><c> let's</c><00:16:11.199><c> say</c><00:16:11.440><c> that</c><00:16:11.839><c> this</c><00:16:12.279><c> node</c><00:16:13.279><c> is</c>
+easing and let's say that this node is
+being<00:16:13.639><c> waited</c><00:16:13.959><c> on</c><00:16:14.199><c> by</c><00:16:14.319><c> something</c><00:16:14.600><c> else</c><00:16:15.079><c> so</c>
+being waited on by something else so
+this<00:16:15.480><c> needs</c><00:16:15.800><c> also</c><00:16:15.959><c> to</c><00:16:16.079><c> be</c><00:16:16.199><c> set</c><00:16:16.360><c> the</c><00:16:16.480><c> true</c><00:16:17.120><c> and</c><00:16:17.360><c> I</c>
+this needs also to be set the true and I
+think<00:16:18.399><c> we</c><00:16:18.519><c> are</c><00:16:18.720><c> good</c><00:16:18.880><c> to</c><00:16:19.079><c> go</c><00:16:19.920><c> so</c><00:16:20.160><c> let's</c><00:16:20.480><c> test</c>
+think we are good to go so let's test
+this<00:16:21.800><c> and</c><00:16:22.000><c> in</c><00:16:22.240><c> this</c><00:16:22.519><c> case</c><00:16:23.240><c> let's</c><00:16:23.800><c> add</c><00:16:24.560><c> uh</c><00:16:24.680><c> let's</c>
+this and in this case let's add uh let's
+just<00:16:24.959><c> show</c><00:16:25.199><c> how</c><00:16:25.360><c> easy</c><00:16:25.639><c> this</c><00:16:25.800><c> is</c><00:16:26.040><c> now</c><00:16:27.000><c> let's</c><00:16:27.480><c> um</c>
+just show how easy this is now let's um
+let's<00:16:27.880><c> add</c><00:16:28.000><c> an</c><00:16:28.240><c> animation</c>
+let's add an animation
+to<00:16:30.240><c> our</c><00:16:30.600><c> panel</c><00:16:31.040><c> container</c><00:16:32.040><c> right</c><00:16:32.440><c> let's</c><00:16:32.680><c> make</c>
+to our panel container right let's make
+the<00:16:33.199><c> panel</c><00:16:33.440><c> container</c><00:16:33.920><c> pop</c><00:16:34.480><c> up</c><00:16:35.480><c> we'll</c><00:16:35.680><c> add</c><00:16:35.839><c> a</c>
+the panel container pop up we'll add a
+new<00:16:36.399><c> animation</c><00:16:37.440><c> component</c><00:16:38.440><c> to</c><00:16:38.639><c> our</c><00:16:38.920><c> panel</c>
+new animation component to our panel
+container<00:16:40.560><c> and</c><00:16:41.160><c> we</c><00:16:41.279><c> will</c><00:16:41.600><c> set</c><00:16:41.800><c> some</c><00:16:42.040><c> settings</c>
+container and we will set some settings
+over<00:16:42.680><c> here</c><00:16:42.880><c> we'll</c><00:16:43.079><c> make</c><00:16:43.199><c> it</c><00:16:43.920><c> do</c><00:16:44.160><c> an</c><00:16:44.279><c> inner</c>
+over here we'll make it do an inner
+animation<00:16:45.720><c> uh</c><00:16:45.880><c> everything</c><00:16:46.199><c> else</c><00:16:46.480><c> is</c><00:16:47.040><c> good</c>
+animation uh everything else is good
+with<00:16:47.399><c> default</c><00:16:47.839><c> we</c><00:16:47.920><c> won't</c><00:16:48.120><c> worry</c><00:16:48.319><c> about</c><00:16:48.560><c> hover</c>
+with default we won't worry about hover
+and<00:16:49.720><c> for</c><00:16:49.880><c> the</c><00:16:50.000><c> inner</c><00:16:50.399><c> time</c><00:16:50.800><c> let's</c><00:16:51.000><c> do</c><00:16:51.440><c> 0.5</c>
+and for the inner time let's do 0.5
+seconds<00:16:52.720><c> let's</c><00:16:52.959><c> add</c><00:16:53.160><c> just</c><00:16:53.279><c> a</c><00:16:53.519><c> little</c><00:16:53.720><c> bit</c><00:16:53.880><c> of</c><00:16:53.959><c> a</c>
+seconds let's add just a little bit of a
+delay<00:16:55.199><c> and</c><00:16:55.360><c> let's</c><00:16:55.560><c> have</c><00:16:55.680><c> it</c><00:16:56.040><c> bounce</c><00:16:56.560><c> in</c><00:16:56.959><c> ease</c>
+delay and let's have it bounce in ease
+in<00:16:57.480><c> ease</c><00:16:57.839><c> out</c><00:16:59.000><c> we'll</c><00:16:59.199><c> start</c><00:16:59.399><c> from</c><00:16:59.560><c> a</c><00:16:59.720><c> scale</c><00:17:00.040><c> of</c>
+in ease out we'll start from a scale of
+zero<00:17:00.519><c> it's</c><00:17:00.680><c> going</c><00:17:00.759><c> to</c><00:17:00.880><c> go</c><00:17:01.000><c> to</c><00:17:01.120><c> a</c><00:17:01.240><c> scale</c><00:17:01.560><c> of</c><00:17:02.160><c> one</c>
+zero it's going to go to a scale of one
+and<00:17:04.160><c> let's</c><00:17:04.439><c> also</c><00:17:05.199><c> um</c><00:17:05.839><c> make</c><00:17:06.039><c> it</c><00:17:06.199><c> transparent</c><00:17:06.959><c> to</c>
+and let's also um make it transparent to
+the<00:17:07.360><c> nontransparent</c><00:17:08.039><c> let's</c><00:17:08.919><c> just</c><00:17:09.120><c> check</c><00:17:09.400><c> that</c>
+the nontransparent let's just check that
+animation
+first<00:17:12.039><c> boom</c><00:17:12.520><c> there</c><00:17:12.640><c> you</c><00:17:12.839><c> go</c><00:17:13.120><c> nice</c><00:17:13.319><c> and</c><00:17:13.480><c> easy</c><00:17:14.199><c> if</c>
+first boom there you go nice and easy if
+we<00:17:14.439><c> get</c><00:17:14.600><c> rid</c><00:17:14.720><c> of</c><00:17:14.919><c> this</c><00:17:15.120><c> delay</c><00:17:15.520><c> it's</c><00:17:15.640><c> going</c><00:17:15.760><c> to</c>
+we get rid of this delay it's going to
+run<00:17:16.160><c> at</c><00:17:16.319><c> the</c><00:17:16.559><c> same</c><00:17:17.439><c> time</c><00:17:17.880><c> so</c><00:17:18.039><c> we</c><00:17:18.120><c> want</c><00:17:18.240><c> to</c><00:17:18.520><c> wait</c>
+run at the same time so we want to wait
+for<00:17:19.520><c> our</c><00:17:19.760><c> our</c><00:17:20.000><c> panel</c><00:17:20.319><c> to</c><00:17:20.480><c> load</c><00:17:20.880><c> and</c><00:17:21.199><c> then</c><00:17:21.839><c> let's</c>
+for our our panel to load and then let's
+do<00:17:22.240><c> our</c><00:17:22.400><c> buttons</c><00:17:23.000><c> so</c><00:17:23.240><c> we</c><00:17:23.480><c> go</c><00:17:23.640><c> to</c><00:17:23.959><c> our</c><00:17:24.679><c> our</c><00:17:24.880><c> new</c>
+do our buttons so we go to our our new
+game<00:17:25.520><c> animation</c><00:17:26.039><c> component</c><00:17:26.480><c> that</c><00:17:26.600><c> we've</c>
+game animation component that we've
+added<00:17:27.600><c> we'll</c><00:17:27.799><c> change</c><00:17:28.120><c> the</c><00:17:28.280><c> weight</c><00:17:28.439><c> for</c><00:17:28.919><c> to</c><00:17:29.080><c> our</c>
+added we'll change the weight for to our
+panel<00:17:30.280><c> container</c><00:17:31.280><c> let's</c><00:17:31.480><c> try</c><00:17:31.679><c> it</c>
+now<00:17:35.360><c> there</c><00:17:35.480><c> we</c><00:17:35.679><c> go</c><00:17:36.280><c> so</c><00:17:36.520><c> this</c><00:17:36.799><c> animation</c><00:17:37.440><c> the</c>
+now there we go so this animation the
+entering<00:17:38.000><c> animation</c><00:17:39.000><c> waited</c><00:17:39.320><c> for</c><00:17:39.559><c> the</c><00:17:40.039><c> panel</c>
+entering animation waited for the panel
+animation<00:17:40.960><c> to</c><00:17:41.160><c> finish</c><00:17:41.600><c> and</c><00:17:41.760><c> then</c><00:17:41.919><c> it</c><00:17:42.120><c> runs</c><00:17:42.880><c> we</c>
+animation to finish and then it runs we
+can<00:17:43.120><c> also</c><00:17:43.320><c> do</c><00:17:43.480><c> the</c><00:17:43.640><c> same</c><00:17:43.880><c> thing</c><00:17:44.200><c> with</c><00:17:44.360><c> our</c>
+can also do the same thing with our
+continue<00:17:45.720><c> button</c><00:17:46.039><c> in</c><00:17:46.160><c> fact</c><00:17:46.400><c> I</c><00:17:46.480><c> think</c><00:17:46.640><c> we're</c>
+continue button in fact I think we're
+running<00:17:47.720><c> that</c><00:17:47.960><c> already</c><00:17:48.360><c> we're</c><00:17:48.559><c> waiting</c><00:17:49.320><c> for</c>
+running that already we're waiting for
+the<00:17:49.640><c> new</c><00:17:49.840><c> game</c><00:17:50.679><c> let's</c><00:17:51.000><c> add</c><00:17:51.360><c> another</c><00:17:51.880><c> one</c>
+the new game let's add another one
+here<00:17:54.480><c> to</c><00:17:54.679><c> our</c><00:17:54.880><c> third</c><00:17:55.200><c> button</c><00:17:56.159><c> have</c><00:17:56.320><c> another</c>
+here to our third button have another
+inner<00:17:56.880><c> animation</c>
+inner animation
+zero<00:17:59.320><c> it</c><00:17:59.559><c> out</c><00:18:00.440><c> linear</c><00:18:00.840><c> is</c><00:18:01.080><c> fine</c><00:18:01.440><c> and</c><00:18:01.679><c> let's</c>
+zero it out linear is fine and let's
+wait<00:18:02.159><c> for</c><00:18:02.400><c> our</c><00:18:02.640><c> continue</c><00:18:03.039><c> button</c><00:18:03.280><c> to</c><00:18:03.679><c> finish</c>
+wait for our continue button to finish
+have<00:18:04.840><c> us</c><00:18:05.080><c> take</c><00:18:05.880><c> 05</c><00:18:06.880><c> so</c><00:18:07.480><c> panel</c><00:18:07.799><c> should</c><00:18:08.039><c> run</c><00:18:08.640><c> new</c>
+have us take 05 so panel should run new
+game<00:18:09.080><c> should</c><00:18:09.320><c> run</c><00:18:09.919><c> continue</c><00:18:10.360><c> should</c><00:18:10.600><c> run</c><00:18:11.159><c> then</c>
+game should run continue should run then
+settings<00:18:11.720><c> should</c>
+settings should
+run<00:18:14.840><c> and</c><00:18:15.000><c> there</c><00:18:15.080><c> you</c><00:18:15.280><c> go</c><00:18:16.240><c> you</c><00:18:16.360><c> just</c><00:18:16.480><c> saw</c><00:18:16.720><c> it</c>
+run and there you go you just saw it
+takes<00:18:17.559><c> like</c><00:18:18.559><c> 15</c><00:18:19.000><c> seconds</c><00:18:19.360><c> to</c><00:18:19.480><c> add</c><00:18:19.600><c> a</c><00:18:19.720><c> new</c>
+takes like 15 seconds to add a new
+animation<00:18:20.880><c> to</c><00:18:21.240><c> the</c><00:18:21.520><c> uh</c><00:18:21.640><c> the</c><00:18:21.720><c> settings</c><00:18:22.120><c> button</c>
+animation to the uh the settings button
+and<00:18:22.600><c> you</c><00:18:22.880><c> have</c><00:18:23.080><c> control</c><00:18:23.480><c> of</c><00:18:24.080><c> when</c><00:18:24.240><c> it</c><00:18:24.400><c> comes</c><00:18:24.640><c> in</c>
+and you have control of when it comes in
+you<00:18:24.919><c> can</c><00:18:25.039><c> add</c><00:18:25.159><c> a</c><00:18:25.520><c> delay</c><00:18:26.520><c> adjust</c><00:18:26.840><c> all</c><00:18:26.960><c> the</c>
+you can add a delay adjust all the
+settings<00:18:27.360><c> that</c><00:18:27.480><c> you</c><00:18:27.640><c> want</c><00:18:28.080><c> I</c><00:18:28.159><c> think</c><00:18:28.280><c> this</c><00:18:28.360><c> is</c><00:18:28.480><c> a</c>
+settings that you want I think this is a
+good<00:18:28.960><c> stopping</c><00:18:29.360><c> point</c><00:18:29.720><c> for</c><00:18:29.919><c> our</c><00:18:30.200><c> animation</c>
+good stopping point for our animation
+portion<00:18:31.520><c> at</c><00:18:31.640><c> least</c><00:18:31.960><c> getting</c><00:18:32.200><c> it</c><00:18:32.520><c> going</c><00:18:33.520><c> um</c><00:18:34.080><c> we</c>
+portion at least getting it going um we
+can<00:18:34.280><c> jump</c><00:18:34.520><c> into</c><00:18:34.760><c> some</c><00:18:34.919><c> user</c><00:18:35.200><c> interfaces</c><00:18:35.960><c> we</c>
+can jump into some user interfaces we
+can<00:18:36.159><c> start</c><00:18:36.360><c> getting</c><00:18:36.559><c> to</c><00:18:36.760><c> the</c><00:18:36.919><c> fun</c><00:18:37.200><c> stuff</c><00:18:38.120><c> as</c>
+can start getting to the fun stuff as
+always<00:18:38.760><c> uh</c><00:18:38.880><c> thanks</c><00:18:39.080><c> for</c><00:18:39.240><c> watching</c><00:18:39.520><c> if</c><00:18:39.600><c> you</c>
+always uh thanks for watching if you
+want<00:18:39.840><c> the</c><00:18:39.919><c> source</c><00:18:40.240><c> files</c><00:18:40.480><c> you</c><00:18:40.600><c> can</c><00:18:40.679><c> grab</c><00:18:40.919><c> on</c>
+want the source files you can grab on
+patreon<00:18:42.320><c> and</c><00:18:42.919><c> uh</c><00:18:43.600><c> yeah</c><00:18:44.200><c> keep</c><00:18:44.559><c> creating</c><00:18:45.559><c> all</c>
+patreon and uh yeah keep creating all
+right<00:18:45.880><c> guys</c><00:18:46.080><c> if</c><00:18:46.240><c> this</c><00:18:46.400><c> tutorial</c><00:18:46.840><c> was</c><00:18:47.039><c> helpful</c>
+right guys if this tutorial was helpful
+consider<00:18:47.720><c> it</c><00:18:47.880><c> a</c><00:18:48.080><c> like</c><00:18:48.440><c> And</c><00:18:48.640><c> subscribe</c><00:18:49.039><c> to</c><00:18:49.159><c> the</c>
+consider it a like And subscribe to the
+channel<00:18:49.640><c> as</c><00:18:49.720><c> we're</c><00:18:49.880><c> going</c><00:18:49.960><c> to</c><00:18:50.039><c> be</c><00:18:50.200><c> covering</c><00:18:50.679><c> a</c>
+channel as we're going to be covering a
+lot<00:18:51.240><c> more</c><00:18:52.000><c> thanks</c><00:18:52.240><c> to</c><00:18:52.600><c> all</c><00:18:52.799><c> of</c><00:18:52.960><c> my</c><00:18:53.080><c> patrons</c><00:18:53.440><c> who</c>
+lot more thanks to all of my patrons who
+keep<00:18:53.760><c> this</c><00:18:53.919><c> series</c><00:18:54.280><c> going</c><00:18:55.000><c> you</c><00:18:55.200><c> too</c><00:18:55.559><c> can</c><00:18:55.760><c> get</c>
+keep this series going you too can get
+access<00:18:56.320><c> to</c><00:18:56.480><c> the</c><00:18:56.640><c> project</c><00:18:57.000><c> source</c><00:18:57.400><c> files</c><00:18:57.840><c> by</c>
+access to the project source files by
+joining<00:18:58.320><c> my</c><00:18:58.440><c> Pat</c>
+joining my Pat
+you<00:18:59.799><c> can</c><00:19:00.000><c> download</c><00:19:00.480><c> everything</c><00:19:00.960><c> there</c><00:19:01.240><c> and</c>
+you can download everything there and
+you'll<00:19:01.679><c> also</c><00:19:01.919><c> get</c><00:19:02.120><c> early</c><00:19:02.520><c> access</c><00:19:02.760><c> to</c><00:19:02.960><c> my</c>
+you'll also get early access to my
+videos<00:19:03.640><c> and</c><00:19:03.799><c> sneak</c><00:19:04.200><c> peeks</c><00:19:04.559><c> at</c><00:19:04.760><c> Future</c>
+videos and sneak peeks at Future
+tutorials<00:19:06.320><c> thanks</c><00:19:06.559><c> for</c><00:19:06.799><c> watching</c><00:19:07.440><c> and</c><00:19:07.600><c> as</c>
+tutorials thanks for watching and as
+always<00:19:08.360><c> keep</c><00:19:08.600><c> creating</c>
+always keep creating

@@ -1,0 +1,2352 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.780 align:start position:0%
+ 
+in<00:00:00.060><c> the</c><00:00:00.599><c> previous</c><00:00:00.810><c> part</c><00:00:01.020><c> with</c><00:00:01.709><c> codes</c><00:00:02.490><c> a</c>
+
+00:00:02.780 --> 00:00:02.790 align:start position:0%
+in the previous part with codes a
+ 
+
+00:00:02.790 --> 00:00:06.260 align:start position:0%
+in the previous part with codes a
+leveling<00:00:03.570><c> and</c><00:00:03.810><c> experience</c><00:00:04.710><c> system</c><00:00:05.520><c> now</c><00:00:06.060><c> we're</c>
+
+00:00:06.260 --> 00:00:06.270 align:start position:0%
+leveling and experience system now we're
+ 
+
+00:00:06.270 --> 00:00:08.450 align:start position:0%
+leveling and experience system now we're
+going<00:00:06.450><c> to</c><00:00:06.540><c> connect</c><00:00:07.200><c> it</c><00:00:07.319><c> with</c><00:00:07.740><c> some</c><00:00:07.980><c> bits</c><00:00:08.250><c> of</c>
+
+00:00:08.450 --> 00:00:08.460 align:start position:0%
+going to connect it with some bits of
+ 
+
+00:00:08.460 --> 00:00:12.350 align:start position:0%
+going to connect it with some bits of
+interface<00:00:09.179><c> in</c><00:00:10.050><c> the</c><00:00:10.559><c> project</c><00:00:11.280><c> you</c><00:00:11.940><c> want</c><00:00:12.150><c> a</c><00:00:12.240><c> good</c>
+
+00:00:12.350 --> 00:00:12.360 align:start position:0%
+interface in the project you want a good
+ 
+
+00:00:12.360 --> 00:00:14.690 align:start position:0%
+interface in the project you want a good
+to<00:00:12.509><c> be</c><00:00:12.660><c> player</c><00:00:12.960><c> GUI</c><00:00:13.530><c> folder</c><00:00:14.190><c> and</c><00:00:14.400><c> I've</c>
+
+00:00:14.690 --> 00:00:14.700 align:start position:0%
+to be player GUI folder and I've
+ 
+
+00:00:14.700 --> 00:00:17.660 align:start position:0%
+to be player GUI folder and I've
+prepared<00:00:15.120><c> an</c><00:00:15.450><c> experience</c><00:00:16.170><c> bar</c><00:00:16.440><c> for</c><00:00:16.890><c> us</c><00:00:16.920><c> the</c>
+
+00:00:17.660 --> 00:00:17.670 align:start position:0%
+prepared an experience bar for us the
+ 
+
+00:00:17.670 --> 00:00:20.450 align:start position:0%
+prepared an experience bar for us the
+scene<00:00:17.910><c> itself</c><00:00:18.330><c> is</c><00:00:18.630><c> fairly</c><00:00:19.050><c> simple</c><00:00:19.500><c> we</c><00:00:19.920><c> have</c><00:00:19.949><c> a</c>
+
+00:00:20.450 --> 00:00:20.460 align:start position:0%
+scene itself is fairly simple we have a
+ 
+
+00:00:20.460 --> 00:00:23.420 align:start position:0%
+scene itself is fairly simple we have a
+progress<00:00:20.939><c> bar</c><00:00:21.180><c> node</c><00:00:21.720><c> that</c><00:00:22.320><c> represents</c><00:00:22.590><c> our</c>
+
+00:00:23.420 --> 00:00:23.430 align:start position:0%
+progress bar node that represents our
+ 
+
+00:00:23.430 --> 00:00:26.269 align:start position:0%
+progress bar node that represents our
+experience<00:00:24.180><c> bar</c><00:00:24.449><c> then</c><00:00:25.080><c> we</c><00:00:25.230><c> have</c><00:00:25.439><c> some</c><00:00:25.710><c> bit</c><00:00:26.130><c> of</c>
+
+00:00:26.269 --> 00:00:26.279 align:start position:0%
+experience bar then we have some bit of
+ 
+
+00:00:26.279 --> 00:00:28.939 align:start position:0%
+experience bar then we have some bit of
+text<00:00:26.730><c> as</c><00:00:26.939><c> a</c><00:00:27.210><c> picture</c><00:00:27.510><c> and</c><00:00:27.900><c> a</c><00:00:28.050><c> twin</c><00:00:28.349><c> node</c><00:00:28.529><c> if</c><00:00:28.859><c> you</c>
+
+00:00:28.939 --> 00:00:28.949 align:start position:0%
+text as a picture and a twin node if you
+ 
+
+00:00:28.949 --> 00:00:30.859 align:start position:0%
+text as a picture and a twin node if you
+want<00:00:29.070><c> to</c><00:00:29.279><c> see</c><00:00:29.550><c> how</c><00:00:29.789><c> to</c><00:00:29.849><c> create</c><00:00:30.150><c> a</c><00:00:30.449><c> bar</c><00:00:30.840><c> that</c>
+
+00:00:30.859 --> 00:00:30.869 align:start position:0%
+want to see how to create a bar that
+ 
+
+00:00:30.869 --> 00:00:33.650 align:start position:0%
+want to see how to create a bar that
+fills<00:00:31.410><c> up</c><00:00:31.650><c> like</c><00:00:31.920><c> that</c><00:00:32.160><c> we</c><00:00:32.610><c> have</c><00:00:32.880><c> a</c><00:00:33.180><c> tutorial</c>
+
+00:00:33.650 --> 00:00:33.660 align:start position:0%
+fills up like that we have a tutorial
+ 
+
+00:00:33.660 --> 00:00:36.440 align:start position:0%
+fills up like that we have a tutorial
+for<00:00:34.230><c> that</c><00:00:34.440><c> on</c><00:00:34.710><c> how</c><00:00:34.950><c> to</c><00:00:35.010><c> create</c><00:00:35.370><c> a</c><00:00:35.550><c> light</c><00:00:35.940><c> bar</c><00:00:36.239><c> on</c>
+
+00:00:36.440 --> 00:00:36.450 align:start position:0%
+for that on how to create a light bar on
+ 
+
+00:00:36.450 --> 00:00:38.869 align:start position:0%
+for that on how to create a light bar on
+your<00:00:36.660><c> character</c><00:00:36.930><c> so</c><00:00:37.739><c> here</c><00:00:37.980><c> we</c><00:00:38.100><c> can</c><00:00:38.250><c> book</c><00:00:38.520><c> us</c><00:00:38.700><c> on</c>
+
+00:00:38.869 --> 00:00:38.879 align:start position:0%
+your character so here we can book us on
+ 
+
+00:00:38.879 --> 00:00:41.299 align:start position:0%
+your character so here we can book us on
+the<00:00:39.270><c> code</c><00:00:39.450><c> click</c><00:00:40.050><c> be</c><00:00:40.590><c> script</c><00:00:40.950><c> next</c><00:00:41.070><c> to</c>
+
+00:00:41.299 --> 00:00:41.309 align:start position:0%
+the code click be script next to
+ 
+
+00:00:41.309 --> 00:00:43.850 align:start position:0%
+the code click be script next to
+experience<00:00:41.969><c> bar</c><00:00:42.210><c> to</c><00:00:42.660><c> open</c><00:00:42.690><c> it</c><00:00:43.079><c> and</c><00:00:43.290><c> I've</c>
+
+00:00:43.850 --> 00:00:43.860 align:start position:0%
+experience bar to open it and I've
+ 
+
+00:00:43.860 --> 00:00:46.729 align:start position:0%
+experience bar to open it and I've
+prepared<00:00:44.160><c> a</c><00:00:44.730><c> few</c><00:00:45.149><c> methods</c><00:00:45.750><c> that</c><00:00:46.320><c> we're</c><00:00:46.559><c> going</c>
+
+00:00:46.729 --> 00:00:46.739 align:start position:0%
+prepared a few methods that we're going
+ 
+
+00:00:46.739 --> 00:00:49.639 align:start position:0%
+prepared a few methods that we're going
+to<00:00:46.920><c> use</c><00:00:47.129><c> first</c><00:00:47.700><c> this</c><00:00:47.940><c> initialize</c><00:00:48.600><c> same</c><00:00:49.350><c> thing</c>
+
+00:00:49.639 --> 00:00:49.649 align:start position:0%
+to use first this initialize same thing
+ 
+
+00:00:49.649 --> 00:00:52.639 align:start position:0%
+to use first this initialize same thing
+as<00:00:49.860><c> in</c><00:00:50.280><c> the</c><00:00:50.309><c> light</c><00:00:51.090><c> bar</c><00:00:51.420><c> torial</c><00:00:51.989><c> so</c><00:00:52.530><c> we</c>
+
+00:00:52.639 --> 00:00:52.649 align:start position:0%
+as in the light bar torial so we
+ 
+
+00:00:52.649 --> 00:00:56.090 align:start position:0%
+as in the light bar torial so we
+initialize<00:00:53.190><c> the</c><00:00:53.219><c> min</c><00:00:53.879><c> and</c><00:00:54.120><c> Max</c><00:00:54.510><c> values</c><00:00:54.660><c> on</c><00:00:55.350><c> the</c>
+
+00:00:56.090 --> 00:00:56.100 align:start position:0%
+initialize the min and Max values on the
+ 
+
+00:00:56.100 --> 00:00:59.420 align:start position:0%
+initialize the min and Max values on the
+range<00:00:56.579><c> parts</c><00:00:57.420><c> of</c><00:00:57.600><c> the</c><00:00:57.840><c> experience</c><00:00:58.379><c> bar</c><00:00:58.770><c> it's</c>
+
+00:00:59.420 --> 00:00:59.430 align:start position:0%
+range parts of the experience bar it's
+ 
+
+00:00:59.430 --> 00:01:02.209 align:start position:0%
+range parts of the experience bar it's
+one<00:00:59.730><c> of</c><00:00:59.850><c> the</c><00:00:59.969><c> classes</c><00:01:00.420><c> it</c><00:01:00.570><c> extends</c><00:01:01.500><c> and</c><00:01:01.710><c> then</c>
+
+00:01:02.209 --> 00:01:02.219 align:start position:0%
+one of the classes it extends and then
+ 
+
+00:01:02.219 --> 00:01:05.179 align:start position:0%
+one of the classes it extends and then
+we're<00:01:02.640><c> going</c><00:01:02.879><c> to</c><00:01:02.940><c> react</c><00:01:03.600><c> to</c><00:01:03.989><c> the</c><00:01:04.559><c> character</c>
+
+00:01:05.179 --> 00:01:05.189 align:start position:0%
+we're going to react to the character
+ 
+
+00:01:05.189 --> 00:01:08.359 align:start position:0%
+we're going to react to the character
+gaining<00:01:06.030><c> experience</c><00:01:06.930><c> we're</c><00:01:07.650><c> going</c><00:01:07.890><c> to</c><00:01:08.070><c> have</c>
+
+00:01:08.359 --> 00:01:08.369 align:start position:0%
+gaining experience we're going to have
+ 
+
+00:01:08.369 --> 00:01:10.850 align:start position:0%
+gaining experience we're going to have
+some<00:01:08.670><c> data</c><00:01:09.030><c> we'll</c><00:01:09.659><c> need</c><00:01:09.810><c> to</c><00:01:09.990><c> pass</c><00:01:10.260><c> a</c><00:01:10.530><c> boundary</c>
+
+00:01:10.850 --> 00:01:10.860 align:start position:0%
+some data we'll need to pass a boundary
+ 
+
+00:01:10.860 --> 00:01:13.460 align:start position:0%
+some data we'll need to pass a boundary
+characters<00:01:11.430><c> growth</c><00:01:11.760><c> also</c><00:01:12.240><c> we</c><00:01:12.960><c> are</c><00:01:13.020><c> going</c><00:01:13.290><c> to</c>
+
+00:01:13.460 --> 00:01:13.470 align:start position:0%
+characters growth also we are going to
+ 
+
+00:01:13.470 --> 00:01:16.670 align:start position:0%
+characters growth also we are going to
+animate<00:01:13.920><c> the</c><00:01:14.400><c> value</c><00:01:14.850><c> on</c><00:01:15.030><c> the</c><00:01:15.659><c> life</c><00:01:15.810><c> bar</c><00:01:16.110><c> we'll</c>
+
+00:01:16.670 --> 00:01:16.680 align:start position:0%
+animate the value on the life bar we'll
+ 
+
+00:01:16.680 --> 00:01:19.219 align:start position:0%
+animate the value on the life bar we'll
+see<00:01:16.920><c> that</c><00:01:17.070><c> in</c><00:01:17.280><c> a</c><00:01:17.400><c> second</c><00:01:17.820><c> but</c><00:01:17.970><c> first</c><00:01:18.360><c> we</c><00:01:18.930><c> need</c>
+
+00:01:19.219 --> 00:01:19.229 align:start position:0%
+see that in a second but first we need
+ 
+
+00:01:19.229 --> 00:01:22.550 align:start position:0%
+see that in a second but first we need
+that<00:01:20.100><c> signal</c><00:01:20.790><c> on</c><00:01:21.060><c> character</c><00:01:21.780><c> experience</c>
+
+00:01:22.550 --> 00:01:22.560 align:start position:0%
+that signal on character experience
+ 
+
+00:01:22.560 --> 00:01:24.830 align:start position:0%
+that signal on character experience
+gained<00:01:22.890><c> we</c><00:01:23.280><c> don't</c><00:01:23.520><c> have</c><00:01:23.700><c> it</c><00:01:23.820><c> so</c><00:01:24.299><c> we</c><00:01:24.390><c> have</c><00:01:24.540><c> to</c><00:01:24.689><c> go</c>
+
+00:01:24.830 --> 00:01:24.840 align:start position:0%
+gained we don't have it so we have to go
+ 
+
+00:01:24.840 --> 00:01:27.980 align:start position:0%
+gained we don't have it so we have to go
+back<00:01:25.020><c> to</c><00:01:25.200><c> our</c><00:01:25.290><c> character</c><00:01:26.100><c> script</c><00:01:26.490><c> and</c><00:01:26.729><c> to</c><00:01:27.570><c> open</c>
+
+00:01:27.980 --> 00:01:27.990 align:start position:0%
+back to our character script and to open
+ 
+
+00:01:27.990 --> 00:01:31.370 align:start position:0%
+back to our character script and to open
+it<00:01:28.350><c> you</c><00:01:28.409><c> can</c><00:01:28.770><c> press</c><00:01:29.400><c> ctrl</c><00:01:29.790><c> alt</c><00:01:29.970><c> o</c><00:01:30.240><c> and</c><00:01:30.509><c> type</c><00:01:31.110><c> for</c>
+
+00:01:31.370 --> 00:01:31.380 align:start position:0%
+it you can press ctrl alt o and type for
+ 
+
+00:01:31.380 --> 00:01:34.789 align:start position:0%
+it you can press ctrl alt o and type for
+character<00:01:32.070><c> to</c><00:01:32.820><c> find</c><00:01:33.119><c> character</c><00:01:33.570><c> Gd</c><00:01:34.079><c> okay</c><00:01:34.740><c> so</c>
+
+00:01:34.789 --> 00:01:34.799 align:start position:0%
+character to find character Gd okay so
+ 
+
+00:01:34.799 --> 00:01:37.219 align:start position:0%
+character to find character Gd okay so
+let<00:01:35.100><c> me</c><00:01:35.250><c> expand</c><00:01:35.640><c> the</c><00:01:35.790><c> script</c><00:01:36.210><c> editors</c><00:01:36.720><c> we</c><00:01:37.020><c> have</c>
+
+00:01:37.219 --> 00:01:37.229 align:start position:0%
+let me expand the script editors we have
+ 
+
+00:01:37.229 --> 00:01:39.410 align:start position:0%
+let me expand the script editors we have
+a<00:01:37.259><c> little</c><00:01:37.650><c> more</c><00:01:37.860><c> space</c><00:01:38.250><c> and</c><00:01:38.579><c> we'll</c><00:01:38.880><c> add</c><00:01:39.119><c> a</c>
+
+00:01:39.410 --> 00:01:39.420 align:start position:0%
+a little more space and we'll add a
+ 
+
+00:01:39.420 --> 00:01:42.289 align:start position:0%
+a little more space and we'll add a
+signal<00:01:40.140><c> to</c><00:01:40.409><c> start</c><00:01:40.710><c> with</c><00:01:41.009><c> we're</c><00:01:41.700><c> going</c><00:01:41.880><c> to</c><00:01:42.030><c> pass</c>
+
+00:01:42.289 --> 00:01:42.299 align:start position:0%
+signal to start with we're going to pass
+ 
+
+00:01:42.299 --> 00:01:45.109 align:start position:0%
+signal to start with we're going to pass
+that<00:01:42.930><c> experience</c><00:01:43.530><c> gained</c><00:01:43.710><c> in</c><00:01:43.979><c> pull</c><00:01:44.310><c> through</c><00:01:44.970><c> a</c>
+
+00:01:45.109 --> 00:01:45.119 align:start position:0%
+that experience gained in pull through a
+ 
+
+00:01:45.119 --> 00:01:47.990 align:start position:0%
+that experience gained in pull through a
+signal<00:01:45.750><c> with</c><00:01:46.140><c> the</c><00:01:46.320><c> same</c><00:01:46.680><c> name</c><00:01:46.979><c> so</c><00:01:47.250><c> experience</c>
+
+00:01:47.990 --> 00:01:48.000 align:start position:0%
+signal with the same name so experience
+ 
+
+00:01:48.000 --> 00:01:51.920 align:start position:0%
+signal with the same name so experience
+gained<00:01:48.899><c> and</c><00:01:49.229><c> we're</c><00:01:50.009><c> going</c><00:01:50.250><c> to</c><00:01:50.430><c> pass</c><00:01:50.700><c> some</c><00:01:51.270><c> data</c>
+
+00:01:51.920 --> 00:01:51.930 align:start position:0%
+gained and we're going to pass some data
+ 
+
+00:01:51.930 --> 00:01:54.679 align:start position:0%
+gained and we're going to pass some data
+now<00:01:52.380><c> this</c><00:01:53.040><c> growth</c><00:01:53.369><c> data</c><00:01:53.640><c> is</c><00:01:54.090><c> going</c><00:01:54.270><c> to</c><00:01:54.360><c> be</c><00:01:54.450><c> an</c>
+
+00:01:54.679 --> 00:01:54.689 align:start position:0%
+now this growth data is going to be an
+ 
+
+00:01:54.689 --> 00:01:58.039 align:start position:0%
+now this growth data is going to be an
+array<00:01:54.899><c> of</c><00:01:55.290><c> the</c><00:01:55.950><c> growth</c><00:01:56.700><c> the</c><00:01:57.030><c> character</c><00:01:57.509><c> had</c><00:01:57.750><c> on</c>
+
+00:01:58.039 --> 00:01:58.049 align:start position:0%
+array of the growth the character had on
+ 
+
+00:01:58.049 --> 00:02:00.410 align:start position:0%
+array of the growth the character had on
+every<00:01:58.560><c> level</c><00:01:58.770><c> so</c><00:01:59.310><c> there</c><00:01:59.460><c> are</c><00:01:59.579><c> a</c><00:01:59.700><c> few</c><00:01:59.969><c> ways</c><00:02:00.149><c> we</c>
+
+00:02:00.410 --> 00:02:00.420 align:start position:0%
+every level so there are a few ways we
+ 
+
+00:02:00.420 --> 00:02:03.200 align:start position:0%
+every level so there are a few ways we
+can<00:02:00.630><c> go</c><00:02:00.899><c> about</c><00:02:01.280><c> animating</c><00:02:02.280><c> that</c><00:02:02.729><c> gained</c>
+
+00:02:03.200 --> 00:02:03.210 align:start position:0%
+can go about animating that gained
+ 
+
+00:02:03.210 --> 00:02:07.910 align:start position:0%
+can go about animating that gained
+experience<00:02:03.890><c> one</c><00:02:04.890><c> is</c><00:02:05.189><c> in</c><00:02:06.090><c> texture</c><00:02:07.020><c> progress</c><00:02:07.500><c> to</c>
+
+00:02:07.910 --> 00:02:07.920 align:start position:0%
+experience one is in texture progress to
+ 
+
+00:02:07.920 --> 00:02:10.460 align:start position:0%
+experience one is in texture progress to
+call<00:02:08.280><c> the</c><00:02:08.789><c> characters</c><00:02:09.390><c> get</c><00:02:10.050><c> required</c>
+
+00:02:10.460 --> 00:02:10.470 align:start position:0%
+call the characters get required
+ 
+
+00:02:10.470 --> 00:02:12.619 align:start position:0%
+call the characters get required
+experience<00:02:10.830><c> for</c><00:02:11.340><c> each</c><00:02:11.550><c> level</c><00:02:11.970><c> that</c><00:02:12.330><c> be</c>
+
+00:02:12.619 --> 00:02:12.629 align:start position:0%
+experience for each level that be
+ 
+
+00:02:12.629 --> 00:02:13.059 align:start position:0%
+experience for each level that be
+character
+
+00:02:13.059 --> 00:02:13.069 align:start position:0%
+character
+ 
+
+00:02:13.069 --> 00:02:16.059 align:start position:0%
+character
+passed<00:02:13.400><c> and</c><00:02:13.670><c> to</c><00:02:14.120><c> make</c><00:02:14.390><c> some</c><00:02:14.659><c> calculation</c><00:02:15.469><c> with</c>
+
+00:02:16.059 --> 00:02:16.069 align:start position:0%
+passed and to make some calculation with
+ 
+
+00:02:16.069 --> 00:02:19.509 align:start position:0%
+passed and to make some calculation with
+the<00:02:16.370><c> experience</c><00:02:17.359><c> that</c><00:02:17.689><c> was</c><00:02:18.049><c> gained</c><00:02:18.469><c> at</c><00:02:18.950><c> that</c>
+
+00:02:19.509 --> 00:02:19.519 align:start position:0%
+the experience that was gained at that
+ 
+
+00:02:19.519 --> 00:02:20.319 align:start position:0%
+the experience that was gained at that
+given<00:02:19.730><c> point</c>
+
+00:02:20.319 --> 00:02:20.329 align:start position:0%
+given point
+ 
+
+00:02:20.329 --> 00:02:22.959 align:start position:0%
+given point
+so<00:02:20.569><c> the</c><00:02:20.719><c> amount</c><00:02:21.230><c> sorry</c><00:02:21.620><c> and</c><00:02:21.889><c> that</c><00:02:22.280><c> was</c><00:02:22.519><c> gained</c>
+
+00:02:22.959 --> 00:02:22.969 align:start position:0%
+so the amount sorry and that was gained
+ 
+
+00:02:22.969 --> 00:02:25.569 align:start position:0%
+so the amount sorry and that was gained
+and<00:02:23.090><c> from</c><00:02:23.689><c> that</c><00:02:23.769><c> recalculate</c><00:02:24.769><c> how</c><00:02:25.099><c> many</c><00:02:25.280><c> times</c>
+
+00:02:25.569 --> 00:02:25.579 align:start position:0%
+and from that recalculate how many times
+ 
+
+00:02:25.579 --> 00:02:28.179 align:start position:0%
+and from that recalculate how many times
+the<00:02:25.790><c> bar</c><00:02:26.030><c> should</c><00:02:26.540><c> bill</c><00:02:26.930><c> up</c><00:02:27.109><c> instead</c><00:02:27.920><c> we're</c>
+
+00:02:28.179 --> 00:02:28.189 align:start position:0%
+the bar should bill up instead we're
+ 
+
+00:02:28.189 --> 00:02:30.520 align:start position:0%
+the bar should bill up instead we're
+going<00:02:28.370><c> to</c><00:02:28.459><c> create</c><00:02:29.090><c> that</c><00:02:29.389><c> data</c><00:02:29.689><c> here</c><00:02:30.139><c> on</c><00:02:30.349><c> the</c>
+
+00:02:30.520 --> 00:02:30.530 align:start position:0%
+going to create that data here on the
+ 
+
+00:02:30.530 --> 00:02:33.670 align:start position:0%
+going to create that data here on the
+character<00:02:31.010><c> and</c><00:02:31.189><c> send</c><00:02:32.150><c> it</c><00:02:32.329><c> like</c><00:02:32.540><c> emitted</c><00:02:33.290><c> from</c>
+
+00:02:33.670 --> 00:02:33.680 align:start position:0%
+character and send it like emitted from
+ 
+
+00:02:33.680 --> 00:02:35.559 align:start position:0%
+character and send it like emitted from
+the<00:02:33.859><c> character</c><00:02:34.280><c> so</c><00:02:34.489><c> all</c><00:02:34.700><c> the</c><00:02:34.939><c> experience</c>
+
+00:02:35.559 --> 00:02:35.569 align:start position:0%
+the character so all the experience
+ 
+
+00:02:35.569 --> 00:02:38.199 align:start position:0%
+the character so all the experience
+related<00:02:36.019><c> calculations</c><00:02:36.799><c> stay</c><00:02:37.400><c> inside</c><00:02:38.150><c> that</c>
+
+00:02:38.199 --> 00:02:38.209 align:start position:0%
+related calculations stay inside that
+ 
+
+00:02:38.209 --> 00:02:40.839 align:start position:0%
+related calculations stay inside that
+class<00:02:38.719><c> in</c><00:02:39.469><c> our</c><00:02:39.650><c> gain</c><00:02:39.980><c> experience</c><00:02:40.459><c> function</c>
+
+00:02:40.839 --> 00:02:40.849 align:start position:0%
+class in our gain experience function
+ 
+
+00:02:40.849 --> 00:02:43.599 align:start position:0%
+class in our gain experience function
+we're<00:02:41.269><c> going</c><00:02:41.299><c> to</c><00:02:41.510><c> create</c><00:02:41.870><c> a</c><00:02:42.109><c> growth</c><00:02:42.919><c> data</c>
+
+00:02:43.599 --> 00:02:43.609 align:start position:0%
+we're going to create a growth data
+ 
+
+00:02:43.609 --> 00:02:45.520 align:start position:0%
+we're going to create a growth data
+variable<00:02:44.389><c> and</c><00:02:44.569><c> it's</c><00:02:44.719><c> going</c><00:02:44.959><c> to</c><00:02:45.079><c> be</c><00:02:45.200><c> an</c><00:02:45.319><c> array</c>
+
+00:02:45.520 --> 00:02:45.530 align:start position:0%
+variable and it's going to be an array
+ 
+
+00:02:45.530 --> 00:02:49.780 align:start position:0%
+variable and it's going to be an array
+for<00:02:46.519><c> each</c><00:02:46.700><c> level</c><00:02:47.569><c> gained</c><00:02:48.200><c> or</c><00:02:48.530><c> each</c><00:02:48.950><c> level</c><00:02:49.459><c> in</c>
+
+00:02:49.780 --> 00:02:49.790 align:start position:0%
+for each level gained or each level in
+ 
+
+00:02:49.790 --> 00:02:51.939 align:start position:0%
+for each level gained or each level in
+which<00:02:50.090><c> there</c><00:02:50.629><c> was</c><00:02:50.780><c> experience</c><00:02:51.409><c> gained</c><00:02:51.620><c> we're</c>
+
+00:02:51.939 --> 00:02:51.949 align:start position:0%
+which there was experience gained we're
+ 
+
+00:02:51.949 --> 00:02:55.059 align:start position:0%
+which there was experience gained we're
+going<00:02:52.129><c> to</c><00:02:52.280><c> add</c><00:02:52.400><c> one</c><00:02:53.000><c> line</c><00:02:53.329><c> in</c><00:02:53.629><c> there</c><00:02:54.260><c> so</c><00:02:54.859><c> here's</c>
+
+00:02:55.059 --> 00:02:55.069 align:start position:0%
+going to add one line in there so here's
+ 
+
+00:02:55.069 --> 00:02:57.309 align:start position:0%
+going to add one line in there so here's
+how<00:02:55.340><c> we</c><00:02:55.400><c> can</c><00:02:55.519><c> do</c><00:02:55.969><c> it</c><00:02:56.000><c> before</c><00:02:56.629><c> the</c><00:02:57.049><c> character</c>
+
+00:02:57.309 --> 00:02:57.319 align:start position:0%
+how we can do it before the character
+ 
+
+00:02:57.319 --> 00:03:00.159 align:start position:0%
+how we can do it before the character
+levels<00:02:57.799><c> up</c><00:02:57.980><c> we're</c><00:02:58.340><c> going</c><00:02:58.519><c> to</c><00:02:58.699><c> append</c><00:02:59.239><c> to</c><00:02:59.810><c> the</c>
+
+00:03:00.159 --> 00:03:00.169 align:start position:0%
+levels up we're going to append to the
+ 
+
+00:03:00.169 --> 00:03:03.069 align:start position:0%
+levels up we're going to append to the
+growth<00:03:00.439><c> data</c><00:03:00.650><c> two</c><00:03:01.370><c> values</c><00:03:01.909><c> we</c><00:03:02.449><c> want</c><00:03:02.599><c> to</c><00:03:02.750><c> append</c>
+
+00:03:03.069 --> 00:03:03.079 align:start position:0%
+growth data two values we want to append
+ 
+
+00:03:03.079 --> 00:03:06.250 align:start position:0%
+growth data two values we want to append
+the<00:03:03.310><c> experience</c><00:03:04.310><c> required</c><00:03:05.090><c> for</c><00:03:05.599><c> that</c><00:03:05.840><c> level</c>
+
+00:03:06.250 --> 00:03:06.260 align:start position:0%
+the experience required for that level
+ 
+
+00:03:06.260 --> 00:03:09.009 align:start position:0%
+the experience required for that level
+so<00:03:06.709><c> that</c><00:03:06.859><c> will</c><00:03:07.129><c> be</c><00:03:07.310><c> the</c><00:03:07.699><c> maximum</c><00:03:08.000><c> of</c><00:03:08.540><c> the</c><00:03:08.780><c> bar</c>
+
+00:03:09.009 --> 00:03:09.019 align:start position:0%
+so that will be the maximum of the bar
+ 
+
+00:03:09.019 --> 00:03:13.240 align:start position:0%
+so that will be the maximum of the bar
+and<00:03:09.639><c> we're</c><00:03:10.639><c> going</c><00:03:11.060><c> to</c><00:03:11.120><c> pass</c><00:03:11.810><c> the</c><00:03:12.709><c> experience</c>
+
+00:03:13.240 --> 00:03:13.250 align:start position:0%
+and we're going to pass the experience
+ 
+
+00:03:13.250 --> 00:03:15.909 align:start position:0%
+and we're going to pass the experience
+required<00:03:13.370><c> second</c><00:03:14.180><c> time</c><00:03:14.389><c> the</c><00:03:15.049><c> first</c><00:03:15.079><c> value</c><00:03:15.739><c> is</c>
+
+00:03:15.909 --> 00:03:15.919 align:start position:0%
+required second time the first value is
+ 
+
+00:03:15.919 --> 00:03:18.039 align:start position:0%
+required second time the first value is
+going<00:03:16.250><c> to</c><00:03:16.340><c> be</c><00:03:16.459><c> the</c><00:03:17.000><c> target</c><00:03:17.540><c> value</c><00:03:17.900><c> we'll</c>
+
+00:03:18.039 --> 00:03:18.049 align:start position:0%
+going to be the target value we'll
+ 
+
+00:03:18.049 --> 00:03:20.530 align:start position:0%
+going to be the target value we'll
+animate<00:03:18.349><c> to</c><00:03:18.739><c> and</c><00:03:19.009><c> the</c><00:03:19.400><c> second</c><00:03:19.879><c> will</c><00:03:20.060><c> be</c><00:03:20.299><c> the</c>
+
+00:03:20.530 --> 00:03:20.540 align:start position:0%
+animate to and the second will be the
+ 
+
+00:03:20.540 --> 00:03:22.990 align:start position:0%
+animate to and the second will be the
+maximum<00:03:21.349><c> value</c><00:03:21.530><c> will</c><00:03:22.040><c> animate</c><00:03:22.430><c> to</c><00:03:22.639><c> so</c><00:03:22.819><c> we're</c>
+
+00:03:22.990 --> 00:03:23.000 align:start position:0%
+maximum value will animate to so we're
+ 
+
+00:03:23.000 --> 00:03:25.809 align:start position:0%
+maximum value will animate to so we're
+going<00:03:23.180><c> to</c><00:03:23.359><c> fill</c><00:03:23.840><c> the</c><00:03:24.500><c> entire</c><00:03:24.650><c> bar</c><00:03:25.220><c> here</c><00:03:25.609><c> and</c>
+
+00:03:25.809 --> 00:03:25.819 align:start position:0%
+going to fill the entire bar here and
+ 
+
+00:03:25.819 --> 00:03:28.539 align:start position:0%
+going to fill the entire bar here and
+after<00:03:26.629><c> the</c><00:03:26.810><c> end</c><00:03:26.840><c> of</c><00:03:27.379><c> the</c><00:03:27.500><c> loop</c><00:03:27.680><c> we</c><00:03:28.009><c> want</c><00:03:28.220><c> to</c><00:03:28.370><c> add</c>
+
+00:03:28.539 --> 00:03:28.549 align:start position:0%
+after the end of the loop we want to add
+ 
+
+00:03:28.549 --> 00:03:31.749 align:start position:0%
+after the end of the loop we want to add
+one<00:03:29.000><c> last</c><00:03:29.329><c> nine</c><00:03:29.599><c> to</c><00:03:30.109><c> the</c><00:03:30.439><c> growth</c><00:03:30.680><c> data</c><00:03:30.919><c> and</c><00:03:31.310><c> in</c>
+
+00:03:31.749 --> 00:03:31.759 align:start position:0%
+one last nine to the growth data and in
+ 
+
+00:03:31.759 --> 00:03:34.300 align:start position:0%
+one last nine to the growth data and in
+case<00:03:32.090><c> the</c><00:03:32.629><c> character</c><00:03:33.169><c> did</c><00:03:33.319><c> not</c><00:03:33.560><c> gain</c><00:03:33.829><c> a</c><00:03:33.859><c> level</c>
+
+00:03:34.300 --> 00:03:34.310 align:start position:0%
+case the character did not gain a level
+ 
+
+00:03:34.310 --> 00:03:37.530 align:start position:0%
+case the character did not gain a level
+this<00:03:34.819><c> time</c><00:03:34.879><c> we're</c><00:03:35.540><c> going</c><00:03:35.750><c> to</c><00:03:35.840><c> append</c><00:03:36.319><c> the</c>
+
+00:03:37.530 --> 00:03:37.540 align:start position:0%
+this time we're going to append the
+ 
+
+00:03:37.540 --> 00:03:40.979 align:start position:0%
+this time we're going to append the
+experience<00:03:38.540><c> and</c><00:03:38.930><c> the</c><00:03:39.680><c> experience</c><00:03:40.519><c> required</c>
+
+00:03:40.979 --> 00:03:40.989 align:start position:0%
+experience and the experience required
+ 
+
+00:03:40.989 --> 00:03:44.319 align:start position:0%
+experience and the experience required
+for<00:03:41.989><c> the</c><00:03:42.379><c> next</c><00:03:42.650><c> level</c><00:03:42.919><c> because</c><00:03:43.489><c> in</c><00:03:43.729><c> level</c><00:03:44.150><c> up</c>
+
+00:03:44.319 --> 00:03:44.329 align:start position:0%
+for the next level because in level up
+ 
+
+00:03:44.329 --> 00:03:47.830 align:start position:0%
+for the next level because in level up
+we<00:03:44.840><c> update</c><00:03:45.379><c> it</c><00:03:45.409><c> we</c><00:03:46.189><c> don't</c><00:03:46.519><c> have</c><00:03:46.759><c> to</c><00:03:47.120><c> make</c><00:03:47.599><c> that</c>
+
+00:03:47.830 --> 00:03:47.840 align:start position:0%
+we update it we don't have to make that
+ 
+
+00:03:47.840 --> 00:03:50.559 align:start position:0%
+we update it we don't have to make that
+calculation<00:03:48.109><c> again</c><00:03:49.040><c> here</c><00:03:49.579><c> can</c><00:03:49.970><c> just</c><00:03:50.000><c> use</c><00:03:50.419><c> the</c>
+
+00:03:50.559 --> 00:03:50.569 align:start position:0%
+calculation again here can just use the
+ 
+
+00:03:50.569 --> 00:03:52.899 align:start position:0%
+calculation again here can just use the
+experience<00:03:51.139><c> required</c><00:03:51.470><c> variable</c><00:03:51.949><c> and</c><00:03:52.099><c> finally</c>
+
+00:03:52.899 --> 00:03:52.909 align:start position:0%
+experience required variable and finally
+ 
+
+00:03:52.909 --> 00:03:55.990 align:start position:0%
+experience required variable and finally
+we<00:03:53.239><c> omit</c><00:03:53.720><c> our</c><00:03:54.109><c> signal</c><00:03:54.650><c> and</c><00:03:54.829><c> pass</c><00:03:55.129><c> the</c><00:03:55.340><c> data</c><00:03:55.519><c> so</c>
+
+00:03:55.990 --> 00:03:56.000 align:start position:0%
+we omit our signal and pass the data so
+ 
+
+00:03:56.000 --> 00:03:59.259 align:start position:0%
+we omit our signal and pass the data so
+it's<00:03:56.209><c> experience</c><00:03:57.199><c> gained</c><00:03:57.530><c> it</c><00:03:58.370><c> doesn't</c><00:03:58.879><c> give</c>
+
+00:03:59.259 --> 00:03:59.269 align:start position:0%
+it's experience gained it doesn't give
+ 
+
+00:03:59.269 --> 00:04:01.209 align:start position:0%
+it's experience gained it doesn't give
+it<00:03:59.389><c> to</c><00:03:59.540><c> me</c><00:03:59.689><c> so</c><00:03:59.810><c> I'm</c><00:03:59.870><c> going</c><00:03:59.930><c> to</c><00:04:00.229><c> copy</c><00:04:00.500><c> it</c><00:04:00.769><c> at</c><00:04:01.009><c> the</c>
+
+00:04:01.209 --> 00:04:01.219 align:start position:0%
+it to me so I'm going to copy it at the
+ 
+
+00:04:01.219 --> 00:04:03.249 align:start position:0%
+it to me so I'm going to copy it at the
+top<00:04:01.400><c> of</c><00:04:01.549><c> the</c><00:04:01.699><c> script</c><00:04:02.000><c> I</c><00:04:02.329><c> didn't</c><00:04:02.810><c> get</c><00:04:02.989><c> auto</c>
+
+00:04:03.249 --> 00:04:03.259 align:start position:0%
+top of the script I didn't get auto
+ 
+
+00:04:03.259 --> 00:04:08.409 align:start position:0%
+top of the script I didn't get auto
+completion<00:04:03.739><c> and</c><00:04:04.540><c> pass</c><00:04:05.540><c> our</c><00:04:05.989><c> growth</c><00:04:06.769><c> data</c><00:04:07.419><c> all</c>
+
+00:04:08.409 --> 00:04:08.419 align:start position:0%
+completion and pass our growth data all
+ 
+
+00:04:08.419 --> 00:04:10.179 align:start position:0%
+completion and pass our growth data all
+right<00:04:08.900><c> so</c><00:04:09.109><c> now</c><00:04:09.259><c> we</c><00:04:09.319><c> need</c><00:04:09.560><c> to</c><00:04:09.709><c> make</c><00:04:09.859><c> some</c>
+
+00:04:10.179 --> 00:04:10.189 align:start position:0%
+right so now we need to make some
+ 
+
+00:04:10.189 --> 00:04:13.959 align:start position:0%
+right so now we need to make some
+connections<00:04:10.549><c> press</c><00:04:11.329><c> f11</c><00:04:11.840><c> to</c><00:04:12.439><c> go</c><00:04:12.949><c> back</c><00:04:13.189><c> to</c><00:04:13.519><c> the</c>
+
+00:04:13.959 --> 00:04:13.969 align:start position:0%
+connections press f11 to go back to the
+ 
+
+00:04:13.969 --> 00:04:17.140 align:start position:0%
+connections press f11 to go back to the
+full<00:04:14.569><c> editor</c><00:04:15.229><c> I'm</c><00:04:15.590><c> going</c><00:04:15.799><c> to</c><00:04:15.919><c> press</c><00:04:16.099><c> f1</c><00:04:16.609><c> to</c><00:04:16.789><c> go</c>
+
+00:04:17.140 --> 00:04:17.150 align:start position:0%
+full editor I'm going to press f1 to go
+ 
+
+00:04:17.150 --> 00:04:20.080 align:start position:0%
+full editor I'm going to press f1 to go
+to<00:04:17.209><c> the</c><00:04:17.479><c> 2d</c><00:04:18.049><c> editor</c><00:04:18.370><c> go</c><00:04:19.370><c> back</c><00:04:19.549><c> to</c><00:04:19.729><c> the</c><00:04:19.849><c> game</c>
+
+00:04:20.080 --> 00:04:20.090 align:start position:0%
+to the 2d editor go back to the game
+ 
+
+00:04:20.090 --> 00:04:23.019 align:start position:0%
+to the 2d editor go back to the game
+scene<00:04:20.449><c> and</c><00:04:20.750><c> we</c><00:04:21.560><c> need</c><00:04:21.709><c> to</c><00:04:21.919><c> drag</c><00:04:22.159><c> our</c><00:04:22.370><c> experience</c>
+
+00:04:23.019 --> 00:04:23.029 align:start position:0%
+scene and we need to drag our experience
+ 
+
+00:04:23.029 --> 00:04:26.750 align:start position:0%
+scene and we need to drag our experience
+bar<00:04:23.529><c> into</c><00:04:24.529><c> the</c><00:04:24.949><c> interface</c><00:04:25.400><c> and</c><00:04:25.849><c> I'm</c><00:04:26.449><c> going</c>
+
+00:04:26.750 --> 00:04:26.760 align:start position:0%
+bar into the interface and I'm going
+ 
+
+00:04:26.760 --> 00:04:29.390 align:start position:0%
+bar into the interface and I'm going
+to<00:04:26.850><c> Center</c><00:04:27.390><c> it</c><00:04:27.510><c> using</c><00:04:28.230><c> the</c><00:04:28.380><c> layout</c><00:04:28.650><c> menu</c><00:04:29.040><c> and</c>
+
+00:04:29.390 --> 00:04:29.400 align:start position:0%
+to Center it using the layout menu and
+ 
+
+00:04:29.400 --> 00:04:31.940 align:start position:0%
+to Center it using the layout menu and
+the<00:04:29.700><c> center</c><00:04:30.120><c> option</c><00:04:30.600><c> all</c><00:04:31.290><c> right</c><00:04:31.440><c> so</c><00:04:31.560><c> it's</c><00:04:31.710><c> more</c>
+
+00:04:31.940 --> 00:04:31.950 align:start position:0%
+the center option all right so it's more
+ 
+
+00:04:31.950 --> 00:04:34.040 align:start position:0%
+the center option all right so it's more
+or<00:04:32.250><c> less</c><00:04:32.310><c> centered</c><00:04:33.060><c> on</c><00:04:33.270><c> the</c><00:04:33.420><c> screen</c><00:04:33.690><c> I'm</c><00:04:34.020><c> going</c>
+
+00:04:34.040 --> 00:04:34.050 align:start position:0%
+or less centered on the screen I'm going
+ 
+
+00:04:34.050 --> 00:04:36.650 align:start position:0%
+or less centered on the screen I'm going
+to<00:04:34.230><c> move</c><00:04:34.440><c> it</c><00:04:34.590><c> down</c><00:04:34.830><c> a</c><00:04:35.070><c> little</c><00:04:35.280><c> bit</c><00:04:35.490><c> because</c><00:04:36.210><c> the</c>
+
+00:04:36.650 --> 00:04:36.660 align:start position:0%
+to move it down a little bit because the
+ 
+
+00:04:36.660 --> 00:04:38.960 align:start position:0%
+to move it down a little bit because the
+label<00:04:37.140><c> is</c><00:04:37.290><c> going</c><00:04:37.470><c> to</c><00:04:37.620><c> take</c><00:04:37.860><c> some</c><00:04:38.100><c> space</c><00:04:38.400><c> to</c>
+
+00:04:38.960 --> 00:04:38.970 align:start position:0%
+label is going to take some space to
+ 
+
+00:04:38.970 --> 00:04:41.480 align:start position:0%
+label is going to take some space to
+balance<00:04:39.390><c> out</c><00:04:39.600><c> the</c><00:04:39.630><c> screen</c><00:04:40.080><c> and</c><00:04:40.350><c> from</c><00:04:41.250><c> there</c>
+
+00:04:41.480 --> 00:04:41.490 align:start position:0%
+balance out the screen and from there
+ 
+
+00:04:41.490 --> 00:04:43.670 align:start position:0%
+balance out the screen and from there
+I'm<00:04:41.730><c> going</c><00:04:41.790><c> to</c><00:04:42.150><c> connect</c><00:04:42.630><c> the</c><00:04:43.050><c> characters</c>
+
+00:04:43.670 --> 00:04:43.680 align:start position:0%
+I'm going to connect the characters
+ 
+
+00:04:43.680 --> 00:04:46.960 align:start position:0%
+I'm going to connect the characters
+experience<00:04:44.160><c> gain</c><00:04:44.670><c> signal</c><00:04:45.180><c> and</c><00:04:45.420><c> the</c><00:04:45.990><c> note</c><00:04:46.200><c> tab</c>
+
+00:04:46.960 --> 00:04:46.970 align:start position:0%
+experience gain signal and the note tab
+ 
+
+00:04:46.970 --> 00:04:49.850 align:start position:0%
+experience gain signal and the note tab
+connected<00:04:47.970><c> to</c><00:04:48.210><c> the</c><00:04:48.570><c> experience</c><00:04:49.170><c> bar</c><00:04:49.410><c> and</c><00:04:49.650><c> it's</c>
+
+00:04:49.850 --> 00:04:49.860 align:start position:0%
+connected to the experience bar and it's
+ 
+
+00:04:49.860 --> 00:04:51.830 align:start position:0%
+connected to the experience bar and it's
+going<00:04:50.010><c> to</c><00:04:50.100><c> create</c><00:04:50.490><c> a</c><00:04:50.670><c> new</c><00:04:51.120><c> on</c><00:04:51.300><c> character</c>
+
+00:04:51.830 --> 00:04:51.840 align:start position:0%
+going to create a new on character
+ 
+
+00:04:51.840 --> 00:04:54.020 align:start position:0%
+going to create a new on character
+experience<00:04:52.260><c> gain</c><00:04:52.440><c> method</c><00:04:52.950><c> with</c><00:04:53.430><c> the</c><00:04:53.760><c> mate</c>
+
+00:04:54.020 --> 00:04:54.030 align:start position:0%
+experience gain method with the mate
+ 
+
+00:04:54.030 --> 00:04:58.160 align:start position:0%
+experience gain method with the mate
+function<00:04:54.600><c> on</c><00:04:54.920><c> alright</c><00:04:55.920><c> with</c><00:04:56.730><c> that</c><00:04:56.970><c> so</c><00:04:57.210><c> I</c><00:04:57.450><c> had</c>
+
+00:04:58.160 --> 00:04:58.170 align:start position:0%
+function on alright with that so I had
+ 
+
+00:04:58.170 --> 00:04:59.990 align:start position:0%
+function on alright with that so I had
+already<00:04:58.350><c> created</c><00:04:58.710><c> the</c><00:04:59.010><c> method</c><00:04:59.370><c> for</c><00:04:59.610><c> us</c><00:04:59.730><c> but</c>
+
+00:04:59.990 --> 00:05:00.000 align:start position:0%
+already created the method for us but
+ 
+
+00:05:00.000 --> 00:05:01.670 align:start position:0%
+already created the method for us but
+that's<00:05:00.390><c> how</c><00:05:00.600><c> you</c><00:05:00.660><c> would</c><00:05:00.930><c> create</c><00:05:01.290><c> it</c><00:05:01.470><c> from</c>
+
+00:05:01.670 --> 00:05:01.680 align:start position:0%
+that's how you would create it from
+ 
+
+00:05:01.680 --> 00:05:05.080 align:start position:0%
+that's how you would create it from
+scratch<00:05:01.770><c> and</c><00:05:02.520><c> now</c><00:05:02.970><c> we</c><00:05:03.450><c> have</c><00:05:03.720><c> our</c><00:05:04.050><c> grow</c><00:05:04.470><c> data</c>
+
+00:05:05.080 --> 00:05:05.090 align:start position:0%
+scratch and now we have our grow data
+ 
+
+00:05:05.090 --> 00:05:08.030 align:start position:0%
+scratch and now we have our grow data
+now<00:05:06.090><c> we're</c><00:05:06.300><c> going</c><00:05:06.480><c> to</c><00:05:06.630><c> loop</c><00:05:06.840><c> over</c><00:05:07.080><c> that</c><00:05:07.770><c> growth</c>
+
+00:05:08.030 --> 00:05:08.040 align:start position:0%
+now we're going to loop over that growth
+ 
+
+00:05:08.040 --> 00:05:09.710 align:start position:0%
+now we're going to loop over that growth
+data<00:05:08.280><c> and</c><00:05:08.730><c> we're</c><00:05:08.910><c> going</c><00:05:09.090><c> to</c><00:05:09.240><c> use</c><00:05:09.450><c> something</c>
+
+00:05:09.710 --> 00:05:09.720 align:start position:0%
+data and we're going to use something
+ 
+
+00:05:09.720 --> 00:05:11.870 align:start position:0%
+data and we're going to use something
+called<00:05:09.900><c> kuru</c><00:05:10.380><c> teens</c><00:05:10.740><c> and</c><00:05:11.100><c> the</c><00:05:11.310><c> yield</c><00:05:11.580><c> keyword</c>
+
+00:05:11.870 --> 00:05:11.880 align:start position:0%
+called kuru teens and the yield keyword
+ 
+
+00:05:11.880 --> 00:05:15.650 align:start position:0%
+called kuru teens and the yield keyword
+to<00:05:12.660><c> fire</c><00:05:12.930><c> the</c><00:05:13.500><c> animation</c><00:05:14.430><c> using</c><00:05:15.060><c> the</c><00:05:15.090><c> animate</c>
+
+00:05:15.650 --> 00:05:15.660 align:start position:0%
+to fire the animation using the animate
+ 
+
+00:05:15.660 --> 00:05:18.170 align:start position:0%
+to fire the animation using the animate
+value<00:05:16.110><c> method</c><00:05:16.470><c> and</c><00:05:16.620><c> wait</c><00:05:17.310><c> for</c><00:05:17.580><c> between</c><00:05:18.000><c> to</c>
+
+00:05:18.170 --> 00:05:18.180 align:start position:0%
+value method and wait for between to
+ 
+
+00:05:18.180 --> 00:05:20.960 align:start position:0%
+value method and wait for between to
+finish<00:05:18.570><c> until</c><00:05:19.110><c> we</c><00:05:19.350><c> read</c><00:05:19.710><c> the</c><00:05:20.250><c> next</c><00:05:20.550><c> line</c><00:05:20.730><c> in</c>
+
+00:05:20.960 --> 00:05:20.970 align:start position:0%
+finish until we read the next line in
+ 
+
+00:05:20.970 --> 00:05:24.230 align:start position:0%
+finish until we read the next line in
+group<00:05:21.300><c> data</c><00:05:21.540><c> for</c><00:05:22.350><c> every</c><00:05:22.740><c> line</c><00:05:22.980><c> and</c><00:05:23.310><c> our</c><00:05:23.940><c> growth</c>
+
+00:05:24.230 --> 00:05:24.240 align:start position:0%
+group data for every line and our growth
+ 
+
+00:05:24.240 --> 00:05:26.780 align:start position:0%
+group data for every line and our growth
+data<00:05:24.480><c> each</c><00:05:25.290><c> line</c><00:05:25.770><c> represents</c><00:05:26.430><c> the</c><00:05:26.610><c> character</c>
+
+00:05:26.780 --> 00:05:26.790 align:start position:0%
+data each line represents the character
+ 
+
+00:05:26.790 --> 00:05:29.510 align:start position:0%
+data each line represents the character
+gaining<00:05:27.450><c> one</c><00:05:27.810><c> level</c><00:05:28.080><c> we're</c><00:05:28.950><c> going</c><00:05:29.160><c> to</c><00:05:29.310><c> unpack</c>
+
+00:05:29.510 --> 00:05:29.520 align:start position:0%
+gaining one level we're going to unpack
+ 
+
+00:05:29.520 --> 00:05:32.150 align:start position:0%
+gaining one level we're going to unpack
+the<00:05:30.000><c> values</c><00:05:30.390><c> so</c><00:05:30.870><c> we</c><00:05:31.020><c> want</c><00:05:31.260><c> the</c><00:05:31.500><c> target</c>
+
+00:05:32.150 --> 00:05:32.160 align:start position:0%
+the values so we want the target
+ 
+
+00:05:32.160 --> 00:05:37.640 align:start position:0%
+the values so we want the target
+experience<00:05:33.120><c> it's</c><00:05:33.960><c> going</c><00:05:34.290><c> to</c><00:05:34.500><c> be</c><00:05:34.760><c> line</c><00:05:35.960><c> zero</c><00:05:36.960><c> so</c>
+
+00:05:37.640 --> 00:05:37.650 align:start position:0%
+experience it's going to be line zero so
+ 
+
+00:05:37.650 --> 00:05:40.310 align:start position:0%
+experience it's going to be line zero so
+this<00:05:37.860><c> is</c><00:05:37.920><c> the</c><00:05:38.610><c> percentage</c><00:05:39.510><c> of</c><00:05:39.750><c> the</c><00:05:39.870><c> bar</c><00:05:40.080><c> we're</c>
+
+00:05:40.310 --> 00:05:40.320 align:start position:0%
+this is the percentage of the bar we're
+ 
+
+00:05:40.320 --> 00:05:42.830 align:start position:0%
+this is the percentage of the bar we're
+going<00:05:40.530><c> to</c><00:05:40.650><c> fill</c><00:05:40.980><c> up</c><00:05:41.130><c> and</c><00:05:41.400><c> then</c><00:05:42.150><c> we</c><00:05:42.540><c> want</c><00:05:42.750><c> to</c>
+
+00:05:42.830 --> 00:05:42.840 align:start position:0%
+going to fill up and then we want to
+ 
+
+00:05:42.840 --> 00:05:46.130 align:start position:0%
+going to fill up and then we want to
+store<00:05:43.200><c> the</c><00:05:43.470><c> maximum</c><00:05:44.420><c> experience</c><00:05:45.420><c> and</c><00:05:45.690><c> it's</c>
+
+00:05:46.130 --> 00:05:46.140 align:start position:0%
+store the maximum experience and it's
+ 
+
+00:05:46.140 --> 00:05:50.240 align:start position:0%
+store the maximum experience and it's
+the<00:05:46.470><c> second</c><00:05:47.130><c> value</c><00:05:47.430><c> in</c><00:05:47.880><c> our</c><00:05:48.450><c> line</c><00:05:49.200><c> now</c><00:05:49.950><c> we</c><00:05:50.010><c> want</c>
+
+00:05:50.240 --> 00:05:50.250 align:start position:0%
+the second value in our line now we want
+ 
+
+00:05:50.250 --> 00:05:53.120 align:start position:0%
+the second value in our line now we want
+to<00:05:50.370><c> make</c><00:05:50.520><c> sure</c><00:05:50.580><c> that</c><00:05:51.000><c> we</c><00:05:51.210><c> set</c><00:05:51.540><c> the</c><00:05:51.990><c> bars</c><00:05:52.350><c> max</c>
+
+00:05:53.120 --> 00:05:53.130 align:start position:0%
+to make sure that we set the bars max
+ 
+
+00:05:53.130 --> 00:05:56.000 align:start position:0%
+to make sure that we set the bars max
+value<00:05:53.640><c> in</c><00:05:53.850><c> the</c><00:05:54.540><c> range</c><00:05:54.720><c> category</c><00:05:55.290><c> to</c><00:05:55.980><c> the</c>
+
+00:05:56.000 --> 00:05:56.010 align:start position:0%
+value in the range category to the
+ 
+
+00:05:56.010 --> 00:05:59.420 align:start position:0%
+value in the range category to the
+maximum<00:05:56.730><c> experience</c><00:05:57.420><c> here</c><00:05:57.720><c> the</c><00:05:58.110><c> max</c><00:05:58.410><c> value</c><00:05:58.590><c> is</c>
+
+00:05:59.420 --> 00:05:59.430 align:start position:0%
+maximum experience here the max value is
+ 
+
+00:05:59.430 --> 00:06:01.700 align:start position:0%
+maximum experience here the max value is
+going<00:05:59.700><c> to</c><00:05:59.820><c> be</c><00:05:59.910><c> equal</c><00:06:00.240><c> to</c><00:06:00.270><c> max</c><00:06:00.900><c> experience</c><00:06:01.500><c> and</c>
+
+00:06:01.700 --> 00:06:01.710 align:start position:0%
+going to be equal to max experience and
+ 
+
+00:06:01.710 --> 00:06:04.220 align:start position:0%
+going to be equal to max experience and
+this<00:06:02.130><c> is</c><00:06:02.310><c> how</c><00:06:02.520><c> you</c><00:06:02.580><c> make</c><00:06:03.000><c> it</c><00:06:03.150><c> so</c><00:06:03.360><c> the</c><00:06:03.660><c> bar</c>
+
+00:06:04.220 --> 00:06:04.230 align:start position:0%
+this is how you make it so the bar
+ 
+
+00:06:04.230 --> 00:06:07.850 align:start position:0%
+this is how you make it so the bar
+animates<00:06:05.010><c> properly</c><00:06:05.730><c> like</c><00:06:05.970><c> to</c><00:06:06.510><c> scale</c><00:06:07.080><c> with</c><00:06:07.740><c> the</c>
+
+00:06:07.850 --> 00:06:07.860 align:start position:0%
+animates properly like to scale with the
+ 
+
+00:06:07.860 --> 00:06:10.070 align:start position:0%
+animates properly like to scale with the
+characters<00:06:08.340><c> level</c><00:06:08.760><c> and</c><00:06:09.030><c> required</c><00:06:09.570><c> experience</c>
+
+00:06:10.070 --> 00:06:10.080 align:start position:0%
+characters level and required experience
+ 
+
+00:06:10.080 --> 00:06:12.620 align:start position:0%
+characters level and required experience
+for<00:06:10.590><c> the</c><00:06:10.740><c> next</c><00:06:10.860><c> level</c><00:06:11.250><c> this</c><00:06:12.000><c> is</c><00:06:12.150><c> where</c><00:06:12.360><c> our</c>
+
+00:06:12.620 --> 00:06:12.630 align:start position:0%
+for the next level this is where our
+ 
+
+00:06:12.630 --> 00:06:15.830 align:start position:0%
+for the next level this is where our
+yield<00:06:13.230><c> keyword</c><00:06:13.710><c> comes</c><00:06:14.550><c> in</c><00:06:14.790><c> so</c><00:06:15.300><c> yield</c><00:06:15.600><c> is</c>
+
+00:06:15.830 --> 00:06:15.840 align:start position:0%
+yield keyword comes in so yield is
+ 
+
+00:06:15.840 --> 00:06:17.690 align:start position:0%
+yield keyword comes in so yield is
+something<00:06:16.290><c> common</c><00:06:16.530><c> in</c><00:06:16.920><c> procedural</c>
+
+00:06:17.690 --> 00:06:17.700 align:start position:0%
+something common in procedural
+ 
+
+00:06:17.700 --> 00:06:19.790 align:start position:0%
+something common in procedural
+programming<00:06:18.000><c> languages</c><00:06:18.780><c> it</c><00:06:19.020><c> allows</c><00:06:19.290><c> you</c><00:06:19.590><c> to</c>
+
+00:06:19.790 --> 00:06:19.800 align:start position:0%
+programming languages it allows you to
+ 
+
+00:06:19.800 --> 00:06:23.000 align:start position:0%
+programming languages it allows you to
+fire<00:06:20.520><c> some</c><00:06:20.850><c> process</c><00:06:21.330><c> stop</c><00:06:22.110><c> the</c><00:06:22.290><c> function</c><00:06:22.680><c> here</c>
+
+00:06:23.000 --> 00:06:23.010 align:start position:0%
+fire some process stop the function here
+ 
+
+00:06:23.010 --> 00:06:25.280 align:start position:0%
+fire some process stop the function here
+when<00:06:23.640><c> you</c><00:06:23.790><c> reach</c><00:06:24.060><c> the</c><00:06:24.390><c> yield</c><00:06:24.600><c> keyword</c><00:06:24.870><c> on</c>
+
+00:06:25.280 --> 00:06:25.290 align:start position:0%
+when you reach the yield keyword on
+ 
+
+00:06:25.290 --> 00:06:27.440 align:start position:0%
+when you reach the yield keyword on
+character<00:06:26.070><c> experience</c><00:06:26.490><c> game</c><00:06:26.670><c> will</c><00:06:27.090><c> stop</c>
+
+00:06:27.440 --> 00:06:27.450 align:start position:0%
+character experience game will stop
+ 
+
+00:06:27.450 --> 00:06:29.990 align:start position:0%
+character experience game will stop
+everything<00:06:28.110><c> we'll</c><00:06:28.470><c> add</c><00:06:28.650><c> after</c><00:06:28.980><c> it</c><00:06:29.340><c> will</c><00:06:29.700><c> not</c>
+
+00:06:29.990 --> 00:06:30.000 align:start position:0%
+everything we'll add after it will not
+ 
+
+00:06:30.000 --> 00:06:32.600 align:start position:0%
+everything we'll add after it will not
+read<00:06:30.420><c> and</c><00:06:30.750><c> it</c><00:06:31.410><c> will</c><00:06:31.710><c> stop</c><00:06:31.980><c> the</c><00:06:32.190><c> loop</c><00:06:32.400><c> and</c>
+
+00:06:32.600 --> 00:06:32.610 align:start position:0%
+read and it will stop the loop and
+ 
+
+00:06:32.610 --> 00:06:35.330 align:start position:0%
+read and it will stop the loop and
+everything<00:06:33.120><c> until</c><00:06:33.840><c> some</c><00:06:34.380><c> condition</c><00:06:34.410><c> is</c>
+
+00:06:35.330 --> 00:06:35.340 align:start position:0%
+everything until some condition is
+ 
+
+00:06:35.340 --> 00:06:38.210 align:start position:0%
+everything until some condition is
+fulfilled<00:06:35.760><c> so</c><00:06:36.510><c> we're</c><00:06:36.690><c> going</c><00:06:36.870><c> to</c><00:06:37.170><c> wait</c><00:06:37.860><c> until</c>
+
+00:06:38.210 --> 00:06:38.220 align:start position:0%
+fulfilled so we're going to wait until
+ 
+
+00:06:38.220 --> 00:06:40.640 align:start position:0%
+fulfilled so we're going to wait until
+our<00:06:38.940><c> animate</c><00:06:39.780><c> value</c><00:06:40.200><c> method</c>
+
+00:06:40.640 --> 00:06:40.650 align:start position:0%
+our animate value method
+ 
+
+00:06:40.650 --> 00:06:43.370 align:start position:0%
+our animate value method
+and<00:06:40.890><c> we're</c><00:06:41.460><c> going</c><00:06:41.670><c> to</c><00:06:41.700><c> pass</c><00:06:42.060><c> in</c><00:06:42.360><c> our</c><00:06:42.780><c> target</c>
+
+00:06:43.370 --> 00:06:43.380 align:start position:0%
+and we're going to pass in our target
+ 
+
+00:06:43.380 --> 00:06:45.110 align:start position:0%
+and we're going to pass in our target
+value<00:06:43.800><c> so</c><00:06:44.040><c> that's</c><00:06:44.160><c> going</c><00:06:44.460><c> to</c><00:06:44.550><c> be</c><00:06:44.670><c> target</c>
+
+00:06:45.110 --> 00:06:45.120 align:start position:0%
+value so that's going to be target
+ 
+
+00:06:45.120 --> 00:06:49.490 align:start position:0%
+value so that's going to be target
+experience<00:06:45.480><c> is</c><00:06:46.640><c> completed</c><00:06:48.230><c> completed</c><00:06:49.230><c> is</c><00:06:49.380><c> a</c>
+
+00:06:49.490 --> 00:06:49.500 align:start position:0%
+experience is completed completed is a
+ 
+
+00:06:49.500 --> 00:06:51.560 align:start position:0%
+experience is completed completed is a
+special<00:06:50.010><c> keyword</c><00:06:50.310><c> it's</c><00:06:50.790><c> going</c><00:06:51.060><c> to</c><00:06:51.210><c> kind</c><00:06:51.510><c> of</c>
+
+00:06:51.560 --> 00:06:51.570 align:start position:0%
+special keyword it's going to kind of
+ 
+
+00:06:51.570 --> 00:06:55.190 align:start position:0%
+special keyword it's going to kind of
+wait<00:06:52.140><c> for</c><00:06:52.500><c> this</c><00:06:53.280><c> function</c><00:06:53.970><c> to</c><00:06:54.210><c> complete</c><00:06:54.780><c> to</c>
+
+00:06:55.190 --> 00:06:55.200 align:start position:0%
+wait for this function to complete to
+ 
+
+00:06:55.200 --> 00:06:58.370 align:start position:0%
+wait for this function to complete to
+return<00:06:55.920><c> a</c><00:06:56.190><c> value</c><00:06:56.490><c> or</c><00:06:56.880><c> to</c><00:06:57.060><c> reach</c><00:06:57.330><c> the</c><00:06:57.870><c> end</c><00:06:58.110><c> of</c>
+
+00:06:58.370 --> 00:06:58.380 align:start position:0%
+return a value or to reach the end of
+ 
+
+00:06:58.380 --> 00:06:59.660 align:start position:0%
+return a value or to reach the end of
+the<00:06:58.470><c> function</c><00:06:58.710><c> okay</c>
+
+00:06:59.660 --> 00:06:59.670 align:start position:0%
+the function okay
+ 
+
+00:06:59.670 --> 00:07:02.630 align:start position:0%
+the function okay
+now<00:07:00.120><c> an</c><00:07:00.390><c> animate</c><00:07:00.930><c> value</c><00:07:01.680><c> we're</c><00:07:02.220><c> going</c><00:07:02.430><c> to</c>
+
+00:07:02.630 --> 00:07:02.640 align:start position:0%
+now an animate value we're going to
+ 
+
+00:07:02.640 --> 00:07:06.560 align:start position:0%
+now an animate value we're going to
+animate<00:07:03.270><c> our</c><00:07:04.280><c> value</c><00:07:05.280><c> on</c><00:07:05.460><c> the</c><00:07:05.610><c> bus</c><00:07:05.790><c> for</c><00:07:06.180><c> that</c><00:07:06.420><c> we</c>
+
+00:07:06.560 --> 00:07:06.570 align:start position:0%
+animate our value on the bus for that we
+ 
+
+00:07:06.570 --> 00:07:08.780 align:start position:0%
+animate our value on the bus for that we
+will<00:07:06.720><c> use</c><00:07:06.750><c> the</c><00:07:07.560><c> experience</c><00:07:08.040><c> balanced</c><00:07:08.580><c> wind</c>
+
+00:07:08.780 --> 00:07:08.790 align:start position:0%
+will use the experience balanced wind
+ 
+
+00:07:08.790 --> 00:07:10.670 align:start position:0%
+will use the experience balanced wind
+node<00:07:08.970><c> I'm</c><00:07:09.180><c> going</c><00:07:09.540><c> to</c><00:07:09.630><c> open</c><00:07:09.810><c> the</c><00:07:10.230><c> experience</c>
+
+00:07:10.670 --> 00:07:10.680 align:start position:0%
+node I'm going to open the experience
+ 
+
+00:07:10.680 --> 00:07:13.550 align:start position:0%
+node I'm going to open the experience
+boss<00:07:10.890><c> scene</c><00:07:11.400><c> so</c><00:07:12.060><c> I</c><00:07:12.120><c> can</c><00:07:12.390><c> get</c><00:07:12.840><c> Auto</c><00:07:13.080><c> completion</c>
+
+00:07:13.550 --> 00:07:13.560 align:start position:0%
+boss scene so I can get Auto completion
+ 
+
+00:07:13.560 --> 00:07:17.000 align:start position:0%
+boss scene so I can get Auto completion
+for<00:07:14.100><c> between</c><00:07:14.760><c> node</c><00:07:15.120><c> and</c><00:07:15.420><c> call</c><00:07:16.200><c> interpolate</c>
+
+00:07:17.000 --> 00:07:17.010 align:start position:0%
+for between node and call interpolate
+ 
+
+00:07:17.010 --> 00:07:20.510 align:start position:0%
+for between node and call interpolate
+property<00:07:17.610><c> on</c><00:07:17.910><c> it</c><00:07:18.480><c> we</c><00:07:19.230><c> want</c><00:07:19.350><c> to</c><00:07:19.560><c> interpolate</c><00:07:20.190><c> a</c>
+
+00:07:20.510 --> 00:07:20.520 align:start position:0%
+property on it we want to interpolate a
+ 
+
+00:07:20.520 --> 00:07:22.850 align:start position:0%
+property on it we want to interpolate a
+property<00:07:21.150><c> on</c><00:07:21.240><c> this</c><00:07:21.480><c> node</c><00:07:21.750><c> the</c><00:07:22.170><c> property</c><00:07:22.620><c> is</c>
+
+00:07:22.850 --> 00:07:22.860 align:start position:0%
+property on this node the property is
+ 
+
+00:07:22.860 --> 00:07:26.350 align:start position:0%
+property on this node the property is
+called<00:07:23.130><c> value</c><00:07:24.230><c> going</c><00:07:25.230><c> to</c><00:07:25.380><c> write</c><00:07:25.590><c> it</c><00:07:25.830><c> this</c><00:07:26.040><c> way</c>
+
+00:07:26.350 --> 00:07:26.360 align:start position:0%
+called value going to write it this way
+ 
+
+00:07:26.360 --> 00:07:29.810 align:start position:0%
+called value going to write it this way
+expand<00:07:27.360><c> the</c><00:07:27.480><c> script</c><00:07:27.930><c> editor</c><00:07:28.080><c> again</c><00:07:28.680><c> we</c><00:07:29.610><c> want</c>
+
+00:07:29.810 --> 00:07:29.820 align:start position:0%
+expand the script editor again we want
+ 
+
+00:07:29.820 --> 00:07:33.590 align:start position:0%
+expand the script editor again we want
+to<00:07:30.090><c> animate</c><00:07:30.630><c> from</c><00:07:31.080><c> the</c><00:07:31.620><c> current</c><00:07:31.980><c> value</c><00:07:32.400><c> to</c><00:07:33.000><c> the</c>
+
+00:07:33.590 --> 00:07:33.600 align:start position:0%
+to animate from the current value to the
+ 
+
+00:07:33.600 --> 00:07:35.870 align:start position:0%
+to animate from the current value to the
+target<00:07:34.230><c> value</c><00:07:34.890><c> so</c><00:07:35.100><c> this</c><00:07:35.310><c> is</c><00:07:35.460><c> the</c><00:07:35.610><c> first</c>
+
+00:07:35.870 --> 00:07:35.880 align:start position:0%
+target value so this is the first
+ 
+
+00:07:35.880 --> 00:07:39.320 align:start position:0%
+target value so this is the first
+argument<00:07:36.240><c> of</c><00:07:36.510><c> the</c><00:07:36.750><c> method</c><00:07:37.170><c> for</c><00:07:38.160><c> a</c><00:07:38.400><c> duration</c><00:07:38.880><c> of</c>
+
+00:07:39.320 --> 00:07:39.330 align:start position:0%
+argument of the method for a duration of
+ 
+
+00:07:39.330 --> 00:07:41.930 align:start position:0%
+argument of the method for a duration of
+tween<00:07:39.870><c> duration</c><00:07:40.560><c> this</c><00:07:40.980><c> is</c><00:07:41.250><c> the</c><00:07:41.460><c> second</c>
+
+00:07:41.930 --> 00:07:41.940 align:start position:0%
+tween duration this is the second
+ 
+
+00:07:41.940 --> 00:07:44.540 align:start position:0%
+tween duration this is the second
+argument<00:07:42.120><c> of</c><00:07:42.540><c> the</c><00:07:42.690><c> function</c><00:07:42.720><c> that</c><00:07:43.350><c> is</c><00:07:44.040><c> set</c><00:07:44.370><c> to</c>
+
+00:07:44.540 --> 00:07:44.550 align:start position:0%
+argument of the function that is set to
+ 
+
+00:07:44.550 --> 00:07:47.000 align:start position:0%
+argument of the function that is set to
+one<00:07:44.820><c> second</c><00:07:45.330><c> by</c><00:07:45.480><c> default</c><00:07:45.900><c> and</c><00:07:46.140><c> then</c><00:07:46.830><c> we're</c>
+
+00:07:47.000 --> 00:07:47.010 align:start position:0%
+one second by default and then we're
+ 
+
+00:07:47.010 --> 00:07:49.040 align:start position:0%
+one second by default and then we're
+going<00:07:47.220><c> to</c><00:07:47.370><c> use</c><00:07:47.550><c> any</c><00:07:47.820><c> transition</c><00:07:48.480><c> you</c><00:07:48.660><c> can</c><00:07:48.690><c> use</c>
+
+00:07:49.040 --> 00:07:49.050 align:start position:0%
+going to use any transition you can use
+ 
+
+00:07:49.050 --> 00:07:53.150 align:start position:0%
+going to use any transition you can use
+sine<00:07:49.590><c> if</c><00:07:49.890><c> you</c><00:07:50.040><c> want</c><00:07:50.280><c> and</c><00:07:50.580><c> ease</c><00:07:51.060><c> out</c><00:07:51.570><c> to</c><00:07:52.380><c> make</c>
+
+00:07:53.150 --> 00:07:53.160 align:start position:0%
+sine if you want and ease out to make
+ 
+
+00:07:53.160 --> 00:07:56.210 align:start position:0%
+sine if you want and ease out to make
+the<00:07:53.340><c> animation</c><00:07:54.110><c> accelerate</c><00:07:55.110><c> a</c><00:07:55.380><c> little</c><00:07:55.410><c> bit</c><00:07:55.950><c> or</c>
+
+00:07:56.210 --> 00:07:56.220 align:start position:0%
+the animation accelerate a little bit or
+ 
+
+00:07:56.220 --> 00:07:58.040 align:start position:0%
+the animation accelerate a little bit or
+give<00:07:56.700><c> it</c><00:07:56.820><c> some</c><00:07:57.060><c> variety</c>
+
+00:07:58.040 --> 00:07:58.050 align:start position:0%
+give it some variety
+ 
+
+00:07:58.050 --> 00:08:00.040 align:start position:0%
+give it some variety
+all<00:07:58.290><c> right</c><00:07:58.650><c> so</c><00:07:58.830><c> we'll</c><00:07:59.010><c> be</c><00:07:59.160><c> animation</c>
+
+00:08:00.040 --> 00:08:00.050 align:start position:0%
+all right so we'll be animation
+ 
+
+00:08:00.050 --> 00:08:03.080 align:start position:0%
+all right so we'll be animation
+initialized<00:08:01.050><c> then</c><00:08:01.590><c> we</c><00:08:01.770><c> want</c><00:08:01.950><c> to</c><00:08:02.040><c> start</c><00:08:02.190><c> it</c><00:08:02.760><c> so</c>
+
+00:08:03.080 --> 00:08:03.090 align:start position:0%
+initialized then we want to start it so
+ 
+
+00:08:03.090 --> 00:08:04.820 align:start position:0%
+initialized then we want to start it so
+for<00:08:03.300><c> that</c><00:08:03.450><c> you</c><00:08:03.630><c> call</c><00:08:03.780><c> the</c><00:08:03.960><c> start</c><00:08:04.290><c> method</c><00:08:04.530><c> on</c>
+
+00:08:04.820 --> 00:08:04.830 align:start position:0%
+for that you call the start method on
+ 
+
+00:08:04.830 --> 00:08:07.370 align:start position:0%
+for that you call the start method on
+between<00:08:05.160><c> node</c><00:08:05.520><c> and</c><00:08:05.790><c> here</c><00:08:06.020><c> we</c><00:08:07.020><c> are</c><00:08:07.050><c> going</c><00:08:07.290><c> to</c>
+
+00:08:07.370 --> 00:08:07.380 align:start position:0%
+between node and here we are going to
+ 
+
+00:08:07.380 --> 00:08:10.790 align:start position:0%
+between node and here we are going to
+yield<00:08:07.920><c> again</c><00:08:08.370><c> and</c><00:08:08.910><c> this</c><00:08:09.510><c> time</c><00:08:09.570><c> we're</c><00:08:10.530><c> going</c><00:08:10.710><c> to</c>
+
+00:08:10.790 --> 00:08:10.800 align:start position:0%
+yield again and this time we're going to
+ 
+
+00:08:10.800 --> 00:08:13.640 align:start position:0%
+yield again and this time we're going to
+yield<00:08:11.310><c> on</c><00:08:11.550><c> the</c><00:08:12.330><c> twin</c><00:08:12.600><c> node</c><00:08:12.840><c> we're</c><00:08:13.230><c> going</c><00:08:13.470><c> to</c>
+
+00:08:13.640 --> 00:08:13.650 align:start position:0%
+yield on the twin node we're going to
+ 
+
+00:08:13.650 --> 00:08:16.700 align:start position:0%
+yield on the twin node we're going to
+wait<00:08:13.950><c> for</c><00:08:14.250><c> the</c><00:08:14.730><c> twin</c><00:08:15.000><c> node</c><00:08:15.210><c> to</c><00:08:15.810><c> complete</c><00:08:16.380><c> its</c>
+
+00:08:16.700 --> 00:08:16.710 align:start position:0%
+wait for the twin node to complete its
+ 
+
+00:08:16.710 --> 00:08:20.600 align:start position:0%
+wait for the twin node to complete its
+swing<00:08:17.160><c> so</c><00:08:17.970><c> note</c><00:08:18.240><c> when</c><00:08:18.780><c> I</c><00:08:18.810><c> pass</c><00:08:19.230><c> I</c><00:08:19.500><c> node</c><00:08:19.860><c> to</c><00:08:20.340><c> the</c>
+
+00:08:20.600 --> 00:08:20.610 align:start position:0%
+swing so note when I pass I node to the
+ 
+
+00:08:20.610 --> 00:08:23.540 align:start position:0%
+swing so note when I pass I node to the
+yield<00:08:21.000><c> function</c><00:08:21.300><c> how</c><00:08:22.200><c> I</c><00:08:22.470><c> get</c><00:08:22.800><c> a</c><00:08:22.830><c> list</c><00:08:23.370><c> of</c>
+
+00:08:23.540 --> 00:08:23.550 align:start position:0%
+yield function how I get a list of
+ 
+
+00:08:23.550 --> 00:08:26.450 align:start position:0%
+yield function how I get a list of
+signals<00:08:24.030><c> from</c><00:08:24.570><c> that</c><00:08:24.810><c> node</c><00:08:25.020><c> and</c><00:08:25.230><c> so</c><00:08:25.890><c> yield</c><00:08:26.280><c> is</c>
+
+00:08:26.450 --> 00:08:26.460 align:start position:0%
+signals from that node and so yield is
+ 
+
+00:08:26.460 --> 00:08:29.750 align:start position:0%
+signals from that node and so yield is
+going<00:08:26.670><c> to</c><00:08:26.850><c> stop</c><00:08:27.300><c> that</c><00:08:27.900><c> function</c><00:08:28.440><c> until</c><00:08:29.280><c> they</c>
+
+00:08:29.750 --> 00:08:29.760 align:start position:0%
+going to stop that function until they
+ 
+
+00:08:29.760 --> 00:08:33.050 align:start position:0%
+going to stop that function until they
+know<00:08:30.000><c> that</c><00:08:30.270><c> we</c><00:08:30.480><c> give</c><00:08:30.720><c> emits</c><00:08:31.350><c> that</c><00:08:31.950><c> signal</c><00:08:32.490><c> so</c>
+
+00:08:33.050 --> 00:08:33.060 align:start position:0%
+know that we give emits that signal so
+ 
+
+00:08:33.060 --> 00:08:35.720 align:start position:0%
+know that we give emits that signal so
+tween<00:08:33.420><c> every</c><00:08:34.080><c> time</c><00:08:34.320><c> an</c><00:08:34.590><c> animation</c><00:08:35.100><c> completes</c>
+
+00:08:35.720 --> 00:08:35.730 align:start position:0%
+tween every time an animation completes
+ 
+
+00:08:35.730 --> 00:08:38.420 align:start position:0%
+tween every time an animation completes
+this<00:08:36.570><c> animation</c><00:08:36.990><c> here</c><00:08:37.440><c> it's</c><00:08:37.740><c> going</c><00:08:37.890><c> to</c><00:08:38.010><c> emit</c>
+
+00:08:38.420 --> 00:08:38.430 align:start position:0%
+this animation here it's going to emit
+ 
+
+00:08:38.430 --> 00:08:41.840 align:start position:0%
+this animation here it's going to emit
+tween<00:08:39.180><c> completed</c><00:08:40.050><c> and</c><00:08:40.260><c> when</c><00:08:40.590><c> it</c><00:08:40.710><c> does</c><00:08:40.920><c> so</c><00:08:41.190><c> this</c>
+
+00:08:41.840 --> 00:08:41.850 align:start position:0%
+tween completed and when it does so this
+ 
+
+00:08:41.850 --> 00:08:44.900 align:start position:0%
+tween completed and when it does so this
+function<00:08:42.360><c> will</c><00:08:42.780><c> return</c><00:08:43.170><c> and</c><00:08:43.680><c> so</c><00:08:44.190><c> we</c><00:08:44.310><c> will</c><00:08:44.460><c> land</c>
+
+00:08:44.900 --> 00:08:44.910 align:start position:0%
+function will return and so we will land
+ 
+
+00:08:44.910 --> 00:08:47.330 align:start position:0%
+function will return and so we will land
+here<00:08:45.540><c> in</c><00:08:45.840><c> our</c><00:08:46.020><c> own</c><00:08:46.230><c> character</c><00:08:46.860><c> experience</c>
+
+00:08:47.330 --> 00:08:47.340 align:start position:0%
+here in our own character experience
+ 
+
+00:08:47.340 --> 00:08:49.790 align:start position:0%
+here in our own character experience
+game<00:08:47.640><c> there</c><00:08:48.510><c> is</c><00:08:48.540><c> one</c><00:08:48.690><c> last</c><00:08:48.990><c> thing</c><00:08:49.200><c> we</c><00:08:49.470><c> need</c><00:08:49.680><c> to</c>
+
+00:08:49.790 --> 00:08:49.800 align:start position:0%
+game there is one last thing we need to
+ 
+
+00:08:49.800 --> 00:08:52.550 align:start position:0%
+game there is one last thing we need to
+do<00:08:49.980><c> when</c><00:08:50.580><c> we</c><00:08:50.820><c> end</c><00:08:51.090><c> the</c><00:08:51.360><c> animation</c><00:08:51.900><c> if</c><00:08:52.080><c> the</c>
+
+00:08:52.550 --> 00:08:52.560 align:start position:0%
+do when we end the animation if the
+ 
+
+00:08:52.560 --> 00:08:54.470 align:start position:0%
+do when we end the animation if the
+character<00:08:53.040><c> gained</c><00:08:53.460><c> a</c><00:08:53.610><c> full</c><00:08:53.970><c> level</c>
+
+00:08:54.470 --> 00:08:54.480 align:start position:0%
+character gained a full level
+ 
+
+00:08:54.480 --> 00:08:56.270 align:start position:0%
+character gained a full level
+there's<00:08:54.900><c> going</c><00:08:55.080><c> to</c><00:08:55.170><c> be</c><00:08:55.260><c> multiple</c><00:08:55.590><c> lines</c><00:08:56.040><c> in</c>
+
+00:08:56.270 --> 00:08:56.280 align:start position:0%
+there's going to be multiple lines in
+ 
+
+00:08:56.280 --> 00:08:59.540 align:start position:0%
+there's going to be multiple lines in
+growth<00:08:56.520><c> data</c><00:08:56.820><c> and</c><00:08:57.270><c> the</c><00:08:58.050><c> bar</c><00:08:58.320><c> will</c><00:08:58.650><c> be</c><00:08:58.860><c> full</c><00:08:59.280><c> at</c>
+
+00:08:59.540 --> 00:08:59.550 align:start position:0%
+growth data and the bar will be full at
+ 
+
+00:08:59.550 --> 00:09:02.840 align:start position:0%
+growth data and the bar will be full at
+this<00:08:59.850><c> point</c><00:09:00.120><c> when</c><00:09:00.300><c> we'll</c><00:09:00.510><c> reach</c><00:09:00.900><c> line</c><00:09:01.620><c> 14</c><00:09:02.250><c> when</c>
+
+00:09:02.840 --> 00:09:02.850 align:start position:0%
+this point when we'll reach line 14 when
+ 
+
+00:09:02.850 --> 00:09:05.510 align:start position:0%
+this point when we'll reach line 14 when
+we<00:09:03.000><c> do</c><00:09:03.180><c> so</c><00:09:03.480><c> we</c><00:09:03.510><c> want</c><00:09:03.990><c> to</c><00:09:04.110><c> reset</c><00:09:04.590><c> the</c><00:09:04.920><c> value</c><00:09:05.310><c> to</c>
+
+00:09:05.510 --> 00:09:05.520 align:start position:0%
+we do so we want to reset the value to
+ 
+
+00:09:05.520 --> 00:09:10.190 align:start position:0%
+we do so we want to reset the value to
+zero<00:09:05.790><c> but</c><00:09:06.570><c> say</c><00:09:06.840><c> if</c><00:09:07.190><c> max</c><00:09:08.190><c> value</c><00:09:08.670><c> is</c><00:09:09.180><c> equal</c><00:09:10.170><c> to</c>
+
+00:09:10.190 --> 00:09:10.200 align:start position:0%
+zero but say if max value is equal to
+ 
+
+00:09:10.200 --> 00:09:13.430 align:start position:0%
+zero but say if max value is equal to
+value<00:09:10.860><c> or</c><00:09:11.100><c> value</c><00:09:12.000><c> is</c><00:09:12.060><c> equal</c><00:09:12.300><c> to</c><00:09:12.420><c> max</c><00:09:12.600><c> value</c><00:09:13.020><c> you</c>
+
+00:09:13.430 --> 00:09:13.440 align:start position:0%
+value or value is equal to max value you
+ 
+
+00:09:13.440 --> 00:09:17.060 align:start position:0%
+value or value is equal to max value you
+want<00:09:13.650><c> to</c><00:09:13.830><c> set</c><00:09:14.100><c> value</c><00:09:14.940><c> back</c><00:09:15.600><c> to</c><00:09:15.630><c> zero</c><00:09:16.110><c> okay</c><00:09:16.710><c> to</c>
+
+00:09:17.060 --> 00:09:17.070 align:start position:0%
+want to set value back to zero okay to
+ 
+
+00:09:17.070 --> 00:09:19.790 align:start position:0%
+want to set value back to zero okay to
+cycle<00:09:17.580><c> back</c><00:09:17.730><c> or</c><00:09:18.000><c> we</c><00:09:18.150><c> set</c><00:09:18.390><c> it</c><00:09:18.540><c> back</c><00:09:18.720><c> to</c><00:09:18.960><c> minimum</c>
+
+00:09:19.790 --> 00:09:19.800 align:start position:0%
+cycle back or we set it back to minimum
+ 
+
+00:09:19.800 --> 00:09:22.760 align:start position:0%
+cycle back or we set it back to minimum
+value<00:09:20.280><c> if</c><00:09:20.520><c> you</c><00:09:21.090><c> want</c><00:09:21.270><c> to</c><00:09:21.390><c> use</c><00:09:21.660><c> really</c><00:09:22.110><c> the</c><00:09:22.170><c> full</c>
+
+00:09:22.760 --> 00:09:22.770 align:start position:0%
+value if you want to use really the full
+ 
+
+00:09:22.770 --> 00:09:25.520 align:start position:0%
+value if you want to use really the full
+object<00:09:23.430><c> the</c><00:09:23.610><c> four</c><00:09:23.910><c> properties</c><00:09:24.630><c> of</c><00:09:24.990><c> the</c>
+
+00:09:25.520 --> 00:09:25.530 align:start position:0%
+object the four properties of the
+ 
+
+00:09:25.530 --> 00:09:28.550 align:start position:0%
+object the four properties of the
+progress<00:09:26.040><c> bar</c><00:09:26.280><c> now</c><00:09:27.090><c> one</c><00:09:27.540><c> issue</c><00:09:27.720><c> with</c><00:09:28.020><c> that</c><00:09:28.050><c> is</c>
+
+00:09:28.550 --> 00:09:28.560 align:start position:0%
+progress bar now one issue with that is
+ 
+
+00:09:28.560 --> 00:09:31.700 align:start position:0%
+progress bar now one issue with that is
+our<00:09:29.040><c> value</c><00:09:29.700><c> animated</c><00:09:30.480><c> by</c><00:09:30.660><c> the</c><00:09:30.720><c> tween</c><00:09:31.140><c> is</c><00:09:31.350><c> going</c>
+
+00:09:31.700 --> 00:09:31.710 align:start position:0%
+our value animated by the tween is going
+ 
+
+00:09:31.710 --> 00:09:33.950 align:start position:0%
+our value animated by the tween is going
+to<00:09:31.830><c> be</c><00:09:31.980><c> a</c><00:09:32.130><c> floating</c><00:09:32.820><c> point</c><00:09:33.030><c> value</c><00:09:33.150><c> so</c><00:09:33.690><c> it</c><00:09:33.780><c> may</c>
+
+00:09:33.950 --> 00:09:33.960 align:start position:0%
+to be a floating point value so it may
+ 
+
+00:09:33.960 --> 00:09:37.370 align:start position:0%
+to be a floating point value so it may
+not<00:09:33.990><c> be</c><00:09:34.470><c> exactly</c><00:09:35.310><c> equal</c><00:09:35.580><c> to</c><00:09:36.030><c> max</c><00:09:36.390><c> value</c><00:09:36.720><c> so</c><00:09:37.170><c> one</c>
+
+00:09:37.370 --> 00:09:37.380 align:start position:0%
+not be exactly equal to max value so one
+ 
+
+00:09:37.380 --> 00:09:39.470 align:start position:0%
+not be exactly equal to max value so one
+way<00:09:37.530><c> to</c><00:09:37.560><c> compare</c><00:09:38.250><c> if</c><00:09:38.520><c> the</c><00:09:38.730><c> two</c><00:09:38.910><c> are</c><00:09:39.120><c> really</c>
+
+00:09:39.470 --> 00:09:39.480 align:start position:0%
+way to compare if the two are really
+ 
+
+00:09:39.480 --> 00:09:42.560 align:start position:0%
+way to compare if the two are really
+close<00:09:39.840><c> is</c><00:09:40.200><c> to</c><00:09:40.440><c> do</c><00:09:40.560><c> this</c><00:09:40.920><c> we're</c><00:09:41.640><c> going</c><00:09:41.820><c> to</c><00:09:41.910><c> take</c>
+
+00:09:42.560 --> 00:09:42.570 align:start position:0%
+close is to do this we're going to take
+ 
+
+00:09:42.570 --> 00:09:44.420 align:start position:0%
+close is to do this we're going to take
+the<00:09:42.780><c> difference</c><00:09:43.170><c> of</c><00:09:43.320><c> the</c><00:09:43.440><c> two</c><00:09:43.650><c> and</c><00:09:43.860><c> the</c>
+
+00:09:44.420 --> 00:09:44.430 align:start position:0%
+the difference of the two and the
+ 
+
+00:09:44.430 --> 00:09:46.850 align:start position:0%
+the difference of the two and the
+absolute<00:09:44.580><c> value</c><00:09:45.450><c> of</c><00:09:45.480><c> that</c><00:09:45.690><c> difference</c><00:09:46.200><c> and</c><00:09:46.410><c> if</c>
+
+00:09:46.850 --> 00:09:46.860 align:start position:0%
+absolute value of that difference and if
+ 
+
+00:09:46.860 --> 00:09:50.450 align:start position:0%
+absolute value of that difference and if
+it's<00:09:47.040><c> very</c><00:09:47.520><c> small</c><00:09:47.940><c> lower</c><00:09:48.540><c> than</c><00:09:48.950><c> 0.01</c><00:09:49.950><c> we</c>
+
+00:09:50.450 --> 00:09:50.460 align:start position:0%
+it's very small lower than 0.01 we
+ 
+
+00:09:50.460 --> 00:09:52.880 align:start position:0%
+it's very small lower than 0.01 we
+consider<00:09:51.030><c> that</c><00:09:51.510><c> they</c><00:09:51.750><c> are</c><00:09:51.810><c> equal</c><00:09:52.290><c> in</c><00:09:52.710><c> which</c>
+
+00:09:52.880 --> 00:09:52.890 align:start position:0%
+consider that they are equal in which
+ 
+
+00:09:52.890 --> 00:09:55.070 align:start position:0%
+consider that they are equal in which
+case<00:09:53.160><c> we'll</c><00:09:53.520><c> reset</c><00:09:54.000><c> the</c><00:09:54.300><c> value</c><00:09:54.810><c> to</c><00:09:54.990><c> minimum</c>
+
+00:09:55.070 --> 00:09:55.080 align:start position:0%
+case we'll reset the value to minimum
+ 
+
+00:09:55.080 --> 00:09:57.800 align:start position:0%
+case we'll reset the value to minimum
+volume<00:09:55.650><c> and</c><00:09:55.800><c> we</c><00:09:56.460><c> bounce</c><00:09:56.820><c> back</c><00:09:56.970><c> to</c><00:09:57.420><c> the</c><00:09:57.540><c> next</c>
+
+00:09:57.800 --> 00:09:57.810 align:start position:0%
+volume and we bounce back to the next
+ 
+
+00:09:57.810 --> 00:10:00.410 align:start position:0%
+volume and we bounce back to the next
+line<00:09:57.990><c> in</c><00:09:58.170><c> group</c><00:09:58.380><c> data</c><00:09:58.590><c> we</c><00:09:59.430><c> fire</c><00:09:59.670><c> the</c><00:09:59.910><c> animation</c>
+
+00:10:00.410 --> 00:10:00.420 align:start position:0%
+line in group data we fire the animation
+ 
+
+00:10:00.420 --> 00:10:03.710 align:start position:0%
+line in group data we fire the animation
+and<00:10:00.630><c> we</c><00:10:00.810><c> do</c><00:10:00.990><c> that</c><00:10:01.230><c> until</c><00:10:02.070><c> max</c><00:10:02.820><c> value</c><00:10:03.150><c> in</c><00:10:03.270><c> value</c>
+
+00:10:03.710 --> 00:10:03.720 align:start position:0%
+and we do that until max value in value
+ 
+
+00:10:03.720 --> 00:10:06.560 align:start position:0%
+and we do that until max value in value
+are<00:10:03.930><c> different</c><00:10:04.890><c> enough</c><00:10:05.490><c> so</c><00:10:05.940><c> that</c><00:10:05.970><c> we</c><00:10:06.360><c> know</c>
+
+00:10:06.560 --> 00:10:06.570 align:start position:0%
+are different enough so that we know
+ 
+
+00:10:06.570 --> 00:10:09.590 align:start position:0%
+are different enough so that we know
+that<00:10:06.600><c> the</c><00:10:07.350><c> bar</c><00:10:07.620><c> is</c><00:10:07.830><c> half-full</c><00:10:08.340><c> or</c><00:10:08.910><c> a</c><00:10:09.150><c> quality</c>
+
+00:10:09.590 --> 00:10:09.600 align:start position:0%
+that the bar is half-full or a quality
+ 
+
+00:10:09.600 --> 00:10:12.650 align:start position:0%
+that the bar is half-full or a quality
+for<00:10:09.900><c> something</c><00:10:10.530><c> like</c><00:10:10.710><c> that</c><00:10:10.890><c> our</c><00:10:11.880><c> bar</c><00:10:12.330><c> will</c>
+
+00:10:12.650 --> 00:10:12.660 align:start position:0%
+for something like that our bar will
+ 
+
+00:10:12.660 --> 00:10:14.930 align:start position:0%
+for something like that our bar will
+already<00:10:13.080><c> more</c><00:10:13.560><c> or</c><00:10:13.710><c> less</c><00:10:13.740><c> work</c><00:10:14.160><c> at</c><00:10:14.430><c> this</c><00:10:14.580><c> point</c>
+
+00:10:14.930 --> 00:10:14.940 align:start position:0%
+already more or less work at this point
+ 
+
+00:10:14.940 --> 00:10:17.180 align:start position:0%
+already more or less work at this point
+we<00:10:15.180><c> just</c><00:10:15.480><c> have</c><00:10:15.630><c> to</c><00:10:15.810><c> initialize</c><00:10:16.440><c> it</c><00:10:16.470><c> we</c><00:10:16.890><c> haven't</c>
+
+00:10:17.180 --> 00:10:17.190 align:start position:0%
+we just have to initialize it we haven't
+ 
+
+00:10:17.190 --> 00:10:19.970 align:start position:0%
+we just have to initialize it we haven't
+done<00:10:17.340><c> yet</c><00:10:17.640><c> and</c><00:10:18.030><c> see</c><00:10:18.270><c> it</c><00:10:18.390><c> starts</c><00:10:18.930><c> half-full</c><00:10:19.650><c> but</c>
+
+00:10:19.970 --> 00:10:19.980 align:start position:0%
+done yet and see it starts half-full but
+ 
+
+00:10:19.980 --> 00:10:22.370 align:start position:0%
+done yet and see it starts half-full but
+if<00:10:20.610><c> you</c><00:10:20.730><c> press</c><00:10:21.000><c> space</c><00:10:21.240><c> you</c><00:10:21.810><c> will</c><00:10:21.960><c> get</c><00:10:22.200><c> some</c>
+
+00:10:22.370 --> 00:10:22.380 align:start position:0%
+if you press space you will get some
+ 
+
+00:10:22.380 --> 00:10:24.530 align:start position:0%
+if you press space you will get some
+animation<00:10:23.010><c> so</c><00:10:23.280><c> the</c><00:10:23.400><c> first</c><00:10:23.640><c> time</c><00:10:23.880><c> it</c><00:10:24.060><c> will</c><00:10:24.240><c> be</c><00:10:24.390><c> a</c>
+
+00:10:24.530 --> 00:10:24.540 align:start position:0%
+animation so the first time it will be a
+ 
+
+00:10:24.540 --> 00:10:26.810 align:start position:0%
+animation so the first time it will be a
+little<00:10:24.960><c> buggy</c><00:10:25.200><c> and</c><00:10:25.470><c> then</c><00:10:26.070><c> from</c><00:10:26.310><c> the</c><00:10:26.460><c> second</c>
+
+00:10:26.810 --> 00:10:26.820 align:start position:0%
+little buggy and then from the second
+ 
+
+00:10:26.820 --> 00:10:29.090 align:start position:0%
+little buggy and then from the second
+time<00:10:27.030><c> it</c><00:10:27.300><c> will</c><00:10:27.600><c> work</c><00:10:27.630><c> this</c><00:10:28.350><c> is</c><00:10:28.500><c> because</c><00:10:28.830><c> our</c>
+
+00:10:29.090 --> 00:10:29.100 align:start position:0%
+time it will work this is because our
+ 
+
+00:10:29.100 --> 00:10:31.180 align:start position:0%
+time it will work this is because our
+bar<00:10:29.520><c> was</c><00:10:29.760><c> not</c><00:10:29.940><c> properly</c><00:10:30.360><c> initialized</c>
+
+00:10:31.180 --> 00:10:31.190 align:start position:0%
+bar was not properly initialized
+ 
+
+00:10:31.190 --> 00:10:33.170 align:start position:0%
+bar was not properly initialized
+initializes<00:10:32.190><c> a</c><00:10:32.220><c> method</c><00:10:32.670><c> you're</c><00:10:32.850><c> going</c><00:10:32.880><c> to</c>
+
+00:10:33.170 --> 00:10:33.180 align:start position:0%
+initializes a method you're going to
+ 
+
+00:10:33.180 --> 00:10:35.990 align:start position:0%
+initializes a method you're going to
+come<00:10:33.390><c> from</c><00:10:33.540><c> outside</c><00:10:33.870><c> the</c><00:10:34.710><c> energy</c><00:10:35.490><c> bar</c><00:10:35.700><c> or</c>
+
+00:10:35.990 --> 00:10:36.000 align:start position:0%
+come from outside the energy bar or
+ 
+
+00:10:36.000 --> 00:10:39.140 align:start position:0%
+come from outside the energy bar or
+attach<00:10:36.330><c> progress</c><00:10:36.930><c> scene</c><00:10:37.770><c> so</c><00:10:38.520><c> we</c><00:10:38.610><c> want</c><00:10:38.790><c> to</c><00:10:38.940><c> go</c>
+
+00:10:39.140 --> 00:10:39.150 align:start position:0%
+attach progress scene so we want to go
+ 
+
+00:10:39.150 --> 00:10:41.390 align:start position:0%
+attach progress scene so we want to go
+back<00:10:39.420><c> to</c><00:10:39.720><c> our</c><00:10:39.960><c> game</c><00:10:40.380><c> and</c><00:10:40.650><c> to</c><00:10:41.220><c> the</c>
+
+00:10:41.390 --> 00:10:41.400 align:start position:0%
+back to our game and to the
+ 
+
+00:10:41.400 --> 00:10:43.250 align:start position:0%
+back to our game and to the
+corresponding<00:10:42.090><c> script</c><00:10:42.360><c> and</c><00:10:42.600><c> in</c><00:10:42.960><c> the</c><00:10:43.050><c> ready</c>
+
+00:10:43.250 --> 00:10:43.260 align:start position:0%
+corresponding script and in the ready
+ 
+
+00:10:43.260 --> 00:10:46.100 align:start position:0%
+corresponding script and in the ready
+function<00:10:43.500><c> we're</c><00:10:44.280><c> going</c><00:10:44.460><c> to</c><00:10:44.550><c> access</c><00:10:45.090><c> the</c><00:10:45.780><c> bar</c>
+
+00:10:46.100 --> 00:10:46.110 align:start position:0%
+function we're going to access the bar
+ 
+
+00:10:46.110 --> 00:10:48.440 align:start position:0%
+function we're going to access the bar
+here<00:10:46.590><c> so</c><00:10:47.190><c> make</c><00:10:47.370><c> sure</c><00:10:47.580><c> you</c><00:10:47.790><c> place</c><00:10:48.180><c> the</c>
+
+00:10:48.440 --> 00:10:48.450 align:start position:0%
+here so make sure you place the
+ 
+
+00:10:48.450 --> 00:10:50.660 align:start position:0%
+here so make sure you place the
+experience<00:10:48.960><c> bar</c><00:10:49.170><c> under</c><00:10:49.680><c> the</c><00:10:49.710><c> interface</c><00:10:50.370><c> node</c>
+
+00:10:50.660 --> 00:10:50.670 align:start position:0%
+experience bar under the interface node
+ 
+
+00:10:50.670 --> 00:10:52.640 align:start position:0%
+experience bar under the interface node
+in<00:10:50.880><c> the</c><00:10:51.270><c> scene</c><00:10:51.510><c> and</c><00:10:51.720><c> not</c><00:10:52.110><c> somewhere</c><00:10:52.470><c> else</c>
+
+00:10:52.640 --> 00:10:52.650 align:start position:0%
+in the scene and not somewhere else
+ 
+
+00:10:52.650 --> 00:10:56.210 align:start position:0%
+in the scene and not somewhere else
+because<00:10:53.220><c> the</c><00:10:53.730><c> variable</c><00:10:54.240><c> stores</c><00:10:55.080><c> a</c><00:10:55.500><c> reference</c>
+
+00:10:56.210 --> 00:10:56.220 align:start position:0%
+because the variable stores a reference
+ 
+
+00:10:56.220 --> 00:10:58.850 align:start position:0%
+because the variable stores a reference
+to<00:10:56.490><c> that</c><00:10:56.730><c> or</c><00:10:56.940><c> you</c><00:10:57.000><c> can</c><00:10:57.420><c> change</c><00:10:57.780><c> that</c><00:10:58.260><c> path</c><00:10:58.530><c> if</c>
+
+00:10:58.850 --> 00:10:58.860 align:start position:0%
+to that or you can change that path if
+ 
+
+00:10:58.860 --> 00:11:00.560 align:start position:0%
+to that or you can change that path if
+you<00:10:59.070><c> place</c><00:10:59.370><c> the</c><00:10:59.610><c> experience</c><00:11:00.060><c> bar</c><00:11:00.240><c> somewhere</c>
+
+00:11:00.560 --> 00:11:00.570 align:start position:0%
+you place the experience bar somewhere
+ 
+
+00:11:00.570 --> 00:11:04.220 align:start position:0%
+you place the experience bar somewhere
+else<00:11:00.930><c> let's</c><00:11:01.530><c> call</c><00:11:01.770><c> bonded</c><00:11:02.640><c> initialize</c><00:11:03.480><c> and</c>
+
+00:11:04.220 --> 00:11:04.230 align:start position:0%
+else let's call bonded initialize and
+ 
+
+00:11:04.230 --> 00:11:07.790 align:start position:0%
+else let's call bonded initialize and
+want<00:11:04.470><c> to</c><00:11:04.620><c> pass</c><00:11:04.890><c> the</c><00:11:05.340><c> character's</c><00:11:06.120><c> experience</c>
+
+00:11:07.790 --> 00:11:07.800 align:start position:0%
+want to pass the character's experience
+ 
+
+00:11:07.800 --> 00:11:12.040 align:start position:0%
+want to pass the character's experience
+and<00:11:07.920><c> the</c><00:11:08.639><c> characters</c><00:11:09.649><c> required</c><00:11:10.910><c> experience</c>
+
+00:11:12.040 --> 00:11:12.050 align:start position:0%
+and the characters required experience
+ 
+
+00:11:12.050 --> 00:11:14.960 align:start position:0%
+and the characters required experience
+this<00:11:13.050><c> will</c><00:11:13.230><c> initialize</c><00:11:13.649><c> our</c><00:11:13.889><c> bar</c><00:11:14.220><c> and</c><00:11:14.399><c> know</c>
+
+00:11:14.960 --> 00:11:14.970 align:start position:0%
+this will initialize our bar and know
+ 
+
+00:11:14.970 --> 00:11:17.929 align:start position:0%
+this will initialize our bar and know
+that<00:11:15.269><c> it</c><00:11:15.569><c> used</c><00:11:16.139><c> a</c><00:11:16.499><c> minimum</c><00:11:17.220><c> value</c><00:11:17.639><c> that's</c>
+
+00:11:17.929 --> 00:11:17.939 align:start position:0%
+that it used a minimum value that's
+ 
+
+00:11:17.939 --> 00:11:20.329 align:start position:0%
+that it used a minimum value that's
+greater<00:11:18.389><c> than</c><00:11:18.929><c> zero</c><00:11:19.230><c> which</c><00:11:19.649><c> I'm</c><00:11:19.829><c> not</c><00:11:20.040><c> doing</c>
+
+00:11:20.329 --> 00:11:20.339 align:start position:0%
+greater than zero which I'm not doing
+ 
+
+00:11:20.339 --> 00:11:22.069 align:start position:0%
+greater than zero which I'm not doing
+here<00:11:20.610><c> though</c><00:11:20.970><c> I'm</c><00:11:21.119><c> going</c><00:11:21.300><c> to</c><00:11:21.389><c> change</c><00:11:21.869><c> that</c>
+
+00:11:22.069 --> 00:11:22.079 align:start position:0%
+here though I'm going to change that
+ 
+
+00:11:22.079 --> 00:11:24.289 align:start position:0%
+here though I'm going to change that
+line<00:11:22.290><c> back</c><00:11:22.559><c> but</c><00:11:23.040><c> if</c><00:11:23.279><c> you</c><00:11:23.459><c> were</c><00:11:23.670><c> to</c><00:11:23.879><c> use</c><00:11:24.089><c> that</c>
+
+00:11:24.289 --> 00:11:24.299 align:start position:0%
+line back but if you were to use that
+ 
+
+00:11:24.299 --> 00:11:28.249 align:start position:0%
+line back but if you were to use that
+you<00:11:24.839><c> would</c><00:11:25.019><c> want</c><00:11:25.350><c> to</c><00:11:25.679><c> also</c><00:11:26.249><c> have</c><00:11:26.759><c> some</c><00:11:27.259><c> minimum</c>
+
+00:11:28.249 --> 00:11:28.259 align:start position:0%
+you would want to also have some minimum
+ 
+
+00:11:28.259 --> 00:11:30.949 align:start position:0%
+you would want to also have some minimum
+value<00:11:28.709><c> in</c><00:11:28.920><c> your</c><00:11:29.069><c> initialized</c><00:11:29.670><c> method</c><00:11:29.790><c> like</c><00:11:30.689><c> if</c>
+
+00:11:30.949 --> 00:11:30.959 align:start position:0%
+value in your initialized method like if
+ 
+
+00:11:30.959 --> 00:11:32.809 align:start position:0%
+value in your initialized method like if
+the<00:11:31.199><c> minimum</c><00:11:31.619><c> experience</c><00:11:32.369><c> for</c><00:11:32.610><c> some</c>
+
+00:11:32.809 --> 00:11:32.819 align:start position:0%
+the minimum experience for some
+ 
+
+00:11:32.819 --> 00:11:35.479 align:start position:0%
+the minimum experience for some
+absolutely<00:11:33.449><c> crazy</c><00:11:33.779><c> reason</c><00:11:34.410><c> will</c><00:11:34.860><c> Stan</c><00:11:35.279><c> or</c>
+
+00:11:35.479 --> 00:11:35.489 align:start position:0%
+absolutely crazy reason will Stan or
+ 
+
+00:11:35.489 --> 00:11:36.109 align:start position:0%
+absolutely crazy reason will Stan or
+something
+
+00:11:36.109 --> 00:11:36.119 align:start position:0%
+something
+ 
+
+00:11:36.119 --> 00:11:38.359 align:start position:0%
+something
+just<00:11:36.540><c> make</c><00:11:36.720><c> sure</c><00:11:36.929><c> that</c><00:11:36.959><c> you</c><00:11:37.350><c> do</c><00:11:37.529><c> that</c><00:11:37.559><c> and</c><00:11:37.860><c> with</c>
+
+00:11:38.359 --> 00:11:38.369 align:start position:0%
+just make sure that you do that and with
+ 
+
+00:11:38.369 --> 00:11:41.629 align:start position:0%
+just make sure that you do that and with
+that<00:11:38.549><c> your</c><00:11:39.179><c> bar</c><00:11:39.449><c> will</c><00:11:39.749><c> start</c><00:11:40.309><c> showing</c><00:11:41.309><c> the</c>
+
+00:11:41.629 --> 00:11:41.639 align:start position:0%
+that your bar will start showing the
+ 
+
+00:11:41.639 --> 00:11:43.369 align:start position:0%
+that your bar will start showing the
+character's<00:11:42.089><c> experience</c><00:11:42.660><c> when</c><00:11:43.019><c> you</c><00:11:43.139><c> press</c>
+
+00:11:43.369 --> 00:11:43.379 align:start position:0%
+character's experience when you press
+ 
+
+00:11:43.379 --> 00:11:45.590 align:start position:0%
+character's experience when you press
+space<00:11:43.889><c> for</c><00:11:44.369><c> the</c><00:11:44.459><c> first</c><00:11:44.670><c> time</c><00:11:44.879><c> because</c><00:11:45.329><c> you</c><00:11:45.569><c> are</c>
+
+00:11:45.590 --> 00:11:45.600 align:start position:0%
+space for the first time because you are
+ 
+
+00:11:45.600 --> 00:11:48.199 align:start position:0%
+space for the first time because you are
+adding<00:11:45.869><c> a</c><00:11:46.199><c> lot</c><00:11:46.499><c> of</c><00:11:46.649><c> experience</c><00:11:47.189><c> the</c><00:11:47.549><c> bar</c><00:11:47.819><c> will</c>
+
+00:11:48.199 --> 00:11:48.209 align:start position:0%
+adding a lot of experience the bar will
+ 
+
+00:11:48.209 --> 00:11:50.389 align:start position:0%
+adding a lot of experience the bar will
+fill<00:11:48.569><c> two</c><00:11:48.959><c> times</c><00:11:49.319><c> and</c><00:11:49.709><c> the</c><00:11:49.829><c> character</c><00:11:50.249><c> will</c>
+
+00:11:50.389 --> 00:11:50.399 align:start position:0%
+fill two times and the character will
+ 
+
+00:11:50.399 --> 00:11:52.879 align:start position:0%
+fill two times and the character will
+gain<00:11:50.579><c> more</c><00:11:50.999><c> than</c><00:11:51.059><c> one</c><00:11:51.540><c> level</c><00:11:51.839><c> at</c><00:11:51.959><c> once</c><00:11:52.230><c> press</c>
+
+00:11:52.879 --> 00:11:52.889 align:start position:0%
+gain more than one level at once press
+ 
+
+00:11:52.889 --> 00:11:54.979 align:start position:0%
+gain more than one level at once press
+space<00:11:53.220><c> again</c><00:11:53.249><c> so</c><00:11:54.059><c> every</c><00:11:54.299><c> time</c><00:11:54.449><c> we</c><00:11:54.569><c> press</c><00:11:54.809><c> space</c>
+
+00:11:54.979 --> 00:11:54.989 align:start position:0%
+space again so every time we press space
+ 
+
+00:11:54.989 --> 00:11:57.499 align:start position:0%
+space again so every time we press space
+like<00:11:55.739><c> in</c><00:11:55.889><c> this</c><00:11:56.220><c> demo</c><00:11:56.519><c> I</c><00:11:56.670><c> think</c><00:11:57.029><c> I'm</c><00:11:57.119><c> adding</c>
+
+00:11:57.499 --> 00:11:57.509 align:start position:0%
+like in this demo I think I'm adding
+ 
+
+00:11:57.509 --> 00:12:00.139 align:start position:0%
+like in this demo I think I'm adding
+thirty<00:11:57.869><c> four</c><00:11:58.170><c> points</c><00:11:58.799><c> of</c><00:11:58.889><c> experience</c><00:11:59.040><c> you</c><00:11:59.970><c> can</c>
+
+00:12:00.139 --> 00:12:00.149 align:start position:0%
+thirty four points of experience you can
+ 
+
+00:12:00.149 --> 00:12:02.809 align:start position:0%
+thirty four points of experience you can
+see<00:12:00.420><c> at</c><00:12:00.660><c> first</c><00:12:01.110><c> it</c><00:12:01.589><c> makes</c><00:12:01.889><c> the</c><00:12:02.100><c> character</c><00:12:02.549><c> gain</c>
+
+00:12:02.809 --> 00:12:02.819 align:start position:0%
+see at first it makes the character gain
+ 
+
+00:12:02.819 --> 00:12:05.090 align:start position:0%
+see at first it makes the character gain
+levels<00:12:03.269><c> pretty</c><00:12:03.509><c> quickly</c><00:12:03.809><c> but</c><00:12:04.410><c> past</c><00:12:04.709><c> level</c>
+
+00:12:05.090 --> 00:12:05.100 align:start position:0%
+levels pretty quickly but past level
+ 
+
+00:12:05.100 --> 00:12:06.710 align:start position:0%
+levels pretty quickly but past level
+five<00:12:05.369><c> I</c><00:12:05.610><c> need</c><00:12:05.850><c> to</c><00:12:05.999><c> press</c><00:12:06.239><c> the</c><00:12:06.420><c> spacebar</c>
+
+00:12:06.710 --> 00:12:06.720 align:start position:0%
+five I need to press the spacebar
+ 
+
+00:12:06.720 --> 00:12:09.229 align:start position:0%
+five I need to press the spacebar
+multiple<00:12:07.439><c> times</c><00:12:07.739><c> for</c><00:12:08.009><c> the</c><00:12:08.189><c> character</c><00:12:08.699><c> to</c><00:12:09.029><c> gain</c>
+
+00:12:09.229 --> 00:12:09.239 align:start position:0%
+multiple times for the character to gain
+ 
+
+00:12:09.239 --> 00:12:11.359 align:start position:0%
+multiple times for the character to gain
+more<00:12:09.449><c> experience</c><00:12:09.509><c> now</c><00:12:10.410><c> that</c><00:12:10.619><c> this</c><00:12:10.769><c> system</c><00:12:11.189><c> at</c>
+
+00:12:11.359 --> 00:12:11.369 align:start position:0%
+more experience now that this system at
+ 
+
+00:12:11.369 --> 00:12:12.169 align:start position:0%
+more experience now that this system at
+the<00:12:11.670><c> moment</c>
+
+00:12:12.169 --> 00:12:12.179 align:start position:0%
+the moment
+ 
+
+00:12:12.179 --> 00:12:14.869 align:start position:0%
+the moment
+has<00:12:12.480><c> some</c><00:12:12.899><c> limitations</c><00:12:13.649><c> if</c><00:12:14.009><c> I</c><00:12:14.339><c> press</c><00:12:14.850><c> the</c>
+
+00:12:14.869 --> 00:12:14.879 align:start position:0%
+has some limitations if I press the
+ 
+
+00:12:14.879 --> 00:12:17.900 align:start position:0%
+has some limitations if I press the
+spacebar<00:12:15.360><c> many</c><00:12:15.899><c> times</c><00:12:16.259><c> the</c><00:12:16.980><c> bar</c><00:12:17.549><c> will</c>
+
+00:12:17.900 --> 00:12:17.910 align:start position:0%
+spacebar many times the bar will
+ 
+
+00:12:17.910 --> 00:12:20.419 align:start position:0%
+spacebar many times the bar will
+sometimes<00:12:18.420><c> go</c><00:12:18.929><c> back</c><00:12:19.259><c> the</c><00:12:19.769><c> animation</c><00:12:20.220><c> will</c><00:12:20.399><c> be</c>
+
+00:12:20.419 --> 00:12:20.429 align:start position:0%
+sometimes go back the animation will be
+ 
+
+00:12:20.429 --> 00:12:22.970 align:start position:0%
+sometimes go back the animation will be
+a<00:12:20.579><c> bit</c><00:12:20.819><c> buggy</c><00:12:21.059><c> because</c><00:12:21.779><c> while</c><00:12:21.990><c> not</c><00:12:22.259><c> stopping</c>
+
+00:12:22.970 --> 00:12:22.980 align:start position:0%
+a bit buggy because while not stopping
+ 
+
+00:12:22.980 --> 00:12:25.160 align:start position:0%
+a bit buggy because while not stopping
+and<00:12:23.189><c> reinitializing</c><00:12:24.089><c> the</c><00:12:24.509><c> animation</c><00:12:25.049><c> or</c>
+
+00:12:25.160 --> 00:12:25.170 align:start position:0%
+and reinitializing the animation or
+ 
+
+00:12:25.170 --> 00:12:28.489 align:start position:0%
+and reinitializing the animation or
+piling<00:12:25.740><c> up</c><00:12:25.920><c> that</c><00:12:26.339><c> growth</c><00:12:26.670><c> data</c><00:12:26.970><c> if</c><00:12:27.420><c> we</c><00:12:27.839><c> gain</c>
+
+00:12:28.489 --> 00:12:28.499 align:start position:0%
+piling up that growth data if we gain
+ 
+
+00:12:28.499 --> 00:12:30.889 align:start position:0%
+piling up that growth data if we gain
+experience<00:12:28.699><c> many</c><00:12:29.699><c> times</c><00:12:30.029><c> in</c><00:12:30.389><c> a</c><00:12:30.540><c> short</c><00:12:30.779><c> amount</c>
+
+00:12:30.889 --> 00:12:30.899 align:start position:0%
+experience many times in a short amount
+ 
+
+00:12:30.899 --> 00:12:32.869 align:start position:0%
+experience many times in a short amount
+of<00:12:31.230><c> time</c><00:12:31.290><c> we</c><00:12:31.920><c> have</c><00:12:32.069><c> to</c><00:12:32.249><c> wait</c><00:12:32.490><c> for</c><00:12:32.519><c> the</c>
+
+00:12:32.869 --> 00:12:32.879 align:start position:0%
+of time we have to wait for the
+ 
+
+00:12:32.879 --> 00:12:34.639 align:start position:0%
+of time we have to wait for the
+animation<00:12:33.209><c> to</c><00:12:33.540><c> finish</c><00:12:33.869><c> so</c><00:12:34.290><c> if</c><00:12:34.350><c> you're</c><00:12:34.499><c> making</c>
+
+00:12:34.639 --> 00:12:34.649 align:start position:0%
+animation to finish so if you're making
+ 
+
+00:12:34.649 --> 00:12:37.669 align:start position:0%
+animation to finish so if you're making
+a<00:12:34.949><c> turn-based</c><00:12:35.249><c> RPG</c><00:12:36.209><c> it's</c><00:12:36.689><c> no</c><00:12:37.139><c> problem</c><00:12:37.379><c> at</c><00:12:37.619><c> all</c>
+
+00:12:37.669 --> 00:12:37.679 align:start position:0%
+a turn-based RPG it's no problem at all
+ 
+
+00:12:37.679 --> 00:12:39.710 align:start position:0%
+a turn-based RPG it's no problem at all
+that's<00:12:38.249><c> how</c><00:12:38.910><c> it</c><00:12:39.089><c> should</c><00:12:39.119><c> work</c>
+
+00:12:39.710 --> 00:12:39.720 align:start position:0%
+that's how it should work
+ 
+
+00:12:39.720 --> 00:12:41.629 align:start position:0%
+that's how it should work
+but<00:12:39.990><c> if</c><00:12:40.170><c> you</c><00:12:40.319><c> make</c><00:12:40.559><c> a</c><00:12:40.589><c> game</c><00:12:40.920><c> where</c><00:12:41.220><c> the</c>
+
+00:12:41.629 --> 00:12:41.639 align:start position:0%
+but if you make a game where the
+ 
+
+00:12:41.639 --> 00:12:44.269 align:start position:0%
+but if you make a game where the
+character<00:12:42.119><c> can</c><00:12:42.360><c> gain</c><00:12:42.779><c> experience</c><00:12:42.959><c> many</c><00:12:43.920><c> times</c>
+
+00:12:44.269 --> 00:12:44.279 align:start position:0%
+character can gain experience many times
+ 
+
+00:12:44.279 --> 00:12:46.369 align:start position:0%
+character can gain experience many times
+in<00:12:44.639><c> a</c><00:12:44.730><c> short</c><00:12:45.029><c> amount</c><00:12:45.179><c> of</c><00:12:45.480><c> time</c><00:12:45.540><c> you</c><00:12:46.110><c> don't</c><00:12:46.259><c> want</c>
+
+00:12:46.369 --> 00:12:46.379 align:start position:0%
+in a short amount of time you don't want
+ 
+
+00:12:46.379 --> 00:12:48.549 align:start position:0%
+in a short amount of time you don't want
+to<00:12:46.740><c> wait</c><00:12:47.040><c> for</c><00:12:47.339><c> the</c><00:12:47.490><c> animation</c><00:12:48.119><c> to</c><00:12:48.480><c> finish</c>
+
+00:12:48.549 --> 00:12:48.559 align:start position:0%
+to wait for the animation to finish
+ 
+
+00:12:48.559 --> 00:12:50.960 align:start position:0%
+to wait for the animation to finish
+you'll<00:12:49.559><c> have</c><00:12:49.769><c> to</c><00:12:49.889><c> modify</c><00:12:50.129><c> the</c><00:12:50.309><c> system</c><00:12:50.579><c> a</c>
+
+00:12:50.960 --> 00:12:50.970 align:start position:0%
+you'll have to modify the system a
+ 
+
+00:12:50.970 --> 00:12:53.329 align:start position:0%
+you'll have to modify the system a
+little<00:12:51.389><c> bit</c><00:12:51.569><c> to</c><00:12:51.689><c> accommodate</c><00:12:52.169><c> for</c><00:12:52.199><c> that</c><00:12:52.410><c> so</c>
+
+00:12:53.329 --> 00:12:53.339 align:start position:0%
+little bit to accommodate for that so
+ 
+
+00:12:53.339 --> 00:12:55.489 align:start position:0%
+little bit to accommodate for that so
+this<00:12:53.519><c> tutorial</c><00:12:54.029><c> was</c><00:12:54.329><c> brought</c><00:12:54.600><c> to</c><00:12:54.779><c> you</c><00:12:54.959><c> by</c><00:12:55.259><c> our</c>
+
+00:12:55.489 --> 00:12:55.499 align:start position:0%
+this tutorial was brought to you by our
+ 
+
+00:12:55.499 --> 00:12:59.299 align:start position:0%
+this tutorial was brought to you by our
+patrons<00:12:55.889><c> on</c><00:12:56.689><c> patreon</c><00:12:57.689><c> on</c><00:12:58.079><c> top</c><00:12:58.439><c> of</c><00:12:58.529><c> that</c><00:12:58.679><c> if</c><00:12:59.100><c> you</c>
+
+00:12:59.299 --> 00:12:59.309 align:start position:0%
+patrons on patreon on top of that if you
+ 
+
+00:12:59.309 --> 00:13:01.069 align:start position:0%
+patrons on patreon on top of that if you
+want<00:12:59.429><c> to</c><00:12:59.549><c> support</c><00:12:59.879><c> us</c><00:13:00.119><c> so</c><00:13:00.269><c> you</c><00:13:00.360><c> can</c><00:13:00.540><c> go</c><00:13:00.899><c> check</c>
+
+00:13:01.069 --> 00:13:01.079 align:start position:0%
+want to support us so you can go check
+ 
+
+00:13:01.079 --> 00:13:03.679 align:start position:0%
+want to support us so you can go check
+us<00:13:01.439><c> out</c><00:13:01.709><c> there</c><00:13:01.860><c> and</c><00:13:02.490><c> you</c><00:13:02.759><c> can</c><00:13:02.910><c> also</c><00:13:02.999><c> check</c><00:13:03.449><c> our</c>
+
+00:13:03.679 --> 00:13:03.689 align:start position:0%
+us out there and you can also check our
+ 
+
+00:13:03.689 --> 00:13:07.429 align:start position:0%
+us out there and you can also check our
+master<00:13:04.559><c> UI</c><00:13:04.980><c> series</c><00:13:05.610><c> to</c><00:13:05.939><c> get</c><00:13:06.389><c> your</c><00:13:06.689><c> UI</c><00:13:06.989><c> skills</c>
+
+00:13:07.429 --> 00:13:07.439 align:start position:0%
+master UI series to get your UI skills
+ 
+
+00:13:07.439 --> 00:13:09.350 align:start position:0%
+master UI series to get your UI skills
+to<00:13:07.649><c> the</c><00:13:07.860><c> next</c><00:13:07.889><c> level</c><00:13:08.339><c> we</c><00:13:08.459><c> could</c><00:13:08.610><c> do</c><00:13:08.759><c> or</c><00:13:08.939><c> our</c>
+
+00:13:09.350 --> 00:13:09.360 align:start position:0%
+to the next level we could do or our
+ 
+
+00:13:09.360 --> 00:13:11.869 align:start position:0%
+to the next level we could do or our
+general<00:13:09.929><c> good</c><00:13:10.290><c> at</c><00:13:10.410><c> three</c><00:13:10.679><c> calls</c><00:13:11.129><c> that's</c><00:13:11.669><c> a</c>
+
+00:13:11.869 --> 00:13:11.879 align:start position:0%
+general good at three calls that's a
+ 
+
+00:13:11.879 --> 00:13:14.210 align:start position:0%
+general good at three calls that's a
+great<00:13:12.089><c> way</c><00:13:12.299><c> to</c><00:13:12.329><c> support</c><00:13:12.899><c> GT</c><00:13:13.319><c> quest</c><00:13:13.559><c> be</c><00:13:13.980><c> sure</c><00:13:14.160><c> to</c>
+
+00:13:14.210 --> 00:13:14.220 align:start position:0%
+great way to support GT quest be sure to
+ 
+
+00:13:14.220 --> 00:13:17.419 align:start position:0%
+great way to support GT quest be sure to
+subscribe<00:13:14.459><c> for</c><00:13:14.730><c> more</c><00:13:14.999><c> and</c><00:13:15.540><c> that</c><00:13:16.379><c> said</c><00:13:16.740><c> be</c>
+
+00:13:17.419 --> 00:13:17.429 align:start position:0%
+subscribe for more and that said be
+ 
+
+00:13:17.429 --> 00:13:19.639 align:start position:0%
+subscribe for more and that said be
+creative<00:13:17.610><c> have</c><00:13:18.419><c> fun</c><00:13:18.449><c> and</c><00:13:18.899><c> I'll</c><00:13:19.290><c> see</c><00:13:19.470><c> you</c><00:13:19.559><c> in</c>
+
+00:13:19.639 --> 00:13:19.649 align:start position:0%
+creative have fun and I'll see you in
+ 
+
+00:13:19.649 --> 00:13:23.059 align:start position:0%
+creative have fun and I'll see you in
+the<00:13:19.740><c> next</c><00:13:19.980><c> one</c><00:13:20.100><c> well</c><00:13:20.490><c> I</c><00:13:20.519><c> have</c><00:13:20.879><c> a</c><00:13:20.910><c> nice</c>
+

@@ -1,0 +1,148 @@
+Kind: captions
+Language: en
+ 
+in<00:00:00.320><c> this</c><00:00:00.480><c> episode</c><00:00:00.840><c> of</c><00:00:00.960><c> my</c><00:00:01.199><c> G</c><00:00:01.520><c> UI</c><00:00:01.880><c> tutorial</c>
+in this episode of my G UI tutorial
+series<00:00:02.720><c> we're</c><00:00:02.919><c> creating</c><00:00:03.320><c> a</c><00:00:03.520><c> transition</c><00:00:04.160><c> scene</c>
+series we're creating a transition scene
+system<00:00:05.240><c> where</c><00:00:05.400><c> we</c><00:00:05.520><c> can</c><00:00:05.680><c> fade</c><00:00:06.000><c> in</c><00:00:06.279><c> and</c><00:00:06.520><c> out</c>
+system where we can fade in and out
+automatically<00:00:07.640><c> when</c><00:00:07.799><c> changing</c><00:00:08.240><c> scenes</c><00:00:09.240><c> these</c>
+automatically when changing scenes these
+tutorials<00:00:09.880><c> are</c><00:00:10.080><c> part</c><00:00:10.240><c> of</c><00:00:10.400><c> a</c><00:00:10.599><c> long</c><00:00:10.920><c> series</c><00:00:11.240><c> of</c>
+tutorials are part of a long series of
+user<00:00:11.799><c> interface</c><00:00:12.320><c> tutorials</c><00:00:12.759><c> for</c><00:00:13.040><c> G</c><00:00:13.480><c> and</c><00:00:13.679><c> as</c>
+user interface tutorials for G and as
+always<00:00:14.200><c> you</c><00:00:14.320><c> can</c><00:00:14.480><c> grab</c><00:00:14.759><c> the</c><00:00:14.839><c> source</c><00:00:15.160><c> files</c><00:00:15.519><c> for</c>
+always you can grab the source files for
+this<00:00:16.240><c> and</c><00:00:16.480><c> all</c><00:00:16.640><c> of</c><00:00:16.800><c> my</c><00:00:17.000><c> GTO</c><00:00:17.359><c> tutorials</c><00:00:17.920><c> on</c><00:00:18.080><c> my</c>
+this and all of my GTO tutorials on my
+patreon<00:00:19.320><c> I'm</c><00:00:19.439><c> working</c><00:00:19.720><c> from</c><00:00:19.880><c> the</c><00:00:20.080><c> last</c>
+patreon I'm working from the last
+episode<00:00:20.840><c> scene</c><00:00:21.199><c> changing</c><00:00:21.760><c> structure</c><00:00:22.519><c> the</c>
+episode scene changing structure the
+goal<00:00:23.039><c> is</c><00:00:23.160><c> to</c><00:00:23.359><c> Overlay</c><00:00:23.800><c> a</c><00:00:24.000><c> transition</c>
+goal is to Overlay a transition
+controller<00:00:25.039><c> scene</c><00:00:25.480><c> over</c><00:00:25.720><c> the</c><00:00:26.000><c> rest</c><00:00:26.199><c> of</c><00:00:26.320><c> the</c>
+controller scene over the rest of the
+nodes<00:00:27.080><c> and</c><00:00:27.320><c> animate</c><00:00:27.800><c> a</c><00:00:28.000><c> black</c><00:00:28.400><c> background</c>
+nodes and animate a black background
+first<00:00:29.439><c> create</c><00:00:29.679><c> a</c><00:00:29.800><c> new</c><00:00:30.000><c> new</c><00:00:30.119><c> control</c><00:00:30.400><c> scene</c>
+first create a new new control scene
+named<00:00:31.039><c> transition</c><00:00:31.560><c> controller</c><00:00:32.119><c> with</c><00:00:32.279><c> this</c>
+named transition controller with this
+structure<00:00:33.160><c> the</c><00:00:33.280><c> color</c><00:00:33.600><c> wct</c><00:00:33.920><c> will</c><00:00:34.079><c> have</c><00:00:34.200><c> a</c>
+structure the color wct will have a
+black<00:00:34.760><c> background</c><00:00:35.320><c> with</c><00:00:35.440><c> an</c><00:00:35.640><c> alpha</c><00:00:36.000><c> setting</c>
+black background with an alpha setting
+of<00:00:36.680><c> zero</c><00:00:37.239><c> set</c><00:00:37.520><c> layout</c><00:00:37.840><c> mode</c><00:00:38.079><c> to</c><00:00:38.280><c> Anchors</c><00:00:38.760><c> and</c>
+of zero set layout mode to Anchors and
+anchor<00:00:39.480><c> to</c><00:00:39.640><c> full</c><00:00:39.920><c> wct</c><00:00:40.320><c> in</c><00:00:40.440><c> the</c><00:00:40.559><c> animation</c>
+anchor to full wct in the animation
+player<00:00:41.520><c> create</c><00:00:41.760><c> a</c><00:00:41.920><c> new</c><00:00:42.160><c> animation</c><00:00:42.680><c> called</c>
+player create a new animation called
+fade<00:00:43.280><c> in</c><00:00:43.879><c> and</c><00:00:44.120><c> create</c><00:00:44.360><c> an</c><00:00:44.559><c> animation</c><00:00:45.000><c> track</c>
+fade in and create an animation track
+for<00:00:45.480><c> the</c><00:00:45.640><c> color</c><00:00:46.079><c> property</c><00:00:46.600><c> of</c><00:00:46.719><c> the</c><00:00:46.840><c> color</c><00:00:47.160><c> wct</c>
+for the color property of the color wct
+node<00:00:48.120><c> the</c><00:00:48.239><c> animation</c><00:00:48.680><c> length</c><00:00:48.960><c> should</c><00:00:49.160><c> be</c><00:00:49.360><c> 1</c>
+node the animation length should be 1
+second<00:00:50.239><c> set</c><00:00:50.520><c> the</c><00:00:50.719><c> alpha</c><00:00:51.079><c> to</c><00:00:51.480><c> 255</c><00:00:52.480><c> or</c><00:00:52.920><c> 100%</c><00:00:53.480><c> on</c>
+second set the alpha to 255 or 100% on
+the<00:00:53.719><c> first</c><00:00:54.120><c> frame</c><00:00:54.680><c> and</c><00:00:54.960><c> zero</c><00:00:55.480><c> on</c><00:00:55.640><c> the</c><00:00:55.879><c> last</c>
+the first frame and zero on the last
+frame<00:00:56.600><c> create</c><00:00:57.000><c> another</c><00:00:57.359><c> animation</c><00:00:57.879><c> called</c>
+frame create another animation called
+Fade<00:00:58.440><c> Out</c><00:00:58.879><c> and</c><00:00:59.079><c> reverse</c><00:00:59.480><c> the</c><00:00:59.600><c> color</c><00:01:00.000><c> settings</c>
+Fade Out and reverse the color settings
+Rec<00:01:00.480><c> created</c><00:01:01.160><c> zero</c><00:01:01.519><c> on</c><00:01:01.680><c> the</c><00:01:01.800><c> first</c><00:01:02.079><c> frame</c><00:01:02.559><c> and</c>
+Rec created zero on the first frame and
+100%<00:01:03.480><c> on</c><00:01:03.600><c> the</c><00:01:03.800><c> last</c><00:01:04.000><c> frame</c><00:01:04.600><c> next</c><00:01:05.040><c> add</c><00:01:05.239><c> the</c>
+100% on the last frame next add the
+transition<00:01:06.080><c> controller</c><00:01:06.560><c> scene</c><00:01:06.920><c> to</c><00:01:07.119><c> your</c><00:01:07.360><c> main</c>
+transition controller scene to your main
+scene<00:01:08.439><c> if</c><00:01:08.520><c> you're</c><00:01:08.680><c> working</c><00:01:09.000><c> from</c><00:01:09.240><c> your</c><00:01:09.400><c> own</c>
+scene if you're working from your own
+setup<00:01:10.119><c> you</c><00:01:10.240><c> want</c><00:01:10.400><c> the</c><00:01:10.600><c> transition</c><00:01:11.080><c> controller</c>
+setup you want the transition controller
+scene<00:01:11.799><c> to</c><00:01:11.920><c> be</c><00:01:12.080><c> at</c><00:01:12.240><c> the</c><00:01:12.479><c> bottom</c><00:01:12.799><c> of</c><00:01:12.920><c> the</c><00:01:13.000><c> scene</c>
+scene to be at the bottom of the scene
+tree<00:01:13.759><c> so</c><00:01:13.960><c> it</c><00:01:14.080><c> has</c><00:01:14.200><c> a</c><00:01:14.479><c> higher</c><00:01:14.799><c> layer</c><00:01:15.280><c> priority</c>
+tree so it has a higher layer priority
+meaning<00:01:16.479><c> it</c><00:01:16.600><c> is</c><00:01:16.759><c> layered</c><00:01:17.159><c> on</c><00:01:17.520><c> top</c><00:01:17.920><c> in</c><00:01:18.040><c> the</c>
+meaning it is layered on top in the
+transition<00:01:18.680><c> controller</c><00:01:19.080><c> scene</c><00:01:19.600><c> add</c><00:01:19.799><c> a</c><00:01:19.960><c> script</c>
+transition controller scene add a script
+set<00:01:20.640><c> the</c><00:01:20.840><c> class</c><00:01:21.119><c> name</c><00:01:21.360><c> to</c><00:01:21.560><c> scene</c><00:01:21.960><c> transition</c>
+set the class name to scene transition
+controller<00:01:23.079><c> and</c><00:01:23.280><c> add</c><00:01:23.520><c> two</c><00:01:23.960><c> export</c><00:01:24.439><c> variables</c>
+controller and add two export variables
+to<00:01:25.240><c> reference</c><00:01:25.640><c> our</c><00:01:25.880><c> color</c><00:01:26.479><c> node</c><00:01:26.920><c> and</c>
+to reference our color node and
+animation<00:01:27.720><c> player</c><00:01:28.040><c> node</c><00:01:28.520><c> be</c><00:01:28.640><c> sure</c><00:01:28.799><c> to</c><00:01:29.040><c> assign</c>
+animation player node be sure to assign
+those<00:01:29.600><c> in</c><00:01:29.759><c> the</c><00:01:29.920><c> the</c><00:01:30.040><c> inspector</c><00:01:30.600><c> create</c><00:01:30.880><c> a</c><00:01:31.000><c> new</c>
+those in the the inspector create a new
+function<00:01:31.759><c> transition</c><00:01:32.600><c> with</c><00:01:32.880><c> parameters</c><00:01:33.320><c> for</c>
+function transition with parameters for
+the<00:01:33.640><c> animation</c><00:01:34.079><c> string</c><00:01:34.560><c> and</c><00:01:34.799><c> length</c><00:01:35.119><c> of</c><00:01:35.240><c> the</c>
+the animation string and length of the
+transition<00:01:35.880><c> in</c><00:01:36.119><c> seconds</c><00:01:36.799><c> the</c><00:01:36.960><c> function</c><00:01:37.280><c> will</c>
+transition in seconds the function will
+reference<00:01:37.880><c> the</c><00:01:38.040><c> animation</c><00:01:38.479><c> player</c><00:01:38.799><c> node</c><00:01:39.079><c> and</c>
+reference the animation player node and
+call<00:01:39.520><c> the</c><00:01:39.640><c> fade</c><00:01:40.040><c> animations</c><00:01:40.560><c> we</c><00:01:40.720><c> just</c><00:01:40.920><c> created</c>
+call the fade animations we just created
+for<00:01:41.640><c> the</c><00:01:41.840><c> length</c><00:01:42.079><c> of</c><00:01:42.240><c> the</c><00:01:42.399><c> animation</c><00:01:43.040><c> we're</c>
+for the length of the animation we're
+adjusting<00:01:43.799><c> the</c><00:01:44.000><c> animation</c><00:01:44.600><c> speed</c><00:01:45.240><c> by</c>
+adjusting the animation speed by
+dividing<00:01:45.880><c> the</c><00:01:46.079><c> length</c><00:01:46.399><c> of</c><00:01:46.520><c> the</c><00:01:46.680><c> animation</c><00:01:47.360><c> 1</c>
+dividing the length of the animation 1
+second<00:01:48.360><c> by</c><00:01:48.560><c> our</c><00:01:48.840><c> desired</c><00:01:49.479><c> length</c><00:01:50.000><c> next</c><00:01:50.280><c> we</c>
+second by our desired length next we
+adjust<00:01:50.880><c> our</c><00:01:51.079><c> game</c><00:01:51.360><c> controller</c><00:01:51.759><c> script</c><00:01:52.240><c> that</c>
+adjust our game controller script that
+handles<00:01:52.719><c> our</c><00:01:52.880><c> scene</c><00:01:53.240><c> changing</c><00:01:53.960><c> we</c><00:01:54.079><c> need</c><00:01:54.200><c> to</c>
+handles our scene changing we need to
+add<00:01:54.600><c> new</c><00:01:54.840><c> parameters</c><00:01:55.280><c> to</c><00:01:55.399><c> the</c><00:01:55.560><c> three</c>
+add new parameters to the three
+functions<00:01:56.560><c> a</c><00:01:56.759><c> transition</c><00:01:57.320><c> Boolean</c><00:01:58.119><c> the</c>
+functions a transition Boolean the
+transition<00:01:58.759><c> and</c><00:01:59.000><c> animation</c><00:01:59.439><c> string</c>
+transition and animation string
+transition<00:02:00.880><c> out</c><00:02:01.240><c> animation</c><00:02:01.759><c> string</c><00:02:02.479><c> and</c><00:02:02.680><c> the</c>
+transition out animation string and the
+transition<00:02:03.439><c> length</c><00:02:03.920><c> I've</c><00:02:04.079><c> also</c><00:02:04.280><c> set</c><00:02:04.640><c> defaults</c>
+transition length I've also set defaults
+so<00:02:05.360><c> we</c><00:02:05.520><c> don't</c><00:02:05.759><c> have</c><00:02:05.840><c> to</c><00:02:06.000><c> set</c><00:02:06.200><c> those</c><00:02:06.439><c> every</c><00:02:06.640><c> time</c>
+so we don't have to set those every time
+we<00:02:06.960><c> call</c><00:02:07.119><c> the</c><00:02:07.280><c> function</c><00:02:07.880><c> before</c><00:02:08.160><c> we</c><00:02:08.280><c> swap</c><00:02:08.720><c> any</c>
+we call the function before we swap any
+scenes<00:02:09.440><c> we</c><00:02:09.560><c> check</c><00:02:09.840><c> if</c><00:02:09.959><c> we</c><00:02:10.080><c> want</c><00:02:10.239><c> to</c><00:02:10.399><c> transition</c>
+scenes we check if we want to transition
+if<00:02:11.400><c> true</c><00:02:12.040><c> we</c><00:02:12.239><c> run</c><00:02:12.599><c> our</c><00:02:12.840><c> transition</c><00:02:13.360><c> animation</c>
+if true we run our transition animation
+with<00:02:13.959><c> our</c><00:02:14.160><c> desired</c><00:02:14.599><c> settings</c><00:02:15.200><c> and</c><00:02:15.400><c> await</c><00:02:16.080><c> till</c>
+with our desired settings and await till
+the<00:02:16.480><c> animation</c><00:02:17.000><c> is</c><00:02:17.239><c> finished</c><00:02:17.920><c> in</c><00:02:18.120><c> our</c><00:02:18.480><c> case</c>
+the animation is finished in our case
+the<00:02:19.040><c> scene</c><00:02:19.400><c> should</c><00:02:19.720><c> now</c><00:02:19.920><c> be</c><00:02:20.160><c> black</c><00:02:20.519><c> and</c><00:02:20.680><c> we</c><00:02:20.800><c> can</c>
+the scene should now be black and we can
+swap<00:02:21.319><c> our</c><00:02:21.480><c> scenes</c><00:02:22.360><c> after</c><00:02:22.599><c> we</c><00:02:22.760><c> run</c><00:02:23.040><c> our</c><00:02:23.239><c> scene</c>
+swap our scenes after we run our scene
+change<00:02:24.000><c> code</c><00:02:24.519><c> we</c><00:02:24.680><c> run</c><00:02:25.040><c> another</c><00:02:25.440><c> transition</c><00:02:25.920><c> to</c>
+change code we run another transition to
+fade<00:02:26.400><c> in</c><00:02:26.560><c> the</c><00:02:26.680><c> scene</c><00:02:27.280><c> remember</c><00:02:27.599><c> to</c><00:02:27.840><c> add</c><00:02:28.080><c> these</c>
+fade in the scene remember to add these
+changes<00:02:28.640><c> to</c><00:02:28.800><c> each</c><00:02:29.080><c> function</c><00:02:29.519><c> as</c><00:02:29.640><c> well</c><00:02:30.239><c> you</c>
+changes to each function as well you
+should<00:02:30.560><c> now</c><00:02:30.760><c> be</c><00:02:30.920><c> able</c><00:02:31.120><c> to</c><00:02:31.319><c> fade</c><00:02:31.599><c> in</c><00:02:32.040><c> and</c><00:02:32.239><c> Fade</c>
+should now be able to fade in and Fade
+Out<00:02:32.959><c> when</c><00:02:33.160><c> changing</c><00:02:33.599><c> scenes</c><00:02:34.319><c> you</c><00:02:34.400><c> can</c><00:02:34.640><c> also</c>
+Out when changing scenes you can also
+create<00:02:35.200><c> your</c><00:02:35.360><c> own</c><00:02:35.720><c> animations</c><00:02:36.319><c> and</c><00:02:36.519><c> run</c><00:02:36.920><c> those</c>
+create your own animations and run those
+including<00:02:38.000><c> shader-based</c><00:02:38.440><c> transitions</c>
+including shader-based transitions
+[Music]
