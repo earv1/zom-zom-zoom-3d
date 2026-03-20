@@ -36,10 +36,18 @@ func _enter_tree() -> void:
 	dock.edit_mode_changed.connect(_on_edit_mode_changed)
 	dock.piece_params_changed.connect(_on_piece_params_changed)
 	dock.connect_mode_toggled.connect(_on_connect_mode_changed)
+	dock.rotate_requested.connect(_on_rotate_requested)
+	dock.selection_cleared.connect(_on_selection_cleared)
+	dock.delete_selection_requested.connect(_on_delete_selection_requested)
+	dock.test_requested.connect(_on_test_requested)
+	dock.connect_from_selection_requested.connect(_on_connect_from_selection_requested)
+	dock.cancel_requested.connect(_on_cancel_requested)
 	add_control_to_dock(DOCK_SLOT_RIGHT_UL, dock)
+	_update_context_ui(NO_HIT)
 
 func _exit_tree() -> void:
 	_destroy_ghost()
+	_deselect_placed_piece()
 	if dock:
 		remove_control_from_docks(dock)
 		dock.queue_free()
@@ -57,12 +65,14 @@ func _on_piece_selected(piece_name: String) -> void:
 	_selected_piece = piece_name
 	_erase_mode = false
 	_piece_params = {}
-	_selected_placed_piece = null
+	_deselect_placed_piece()
 	if not _edit_mode:
+		_update_context_ui(NO_HIT)
 		return
 	_rebuild_ghost()
 	if is_instance_valid(_ghost) and _ghost.has_method("get_param_defs"):
 		dock.show_params(_ghost.get_param_defs(), _ghost.get_config())
+	_update_context_ui(_last_grid_pos)
 
 func _on_edit_mode_changed(active: bool) -> void:
 	_edit_mode = active
@@ -70,40 +80,76 @@ func _on_edit_mode_changed(active: bool) -> void:
 		_rebuild_ghost()
 		if is_instance_valid(_ghost) and _ghost.has_method("get_param_defs"):
 			dock.show_params(_ghost.get_param_defs(), _ghost.get_config())
+		dock.set_rotation_turns(_rotation_y)
 	else:
 		_destroy_ghost()
-		_selected_placed_piece = null
+		_deselect_placed_piece()
 		dock.clear_params()
 		_connect_mode = false
 		_connect_first = null
 		dock.set_connect_active(false)
+		dock.set_selection_info("Nothing selected", false)
+	_update_context_ui(_last_grid_pos if active else NO_HIT)
 
 func _on_connect_mode_changed(active: bool) -> void:
 	_connect_mode = active
 	_connect_first = null
 	if active:
 		_destroy_ghost()
+		_deselect_placed_piece()
 		dock.clear_params()
 	else:
 		if not _erase_mode:
 			_rebuild_ghost()
 			if is_instance_valid(_ghost) and _ghost.has_method("get_param_defs"):
 				dock.show_params(_ghost.get_param_defs(), _ghost.get_config())
+	_update_context_ui(_last_grid_pos)
 
 func _on_erase_toggled(active: bool) -> void:
 	_erase_mode = active
 	if active:
 		_destroy_ghost()
+		_deselect_placed_piece()
+		dock.clear_params()
 	else:
 		_rebuild_ghost()
+	_update_context_ui(_last_grid_pos)
 
 func _on_piece_params_changed(params: Dictionary) -> void:
 	_piece_params = params
 	if is_instance_valid(_selected_placed_piece):
-		_selected_placed_piece.configure(params)
-		_refresh_neighbors()
+		_apply_params_to_selected_piece(params)
 	if _edit_mode:
 		_rebuild_ghost()
+
+func _on_rotate_requested(step: int) -> void:
+	_rotate_by(step)
+
+func _on_selection_cleared() -> void:
+	_deselect_placed_piece()
+
+func _on_delete_selection_requested() -> void:
+	if is_instance_valid(_selected_placed_piece):
+		_erase_piece(_selected_placed_piece)
+
+func _on_test_requested() -> void:
+	var editor := get_editor_interface()
+	if editor != null and editor.has_method("play_current_scene"):
+		editor.play_current_scene()
+		dock.set_status("Running current scene.")
+
+func _on_connect_from_selection_requested() -> void:
+	if not is_instance_valid(_selected_placed_piece):
+		return
+	_connect_mode = true
+	_connect_first = _selected_placed_piece
+	dock.set_connect_active(true)
+	dock.set_connect_status("Now click second piece")
+	_destroy_ghost()
+	_update_context_ui(_last_grid_pos)
+
+func _on_cancel_requested() -> void:
+	_cancel_active_mode()
 
 # ── viewport input ────────────────────────────────────────────────────────────
 
@@ -113,8 +159,16 @@ func _forward_3d_gui_input(viewport_camera: Camera3D, event: InputEvent) -> int:
 
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_R:
-			_rotation_y = (_rotation_y + 1) % 4
-			_rebuild_ghost()
+			_rotate_by(1)
+			return EditorPlugin.AFTER_GUI_INPUT_STOP
+		if event.keycode == KEY_DELETE or event.keycode == KEY_BACKSPACE:
+			if is_instance_valid(_selected_placed_piece):
+				_erase_piece(_selected_placed_piece)
+			return EditorPlugin.AFTER_GUI_INPUT_STOP
+		if event.keycode == KEY_ESCAPE:
+			if _connect_mode or _erase_mode or is_instance_valid(_selected_placed_piece):
+				_cancel_active_mode()
+				return EditorPlugin.AFTER_GUI_INPUT_STOP
 			return EditorPlugin.AFTER_GUI_INPUT_STOP
 
 	if not _ensure_track_root():
@@ -125,6 +179,9 @@ func _forward_3d_gui_input(viewport_camera: Camera3D, event: InputEvent) -> int:
 		if pos != NO_HIT:
 			_last_grid_pos = pos
 			_move_ghost(pos)
+			_update_context_ui(pos)
+		else:
+			_update_context_ui(NO_HIT)
 		return EditorPlugin.AFTER_GUI_INPUT_PASS
 
 	if event is InputEventMouseButton and event.pressed:
@@ -139,11 +196,15 @@ func _forward_3d_gui_input(viewport_camera: Camera3D, event: InputEvent) -> int:
 					if _connect_first == null:
 						_connect_first = hit
 						dock.set_connect_status("Now click second piece")
+						dock.set_selection_info("Connecting from %s" % _describe_piece(hit), true)
 					elif hit != _connect_first:
 						_create_connector(_connect_first, hit)
 						_connect_first = null
 						_connect_mode = false
 						dock.set_connect_active(false)
+						dock.set_status("Connector created.")
+						dock.set_selection_info("Nothing selected", false)
+						_update_context_ui(pos)
 				return EditorPlugin.AFTER_GUI_INPUT_STOP
 			elif _erase_mode:
 				_erase_at(pos)
@@ -256,40 +317,65 @@ func _place_piece(grid_pos: Vector3) -> void:
 	var undo := get_undo_redo()
 	undo.create_action("Place Track Piece")
 	undo.add_do_method(_track_root, "add_child", piece)
+	undo.add_do_reference(piece)
 	undo.add_do_method(piece, "set_owner", scene_root)
 	undo.add_undo_method(_track_root, "remove_child", piece)
 	undo.commit_action()
 
 	_refresh_neighbors()
+	dock.set_status("Placed %s at %s" % [_selected_piece.capitalize(), _grid_to_text(grid_pos)])
+	_update_context_ui(grid_pos)
 
 func _erase_at(grid_pos: Vector3) -> void:
 	if not _ensure_track_root():
 		return
 	for child in _track_root.get_children():
 		if child.position.is_equal_approx(grid_pos):
-			var scene_root := _get_scene_root()
-			var undo := get_undo_redo()
-			undo.create_action("Erase Track Piece")
-			undo.add_do_method(_track_root, "remove_child", child)
-			undo.add_undo_method(_track_root, "add_child", child)
-			if scene_root:
-				undo.add_undo_method(child, "set_owner", scene_root)
-			undo.commit_action()
-			if _selected_placed_piece == child:
-				_deselect_placed_piece()
-			_refresh_neighbors()
+			_erase_piece(child)
 			return
+
+func _erase_piece(piece: Node3D) -> void:
+	if not is_instance_valid(piece) or not _ensure_track_root():
+		return
+	var scene_root := _get_scene_root()
+	var piece_desc := _describe_piece(piece)
+	var undo := get_undo_redo()
+	undo.create_action("Erase Track Piece")
+	undo.add_do_method(_track_root, "remove_child", piece)
+	undo.add_undo_method(_track_root, "add_child", piece)
+	undo.add_undo_reference(piece)
+	if scene_root:
+		undo.add_undo_method(piece, "set_owner", scene_root)
+	undo.commit_action()
+	if _selected_placed_piece == piece:
+		_deselect_placed_piece()
+	_refresh_neighbors()
+	dock.set_status("Removed %s" % piece_desc)
+	_update_context_ui(_last_grid_pos)
 
 # ── piece selection ───────────────────────────────────────────────────────────
 
 func _select_placed_piece(piece: Node3D) -> void:
+	if _selected_placed_piece == piece:
+		return
+	_deselect_placed_piece()
 	_selected_placed_piece = piece
+	_piece_params = piece.get_config() if piece.has_method("get_config") else {}
 	if piece.has_method("get_param_defs"):
 		dock.show_params(piece.get_param_defs(), piece.get_config())
+	dock.set_selection_info(_describe_piece(piece), true)
+	dock.set_status("Selected %s" % _describe_piece(piece))
+	_update_context_ui(piece.position)
 
 func _deselect_placed_piece() -> void:
 	_selected_placed_piece = null
-	dock.clear_params()
+	if dock:
+		dock.set_selection_info("Nothing selected", false)
+		if not _connect_mode and not _erase_mode and _edit_mode and is_instance_valid(_ghost) and _ghost.has_method("get_param_defs"):
+			dock.show_params(_ghost.get_param_defs(), _ghost.get_config())
+		else:
+			dock.clear_params()
+	_update_context_ui(_last_grid_pos if _edit_mode else NO_HIT)
 
 func _get_piece_at(grid_pos: Vector3) -> Node3D:
 	if not is_instance_valid(_track_root):
@@ -399,12 +485,115 @@ func _create_connector(piece_a: Node3D, piece_b: Node3D) -> void:
 	var undo := get_undo_redo()
 	undo.create_action("Connect Track Pieces")
 	undo.add_do_method(_track_root, "add_child", conn)
+	undo.add_do_reference(conn)
 	undo.add_do_method(conn, "set_owner", scene_root)
 	undo.add_undo_method(_track_root, "remove_child", conn)
 	undo.commit_action()
+	dock.set_status("Connected %s to %s" % [_describe_piece(piece_a), _describe_piece(piece_b)])
+	_update_context_ui(_last_grid_pos)
 
 func _get_scene_root() -> Node:
 	var ei := get_editor_interface()
 	if ei == null:
 		return null
 	return ei.get_edited_scene_root()
+
+func _rotate_by(step: int) -> void:
+	_rotation_y = posmod(_rotation_y + step, 4)
+	if dock:
+		dock.set_rotation_turns(_rotation_y)
+	if _edit_mode and not _connect_mode and not _erase_mode:
+		_rebuild_ghost()
+	_update_context_ui(_last_grid_pos)
+
+func _apply_params_to_selected_piece(params: Dictionary) -> void:
+	if not is_instance_valid(_selected_placed_piece) or not _selected_placed_piece.has_method("get_config"):
+		return
+	var old_config: Dictionary = _selected_placed_piece.get_config()
+	var new_config := old_config.duplicate()
+	for key in params:
+		new_config[key] = params[key]
+	if old_config == new_config:
+		return
+	var piece := _selected_placed_piece
+	var undo := get_undo_redo()
+	undo.create_action("Edit Track Piece")
+	undo.add_do_method(piece, "configure", new_config)
+	undo.add_do_method(self, "_refresh_neighbors")
+	undo.add_undo_method(piece, "configure", old_config)
+	undo.add_undo_method(self, "_refresh_neighbors")
+	undo.commit_action()
+	dock.set_status("Updated %s" % _describe_piece(piece))
+	_update_context_ui(piece.position)
+
+func _describe_piece(piece: Node3D) -> String:
+	var script := piece.get_script()
+	var type_name := "piece"
+	if script is Script:
+		var path := (script as Script).resource_path.get_file().get_basename()
+		if path != "":
+			type_name = path.capitalize()
+	return "%s at %s" % [type_name, _grid_to_text(piece.position)]
+
+func _grid_to_text(pos: Vector3) -> String:
+	return "(%.0f, %.0f, %.0f)" % [pos.x, pos.y, pos.z]
+
+func _cancel_active_mode() -> void:
+	if _connect_mode:
+		_connect_mode = false
+		_connect_first = null
+		dock.set_connect_active(false)
+		dock.set_connect_status("")
+	if _erase_mode:
+		_erase_mode = false
+		_on_erase_toggled(false)
+		return
+	if is_instance_valid(_selected_placed_piece):
+		_on_selection_cleared()
+	if not _erase_mode and not _connect_mode and _edit_mode:
+		_rebuild_ghost()
+	_update_context_ui(_last_grid_pos)
+
+func _update_context_ui(hover_pos: Vector3) -> void:
+	if dock == null:
+		return
+	var title := "Browse pieces or enable edit mode."
+	var hover := "Cursor: waiting"
+	var can_cancel := false
+	var can_connect := is_instance_valid(_selected_placed_piece)
+	var can_rotate := _edit_mode and not _erase_mode and not _connect_mode
+
+	if not _edit_mode:
+		title = "Enable edit mode, choose a piece, then place from the palette."
+	elif hover_pos == NO_HIT:
+		title = "Move over the ground plane to place pieces."
+	else:
+		var hovered_piece := _get_piece_at(hover_pos)
+		if _connect_mode:
+			can_cancel = true
+			title = "Connect mode: choose the second piece."
+			hover = "Target: %s" % (_describe_piece(hovered_piece) if hovered_piece != null else _grid_to_text(hover_pos))
+		elif _erase_mode:
+			can_cancel = true
+			title = "Erase mode: click a placed piece to remove it."
+			hover = "Erase target: %s" % (_describe_piece(hovered_piece) if hovered_piece != null else "empty cell")
+		elif hovered_piece != null:
+			title = "Occupied cell: select, delete, or connect from this piece."
+			hover = "Hover: %s" % _describe_piece(hovered_piece)
+		else:
+			title = "Open cell: click to place %s." % _selected_piece.capitalize()
+			hover = "Place at %s" % _grid_to_text(hover_pos)
+
+	if is_instance_valid(_selected_placed_piece):
+		title = "Selection active: tweak settings, connect, delete, or clear."
+		can_cancel = true
+	if _connect_mode:
+		can_connect = false
+
+	dock.set_context_state({
+		"title": title,
+		"hover": hover,
+		"can_connect_from_selection": can_connect,
+		"can_cancel": can_cancel,
+		"can_rotate": can_rotate,
+	})
