@@ -459,11 +459,14 @@ func _create_connector(piece_a: Node3D, piece_b: Node3D) -> void:
 	var start_dir := (face_a - piece_a.position).normalized()
 	var end_dir   := (piece_b.position - face_b).normalized()
 
-	# Inherit road_width from piece A if it has one
-	var rw := 6.0
-	var rw_val = piece_a.get("road_width")
-	if rw_val != null:
-		rw = rw_val
+	var start_width := 6.0
+	var end_width := 6.0
+	var start_width_val = piece_a.get("road_width")
+	var end_width_val = piece_b.get("road_width")
+	if start_width_val != null:
+		start_width = start_width_val
+	if end_width_val != null:
+		end_width = end_width_val
 
 	var scene_path := "res://addons/track_editor/pieces/connector.tscn"
 	var packed: PackedScene = _scene_cache.get(scene_path)
@@ -480,7 +483,9 @@ func _create_connector(piece_a: Node3D, piece_b: Node3D) -> void:
 	conn.set("start_dir",  start_dir)
 	conn.set("end_pos",    face_b)
 	conn.set("end_dir",    end_dir)
-	conn.set("road_width", rw)
+	conn.set("road_width", start_width)
+	conn.set("start_width", start_width)
+	conn.set("end_width", end_width)
 
 	var undo := get_undo_redo()
 	undo.create_action("Connect Track Pieces")

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" path="res://addons/track_editor/pieces/curve.tscn" id="4_er0gg"]
 [ext_resource type="PackedScene" path="res://addons/track_editor/pieces/straight.tscn" id="6_65k0a"]
 [ext_resource type="PackedScene" path="res://addons/track_editor/pieces/connector.tscn" id="6_er0gg"]
+[ext_resource type="Script" uid="uid://dv8s1dmyjp0gg" path="res://addons/track_editor/pieces/loop.gd" id="6_t88gf"]
 [ext_resource type="Script" uid="uid://bpcxurflb1ppq" path="res://addons/track_editor/pieces/straight.gd" id="7_2pw1y"]
 [ext_resource type="Script" uid="uid://pala8xtdu7u6" path="res://addons/track_editor/pieces/connector.gd" id="7_t88gf"]
 
@@ -88,6 +89,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -96)
 start_pos = Vector3(-4, 0, -96)
 end_pos = Vector3(-28, 0, -88)
 end_dir = Vector3(0, 0, 1)
+start_width = null
+end_width = null
 
 [node name="straight_60_-84" parent="TrackRoot" unique_id=619950615 instance=ExtResource("6_65k0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -84)
@@ -102,6 +105,8 @@ start_pos = Vector3(60, 0, -88)
 start_dir = Vector3(0, 0, -1)
 end_pos = Vector3(12, 0, -88)
 end_dir = Vector3(0, 0, -1)
+start_width = null
+end_width = null
 
 [node name="straight_100_-44" parent="TrackRoot" unique_id=1968795549 instance=ExtResource("6_65k0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, -44)
@@ -114,6 +119,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, -40)
 start_pos = Vector3(100, 0, -40)
 end_pos = Vector3(76, 0, -24)
 end_dir = Vector3(0, 0, 1)
+start_width = null
+end_width = null
 
 [node name="straight_60_-68" parent="TrackRoot" unique_id=1980211467 instance=ExtResource("6_65k0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -68)
@@ -126,6 +133,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -64)
 start_pos = Vector3(60, 0, -64)
 end_pos = Vector3(36, 0, -56)
 end_dir = Vector3(0, 0, 1)
+start_width = null
+end_width = null
 
 [node name="loop_36_-28" parent="TrackRoot" unique_id=2120466478 instance=ExtResource("2_khyy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -28)
@@ -166,29 +175,79 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180, 0, 20)
 radius = 36.0
 road_width = 12.0
 
-[node name="straight_148_-12" type="Node3D" parent="TrackRoot" unique_id=1825747722 instance=ExtResource("6_65k0a")]
+[node name="straight_148_-12" parent="TrackRoot" unique_id=1825747722 instance=ExtResource("6_65k0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148, 0, -12)
-script = ExtResource("7_2pw1y")
 
-[node name="straight_172_-28" type="Node3D" parent="TrackRoot" unique_id=119767156 instance=ExtResource("6_65k0a")]
+[node name="straight_172_-28" parent="TrackRoot" unique_id=119767156 instance=ExtResource("6_65k0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 172, 0, -28)
-script = ExtResource("7_2pw1y")
 
-[node name="connector_148_-16" type="Node3D" parent="TrackRoot" unique_id=465488524 instance=ExtResource("6_er0gg")]
+[node name="connector_148_-16" parent="TrackRoot" unique_id=465488524 instance=ExtResource("6_er0gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148, 0, -16)
-script = ExtResource("7_t88gf")
 start_pos = Vector3(148, 0, -16)
 start_dir = Vector3(0, 0, -1)
 end_pos = Vector3(172, 0, -24)
 end_dir = Vector3(0, 0, -1)
+start_width = null
+end_width = null
 
-[node name="straight_-516_-148" type="Node3D" parent="TrackRoot" unique_id=457980090 instance=ExtResource("6_65k0a")]
+[node name="straight_-516_-148" parent="TrackRoot" unique_id=457980090 instance=ExtResource("6_65k0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -516, 0, -148)
+
+[node name="straight_132_-44" parent="TrackRoot" unique_id=561435306 instance=ExtResource("6_65k0a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132, 0, -44)
+
+[node name="loop_-212_-396" type="Node3D" parent="TrackRoot" unique_id=332834243 instance=ExtResource("2_khyy7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -212, 0, -396)
+script = ExtResource("6_t88gf")
+
+[node name="loop_-220_-276" type="Node3D" parent="TrackRoot" unique_id=1179950944 instance=ExtResource("2_khyy7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -220, 0, -276)
+script = ExtResource("6_t88gf")
+radius = 30.0
+
+[node name="connector_132_-48" type="Node3D" parent="TrackRoot" unique_id=889290629 instance=ExtResource("6_er0gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132, 0, -48)
+script = ExtResource("7_t88gf")
+start_pos = Vector3(132, 0, -48)
+start_dir = Vector3(0, 0, -1)
+end_pos = Vector3(100, 0, -48)
+end_dir = Vector3(0, 0, 1)
+start_width = null
+end_width = null
+
+[node name="straight_116_-20" type="Node3D" parent="TrackRoot" unique_id=181196753 instance=ExtResource("6_65k0a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116, 0, -20)
 script = ExtResource("7_2pw1y")
 
-[node name="straight_132_-44" type="Node3D" parent="TrackRoot" unique_id=561435306 instance=ExtResource("6_65k0a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132, 0, -44)
+[node name="straight_180_-228" type="Node3D" parent="TrackRoot" unique_id=1988744754 instance=ExtResource("6_65k0a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180, 0, -228)
 script = ExtResource("7_2pw1y")
+
+[node name="straight_252_-84" type="Node3D" parent="TrackRoot" unique_id=1935643070 instance=ExtResource("6_65k0a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 252, 0, -84)
+script = ExtResource("7_2pw1y")
+
+[node name="straight_228_-164" type="Node3D" parent="TrackRoot" unique_id=330926095 instance=ExtResource("6_65k0a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 228, 0, -164)
+script = ExtResource("7_2pw1y")
+
+[node name="connector_228_-160" type="Node3D" parent="TrackRoot" unique_id=1037297908 instance=ExtResource("6_er0gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 228, 0, -160)
+script = ExtResource("7_t88gf")
+start_pos = Vector3(228, 0, -160)
+end_pos = Vector3(252, 0, -88)
+end_dir = Vector3(0, 0, 1)
+
+[node name="straight_268_-52" type="Node3D" parent="TrackRoot" unique_id=1189903792 instance=ExtResource("6_65k0a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 268, 0, -52)
+script = ExtResource("7_2pw1y")
+
+[node name="connector_252_-80" type="Node3D" parent="TrackRoot" unique_id=291044777 instance=ExtResource("6_er0gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 252, 0, -80)
+script = ExtResource("7_t88gf")
+start_pos = Vector3(252, 0, -80)
+end_pos = Vector3(268, 0, -56)
+end_dir = Vector3(0, 0, 1)
 
 [node name="Car" parent="." unique_id=702484831 instance=ExtResource("2_car")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
