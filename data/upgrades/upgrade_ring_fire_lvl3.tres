@@ -9,3 +9,4 @@ display_name = "Ring Fire Lv.3"
 description = "+200% Damage per tick"
 icon_color = Color(1.0, 0.4, 0.1, 1)
 weapon_id = &"ring_fire"
+required_level = 2

@@ -9,3 +9,4 @@ display_name = "Side Rockets Lv.2"
 description = "+75% Damage"
 icon_color = Color(0.3, 0.6, 1.0, 1)
 weapon_id = &"side_rockets"
+required_level = 1

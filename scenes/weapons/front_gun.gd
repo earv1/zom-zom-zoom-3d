@@ -3,8 +3,6 @@ extends BaseWeapon
 
 var _spread_mode: bool = false
 
-const _PROJ_SCENE: PackedScene = preload("res://scenes/weapons/projectile.tscn")
-
 
 func _ready() -> void:
 	base_damage = 1.0
@@ -33,10 +31,6 @@ func _get_nearest_enemy() -> Node3D:
 
 
 func _fire_projectile(x_offset: float, nearest: Node3D) -> void:
-	var proj: Projectile = _PROJ_SCENE.instantiate()
-	proj.damage = get_damage()
-	proj.target = nearest
-
 	var base_dir := -car.global_basis.z
 	base_dir.y = 0.0
 	base_dir = base_dir.normalized()
@@ -46,10 +40,8 @@ func _fire_projectile(x_offset: float, nearest: Node3D) -> void:
 		if to_enemy.length_squared() > 0.001:
 			base_dir = to_enemy.normalized()
 
-	proj.direction = (base_dir + car.global_basis.x * x_offset).normalized()
-	proj.speed = 40.0
-	get_tree().current_scene.add_child(proj)
-	proj.global_position = car.global_position + base_dir * 2.5 + Vector3.UP * 0.5
+	var dir := (base_dir + car.global_basis.x * x_offset).normalized()
+	_spawn_projectile(dir, 40.0, nearest)
 
 
 func _apply_level() -> void:

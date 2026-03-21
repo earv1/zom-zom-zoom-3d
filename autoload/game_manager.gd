@@ -81,26 +81,26 @@ func apply_upgrade(upgrade: Resource) -> void:
 	if not upg:
 		return
 	match upg.upgrade_type:
-		0: # UNLOCK_WEAPON
+		UpgradeData.Type.UNLOCK_WEAPON:
 			if upg.weapon_id not in unlocked_weapons:
 				unlocked_weapons.append(upg.weapon_id)
 			weapon_unlocked.emit(upg.weapon_id, upg.weapon_scene)
-		1: # WEAPON_LEVEL_UP
+		UpgradeData.Type.WEAPON_LEVEL_UP:
 			weapon_levels[upg.weapon_id] = weapon_levels.get(upg.weapon_id, 1) + 1
 			weapon_leveled_up.emit(upg.weapon_id)
-		2: # STAT_BUFF
+		UpgradeData.Type.STAT_BUFF:
 			match upg.stat_target:
-				0: # MAX_HEALTH
+				UpgradeData.Stat.MAX_HEALTH:
 					max_health += int(upg.stat_value)
 					current_health = min(current_health + int(upg.stat_value), max_health)
 					health_changed.emit(current_health, max_health)
-				1: # SPEED
+				UpgradeData.Stat.SPEED:
 					speed_multiplier += upg.stat_value
-				2: # PICKUP_RADIUS
+				UpgradeData.Stat.PICKUP_RADIUS:
 					pickup_radius += upg.stat_value
-				3: # DAMAGE_MULT
+				UpgradeData.Stat.DAMAGE_MULT:
 					damage_multiplier += upg.stat_value
-				4: # FIRE_RATE
+				UpgradeData.Stat.FIRE_RATE:
 					fire_rate_multiplier += upg.stat_value
 
 

@@ -15,10 +15,10 @@ var _active_count: int = 0
 func _ready() -> void:
 	add_to_group("enemy_spawner")
 	_pool = [
-		{scene = load("res://scenes/enemy/zombie.tscn"), weight = 1.0, unlock_time = 0.0},
-		{scene = load("res://scenes/enemy/runner.tscn"), weight = 0.6, unlock_time = 60.0},
-		{scene = load("res://scenes/enemy/tank.tscn"), weight = 0.3, unlock_time = 120.0},
-		{scene = load("res://scenes/enemy/exploder.tscn"), weight = 0.5, unlock_time = 180.0},
+		{scene = preload("res://scenes/enemy/zombie.tscn"), weight = 1.0, unlock_time = 0.0},
+		{scene = preload("res://scenes/enemy/runner.tscn"), weight = 0.6, unlock_time = 60.0},
+		{scene = preload("res://scenes/enemy/tank.tscn"), weight = 0.3, unlock_time = 120.0},
+		{scene = preload("res://scenes/enemy/exploder.tscn"), weight = 0.5, unlock_time = 180.0},
 	]
 
 

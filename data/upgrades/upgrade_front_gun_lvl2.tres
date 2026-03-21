@@ -9,3 +9,4 @@ display_name = "Front Gun Lv.2"
 description = "+50% Damage"
 icon_color = Color(0.8, 0.8, 0.2, 1)
 weapon_id = &"front_gun"
+required_level = 1

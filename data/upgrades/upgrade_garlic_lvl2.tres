@@ -9,3 +9,4 @@ display_name = "Garlic Lv.2"
 description = "+3 Radius"
 icon_color = Color(0.6, 0.9, 0.25, 1)
 weapon_id = &"garlic"
+required_level = 1

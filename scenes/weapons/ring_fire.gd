@@ -13,9 +13,7 @@ func _ready() -> void:
 
 
 func _update_shape() -> void:
-	var shape_node := _area.get_node("CollisionShape3D") as CollisionShape3D
-	if shape_node and shape_node.shape is SphereShape3D:
-		(shape_node.shape as SphereShape3D).radius = _radius
+	_update_collision_radius(_area, _radius)
 
 
 func fire() -> void:

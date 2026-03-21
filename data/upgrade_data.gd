@@ -11,6 +11,7 @@ enum Stat { MAX_HEALTH, SPEED, PICKUP_RADIUS, DAMAGE_MULT, FIRE_RATE }
 
 @export var weapon_id: StringName
 @export var weapon_scene: PackedScene
+@export var required_level: int = 0
 
 @export var stat_target: Stat
 @export var stat_value: float
@@ -24,7 +25,7 @@ func is_available(gm: Variant) -> bool:
 			if weapon_id not in gm.unlocked_weapons:
 				return false
 			var current_level: int = gm.weapon_levels.get(weapon_id, 1)
-			return current_level < 3
+			return current_level == required_level
 		Type.STAT_BUFF:
 			return true
 	return false
