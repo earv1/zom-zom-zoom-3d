@@ -8,6 +8,7 @@ extends Node
 const HOLD_REQUIRED:   float = 2.0
 const BOOST_DURATION:  float = 4.0
 const BOOST_MULTIPLIER: float = 2.5
+const DRIFT_SPEED_MIN: float = 22.2  ## ~80 km/h
 
 var is_boosting: bool  = false
 var multiplier:  float = 1.0
@@ -28,8 +29,10 @@ func _process(delta: float) -> void:
 	if not _car:
 		return
 
+	var speed := Vector2(_car.linear_velocity.x, _car.linear_velocity.z).length()
+
 	if Input.is_action_pressed("handbreak"):
-		if not is_boosting:
+		if not is_boosting and speed >= DRIFT_SPEED_MIN:
 			hold_time = minf(hold_time + delta, HOLD_REQUIRED)
 
 	if Input.is_action_just_released("handbreak"):

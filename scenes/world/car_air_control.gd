@@ -6,7 +6,8 @@ extends Node
 ## Landing always zeroes angular momentum.
 
 @export var jump_force: float = 8.0
-@export var spin_speed: float = TAU * 1.2   # radians/sec — ~1.2 full rotations per second
+@export var spin_accel: float = TAU * 2.25    # radians/sec² — how fast spin ramps up
+@export var max_spin_speed: float = TAU * 1.125  # radians/sec — cap so it doesn't go crazy
 @export var level_torque: float = 800.0
 @export var level_damping: float = 8.0
 
@@ -20,8 +21,6 @@ var _car: RigidBody3D
 var _wheels: Array[RayCast3D] = []
 var _trick_pitch_accum := 0.0
 var _trick_roll_accum := 0.0
-var _prev_pitch := 0.0
-var _prev_roll := 0.0
 
 
 func _ready() -> void:
@@ -29,41 +28,53 @@ func _ready() -> void:
 	if not _car:
 		push_error("CarAirControl: parent must be RigidBody3D")
 		return
+	# Enable contact monitoring so we can detect body-to-ground collisions
+	_car.contact_monitor = true
+	_car.max_contacts_reported = 4
 	for wheel_name in ["WheelFL", "WheelFR", "WheelRL", "WheelRR"]:
 		var w := _car.get_node_or_null(wheel_name) as RayCast3D
 		if w:
 			_wheels.append(w)
 
 
-func _is_grounded() -> bool:
+func _any_contact() -> bool:
+	# Wheels touching ground
 	for w in _wheels:
 		if w.is_colliding():
 			return true
+	# Car body touching anything (roof/side hits ground)
+	if _car.get_contact_count() > 0:
+		return true
 	return false
+
+
+func _all_grounded() -> bool:
+	for w in _wheels:
+		if not w.is_colliding():
+			return false
+	return true
 
 
 func _physics_process(delta: float) -> void:
 	if not _car:
 		return
 
-	var grounded := _is_grounded()
-
 	match state:
 		State.GROUNDED:
-			_tick_grounded(grounded)
+			_tick_grounded()
 		State.AIRBORNE:
-			_tick_airborne(delta, grounded)
+			_tick_airborne(delta)
 		State.TRICKS:
-			_tick_tricks(delta, grounded)
+			_tick_tricks(delta)
 
 
 # ── GROUNDED ──────────────────────────────────────────────────────────────────
 
-func _tick_grounded(grounded: bool) -> void:
+func _tick_grounded() -> void:
 	if Input.is_action_just_pressed("jump"):
 		_car.apply_central_impulse(_car.global_basis.y * _car.mass * jump_force)
 
-	if not grounded:
+	if not _any_contact():
 		_transition(State.AIRBORNE)
 
 
@@ -73,8 +84,8 @@ func _enter_grounded() -> void:
 
 # ── AIRBORNE ──────────────────────────────────────────────────────────────────
 
-func _tick_airborne(delta: float, grounded: bool) -> void:
-	if grounded:
+func _tick_airborne(delta: float) -> void:
+	if _all_grounded():
 		_transition(State.GROUNDED)
 		return
 
@@ -88,16 +99,16 @@ func _tick_airborne(delta: float, grounded: bool) -> void:
 func _enter_airborne() -> void:
 	_trick_pitch_accum = 0.0
 	_trick_roll_accum  = 0.0
-	_prev_pitch = 0.0
-	_prev_roll  = 0.0
 
 
 # ── TRICKS ────────────────────────────────────────────────────────────────────
 
-func _tick_tricks(delta: float, grounded: bool) -> void:
-	if grounded:
+func _tick_tricks(delta: float) -> void:
+	# Any ground contact (wheels OR car body) instantly kills trick mode
+	if _any_contact():
 		_score_tricks()
-		_transition(State.GROUNDED)
+		# Must wait for all 4 wheels down before fully grounded
+		_transition(State.AIRBORNE)
 		return
 
 	_do_air_control(delta)
@@ -130,15 +141,25 @@ func _do_air_control(delta: float) -> void:
 	var pitch := Input.get_axis("accelerate", "decelerate")
 	var roll  := Input.get_axis("turn_left", "turn_right")
 
-	if pitch != _prev_pitch or roll != _prev_roll:
-		var local_angvel := _car.global_basis.inverse() * _car.angular_velocity
-		local_angvel.x = pitch * spin_speed
-		local_angvel.z = roll  * spin_speed
-		_car.angular_velocity = _car.global_basis * local_angvel
-		_prev_pitch = pitch
-		_prev_roll  = roll
-
 	var local_angvel := _car.global_basis.inverse() * _car.angular_velocity
+
+	# Accelerate spin with input, decelerate when released
+	if absf(pitch) > 0.01:
+		local_angvel.x += pitch * spin_accel * delta
+	else:
+		local_angvel.x = move_toward(local_angvel.x, 0.0, spin_accel * 0.5 * delta)
+
+	if absf(roll) > 0.01:
+		local_angvel.z += roll * spin_accel * delta
+	else:
+		local_angvel.z = move_toward(local_angvel.z, 0.0, spin_accel * 0.5 * delta)
+
+	# Cap so it doesn't go out of control
+	local_angvel.x = clampf(local_angvel.x, -max_spin_speed, max_spin_speed)
+	local_angvel.z = clampf(local_angvel.z, -max_spin_speed, max_spin_speed)
+
+	_car.angular_velocity = _car.global_basis * local_angvel
+
 	_trick_pitch_accum += rad_to_deg(local_angvel.x) * delta
 	_trick_roll_accum  += rad_to_deg(local_angvel.z) * delta
 

@@ -3,10 +3,11 @@
 ## and shows an animated air-wave ring effect when above the speed threshold.
 extends Node3D
 
-const RAM_SPEED_MIN  := 50.0   ## units/s — below this, no ram damage
+const RAM_SPEED_MIN  := 55.6   ## units/s (~200 km/h) — below this, no ram damage
 const BASE_DAMAGE    := 20
 const MAX_DAMAGE     := 60
 const KNOCK_FORCE    := 2.5    ## multiplied by speed
+const SPEED_PENALTY  := 2.78   ## units/s (~10 km/h) lost per ram hit
 const RING_COUNT     := 3
 const RING_CYCLE     := 0.35   ## seconds per ring pass
 
@@ -61,7 +62,7 @@ func _build_rings() -> void:
 
 
 func _update_rings(delta: float, speed: float) -> void:
-	var intensity := clampf((speed - RAM_SPEED_MIN) / 40.0, 0.0, 1.0)
+	var intensity := clampf((speed - RAM_SPEED_MIN) / 30.0, 0.0, 1.0)
 	for i in _rings.size():
 		var ring := _rings[i]
 		if not _active:
@@ -89,6 +90,11 @@ func _on_body_entered(body: Node) -> void:
 	var t      := clampf((speed - RAM_SPEED_MIN) / (120.0 - RAM_SPEED_MIN), 0.0, 1.0)
 	var damage := int(lerpf(BASE_DAMAGE, MAX_DAMAGE, t))
 	body.take_damage(damage)
+
+	# Lose 10 km/h per ram hit — apply backward impulse
+	var hvel := Vector3(_car.linear_velocity.x, 0.0, _car.linear_velocity.z)
+	if hvel.length_squared() > 0.001:
+		_car.apply_central_impulse(-hvel.normalized() * SPEED_PENALTY * _car.mass)
 
 	if body is RigidBody3D:
 		var away: Vector3 = (body as RigidBody3D).global_position - _car.global_position

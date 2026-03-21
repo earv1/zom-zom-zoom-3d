@@ -90,6 +90,10 @@ func apply_wheel_physics(car: RaycastCar) -> void:
 		grip_factor = 0.0
 	var x_traction     := grip_curve.sample_baked(grip_factor)
 
+	# Reduce lateral grip at high speed — car slides more, can't snap-turn
+	var speed_ratio := clampf(absf(speed) / car.max_speed, 0.0, 1.0)
+	x_traction *= lerpf(1.0, 0.6, speed_ratio)
+
 	if not car.hand_break and grip_factor < 0.2:
 		car.is_slipping = false
 	if car.hand_break:
