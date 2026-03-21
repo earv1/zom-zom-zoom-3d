@@ -12,10 +12,8 @@ func _ready() -> void:
 
 	var music := $MusicPlayer as AudioStreamPlayer
 	(music.stream as AudioStreamMP3).loop = true
-	music.volume_db = -80.0
+	music.volume_db = -3.0
 	music.play()
-	var tween := create_tween()
-	tween.tween_property(music, "volume_db", -3.0, 1.0).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 
 
 func _on_game_over() -> void:

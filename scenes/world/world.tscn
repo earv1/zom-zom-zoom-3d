@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bk63etuxod2bm" path="res://scenes/world/world.gd" id="21_world"]
 [ext_resource type="Script" uid="uid://2207p3v4dhmi" path="res://scenes/enemy/enemy_spawner.gd" id="22_spawner"]
 [ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="25_hud"]
-[ext_resource type="AudioStream" path="res://assets/music/Dark Start Hope.mp3" id="26_music"]
+[ext_resource type="AudioStream" path="res://assets/music/Dark Start Hope_slow.mp3" id="26_music"]
 [ext_resource type="PackedScene" path="res://scenes/ui/splash_screen.tscn" id="27_splash"]
 [ext_resource type="Script" uid="uid://1e2y8ottpr2h" path="res://scenes/world/chunk_manager.gd" id="20_chkmgr"]
 [ext_resource type="PackedScene" path="res://scenes/world/car.tscn" id="30_car"]

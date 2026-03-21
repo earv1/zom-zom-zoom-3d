@@ -41,5 +41,34 @@ theme_override_font_sizes/font_size = 22
 text = "TEST TRACK"
 theme_override_font_sizes/font_size = 22
 
+[node name="LoadingLabel" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -120.0
+offset_right = 150.0
+offset_bottom = -90.0
+text = "LOADING..."
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 20
+visible = false
+
+[node name="LoadingBar" type="ProgressBar" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -80.0
+offset_right = 200.0
+offset_bottom = -50.0
+max_value = 100.0
+show_percentage = false
+visible = false
+
 [connection signal="pressed" from="Center/VBox/MainGame" to="." method="_on_main_game_pressed"]
 [connection signal="pressed" from="Center/VBox/TestTrack" to="." method="_on_test_track_pressed"]

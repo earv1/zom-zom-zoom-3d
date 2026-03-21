@@ -9,7 +9,6 @@ class_name RaycastCar
 @export var tire_turn_speed := 4.0
 @export var tire_max_turn_degrees := 25
 
-@export var skid_marks: Array[GPUParticles3D]
 @export var anti_roll_strength := 3000.0
 @export var roll_damping := 20.0
 @export var show_debug := false
@@ -20,6 +19,42 @@ var motor_input := 0
 var hand_break := false
 var is_slipping := false
 var _prev_hand_break := false
+const _SkidMarkScript = preload("res://scenes/world/skid_mark.gd")
+const _POOL_SIZE := 8
+var _skid_strips: Array = []  # one SkidMark per wheel (null when not skidding)
+var _skid_pool: Array = []    # pre-created strips ready to use
+
+
+func _ready() -> void:
+	_skid_strips.resize(wheels.size())
+	_skid_strips.fill(null)
+	# Pre-pool strips and prime the GPU with a dummy mesh
+	SkidMark.warmup()
+	for i in _POOL_SIZE:
+		var strip := _create_strip()
+		# Prime GPU by adding a tiny invisible mesh then clearing
+		strip.add_point(Vector3.ZERO, Vector3.FORWARD)
+		strip.add_point(Vector3(0, 0, 0.3), Vector3.FORWARD)
+		strip.reset_strip()
+		strip.visible = false
+		_skid_pool.append(strip)
+
+
+func _get_pooled_strip() -> MeshInstance3D:
+	if _skid_pool.size() > 0:
+		var strip: MeshInstance3D = _skid_pool.pop_back()
+		strip.reset_strip()
+		strip.visible = true
+		return strip
+	return _create_strip()
+
+
+func _create_strip() -> MeshInstance3D:
+	var strip := MeshInstance3D.new()
+	strip.set_script(_SkidMarkScript)
+	get_tree().current_scene.add_child(strip)
+	return strip
+
 
 func _get_point_velocity(point: Vector3) -> Vector3:
 	return linear_velocity + angular_velocity.cross(point - to_global(center_of_mass))
@@ -71,16 +106,21 @@ func _physics_process(delta: float) -> void:
 		else:
 			wheel.is_braking = false
 
-		# Skid marks
-		skid_marks[id].global_position = wheel.get_collision_point() + Vector3.UP * 0.01
-		skid_marks[id].look_at(skid_marks[id].global_position + global_basis.z)
+		# Skid marks — ribbon strips
+		var should_skid := hand_break and wheel.is_colliding()
+		if should_skid:
+			if _skid_strips[id] == null:
+				_skid_strips[id] = _get_pooled_strip()
+			var fwd := -wheel.global_basis.z
+			fwd.y = 0.0
+			fwd = fwd.normalized()
+			_skid_strips[id].add_point(wheel.get_collision_point(), fwd)
+		elif _skid_strips[id] != null:
+			_skid_strips[id].finish()
+			_skid_strips[id] = null
 
 		if not hand_break and wheel.grip_factor < 0.2:
 			is_slipping = false
-			skid_marks[id].emitting = false
-
-		if hand_break and not skid_marks[id].emitting:
-			skid_marks[id].emitting = true
 
 		if wheel.is_colliding():
 			grounded = true

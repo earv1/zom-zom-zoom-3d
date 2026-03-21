@@ -35,26 +35,7 @@ points = PackedVector3Array(1.01653, 1.04161, 0.224878, 0.667473, 1.23939, -0.68
 height = 0.2
 radius = 0.35
 
-[sub_resource type="Gradient" id="Gradient_y3ehv"]
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.388235)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_vxjfv"]
-gradient = SubResource("Gradient_y3ehv")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7w1kq"]
-gravity = Vector3(0, 0, 0)
-color_ramp = SubResource("GradientTexture1D_vxjfv")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6rug"]
-transparency = 1
-vertex_color_use_as_albedo = true
-
-[sub_resource type="QuadMesh" id="QuadMesh_u7ljy"]
-material = SubResource("StandardMaterial3D_o6rug")
-size = Vector2(0.6, 1)
-orientation = 1
-
-[node name="Car" type="RigidBody3D" node_paths=PackedStringArray("wheels", "skid_marks")]
+[node name="Car" type="RigidBody3D" node_paths=PackedStringArray("wheels")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 mass = 50.0
 physics_material_override = SubResource("PhysicsMaterial_qm2o8")
@@ -67,7 +48,6 @@ accel_curve = SubResource("Curve_xmp6s")
 steer_curve = SubResource("Curve_steer")
 tire_turn_speed = 3.0
 tire_max_turn_degrees = 26
-skid_marks = [NodePath("SkidMarks/GPUParticles3D"), NodePath("SkidMarks/GPUParticles3D2"), NodePath("SkidMarks/GPUParticles3D3"), NodePath("SkidMarks/GPUParticles3D4")]
 roll_damping = 10.0
 show_debug = true
 
@@ -172,44 +152,6 @@ transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0
 shape = SubResource("CylinderShape3D_lhijp")
 target_position = Vector3(0, 0, 0)
 max_results = 3
-
-[node name="SkidMarks" type="Node3D" parent="."]
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="SkidMarks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16986, -0.85232, 0.224953)
-emitting = false
-amount = 150
-lifetime = 1.5
-fixed_fps = 60
-process_material = SubResource("ParticleProcessMaterial_7w1kq")
-draw_pass_1 = SubResource("QuadMesh_u7ljy")
-
-[node name="GPUParticles3D2" type="GPUParticles3D" parent="SkidMarks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16986, -0.85232, 0.224953)
-emitting = false
-amount = 150
-lifetime = 1.5
-fixed_fps = 60
-process_material = SubResource("ParticleProcessMaterial_7w1kq")
-draw_pass_1 = SubResource("QuadMesh_u7ljy")
-
-[node name="GPUParticles3D3" type="GPUParticles3D" parent="SkidMarks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16986, -0.85232, 0.224953)
-emitting = false
-amount = 150
-lifetime = 1.5
-fixed_fps = 60
-process_material = SubResource("ParticleProcessMaterial_7w1kq")
-draw_pass_1 = SubResource("QuadMesh_u7ljy")
-
-[node name="GPUParticles3D4" type="GPUParticles3D" parent="SkidMarks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16986, -0.85232, 0.224953)
-emitting = false
-amount = 150
-lifetime = 1.5
-fixed_fps = 60
-process_material = SubResource("ParticleProcessMaterial_7w1kq")
-draw_pass_1 = SubResource("QuadMesh_u7ljy")
 
 [node name="nissan_skyliner35" parent="." instance=ExtResource("6_carglb")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.476322, 0)
