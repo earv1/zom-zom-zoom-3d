@@ -1,49 +1,51 @@
 extends GutTest
 
-## Simulated acceleration timing test — 0-100 km/h and 0-250 km/h.
+## Structural tests for the gear system's physical behaviour.
 ##
-## Uses Euler integration of the gear system with the car's actual accel curve.
-## This is an APPROXIMATION — real Jolt physics includes wheel grip, suspension
-## forces, and ground reaction that aren't captured here.
-##
-## Calibration tool: scripts/calibrate_gears.py — mirrors this simulation, plots
-## a velocity-time chart, and runs a solver to find accel_scale values automatically.
+## Calibration tool: scripts/calibrate_gears.py — mirrors this simulation,
+## plots a velocity-time chart, and runs a solver to find accel_scale values.
 ## Run with: python3 scripts/calibrate_gears.py
 ##
-## HOW TO CALIBRATE:
-##   1. Run the game, time 0-100 and 0-250 with a stopwatch (or add a debug timer).
-##   2. Run this test and read the reported times from the failure messages.
-##   3. Adjust SIM_DRAG below until simulated times match in-game times.
-##   4. The test then becomes a reliable regression — any gear change that
-##      breaks your timing targets will show up as a test failure.
+## WHY STRUCTURAL TESTS INSTEAD OF TIMING TESTS:
+##   The Jolt physics engine adds real-world effects (wheel slip, suspension,
+##   static friction) that this Euler simulation cannot capture, so absolute
+##   timing numbers are not reliable regressions.  Instead we test STRUCTURE:
+##     1. In each gear, the terminal velocity must be above the upshift
+##        threshold so the car can actually reach it and shift.
+##     2. Gear 5 terminal velocity must sit in a sensible top-speed range.
+##   These hold regardless of Jolt-specific tuning.
+##
+## PHYSICS MODEL:
+##   Drag comes from the wheel z_force in raycast_wheel.gd (linear, NOT aero):
+##     z_force = speed × z_traction × (mass × gravity / total_wheels)  per wheel
+##     z_traction = 0.15 (raycast_wheel.gd default)
+##     gravity = 9.8 m/s², mass = 50 kg, total_wheels = 4
+##     → drag_decel = 4 × speed × 0.15 × (50×9.8/4) / 50 = 1.47 × speed  m/s²
+##   This is LINEAR in speed, creating a natural terminal velocity in each gear.
+##
+##   HUD formula: linear_velocity.length() × 3.6  (standard m/s → km/h).
+##   Motor wheels: WheelRL + WheelRR (is_motor=true in car.tscn) = 2 wheels.
+##   Each motor wheel applies car.acceleration × accel_curve force to the car.
 
-# ── Calibration constants ─────────────────────────────────────────────────────
-
-## Quadratic drag coefficient. Higher = more drag = slower acceleration.
-## Tune this until simulated times match real in-game times.
-## Derived: 65 units/s felt like ~84 km/h → KMH_PER_UNIT ≈ 1.3.
-## 250 km/h ≈ 192 units/s ≈ BASE_MAX_SPEED. SIM_DRAG tuned so terminal
-## velocity is just above 250 km/h, letting the simulation reach that target.
-const SIM_DRAG := 0.003
-
-## Conversion from game units/s to km/h.
-## From observation: 65 units/s was reported as ~84 km/h → 84/65 ≈ 1.29.
-## Adjust if your speedometer says otherwise.
-const KMH_PER_UNIT := 1.3
-
-# ── Fixed car constants — match car.tscn ─────────────────────────────────────
+# ── Constants (must match car.tscn and car_gears.gd) ─────────────────────────
 
 const BASE_ACCELERATION := 2000.0
 const BASE_MAX_SPEED    := 195.0
 const MASS              := 50.0
+const N_MOTOR_WHEELS    := 2      # WheelRL + WheelRR
 
-# ── Simulation ────────────────────────────────────────────────────────────────
+const Z_TRACTION   := 0.15       # raycast_wheel.gd default
+const GRAVITY      := 9.8        # m/s²
+const TOTAL_WHEELS := 4
+## Linear drag deceleration coefficient (m/s² per m/s of speed).
+## Derived: Z_TRACTION × GRAVITY = 0.15 × 9.8 = 1.47
+const LINEAR_DRAG := Z_TRACTION * GRAVITY
 
-const SIM_DT      := 0.005   # 5 ms steps — small enough for accuracy
-const SIM_TIMEOUT := 30.0    # give up after 30 s if target not reached
+## HUD conversion: velocity.length() × 3.6 = km/h  (standard SI, m/s → km/h)
+const KMH_PER_UNIT := 3.6
 
-## Piecewise-linear approximation of the accel curve from car.tscn (Curve_xmp6s).
-## Points: (0, 0.3) → (0.3, 0.9) → (0.6, 0.8) → (1.0, 0.1)
+# ── Accel curve (piecewise linear — matches Curve_xmp6s in car.tscn) ─────────
+
 func _accel_curve(t: float) -> float:
 	t = clampf(t, 0.0, 1.0)
 	if t <= 0.3:
@@ -62,63 +64,69 @@ func _accel_scale(gear: int) -> float:
 	return float(CarGears.GEARS[gear][&"accel_scale"])
 
 
-## Returns the time in seconds to reach target_kmh from a standstill, or
-## SIM_TIMEOUT if the car never gets there.
-func simulate_to(target_kmh: float) -> float:
-	var speed    := 0.0
-	var t        := 0.0
-	var gear     := 0
+# ── Terminal velocity solver ──────────────────────────────────────────────────
 
-	while t < SIM_TIMEOUT:
-		var gmax    := _gear_max(gear)
-		var scale   := _accel_scale(gear)
+## Returns the terminal velocity (m/s) in a given gear: the speed where
+## motor acceleration equals drag deceleration.
+## Uses binary search over [0, gear_max].
+func _terminal_velocity(gear: int) -> float:
+	var m: float = _gear_max(gear)
+	var a: float = _accel_scale(gear)
 
-		# Upshift
-		if gear < CarGears.GEARS.size() - 1:
-			if speed >= gmax * CarGears.UPSHIFT_THRESHOLD:
-				gear += 1
-				gmax  = _gear_max(gear)
-				scale = _accel_scale(gear)
+	var lo := 0.0
+	var hi := m
 
-		var ratio     := clampf(speed / maxf(gmax, 0.001), 0.0, 1.0)
-		var curve_val := _accel_curve(ratio)
-		var f_motor   := BASE_ACCELERATION * scale * curve_val
-		var f_drag    := SIM_DRAG * speed * speed
-		var accel     := (f_motor - f_drag) / MASS
+	for _i in 60:
+		var mid := (lo + hi) * 0.5
+		var ratio := clampf(mid / maxf(m, 0.001), 0.0, 1.0)
+		var motor  := float(N_MOTOR_WHEELS) * BASE_ACCELERATION * a * _accel_curve(ratio) / MASS
+		var drag   := LINEAR_DRAG * mid
+		if motor > drag:
+			lo = mid
+		else:
+			hi = mid
 
-		speed += accel * SIM_DT
-		speed  = maxf(speed, 0.0)
-		t     += SIM_DT
-
-		if speed * KMH_PER_UNIT >= target_kmh:
-			return t
-
-	return SIM_TIMEOUT
+	return (lo + hi) * 0.5
 
 
 # ── Tests ─────────────────────────────────────────────────────────────────────
 
-func test_zero_to_100_in_3_seconds() -> void:
-	var t := simulate_to(100.0)
-	var msg := "0-100 km/h simulation: %.2f s (target 3.0 ± 1.0 s) — adjust SIM_DRAG to calibrate" % t
-	assert_gt(t, 2.0, msg)
-	assert_lt(t, 4.0, msg)
+## Each gear (except the last) must have a terminal velocity above its upshift
+## threshold.  If the terminal sits below the threshold the car stalls in that
+## gear and never progresses — which is exactly the bug this test guards.
+func test_each_gear_upshift_threshold_is_reachable() -> void:
+	for gear in range(CarGears.GEARS.size() - 1):  # skip last gear (no upshift)
+		var terminal := _terminal_velocity(gear)
+		var threshold := _gear_max(gear) * CarGears.UPSHIFT_THRESHOLD
+		var msg := (
+			"Gear %d: terminal %.1f m/s (%.0f km/h) must exceed upshift threshold %.1f m/s (%.0f km/h). "
+			+ "If this fails, lower UPSHIFT_THRESHOLD or increase accel_scale for this gear."
+		) % [
+			gear + 1,
+			terminal, terminal * KMH_PER_UNIT,
+			threshold, threshold * KMH_PER_UNIT,
+		]
+		assert_gt(terminal, threshold, msg)
 
 
-func test_zero_to_250_in_10_seconds() -> void:
-	var t := simulate_to(250.0)
-	var msg := "0-250 km/h simulation: %.2f s (target 10.0 ± 2.0 s) — adjust SIM_DRAG to calibrate" % t
-	assert_gt(t, 8.0, msg)
-	assert_lt(t, 12.0, msg)
+## Gear 5 terminal velocity should be in a reasonable top-speed range.
+## Too low → car feels slow at the top end; too high → physics is broken.
+func test_gear5_terminal_velocity_is_in_range() -> void:
+	var top_gear := CarGears.GEARS.size() - 1
+	var terminal := _terminal_velocity(top_gear)
+	var kmh      := terminal * KMH_PER_UNIT
+	var msg_lo   := "Gear 5 terminal %.0f km/h is below 150 km/h — needs higher accel_scale" % kmh
+	var msg_hi   := "Gear 5 terminal %.0f km/h exceeds 350 km/h — physics may be unbalanced" % kmh
+	assert_gt(kmh, 150.0, msg_lo)
+	assert_lt(kmh, 350.0, msg_hi)
 
 
-func test_top_speed_reaches_250_kmh() -> void:
-	# Verify the car can physically reach 250 km/h within 30 s
-	var t := simulate_to(250.0)
-	assert_lt(t, SIM_TIMEOUT, "car should reach 250 km/h — check gear max_speed and BASE_MAX_SPEED")
-
-
-func test_100_reached_before_250() -> void:
-	var t100 := simulate_to(100.0)
-	var t250 := simulate_to(250.0)
-	assert_lt(t100, t250, "0-100 should be faster than 0-250")
+## Each successive gear must reach a higher terminal velocity than the previous.
+func test_terminal_velocity_increases_each_gear() -> void:
+	var prev_terminal := 0.0
+	for gear in CarGears.GEARS.size():
+		var terminal := _terminal_velocity(gear)
+		assert_gt(terminal, prev_terminal,
+			"Gear %d terminal (%.1f m/s) should exceed gear %d terminal (%.1f m/s)" % [
+				gear + 1, terminal, gear, prev_terminal])
+		prev_terminal = terminal

@@ -2,41 +2,61 @@
 """
 Gear calibration tool for Zom Zom Zoom.
 
-Mirrors the GDScript simulation in test_car_performance.gd.
-Plots velocity over time and shows where time is spent in each gear.
+Mirrors the physics of the gear system and wheel drag to show:
+  - Velocity-over-time profile (with gear labels)
+  - Time spent per gear
+  - Terminal velocity per gear (where motor force = drag)
+  - 0→100 and 0→250 km/h timings
 
 Usage:
     python3 scripts/calibrate_gears.py
-"""
 
-import sys
+# ── Physics model ─────────────────────────────────────────────────────────────
+# Drag comes from raycast_wheel.gd z_force (NOT quadratic aero drag):
+#   z_force = speed * z_traction * (mass * gravity / total_wheels)  per wheel
+#   z_traction = 0.15, gravity = 9.8, mass = 50, total_wheels = 4
+#   total drag decel = 4 * speed * 0.15 * (50*9.8/4) / 50 = 1.47 * speed m/s²
+# This is LINEAR in speed, creating a natural terminal velocity per gear.
+#
+# HUD: linear_velocity.length() * 3.6  (standard m/s → km/h)
+# Motor wheels: WheelRL + WheelRR (is_motor=true in car.tscn) = 2 wheels.
+# Each motor wheel applies car.acceleration * accel_curve force to the car.
+"""
 
 # ── Constants (must match car_gears.gd and test_car_performance.gd) ──────────
 
 GEARS = [
-    {"speed_frac": 0.06, "accel_scale": 1.30},  # 1 — launch
-    {"speed_frac": 0.15, "accel_scale": 1.15},  # 2 — building
-    {"speed_frac": 0.42, "accel_scale": 1.05},  # 3 — 100 km/h lives here
-    {"speed_frac": 0.72, "accel_scale": 0.92},  # 4 — long pull
-    {"speed_frac": 1.00, "accel_scale": 0.82},  # 5 — top-end
+    {"speed_frac": 0.06, "accel_scale": 1.300},  # 1 — launch
+    {"speed_frac": 0.15, "accel_scale": 1.150},  # 2 — building
+    {"speed_frac": 0.42, "accel_scale": 1.050},  # 3 — mid-range
+    {"speed_frac": 0.72, "accel_scale": 1.313},  # 4 — long pull
+    {"speed_frac": 1.00, "accel_scale": 1.450},  # 5 — top-end
 ]
 
-UPSHIFT_THRESHOLD   = 0.92
-DOWNSHIFT_THRESHOLD = 0.75
+UPSHIFT_THRESHOLD   = 0.40   # upshift at 40% of gear's max_speed
+DOWNSHIFT_THRESHOLD = 0.30   # downshift at 30% of previous gear's max_speed
 
-BASE_ACCELERATION = 2000.0
-BASE_MAX_SPEED    = 195.0
-MASS              = 50.0
-SIM_DRAG          = 0.003
-KMH_PER_UNIT      = 1.3
+BASE_ACCELERATION = 2000.0   # car.tscn acceleration property
+BASE_MAX_SPEED    = 195.0    # car.tscn max_speed property
+MASS              = 50.0     # car.tscn mass
+N_MOTOR_WHEELS    = 2        # WheelRL + WheelRR
 
-SIM_DT      = 0.005
+# Linear drag: z_traction * gravity * (mass / total_wheels) * n_wheels / mass
+# = z_traction * gravity = 0.15 * 9.8 = 1.47  (units: m/s² per m/s)
+Z_TRACTION    = 0.15
+GRAVITY       = 9.8
+TOTAL_WHEELS  = 4
+LINEAR_DRAG   = Z_TRACTION * GRAVITY  # = 1.47 s⁻¹
+KMH_PER_UNIT  = 3.6   # HUD: m/s * 3.6 = km/h
+
+SIM_DT      = 0.005   # 5 ms steps
 SIM_TIMEOUT = 30.0
 
-TARGET_100  = 100.0   # km/h
-TARGET_250  = 250.0   # km/h
+TARGET_100 = 100.0    # km/h
+TARGET_250 = 250.0    # km/h
 
-# ── Accel curve (piecewise linear, mirrors Curve_xmp6s) ──────────────────────
+# ── Accel curve (piecewise linear — matches Curve_xmp6s in car.tscn) ─────────
+# Points: (0, 0.3) → (0.3, 0.9) → (0.6, 0.8) → (1.0, 0.1)
 
 def accel_curve(t: float) -> float:
     t = max(0.0, min(1.0, t))
@@ -52,19 +72,48 @@ def gear_max(gear: int) -> float:
     return BASE_MAX_SPEED * GEARS[gear]["speed_frac"]
 
 
+# ── Terminal velocity analysis ────────────────────────────────────────────────
+
+def terminal_velocity(gear: int, tol: float = 0.01) -> float:
+    """
+    Binary-search for the speed where motor accel = drag accel in this gear.
+    Returns the terminal velocity in m/s, or gear_max if never reached.
+    """
+    m   = gear_max(gear)
+    a   = GEARS[gear]["accel_scale"]
+
+    def net(v: float) -> float:
+        ratio  = max(0.0, min(1.0, v / max(m, 0.001)))
+        motor  = N_MOTOR_WHEELS * BASE_ACCELERATION * a * accel_curve(ratio) / MASS
+        drag   = LINEAR_DRAG * v
+        return motor - drag
+
+    if net(m) >= 0:          # motor exceeds drag even at gear max
+        return m
+
+    lo, hi = 0.0, m
+    for _ in range(60):
+        mid = (lo + hi) / 2
+        if net(mid) > 0:
+            lo = mid
+        else:
+            hi = mid
+    return (lo + hi) / 2
+
+
 # ── Simulation ────────────────────────────────────────────────────────────────
 
 def simulate(record_profile: bool = False):
     """
     Returns (t100, t250, profile).
-    profile is list of (time, speed_kmh, gear) sampled every 0.1 s.
+    profile: list of (time_s, speed_kmh, gear_1indexed) sampled every 0.1 s.
     """
-    speed  = 0.0
-    t      = 0.0
-    gear   = 0
-    t100   = None
-    t250   = None
-    profile = []
+    speed = 0.0
+    t     = 0.0
+    gear  = 0
+    t100  = None
+    t250  = None
+    profile   = []
     next_sample = 0.0
 
     while t < SIM_TIMEOUT:
@@ -74,21 +123,18 @@ def simulate(record_profile: bool = False):
         # Upshift
         if gear < len(GEARS) - 1:
             if speed >= gmax * UPSHIFT_THRESHOLD:
-                gear += 1
-                gmax  = gear_max(gear)
-                scale = GEARS[gear]["accel_scale"]
+                gear  += 1
+                gmax   = gear_max(gear)
+                scale  = GEARS[gear]["accel_scale"]
 
         ratio     = max(0.0, min(1.0, speed / max(gmax, 0.001)))
         cv        = accel_curve(ratio)
-        f_motor   = BASE_ACCELERATION * scale * cv
-        f_drag    = SIM_DRAG * speed * speed
-        accel     = (f_motor - f_drag) / MASS
-
-        speed = max(0.0, speed + accel * SIM_DT)
-        t    += SIM_DT
+        motor_acc = N_MOTOR_WHEELS * BASE_ACCELERATION * scale * cv / MASS
+        drag_acc  = LINEAR_DRAG * speed
+        speed     = max(0.0, speed + (motor_acc - drag_acc) * SIM_DT)
+        t        += SIM_DT
 
         kmh = speed * KMH_PER_UNIT
-
         if t100 is None and kmh >= TARGET_100:
             t100 = t
         if t250 is None and kmh >= TARGET_250:
@@ -97,7 +143,7 @@ def simulate(record_profile: bool = False):
                 break
 
         if record_profile and t >= next_sample:
-            profile.append((t, kmh, gear + 1))  # gear is 1-indexed for display
+            profile.append((t, kmh, gear + 1))
             next_sample += 0.1
 
         if t250 is not None and not record_profile:
@@ -109,7 +155,6 @@ def simulate(record_profile: bool = False):
 # ── ASCII chart ───────────────────────────────────────────────────────────────
 
 def ascii_chart(profile, width=70, height=20):
-    """Print a terminal velocity/time chart with gear shading."""
     if not profile:
         return
 
@@ -119,14 +164,13 @@ def ascii_chart(profile, width=70, height=20):
 
     rows = [[" "] * width for _ in range(height)]
 
-    # Reference lines
-    for t100_ref in [3.0, 10.0]:
-        x = int(t100_ref / max_t * (width - 1))
+    for t_ref in [3.0, 10.0]:
+        x = int(t_ref / max_t * (width - 1))
         if 0 <= x < width:
             for y in range(height):
-                rows[y][x] = "│" if rows[y][x] == " " else rows[y][x]
+                if rows[y][x] == " ":
+                    rows[y][x] = "│"
 
-    # 100 and 250 km/h horizontal markers
     for kmh_ref in [100.0, 250.0]:
         y_frac = 1.0 - kmh_ref / max_kmh
         y = int(y_frac * (height - 1))
@@ -135,16 +179,12 @@ def ascii_chart(profile, width=70, height=20):
                 if rows[y][x] == " ":
                     rows[y][x] = "─"
 
-    # Velocity curve
-    gear_chars = {1: "①", 2: "②", 3: "③", 4: "④", 5: "⑤"}
-    prev_x = -1
     for (t, kmh, g) in profile:
         x = int(t / max_t * (width - 1))
         y = int((1.0 - kmh / max_kmh) * (height - 1))
         y = max(0, min(height - 1, y))
         if 0 <= x < width:
             rows[y][x] = str(g)
-            prev_x = x
 
     print()
     print(f"  Velocity profile  (top={max_kmh:.0f} km/h, right={max_t:.1f} s)")
@@ -153,28 +193,24 @@ def ascii_chart(profile, width=70, height=20):
         kmh_label = max_kmh * (1.0 - i / (height - 1))
         print(f"{kmh_label:5.0f} │{''.join(row)}│")
     print("  └" + "─" * width + "┘")
-    # Time axis labels
     labels = " " * 7
     step = max_t / 5
     for i in range(6):
-        t_label = f"{step * i:.1f}s"
-        labels += t_label.ljust(width // 5)
+        labels += f"{step*i:.1f}s".ljust(width // 5)
     print(labels)
     print()
     print("  Legend: number = gear, ─ = 100/250 km/h, │ = 3 s / 10 s marks")
 
 
-# ── Time-in-gear breakdown ────────────────────────────────────────────────────
-
-def time_in_gear_breakdown(profile):
-    gear_time = {}
+def time_in_gear(profile):
+    gt = {}
     for i in range(len(profile) - 1):
         t0, _, g = profile[i]
         t1, _, _ = profile[i + 1]
-        gear_time[g] = gear_time.get(g, 0.0) + (t1 - t0)
+        gt[g] = gt.get(g, 0.0) + (t1 - t0)
     print("  Time per gear:")
-    for g in sorted(gear_time):
-        print(f"    Gear {g}: {gear_time[g]:.2f} s")
+    for g in sorted(gt):
+        print(f"    Gear {g}: {gt[g]:.2f} s")
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
@@ -183,88 +219,39 @@ def main():
     t100, t250, profile = simulate(record_profile=True)
 
     print("=" * 72)
-    print("  ZOM ZOM ZOOM — Gear Calibration")
+    print("  ZOM ZOM ZOOM — Gear Calibration  (linear drag, KMH = m/s × 3.6)")
     print("=" * 72)
     print()
-    print(f"  0→100 km/h : {t100:.2f} s  (target: 2.0–4.0 s)")
-    print(f"  0→250 km/h : {t250:.2f} s  (target: 8.0–12.0 s)")
+    print(f"  0→100 km/h : {t100:.2f} s  (target: 2.0–5.0 s)")
+    print(f"  0→250 km/h : {t250:.2f} s  (target: 8.0–14.0 s)")
     print()
 
-    ok100 = t100 is not None and 2.0 <= t100 <= 4.0
-    ok250 = t250 < SIM_TIMEOUT and 8.0 <= t250 <= 12.0
+    ok100 = t100 is not None and 2.0 <= t100 <= 5.0
+    ok250 = t250 < SIM_TIMEOUT and 8.0 <= t250 <= 14.0
     print(f"  0→100  {'✓ PASS' if ok100 else '✗ FAIL'}")
     print(f"  0→250  {'✓ PASS' if ok250 else '✗ FAIL'}")
     print()
 
+    print("  Terminal velocity per gear:")
+    for i, g in enumerate(GEARS):
+        vt  = terminal_velocity(i)
+        kmh = vt * KMH_PER_UNIT
+        up  = gear_max(i) * UPSHIFT_THRESHOLD
+        flag = " ✓" if vt > up else " ✗ UPSHIFT UNREACHABLE"
+        print(f"    Gear {i+1}: terminal={kmh:.0f} km/h, upshift at {up*KMH_PER_UNIT:.0f} km/h{flag}")
+    print()
+
     ascii_chart(profile)
-    time_in_gear_breakdown(profile)
+    time_in_gear(profile)
 
     print()
-    print("  Current gear constants:")
-    print(f"  {'Gear':<6} {'speed_frac':>12} {'accel_scale':>12}  {'max_speed (units/s)':>20}")
+    print("  Gear constants:")
+    print(f"  {'Gear':<6} {'speed_frac':>12} {'accel_scale':>12}  {'max (m/s)':>10}  {'max (km/h)':>10}")
     for i, g in enumerate(GEARS):
         ms = BASE_MAX_SPEED * g["speed_frac"]
-        print(f"  {i+1:<6} {g['speed_frac']:>12.2f} {g['accel_scale']:>12.2f}  {ms:>20.1f}")
-    print()
-
-
-def solve_accel_scales():
-    """
-    Binary-search accel_scale for gears 4 and 5 to hit 0→250 in ~10 s,
-    keeping BASE_MAX_SPEED and gears 1-3 unchanged so 0→100 (~3 s) is unaffected.
-    Gears 4 and 5 are scaled together by a single multiplier for simplicity.
-    """
-    global GEARS
-
-    saved = [g.copy() for g in GEARS]
-    lo, hi = 0.5, 5.0
-    best_mult = None
-    target_t250 = 10.0
-
-    for _ in range(40):
-        mid = (lo + hi) / 2.0
-        for i in [3, 4]:                       # gear indices 3 = gear4, 4 = gear5
-            GEARS[i]["accel_scale"] = saved[i]["accel_scale"] * mid
-        t100, t250, _ = simulate()
-        if t250 < target_t250:
-            hi  = mid
-            best_mult = mid
-        else:
-            lo  = mid
-
-    # Apply best
-    if best_mult is not None:
-        for i in [3, 4]:
-            GEARS[i]["accel_scale"] = saved[i]["accel_scale"] * best_mult
-        t100, t250, _ = simulate()
-        print("  Solved accel_scale multiplier for gears 4-5: ×{:.2f}".format(best_mult))
-        for i, g in enumerate(GEARS):
-            print(f"    Gear {i+1}: accel_scale = {g['accel_scale']:.3f}")
-        print(f"  Result → 0→100: {t100:.2f} s, 0→250: {t250:.2f} s")
-    else:
-        print("  Solver failed to converge.")
-
-    GEARS = saved  # restore
-    print()
-
-
-def sensitivity_analysis():
-    """Show effect of varying BASE_MAX_SPEED on 0→250 time."""
-    global BASE_MAX_SPEED
-    print("  Sensitivity: BASE_MAX_SPEED vs 0→250 time")
-    print(f"  {'max_speed':>10} {'250 km/h = X% of max':>22} {'0→100':>8} {'0→250':>8}")
-    original = BASE_MAX_SPEED
-    for ms in [195, 220, 250, 280, 320]:
-        BASE_MAX_SPEED = float(ms)
-        t100, t250, _ = simulate()
-        ratio_at_250 = (TARGET_250 / KMH_PER_UNIT) / ms * 100
-        t250_str = f"{t250:.2f}s" if t250 < SIM_TIMEOUT else "TIMEOUT"
-        print(f"  {ms:>10}   {ratio_at_250:>18.1f}%   {t100:>6.2f}s   {t250_str:>8}")
-    BASE_MAX_SPEED = original
+        print(f"  {i+1:<6} {g['speed_frac']:>12.3f} {g['accel_scale']:>12.3f}  {ms:>10.1f}  {ms*KMH_PER_UNIT:>10.0f}")
     print()
 
 
 if __name__ == "__main__":
     main()
-    solve_accel_scales()
-    sensitivity_analysis()

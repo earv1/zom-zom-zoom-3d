@@ -19,13 +19,17 @@ const GEARS := [
 	{&"speed_frac": 0.06, &"accel_scale": 1.30},  # 1 — very short launch gear
 	{&"speed_frac": 0.15, &"accel_scale": 1.15},  # 2 — still building
 	{&"speed_frac": 0.42, &"accel_scale": 1.05},  # 3 — 100 km/h lives here
-	{&"speed_frac": 0.72, &"accel_scale": 1.313},  # 4 — long pull (overdrive thrust)
-	{&"speed_frac": 1.00, &"accel_scale": 1.170},  # 5 — sustained top-end
+	{&"speed_frac": 0.72, &"accel_scale": 1.313},  # 4 — long pull
+	{&"speed_frac": 1.00, &"accel_scale": 1.450},  # 5 — top-end (needs extra thrust to reach 250 km/h)
 ]
 
-const UPSHIFT_THRESHOLD   := 0.92  # shift up at 92% of gear's max_speed
-const DOWNSHIFT_THRESHOLD := 0.75  # shift down at 75% of previous gear's max_speed
-                                   # gap between thresholds prevents gear hunting
+# Thresholds are fractions of the *current* gear's max_speed (upshift) or the
+# *previous* gear's max_speed (downshift).  They must sit below the terminal
+# velocity fraction for each gear so the car can actually reach them.
+# z_traction drag creates terminal velocity at ~40–55% of the gear's range,
+# so 0.40 upshift comfortably fires before the car plateaus.
+const UPSHIFT_THRESHOLD   := 0.40  # shift up at 40% of gear's max_speed
+const DOWNSHIFT_THRESHOLD := 0.30  # shift down at 30% of previous gear's max_speed
 
 @export var acceleration_preview: Curve:
 	get: return _preview_curve
