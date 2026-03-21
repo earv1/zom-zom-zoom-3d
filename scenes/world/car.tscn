@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" path="res://assets/car/nissan35/nissan_skyliner35.glb" id="6_carglb"]
 [ext_resource type="Script" path="res://scenes/world/car_follow_camera.gd" id="7_cam"]
 [ext_resource type="Script" path="res://scenes/world/car_boost.gd" id="8_boost"]
+[ext_resource type="Script" path="res://scenes/world/car_dust_trail.gd" id="16_dust"]
 [ext_resource type="Script" path="res://scenes/world/car_air_control.gd" id="11_air"]
 [ext_resource type="Script" path="res://scenes/world/car_blob_shadow.gd" id="12_shadow"]
 [ext_resource type="Script" path="res://scenes/weapons/weapon_manager.gd" id="9_wm"]
@@ -188,5 +189,8 @@ script = ExtResource("15_gears")
 
 [node name="EngineAudio" type="Node" parent="."]
 script = ExtResource("14_engine")
+
+[node name="DustTrail" type="Node" parent="."]
+script = ExtResource("16_dust")
 
 [editable path="nissan_skyliner35"]
