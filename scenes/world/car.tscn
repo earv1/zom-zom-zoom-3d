@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://scenes/weapons/weapon_manager.gd" id="9_wm"]
 [ext_resource type="PackedScene" path="res://scenes/weapons/front_gun.tscn" id="10_fg"]
 [ext_resource type="PackedScene" path="res://scenes/world/car_ram.tscn" id="13_ram"]
+[ext_resource type="Script" path="res://assets/audio/engine/car_engine_audio.gd" id="14_engine"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qm2o8"]
 friction = 0.0
@@ -237,5 +238,8 @@ script = ExtResource("9_wm")
 [node name="FrontGun" parent="WeaponManager" instance=ExtResource("10_fg")]
 
 [node name="RamComponent" parent="." instance=ExtResource("13_ram")]
+
+[node name="EngineAudio" type="Node" parent="."]
+script = ExtResource("14_engine")
 
 [editable path="nissan_skyliner35"]

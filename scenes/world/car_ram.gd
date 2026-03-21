@@ -91,7 +91,7 @@ func _on_body_entered(body: Node) -> void:
 	body.take_damage(damage)
 
 	if body is RigidBody3D:
-		var away := body.global_position - _car.global_position
+		var away: Vector3 = (body as RigidBody3D).global_position - _car.global_position
 		away.y = 0.0
 		if away.length_squared() > 0.0001:
 			body.apply_central_impulse(away.normalized() * speed * KNOCK_FORCE)

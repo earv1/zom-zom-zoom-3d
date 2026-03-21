@@ -26,9 +26,14 @@ connector-test:
 world:
     "{{godot}}" --path "{{project}}" --scene scenes/world/world.tscn
 
-# Check for script compilation errors (headless, no window)
+# Check for script compilation + type errors (headless, no window)
+# Filters out known false positives: autoloads (GameManager) and debug plugins (DebugDraw)
+# that are unavailable in --script mode but work fine at runtime.
 check:
-    "{{godot}}" --path "{{project}}" --headless --quit-after 5 2>&1 || true
+    "{{godot}}" --path "{{project}}" --headless --script scripts/validate.gd 2>&1 \
+        | grep "SCRIPT ERROR:" \
+        | grep -v "GameManager\|DebugDraw\|Failed to compile depended" \
+        || true
 
 # Run headless unit tests via GUT
 test:
