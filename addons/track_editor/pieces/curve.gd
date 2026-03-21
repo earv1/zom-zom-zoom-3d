@@ -13,6 +13,8 @@ const SWEEP := -PI * 0.5   # 0 → -90° (east to south from pivot)
 
 @export_storage var radius     := 6.0
 @export_storage var road_width := 6.0
+@export_storage var theme_mode := TrackTheme.MODE_LINES
+@export_storage var side_color_name := "yellow"
 
 func _ready() -> void:
 	_build()
@@ -33,12 +35,26 @@ func get_param_defs() -> Array:
 		{name = "radius",     label = "Radius", min = 6.0, max = 12.0, step = 6.0, default = 6.0},
 	]
 
+func apply_theme(mode: int, side_color: String) -> void:
+	theme_mode = mode
+	side_color_name = side_color
+	for child in get_children():
+		child.queue_free()
+	_build()
+
+func get_connection_anchors() -> Array:
+	return [
+		{"position": Vector3(0, 0, 4), "out_dir": Vector3(0, 0, 1)},
+		{"position": Vector3(-4, 0, 0), "out_dir": Vector3(-1, 0, 0)},
+	]
+
 func _build() -> void:
 	var inner_r := radius - road_width * 0.5
 	var outer_r := radius + road_width * 0.5
 
-	var road_mat := TrackTheme.road_material()
-	var kerb_mat := TrackTheme.kerb_material()
+	var road_mat := TrackTheme.road_material(theme_mode, side_color_name)
+	var side_mat := TrackTheme.side_material(side_color_name)
+	var line_mat := TrackTheme.line_material()
 
 	var sb := StaticBody3D.new()
 	add_child(sb)
@@ -62,16 +78,28 @@ func _build() -> void:
 		mi.material_override = road_mat.duplicate()
 		add_child(mi)
 
-		# outer kerb strip (triangle, slightly wider)
-		var kerb_inner_r := outer_r + 0.05
-		var kerb_outer_r := outer_r + 0.45
-		var ki_mid := PIVOT + dm * kerb_inner_r
-		var ko0    := PIVOT + d0 * kerb_outer_r
-		var ko1    := PIVOT + d1 * kerb_outer_r
-		var mk := MeshInstance3D.new()
-		mk.mesh = _triangle_mesh(ki_mid, ko0, ko1, THICK + 0.1)
-		mk.material_override = kerb_mat.duplicate()
-		add_child(mk)
+		if TrackTheme.show_sides(theme_mode):
+			var kerb_inner_r := outer_r + 0.05
+			var kerb_outer_r := outer_r + 0.45
+			var ki_mid := PIVOT + dm * kerb_inner_r
+			var ko0    := PIVOT + d0 * kerb_outer_r
+			var ko1    := PIVOT + d1 * kerb_outer_r
+			var mk := MeshInstance3D.new()
+			mk.mesh = _triangle_mesh(ki_mid, ko0, ko1, THICK + 0.1)
+			mk.material_override = side_mat.duplicate()
+			add_child(mk)
+
+		if TrackTheme.show_lines(theme_mode):
+			var line_inner_r := radius - 0.12
+			var line_outer_r := radius + 0.12
+			var li_mid := PIVOT + dm * line_inner_r
+			var lo0 := PIVOT + d0 * line_outer_r
+			var lo1 := PIVOT + d1 * line_outer_r
+			var line_mesh := MeshInstance3D.new()
+			line_mesh.mesh = _triangle_mesh(li_mid, lo0, lo1, 0.02)
+			line_mesh.material_override = line_mat.duplicate()
+			line_mesh.position.y += 0.01
+			add_child(line_mesh)
 
 		# collision (convex hull of 6 corners — triangular prism)
 		var cs  := CollisionShape3D.new()

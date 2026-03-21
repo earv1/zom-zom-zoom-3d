@@ -4,7 +4,8 @@ extends RefCounted
 class_name TrackRibbonBuilder
 
 static func add_ribbon(parent: Node3D, static_body: StaticBody3D, points: Array, width_dirs: Array,
-		widths: Array, road_mat: Material, kerb_mat: Material,
+		widths: Array, road_mat: Material, side_mat: Material, line_mat: Material,
+		show_sides: bool, show_lines: bool,
 		slab_t: float = 0.3, kerb_w: float = 0.35, kerb_h: float = 0.1) -> void:
 	if points.size() < 2 or width_dirs.size() != points.size() or widths.size() != points.size():
 		return
@@ -43,15 +44,32 @@ static func add_ribbon(parent: Node3D, static_body: StaticBody3D, points: Array,
 		road.material_override = road_mat.duplicate()
 		parent.add_child(road)
 
-		var left_kerb := MeshInstance3D.new()
-		left_kerb.mesh = _segment_mesh(a_left - a_width_dir * kerb_w, a_left, b_left - b_width_dir * kerb_w, b_left, kerb_h, false, false)
-		left_kerb.material_override = kerb_mat.duplicate()
-		parent.add_child(left_kerb)
+		if show_sides:
+			var left_kerb := MeshInstance3D.new()
+			left_kerb.mesh = _segment_mesh(a_left - a_width_dir * kerb_w, a_left, b_left - b_width_dir * kerb_w, b_left, kerb_h, false, false)
+			left_kerb.material_override = side_mat.duplicate()
+			parent.add_child(left_kerb)
 
-		var right_kerb := MeshInstance3D.new()
-		right_kerb.mesh = _segment_mesh(a_right, a_right + a_width_dir * kerb_w, b_right, b_right + b_width_dir * kerb_w, kerb_h, false, false)
-		right_kerb.material_override = kerb_mat.duplicate()
-		parent.add_child(right_kerb)
+			var right_kerb := MeshInstance3D.new()
+			right_kerb.mesh = _segment_mesh(a_right, a_right + a_width_dir * kerb_w, b_right, b_right + b_width_dir * kerb_w, kerb_h, false, false)
+			right_kerb.material_override = side_mat.duplicate()
+			parent.add_child(right_kerb)
+
+		if show_lines:
+			var stripe_half_w: float = min(a_half_w, b_half_w) * 0.08
+			var stripe_raise := Vector3.UP * 0.01
+			var line := MeshInstance3D.new()
+			line.mesh = _segment_mesh(
+				a_center - a_width_dir * stripe_half_w + stripe_raise,
+				a_center + a_width_dir * stripe_half_w + stripe_raise,
+				b_center - b_width_dir * stripe_half_w + stripe_raise,
+				b_center + b_width_dir * stripe_half_w + stripe_raise,
+				0.02,
+				false,
+				false
+			)
+			line.material_override = line_mat.duplicate()
+			parent.add_child(line)
 
 		var cs := CollisionShape3D.new()
 		var cps := ConvexPolygonShape3D.new()
@@ -65,10 +83,11 @@ static func add_ribbon(parent: Node3D, static_body: StaticBody3D, points: Array,
 
 	_add_cap(parent, road_mat, first_center - first_dir * first_half_w, first_center + first_dir * first_half_w, slab_t, true)
 	_add_cap(parent, road_mat, last_center - last_dir * last_half_w, last_center + last_dir * last_half_w, slab_t, false)
-	_add_cap(parent, kerb_mat, first_center - first_dir * (first_half_w + kerb_w), first_center - first_dir * first_half_w, kerb_h, true)
-	_add_cap(parent, kerb_mat, first_center + first_dir * first_half_w, first_center + first_dir * (first_half_w + kerb_w), kerb_h, true)
-	_add_cap(parent, kerb_mat, last_center - last_dir * (last_half_w + kerb_w), last_center - last_dir * last_half_w, kerb_h, false)
-	_add_cap(parent, kerb_mat, last_center + last_dir * last_half_w, last_center + last_dir * (last_half_w + kerb_w), kerb_h, false)
+	if show_sides:
+		_add_cap(parent, side_mat, first_center - first_dir * (first_half_w + kerb_w), first_center - first_dir * first_half_w, kerb_h, true)
+		_add_cap(parent, side_mat, first_center + first_dir * first_half_w, first_center + first_dir * (first_half_w + kerb_w), kerb_h, true)
+		_add_cap(parent, side_mat, last_center - last_dir * (last_half_w + kerb_w), last_center - last_dir * last_half_w, kerb_h, false)
+		_add_cap(parent, side_mat, last_center + last_dir * last_half_w, last_center + last_dir * (last_half_w + kerb_w), kerb_h, false)
 
 static func _segment_mesh(a_left: Vector3, a_right: Vector3, b_left: Vector3, b_right: Vector3, thick: float,
 		cap_start: bool, cap_end: bool) -> ArrayMesh:

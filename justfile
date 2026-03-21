@@ -18,6 +18,10 @@ run:
 track:
     "{{godot}}" --path "{{project}}" --scene scenes/test_track/test_track.tscn
 
+# Run the connector visual test scene
+connector-test:
+    "{{godot}}" --path "{{project}}" --scene scenes/test_track/connector_visual_test.tscn
+
 # Run the main game world directly
 world:
     "{{godot}}" --path "{{project}}" --scene scenes/world/world.tscn

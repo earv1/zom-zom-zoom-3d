@@ -2,6 +2,7 @@
 extends EditorPlugin
 
 const DOCK_SCENE = preload("res://addons/track_editor/editor_dock.tscn")
+const TrackTheme = preload("res://addons/track_editor/track_theme.gd")
 
 const CELL   := Vector3(8.0, 4.0, 8.0)
 const NO_HIT := Vector3(INF, INF, INF)
@@ -20,6 +21,8 @@ var _scene_cache: Dictionary = {}
 var _connect_mode := false
 var _connect_first: Node3D = null
 var _current_layer := 0
+var _theme_mode := TrackTheme.MODE_LINES
+var _side_color_name := "yellow"
 
 var PIECE_SCENES := {
 	"straight": "res://addons/track_editor/pieces/straight.tscn",
@@ -44,8 +47,12 @@ func _enter_tree() -> void:
 	dock.connect_from_selection_requested.connect(_on_connect_from_selection_requested)
 	dock.cancel_requested.connect(_on_cancel_requested)
 	dock.layer_changed.connect(_on_layer_changed)
+	dock.theme_mode_changed.connect(_on_theme_mode_changed)
+	dock.side_color_changed.connect(_on_side_color_changed)
 	add_control_to_dock(DOCK_SLOT_RIGHT_UL, dock)
 	dock.set_layer(_current_layer, _current_layer * CELL.y)
+	dock.set_theme_mode(_theme_mode)
+	dock.set_side_color(_side_color_name)
 	_update_context_ui(NO_HIT)
 
 func _exit_tree() -> void:
@@ -157,6 +164,27 @@ func _on_cancel_requested() -> void:
 
 func _on_layer_changed(delta: int) -> void:
 	_set_current_layer(_current_layer + delta)
+
+func _on_theme_mode_changed(mode: int) -> void:
+	_theme_mode = mode
+	_apply_theme_to_all_pieces()
+
+func _on_side_color_changed(color_name: String) -> void:
+	_side_color_name = color_name
+	_apply_theme_to_all_pieces()
+
+func _apply_theme_to_all_pieces() -> void:
+	if is_instance_valid(_track_root):
+		for child in _track_root.get_children():
+			if child is Node3D and child.has_method("apply_theme"):
+				child.apply_theme(_theme_mode, _side_color_name)
+		_refresh_neighbors()
+	if is_instance_valid(_ghost) and _ghost.has_method("apply_theme"):
+		_ghost.apply_theme(_theme_mode, _side_color_name)
+		_ghost.rotation_degrees.y = _rotation_y * 90.0
+		_ghost.position = _last_grid_pos
+		_set_ghost_alpha(_ghost, 0.4)
+	_update_context_ui(_last_grid_pos if _edit_mode else NO_HIT)
 
 # ── viewport input ────────────────────────────────────────────────────────────
 
@@ -276,6 +304,8 @@ func _rebuild_ghost() -> void:
 	_ghost = packed.instantiate()
 	_ghost.position = _last_grid_pos   # snap to last known cursor position
 	_ghost.rotation_degrees.y = _rotation_y * 90.0
+	if _ghost.has_method("apply_theme"):
+		_ghost.apply_theme(_theme_mode, _side_color_name)
 	# Pre-set vars before entering tree so _ready()→_build() uses them (no double-build)
 	for key in _piece_params:
 		_ghost.set(key, _piece_params[key])
@@ -325,6 +355,8 @@ func _place_piece(grid_pos: Vector3) -> void:
 	piece.position = grid_pos
 	piece.rotation_degrees.y = _rotation_y * 90.0
 	piece.name = _selected_piece + "_" + str(snappedi(grid_pos.x, 1)) + "_" + str(snappedi(grid_pos.y, 1)) + "_" + str(snappedi(grid_pos.z, 1))
+	if piece.has_method("apply_theme"):
+		piece.apply_theme(_theme_mode, _side_color_name)
 	# Pre-set vars before entering tree so _ready()→_build() uses them (no double-build)
 	for key in _piece_params:
 		piece.set(key, _piece_params[key])
@@ -455,25 +487,14 @@ func _create_connector(piece_a: Node3D, piece_b: Node3D) -> void:
 	if scene_root == null:
 		return
 
-	# Axis each piece runs along (Z-axis rotated by rotation_degrees.y)
-	var rot_a  := deg_to_rad(piece_a.rotation_degrees.y)
-	var rot_b  := deg_to_rad(piece_b.rotation_degrees.y)
-	var axis_a := Vector3(sin(rot_a), 0.0, cos(rot_a))
-	var axis_b := Vector3(sin(rot_b), 0.0, cos(rot_b))
+	var anchor_pair := _select_connection_anchor_pair(piece_a, piece_b)
+	var start_anchor: Dictionary = anchor_pair.start
+	var end_anchor: Dictionary = anchor_pair.end
 
-	# Exit face of A: whichever face is closer to B
-	var fa_p := piece_a.position + axis_a * 4.0
-	var fa_n := piece_a.position - axis_a * 4.0
-	var face_a := fa_p if fa_p.distance_to(piece_b.position) < fa_n.distance_to(piece_b.position) else fa_n
-
-	# Entry face of B: whichever face is closer to face_a
-	var fb_p := piece_b.position + axis_b * 4.0
-	var fb_n := piece_b.position - axis_b * 4.0
-	var face_b := fb_p if fb_p.distance_to(face_a) < fb_n.distance_to(face_a) else fb_n
-
-	# Tangent directions: away from A through face_a, into B through face_b
-	var start_dir := (face_a - piece_a.position).normalized()
-	var end_dir   := (piece_b.position - face_b).normalized()
+	var face_a: Vector3 = start_anchor.position
+	var face_b: Vector3 = end_anchor.position
+	var start_dir: Vector3 = start_anchor.out_dir
+	var end_dir: Vector3 = -end_anchor.out_dir
 
 	var start_width := 6.0
 	var end_width := 6.0
@@ -495,6 +516,8 @@ func _create_connector(piece_a: Node3D, piece_b: Node3D) -> void:
 	var conn: Node3D = packed.instantiate()
 	conn.position = face_a
 	conn.name = "connector_" + str(snappedi(face_a.x, 1)) + "_" + str(snappedi(face_a.y, 1)) + "_" + str(snappedi(face_a.z, 1))
+	if conn.has_method("apply_theme"):
+		conn.apply_theme(_theme_mode, _side_color_name)
 	conn.set("start_pos",  face_a)
 	conn.set("start_dir",  start_dir)
 	conn.set("end_pos",    face_b)
@@ -512,6 +535,57 @@ func _create_connector(piece_a: Node3D, piece_b: Node3D) -> void:
 	undo.commit_action()
 	dock.set_status("Connected %s to %s" % [_describe_piece(piece_a), _describe_piece(piece_b)])
 	_update_context_ui(_last_grid_pos)
+
+func _select_connection_anchor_pair(piece_a: Node3D, piece_b: Node3D) -> Dictionary:
+	var start_anchors := _connection_anchors_for_piece(piece_a)
+	var end_anchors := _connection_anchors_for_piece(piece_b)
+	if start_anchors.is_empty():
+		start_anchors = [{"position": piece_a.position, "out_dir": Vector3.FORWARD}]
+	if end_anchors.is_empty():
+		end_anchors = [{"position": piece_b.position, "out_dir": Vector3.BACK}]
+
+	var best_start: Dictionary = start_anchors[0]
+	var best_end: Dictionary = end_anchors[0]
+	var best_dist := INF
+	var best_facing := -INF
+
+	for start_anchor in start_anchors:
+		for end_anchor in end_anchors:
+			var start_pos: Vector3 = start_anchor.position
+			var end_pos: Vector3 = end_anchor.position
+			var span := end_pos - start_pos
+			var dist := span.length()
+			var facing := 0.0
+			if dist > 0.001:
+				var dir := span / dist
+				facing = start_anchor.out_dir.dot(dir) + (-end_anchor.out_dir).dot(dir)
+			if dist < best_dist - 0.001 or (is_equal_approx(dist, best_dist) and facing > best_facing):
+				best_dist = dist
+				best_facing = facing
+				best_start = {"position": start_pos, "out_dir": (start_anchor.out_dir as Vector3).normalized()}
+				best_end = {"position": end_pos, "out_dir": (end_anchor.out_dir as Vector3).normalized()}
+
+	return {"start": best_start, "end": best_end}
+
+func _connection_anchors_for_piece(piece: Node3D) -> Array:
+	var local_anchors: Array = []
+	if piece.has_method("get_connection_anchors"):
+		local_anchors = piece.get_connection_anchors()
+	else:
+		local_anchors = [
+			{"position": Vector3(0, 0, 4), "out_dir": Vector3(0, 0, 1)},
+			{"position": Vector3(0, 0, -4), "out_dir": Vector3(0, 0, -1)},
+		]
+
+	var anchors: Array = []
+	for anchor in local_anchors:
+		var local_pos: Vector3 = anchor.get("position", Vector3.ZERO)
+		var local_dir: Vector3 = anchor.get("out_dir", Vector3.FORWARD)
+		anchors.append({
+			"position": piece.transform * local_pos,
+			"out_dir": (piece.transform.basis * local_dir).normalized(),
+		})
+	return anchors
 
 func _get_scene_root() -> Node:
 	var ei := get_editor_interface()

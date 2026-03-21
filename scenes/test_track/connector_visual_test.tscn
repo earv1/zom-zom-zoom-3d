@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bbblirfem3mj0"]
+
+[ext_resource type="PackedScene" uid="uid://cmpcr4wp2d8gk" path="res://scenes/environment_and_light.tscn" id="1_env"]
+[ext_resource type="Script" uid="uid://cpjh0jmth1bnh" path="res://scenes/test_track/connector_visual_test.gd" id="2_script"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ground"]
+size = Vector3(500, 0.2, 500)
+
+[node name="ConnectorVisualTest" type="Node3D" unique_id=668472858]
+
+[node name="Environment" parent="." unique_id=514780106 instance=ExtResource("1_env")]
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=762881868]
+transform = Transform3D(-0.422618, -0.694272, 0.582564, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
+shadow_enabled = true
+shadow_bias = 0.2
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=870049662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=2027987484]
+shape = SubResource("BoxShape3D_ground")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1185944327]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866, 0, -0.866, 0.5, 45, 80, 30)
+
+[node name="ConnectorCases" type="Node3D" parent="." unique_id=289560916]
+script = ExtResource("2_script")
+
+[node name="TrackRoot" type="Node3D" parent="." unique_id=37158668]

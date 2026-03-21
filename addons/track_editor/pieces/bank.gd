@@ -2,8 +2,12 @@
 @tool
 extends Node3D
 
+const TrackTheme = preload("res://addons/track_editor/track_theme.gd")
+
 @export_storage var road_width := 6.0
 @export_storage var bank_angle := 30.0
+@export_storage var theme_mode := TrackTheme.MODE_LINES
+@export_storage var side_color_name := "yellow"
 
 func _ready() -> void:
 	_build()
@@ -24,9 +28,23 @@ func get_param_defs() -> Array:
 		{name = "bank_angle", label = "Bank Angle", min = 6.0, max = 60.0, step = 6.0, default = 30.0},
 	]
 
+func apply_theme(mode: int, side_color: String) -> void:
+	theme_mode = mode
+	side_color_name = side_color
+	for child in get_children():
+		child.queue_free()
+	_build()
+
+func get_connection_anchors() -> Array:
+	return [
+		{"position": Vector3(0, 0, 4), "out_dir": Vector3(0, 0, 1)},
+		{"position": Vector3(0, 0, -4), "out_dir": Vector3(0, 0, -1)},
+	]
+
 func _build() -> void:
-	var road_mat := StandardMaterial3D.new()
-	road_mat.albedo_color = Color(0.22, 0.22, 0.32)
+	var road_mat := TrackTheme.road_material(theme_mode, side_color_name)
+	var side_mat := TrackTheme.side_material(side_color_name)
+	var line_mat := TrackTheme.line_material()
 
 	# Road slab tilted around Z axis
 	var slab_w := road_width + 0.5
@@ -39,16 +57,25 @@ func _build() -> void:
 	mi.position = Vector3(0, 0.3, 0)
 	add_child(mi)
 
+	if TrackTheme.show_lines(theme_mode):
+		var line := MeshInstance3D.new()
+		var lbm := BoxMesh.new()
+		lbm.size = Vector3(0.18, 0.02, 8.0)
+		line.mesh = lbm
+		line.material_override = line_mat
+		line.rotation.z = deg_to_rad(-bank_angle)
+		line.position = Vector3(0, 0.46, 0)
+		add_child(line)
+
 	# Outer wall
-	var wall_mat := StandardMaterial3D.new()
-	wall_mat.albedo_color = Color(0.4, 0.4, 0.55)
-	var wm  := MeshInstance3D.new()
-	var wbm := BoxMesh.new()
-	wbm.size = Vector3(0.3, 2.5, 8.0)
-	wm.mesh = wbm
-	wm.material_override = wall_mat
-	wm.position = Vector3(road_width * 0.5 + 0.5, 1.2, 0)
-	add_child(wm)
+	if TrackTheme.show_sides(theme_mode):
+		var wm  := MeshInstance3D.new()
+		var wbm := BoxMesh.new()
+		wbm.size = Vector3(0.3, 2.5, 8.0)
+		wm.mesh = wbm
+		wm.material_override = side_mat
+		wm.position = Vector3(road_width * 0.5 + 0.5, 1.2, 0)
+		add_child(wm)
 
 	# Collision
 	var sb := StaticBody3D.new()

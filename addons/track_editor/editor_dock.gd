@@ -14,6 +14,8 @@ signal category_changed(category_name: String)
 signal connect_from_selection_requested()
 signal cancel_requested()
 signal layer_changed(delta: int)
+signal theme_mode_changed(mode: int)
+signal side_color_changed(color_name: String)
 
 const PIECES := [
 	{"name": "straight", "label": "Straight", "tag": "Core", "desc": "Fast starter"},
@@ -35,6 +37,8 @@ var _layer_label: Label
 var _status_label: Label
 var _hover_label: Label
 var _context_label: Label
+var _theme_mode_buttons: Dictionary = {}
+var _side_color_buttons: Dictionary = {}
 var _clear_selection_btn: Button
 var _delete_selection_btn: Button
 var _rotate_btn: Button
@@ -191,6 +195,40 @@ func _build_ui() -> void:
 
 	root.add_child(HSeparator.new())
 
+	var theme_title := Label.new()
+	theme_title.text = "Track Theme"
+	root.add_child(theme_title)
+
+	var theme_modes := HBoxContainer.new()
+	root.add_child(theme_modes)
+	for mode_data in [
+		{"id": 0, "label": "Lines"},
+		{"id": 1, "label": "Blank"},
+		{"id": 2, "label": "Colorful"},
+	]:
+		var btn := Button.new()
+		btn.text = mode_data.label
+		btn.toggle_mode = true
+		btn.pressed.connect(func() -> void:
+			set_theme_mode(mode_data.id)
+			emit_signal("theme_mode_changed", mode_data.id)
+		)
+		theme_modes.add_child(btn)
+		_theme_mode_buttons[mode_data.id] = btn
+
+	var side_colors := HBoxContainer.new()
+	root.add_child(side_colors)
+	for color_name in ["yellow", "red", "blue"]:
+		var btn := Button.new()
+		btn.text = color_name.capitalize()
+		btn.toggle_mode = true
+		btn.pressed.connect(func() -> void:
+			set_side_color(color_name)
+			emit_signal("side_color_changed", color_name)
+		)
+		side_colors.add_child(btn)
+		_side_color_buttons[color_name] = btn
+
 	var palette_title := Label.new()
 	palette_title.text = "Piece Palette"
 	root.add_child(palette_title)
@@ -242,6 +280,8 @@ func _build_ui() -> void:
 	_on_category_pressed("All")
 	_select_piece("straight")
 	set_rotation_turns(0)
+	set_theme_mode(0)
+	set_side_color("yellow")
 	set_context_state({
 		"title": "Browse pieces or enable edit mode.",
 		"hover": "Cursor: waiting",
@@ -381,6 +421,14 @@ func set_rotation_turns(turns: int) -> void:
 func set_layer(layer_index: int, world_y: float) -> void:
 	if _layer_label:
 		_layer_label.text = "Layer: %d (%.0fm)" % [layer_index, world_y]
+
+func set_theme_mode(mode: int) -> void:
+	for key in _theme_mode_buttons:
+		_theme_mode_buttons[key].button_pressed = (key == mode)
+
+func set_side_color(color_name: String) -> void:
+	for key in _side_color_buttons:
+		_side_color_buttons[key].button_pressed = (key == color_name)
 
 func set_selection_info(text: String, has_selection: bool) -> void:
 	if _selection_label:
