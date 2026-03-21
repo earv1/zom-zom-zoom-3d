@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" path="res://scenes/weapons/front_gun.tscn" id="10_fg"]
 [ext_resource type="PackedScene" path="res://scenes/world/car_ram.tscn" id="13_ram"]
 [ext_resource type="Script" path="res://assets/audio/engine/car_engine_audio.gd" id="14_engine"]
+[ext_resource type="Script" path="res://scenes/world/car_gears.gd" id="15_gears"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qm2o8"]
 friction = 0.0
@@ -61,7 +62,7 @@ linear_damp_mode = 1
 script = ExtResource("1_car")
 wheels = [NodePath("WheelFL"), NodePath("WheelFR"), NodePath("WheelRL"), NodePath("WheelRR")]
 acceleration = 2000.0
-max_speed = 120.0
+max_speed = 195.0
 accel_curve = SubResource("Curve_xmp6s")
 steer_curve = SubResource("Curve_steer")
 tire_max_turn_degrees = 30
@@ -238,6 +239,9 @@ script = ExtResource("9_wm")
 [node name="FrontGun" parent="WeaponManager" instance=ExtResource("10_fg")]
 
 [node name="RamComponent" parent="." instance=ExtResource("13_ram")]
+
+[node name="CarGears" type="Node" parent="."]
+script = ExtResource("15_gears")
 
 [node name="EngineAudio" type="Node" parent="."]
 script = ExtResource("14_engine")
