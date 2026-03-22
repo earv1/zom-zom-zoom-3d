@@ -3,7 +3,8 @@ extends RigidBody3D
 
 @export var car: Node3D
 @export var fragment_scene: PackedScene
-@export var speed: float = 8.0
+@export var speed: float = 55.0
+@export var acceleration: float = 15.0
 @export var max_health: int = 1
 @export var xp_value: int = 5
 @export var contact_damage: int = 10
@@ -18,6 +19,8 @@ var pool_key: String
 
 const WARP_BUFFER := 30.0   # trigger warp this many units beyond the warp landing spot
 const DROP_HEIGHT := 10.0   # units above ground to drop from
+const BLOWBACK_RADIUS := 50.0
+const BLOWBACK_FORCE := 40.0
 
 
 func _ready() -> void:
@@ -27,6 +30,7 @@ func _ready() -> void:
 	contact_monitor = true
 	max_contacts_reported = 4
 	body_entered.connect(_on_body_entered)
+	GameManager.damage_taken.connect(_on_car_damage_taken)
 
 
 func _process(_delta: float) -> void:
@@ -50,8 +54,10 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	var dir := to_car.normalized()
 
 	var vel := state.linear_velocity
-	vel.x = dir.x * speed
-	vel.z = dir.z * speed
+	var current_hspeed := Vector2(vel.x, vel.z).length()
+	var target_speed := minf(current_hspeed + acceleration * state.step, speed)
+	vel.x = dir.x * target_speed
+	vel.z = dir.z * target_speed
 
 	if _raycast.is_colliding():
 		var terrain_y := _raycast.get_collision_point().y + 0.5
@@ -145,6 +151,20 @@ func _spawn_xp_orb() -> void:
 	orb.set("car", car)
 	get_tree().current_scene.add_child(orb)
 	orb.global_position = global_position + Vector3.UP * 0.5
+
+
+func _on_car_damage_taken() -> void:
+	if _dead or not car or not visible:
+		return
+	var dist := global_position.distance_to(car.global_position)
+	if dist > BLOWBACK_RADIUS:
+		return
+	var away := global_position - car.global_position
+	away.y = 0.0
+	if away.length_squared() < 0.001:
+		away = Vector3(randf_range(-1, 1), 0, randf_range(-1, 1))
+	linear_velocity = Vector3.ZERO
+	apply_central_impulse(away.normalized() * BLOWBACK_FORCE + Vector3.UP * 10.0)
 
 
 func _on_die() -> void:

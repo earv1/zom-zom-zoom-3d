@@ -8,7 +8,6 @@ var max_health: int = 100
 var enemies_killed: int = 0
 
 var speed_multiplier: float = 1.0
-var pickup_radius: float = 36.0
 var damage_multiplier: float = 1.0
 var fire_rate_multiplier: float = 1.0
 
@@ -25,7 +24,7 @@ var all_upgrades: Array = [
 	preload("res://data/upgrades/upgrade_side_rockets_lvl2.tres"),
 	preload("res://data/upgrades/stat_max_health.tres"),
 	preload("res://data/upgrades/stat_speed.tres"),
-	preload("res://data/upgrades/stat_pickup_radius.tres"),
+
 	preload("res://data/upgrades/stat_damage_mult.tres"),
 	preload("res://data/upgrades/stat_fire_rate.tres"),
 ]
@@ -38,6 +37,7 @@ signal level_up_triggered(choices: Array)
 signal game_over()
 signal weapon_unlocked(id: StringName, scene: PackedScene)
 signal weapon_leveled_up(id: StringName)
+signal damage_taken()
 
 
 func _ready() -> void:
@@ -71,6 +71,7 @@ func take_damage(amount: int) -> void:
 		return
 	current_health = max(0, current_health - amount)
 	health_changed.emit(current_health, max_health)
+	damage_taken.emit()
 	if current_health <= 0:
 		_is_game_over = true
 		game_over.emit()
@@ -96,8 +97,6 @@ func apply_upgrade(upgrade: Resource) -> void:
 					health_changed.emit(current_health, max_health)
 				UpgradeData.Stat.SPEED:
 					speed_multiplier += upg.stat_value
-				UpgradeData.Stat.PICKUP_RADIUS:
-					pickup_radius += upg.stat_value
 				UpgradeData.Stat.DAMAGE_MULT:
 					damage_multiplier += upg.stat_value
 				UpgradeData.Stat.FIRE_RATE:
@@ -121,7 +120,6 @@ func reset() -> void:
 	max_health = 100
 	enemies_killed = 0
 	speed_multiplier = 1.0
-	pickup_radius = 36.0
 	damage_multiplier = 1.0
 	fire_rate_multiplier = 1.0
 	unlocked_weapons = [&"front_gun"]
