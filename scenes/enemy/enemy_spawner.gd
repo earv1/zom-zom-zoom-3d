@@ -4,7 +4,7 @@ extends Node3D
 @export var car: Node3D
 @export var spawn_radius: float = 40.0
 
-const MAX_ENEMIES := 400
+const MAX_ENEMIES := 200
 
 var _timer: float = 0.0
 var _pool: Array = []
@@ -23,7 +23,7 @@ func _ready() -> void:
 
 
 const RAMP_DURATION := 10.0  # seconds before full spawn rate
-const BATCH_MAX := 10
+const BATCH_MAX := 5
 
 func _process(delta: float) -> void:
 	_timer += delta
