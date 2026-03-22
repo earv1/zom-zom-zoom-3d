@@ -17,7 +17,7 @@ var _spawner: EnemySpawner
 var pool_key: String
 
 const WARP_BUFFER := 30.0   # trigger warp this many units beyond the warp landing spot
-const DROP_HEIGHT := 10.0   # units above target position to drop from
+const DROP_HEIGHT := 10.0   # units above ground to drop from
 
 
 func _ready() -> void:
@@ -91,18 +91,14 @@ func drop_near(center: Vector3, radius: float) -> void:
 	linear_velocity = Vector3.ZERO
 
 
-func reset_for_spawn(pos: Vector3, car_ref: Node3D) -> void:
-	# Position while still frozen so physics doesn't interfere.
-	global_position = pos
-	linear_velocity = Vector3.ZERO
-	angular_velocity = Vector3.ZERO
+func reset_for_spawn(car_ref: Node3D) -> void:
 	car = car_ref
 	_health = max_health
 	_dead = false
-	# Enable after positioning.
-	freeze = false
+	angular_velocity = Vector3.ZERO
 	visible = true
 	process_mode = PROCESS_MODE_INHERIT
+	freeze = false
 
 
 func _return_to_pool() -> void:

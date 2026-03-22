@@ -63,16 +63,16 @@ func _spawn() -> void:
 
 	if _inactive.has(key) and not (_inactive[key] as Array).is_empty():
 		enemy = (_inactive[key] as Array).pop_back() as BaseEnemy
-		enemy.reset_for_spawn(car.global_position, car)
 		enemy.drop_near(car.global_position, spawn_dist)
+		enemy.reset_for_spawn(car)
 	else:
 		var enemy_scene := chosen.get("scene") as PackedScene
 		enemy = enemy_scene.instantiate() as BaseEnemy
 		enemy._spawner = self
 		enemy.pool_key = key
-		enemy.car = car
 		add_child(enemy)
 		enemy.drop_near(car.global_position, spawn_dist)
+		enemy.reset_for_spawn(car)
 
 	_active_count += 1
 
