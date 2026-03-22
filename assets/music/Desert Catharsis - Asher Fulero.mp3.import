@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d3ihsibcykxwh"
+path="res://.godot/imported/Desert Catharsis - Asher Fulero.mp3-08a89357852d72392fc50de8016a356f.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Desert Catharsis - Asher Fulero.mp3"
+dest_files=["res://.godot/imported/Desert Catharsis - Asher Fulero.mp3-08a89357852d72392fc50de8016a356f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

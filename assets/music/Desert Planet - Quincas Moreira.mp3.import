@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djrjd6i8n5kce"
+path="res://.godot/imported/Desert Planet - Quincas Moreira.mp3-6b87d00b2dff73689007d6f38237aa4a.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Desert Planet - Quincas Moreira.mp3"
+dest_files=["res://.godot/imported/Desert Planet - Quincas Moreira.mp3-6b87d00b2dff73689007d6f38237aa4a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

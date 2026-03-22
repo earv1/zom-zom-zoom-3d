@@ -1,5 +1,4 @@
 extends Node3D
-class_name ZombieSpawner
 
 @export var car: Node3D
 @export var zombie_scene: PackedScene

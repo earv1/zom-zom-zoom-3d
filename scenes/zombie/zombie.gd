@@ -1,5 +1,4 @@
 extends RigidBody3D
-class_name Zombie
 
 @export var car: Node3D
 @export var fragment_scene: PackedScene

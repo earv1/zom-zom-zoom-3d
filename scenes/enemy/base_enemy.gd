@@ -13,15 +13,11 @@ extends RigidBody3D
 
 var _health: int
 var _dead: bool = false
-var _lifetime: float = 0.0
-var _blink_mat: StandardMaterial3D
-var _original_color: Color
 var _spawner: EnemySpawner
 var pool_key: String
 
-const LIFETIME := 30.0
-const BLINK_START := 25.0
 const WARP_BUFFER := 30.0   # trigger warp this many units beyond the warp landing spot
+const DROP_HEIGHT := 10.0   # units above target position to drop from
 
 
 func _ready() -> void:
@@ -32,41 +28,16 @@ func _ready() -> void:
 	max_contacts_reported = 4
 	body_entered.connect(_on_body_entered)
 
-	# Cache a unique material so blinking doesn't affect other enemies.
-	var mesh := find_child("*") as MeshInstance3D
-	if mesh:
-		var src := mesh.get_active_material(0)
-		if src:
-			_blink_mat = src.duplicate() as StandardMaterial3D
-			_original_color = _blink_mat.albedo_color
-			mesh.set_surface_override_material(0, _blink_mat)
 
-
-func _process(delta: float) -> void:
-	_lifetime += delta
-	if _lifetime >= LIFETIME:
-		_return_to_pool()
-		return
-
-	# Warp back toward the car if the enemy has wandered too far.
+func _process(_delta: float) -> void:
+	# Drop back in if the enemy has wandered too far from the car.
 	if car:
 		var spawners := get_tree().get_nodes_in_group("enemy_spawner")
 		var spawn_dist := 120.0
 		if spawners.size() > 0:
 			spawn_dist = (spawners[0] as EnemySpawner).spawn_radius * 3.0
 		if global_position.distance_to(car.global_position) > spawn_dist + WARP_BUFFER:
-			var angle := randf() * TAU
-			var offset := Vector3(cos(angle), 0.0, sin(angle)) * spawn_dist
-			global_position = car.global_position + offset
-			global_position.y += 10.0
-			linear_velocity = Vector3.ZERO  # drop cleanly from spawn height
-
-	if _blink_mat and _lifetime >= BLINK_START:
-		# Speed up blink rate as expiry approaches: 2 Hz → 10 Hz over 5 seconds.
-		var frac := (_lifetime - BLINK_START) / (LIFETIME - BLINK_START)
-		var hz := lerpf(2.0, 10.0, frac)
-		var on := fmod(_lifetime * hz, 1.0) < 0.5
-		_blink_mat.albedo_color = _original_color if on else Color.WHITE
+			drop_near(car.global_position, spawn_dist)
 
 
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
@@ -111,6 +82,15 @@ func die() -> void:
 	_return_to_pool()
 
 
+func drop_near(center: Vector3, radius: float) -> void:
+	var angle := randf() * TAU
+	var offset := Vector3(cos(angle), 0.0, sin(angle)) * radius
+	var pos := center + offset
+	pos.y += DROP_HEIGHT
+	global_position = pos
+	linear_velocity = Vector3.ZERO
+
+
 func reset_for_spawn(pos: Vector3, car_ref: Node3D) -> void:
 	# Position while still frozen so physics doesn't interfere.
 	global_position = pos
@@ -119,9 +99,6 @@ func reset_for_spawn(pos: Vector3, car_ref: Node3D) -> void:
 	car = car_ref
 	_health = max_health
 	_dead = false
-	_lifetime = 0.0
-	if _blink_mat:
-		_blink_mat.albedo_color = _original_color
 	# Enable after positioning.
 	freeze = false
 	visible = true

@@ -22,12 +22,16 @@ func _ready() -> void:
 	]
 
 
+const RAMP_DURATION := 10.0  # seconds before full spawn rate
+const BATCH_MAX := 10
+
 func _process(delta: float) -> void:
 	_timer += delta
 	var interval := maxf(0.3, 2.0 - GameManager.elapsed_time * 0.008)
 	if _timer >= interval:
 		_timer = 0.0
-		for i in 10:
+		var batch := clampi(int(lerpf(1.0, BATCH_MAX, GameManager.elapsed_time / RAMP_DURATION)), 1, BATCH_MAX)
+		for i in batch:
 			_spawn()
 
 
@@ -53,17 +57,14 @@ func _spawn() -> void:
 			chosen = e
 			break
 
-	var angle := randf() * TAU
-	var offset := Vector3(cos(angle), 0.0, sin(angle)) * spawn_radius * 3.0
-	var pos := car.global_position + offset
-	pos.y += 10.0
-
+	var spawn_dist := spawn_radius * 3.0
 	var key: String = (chosen.get("scene") as PackedScene).resource_path
 	var enemy: BaseEnemy
 
 	if _inactive.has(key) and not (_inactive[key] as Array).is_empty():
 		enemy = (_inactive[key] as Array).pop_back() as BaseEnemy
-		enemy.reset_for_spawn(pos, car)
+		enemy.reset_for_spawn(car.global_position, car)
+		enemy.drop_near(car.global_position, spawn_dist)
 	else:
 		var enemy_scene := chosen.get("scene") as PackedScene
 		enemy = enemy_scene.instantiate() as BaseEnemy
@@ -71,7 +72,7 @@ func _spawn() -> void:
 		enemy.pool_key = key
 		enemy.car = car
 		add_child(enemy)
-		enemy.global_position = pos
+		enemy.drop_near(car.global_position, spawn_dist)
 
 	_active_count += 1
 

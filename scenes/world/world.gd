@@ -12,7 +12,7 @@ func _ready() -> void:
 
 	var music := $MusicPlayer as AudioStreamPlayer
 	(music.stream as AudioStreamMP3).loop = true
-	music.volume_db = -3.0
+	music.volume_db = -1.0
 	music.play()
 
 
