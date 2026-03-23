@@ -35,6 +35,14 @@ func _ready() -> void:
 	_setup_psx_screen()
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and (event as InputEventKey).pressed and (event as InputEventKey).keycode == KEY_SEMICOLON:
+		var debug_on: bool = not car.get("show_debug")
+		car.set("show_debug", debug_on)
+		for wheel in car.get("wheels"):
+			(wheel as Node).set("show_debug", debug_on)
+
+
 func _spawn_level_exit() -> void:
 	var angle := randf() * TAU
 	var pos := Vector3(cos(angle) * EXIT_DISTANCE, 0.5, sin(angle) * EXIT_DISTANCE)

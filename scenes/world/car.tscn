@@ -50,7 +50,7 @@ steer_curve = SubResource("Curve_steer")
 tire_turn_speed = 3.0
 tire_max_turn_degrees = 26
 roll_damping = 10.0
-show_debug = true
+show_debug = false
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.385903, 0)
@@ -69,7 +69,7 @@ wheel_radius = 0.33
 z_brake_traction = 0.5
 is_steer = true
 grip_curve = ExtResource("3_tireback")
-show_debug = true
+show_debug = false
 
 [node name="wheel_nissan2" parent="WheelFL" instance=ExtResource("4_wheelglb")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
@@ -94,7 +94,7 @@ wheel_radius = 0.33
 z_brake_traction = 0.5
 is_steer = true
 grip_curve = ExtResource("5_tirefront")
-show_debug = true
+show_debug = false
 
 [node name="wheel_nissan2" parent="WheelFR" instance=ExtResource("4_wheelglb")]
 
@@ -118,7 +118,7 @@ wheel_radius = 0.33
 z_brake_traction = 0.5
 is_motor = true
 grip_curve = ExtResource("3_tireback")
-show_debug = true
+show_debug = false
 
 [node name="wheel_nissan2" parent="WheelRL" instance=ExtResource("4_wheelglb")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
@@ -143,7 +143,7 @@ wheel_radius = 0.33
 z_brake_traction = 0.5
 is_motor = true
 grip_curve = ExtResource("3_tireback")
-show_debug = true
+show_debug = false
 
 [node name="wheel_nissan2" parent="WheelRR" instance=ExtResource("4_wheelglb")]
 
