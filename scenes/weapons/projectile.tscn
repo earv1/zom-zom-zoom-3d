@@ -4,10 +4,10 @@
 [ext_resource type="Material" path="res://assets/prototype/prototype-materials/white_square.tres" id="2_mat"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_proj"]
-size = Vector3(0.3, 0.3, 0.3)
+size = Vector3(0.6, 0.6, 0.6)
 
 [sub_resource type="BoxMesh" id="BoxMesh_proj"]
-size = Vector3(0.3, 0.3, 0.3)
+size = Vector3(0.6, 0.6, 0.6)
 
 [node name="Projectile" type="Area3D"]
 script = ExtResource("1_proj")

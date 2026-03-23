@@ -52,6 +52,14 @@ func _draw() -> void:
 		var color: Color = obj["color"]
 		var label: String = obj["label"]
 
+		# Dynamic label for exit gate
+		if node.has_method("is_active") and label == "EXIT":
+			if not node.is_active():
+				color = Color(0.5, 0.5, 0.5)
+				label = "EXIT (Lv %d)" % node.REQUIRED_LEVEL
+			else:
+				color = obj["color"]
+
 		# Distance for the label
 		var dist := _camera.global_position.distance_to(world_pos)
 		var dist_text: String

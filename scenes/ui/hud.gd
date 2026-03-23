@@ -1,6 +1,14 @@
 class_name HUD
 extends CanvasLayer
 
+const NEAR_MISS_RADIUS := 5.0
+const NEAR_MISS_XP := 10
+const SHAKE_DURATION := 0.3
+const SHAKE_INTENSITY := 8.0
+
+const PopupTextScript := preload("res://scenes/ui/popup_text.gd")
+const TrickInputDisplayScript := preload("res://scenes/ui/trick_input_display.gd")
+
 @onready var _health_bar: ProgressBar = $HealthBar
 @onready var _timer_label: Label = $XPLabels/TimerLabel
 @onready var _level_label: Label = $XPLabels/LevelLabel
@@ -15,6 +23,10 @@ extends CanvasLayer
 var _car_boost: CarBoost
 var _car: RigidBody3D
 var _health_tween: Tween
+var _popup_text: Control
+var _shake_timer := 0.0
+var _near_miss_cooldowns: Dictionary = {}  # enemy instance_id -> float
+var _trick_display: Control
 
 
 func _ready() -> void:
@@ -35,14 +47,105 @@ func _ready() -> void:
 		_car = _car_boost.get_parent() as RigidBody3D
 	_boost_container.visible = false
 
+	_setup_popup_text()
 
-func _process(_delta: float) -> void:
+	# Connect trick signals
+	_setup_trick_display()
+	if _car:
+		var air_ctrl := _car.get_node_or_null("CarAirControl") as CarAirControl
+		if air_ctrl:
+			air_ctrl.trick_landed.connect(_on_trick_landed)
+			air_ctrl.trick_input.connect(_trick_display.on_trick_input)
+			air_ctrl.trick_sequence_reset.connect(_trick_display.on_sequence_reset)
+			air_ctrl.trick_spin_started.connect(_trick_display.on_spin_started)
+			air_ctrl.trick_spin_ended.connect(_trick_display.on_spin_ended)
+
+
+func _process(delta: float) -> void:
 	var secs := int(GameManager.elapsed_time)
 	_timer_label.text = "%02d:%02d" % [secs / 60, secs % 60]
 	_update_boost_bar()
 	if _car:
 		_speed_label.text = "%d km/h" % int(_car.linear_velocity.length() * 3.6)
+		_check_near_misses(delta)
+	_update_shake(delta)
 
+
+# ── Popup Text ────────────────────────────────────────────────────────────────
+
+func _setup_trick_display() -> void:
+	_trick_display = Control.new()
+	_trick_display.set_script(TrickInputDisplayScript)
+	_trick_display.name = "TrickInputDisplay"
+	add_child(_trick_display)
+
+
+func _setup_popup_text() -> void:
+	_popup_text = Control.new()
+	_popup_text.set_script(PopupTextScript)
+	_popup_text.name = "PopupText"
+	add_child(_popup_text)
+
+
+func show_popup(text: String, color: Color = Color.WHITE) -> void:
+	if _popup_text:
+		_popup_text.show_text(text, color)
+
+
+# ── Screen Shake ──────────────────────────────────────────────────────────────
+
+func trigger_shake() -> void:
+	_shake_timer = SHAKE_DURATION
+
+
+func _update_shake(delta: float) -> void:
+	if _shake_timer > 0.0:
+		_shake_timer -= delta
+		var intensity := (_shake_timer / SHAKE_DURATION) * SHAKE_INTENSITY
+		offset = Vector2(
+			randf_range(-intensity, intensity),
+			randf_range(-intensity, intensity)
+		)
+	else:
+		offset = Vector2.ZERO
+
+
+# ── Near-Miss XP ─────────────────────────────────────────────────────────────
+
+func _check_near_misses(delta: float) -> void:
+	# Expire cooldowns
+	var expired: Array = []
+	for id in _near_miss_cooldowns:
+		_near_miss_cooldowns[id] -= delta
+		if _near_miss_cooldowns[id] <= 0.0:
+			expired.append(id)
+	for id in expired:
+		_near_miss_cooldowns.erase(id)
+
+	for enemy in get_tree().get_nodes_in_group("enemies"):
+		if not is_instance_valid(enemy) or not enemy is RigidBody3D:
+			continue
+		if not (enemy as Node3D).visible:
+			continue
+		var eid := enemy.get_instance_id()
+		if _near_miss_cooldowns.has(eid):
+			continue
+		var dist: float = (enemy as Node3D).global_position.distance_to(_car.global_position)
+		if dist > NEAR_MISS_RADIUS and dist < NEAR_MISS_RADIUS + 3.0:
+			GameManager.add_xp(NEAR_MISS_XP)
+			show_popup("NEAR MISS +%d" % (NEAR_MISS_XP * 3), Color(1.0, 0.9, 0.2))
+			_near_miss_cooldowns[eid] = 2.0  # cooldown per enemy
+
+
+# ── Tricks ────────────────────────────────────────────────────────────────────
+
+func _on_trick_landed(trick_name: String, spin_count: int) -> void:
+	var xp := 50 * spin_count
+	GameManager.add_xp(xp)
+	show_popup("%s x%d  +%d" % [trick_name, spin_count, xp * 3], Color(0.3, 1.0, 0.8))
+
+
+# ── Boost Bar ─────────────────────────────────────────────────────────────────
 
 func _update_boost_bar() -> void:
 	if not _car_boost:
@@ -67,9 +170,12 @@ func _update_boost_bar() -> void:
 		_boost_container.visible = false
 
 
+# ── Health ────────────────────────────────────────────────────────────────────
+
 func _on_health_changed(current: int, maximum: int) -> void:
 	_health_bar.max_value = maximum
 	var took_damage := current < _health_bar.value
+	var healed := current > _health_bar.value
 	if _health_tween:
 		_health_tween.kill()
 	_health_tween = create_tween()
@@ -78,6 +184,14 @@ func _on_health_changed(current: int, maximum: int) -> void:
 	if took_damage:
 		_health_bar.modulate = Color(2.0, 0.4, 0.4)
 		create_tween().tween_property(_health_bar, "modulate", Color.WHITE, 0.4)
+		trigger_shake()
+	elif healed:
+		_health_bar.modulate = Color(0.4, 2.0, 0.4)
+		create_tween().tween_property(_health_bar, "modulate", Color.WHITE, 0.5)
+		show_popup("+%d HP" % HEAL_DISPLAY, Color(0.3, 1.0, 0.4))
+
+# Used for heal popup display
+const HEAL_DISPLAY := 25
 
 
 func _on_xp_changed(current: int, to_next: int) -> void:

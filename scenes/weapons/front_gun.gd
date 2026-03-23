@@ -19,11 +19,28 @@ func fire() -> void:
 		_fire_projectile(0.0, nearest)
 
 
+const FRONT_COS := cos(deg_to_rad(20.0))  # ~0.94
+const BACK_COS := cos(deg_to_rad(180.0 - 40.0))  # ~-0.77
+const FRONT_RANGE := 60.0
+const BACK_RANGE := 15.0
+
 func _get_nearest_enemy() -> Node3D:
 	var nearest: Node3D = null
 	var nearest_dist := INF
+	var forward := -car.global_basis.z
+	forward.y = 0.0
+	forward = forward.normalized()
 	for e in get_tree().get_nodes_in_group("enemies"):
-		var dist := (e as Node3D).global_position.distance_to(car.global_position)
+		var to_enemy := (e as Node3D).global_position - car.global_position
+		to_enemy.y = 0.0
+		var dist := to_enemy.length()
+		var dot := to_enemy.normalized().dot(forward)
+		# Front cone: within 20° of forward, back cone: within 40° of rear
+		if dot < FRONT_COS and dot > BACK_COS:
+			continue
+		var max_range := FRONT_RANGE if dot >= FRONT_COS else BACK_RANGE
+		if dist > max_range:
+			continue
 		if dist < nearest_dist:
 			nearest_dist = dist
 			nearest = e as Node3D

@@ -2,13 +2,18 @@ class_name LevelExit
 extends Node3D
 
 ## Visible pillar of light marking the level exit.
+## Requires minimum level to activate.
 
 const TRIGGER_RADIUS := 8.0
+const REQUIRED_LEVEL := 5
 
 var _mesh: MeshInstance3D
 var _glow: MeshInstance3D
 var _car: Node3D
 var _time := 0.0
+var _active := false
+var _mat: StandardMaterial3D
+var _glow_mat: StandardMaterial3D
 
 
 func _ready() -> void:
@@ -21,13 +26,43 @@ func set_car(car: Node3D) -> void:
 
 func _process(delta: float) -> void:
 	_time += delta
-	# Gentle bob
+
+	# Check if level requirement met
+	var was_active := _active
+	_active = GameManager.current_level >= REQUIRED_LEVEL
+
+	if _active != was_active:
+		_update_colors()
+
 	if _mesh:
 		_mesh.position.y = 2.0 + sin(_time * 2.0) * 0.3
 	if _glow:
 		_glow.position.y = 1.0
 		var s := 1.0 + sin(_time * 3.0) * 0.15
 		_glow.scale = Vector3(s, 1.0, s)
+
+
+func is_active() -> bool:
+	return _active
+
+
+func _update_colors() -> void:
+	if _active:
+		if _mat:
+			_mat.albedo_color = Color(0.2, 1.0, 0.4, 0.6)
+			_mat.emission = Color(0.2, 1.0, 0.4)
+		if _glow_mat:
+			_glow_mat.albedo_color = Color(0.2, 1.0, 0.4, 0.3)
+			_glow_mat.emission = Color(0.2, 1.0, 0.4)
+	else:
+		if _mat:
+			_mat.albedo_color = Color(0.5, 0.5, 0.5, 0.3)
+			_mat.emission = Color(0.3, 0.3, 0.3)
+			_mat.emission_energy_multiplier = 1.0
+		if _glow_mat:
+			_glow_mat.albedo_color = Color(0.5, 0.5, 0.5, 0.15)
+			_glow_mat.emission = Color(0.3, 0.3, 0.3)
+			_glow_mat.emission_energy_multiplier = 0.5
 
 
 func _setup_visuals() -> void:
@@ -41,14 +76,13 @@ func _setup_visuals() -> void:
 	mesh_inst.mesh = cyl
 	mesh_inst.position.y = 2.0
 
-	var mat := StandardMaterial3D.new()
-	mat.albedo_color = Color(0.2, 1.0, 0.4)
-	mat.emission_enabled = true
-	mat.emission = Color(0.2, 1.0, 0.4)
-	mat.emission_energy_multiplier = 3.0
-	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-	mat.albedo_color.a = 0.6
-	mesh_inst.material_override = mat
+	_mat = StandardMaterial3D.new()
+	_mat.albedo_color = Color(0.5, 0.5, 0.5, 0.3)
+	_mat.emission_enabled = true
+	_mat.emission = Color(0.3, 0.3, 0.3)
+	_mat.emission_energy_multiplier = 1.0
+	_mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	mesh_inst.material_override = _mat
 	add_child(mesh_inst)
 	_mesh = mesh_inst
 
@@ -62,12 +96,12 @@ func _setup_visuals() -> void:
 	glow_inst.mesh = torus
 	glow_inst.position.y = 1.0
 
-	var glow_mat := StandardMaterial3D.new()
-	glow_mat.albedo_color = Color(0.2, 1.0, 0.4, 0.3)
-	glow_mat.emission_enabled = true
-	glow_mat.emission = Color(0.2, 1.0, 0.4)
-	glow_mat.emission_energy_multiplier = 2.0
-	glow_mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-	glow_inst.material_override = glow_mat
+	_glow_mat = StandardMaterial3D.new()
+	_glow_mat.albedo_color = Color(0.5, 0.5, 0.5, 0.15)
+	_glow_mat.emission_enabled = true
+	_glow_mat.emission = Color(0.3, 0.3, 0.3)
+	_glow_mat.emission_energy_multiplier = 0.5
+	_glow_mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	glow_inst.material_override = _glow_mat
 	add_child(glow_inst)
 	_glow = glow_inst

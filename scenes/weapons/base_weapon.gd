@@ -43,7 +43,8 @@ func _spawn_projectile(dir: Vector3, speed: float, target: Node3D = null) -> voi
 	var proj: Projectile = _PROJ_SCENE.instantiate()
 	proj.damage = get_damage()
 	proj.direction = dir
-	proj.speed = speed
+	var car_boost := (car as RigidBody3D).linear_velocity.dot(dir) if car is RigidBody3D else 0.0
+	proj.speed = speed + car_boost
 	proj.target = target
 	get_tree().current_scene.add_child(proj)
 	proj.global_position = car.global_position + dir * 2.5 + Vector3.UP * 0.5

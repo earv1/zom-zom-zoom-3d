@@ -26,6 +26,10 @@ connector-test:
 world:
     "{{godot}}" --path "{{project}}" --scene scenes/world/world.tscn
 
+# Run the main game world with no audio
+world-mute:
+    "{{godot}}" --path "{{project}}" --scene scenes/world/world.tscn --audio-driver Dummy
+
 # Check for script compilation + type errors (headless, no window)
 # Filters out known false positives: autoloads (GameManager) and debug plugins (DebugDraw)
 # that are unavailable in --script mode but work fine at runtime.

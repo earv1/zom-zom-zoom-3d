@@ -52,7 +52,7 @@ func _get_pooled_strip() -> MeshInstance3D:
 func _create_strip() -> MeshInstance3D:
 	var strip := MeshInstance3D.new()
 	strip.set_script(_SkidMarkScript)
-	get_tree().current_scene.add_child(strip)
+	get_tree().current_scene.add_child.call_deferred(strip)
 	return strip
 
 
