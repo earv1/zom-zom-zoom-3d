@@ -76,6 +76,25 @@ if [ -f "$COI_FILE" ] && [ -f "$OUT_DIR/index.html" ]; then
   fi
 fi
 
+# --- Cache-busting ----------------------------------------------------------
+# Append ?v=<short-sha> to asset references so browsers fetch fresh files.
+CACHE_SHA=$(git log --format="%h" --grep="^build: " --invert-grep -1 2>/dev/null)
+if [ -n "$CACHE_SHA" ] && [ -f "$OUT_DIR/index.html" ]; then
+  echo ""
+  echo "Adding cache-busting query strings (v=$CACHE_SHA) ..."
+  # Add no-cache meta tag for the HTML itself
+  sed -i '' 's|<head>|<head>\n<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">|' "$OUT_DIR/index.html"
+  # Bust .js, .wasm, .pck, .png references
+  sed -i '' "s|\(index\.js\)\"|index.js?v=$CACHE_SHA\"|g" "$OUT_DIR/index.html"
+  sed -i '' "s|\(index\.wasm\)\"|index.wasm?v=$CACHE_SHA\"|g" "$OUT_DIR/index.html"
+  sed -i '' "s|\(index\.pck\)\"|index.pck?v=$CACHE_SHA\"|g" "$OUT_DIR/index.html"
+  sed -i '' "s|\(index\.png\)\"|index.png?v=$CACHE_SHA\"|g" "$OUT_DIR/index.html"
+  sed -i '' "s|\(index\.icon\.png\)\"|index.icon.png?v=$CACHE_SHA\"|g" "$OUT_DIR/index.html"
+  sed -i '' "s|\(index\.audio\.worklet\.js\)\"|index.audio.worklet.js?v=$CACHE_SHA\"|g" "$OUT_DIR/index.html"
+  sed -i '' "s|\(index\.audio\.position\.worklet\.js\)\"|index.audio.position.worklet.js?v=$CACHE_SHA\"|g" "$OUT_DIR/index.html"
+  echo "Cache-busting applied."
+fi
+
 # --- Zip for Git LFS --------------------------------------------------------
 echo ""
 echo "Zipping to build/build.zip ..."

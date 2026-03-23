@@ -13,7 +13,7 @@ func _ready() -> void:
 	mat.shader = shader
 	mat.set_shader_parameter("color_depth", 15)
 	mat.set_shader_parameter("dither_strength", 0.4)
-	mat.set_shader_parameter("target_resolution", Vector2i(640, 480))
+	mat.set_shader_parameter("target_resolution", Vector2i(960, 720))
 
 	_rect = ColorRect.new()
 	_rect.material = mat
