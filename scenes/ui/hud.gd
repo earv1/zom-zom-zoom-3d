@@ -59,6 +59,10 @@ func _ready() -> void:
 			air_ctrl.trick_sequence_reset.connect(_trick_display.on_sequence_reset)
 			air_ctrl.trick_spin_started.connect(_trick_display.on_spin_started)
 			air_ctrl.trick_spin_ended.connect(_trick_display.on_spin_ended)
+		else:
+			push_warning("HUD: CarAirControl not found on car")
+	else:
+		push_warning("HUD: _car is null, trick display signals not connected")
 
 
 func _process(delta: float) -> void:
@@ -77,6 +81,8 @@ func _setup_trick_display() -> void:
 	_trick_display = Control.new()
 	_trick_display.set_script(TrickInputDisplayScript)
 	_trick_display.name = "TrickInputDisplay"
+	_trick_display.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_trick_display.size = get_viewport().get_visible_rect().size
 	add_child(_trick_display)
 
 
