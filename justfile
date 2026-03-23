@@ -16,7 +16,7 @@ run:
 
 # Run the test track directly
 track:
-    "{{godot}}" --path "{{project}}" --scene scenes/test_track/test_track.tscn
+    "{{godot}}" --path "{{project}}" --scene scenes/test_track/test_track2.tscn
 
 # Run the connector visual test scene
 connector-test:

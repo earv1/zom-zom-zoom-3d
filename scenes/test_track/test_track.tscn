@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://dl32qf07aht26"]
+[gd_scene format=3 uid="uid://c517f6ws4520g"]
 
 [ext_resource type="MeshLibrary" uid="uid://b6myd2b7l2o2j" path="res://models/Library/mesh-library.tres" id="1_meshlib"]
 [ext_resource type="PackedScene" uid="uid://cmpcr4wp2d8gk" path="res://scenes/environment_and_light.tscn" id="2_env"]
 [ext_resource type="PackedScene" path="res://scenes/world/car.tscn" id="3_car"]
-[ext_resource type="Script" uid="uid://eq5sidj3ukeq" path="res://scenes/test_track/trick_display.gd" id="4_tricks"]
-[ext_resource type="Script" uid="uid://b7qdx685rh77r" path="res://scenes/test_track/test_track.gd" id="5_tt"]
+[ext_resource type="Script" path="res://scenes/test_track/trick_display.gd" id="4_tricks"]
+[ext_resource type="Script" path="res://scenes/test_track/test_track.gd" id="5_tt"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_track"]
 friction = 0.8
@@ -16,6 +16,7 @@ size = Vector3(500, 0.2, 500)
 script = ExtResource("5_tt")
 
 [node name="Environment" parent="." unique_id=1907472309 instance=ExtResource("2_env")]
+transform = Transform3D(0.8658247, -0.43326417, 0.25025928, 0, 0.500171, 0.8659266, -0.50034744, -0.74974066, 0.4330604, 0, 0, 0)
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=419859524]
 transform = Transform3D(-0.422618, -0.694272, 0.582564, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)

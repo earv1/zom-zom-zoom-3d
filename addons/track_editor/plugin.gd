@@ -604,6 +604,8 @@ func _create_connector(piece_a: Node3D, piece_b: Node3D) -> void:
 	conn.set("start_dir",  start_dir)
 	conn.set("end_pos",    face_b)
 	conn.set("end_dir",    end_dir)
+	conn.set("start_up",   piece_a.basis.y.normalized())
+	conn.set("end_up",     piece_b.basis.y.normalized())
 	conn.set("road_width", start_width)
 	conn.set("start_width", start_width)
 	conn.set("end_width", end_width)

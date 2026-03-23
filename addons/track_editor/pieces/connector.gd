@@ -17,6 +17,8 @@ const DEBUG_LINE_WIDTH := 0.3   # world-space half-width of debug ribbon segment
 @export_storage var start_dir  := Vector3(0, 0, 1)
 @export_storage var end_pos    := Vector3(8, 0, 0)
 @export_storage var end_dir    := Vector3(1, 0, 0)
+@export_storage var start_up   := Vector3.UP  # surface normal at start
+@export_storage var end_up     := Vector3.UP  # surface normal at end
 @export_storage var road_width := 6.0
 @export_storage var start_width := 6.0
 @export_storage var end_width := 6.0
@@ -78,15 +80,17 @@ func _build() -> void:
 	add_child(sb)
 
 	var widths: Array = []
+	var up_dirs: Array = []
 	for i in range(points.size()):
 		var t: float = float(i) / max(1, points.size() - 1)
 		widths.append(_width_at(t))
+		up_dirs.append(_slerp_up(t))
 
 	RibbonBuilder.add_ribbon(
 		self, sb, points, width_dirs, widths,
 		mat, side_mat, line_mat,
 		TrackTheme.show_sides(theme_mode), TrackTheme.show_lines(theme_mode),
-		SLAB_T, KERB_W, KERB_H
+		SLAB_T, KERB_W, KERB_H, up_dirs
 	)
 
 func sample_centerline(steps: int = STEPS) -> Array:
@@ -165,9 +169,14 @@ func _sample_flush_approach_path(steps: int) -> Dictionary:
 	var p2: Vector3 = end_pos - planar_end * approach_len
 	var p3: Vector3 = end_pos
 	var world_points := _sample_polyline([p0, p1, p2, p3], steps)
+	var local_points := _to_local_points(world_points)
+	var chord := end_pos - start_pos
+	if chord.length_squared() < 0.0001:
+		chord = start_dir
+	var width_dirs := _constant_width_dirs(steps, _straight_width_dir())
 	return {
-		"points": _to_local_points(world_points),
-		"width_dirs": _constant_width_dirs(steps, _straight_width_dir()),
+		"points": local_points,
+		"width_dirs": width_dirs,
 		"controls": _to_local_points([p0, p1, p2, p3]),
 	}
 
@@ -188,13 +197,14 @@ func _sample_guided_turn_path(steps: int) -> Dictionary:
 
 	var guides: Array = [p0, p1, p2, p3]
 	var points: Array = []
-	var width_dirs: Array = []
 	for i in range(steps + 1):
 		var t: float = float(i) / steps
 		var world_point := _sample_cubic_bezier(p0, p1, p2, p3, t)
-		var tangent := _sample_cubic_bezier_derivative(p0, p1, p2, p3, t)
 		points.append(world_point - start_pos)
-		width_dirs.append(_width_dir_from_tangent(tangent))
+
+	var tangent_func := func(t: float) -> Vector3:
+		return _sample_cubic_bezier_derivative(p0, p1, p2, p3, t)
+	var width_dirs := _interpolated_width_dirs(steps, tangent_func)
 	return {"points": points, "width_dirs": width_dirs, "controls": _to_local_points(guides)}
 
 func _sample_straight_centerline(steps: int) -> Array:
@@ -226,20 +236,53 @@ func _sample_polyline(world_points: Array, steps: int) -> Array:
 	return sampled
 
 func _straight_width_dir() -> Vector3:
-	var planar := end_pos - start_pos
-	planar.y = 0.0
-	if planar.length_squared() < 0.0001:
-		planar = start_dir
-		planar.y = 0.0
-	if planar.length_squared() < 0.0001:
+	var chord := end_pos - start_pos
+	if chord.length_squared() < 0.0001:
+		chord = start_dir
+	if chord.length_squared() < 0.0001:
 		return Vector3.RIGHT
-	return planar.normalized().cross(Vector3.UP).normalized()
+	return _width_dir_from_tangent(chord, start_up)
+
+func _interpolated_width_dirs(steps: int, tangent_func: Callable) -> Array:
+	## Build width dirs by slerping start_up → end_up along the path.
+	var dirs: Array = []
+	for i in range(steps + 1):
+		var t: float = float(i) / steps
+		var up := _slerp_up(t)
+		var tangent: Vector3 = tangent_func.call(t)
+		dirs.append(_width_dir_from_tangent(tangent, up))
+	return dirs
 
 func _constant_width_dirs(steps: int, dir: Vector3) -> Array:
-	var dirs: Array = []
-	for _i in range(steps + 1):
-		dirs.append(dir)
-	return dirs
+	# When start_up == end_up, no twist needed
+	if start_up.is_equal_approx(end_up):
+		var dirs: Array = []
+		for _i in range(steps + 1):
+			dirs.append(dir)
+		return dirs
+	# Otherwise interpolate the twist
+	var chord := end_pos - start_pos
+	if chord.length_squared() < 0.0001:
+		chord = start_dir
+	return _interpolated_width_dirs(steps, func(_t: float) -> Vector3: return chord)
+
+func _slerp_up(t: float) -> Vector3:
+	## Spherical lerp between start_up and end_up.
+	var a := start_up.normalized()
+	var b := end_up.normalized()
+	var dot := clampf(a.dot(b), -1.0, 1.0)
+	if dot > 0.9999:
+		return a
+	if dot < -0.9999:
+		# 180° — pick an intermediate axis
+		var mid := a.cross(start_dir.normalized()).normalized()
+		if mid.length_squared() < 0.001:
+			mid = a.cross(Vector3.FORWARD).normalized()
+		if t < 0.5:
+			return a.slerp(mid, t * 2.0).normalized()
+		else:
+			return mid.slerp(b, (t - 0.5) * 2.0).normalized()
+	return a.slerp(b, t).normalized()
 
 func _to_local_points(world_points: Array) -> Array:
 	var local_points: Array = []
@@ -247,11 +290,14 @@ func _to_local_points(world_points: Array) -> Array:
 		local_points.append((point as Vector3) - start_pos)
 	return local_points
 
-func _width_dir_from_tangent(tangent: Vector3) -> Vector3:
-	tangent.y = 0.0
+func _width_dir_from_tangent(tangent: Vector3, up: Vector3 = Vector3.UP) -> Vector3:
 	if tangent.length_squared() < 0.0001:
 		return Vector3.RIGHT
-	return tangent.normalized().cross(Vector3.UP).normalized()
+	var right := tangent.normalized().cross(up).normalized()
+	if right.length_squared() < 0.0001:
+		# Tangent parallel to up — pick a fallback
+		right = tangent.normalized().cross(Vector3.FORWARD).normalized()
+	return right
 
 func _sample_cubic_bezier(p0: Vector3, p1: Vector3, p2: Vector3, p3: Vector3, t: float) -> Vector3:
 	var u := 1.0 - t

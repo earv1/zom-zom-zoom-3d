@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://cmpcr4wp2d8gk" path="res://scenes/environment_and_light.tscn" id="1_env"]
 [ext_resource type="Script" uid="uid://cpjh0jmth1bnh" path="res://scenes/test_track/connector_visual_test.gd" id="2_script"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/straight.tscn" id="3_m4cv5"]
+[ext_resource type="Script" uid="uid://bpcxurflb1ppq" path="res://addons/track_editor/pieces/straight.gd" id="4_kklry"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ground"]
 size = Vector3(500, 0.2, 500)
@@ -9,6 +11,7 @@ size = Vector3(500, 0.2, 500)
 [node name="ConnectorVisualTest" type="Node3D" unique_id=668472858]
 
 [node name="Environment" parent="." unique_id=514780106 instance=ExtResource("1_env")]
+transform = Transform3D(0.8658247, -0.43326417, 0.25025928, 0, 0.500171, 0.8659266, -0.50034744, -0.74974066, 0.4330604, 0, 0, 0)
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=762881868]
 transform = Transform3D(-0.422618, -0.694272, 0.582564, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
@@ -28,3 +31,11 @@ transform = Transform3D(1, 0, 0, 0, 0.5, 0.866, 0, -0.866, 0.5, 45, 80, 30)
 script = ExtResource("2_script")
 
 [node name="TrackRoot" type="Node3D" parent="." unique_id=37158668]
+
+[node name="straight_52_12_108" type="Node3D" parent="TrackRoot" unique_id=166464472 instance=ExtResource("3_m4cv5")]
+transform = Transform3D(0, 1, 0, -1, 0, -4.371139e-08, -4.371139e-08, 0, 1, 52, 12, 108)
+script = ExtResource("4_kklry")
+
+[node name="straight_-52_12_68" type="Node3D" parent="TrackRoot" unique_id=1141190974 instance=ExtResource("3_m4cv5")]
+transform = Transform3D(0, 1, 0, -1, 0, -4.371139e-08, -4.371139e-08, 0, 1, -52, 12, 68)
+script = ExtResource("4_kklry")

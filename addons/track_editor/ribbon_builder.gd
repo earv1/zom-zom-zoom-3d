@@ -6,9 +6,17 @@ class_name TrackRibbonBuilder
 static func add_ribbon(parent: Node3D, static_body: StaticBody3D, points: Array, width_dirs: Array,
 		widths: Array, road_mat: Material, side_mat: Material, line_mat: Material,
 		show_sides: bool, show_lines: bool,
-		slab_t: float = 0.3, kerb_w: float = 0.35, kerb_h: float = 0.1) -> void:
+		slab_t: float = 0.3, kerb_w: float = 0.35, kerb_h: float = 0.1,
+		up_dirs: Array = []) -> void:
 	if points.size() < 2 or width_dirs.size() != points.size() or widths.size() != points.size():
 		return
+
+	# If no up_dirs provided, default to Vector3.UP for all points
+	var ups: Array = up_dirs
+	if ups.size() != points.size():
+		ups = []
+		for _i in range(points.size()):
+			ups.append(Vector3.UP)
 
 	var aligned_width_dirs: Array = []
 	for i in range(width_dirs.size()):
@@ -31,6 +39,8 @@ static func add_ribbon(parent: Node3D, static_body: StaticBody3D, points: Array,
 		var b_center: Vector3 = points[i + 1]
 		var a_width_dir: Vector3 = aligned_width_dirs[i]
 		var b_width_dir: Vector3 = aligned_width_dirs[i + 1]
+		var a_up: Vector3 = ups[i]
+		var b_up: Vector3 = ups[i + 1]
 		var a_half_w := float(widths[i]) * 0.5
 		var b_half_w := float(widths[i + 1]) * 0.5
 
@@ -40,31 +50,32 @@ static func add_ribbon(parent: Node3D, static_body: StaticBody3D, points: Array,
 		var b_right := b_center + b_width_dir * b_half_w
 
 		var road := MeshInstance3D.new()
-		road.mesh = _segment_mesh(a_left, a_right, b_left, b_right, slab_t, false, false)
+		road.mesh = _segment_mesh_up(a_left, a_right, b_left, b_right, slab_t, a_up, b_up, false, false)
 		road.material_override = road_mat.duplicate()
 		parent.add_child(road)
 
 		if show_sides:
 			var left_kerb := MeshInstance3D.new()
-			left_kerb.mesh = _segment_mesh(a_left - a_width_dir * kerb_w, a_left, b_left - b_width_dir * kerb_w, b_left, kerb_h, false, false)
+			left_kerb.mesh = _segment_mesh_up(a_left - a_width_dir * kerb_w, a_left, b_left - b_width_dir * kerb_w, b_left, kerb_h, a_up, b_up, false, false)
 			left_kerb.material_override = side_mat.duplicate()
 			parent.add_child(left_kerb)
 
 			var right_kerb := MeshInstance3D.new()
-			right_kerb.mesh = _segment_mesh(a_right, a_right + a_width_dir * kerb_w, b_right, b_right + b_width_dir * kerb_w, kerb_h, false, false)
+			right_kerb.mesh = _segment_mesh_up(a_right, a_right + a_width_dir * kerb_w, b_right, b_right + b_width_dir * kerb_w, kerb_h, a_up, b_up, false, false)
 			right_kerb.material_override = side_mat.duplicate()
 			parent.add_child(right_kerb)
 
 		if show_lines:
 			var stripe_half_w: float = min(a_half_w, b_half_w) * 0.08
-			var stripe_raise := Vector3.UP * 0.01
+			var a_stripe_raise := a_up * 0.01
+			var b_stripe_raise := b_up * 0.01
 			var line := MeshInstance3D.new()
-			line.mesh = _segment_mesh(
-				a_center - a_width_dir * stripe_half_w + stripe_raise,
-				a_center + a_width_dir * stripe_half_w + stripe_raise,
-				b_center - b_width_dir * stripe_half_w + stripe_raise,
-				b_center + b_width_dir * stripe_half_w + stripe_raise,
-				0.02,
+			line.mesh = _segment_mesh_up(
+				a_center - a_width_dir * stripe_half_w + a_stripe_raise,
+				a_center + a_width_dir * stripe_half_w + a_stripe_raise,
+				b_center - b_width_dir * stripe_half_w + b_stripe_raise,
+				b_center + b_width_dir * stripe_half_w + b_stripe_raise,
+				0.02, a_up, b_up,
 				false,
 				false
 			)
@@ -73,10 +84,11 @@ static func add_ribbon(parent: Node3D, static_body: StaticBody3D, points: Array,
 
 		var cs := CollisionShape3D.new()
 		var cps := ConvexPolygonShape3D.new()
-		var down := Vector3(0, slab_t, 0)
+		var a_down := a_up * slab_t
+		var b_down := b_up * slab_t
 		cps.points = PackedVector3Array([
 			a_left, a_right, b_right, b_left,
-			a_left - down, a_right - down, b_right - down, b_left - down,
+			a_left - a_down, a_right - a_down, b_right - b_down, b_left - b_down,
 		])
 		cs.shape = cps
 		static_body.add_child(cs)
@@ -88,6 +100,39 @@ static func add_ribbon(parent: Node3D, static_body: StaticBody3D, points: Array,
 		_add_cap(parent, side_mat, first_center + first_dir * first_half_w, first_center + first_dir * (first_half_w + kerb_w), kerb_h, true)
 		_add_cap(parent, side_mat, last_center - last_dir * (last_half_w + kerb_w), last_center - last_dir * last_half_w, kerb_h, false)
 		_add_cap(parent, side_mat, last_center + last_dir * last_half_w, last_center + last_dir * (last_half_w + kerb_w), kerb_h, false)
+
+static func _segment_mesh_up(a_left: Vector3, a_right: Vector3, b_left: Vector3, b_right: Vector3, thick: float,
+		a_up: Vector3, b_up: Vector3, cap_start: bool, cap_end: bool) -> ArrayMesh:
+	var a_down := a_up * thick
+	var b_down := b_up * thick
+	var a_left_b := a_left - a_down
+	var a_right_b := a_right - a_down
+	var b_left_b := b_left - b_down
+	var b_right_b := b_right - b_down
+	var center := (a_left + a_right + b_left + b_right) * 0.25
+
+	var verts := PackedVector3Array()
+	var norms := PackedVector3Array()
+
+	var avg_up := (a_up + b_up).normalized()
+	_quad(verts, norms, a_left, b_left, b_right, a_right, avg_up)
+	_quad(verts, norms, a_left_b, a_right_b, b_right_b, b_left_b, -avg_up)
+	_quad(verts, norms, a_left, b_left, b_left_b, a_left_b, _outward_normal(a_left, b_left, center))
+	_quad(verts, norms, a_right, a_right_b, b_right_b, b_right, _outward_normal(a_right, b_right, center))
+	if cap_start:
+		_quad(verts, norms, a_left, a_left_b, a_right_b, a_right, _outward_normal(a_left, a_right, center))
+	if cap_end:
+		_quad(verts, norms, b_left, b_right, b_right_b, b_left_b, _outward_normal(b_right, b_left, center))
+
+	var arr := []
+	arr.resize(Mesh.ARRAY_MAX)
+	arr[Mesh.ARRAY_VERTEX] = verts
+	arr[Mesh.ARRAY_NORMAL] = norms
+
+	var mesh := ArrayMesh.new()
+	mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arr)
+	return mesh
+
 
 static func _segment_mesh(a_left: Vector3, a_right: Vector3, b_left: Vector3, b_right: Vector3, thick: float,
 		cap_start: bool, cap_end: bool) -> ArrayMesh:

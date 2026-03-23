@@ -47,6 +47,8 @@ func _spawn(c: Dictionary, offset: Vector3) -> void:
 	connector.start_dir        = c.s_dir
 	connector.end_pos          = end
 	connector.end_dir          = c.e_dir
+	connector.start_up         = c.get("s_up", Vector3.UP)
+	connector.end_up           = c.get("e_up", Vector3.UP)
 	connector.debug_show_bezier = show_bezier
 	connector.position         = start
 	add_child(connector)
@@ -153,5 +155,31 @@ func _cases() -> Array:
 			label   = "height ramp flush\n(test: flush approach end dir)",
 			start   = Vector3.ZERO,      s_dir = Vector3(0, 0, 1),
 			end     = Vector3(0, 4, 8),  e_dir = Vector3(0, 0, 1),
+		},
+
+		# ── surface twist cases ──────────────────────────────────────────
+		{
+			label   = "floor → west wall\n(twist 90° forward)",
+			start   = Vector3.ZERO,       s_dir = Vector3(0, 0, 1),
+			end     = Vector3(0, 0, 16),  e_dir = Vector3(0, 0, 1),
+			s_up    = Vector3.UP,          e_up  = Vector3(-1, 0, 0),
+		},
+		{
+			label   = "floor → east wall\n(twist 90° forward)",
+			start   = Vector3.ZERO,       s_dir = Vector3(0, 0, 1),
+			end     = Vector3(0, 0, 16),  e_dir = Vector3(0, 0, 1),
+			s_up    = Vector3.UP,          e_up  = Vector3(1, 0, 0),
+		},
+		{
+			label   = "floor → ceiling\n(twist 180° forward)",
+			start   = Vector3.ZERO,       s_dir = Vector3(0, 0, 1),
+			end     = Vector3(0, 0, 20),  e_dir = Vector3(0, 0, 1),
+			s_up    = Vector3.UP,          e_up  = Vector3.DOWN,
+		},
+		{
+			label   = "west wall → floor\n(twist + turn 90°)",
+			start   = Vector3.ZERO,       s_dir = Vector3(0, 0, 1),
+			end     = Vector3(12, 0, -4), e_dir = Vector3(1, 0, 0),
+			s_up    = Vector3(-1, 0, 0),  e_up  = Vector3.UP,
 		},
 	]

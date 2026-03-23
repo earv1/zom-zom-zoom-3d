@@ -19,7 +19,7 @@ func _on_main_game_pressed() -> void:
 
 
 func _on_test_track_pressed() -> void:
-	_start_load("res://scenes/test_track/test_track.tscn")
+	_start_load("res://scenes/test_track/test_track2.tscn")
 
 
 func _start_load(path: String) -> void:
