@@ -3,29 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://cmpcr4wp2d8gk" path="res://scenes/environment_and_light.tscn" id="1_env"]
 [ext_resource type="PackedScene" path="res://addons/track_editor/pieces/straight.tscn" id="2_b84ki"]
 [ext_resource type="PackedScene" path="res://scenes/world/car.tscn" id="2_car"]
-[ext_resource type="Script" uid="uid://bpcxurflb1ppq" path="res://addons/track_editor/pieces/straight.gd" id="3_hamww"]
 [ext_resource type="PackedScene" path="res://addons/track_editor/pieces/connector.tscn" id="4_er0gg"]
 [ext_resource type="PackedScene" path="res://addons/track_editor/pieces/loop.tscn" id="4_t88gf"]
-[ext_resource type="Script" uid="uid://pala8xtdu7u6" path="res://addons/track_editor/pieces/connector.gd" id="5_t88gf"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ground"]
-size = Vector3(5000, 0.2, 5000)
+[ext_resource type="Script" uid="uid://c5b7iinln65r4" path="res://scenes/test_track/static_tilemap.gd" id="6_tilemap"]
 
 [node name="TestTrack2" type="Node3D" unique_id=412371668]
 
 [node name="Environment" parent="." unique_id=1680316041 instance=ExtResource("1_env")]
 transform = Transform3D(0.8658247, -0.43326417, 0.25025928, 0, 0.500171, 0.8659266, -0.50034744, -0.74974066, 0.4330604, 0, 0, 0)
 
-[node name="Sun" type="DirectionalLight3D" parent="." unique_id=60940115]
-transform = Transform3D(-0.422618, -0.694272, 0.582564, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
-shadow_enabled = true
-shadow_bias = 0.2
-
 [node name="Ground" type="StaticBody3D" parent="." unique_id=301445418]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1186646147]
-shape = SubResource("BoxShape3D_ground")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+script = ExtResource("6_tilemap")
+ground_size = 1024.0
 
 [node name="TrackRoot" type="Node3D" parent="." unique_id=136794630]
 
@@ -41,8 +31,6 @@ start_pos = Vector3(-36, 0, 0)
 start_dir = Vector3(0, 0, -1)
 end_pos = Vector3(-28, 0, -16)
 end_dir = Vector3(0, 0, -1)
-start_up = Vector3(0, 1, 0)
-end_up = Vector3(0, 1, 0)
 
 [node name="straight_44_0_-44" parent="TrackRoot" unique_id=56666817 instance=ExtResource("2_b84ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, -44)
@@ -56,8 +44,6 @@ start_pos = Vector3(-12, 0, 24)
 start_dir = Vector3(0, 0, -1)
 end_pos = Vector3(44, 0, -40)
 end_dir = Vector3(0, 0, -1)
-start_up = Vector3(0, 1, 0)
-end_up = Vector3(0, 1, 0)
 
 [node name="loop_-44_0_20" parent="TrackRoot" unique_id=1910467697 instance=ExtResource("4_t88gf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, 20)
@@ -74,8 +60,6 @@ start_pos = Vector3(-12, 0, -24)
 start_dir = Vector3(0, 0, -1)
 end_pos = Vector3(4, 0, -40)
 end_dir = Vector3(0, 0, -1)
-start_up = Vector3(0, 1, 0)
-end_up = Vector3(0, 1, 0)
 debug_show_bezier = true
 
 [node name="straight_-52_0_-68" parent="TrackRoot" unique_id=178018625 instance=ExtResource("2_b84ki")]
@@ -99,8 +83,6 @@ start_pos = Vector3(-36, 0, -32)
 start_dir = Vector3(0, 0, -1)
 end_pos = Vector3(-28, 0, -48)
 end_dir = Vector3(0, 0, -1)
-start_up = Vector3(0, 1, 0)
-end_up = Vector3(0, 1, 0)
 
 [node name="straight_52_0_-4" parent="TrackRoot" unique_id=1336501749 instance=ExtResource("2_b84ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, -4)
@@ -114,8 +96,6 @@ start_pos = Vector3(28, 0, 16)
 start_dir = Vector3(0, 0, -1)
 end_pos = Vector3(52, 0, 0)
 end_dir = Vector3(0, 0, -1)
-start_up = Vector3(0, 1, 0)
-end_up = Vector3(0, 1, 0)
 
 [node name="straight_20_0_44" parent="TrackRoot" unique_id=1683024221 instance=ExtResource("2_b84ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 44)
@@ -129,8 +109,6 @@ start_pos = Vector3(-4, 0, 72)
 start_dir = Vector3(0, 0, -1)
 end_pos = Vector3(20, 0, 48)
 end_dir = Vector3(0, 0, -1)
-start_up = Vector3(0, 1, 0)
-end_up = Vector3(0, 1, 0)
 
 [node name="straight_60_0_68" parent="TrackRoot" unique_id=843178137 instance=ExtResource("2_b84ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 68)
@@ -143,8 +121,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 72)
 start_pos = Vector3(60, 0, 72)
 end_pos = Vector3(44, 0, 80)
 end_dir = Vector3(0, 0, 1)
-start_up = Vector3(0, 1, 0)
-end_up = Vector3(0, 1, 0)
 
 [node name="straight_28_0_36" parent="TrackRoot" unique_id=369789666 instance=ExtResource("2_b84ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 36)
@@ -157,8 +133,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -128)
 start_pos = Vector3(12, 0, -128)
 end_pos = Vector3(-12, 0, -120)
 end_dir = Vector3(0, 0, 1)
-start_up = Vector3(0, 1, 0)
-end_up = Vector3(0, 1, 0)
 debug_show_bezier = true
 
 [node name="straight_36_0_-84" parent="TrackRoot" unique_id=382173267 instance=ExtResource("2_b84ki")]
@@ -173,8 +147,6 @@ start_pos = Vector3(4, 0, -64)
 start_dir = Vector3(0, 0, -1)
 end_pos = Vector3(36, 0, -80)
 end_dir = Vector3(0, 0, -1)
-start_up = Vector3(0, 1, 0)
-end_up = Vector3(0, 1, 0)
 
 [node name="straight_76_0_-84" parent="TrackRoot" unique_id=1291363335 instance=ExtResource("2_b84ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76, 0, -84)
@@ -188,8 +160,6 @@ start_pos = Vector3(52, 0, -64)
 start_dir = Vector3(0, 0, -1)
 end_pos = Vector3(76, 0, -80)
 end_dir = Vector3(0, 0, -1)
-start_up = Vector3(0, 1, 0)
-end_up = Vector3(0, 1, 0)
 
 [node name="straight_76_0_-52" parent="TrackRoot" unique_id=346049325 instance=ExtResource("2_b84ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76, 0, -52)
@@ -203,8 +173,6 @@ start_pos = Vector3(68, 0, -16)
 start_dir = Vector3(0, 0, -1)
 end_pos = Vector3(76, 0, -48)
 end_dir = Vector3(0, 0, -1)
-start_up = Vector3(0, 1, 0)
-end_up = Vector3(0, 1, 0)
 
 [node name="straight_44_0_-116" parent="TrackRoot" unique_id=1929320817 instance=ExtResource("2_b84ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, -116)
@@ -224,20 +192,15 @@ start_pos = Vector3(56, 0, -92)
 start_dir = Vector3(1, 0, -1.1924881e-08)
 end_pos = Vector3(64, 0, -100)
 end_dir = Vector3(1, 0, -1.1924881e-08)
-start_up = Vector3(0, 1, 0)
-end_up = Vector3(0, 1, 0)
 
-[node name="straight_68_0_-140" type="Node3D" parent="TrackRoot" unique_id=2027847738 instance=ExtResource("2_b84ki")]
+[node name="straight_68_0_-140" parent="TrackRoot" unique_id=2027847738 instance=ExtResource("2_b84ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, -140)
-script = ExtResource("3_hamww")
 
-[node name="straight_36_12_-164" type="Node3D" parent="TrackRoot" unique_id=1427140460 instance=ExtResource("2_b84ki")]
+[node name="straight_36_12_-164" parent="TrackRoot" unique_id=1427140460 instance=ExtResource("2_b84ki")]
 transform = Transform3D(0, 1, 0, -1, 0, -4.371139e-08, -4.371139e-08, 0, 1, 36, 12, -164)
-script = ExtResource("3_hamww")
 
-[node name="connector_36_12_-160" type="Node3D" parent="TrackRoot" unique_id=1231361285 instance=ExtResource("4_er0gg")]
+[node name="connector_36_12_-160" parent="TrackRoot" unique_id=1231361285 instance=ExtResource("4_er0gg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 12, -160)
-script = ExtResource("5_t88gf")
 start_pos = Vector3(36, 12, -160)
 start_dir = Vector3(0, -4.371139e-08, 1)
 end_pos = Vector3(68, 0, -144)
