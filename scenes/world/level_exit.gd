@@ -34,6 +34,15 @@ func _process(delta: float) -> void:
 	if _active != was_active:
 		_update_colors()
 
+	# Check if car reached the exit
+	if _active and _car:
+		var dist := global_position.distance_to(_car.global_position)
+		if dist <= TRIGGER_RADIUS:
+			GameManager._is_game_over = true
+			GameManager.game_won.emit()
+			set_process(false)
+			return
+
 	if _mesh:
 		_mesh.position.y = 2.0 + sin(_time * 2.0) * 0.3
 	if _glow:

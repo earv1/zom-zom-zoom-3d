@@ -35,6 +35,7 @@ signal level_changed(new_level: int)
 signal health_changed(current: int, maximum: int)
 signal level_up_triggered(choices: Array)
 signal game_over()
+signal game_won()
 signal weapon_unlocked(id: StringName, scene: PackedScene)
 signal weapon_leveled_up(id: StringName)
 

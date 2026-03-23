@@ -16,6 +16,7 @@ signal cancel_requested()
 signal layer_changed(delta: int)
 signal theme_mode_changed(mode: int)
 signal side_color_changed(color_name: String)
+signal surface_changed(surface_id: int)
 
 const PIECES := [
 	{"name": "straight", "label": "Straight", "tag": "Core", "desc": "Fast starter"},
@@ -47,6 +48,8 @@ var _connect_from_selection_btn: Button
 var _cancel_btn: Button
 var _piece_buttons: Dictionary = {}
 var _category_buttons: Dictionary = {}
+var _surface_buttons: Dictionary = {}
+var _surface_label: Label
 var _piece_grid: GridContainer
 var edit_mode := false
 var _props_container: VBoxContainer
@@ -176,6 +179,34 @@ func _build_ui() -> void:
 	)
 	layer_row.add_child(layer_up)
 
+	_surface_label = Label.new()
+	_surface_label.text = "Surface: Floor"
+	root.add_child(_surface_label)
+
+	var surface_row1 := HBoxContainer.new()
+	root.add_child(surface_row1)
+	var surface_row2 := HBoxContainer.new()
+	root.add_child(surface_row2)
+	# Floor/Ceiling on row 1, N/S/E/W on row 2
+	var surface_defs := [
+		{"id": 0, "label": "Floor", "row": surface_row1},
+		{"id": 1, "label": "Ceiling", "row": surface_row1},
+		{"id": 2, "label": "North", "row": surface_row2},
+		{"id": 3, "label": "South", "row": surface_row2},
+		{"id": 4, "label": "East", "row": surface_row2},
+		{"id": 5, "label": "West", "row": surface_row2},
+	]
+	for sdef in surface_defs:
+		var btn := Button.new()
+		btn.text = sdef.label
+		btn.toggle_mode = true
+		btn.pressed.connect(func() -> void:
+			set_surface(sdef.id)
+			emit_signal("surface_changed", sdef.id)
+		)
+		sdef.row.add_child(btn)
+		_surface_buttons[sdef.id] = btn
+
 	_context_label = Label.new()
 	_context_label.text = "Enable edit mode to start building."
 	_context_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -282,6 +313,7 @@ func _build_ui() -> void:
 	set_rotation_turns(0)
 	set_theme_mode(0)
 	set_side_color("yellow")
+	set_surface(0)
 	set_context_state({
 		"title": "Browse pieces or enable edit mode.",
 		"hover": "Cursor: waiting",
@@ -429,6 +461,14 @@ func set_theme_mode(mode: int) -> void:
 func set_side_color(color_name: String) -> void:
 	for key in _side_color_buttons:
 		_side_color_buttons[key].button_pressed = (key == color_name)
+
+func set_surface(surface_id: int) -> void:
+	var names := {0: "Floor", 1: "Ceiling", 2: "North", 3: "South", 4: "East", 5: "West"}
+	if _surface_label:
+		_surface_label.text = "Surface: %s" % names.get(surface_id, "Floor")
+	for key in _surface_buttons:
+		_surface_buttons[key].button_pressed = (key == surface_id)
+
 
 func set_selection_info(text: String, has_selection: bool) -> void:
 	if _selection_label:

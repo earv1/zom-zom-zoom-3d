@@ -6,6 +6,24 @@ const TrackTheme = preload("res://addons/track_editor/track_theme.gd")
 
 const CELL   := Vector3(8.0, 4.0, 8.0)
 const NO_HIT := Vector3(INF, INF, INF)
+const ANCHOR_SNAP_RADIUS := 12.0  # world units — max distance to snap to an anchor
+const GRID_BIAS := 2.0  # anchors are favored by this multiplier over grid
+
+# Surface orientations: which direction the track bottom faces
+enum Surface { FLOOR, CEILING, NORTH, SOUTH, EAST, WEST }
+const SURFACE_BASES := {
+	Surface.FLOOR:   Basis.IDENTITY,
+	Surface.CEILING: Basis(Vector3(1, 0, 0), Vector3(0, -1, 0), Vector3(0, 0, -1)),
+	Surface.NORTH:   Basis(Vector3(1, 0, 0), Vector3(0, 0, -1), Vector3(0, 1, 0)),
+	Surface.SOUTH:   Basis(Vector3(1, 0, 0), Vector3(0, 0, 1), Vector3(0, -1, 0)),
+	Surface.EAST:    Basis(Vector3(0, 0, 1), Vector3(1, 0, 0), Vector3(0, 1, 0)),
+	Surface.WEST:    Basis(Vector3(0, 0, -1), Vector3(-1, 0, 0), Vector3(0, 1, 0)),
+}
+const SURFACE_NAMES := {
+	Surface.FLOOR: "Floor", Surface.CEILING: "Ceiling",
+	Surface.NORTH: "North", Surface.SOUTH: "South",
+	Surface.EAST: "East", Surface.WEST: "West",
+}
 
 var dock: Control
 var _selected_piece: String = "straight"
@@ -14,6 +32,8 @@ var _track_root: Node3D = null
 var _ghost: Node3D = null
 var _erase_mode := false
 var _last_grid_pos := Vector3.ZERO  # remembered so ghost snaps on piece-change
+var _last_snap_pos := Vector3.ZERO  # actual position (grid or anchor)
+var _snapped_to_anchor := false
 var _edit_mode := false
 var _selected_placed_piece: Node3D = null
 var _piece_params: Dictionary = {}
@@ -23,6 +43,7 @@ var _connect_first: Node3D = null
 var _current_layer := 0
 var _theme_mode := TrackTheme.MODE_LINES
 var _side_color_name := "yellow"
+var _surface: int = Surface.FLOOR
 
 var PIECE_SCENES := {
 	"straight": "res://addons/track_editor/pieces/straight.tscn",
@@ -49,10 +70,12 @@ func _enter_tree() -> void:
 	dock.layer_changed.connect(_on_layer_changed)
 	dock.theme_mode_changed.connect(_on_theme_mode_changed)
 	dock.side_color_changed.connect(_on_side_color_changed)
+	dock.surface_changed.connect(_on_surface_changed)
 	add_control_to_dock(DOCK_SLOT_RIGHT_UL, dock)
 	dock.set_layer(_current_layer, _current_layer * CELL.y)
 	dock.set_theme_mode(_theme_mode)
 	dock.set_side_color(_side_color_name)
+	dock.set_surface(_surface)
 	_update_context_ui(NO_HIT)
 
 func _exit_tree() -> void:
@@ -173,6 +196,12 @@ func _on_side_color_changed(color_name: String) -> void:
 	_side_color_name = color_name
 	_apply_theme_to_all_pieces()
 
+func _on_surface_changed(surface_id: int) -> void:
+	_surface = surface_id
+	if _edit_mode and not _connect_mode and not _erase_mode:
+		_rebuild_ghost()
+	_update_context_ui(_last_grid_pos if _edit_mode else NO_HIT)
+
 func _apply_theme_to_all_pieces() -> void:
 	if is_instance_valid(_track_root):
 		for child in _track_root.get_children():
@@ -181,7 +210,7 @@ func _apply_theme_to_all_pieces() -> void:
 		_refresh_neighbors()
 	if is_instance_valid(_ghost) and _ghost.has_method("apply_theme"):
 		_ghost.apply_theme(_theme_mode, _side_color_name)
-		_ghost.rotation_degrees.y = _rotation_y * 90.0
+		_ghost.basis = _get_placement_basis()
 		_ghost.position = _last_grid_pos
 		_set_ghost_alpha(_ghost, 0.4)
 	_update_context_ui(_last_grid_pos if _edit_mode else NO_HIT)
@@ -210,11 +239,16 @@ func _forward_3d_gui_input(viewport_camera: Camera3D, event: InputEvent) -> int:
 		return EditorPlugin.AFTER_GUI_INPUT_PASS
 
 	if event is InputEventMouseMotion:
-		var pos := _raycast_to_grid(viewport_camera, event.position)
-		if pos != NO_HIT:
-			_last_grid_pos = pos
-			_move_ghost(pos)
-			_update_context_ui(pos)
+		var grid_pos := _raycast_to_grid(viewport_camera, event.position)
+		if grid_pos != NO_HIT:
+			_last_grid_pos = grid_pos
+			var snap_result := _best_snap_position(viewport_camera, event.position, grid_pos)
+			_last_snap_pos = snap_result.position
+			_snapped_to_anchor = snap_result.is_anchor
+			_move_ghost(_last_snap_pos)
+			if _snapped_to_anchor and is_instance_valid(_ghost):
+				_ghost.rotation_degrees.y = snap_result.rotation_y
+			_update_context_ui(_last_snap_pos)
 		else:
 			_update_context_ui(NO_HIT)
 		return EditorPlugin.AFTER_GUI_INPUT_PASS
@@ -248,12 +282,13 @@ func _forward_3d_gui_input(viewport_camera: Camera3D, event: InputEvent) -> int:
 				elif pos != NO_HIT:
 					_erase_at(pos)
 			else:
-				var occupied := picked_piece if picked_piece != null else _get_piece_at(pos)
+				var place_pos := _last_snap_pos if _last_snap_pos != NO_HIT else pos
+				var occupied := picked_piece if picked_piece != null else _get_piece_at(place_pos)
 				if occupied != null:
 					_select_placed_piece(occupied)
-				elif pos != NO_HIT:
+				elif place_pos != NO_HIT:
 					_deselect_placed_piece()
-					_place_piece(pos)
+					_place_piece(place_pos)
 			return EditorPlugin.AFTER_GUI_INPUT_STOP
 
 		if event.button_index == MOUSE_BUTTON_RIGHT:
@@ -285,6 +320,53 @@ func _snap(world_pos: Vector3) -> Vector3:
 		floorf(world_pos.z / CELL.z) * CELL.z + CELL.z * 0.5
 	)
 
+
+func _best_snap_position(cam: Camera3D, screen_pos: Vector2, grid_pos: Vector3) -> Dictionary:
+	## Compare grid snap to all available anchors from placed pieces.
+	## Anchors are biased 2× closer (their distance is halved for comparison).
+	## Returns { position: Vector3, is_anchor: bool, rotation_y: float }
+	if not is_instance_valid(_track_root):
+		return {"position": grid_pos, "is_anchor": false, "rotation_y": _rotation_y * 90.0}
+
+	var ray_origin := cam.project_ray_origin(screen_pos)
+	var ray_dir := cam.project_ray_normal(screen_pos)
+
+	var best_pos := grid_pos
+	var best_rot := _rotation_y * 90.0
+	var best_dist := grid_pos.distance_to(ray_origin + ray_dir * ray_origin.distance_to(grid_pos))
+	var is_anchor := false
+
+	for child in _track_root.get_children():
+		if child == _ghost:
+			continue
+		var anchors := _connection_anchors_for_piece(child)
+		for anchor in anchors:
+			var apos: Vector3 = anchor.position
+			# Project anchor onto the camera ray to get screen-space distance
+			var to_anchor := apos - ray_origin
+			var t := to_anchor.dot(ray_dir)
+			if t < 0.0:
+				continue
+			var closest_on_ray := ray_origin + ray_dir * t
+			var screen_dist := apos.distance_to(closest_on_ray)
+
+			# Apply anchor bias (halve distance for comparison)
+			var biased_dist := screen_dist / GRID_BIAS
+
+			if biased_dist < best_dist and screen_dist < ANCHOR_SNAP_RADIUS:
+				best_dist = biased_dist
+				# Place at anchor pos, offset by one cell in the anchor's out direction
+				var out_dir: Vector3 = anchor.out_dir
+				best_pos = apos + out_dir * CELL.x * 0.5
+				# Snap the position to grid Y
+				best_pos.y = _current_layer * CELL.y
+				# Derive rotation from out_dir (incoming piece should face opposite)
+				var facing := -out_dir
+				best_rot = rad_to_deg(atan2(-facing.x, -facing.z))
+				is_anchor = true
+
+	return {"position": best_pos, "is_anchor": is_anchor, "rotation_y": best_rot}
+
 # ── ghost ─────────────────────────────────────────────────────────────────────
 
 func _rebuild_ghost() -> void:
@@ -303,7 +385,7 @@ func _rebuild_ghost() -> void:
 		_scene_cache[scene_path] = packed
 	_ghost = packed.instantiate()
 	_ghost.position = _last_grid_pos   # snap to last known cursor position
-	_ghost.rotation_degrees.y = _rotation_y * 90.0
+	_ghost.basis = _get_placement_basis()
 	if _ghost.has_method("apply_theme"):
 		_ghost.apply_theme(_theme_mode, _side_color_name)
 	# Pre-set vars before entering tree so _ready()→_build() uses them (no double-build)
@@ -353,7 +435,7 @@ func _place_piece(grid_pos: Vector3) -> void:
 
 	var piece: Node3D = packed.instantiate()
 	piece.position = grid_pos
-	piece.rotation_degrees.y = _rotation_y * 90.0
+	piece.basis = _get_placement_basis()
 	piece.name = _selected_piece + "_" + str(snappedi(grid_pos.x, 1)) + "_" + str(snappedi(grid_pos.y, 1)) + "_" + str(snappedi(grid_pos.z, 1))
 	if piece.has_method("apply_theme"):
 		piece.apply_theme(_theme_mode, _side_color_name)
@@ -592,6 +674,12 @@ func _get_scene_root() -> Node:
 	if ei == null:
 		return null
 	return ei.get_edited_scene_root()
+
+func _get_placement_basis() -> Basis:
+	var yaw := Basis(Vector3.UP, deg_to_rad(_rotation_y * 90.0))
+	var surface_basis: Basis = SURFACE_BASES[_surface]
+	return surface_basis * yaw
+
 
 func _rotate_by(step: int) -> void:
 	_rotation_y = posmod(_rotation_y + step, 4)

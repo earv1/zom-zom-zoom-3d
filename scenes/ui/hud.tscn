@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://scenes/ui/mobile_controls.gd" id="4_mob"]
 [ext_resource type="PackedScene" path="res://scenes/ui/level_up_screen.tscn" id="2_lus"]
 [ext_resource type="PackedScene" path="res://scenes/ui/game_over_screen.tscn" id="3_gos"]
+[ext_resource type="PackedScene" path="res://scenes/ui/win_screen.tscn" id="5_win"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_health"]
 bg_color = Color(0.85, 0.15, 0.15, 1)
@@ -97,3 +98,5 @@ script = ExtResource("4_mob")
 [node name="LevelUpScreen" parent="." instance=ExtResource("2_lus")]
 
 [node name="GameOverScreen" parent="." instance=ExtResource("3_gos")]
+
+[node name="WinScreen" parent="." instance=ExtResource("5_win")]

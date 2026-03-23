@@ -18,6 +18,7 @@ const TrickInputDisplayScript := preload("res://scenes/ui/trick_input_display.gd
 @onready var _boost_label: Label = $BoostContainer/BoostLabel
 @onready var _level_up_screen: LevelUpScreen = $LevelUpScreen
 @onready var _game_over_screen: GameOverScreen = $GameOverScreen
+@onready var _win_screen: CanvasLayer = $WinScreen
 @onready var _speed_label: Label = $SpeedLabel
 
 var _car_boost: CarBoost
@@ -35,6 +36,7 @@ func _ready() -> void:
 	GameManager.level_changed.connect(_on_level_changed)
 	GameManager.level_up_triggered.connect(_on_level_up_triggered)
 	GameManager.game_over.connect(_on_game_over)
+	GameManager.game_won.connect(_on_game_won)
 
 	_health_bar.max_value = GameManager.max_health
 	_health_bar.value = GameManager.current_health
@@ -216,3 +218,7 @@ func _on_level_up_triggered(choices: Array) -> void:
 
 func _on_game_over() -> void:
 	_game_over_screen.show_screen()
+
+
+func _on_game_won() -> void:
+	_win_screen.show_screen()
