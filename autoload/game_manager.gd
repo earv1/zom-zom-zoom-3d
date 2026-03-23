@@ -37,7 +37,6 @@ signal level_up_triggered(choices: Array)
 signal game_over()
 signal weapon_unlocked(id: StringName, scene: PackedScene)
 signal weapon_leveled_up(id: StringName)
-signal damage_taken()
 
 
 func _ready() -> void:
@@ -71,7 +70,9 @@ func take_damage(amount: int) -> void:
 		return
 	current_health = max(0, current_health - amount)
 	health_changed.emit(current_health, max_health)
-	damage_taken.emit()
+	for enemy in get_tree().get_nodes_in_group("enemies"):
+		if enemy is RigidBody3D:
+			(enemy as RigidBody3D).linear_velocity = Vector3.ZERO
 	if current_health <= 0:
 		_is_game_over = true
 		game_over.emit()

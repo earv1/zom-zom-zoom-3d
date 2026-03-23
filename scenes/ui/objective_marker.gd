@@ -9,7 +9,7 @@ const ICON_SIZE := 12.0
 const DISTANCE_FONT_SIZE := 18
 
 var _camera: Camera3D
-var _objectives: Array[Dictionary] = []
+var _objectives: Array = []
 # Each dict: { "node": Node3D, "color": Color, "label": String }
 
 
@@ -37,6 +37,8 @@ func remove_objective(node: Node3D) -> void:
 func _draw() -> void:
 	if not _camera or not _camera.is_inside_tree():
 		return
+
+	_objectives = _objectives.filter(func(o: Dictionary) -> bool: return is_instance_valid(o["node"]))
 
 	var screen_size := get_viewport_rect().size
 	var center := screen_size * 0.5

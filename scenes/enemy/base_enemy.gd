@@ -19,8 +19,6 @@ var pool_key: String
 
 const WARP_BUFFER := 30.0   # trigger warp this many units beyond the warp landing spot
 const DROP_HEIGHT := 10.0   # units above ground to drop from
-const BLOWBACK_RADIUS := 50.0
-const BLOWBACK_FORCE := 40.0
 
 
 func _ready() -> void:
@@ -30,7 +28,6 @@ func _ready() -> void:
 	contact_monitor = true
 	max_contacts_reported = 4
 	body_entered.connect(_on_body_entered)
-	GameManager.damage_taken.connect(_on_car_damage_taken)
 
 
 func _process(_delta: float) -> void:
@@ -118,6 +115,10 @@ func _on_body_entered(body: Node) -> void:
 	if not visible or _dead:
 		return
 	if body == car:
+		var ram := car.find_child("RamComponent", false) as Node
+		if ram and ram.get("is_ramming"):
+			die()
+			return
 		GameManager.take_damage(contact_damage)
 		die()
 
@@ -151,20 +152,6 @@ func _spawn_xp_orb() -> void:
 	orb.set("car", car)
 	get_tree().current_scene.add_child(orb)
 	orb.global_position = global_position + Vector3.UP * 0.5
-
-
-func _on_car_damage_taken() -> void:
-	if _dead or not car or not visible:
-		return
-	var dist := global_position.distance_to(car.global_position)
-	if dist > BLOWBACK_RADIUS:
-		return
-	var away := global_position - car.global_position
-	away.y = 0.0
-	if away.length_squared() < 0.001:
-		away = Vector3(randf_range(-1, 1), 0, randf_range(-1, 1))
-	linear_velocity = Vector3.ZERO
-	apply_central_impulse(away.normalized() * BLOWBACK_FORCE + Vector3.UP * 10.0)
 
 
 func _on_die() -> void:

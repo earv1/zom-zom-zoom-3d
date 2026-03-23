@@ -16,7 +16,7 @@ const RING_CYCLE     := 0.35   ## seconds per ring pass
 var _car: RigidBody3D
 var _rings: Array[MeshInstance3D] = []
 var _ring_phases: Array[float] = []
-var _active := false
+var is_ramming := false
 
 
 func _ready() -> void:
@@ -29,8 +29,11 @@ func _process(delta: float) -> void:
 	if not _car:
 		return
 	var speed := _car.linear_velocity.length()
-	_active = speed >= RAM_SPEED_MIN
-	_area.monitoring = _active
+	var was_ramming := is_ramming
+	is_ramming = speed >= RAM_SPEED_MIN
+	_area.monitoring = is_ramming
+	if is_ramming != was_ramming:
+		pass
 	_update_rings(delta, speed)
 
 
@@ -65,7 +68,7 @@ func _update_rings(delta: float, speed: float) -> void:
 	var intensity := clampf((speed - RAM_SPEED_MIN) / 30.0, 0.0, 1.0)
 	for i in _rings.size():
 		var ring := _rings[i]
-		if not _active:
+		if not is_ramming:
 			ring.visible = false
 			continue
 		ring.visible = true
@@ -82,7 +85,7 @@ func _update_rings(delta: float, speed: float) -> void:
 # ── Damage ───────────────────────────────────────────────────────────────────
 
 func _on_body_entered(body: Node) -> void:
-	if not _active or not _car:
+	if not is_ramming or not _car:
 		return
 	if body == _car or not body.has_method("take_damage"):
 		return
@@ -90,11 +93,6 @@ func _on_body_entered(body: Node) -> void:
 	var t      := clampf((speed - RAM_SPEED_MIN) / (120.0 - RAM_SPEED_MIN), 0.0, 1.0)
 	var damage := int(lerpf(BASE_DAMAGE, MAX_DAMAGE, t))
 	body.take_damage(damage)
-
-	# Lose 10 km/h per ram hit — apply backward impulse
-	var hvel := Vector3(_car.linear_velocity.x, 0.0, _car.linear_velocity.z)
-	if hvel.length_squared() > 0.001:
-		_car.apply_central_impulse(-hvel.normalized() * SPEED_PENALTY * _car.mass)
 
 	if body is RigidBody3D:
 		var away: Vector3 = (body as RigidBody3D).global_position - _car.global_position

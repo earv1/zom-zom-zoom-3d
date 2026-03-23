@@ -10,13 +10,14 @@ var _timer: float = 0.0
 var _pool: Array = []
 var _inactive: Dictionary = {}  # pool_key (scene path) -> Array[BaseEnemy]
 var _active_count: int = 0
+var _active_per_type: Dictionary = {}  # pool_key -> int
 
 
 func _ready() -> void:
 	add_to_group("enemy_spawner")
 	_pool = [
 		{scene = preload("res://scenes/enemy/zombie.tscn"), weight = 1.0, unlock_time = 0.0},
-		{scene = preload("res://scenes/enemy/runner.tscn"), weight = 0.6, unlock_time = 60.0},
+		{scene = preload("res://scenes/enemy/runner.tscn"), weight = 0.6, unlock_time = 60.0, max_active = 2},
 		{scene = preload("res://scenes/enemy/tank.tscn"), weight = 0.3, unlock_time = 120.0},
 		{scene = preload("res://scenes/enemy/exploder.tscn"), weight = 0.5, unlock_time = 180.0},
 	]
@@ -59,6 +60,11 @@ func _spawn() -> void:
 
 	var spawn_dist := spawn_radius * 3.0
 	var key: String = (chosen.get("scene") as PackedScene).resource_path
+
+	var max_active: int = chosen.get("max_active", -1)
+	if max_active >= 0 and _active_per_type.get(key, 0) >= max_active:
+		return
+
 	var enemy: BaseEnemy
 
 	if _inactive.has(key) and not (_inactive[key] as Array).is_empty():
@@ -75,6 +81,7 @@ func _spawn() -> void:
 		enemy.reset_for_spawn(car)
 
 	_active_count += 1
+	_active_per_type[key] = _active_per_type.get(key, 0) + 1
 
 
 func recycle(enemy: BaseEnemy) -> void:
@@ -83,6 +90,7 @@ func recycle(enemy: BaseEnemy) -> void:
 	enemy.process_mode = PROCESS_MODE_DISABLED
 	enemy.freeze = true
 	var key := enemy.pool_key
+	_active_per_type[key] = maxi(0, _active_per_type.get(key, 0) - 1)
 	if not _inactive.has(key):
 		_inactive[key] = []
 	(_inactive[key] as Array).append(enemy)
