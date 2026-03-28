@@ -3,11 +3,11 @@ extends Node3D
 
 @export var car: Node3D
 @export var spawn_radius: float = 40.0
+@export var pool: Array[EnemyEntry] = []
 
 const MAX_ENEMIES := 100
 
 var _timer: float = 0.0
-var _pool: Array = []
 var _inactive: Dictionary = {}  # pool_key (scene path) -> Array[BaseEnemy]
 var _active_count: int = 0
 var _active_per_type: Dictionary = {}  # pool_key -> int
@@ -15,12 +15,6 @@ var _active_per_type: Dictionary = {}  # pool_key -> int
 
 func _ready() -> void:
 	add_to_group("enemy_spawner")
-	_pool = [
-		{scene = preload("res://scenes/enemy/zombie.tscn"), weight = 1.0, unlock_time = 0.0},
-		{scene = preload("res://scenes/enemy/runner.tscn"), weight = 0.6, unlock_time = 60.0, max_active = 2},
-		{scene = preload("res://scenes/enemy/tank.tscn"), weight = 0.3, unlock_time = 120.0},
-		{scene = preload("res://scenes/enemy/exploder.tscn"), weight = 0.5, unlock_time = 180.0},
-	]
 
 
 const RAMP_DURATION := 10.0  # seconds before full spawn rate
@@ -40,29 +34,28 @@ func _spawn() -> void:
 	if _active_count >= MAX_ENEMIES:
 		return
 
-	var available: Array = _pool.filter(
-		func(e: Variant) -> bool: return GameManager.elapsed_time >= (e as Dictionary).get("unlock_time", 0.0)
+	var available: Array = pool.filter(
+		func(e: EnemyEntry) -> bool: return GameManager.elapsed_time >= e.unlock_time
 	)
 	if available.is_empty():
 		return
 
 	var total_weight := 0.0
 	for e in available:
-		total_weight += e.weight
+		total_weight += (e as EnemyEntry).weight
 
 	var roll := randf() * total_weight
-	var chosen: Dictionary = available[-1]
+	var chosen: EnemyEntry = available[-1]
 	for e in available:
-		roll -= e.weight
+		roll -= (e as EnemyEntry).weight
 		if roll <= 0.0:
 			chosen = e
 			break
 
 	var spawn_dist := spawn_radius * 3.0
-	var key: String = (chosen.get("scene") as PackedScene).resource_path
+	var key: String = chosen.scene.resource_path
 
-	var max_active: int = chosen.get("max_active", -1)
-	if max_active >= 0 and _active_per_type.get(key, 0) >= max_active:
+	if chosen.max_active >= 0 and _active_per_type.get(key, 0) >= chosen.max_active:
 		return
 
 	var enemy: BaseEnemy
@@ -72,8 +65,7 @@ func _spawn() -> void:
 		enemy.drop_near(car.global_position, spawn_dist)
 		enemy.reset_for_spawn(car)
 	else:
-		var enemy_scene := chosen.get("scene") as PackedScene
-		enemy = enemy_scene.instantiate() as BaseEnemy
+		enemy = chosen.scene.instantiate() as BaseEnemy
 		enemy._spawner = self
 		enemy.pool_key = key
 		add_child(enemy)

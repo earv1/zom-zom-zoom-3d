@@ -8,6 +8,39 @@
 [ext_resource type="PackedScene" path="res://scenes/ui/splash_screen.tscn" id="27_splash"]
 [ext_resource type="Script" uid="uid://1e2y8ottpr2h" path="res://scenes/world/chunk_manager.gd" id="20_chkmgr"]
 [ext_resource type="PackedScene" path="res://scenes/world/car.tscn" id="30_car"]
+[ext_resource type="Script" path="res://scenes/enemy/enemy_entry.gd" id="31_entry"]
+[ext_resource type="PackedScene" path="res://scenes/enemy/zombie.tscn" id="32_zombie"]
+[ext_resource type="PackedScene" path="res://scenes/enemy/runner.tscn" id="33_runner"]
+[ext_resource type="PackedScene" path="res://scenes/enemy/tank.tscn" id="34_tank"]
+[ext_resource type="PackedScene" path="res://scenes/enemy/exploder.tscn" id="35_exploder"]
+
+[sub_resource type="Resource" id="EnemyEntry_zombie"]
+script = ExtResource("31_entry")
+scene = ExtResource("32_zombie")
+weight = 1.0
+unlock_time = 0.0
+max_active = -1
+
+[sub_resource type="Resource" id="EnemyEntry_runner"]
+script = ExtResource("31_entry")
+scene = ExtResource("33_runner")
+weight = 0.6
+unlock_time = 60.0
+max_active = 2
+
+[sub_resource type="Resource" id="EnemyEntry_tank"]
+script = ExtResource("31_entry")
+scene = ExtResource("34_tank")
+weight = 0.3
+unlock_time = 120.0
+max_active = -1
+
+[sub_resource type="Resource" id="EnemyEntry_exploder"]
+script = ExtResource("31_entry")
+scene = ExtResource("35_exploder")
+weight = 0.5
+unlock_time = 180.0
+max_active = -1
 
 [node name="World" type="Node3D" node_paths=PackedStringArray("car")]
 script = ExtResource("21_world")
@@ -25,6 +58,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 [node name="EnemySpawner" type="Node3D" parent="." node_paths=PackedStringArray("car")]
 script = ExtResource("22_spawner")
 car = NodePath("../Car")
+pool = [SubResource("EnemyEntry_zombie"), SubResource("EnemyEntry_runner"), SubResource("EnemyEntry_tank"), SubResource("EnemyEntry_exploder")]
 
 [node name="HUD" parent="." instance=ExtResource("25_hud")]
 

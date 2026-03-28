@@ -1,33 +1,28 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene format=3 uid="uid://cv04rduu25w1x"]
 
-[ext_resource type="Script" path="res://scenes/enemy/runner.gd" id="1_runner"]
-[ext_resource type="Material" path="res://assets/prototype/prototype-materials/red_square.tres" id="2_mat"]
+[ext_resource type="Script" uid="uid://7rvtgtbehjf2" path="res://scenes/enemy/runner.gd" id="1_runner"]
+[ext_resource type="PackedScene" uid="uid://ck656lt61wbit" path="res://models/rat.glb" id="2_rat"]
 [ext_resource type="PackedScene" path="res://scenes/enemy/runner_fragment.tscn" id="3_frag"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_runner"]
-size = Vector3(1.0, 1.0, 1.0)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_runner"]
-size = Vector3(1.0, 1.0, 1.0)
+size = Vector3(1, 0.94244385, 1.7084656)
 
-[node name="Runner" type="RigidBody3D"]
+[node name="Runner" type="RigidBody3D" unique_id=1819997410]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 mass = 15.0
-scale = Vector3(0.7, 0.7, 0.7)
 script = ExtResource("1_runner")
 fragment_scene = ExtResource("3_frag")
 speed = 66.7
 acceleration = 25.0
-max_health = 1
 xp_value = 8
 contact_damage = 8
 fragment_count = 8
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_override = ExtResource("2_mat")
-mesh = SubResource("BoxMesh_runner")
+[node name="RatModel" parent="." unique_id=1901546 instance=ExtResource("2_rat")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1404555350]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26913452, -0.636845)
 shape = SubResource("BoxShape3D_runner")
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=572966880]
 target_position = Vector3(0, -3, 0)
