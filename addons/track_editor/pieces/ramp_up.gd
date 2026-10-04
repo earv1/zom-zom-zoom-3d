@@ -31,7 +31,7 @@ func get_config() -> Dictionary:
 
 func get_param_defs() -> Array:
 	return [
-		{name = "road_width", label = "Width", min = 6.0, max = 12.0, step = 6.0, default = 6.0},
+		{name = "road_width", label = "Width", min = 6.0, max = 24.0, step = 6.0, default = 6.0},
 		{name = "pitch_deg", label = "Pitch", min = 6.0, max = 42.0, step = 6.0, default = 30.0},
 	]
 

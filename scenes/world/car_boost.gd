@@ -31,7 +31,10 @@ func _process(delta: float) -> void:
 
 	var speed := Vector2(_car.linear_velocity.x, _car.linear_velocity.z).length()
 
-	if Input.is_action_pressed("handbreak"):
+	var grounded := _car.wheels.any(func(w: RaycastWheel) -> bool: return w.is_colliding())
+	if not grounded:
+		hold_time = 0.0                        # Shift in the air is for tricks, not boost
+	elif Input.is_action_pressed("handbreak"):
 		if not is_boosting and speed >= DRIFT_SPEED_MIN:
 			hold_time = minf(hold_time + delta, HOLD_REQUIRED)
 

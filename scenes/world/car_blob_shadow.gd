@@ -54,6 +54,14 @@ void fragment() {
 	return mat
 
 
+## Height of the car's origin above whatever is straight below it, from the
+## shadow's own down ray (last physics tick). INF when nothing is in reach.
+func ground_clearance() -> float:
+	if not _ray or not _ray.is_colliding():
+		return INF
+	return _car.global_position.y - _ray.get_collision_point().y
+
+
 func _physics_process(_delta: float) -> void:
 	# Follow car position in world space (ignoring its rotation)
 	global_position = _car.global_position
@@ -94,6 +102,9 @@ func _physics_process(_delta: float) -> void:
 
 	# ── Orient quad flat on surface, aligned with car's horizontal forward ────
 	var up    := hit_normal
-	var right := up.cross(fwd_flat).normalized()
+	var right := up.cross(fwd_flat)
+	if right.length_squared() < 0.0001:      # riding a wall that faces the way we're heading
+		right = up.cross(Vector3.UP if absf(up.y) < 0.9 else Vector3.RIGHT)
+	right = right.normalized()
 	var fwd   := right.cross(up).normalized()
 	_mesh.global_transform.basis = Basis(right, up, -fwd).rotated(right, -PI * 0.5)

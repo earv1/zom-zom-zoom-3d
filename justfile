@@ -22,6 +22,14 @@ track:
 connector-test:
     "{{godot}}" --path "{{project}}" --scene scenes/test_track/connector_visual_test.tscn
 
+# Check the park's ground after editing it: no invisible colliders, flat sand in the dome
+check-ground:
+    "{{godot}}" --path "{{project}}" --headless --audio-driver Dummy --script addons/gut/gut_cmdln.gd -- -gtest=res://tests/test_ground_check.gd -gexit
+
+# Run the hadeda boss sandbox (drive around and dodge the boss)
+boss:
+    "{{godot}}" --path "{{project}}" --scene scenes/boss/boss_test.tscn
+
 # Run the main game world directly
 world:
     "{{godot}}" --path "{{project}}" --scene scenes/world/world.tscn

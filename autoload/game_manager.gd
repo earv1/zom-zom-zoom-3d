@@ -1,34 +1,46 @@
 extends Node
 
-var current_level: int = 1
-var current_xp: int = 0
+## Run state + the scrap economy. Everything that scores calls earn(); upgrades
+## are bought at stores (diner / sky workshop / petrol station) with scrap, or in
+## the garage with parts that persist between runs. Balance numbers live in the
+## data/*.csv tables (see Economy); nothing levels up automatically any more.
+
+const SAVE_PATH := "user://garage.cfg"
+
+## Player setting: every screen shake (quakes, boss landings, ground pounds)
+## checks this. Anything new that shakes the screen must too.
+var screen_shake := true
+
 var elapsed_time: float = 0.0
 var current_health: int = 100
 var max_health: int = 100
 var enemies_killed: int = 0
 
+# legacy stat fields still read by weapons; kept in sync with `stats`
 var speed_multiplier: float = 1.0
 var damage_multiplier: float = 1.0
 var fire_rate_multiplier: float = 1.0
+# legacy XP fields (the old level-up loop is gone; the HUD still reads these)
+var current_level: int = 1
+var current_xp: int = 0
 
 var unlocked_weapons: Array[StringName] = [&"front_gun"]
 var weapon_levels: Dictionary = {}
 
-var all_upgrades: Array = [
-	preload("res://data/upgrades/upgrade_front_gun_lvl2.tres"),
-	preload("res://data/upgrades/upgrade_front_gun_lvl3.tres"),
-	preload("res://data/upgrades/unlock_garlic.tres"),
-	preload("res://data/upgrades/upgrade_garlic_lvl2.tres"),
-	preload("res://data/upgrades/upgrade_garlic_lvl3.tres"),
-	preload("res://data/upgrades/unlock_side_rockets.tres"),
-	preload("res://data/upgrades/upgrade_side_rockets_lvl2.tres"),
-	preload("res://data/upgrades/stat_max_health.tres"),
-	preload("res://data/upgrades/stat_speed.tres"),
+var scrap: int = 0
+var run_scrap: int = 0                     ## total earned this run (drives banking)
+var parts: int = 0                         ## persistent garage currency
+var combo_count: int = 0
+var combo_time_left: float = 0.0
+var bosses_defeated: int = 0
+var invulnerable := false                  ## e.g. while parked in a store bay
+var stats: Dictionary = {}
+var run_levels: Dictionary = {}            ## upgrade id -> level bought this run
+var meta_levels: Dictionary = {}           ## garage upgrade id -> level (saved)
 
-	preload("res://data/upgrades/stat_damage_mult.tres"),
-	preload("res://data/upgrades/stat_fire_rate.tres"),
-]
 var _is_game_over: bool = false
+var _regen_carry := 0.0
+var _banked := false
 
 signal xp_changed(current: int, to_next: int)
 signal level_changed(new_level: int)
@@ -38,39 +50,105 @@ signal game_over()
 signal game_won()
 signal weapon_unlocked(id: StringName, scene: PackedScene)
 signal weapon_leveled_up(id: StringName)
+signal scrap_changed(scrap: int)
+signal scrap_earned(amount: int, source: StringName, multiplier: float)
+signal combo_changed(count: int, multiplier: float)
+signal upgrade_bought(id: StringName, level: int)
+signal parts_changed(parts: int)
+signal run_banked(parts_earned: int)
 
 
 func _ready() -> void:
-	pass
+	_load_meta()
+	_recompute_stats()
+	game_over.connect(bank_run)
+	game_won.connect(bank_run)
 
 
 func _process(delta: float) -> void:
 	if _is_game_over:
 		return
 	elapsed_time += delta
+	if combo_count > 0:
+		combo_time_left -= delta
+		if combo_time_left <= 0.0:
+			_set_combo(0)
+	var regen: float = stats.get("regen", 0.0)
+	if regen > 0.0 and current_health < max_health:
+		_regen_carry += regen * delta
+		if _regen_carry >= 1.0:
+			var heal := int(_regen_carry)
+			_regen_carry -= heal
+			current_health = mini(current_health + heal, max_health)
+			health_changed.emit(current_health, max_health)
 
 
-func _xp_to_next() -> int:
-	return int(500 * pow(1.4, current_level - 1))
+# ── difficulty (Risk of Rain style) ───────────────────────────────────────────
+
+## Climbs with time and with every boss beaten; scales the enemies.
+func difficulty_coefficient() -> float:
+	var minutes := elapsed_time / 60.0
+	return (1.0 + Economy.difficulty("rate_per_minute") * minutes) * pow(Economy.difficulty("boss_factor"), bosses_defeated)
 
 
+## coefficient ^ <key> from difficulty.csv, e.g. enemy_scale("enemy_health_exp").
+func enemy_scale(exp_key: String) -> float:
+	return pow(difficulty_coefficient(), Economy.difficulty(exp_key))
+
+
+## {index, name, progress (0..1 through the current tier)}.
+func difficulty_tier() -> Dictionary:
+	var names := Economy.tier_names()
+	var steps := (difficulty_coefficient() - 1.0) / Economy.difficulty("tier_step")
+	var index := mini(floori(steps), names.size() - 1)
+	var progress := 1.0 if index == names.size() - 1 and steps >= names.size() - 1 else steps - floorf(steps)
+	return {"index": index, "name": names[index], "progress": progress}
+
+
+# ── scrap & combo ─────────────────────────────────────────────────────────────
+
+func combo_multiplier() -> float:
+	return minf(1.0 + stats.combo_step * combo_count, stats.combo_cap)
+
+
+## Scores an event. `base` defaults to the source's value in scrap_sources.csv.
+## Returns the scrap actually paid out.
+func earn(source: StringName, base: float = -1.0) -> int:
+	if _is_game_over:
+		return 0
+	if base < 0.0:
+		base = Economy.source_base(source)
+	var mult := combo_multiplier()
+	var amount := maxi(roundi(base * mult * stats.scrap_mult), 1)
+	scrap += amount
+	run_scrap += amount
+	scrap_changed.emit(scrap)
+	scrap_earned.emit(amount, source, mult)
+	_set_combo(combo_count + 1)
+	return amount
+
+
+## Legacy entry point (XP orbs, near misses, tricks): now pays scrap.
 func add_xp(amount: int) -> void:
-	current_xp += amount * 3
-	var to_next := _xp_to_next()
-	xp_changed.emit(current_xp, to_next)
-	if current_xp >= to_next:
-		current_xp -= to_next
-		current_level += 1
-		level_changed.emit(current_level)
-		var choices := _pick_upgrade_choices()
-		level_up_triggered.emit(choices)
+	earn(&"pickup", float(amount))
 
+
+func _set_combo(count: int) -> void:
+	combo_count = count
+	combo_time_left = stats.combo_window if count > 0 else 0.0
+	combo_changed.emit(combo_count, combo_multiplier())
+
+
+# ── damage ────────────────────────────────────────────────────────────────────
 
 func take_damage(amount: int) -> void:
-	if _is_game_over:
+	if _is_game_over or invulnerable:
 		return
-	current_health = max(0, current_health - amount)
+	var dealt := maxi(roundi(amount * (1.0 - stats.armor)), 1)
+	current_health = max(0, current_health - dealt)
 	health_changed.emit(current_health, max_health)
+	if combo_count > 0:
+		_set_combo(0)                          # getting hit drops the combo
 	for enemy in get_tree().get_nodes_in_group("enemies"):
 		if enemy is RigidBody3D:
 			(enemy as RigidBody3D).linear_velocity = Vector3.ZERO
@@ -79,51 +157,159 @@ func take_damage(amount: int) -> void:
 		game_over.emit()
 
 
-func apply_upgrade(upgrade: Resource) -> void:
-	var upg := upgrade as UpgradeData
-	if not upg:
+## Rolls a crit on an outgoing hit. Returns [damage, is_crit].
+func roll_hit(amount: float) -> Array:
+	if randf() < stats.crit_chance:
+		return [amount * stats.crit_mult, true]
+	return [amount, false]
+
+
+# ── upgrades ──────────────────────────────────────────────────────────────────
+
+func level_of(id: StringName) -> int:
+	var u := Economy.upgrade(id)
+	return meta_levels.get(id, 0) if u.get("store") == &"garage" else run_levels.get(id, 0)
+
+
+func price_of(id: StringName) -> int:
+	var u := Economy.upgrade(id)
+	var discount: float = 0.0 if u.store == &"garage" else stats.store_discount
+	return Economy.price(u, level_of(id), discount)
+
+
+## Why an upgrade can't be bought right now ("" when it can).
+func blocker(id: StringName) -> String:
+	var u := Economy.upgrade(id)
+	if u.is_empty():
+		return "unknown"
+	if u.op == &"unlock" and u.weapon in unlocked_weapons:
+		return "owned"
+	if level_of(id) >= u.max_level:
+		return "maxed"
+	if u.op == &"weapon" and u.weapon not in unlocked_weapons:
+		return "needs weapon"
+	var wallet := parts if u.store == &"garage" else scrap
+	if wallet < price_of(id):
+		return "can't afford"
+	return ""
+
+
+func buy(id: StringName) -> bool:
+	if blocker(id) != "":
+		return false
+	var u := Economy.upgrade(id)
+	var cost := price_of(id)
+	var level := level_of(id) + 1
+	if u.store == &"garage":
+		parts -= cost
+		meta_levels[id] = level
+		parts_changed.emit(parts)
+		_save_meta()
+	else:
+		scrap -= cost
+		run_levels[id] = level
+		scrap_changed.emit(scrap)
+	match u.op:
+		&"unlock":
+			unlocked_weapons.append(u.weapon)
+			weapon_unlocked.emit(u.weapon, load(Economy.WEAPON_SCENES[u.weapon]))
+		&"weapon":
+			weapon_levels[u.weapon] = weapon_levels.get(u.weapon, 1) + 1
+			weapon_leveled_up.emit(u.weapon)
+	_recompute_stats()
+	upgrade_bought.emit(id, level)
+	return true
+
+
+func _recompute_stats() -> void:
+	var table := Economy.stat_table()
+	var s := {}
+	for stat in table:
+		s[stat] = table[stat].default
+	for u in Economy.upgrades():
+		Economy.apply(s, u, meta_levels.get(u.id, 0) if u.store == &"garage" else run_levels.get(u.id, 0))
+	Economy.clamp_stats(s)
+	stats = s
+	damage_multiplier = s.damage_mult
+	fire_rate_multiplier = s.fire_rate_mult
+	speed_multiplier = s.top_speed_mult
+	var new_max := int(s.max_health)
+	if new_max != max_health:
+		current_health = clampi(current_health + new_max - max_health, 1, new_max)
+		max_health = new_max
+		health_changed.emit(current_health, max_health)
+
+
+# ── persistence (garage) ──────────────────────────────────────────────────────
+
+## Banks part of this run's scrap as garage parts. Called once per run end.
+func bank_run() -> int:
+	if _banked:
+		return 0
+	_banked = true
+	var earned := floori(run_scrap * stats.bank_rate)
+	parts += earned
+	_save_meta()
+	parts_changed.emit(parts)
+	run_banked.emit(earned)
+	return earned
+
+
+func _load_meta() -> void:
+	var cfg := ConfigFile.new()
+	if cfg.load(SAVE_PATH) != OK:
 		return
-	match upg.upgrade_type:
-		UpgradeData.Type.UNLOCK_WEAPON:
-			if upg.weapon_id not in unlocked_weapons:
-				unlocked_weapons.append(upg.weapon_id)
-			weapon_unlocked.emit(upg.weapon_id, upg.weapon_scene)
-		UpgradeData.Type.WEAPON_LEVEL_UP:
-			weapon_levels[upg.weapon_id] = weapon_levels.get(upg.weapon_id, 1) + 1
-			weapon_leveled_up.emit(upg.weapon_id)
-		UpgradeData.Type.STAT_BUFF:
-			match upg.stat_target:
-				UpgradeData.Stat.MAX_HEALTH:
-					max_health += int(upg.stat_value)
-					current_health = min(current_health + int(upg.stat_value), max_health)
-					health_changed.emit(current_health, max_health)
-				UpgradeData.Stat.SPEED:
-					speed_multiplier += upg.stat_value
-				UpgradeData.Stat.DAMAGE_MULT:
-					damage_multiplier += upg.stat_value
-				UpgradeData.Stat.FIRE_RATE:
-					fire_rate_multiplier += upg.stat_value
+	parts = cfg.get_value("garage", "parts", 0)
+	screen_shake = cfg.get_value("settings", "screen_shake", true)
+	var saved: Dictionary = cfg.get_value("garage", "levels", {})
+	meta_levels = {}
+	for id in saved:
+		meta_levels[StringName(id)] = int(saved[id])
 
 
-func _pick_upgrade_choices() -> Array:
-	var eligible: Array = []
-	for upg in all_upgrades:
-		if upg.is_available(self):
-			eligible.append(upg)
-	eligible.shuffle()
-	return eligible.slice(0, min(3, eligible.size()))
+func set_screen_shake(on: bool) -> void:
+	screen_shake = on
+	_save_meta()
+
+
+func _save_meta() -> void:
+	var cfg := ConfigFile.new()
+	cfg.set_value("garage", "parts", parts)
+	cfg.set_value("settings", "screen_shake", screen_shake)
+	var plain := {}
+	for id in meta_levels:
+		plain[String(id)] = meta_levels[id]
+	cfg.set_value("garage", "levels", plain)
+	cfg.save(SAVE_PATH)
+
+
+# ── legacy level-up API (kept so old scenes still load) ──────────────────────
+
+func apply_upgrade(upgrade: Resource) -> void:
+	push_warning("GameManager.apply_upgrade: level-up upgrades are gone; buy from a store instead (%s)" % upgrade)
 
 
 func reset() -> void:
+	elapsed_time = 0.0
+	enemies_killed = 0
 	current_level = 1
 	current_xp = 0
-	elapsed_time = 0.0
-	current_health = 100
-	max_health = 100
-	enemies_killed = 0
-	speed_multiplier = 1.0
-	damage_multiplier = 1.0
-	fire_rate_multiplier = 1.0
 	unlocked_weapons = [&"front_gun"]
 	weapon_levels = {}
+	run_levels = {}
+	run_scrap = 0
+	bosses_defeated = 0
+	combo_count = 0
+	combo_time_left = 0.0
+	invulnerable = false
+	_regen_carry = 0.0
 	_is_game_over = false
+	_banked = false
+	_load_meta()
+	_recompute_stats()
+	max_health = int(stats.max_health)
+	current_health = max_health
+	scrap = int(stats.start_scrap)
+	scrap_changed.emit(scrap)
+	combo_changed.emit(0, 1.0)
+	health_changed.emit(current_health, max_health)

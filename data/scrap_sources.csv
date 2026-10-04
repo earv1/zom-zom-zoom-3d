@@ -1,0 +1,10 @@
+source,base,description
+kill,2,Multiplied by the enemy's value (zombie 5 / runner 8 / exploder 15 / tank 25)
+near_miss,10,Skimming past an enemy without touching it
+ground_pound,15,Landing a ground pound (+50% per enemy caught in the shockwave)
+trick,25,Per spin of a landed trick
+loop,60,Driving all the way round a loop
+lap,150,Completing a race loop through all its checkpoints
+boss_hadeda,400,Defeating the hadeda
+boss_zadeda,1200,Defeating the zadeda
+boss_cydeda,3000,Defeating the cydeda

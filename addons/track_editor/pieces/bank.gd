@@ -24,7 +24,7 @@ func get_config() -> Dictionary:
 
 func get_param_defs() -> Array:
 	return [
-		{name = "road_width", label = "Width",  min = 6.0, max = 12.0, step = 6.0, default = 6.0},
+		{name = "road_width", label = "Width",  min = 6.0, max = 24.0, step = 6.0, default = 6.0},
 		{name = "bank_angle", label = "Bank Angle", min = 6.0, max = 60.0, step = 6.0, default = 30.0},
 	]
 

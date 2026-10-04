@@ -18,7 +18,7 @@ func _update_shape() -> void:
 
 func fire() -> void:
 	for body in _area.get_overlapping_bodies():
-		if body is BaseEnemy:
+		if body.is_in_group("enemies") and body.has_method("take_damage"):
 			body.take_damage(int(get_damage()))
 
 

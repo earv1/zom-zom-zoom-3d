@@ -32,7 +32,7 @@ func get_config() -> Dictionary:
 
 func get_param_defs() -> Array:
 	return [
-		{name = "road_width", label = "Width",  min = 6.0, max = 12.0, step = 6.0, default = 6.0},
+		{name = "road_width", label = "Width",  min = 6.0, max = 24.0, step = 6.0, default = 6.0},
 	]
 
 func apply_theme(mode: int, side_color: String) -> void:

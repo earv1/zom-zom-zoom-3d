@@ -1,6 +1,8 @@
 class_name BaseEnemy
 extends RigidBody3D
 
+const XP_ORB: PackedScene = preload("res://scenes/enemy/xp_orb.tscn")
+
 @export var car: Node3D
 @export var fragment_scene: PackedScene
 @export var speed: float = 55.0
@@ -14,15 +16,19 @@ extends RigidBody3D
 
 var _health: int
 var _dead: bool = false
+var _collision_layer := 1
+var _collision_mask := 1
 var _spawner: EnemySpawner
 var pool_key: String
 
 const WARP_BUFFER := 30.0   # trigger warp this many units beyond the warp landing spot
-const DROP_HEIGHT := 10.0   # units above ground to drop from
+const FOG_IN_TIME := 0.8   # seconds to materialise out of the fog
 
 
 func _ready() -> void:
 	_health = max_health
+	_collision_layer = collision_layer
+	_collision_mask = collision_mask
 	add_to_group("enemies")
 	_raycast.add_exception(self)
 	contact_monitor = true
@@ -69,7 +75,10 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 func take_damage(amount: int) -> void:
 	if _dead:
 		return
-	_health -= amount
+	var hit := GameManager.roll_hit(amount)
+	var dealt := maxi(roundi(hit[0]), 1)
+	DamageNumber.spawn(get_tree().current_scene, global_position, dealt, hit[1])
+	_health -= dealt
 	if _health <= 0:
 		die()
 
@@ -85,23 +94,65 @@ func die() -> void:
 	_return_to_pool()
 
 
+## Spawns on the ground `radius` from `center`, materialising out of a fog puff.
 func drop_near(center: Vector3, radius: float) -> void:
 	var angle := randf() * TAU
-	var offset := Vector3(cos(angle), 0.0, sin(angle)) * radius
-	var pos := center + offset
-	pos.y += DROP_HEIGHT
+	var pos := center + Vector3(cos(angle), 0.0, sin(angle)) * radius
+	var query := PhysicsRayQueryParameters3D.create(pos + Vector3.UP * 60.0, pos + Vector3.DOWN * 120.0)
+	query.exclude = [get_rid()]
+	var hit := get_world_3d().direct_space_state.intersect_ray(query)
+	pos.y = (hit.position.y if hit else center.y) + 0.6
 	global_position = pos
 	linear_velocity = Vector3.ZERO
+	_fog_in()
+
+
+func _fog_in() -> void:
+	var puff := CPUParticles3D.new()
+	puff.one_shot = true
+	puff.explosiveness = 0.9
+	puff.amount = 10
+	puff.lifetime = 1.4
+	puff.emission_shape = CPUParticles3D.EMISSION_SHAPE_SPHERE
+	puff.emission_sphere_radius = 1.2
+	puff.direction = Vector3.UP
+	puff.spread = 60.0
+	puff.initial_velocity_min = 0.3
+	puff.initial_velocity_max = 1.2
+	puff.gravity = Vector3.ZERO
+	puff.scale_amount_min = 1.5
+	puff.scale_amount_max = 2.8
+	var quad := QuadMesh.new()
+	var mat := StandardMaterial3D.new()
+	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	mat.billboard_mode = BaseMaterial3D.BILLBOARD_PARTICLES
+	mat.albedo_color = Color(0.78, 0.76, 0.72, 0.45)
+	quad.material = mat
+	puff.mesh = quad
+	get_tree().current_scene.add_child(puff)
+	puff.global_position = global_position
+	puff.emitting = true
+	puff.finished.connect(puff.queue_free)
+	for child in get_children():
+		if child is Node3D and not (child is CollisionShape3D or child is RayCast3D):
+			var visual := child as Node3D
+			var full: Vector3 = visual.get_meta("full_scale", visual.scale)   # pooled enemies reuse this
+			visual.set_meta("full_scale", full)
+			visual.scale = full * 0.15
+			create_tween().tween_property(visual, "scale", full, FOG_IN_TIME).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 
 func reset_for_spawn(car_ref: Node3D) -> void:
 	car = car_ref
-	_health = max_health
+	_health = ceili(max_health * GameManager.enemy_scale("enemy_health_exp"))
 	_dead = false
 	angular_velocity = Vector3.ZERO
 	visible = true
 	process_mode = PROCESS_MODE_INHERIT
 	freeze = false
+	collision_layer = _collision_layer          # restored after sitting in the pool
+	collision_mask = _collision_mask
 
 
 func _return_to_pool() -> void:
@@ -119,7 +170,7 @@ func _on_body_entered(body: Node) -> void:
 		if ram and ram.get("is_ramming"):
 			die()
 			return
-		GameManager.take_damage(contact_damage)
+		GameManager.take_damage(roundi(contact_damage * GameManager.enemy_scale("enemy_damage_exp")))
 		die()
 
 
@@ -144,10 +195,7 @@ func _spawn_fragments() -> void:
 
 
 func _spawn_xp_orb() -> void:
-	var orb_scene: PackedScene = load("res://scenes/enemy/xp_orb.tscn")
-	if not orb_scene:
-		return
-	var orb: Node3D = orb_scene.instantiate()
+	var orb: Node3D = XP_ORB.instantiate()
 	orb.set("xp_value", xp_value)
 	orb.set("car", car)
 	get_tree().current_scene.add_child(orb)

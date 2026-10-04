@@ -57,6 +57,12 @@ func apply_wheel_physics(car: RaycastCar) -> void:
 	if shapecast:
 		contact = shapecast.get_collision_point(0)
 	var spring_len    := maxf(0.0, global_position.distance_to(contact) - wheel_radius)
+	if spring_len > rest_dist + over_extend + 0.25:
+		# Beyond the suspension's travel: a stale hit from last tick (the car moved a lot,
+		# e.g. a teleport or a fast drop). Treating it as contact made the spring yank the
+		# car down at hundreds of m/s, straight through the floor.
+		spring_compression = 0.0
+		return
 	var offset        := rest_dist - spring_len
 	spring_compression = offset / rest_dist  # 0 = fully extended, 1 = fully compressed
 
@@ -68,7 +74,8 @@ func apply_wheel_physics(car: RaycastCar) -> void:
 	var spring_force  := spring_strength * offset
 	var tire_vel      := car._get_point_velocity(contact) # Center of the wheel
 	var spring_damp_f := spring_damping * global_basis.y.dot(tire_vel)
-	var suspension_force := clampf(spring_force - spring_damp_f, -max_spring_force, max_spring_force)
+	# a damper may hold the car down a little, never more than the spring's own full push
+	var suspension_force := clampf(spring_force - spring_damp_f, -spring_strength * rest_dist, max_spring_force)
 
 	var y_force       :=  suspension_force * get_collision_normal()
 	if shapecast:

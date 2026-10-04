@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scenes/boss/boss_test.gd" id="1_test"]
+[ext_resource type="PackedScene" path="res://scenes/environment_and_light.tscn" id="2_env"]
+[ext_resource type="PackedScene" path="res://scenes/world/car.tscn" id="3_car"]
+[ext_resource type="Script" path="res://scenes/boss/hadeda_boss.gd" id="4_boss"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ground"]
+size = Vector3(800, 2, 800)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ground"]
+size = Vector2(800, 800)
+
+[sub_resource type="Shader" id="Shader_ground"]
+code = "shader_type spatial;
+// dusty checker so you can read speed and distance in the sandbox
+varying vec3 world_pos;
+void vertex() { world_pos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz; }
+void fragment() {
+	vec2 cell = floor(world_pos.xz / 8.0);
+	float checker = mod(cell.x + cell.y, 2.0);
+	ALBEDO = mix(vec3(0.43, 0.38, 0.29), vec3(0.37, 0.33, 0.25), checker);
+	ROUGHNESS = 0.95;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ground"]
+shader = SubResource("Shader_ground")
+
+[node name="BossTest" type="Node3D" node_paths=PackedStringArray("boss", "car")]
+script = ExtResource("1_test")
+boss = NodePath("HadedaBoss")
+car = NodePath("Car")
+
+[node name="Environment" parent="." instance=ExtResource("2_env")]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("BoxShape3D_ground")
+
+[node name="Mesh" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("PlaneMesh_ground")
+surface_material_override/0 = SubResource("ShaderMaterial_ground")
+
+[node name="Car" parent="." instance=ExtResource("3_car")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 1.5, -45)
+
+[node name="HadedaBoss" type="Node3D" parent="." node_paths=PackedStringArray("target")]
+transform = Transform3D(-5, 0, 0, 0, 5, 0, 0, 0, -5, 0, 0, 0)
+script = ExtResource("4_boss")
+stage = 2
+target = NodePath("../Car")

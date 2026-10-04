@@ -52,6 +52,22 @@ var PIECE_SCENES := {
 	"loop":     "res://addons/track_editor/pieces/loop.tscn",
 	"bank":     "res://addons/track_editor/pieces/bank.tscn",
 	"jump":     "res://addons/track_editor/pieces/jump.tscn",
+	# skatepark kit
+	"floor":        "res://addons/track_editor/pieces/park/floor.tscn",
+	"quarter_pipe": "res://addons/track_editor/pieces/park/quarter_pipe.tscn",
+	"bowl_corner":  "res://addons/track_editor/pieces/park/bowl_corner.tscn",
+	"spine":        "res://addons/track_editor/pieces/park/spine.tscn",
+	"kicker":       "res://addons/track_editor/pieces/park/kicker.tscn",
+	"funbox":       "res://addons/track_editor/pieces/park/funbox.tscn",
+	"deck":         "res://addons/track_editor/pieces/park/deck.tscn",
+	"slope":        "res://addons/track_editor/pieces/park/slope.tscn",
+	"sky_pillar":   "res://addons/track_editor/pieces/park/sky_pillar.tscn",
+	"dome":         "res://addons/track_editor/pieces/park/dome.tscn",
+	"summon_panel": "res://addons/track_editor/pieces/park/summon_panel.tscn",
+	# stores
+	"diner":        "res://addons/track_editor/pieces/park/store_diner.tscn",
+	"petrol":       "res://addons/track_editor/pieces/park/store_petrol.tscn",
+	"sky_workshop": "res://addons/track_editor/pieces/park/store_sky_workshop.tscn",
 }
 
 func _enter_tree() -> void:

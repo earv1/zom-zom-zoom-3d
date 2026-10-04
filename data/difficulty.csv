@@ -1,0 +1,8 @@
+key,value,description
+rate_per_minute,0.1,Coefficient gained per minute: coefficient = (1 + rate * minutes) * boss_factor ^ bosses_beaten
+boss_factor,1.15,Each boss beaten multiplies the coefficient (like a new stage in Risk of Rain)
+tier_step,0.3,Coefficient per tracker tier (0.3 = a new tier every 3 minutes before bosses)
+enemy_health_exp,1.0,Enemy and boss health scale by coefficient ^ this
+enemy_damage_exp,0.5,Enemy contact damage scales by coefficient ^ this
+enemy_count_exp,1.0,Max enemies alive scales by coefficient ^ this
+kill_reward_exp,0.7,Kill scrap scales by coefficient ^ this

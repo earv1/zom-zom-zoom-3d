@@ -1,0 +1,1321 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/straight.tscn" id="1_r6agj"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/straight.gd" id="2_ennor"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/connector.tscn" id="3_70tqc"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/connector.gd" id="4_vkk0b"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/loop.tscn" id="5_dhhhe"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/loop.gd" id="6_wt4ob"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/store_diner.tscn" id="7_o645c"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/store.gd" id="8_uwucp"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/store_petrol.tscn" id="9_4r6x1"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/floor.tscn" id="10_shjij"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/floor.gd" id="11_cpvlk"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/quarter_pipe.tscn" id="12_anehe"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/quarter_pipe.gd" id="13_1ug6v"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/bowl_corner.tscn" id="14_8hdye"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/bowl_corner.gd" id="15_rhpu1"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/slope.tscn" id="16_v28cr"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/slope.gd" id="17_x4b77"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/summon_panel.tscn" id="18_ucdli"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/summon_panel.gd" id="19_wkywo"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/spine.tscn" id="20_bp574"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/spine.gd" id="21_yjqee"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/funbox.tscn" id="22_0r38w"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/funbox.gd" id="23_2amb6"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/kicker.tscn" id="24_sobhq"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/kicker.gd" id="25_xafp4"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/deck.tscn" id="26_8yb6h"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/deck.gd" id="27_2nvmc"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/sky_pillar.tscn" id="28_l5tta"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/sky_pillar.gd" id="29_f7vxs"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/store_sky_workshop.tscn" id="30_hk4aa"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/dome.tscn" id="31_jx8y0"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/dome.gd" id="32_y4fke"]
+
+[node name="HadedaPark" type="Node3D" unique_id=1825294962]
+
+[node name="TrackRoot" type="Node3D" parent="." unique_id=2087079398]
+
+[node name="straight_-204_0_180" type="Node3D" parent="TrackRoot" unique_id=1458700110 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 180)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_172" type="Node3D" parent="TrackRoot" unique_id=1482596302 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 172)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_164" type="Node3D" parent="TrackRoot" unique_id=829760610 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 164)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_156" type="Node3D" parent="TrackRoot" unique_id=665110514 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 156)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_148" type="Node3D" parent="TrackRoot" unique_id=1581558953 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 148)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_140" type="Node3D" parent="TrackRoot" unique_id=1371681007 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 140)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_132" type="Node3D" parent="TrackRoot" unique_id=1917132371 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 132)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_124" type="Node3D" parent="TrackRoot" unique_id=674914065 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 124)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_116" type="Node3D" parent="TrackRoot" unique_id=1592909255 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 116)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_108" type="Node3D" parent="TrackRoot" unique_id=1161845917 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 108)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_100" type="Node3D" parent="TrackRoot" unique_id=1240821090 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 100)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_92" type="Node3D" parent="TrackRoot" unique_id=2021065829 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 92)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_84" type="Node3D" parent="TrackRoot" unique_id=2138144527 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 84)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_76" type="Node3D" parent="TrackRoot" unique_id=1332486019 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 76)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_68" type="Node3D" parent="TrackRoot" unique_id=1653794949 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 68)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_60" type="Node3D" parent="TrackRoot" unique_id=2026617778 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 60)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_52" type="Node3D" parent="TrackRoot" unique_id=1755575112 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 52)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_44" type="Node3D" parent="TrackRoot" unique_id=459998329 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 44)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_36" type="Node3D" parent="TrackRoot" unique_id=1251196967 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 36)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_28" type="Node3D" parent="TrackRoot" unique_id=224574445 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 28)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_20" type="Node3D" parent="TrackRoot" unique_id=1395468325 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 20)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_12" type="Node3D" parent="TrackRoot" unique_id=202103335 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 12)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_4" type="Node3D" parent="TrackRoot" unique_id=1970445123 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, 4)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_-4" type="Node3D" parent="TrackRoot" unique_id=1059156705 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, -4)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_-12" type="Node3D" parent="TrackRoot" unique_id=1667507004 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, -12)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_-20" type="Node3D" parent="TrackRoot" unique_id=1898491072 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, -20)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_-28" type="Node3D" parent="TrackRoot" unique_id=833814116 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, -28)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_-36" type="Node3D" parent="TrackRoot" unique_id=398996844 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, -36)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_-44" type="Node3D" parent="TrackRoot" unique_id=1872017961 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, -44)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_-52" type="Node3D" parent="TrackRoot" unique_id=2062036276 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, -52)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_-60" type="Node3D" parent="TrackRoot" unique_id=64980898 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, -60)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_-68" type="Node3D" parent="TrackRoot" unique_id=1971452912 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, -68)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_-76" type="Node3D" parent="TrackRoot" unique_id=102470601 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, -76)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_-84" type="Node3D" parent="TrackRoot" unique_id=253230551 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, -84)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_-92" type="Node3D" parent="TrackRoot" unique_id=1817412238 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, -92)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_-100" type="Node3D" parent="TrackRoot" unique_id=753863998 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, -100)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_-108" type="Node3D" parent="TrackRoot" unique_id=1160435372 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, -108)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-204_0_-116" type="Node3D" parent="TrackRoot" unique_id=2080866155 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, -116)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="connector_-204_0_-120" type="Node3D" parent="TrackRoot" unique_id=661620920 instance=ExtResource("3_70tqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204, 0, -120)
+script = ExtResource("4_vkk0b")
+start_pos = Vector3(-204, 0, -120)
+start_dir = Vector3(0, 0, -1)
+end_pos = Vector3(-80, 0, -244)
+end_dir = Vector3(1, 0, -1.1924881e-08)
+road_width = 24.0
+start_width = 24.0
+end_width = 24.0
+side_color_name = "red"
+sweep = 1.0
+
+[node name="straight_-76_0_-244" type="Node3D" parent="TrackRoot" unique_id=1378468737 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -76, 0, -244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-68_0_-244" type="Node3D" parent="TrackRoot" unique_id=1505087749 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -68, 0, -244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-60_0_-244" type="Node3D" parent="TrackRoot" unique_id=656611550 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -60, 0, -244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-52_0_-244" type="Node3D" parent="TrackRoot" unique_id=859213750 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -52, 0, -244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="loop_-44_0_-244" type="Node3D" parent="TrackRoot" unique_id=1121993577 instance=ExtResource("5_dhhhe")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -44, 0, -244)
+script = ExtResource("6_wt4ob")
+radius = 26.0
+exit_offset = 32.0
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-36_0_-276" type="Node3D" parent="TrackRoot" unique_id=103061560 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -36.000004, 0, -276)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-28_0_-276" type="Node3D" parent="TrackRoot" unique_id=1188177219 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -28.000004, 0, -276)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-20_0_-276" type="Node3D" parent="TrackRoot" unique_id=1215478145 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -20.000004, 0, -276)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-12_0_-276" type="Node3D" parent="TrackRoot" unique_id=1414324290 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -12.000004, 0, -276)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-4_0_-276" type="Node3D" parent="TrackRoot" unique_id=157958235 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -4.000004, 0, -276)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_4_0_-276" type="Node3D" parent="TrackRoot" unique_id=1986149258 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 3.9999962, 0, -276)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_12_0_-276" type="Node3D" parent="TrackRoot" unique_id=925386275 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 11.999996, 0, -276)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_20_0_-276" type="Node3D" parent="TrackRoot" unique_id=962153467 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 19.999996, 0, -276)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_28_0_-276" type="Node3D" parent="TrackRoot" unique_id=744094531 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 27.999996, 0, -276)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_36_0_-276" type="Node3D" parent="TrackRoot" unique_id=1139266120 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 35.999996, 0, -276)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_44_0_-276" type="Node3D" parent="TrackRoot" unique_id=1746542799 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 43.999996, 0, -276)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_52_0_-276" type="Node3D" parent="TrackRoot" unique_id=98514898 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 51.999996, 0, -276)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_60_0_-276" type="Node3D" parent="TrackRoot" unique_id=790332086 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 59.999996, 0, -276)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_68_0_-276" type="Node3D" parent="TrackRoot" unique_id=727862251 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 68, 0, -276)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_76_0_-276" type="Node3D" parent="TrackRoot" unique_id=723073716 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 76, 0, -276)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_84_0_-276" type="Node3D" parent="TrackRoot" unique_id=1308348940 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 84, 0, -276)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="connector_88_0_-276" type="Node3D" parent="TrackRoot" unique_id=260026908 instance=ExtResource("3_70tqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88, 0, -276)
+script = ExtResource("4_vkk0b")
+start_pos = Vector3(88, 0, -276)
+start_dir = Vector3(1, 0, -1.1924881e-08)
+end_pos = Vector3(212, 0, -152)
+end_dir = Vector3(8.742278e-08, 0, 1)
+road_width = 24.0
+start_width = 24.0
+end_width = 24.0
+side_color_name = "red"
+sweep = 1.0
+
+[node name="straight_212_0_-148" type="Node3D" parent="TrackRoot" unique_id=1175831245 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, -148)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_-140" type="Node3D" parent="TrackRoot" unique_id=957004075 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, -140)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_-132" type="Node3D" parent="TrackRoot" unique_id=56849931 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, -132)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_-124" type="Node3D" parent="TrackRoot" unique_id=1230882590 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, -124)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_-116" type="Node3D" parent="TrackRoot" unique_id=592668245 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, -116)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_-108" type="Node3D" parent="TrackRoot" unique_id=1335791642 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, -108)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_-100" type="Node3D" parent="TrackRoot" unique_id=470142837 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, -100)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_-92" type="Node3D" parent="TrackRoot" unique_id=1434704848 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, -92)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_-84" type="Node3D" parent="TrackRoot" unique_id=357796389 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, -84)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_-76" type="Node3D" parent="TrackRoot" unique_id=354730819 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, -76)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_-68" type="Node3D" parent="TrackRoot" unique_id=221321485 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, -68)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_-60" type="Node3D" parent="TrackRoot" unique_id=1802291866 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, -60)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_-52" type="Node3D" parent="TrackRoot" unique_id=65678525 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, -52)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_-44" type="Node3D" parent="TrackRoot" unique_id=788310083 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, -44)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_-36" type="Node3D" parent="TrackRoot" unique_id=784102432 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, -36)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_-28" type="Node3D" parent="TrackRoot" unique_id=1991162657 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, -28)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_-20" type="Node3D" parent="TrackRoot" unique_id=2043328319 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, -20)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_-12" type="Node3D" parent="TrackRoot" unique_id=1975759163 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, -12)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_-4" type="Node3D" parent="TrackRoot" unique_id=1690511320 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, -4)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_4" type="Node3D" parent="TrackRoot" unique_id=1239881661 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, 4)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_12" type="Node3D" parent="TrackRoot" unique_id=1943767282 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, 12)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_20" type="Node3D" parent="TrackRoot" unique_id=1843960830 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, 20)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_28" type="Node3D" parent="TrackRoot" unique_id=1601608651 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, 28)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_36" type="Node3D" parent="TrackRoot" unique_id=1842328577 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, 36)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_44" type="Node3D" parent="TrackRoot" unique_id=521847161 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, 44)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_52" type="Node3D" parent="TrackRoot" unique_id=631067963 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, 52)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_60" type="Node3D" parent="TrackRoot" unique_id=1234793638 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, 60)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_68" type="Node3D" parent="TrackRoot" unique_id=1735323719 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, 68)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_76" type="Node3D" parent="TrackRoot" unique_id=2050139462 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, 76)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_212_0_84" type="Node3D" parent="TrackRoot" unique_id=540124837 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 212, 0, 84)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="connector_212_0_88" type="Node3D" parent="TrackRoot" unique_id=1873580475 instance=ExtResource("3_70tqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 212, 0, 88)
+script = ExtResource("4_vkk0b")
+start_pos = Vector3(212, 0, 88)
+start_dir = Vector3(8.742278e-08, 0, 1)
+end_pos = Vector3(88.00001, 0, 212)
+end_dir = Vector3(-1, 0, 4.371139e-08)
+road_width = 24.0
+start_width = 24.0
+end_width = 24.0
+side_color_name = "red"
+sweep = 1.0
+
+[node name="straight_84_0_212" type="Node3D" parent="TrackRoot" unique_id=1739113385 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 84.00001, 0, 212)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_76_0_212" type="Node3D" parent="TrackRoot" unique_id=1481743760 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 76.00001, 0, 212)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_68_0_212" type="Node3D" parent="TrackRoot" unique_id=1773872445 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 68.00001, 0, 212)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_60_0_212" type="Node3D" parent="TrackRoot" unique_id=2003030451 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 60.000008, 0, 212)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="loop_52_0_212" type="Node3D" parent="TrackRoot" unique_id=1457923098 instance=ExtResource("5_dhhhe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.000008, 0, 212)
+script = ExtResource("6_wt4ob")
+radius = 26.0
+exit_offset = 32.0
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_44_0_244" type="Node3D" parent="TrackRoot" unique_id=2038601627 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 44.000008, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_36_0_244" type="Node3D" parent="TrackRoot" unique_id=2045780000 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 36.000008, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_28_0_244" type="Node3D" parent="TrackRoot" unique_id=996074949 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 28.000008, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_20_0_244" type="Node3D" parent="TrackRoot" unique_id=804636650 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20.000008, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_12_0_244" type="Node3D" parent="TrackRoot" unique_id=508064845 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12.000008, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_4_0_244" type="Node3D" parent="TrackRoot" unique_id=1533032483 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.0000076, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-4_0_244" type="Node3D" parent="TrackRoot" unique_id=585311833 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.9999924, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-12_0_244" type="Node3D" parent="TrackRoot" unique_id=2130838261 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.999992, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-20_0_244" type="Node3D" parent="TrackRoot" unique_id=848832417 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -19.999992, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-28_0_244" type="Node3D" parent="TrackRoot" unique_id=1343233142 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27.999992, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-36_0_244" type="Node3D" parent="TrackRoot" unique_id=2020953523 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -35.999992, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-44_0_244" type="Node3D" parent="TrackRoot" unique_id=794811352 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -43.999992, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-52_0_244" type="Node3D" parent="TrackRoot" unique_id=343027270 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -51.999992, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-60_0_244" type="Node3D" parent="TrackRoot" unique_id=1509488774 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -59.999992, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-68_0_244" type="Node3D" parent="TrackRoot" unique_id=897517435 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -67.99999, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-76_0_244" type="Node3D" parent="TrackRoot" unique_id=1530995287 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -75.99999, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-84_0_244" type="Node3D" parent="TrackRoot" unique_id=901836390 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -83.99999, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-92_0_244" type="Node3D" parent="TrackRoot" unique_id=1120648744 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -91.99999, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-100_0_244" type="Node3D" parent="TrackRoot" unique_id=800672896 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -99.99999, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-108_0_244" type="Node3D" parent="TrackRoot" unique_id=1688870871 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -107.99999, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-116_0_244" type="Node3D" parent="TrackRoot" unique_id=652943256 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -115.99999, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-124_0_244" type="Node3D" parent="TrackRoot" unique_id=1375285820 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -123.99999, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-132_0_244" type="Node3D" parent="TrackRoot" unique_id=686904597 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -132, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_-140_0_244" type="Node3D" parent="TrackRoot" unique_id=1645035083 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -140, 0, 244)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="connector_-144_0_244" type="Node3D" parent="TrackRoot" unique_id=708653473 instance=ExtResource("3_70tqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -144, 0, 244)
+script = ExtResource("4_vkk0b")
+start_pos = Vector3(-144, 0, 244)
+start_dir = Vector3(-1, 0, 4.371139e-08)
+end_pos = Vector3(-204, 0, 184)
+end_dir = Vector3(0, 0, -1)
+road_width = 24.0
+start_width = 24.0
+end_width = 24.0
+side_color_name = "red"
+sweep = 1.0
+
+[node name="connector_212_0_-104" type="Node3D" parent="TrackRoot" unique_id=1941722724 instance=ExtResource("3_70tqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 212, 0.03, -104)
+script = ExtResource("4_vkk0b")
+start_pos = Vector3(212, 0.03, -104)
+start_dir = Vector3(8.742278e-08, 0, 1)
+end_pos = Vector3(240, 0, -76)
+end_dir = Vector3(1, 0, -1.1924881e-08)
+road_width = 24.0
+start_width = 24.0
+end_width = 24.0
+side_color_name = "red"
+sweep = 1.0
+metadata/route = "diner_pit_lane"
+
+[node name="straight_244_0_-76" type="Node3D" parent="TrackRoot" unique_id=1340667194 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 244, 0, -76)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "diner_pit_lane"
+
+[node name="straight_252_0_-76" type="Node3D" parent="TrackRoot" unique_id=2081793987 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 252, 0, -76)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "diner_pit_lane"
+
+[node name="connector_256_0_-76" type="Node3D" parent="TrackRoot" unique_id=928102870 instance=ExtResource("3_70tqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 0, -76)
+script = ExtResource("4_vkk0b")
+start_pos = Vector3(256, 0, -76)
+start_dir = Vector3(1, 0, -1.1924881e-08)
+end_pos = Vector3(284, 0, -48)
+end_dir = Vector3(8.742278e-08, 0, 1)
+road_width = 24.0
+start_width = 24.0
+end_width = 24.0
+side_color_name = "red"
+sweep = 1.0
+metadata/route = "diner_pit_lane"
+
+[node name="diner_284_0_-40" type="Node3D" parent="TrackRoot" unique_id=1973621861 instance=ExtResource("7_o645c")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 284, 0, -40)
+script = ExtResource("8_uwucp")
+side_color_name = "red"
+metadata/route = "diner_pit_lane"
+
+[node name="straight_284_0_-28" type="Node3D" parent="TrackRoot" unique_id=2069571596 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 284, 0, -28)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "diner_pit_lane"
+
+[node name="straight_284_0_-20" type="Node3D" parent="TrackRoot" unique_id=944423253 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 284, 0, -20)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "diner_pit_lane"
+
+[node name="connector_284_0_-16" type="Node3D" parent="TrackRoot" unique_id=235521777 instance=ExtResource("3_70tqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 284, 0, -16)
+script = ExtResource("4_vkk0b")
+start_pos = Vector3(284, 0, -16)
+start_dir = Vector3(8.742278e-08, 0, 1)
+end_pos = Vector3(256, 0, 12.000002)
+end_dir = Vector3(-1, 0, 4.371139e-08)
+road_width = 24.0
+start_width = 24.0
+end_width = 24.0
+side_color_name = "red"
+sweep = 1.0
+metadata/route = "diner_pit_lane"
+
+[node name="straight_252_0_12" type="Node3D" parent="TrackRoot" unique_id=1597379768 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 252, 0, 12.000002)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "diner_pit_lane"
+
+[node name="straight_244_0_12" type="Node3D" parent="TrackRoot" unique_id=290024702 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 244, 0, 12.000002)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "diner_pit_lane"
+
+[node name="connector_240_0_12" type="Node3D" parent="TrackRoot" unique_id=1251645929 instance=ExtResource("3_70tqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240, 0, 12.000002)
+script = ExtResource("4_vkk0b")
+start_pos = Vector3(240, 0, 12.000002)
+start_dir = Vector3(-1, 0, 4.371139e-08)
+end_pos = Vector3(212, 0.03, 40)
+end_dir = Vector3(8.742278e-08, 0, 1)
+road_width = 24.0
+start_width = 24.0
+end_width = 24.0
+side_color_name = "red"
+sweep = 1.0
+metadata/route = "diner_pit_lane"
+
+[node name="connector_16_0_244" type="Node3D" parent="TrackRoot" unique_id=477476392 instance=ExtResource("3_70tqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.000008, 0.03, 244)
+script = ExtResource("4_vkk0b")
+start_pos = Vector3(16.000008, 0.03, 244)
+start_dir = Vector3(-1, 0, 4.371139e-08)
+end_pos = Vector3(-11.99999, 0, 272)
+end_dir = Vector3(8.742278e-08, 0, 1)
+road_width = 24.0
+start_width = 24.0
+end_width = 24.0
+side_color_name = "red"
+sweep = 1.0
+metadata/route = "petrol_pit_lane"
+
+[node name="straight_-12_0_276" type="Node3D" parent="TrackRoot" unique_id=898826472 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -11.99999, 0, 276)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "petrol_pit_lane"
+
+[node name="straight_-12_0_284" type="Node3D" parent="TrackRoot" unique_id=850824346 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -11.99999, 0, 284)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "petrol_pit_lane"
+
+[node name="connector_-12_0_288" type="Node3D" parent="TrackRoot" unique_id=2078010517 instance=ExtResource("3_70tqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.99999, 0, 288)
+script = ExtResource("4_vkk0b")
+start_pos = Vector3(-11.99999, 0, 288)
+start_dir = Vector3(8.742278e-08, 0, 1)
+end_pos = Vector3(-39.99999, 0, 316)
+end_dir = Vector3(-1, 0, 4.371139e-08)
+road_width = 24.0
+start_width = 24.0
+end_width = 24.0
+side_color_name = "red"
+sweep = 1.0
+metadata/route = "petrol_pit_lane"
+
+[node name="petrol_-48_0_316" type="Node3D" parent="TrackRoot" unique_id=1946395117 instance=ExtResource("9_4r6x1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -47.99999, 0, 316)
+script = ExtResource("8_uwucp")
+kind = 1
+side_color_name = "red"
+metadata/route = "petrol_pit_lane"
+
+[node name="straight_-60_0_316" type="Node3D" parent="TrackRoot" unique_id=2090657742 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -59.99999, 0, 316)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "petrol_pit_lane"
+
+[node name="straight_-68_0_316" type="Node3D" parent="TrackRoot" unique_id=439267821 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -67.999985, 0, 316)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "petrol_pit_lane"
+
+[node name="connector_-72_0_316" type="Node3D" parent="TrackRoot" unique_id=513916794 instance=ExtResource("3_70tqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.999985, 0, 316)
+script = ExtResource("4_vkk0b")
+start_pos = Vector3(-71.999985, 0, 316)
+start_dir = Vector3(-1, 0, 4.371139e-08)
+end_pos = Vector3(-99.999985, 0, 288)
+end_dir = Vector3(0, 0, -1)
+road_width = 24.0
+start_width = 24.0
+end_width = 24.0
+side_color_name = "red"
+sweep = 1.0
+metadata/route = "petrol_pit_lane"
+
+[node name="straight_-100_0_284" type="Node3D" parent="TrackRoot" unique_id=10077831 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.999985, 0, 284)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "petrol_pit_lane"
+
+[node name="straight_-100_0_276" type="Node3D" parent="TrackRoot" unique_id=1600073977 instance=ExtResource("1_r6agj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.999985, 0, 276)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "petrol_pit_lane"
+
+[node name="connector_-100_0_272" type="Node3D" parent="TrackRoot" unique_id=207882348 instance=ExtResource("3_70tqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.999985, 0, 272)
+script = ExtResource("4_vkk0b")
+start_pos = Vector3(-99.999985, 0, 272)
+start_dir = Vector3(0, 0, -1)
+end_pos = Vector3(-128, 0.03, 244)
+end_dir = Vector3(-1, 0, 4.371139e-08)
+road_width = 24.0
+start_width = 24.0
+end_width = 24.0
+side_color_name = "red"
+sweep = 1.0
+metadata/route = "petrol_pit_lane"
+
+[node name="connector_212_0_-48" type="Node3D" parent="TrackRoot" unique_id=58474858 instance=ExtResource("3_70tqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 212, 0.03, -48)
+script = ExtResource("4_vkk0b")
+start_pos = Vector3(212, 0.03, -48)
+start_dir = Vector3(8.742278e-08, 0, 1)
+end_pos = Vector3(184, 0, -19.999998)
+end_dir = Vector3(-1, 0, 4.371139e-08)
+road_width = 24.0
+start_width = 24.0
+end_width = 24.0
+side_color_name = "red"
+sweep = 1.0
+metadata/route = "east_spur"
+
+[node name="straight_180_0_-20" type="Node3D" parent="TrackRoot" unique_id=427751918 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 180, 0, -19.999998)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "east_spur"
+
+[node name="straight_172_0_-20" type="Node3D" parent="TrackRoot" unique_id=1629954250 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 172, 0, -19.999998)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "east_spur"
+
+[node name="straight_164_0_-20" type="Node3D" parent="TrackRoot" unique_id=626490894 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 164, 0, -19.999998)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "east_spur"
+
+[node name="straight_156_0_-20" type="Node3D" parent="TrackRoot" unique_id=1931419519 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 156, 0, -19.999998)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "east_spur"
+
+[node name="straight_148_0_-20" type="Node3D" parent="TrackRoot" unique_id=1768649016 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 148, 0, -19.999998)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "east_spur"
+
+[node name="straight_140_0_-20" type="Node3D" parent="TrackRoot" unique_id=403564549 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 140, 0, -19.999998)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "east_spur"
+
+[node name="straight_132_0_-20" type="Node3D" parent="TrackRoot" unique_id=1049458011 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 132, 0, -19.999998)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "east_spur"
+
+[node name="straight_124_0_-20" type="Node3D" parent="TrackRoot" unique_id=1365987785 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 124, 0, -19.999998)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "east_spur"
+
+[node name="straight_116_0_-20" type="Node3D" parent="TrackRoot" unique_id=1263985548 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 116, 0, -19.999998)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "east_spur"
+
+[node name="straight_108_0_-20" type="Node3D" parent="TrackRoot" unique_id=214218876 instance=ExtResource("1_r6agj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 108, 0, -19.999998)
+script = ExtResource("2_ennor")
+road_width = 24.0
+side_color_name = "red"
+metadata/route = "east_spur"
+
+[node name="floor_-80_0_-80" type="Node3D" parent="TrackRoot" unique_id=45081365 instance=ExtResource("10_shjij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, -80)
+script = ExtResource("11_cpvlk")
+width_cells = 10
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_-80_0_0" type="Node3D" parent="TrackRoot" unique_id=296672503 instance=ExtResource("10_shjij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 0)
+script = ExtResource("11_cpvlk")
+width_cells = 10
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_-80_0_80" type="Node3D" parent="TrackRoot" unique_id=68326013 instance=ExtResource("10_shjij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 80)
+script = ExtResource("11_cpvlk")
+width_cells = 10
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_0_0_-80" type="Node3D" parent="TrackRoot" unique_id=2136731513 instance=ExtResource("10_shjij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -80)
+script = ExtResource("11_cpvlk")
+width_cells = 10
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_0_0_0" type="Node3D" parent="TrackRoot" unique_id=1041866197 instance=ExtResource("10_shjij")]
+script = ExtResource("11_cpvlk")
+width_cells = 10
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_0_0_80" type="Node3D" parent="TrackRoot" unique_id=2029819038 instance=ExtResource("10_shjij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 80)
+script = ExtResource("11_cpvlk")
+width_cells = 10
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_80_0_-80" type="Node3D" parent="TrackRoot" unique_id=127837089 instance=ExtResource("10_shjij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, -80)
+script = ExtResource("11_cpvlk")
+width_cells = 10
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_80_0_0" type="Node3D" parent="TrackRoot" unique_id=1089166191 instance=ExtResource("10_shjij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 0)
+script = ExtResource("11_cpvlk")
+width_cells = 10
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_80_0_80" type="Node3D" parent="TrackRoot" unique_id=654015209 instance=ExtResource("10_shjij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 80)
+script = ExtResource("11_cpvlk")
+width_cells = 10
+depth_cells = 10
+side_color_name = "red"
+
+[node name="quarter_pipe_0_0_-36" type="Node3D" parent="TrackRoot" unique_id=225506642 instance=ExtResource("12_anehe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36)
+script = ExtResource("13_1ug6v")
+radius = 8.0
+height = 10.0
+width_cells = 8
+deck = 4.0
+side_color_name = "red"
+
+[node name="quarter_pipe_0_0_36" type="Node3D" parent="TrackRoot" unique_id=1151058052 instance=ExtResource("12_anehe")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 36)
+script = ExtResource("13_1ug6v")
+radius = 8.0
+height = 10.0
+width_cells = 8
+deck = 4.0
+side_color_name = "red"
+
+[node name="quarter_pipe_-36_0_0" type="Node3D" parent="TrackRoot" unique_id=1967675679 instance=ExtResource("12_anehe")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -36, 0, 0)
+script = ExtResource("13_1ug6v")
+radius = 8.0
+height = 10.0
+width_cells = 8
+deck = 4.0
+side_color_name = "red"
+
+[node name="bowl_corner_-36_0_-36" type="Node3D" parent="TrackRoot" unique_id=854234132 instance=ExtResource("14_8hdye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -36)
+script = ExtResource("15_rhpu1")
+radius = 8.0
+height = 10.0
+deck = 6.0
+side_color_name = "red"
+
+[node name="bowl_corner_-36_0_36" type="Node3D" parent="TrackRoot" unique_id=533409276 instance=ExtResource("14_8hdye")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -36, 0, 36)
+script = ExtResource("15_rhpu1")
+radius = 8.0
+height = 10.0
+deck = 6.0
+side_color_name = "red"
+
+[node name="slope_0_0_-56" type="Node3D" parent="TrackRoot" unique_id=1780915868 instance=ExtResource("16_v28cr")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -56)
+script = ExtResource("17_x4b77")
+length = 24.0
+height = 10.0
+width_cells = 3
+side_color_name = "red"
+
+[node name="summon_panel_0_0_0" type="Node3D" parent="TrackRoot" unique_id=1938690925 instance=ExtResource("18_ucdli")]
+script = ExtResource("19_wkywo")
+side_color_name = "red"
+
+[node name="spine_72_0_0" type="Node3D" parent="TrackRoot" unique_id=1130139878 instance=ExtResource("20_bp574")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 72, 0, 0)
+script = ExtResource("21_yjqee")
+radius = 4.0
+width_cells = 6
+side_color_name = "red"
+
+[node name="funbox_64_0_-64" type="Node3D" parent="TrackRoot" unique_id=144597242 instance=ExtResource("22_0r38w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -64)
+script = ExtResource("23_2amb6")
+top = 16.0
+height = 3.0
+slope = 10.0
+side_color_name = "red"
+
+[node name="funbox_64_0_64" type="Node3D" parent="TrackRoot" unique_id=1121176039 instance=ExtResource("22_0r38w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 64)
+script = ExtResource("23_2amb6")
+top = 16.0
+height = 3.0
+slope = 10.0
+side_color_name = "red"
+
+[node name="kicker_-102_0_0" type="Node3D" parent="TrackRoot" unique_id=1116164578 instance=ExtResource("24_sobhq")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -102, 0, 0)
+script = ExtResource("25_xafp4")
+length = 12.0
+lip_angle = 35.0
+width_cells = 2
+side_color_name = "red"
+
+[node name="slope_0_0_-140" type="Node3D" parent="TrackRoot" unique_id=233438831 instance=ExtResource("16_v28cr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -140)
+script = ExtResource("17_x4b77")
+length = 24.0
+width_cells = 4
+side_color_name = "red"
+
+[node name="deck_0_0_-168" type="Node3D" parent="TrackRoot" unique_id=891010896 instance=ExtResource("26_8yb6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -168)
+script = ExtResource("27_2nvmc")
+width_cells = 6
+depth_cells = 4
+side_color_name = "red"
+
+[node name="kicker_18_4_-168" type="Node3D" parent="TrackRoot" unique_id=726040842 instance=ExtResource("24_sobhq")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 18, 4, -168)
+script = ExtResource("25_xafp4")
+length = 12.0
+lip_angle = 25.0
+width_cells = 3
+side_color_name = "red"
+
+[node name="deck_80_0_-168" type="Node3D" parent="TrackRoot" unique_id=1487095320 instance=ExtResource("26_8yb6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, -168)
+script = ExtResource("27_2nvmc")
+width_cells = 4
+depth_cells = 4
+side_color_name = "red"
+
+[node name="slope_80_0_-140" type="Node3D" parent="TrackRoot" unique_id=2115691371 instance=ExtResource("16_v28cr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, -140)
+script = ExtResource("17_x4b77")
+length = 24.0
+width_cells = 4
+side_color_name = "red"
+
+[node name="slope_0_4_-188" type="Node3D" parent="TrackRoot" unique_id=1578410595 instance=ExtResource("16_v28cr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -188)
+script = ExtResource("17_x4b77")
+length = 8.0
+height = 6.0
+width_cells = 6
+side_color_name = "red"
+
+[node name="deck_0_0_-208" type="Node3D" parent="TrackRoot" unique_id=893448662 instance=ExtResource("26_8yb6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -208)
+script = ExtResource("27_2nvmc")
+width_cells = 6
+depth_cells = 4
+height = 10.0
+side_color_name = "red"
+
+[node name="sky_pillar_-282_0_0" type="Node3D" parent="TrackRoot" unique_id=757699914 instance=ExtResource("28_l5tta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -282, 0, 0)
+script = ExtResource("29_f7vxs")
+height = 28.0
+side_color_name = "red"
+
+[node name="sky_workshop_-282_28_0" type="Node3D" parent="TrackRoot" unique_id=2087238778 instance=ExtResource("30_hk4aa")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -282, 28, 0)
+script = ExtResource("8_uwucp")
+kind = 2
+side_color_name = "red"
+
+[node name="diner_0_0_152" type="Node3D" parent="TrackRoot" unique_id=1213727957 instance=ExtResource("7_o645c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 152)
+script = ExtResource("8_uwucp")
+side_color_name = "red"
+
+[node name="dome_1_0_20" type="Node3D" parent="TrackRoot" unique_id=1450690029 instance=ExtResource("31_jx8y0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.08, 20)
+script = ExtResource("32_y4fke")
+radius = 384.0
+height = 134.39999999999998
+transition = 24.0
+exit_width = 32.0
+side_color_name = "red"

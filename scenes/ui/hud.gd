@@ -2,7 +2,6 @@ class_name HUD
 extends CanvasLayer
 
 const NEAR_MISS_RADIUS := 5.0
-const NEAR_MISS_XP := 10
 const SHAKE_DURATION := 0.3
 const SHAKE_INTENSITY := 8.0
 
@@ -28,20 +27,39 @@ var _popup_text: Control
 var _shake_timer := 0.0
 var _near_miss_cooldowns: Dictionary = {}  # enemy instance_id -> float
 var _trick_display: Control
+var _shown_scrap := 0.0                     # the counter ticks up toward GameManager.scrap
+var _combo_label: Label
 
 
 func _ready() -> void:
 	GameManager.health_changed.connect(_on_health_changed)
-	GameManager.xp_changed.connect(_on_xp_changed)
-	GameManager.level_changed.connect(_on_level_changed)
-	GameManager.level_up_triggered.connect(_on_level_up_triggered)
+	GameManager.scrap_earned.connect(_on_scrap_earned)
+	GameManager.combo_changed.connect(_on_combo_changed)
 	GameManager.game_over.connect(_on_game_over)
 	GameManager.game_won.connect(_on_game_won)
 
 	_health_bar.max_value = GameManager.max_health
 	_health_bar.value = GameManager.current_health
-	_xp_bar.max_value = 100
-	_xp_bar.value = 0
+	# the old XP bar is now the combo timer, the level label the scrap counter
+	_xp_bar.max_value = 1.0
+	_xp_bar.value = 0.0
+	_shown_scrap = GameManager.scrap
+	_level_label.add_theme_font_size_override("font_size", 28)
+	_combo_label = Label.new()
+	_combo_label.add_theme_font_size_override("font_size", 22)
+	_combo_label.add_theme_color_override("font_color", Color(1.0, 0.8, 0.2))
+	_combo_label.add_theme_color_override("font_outline_color", Color.BLACK)
+	_combo_label.add_theme_constant_override("outline_size", 6)
+	_combo_label.position = _xp_bar.position + Vector2(0, _xp_bar.size.y + 4)
+	add_child(_combo_label)
+	_on_combo_changed(0, 1.0)
+	var tracker := DifficultyTracker.new()
+	add_child(tracker)
+	tracker.set_anchors_preset(Control.PRESET_TOP_RIGHT)      # follows window resizes
+	tracker.offset_left = -270.0
+	tracker.offset_right = -16.0
+	tracker.offset_top = 104.0                              # below the speed readout
+	tracker.offset_bottom = 164.0
 
 	var boosts := get_tree().get_nodes_in_group("car_boost")
 	if boosts.size() > 0:
@@ -57,6 +75,13 @@ func _ready() -> void:
 		var air_ctrl := _car.get_node_or_null("CarAirControl") as CarAirControl
 		if air_ctrl:
 			air_ctrl.trick_landed.connect(_on_trick_landed)
+			air_ctrl.ground_pounded.connect(func(strength: float, hits: int) -> void:
+				trigger_shake()
+				show_popup("GROUND POUND" + (" x%d" % hits if hits > 0 else ""), Color(1.0, 0.75, 0.3).lerp(Color(1.0, 0.3, 0.2), strength)))
+			var flight := FlightIndicator.new()        # debug: shows when flight mode is in control
+			flight.air = air_ctrl
+			add_child(flight)
+			flight.position = Vector2(16, 16)
 			air_ctrl.trick_input.connect(_trick_display.on_trick_input)
 			air_ctrl.trick_sequence_reset.connect(_trick_display.on_sequence_reset)
 			air_ctrl.trick_spin_started.connect(_trick_display.on_spin_started)
@@ -70,6 +95,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var secs := int(GameManager.elapsed_time)
 	_timer_label.text = "%02d:%02d" % [secs / 60, secs % 60]
+	_shown_scrap = move_toward(_shown_scrap, GameManager.scrap, maxf(absf(GameManager.scrap - _shown_scrap) * 6.0, 30.0) * delta)
+	_level_label.text = "SCRAP " + Num.short(_shown_scrap)
+	_xp_bar.value = GameManager.combo_time_left / GameManager.stats.combo_window if GameManager.combo_count > 0 else 0.0
 	_update_boost_bar()
 	if _car:
 		_speed_label.text = "%d km/h" % int(_car.linear_velocity.length() * 3.6)
@@ -103,6 +131,8 @@ func show_popup(text: String, color: Color = Color.WHITE) -> void:
 # ── Screen Shake ──────────────────────────────────────────────────────────────
 
 func trigger_shake() -> void:
+	if not GameManager.screen_shake:
+		return
 	_shake_timer = SHAKE_DURATION
 
 
@@ -140,17 +170,16 @@ func _check_near_misses(delta: float) -> void:
 			continue
 		var dist: float = (enemy as Node3D).global_position.distance_to(_car.global_position)
 		if dist > NEAR_MISS_RADIUS and dist < NEAR_MISS_RADIUS + 3.0:
-			GameManager.add_xp(NEAR_MISS_XP)
-			show_popup("NEAR MISS +%d" % (NEAR_MISS_XP * 3), Color(1.0, 0.9, 0.2))
+			GameManager.earn(&"near_miss")
+			show_popup("NEAR MISS", Color(1.0, 0.9, 0.2))
 			_near_miss_cooldowns[eid] = 2.0  # cooldown per enemy
 
 
 # ── Tricks ────────────────────────────────────────────────────────────────────
 
 func _on_trick_landed(trick_name: String, spin_count: int) -> void:
-	var xp := 50 * spin_count
-	GameManager.add_xp(xp)
-	show_popup("%s x%d  +%d" % [trick_name, spin_count, xp * 3], Color(0.3, 1.0, 0.8))
+	GameManager.earn(&"trick", Economy.source_base(&"trick") * spin_count)
+	show_popup("%s x%d" % [trick_name, spin_count], Color(0.3, 1.0, 0.8))
 
 
 # ── Boost Bar ─────────────────────────────────────────────────────────────────
@@ -202,18 +231,28 @@ func _on_health_changed(current: int, maximum: int) -> void:
 const HEAL_DISPLAY := 25
 
 
-func _on_xp_changed(current: int, to_next: int) -> void:
-	_xp_bar.max_value = to_next
-	create_tween().tween_property(_xp_bar, "value", float(current), 0.25) \
-		.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+# ── Scrap & combo ───────────────────────────────────────────────────────────
+
+func _on_scrap_earned(amount: int, _source: StringName, multiplier: float) -> void:
+	var pop := Label.new()
+	pop.text = "+" + Num.short(amount) + ("  x%.1f" % multiplier if multiplier > 1.05 else "")
+	pop.add_theme_font_size_override("font_size", 18 + mini(int(log(amount + 1.0) * 2.5), 22))
+	pop.add_theme_color_override("font_color", Color(1.0, 0.92, 0.4))
+	pop.add_theme_color_override("font_outline_color", Color.BLACK)
+	pop.add_theme_constant_override("outline_size", 5)
+	pop.position = _level_label.global_position + Vector2(randf_range(0, 60), 34)
+	add_child(pop)
+	var tw := pop.create_tween()
+	tw.tween_property(pop, "position:y", pop.position.y + 40.0, 0.7).set_ease(Tween.EASE_OUT)
+	tw.parallel().tween_property(pop, "modulate:a", 0.0, 0.7).set_delay(0.25)
+	tw.tween_callback(pop.queue_free)
 
 
-func _on_level_changed(new_level: int) -> void:
-	_level_label.text = "Lv %d" % new_level
-
-
-func _on_level_up_triggered(choices: Array) -> void:
-	_level_up_screen.show_choices(choices)
+func _on_combo_changed(count: int, multiplier: float) -> void:
+	_combo_label.text = "COMBO %d   x%.1f" % [count, multiplier] if count > 1 else ""
+	if count > 1:
+		_combo_label.scale = Vector2.ONE * 1.25
+		create_tween().tween_property(_combo_label, "scale", Vector2.ONE, 0.15)
 
 
 func _on_game_over() -> void:

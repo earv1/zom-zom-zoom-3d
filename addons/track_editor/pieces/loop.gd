@@ -9,12 +9,14 @@ const TrackTheme = preload("res://addons/track_editor/track_theme.gd")
 const LOOP_STEPS := 36
 const APPROACH_STEPS := 4
 const EXIT_STEPS := 4
-const EXIT_OFFSET_Z := 8.0
 const SLAB_T := 0.3
 const KERB_W := 0.35
 const KERB_H := 0.1
 
 @export_storage var radius := 18.0
+## How far sideways the exit sits from the entry; keep it wider than the road
+## so the loop doesn't run over itself.
+@export_storage var exit_offset := 8.0
 @export_storage var road_width := 6.0
 @export_storage var theme_mode := TrackTheme.MODE_LINES
 @export_storage var side_color_name := "yellow"
@@ -24,18 +26,20 @@ func _ready() -> void:
 
 func configure(params: Dictionary) -> void:
 	radius = params.get("radius", radius)
+	exit_offset = params.get("exit_offset", exit_offset)
 	road_width = params.get("road_width", road_width)
 	for child in get_children():
 		child.queue_free()
 	_build()
 
 func get_config() -> Dictionary:
-	return {road_width = road_width, radius = radius}
+	return {road_width = road_width, radius = radius, exit_offset = exit_offset}
 
 func get_param_defs() -> Array:
 	return [
-		{name = "road_width", label = "Width", min = 6.0, max = 12.0, step = 6.0, default = 6.0},
+		{name = "road_width", label = "Width", min = 6.0, max = 24.0, step = 6.0, default = 6.0},
 		{name = "radius", label = "Radius", min = 6.0, max = 42.0, step = 6.0, default = 18.0},
+		{name = "exit_offset", label = "Exit offset", min = 8.0, max = 48.0, step = 8.0, default = 8.0},
 	]
 
 func apply_theme(mode: int, side_color: String) -> void:
@@ -48,7 +52,7 @@ func apply_theme(mode: int, side_color: String) -> void:
 func get_connection_anchors() -> Array:
 	return [
 		{"position": Vector3(4, 0, 0), "out_dir": Vector3(1, 0, 0)},
-		{"position": Vector3(-4, 0, EXIT_OFFSET_Z), "out_dir": Vector3(-1, 0, 0)},
+		{"position": Vector3(-4, 0, exit_offset), "out_dir": Vector3(-1, 0, 0)},
 	]
 
 func _build() -> void:
@@ -57,6 +61,7 @@ func _build() -> void:
 	var line_mat := TrackTheme.line_material()
 
 	var sb := StaticBody3D.new()
+	sb.add_to_group("sticky_track")      # the car's gravity follows this surface (RaycastCar)
 	add_child(sb)
 
 	var points: Array = []
@@ -72,7 +77,7 @@ func _build() -> void:
 		width_dirs.append(_helix_width(a))
 		widths.append(road_width)
 
-	_append_flat_section(points, width_dirs, widths, Vector3(0, 0, EXIT_OFFSET_Z), Vector3(-4, 0, EXIT_OFFSET_Z), EXIT_STEPS, true)
+	_append_flat_section(points, width_dirs, widths, Vector3(0, 0, exit_offset), Vector3(-4, 0, exit_offset), EXIT_STEPS, true)
 
 	RibbonBuilder.add_ribbon(
 		self, sb, points, width_dirs, widths,
@@ -98,7 +103,7 @@ func _arc(a: float) -> Vector3:
 	return Vector3(
 		-radius * sin(a),
 		radius * (1.0 - cos(a)),
-		EXIT_OFFSET_Z * a / TAU
+		exit_offset * a / TAU
 	)
 
 func _helix_tangent(a: float) -> Vector3:

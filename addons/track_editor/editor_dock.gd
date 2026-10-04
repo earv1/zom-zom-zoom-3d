@@ -25,6 +25,20 @@ const PIECES := [
 	{"name": "bank", "label": "Bank Turn", "tag": "Flow", "desc": "Carry speed"},
 	{"name": "jump", "label": "Jump Pad", "tag": "Stunts", "desc": "Launch section"},
 	{"name": "loop", "label": "Loop", "tag": "Stunts", "desc": "Big commit"},
+	{"name": "floor", "label": "Floor", "tag": "Park", "desc": "Concrete slab"},
+	{"name": "quarter_pipe", "label": "Quarter Pipe", "tag": "Park", "desc": "Transition to vert"},
+	{"name": "bowl_corner", "label": "Bowl Corner", "tag": "Park", "desc": "Join two QPs"},
+	{"name": "spine", "label": "Spine", "tag": "Park", "desc": "Back-to-back QPs"},
+	{"name": "kicker", "label": "Kicker", "tag": "Park", "desc": "Launch ramp"},
+	{"name": "funbox", "label": "Funbox", "tag": "Park", "desc": "Pyramid"},
+	{"name": "deck", "label": "Deck", "tag": "Park", "desc": "Raised platform"},
+	{"name": "slope", "label": "Slope", "tag": "Park", "desc": "Ramp to a deck"},
+	{"name": "sky_pillar", "label": "Sky Pillar", "tag": "Park", "desc": "Landing deck up high"},
+	{"name": "dome", "label": "Glass Dome", "tag": "Park", "desc": "Drive the walls, exits at the base"},
+	{"name": "summon_panel", "label": "Summon Panel", "tag": "Park", "desc": "Drive through to summon the boss"},
+	{"name": "diner", "label": "Roadside Diner", "tag": "Stores", "desc": "Common upgrades"},
+	{"name": "petrol", "label": "Petrol Station", "tag": "Stores", "desc": "Rare upgrades"},
+	{"name": "sky_workshop", "label": "Sky Workshop", "tag": "Stores", "desc": "3x upgrades, 2x price"},
 ]
 
 var _erase_btn: Button
@@ -266,7 +280,7 @@ func _build_ui() -> void:
 
 	var categories := HBoxContainer.new()
 	root.add_child(categories)
-	for category_name in ["All", "Core", "Flow", "Stunts"]:
+	for category_name in ["All", "Core", "Flow", "Stunts", "Park", "Stores"]:
 		var btn := Button.new()
 		btn.text = category_name
 		btn.toggle_mode = true

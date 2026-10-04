@@ -82,7 +82,7 @@ func _draw() -> void:
 		# Check if on screen (with margin)
 		var safe_rect := Rect2(
 			Vector2(EDGE_MARGIN, EDGE_MARGIN),
-			screen_size - Vector2(EDGE_MARGIN, EDGE_MARGIN) * 2.0
+			(screen_size - Vector2(EDGE_MARGIN, EDGE_MARGIN) * 2.0).max(Vector2.ZERO)   # tiny (headless) viewports
 		)
 
 		if not is_behind and safe_rect.has_point(screen_pos):
@@ -96,7 +96,7 @@ func _draw() -> void:
 			_draw_arrow(clamped, direction, color)
 			_draw_label(clamped - direction * (ARROW_SIZE + 16), dist_text, color)
 			if label != "":
-				_draw_label(clamped - direction * (ARROW_SIZE + 34), label, color)
+				_draw_label(clamped - direction * (ARROW_SIZE + 16) + Vector2(0, -18), label, color)   # stacked above the distance
 
 
 func _clamp_to_edge(pos: Vector2, center: Vector2, screen_size: Vector2) -> Vector2:

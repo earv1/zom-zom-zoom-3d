@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/sky_pillar.gd" id="1"]
+
+[node name="SkyPillar" type="Node3D"]
+script = ExtResource("1")

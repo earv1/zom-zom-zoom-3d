@@ -24,6 +24,9 @@ const DEBUG_LINE_WIDTH := 0.3   # world-space half-width of debug ribbon segment
 @export_storage var end_width := 6.0
 @export_storage var theme_mode := TrackTheme.MODE_LINES
 @export_storage var side_color_name := "yellow"
+## 0 = short flush handles (tight joins). 1 = handles sized to the turn angle so
+## the connector traces a smooth constant-radius arc, for fast sweeping corners.
+@export_storage var sweep := 0.0
 @export var debug_show_bezier := false:
 	set(value):
 		debug_show_bezier = value
@@ -37,6 +40,7 @@ func _ready() -> void:
 
 func configure(params: Dictionary) -> void:
 	road_width = params.get("road_width", road_width)
+	sweep = params.get("sweep", sweep)
 	start_width = road_width
 	end_width = road_width
 	for child in get_children():
@@ -44,11 +48,12 @@ func configure(params: Dictionary) -> void:
 	_build()
 
 func get_config() -> Dictionary:
-	return {road_width = road_width}
+	return {road_width = road_width, sweep = sweep}
 
 func get_param_defs() -> Array:
 	return [
-		{name = "road_width", label = "Width", min = 6.0, max = 12.0, step = 6.0, default = 6.0},
+		{name = "road_width", label = "Width", min = 6.0, max = 24.0, step = 6.0, default = 6.0},
+		{name = "sweep", label = "Sweep", min = 0.0, max = 1.0, step = 1.0, default = 0.0},
 	]
 
 func apply_theme(mode: int, side_color: String) -> void:
@@ -113,6 +118,9 @@ func sample_debug_controls(steps: int = STEPS) -> Array:
 func _sample_path(steps: int) -> Dictionary:
 	if steps < 1:
 		return {}
+	if sweep > 0.5:
+		# smooth arc (or an S-shaped climb when straight), even when the chord is axis-aligned
+		return _sample_guided_turn_path(steps)
 	if _should_use_flush_approach_path():
 		return _sample_flush_approach_path(steps)
 	if _should_use_straight_centerline():
@@ -188,6 +196,8 @@ func _sample_guided_turn_path(steps: int) -> Dictionary:
 	var chord := chord_vec.length()
 	# Scale guide length with chord so short connectors don't overshoot
 	var guide_len := clampf(chord * 0.3, 0.5, 4.0)
+	if sweep > 0.5:
+		guide_len = chord * _arc_handle_ratio()
 	# Cubic Bezier: derivative at t=0 = 3*(p1-p0) ∝ start_dir,
 	# derivative at t=1 = 3*(p3-p2) ∝ end_dir — guarantees flush junctions.
 	var p0: Vector3 = start_pos
@@ -206,6 +216,17 @@ func _sample_guided_turn_path(steps: int) -> Dictionary:
 		return _sample_cubic_bezier_derivative(p0, p1, p2, p3, t)
 	var width_dirs := _interpolated_width_dirs(steps, tangent_func)
 	return {"points": points, "width_dirs": width_dirs, "controls": _to_local_points(guides)}
+
+## Handle length / chord for a cubic Bezier that best fits a circular arc
+## turning through the angle between start_dir and end_dir:
+## (4/3)·tan(θ/4) / (2·sin(θ/2)) — 1/3 when straight, ~0.39 at 90°, 2/3 at 180°.
+func _arc_handle_ratio() -> float:
+	var a := Vector3(start_dir.x, 0.0, start_dir.z).normalized()
+	var b := Vector3(end_dir.x, 0.0, end_dir.z).normalized()
+	var theta := a.angle_to(b) if a.length_squared() > 0.0 and b.length_squared() > 0.0 else 0.0
+	if theta < 0.01:
+		return 1.0 / 3.0
+	return (4.0 / 3.0) * tan(theta / 4.0) / (2.0 * sin(theta / 2.0))
 
 func _sample_straight_centerline(steps: int) -> Array:
 	var points: Array = []

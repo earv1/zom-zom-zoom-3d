@@ -4,6 +4,11 @@ class_name RaycastCar
 @export var wheels: Array[RaycastWheel]
 @export var acceleration := 600.0
 @export var max_speed := 60.0
+## Cruising top speed (m/s) before upgrades: horizontal speed is capped at
+## top_speed * GameManager.speed_multiplier (x the boost multiplier while
+## boosting, x SAND_SPEED on sand), eased in rather than snapped.
+@export var top_speed := 55.0
+const SAND_SPEED := 0.9
 @export var accel_curve: Curve
 @export var steer_curve: Curve
 @export var tire_turn_speed := 4.0
@@ -54,6 +59,41 @@ func _create_strip() -> MeshInstance3D:
 	strip.set_script(_SkidMarkScript)
 	get_tree().current_scene.add_child.call_deferred(strip)
 	return strip
+
+
+## On sticky track (loop pieces), gravity follows the road: while the wheels are
+## on it the car is pulled into the surface instead of down, so loops can be
+## driven at any sane speed. Elsewhere (ramps, quarter pipes) physics is unchanged.
+func _apply_track_adhesion() -> void:
+	var normal := Vector3.ZERO
+	for wheel in wheels:
+		if wheel.is_colliding():
+			var hit := wheel.get_collider() as Node
+			if hit and hit.is_in_group("sticky_track"):
+				var n := wheel.get_collision_normal()
+				normal += n if n.dot(global_basis.y) >= 0.0 else -n
+	if normal == Vector3.ZERO:
+		return
+	normal = normal.normalized()
+	var g := get_gravity().length()
+	apply_central_force(mass * g * (Vector3.UP - normal))        # cancel world gravity, pull into the road
+	apply_central_force(-normal * mass * g * 0.5)                # a little extra grip
+
+
+func _cruise_cap() -> float:
+	var cap := top_speed * GameManager.speed_multiplier
+	var boost := get_node_or_null("CarBoost")
+	if boost and boost.get("is_boosting"):
+		cap *= boost.get("multiplier")
+	var on_sand := 0
+	for wheel in wheels:
+		if wheel.is_colliding():
+			var hit := wheel.get_collider() as Node
+			if hit and hit.is_in_group("sand"):
+				on_sand += 1
+	if on_sand >= 2:
+		cap *= SAND_SPEED
+	return cap
 
 
 func _get_point_velocity(point: Vector3) -> Vector3:
@@ -138,11 +178,17 @@ func _physics_process(delta: float) -> void:
 		apply_torque(global_basis.y * turn_input * mass * 0.0)
 
 	_prev_hand_break = hand_break
+	_apply_track_adhesion()
 
-	# Hard-cap horizontal speed so max_speed is actually respected.
+	# Hard-cap horizontal speed so max_speed (gears) is respected, and ease down
+	# to the cruising top speed (sand, upgrades and boost adjust it).
 	var hvel := Vector3(linear_velocity.x, 0.0, linear_velocity.z)
 	if hvel.length() > max_speed:
 		hvel = hvel.normalized() * max_speed
+		linear_velocity = Vector3(hvel.x, linear_velocity.y, hvel.z)
+	var cruise := _cruise_cap()
+	if hvel.length() > cruise:
+		hvel = hvel.normalized() * maxf(cruise, hvel.length() - 20.0 * delta)
 		linear_velocity = Vector3(hvel.x, linear_velocity.y, hvel.z)
 
 	if grounded:
@@ -165,13 +211,13 @@ func _apply_anti_roll(left: RaycastWheel, right: RaycastWheel) -> void:
 	var left_grounded  := left.is_colliding() or (left.shapecast != null and left.shapecast.is_colliding())
 	var right_grounded := right.is_colliding() or (right.shapecast != null and right.shapecast.is_colliding())
 
-	var left_travel  := left.spring_compression  if left_grounded  else -1.0
-	var right_travel := right.spring_compression if right_grounded else -1.0
-
-	var diff := left_travel - right_travel
+	# A bar only twists between two loaded wheels. With one wheel in the air this
+	# used to count it as -1 compression, and the huge difference shoved the
+	# grounded side up at ~6 g: the car flipped onto its other side, then back,
+	# hopping and launching instead of settling onto all four wheels.
+	if not (left_grounded and right_grounded):
+		return
+	var diff := left.spring_compression - right.spring_compression
 	var force := diff * anti_roll_strength
-
-	if left_grounded:
-		apply_force( left.global_basis.y *  force, left.global_position  - global_position)
-	if right_grounded:
-		apply_force(right.global_basis.y * -force, right.global_position - global_position)
+	apply_force( left.global_basis.y *  force, left.global_position  - global_position)
+	apply_force(right.global_basis.y * -force, right.global_position - global_position)

@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	var to_car := car.global_position - global_position
 	var dist := to_car.length()
 	if dist < 1.0:
-		GameManager.add_xp(xp_value)
+		GameManager.earn(&"kill", xp_value * Economy.source_base(&"kill") * GameManager.enemy_scale("kill_reward_exp"))
 		queue_free()
 		return
 	global_position += to_car.normalized() * minf(dist, 120.0 * delta)

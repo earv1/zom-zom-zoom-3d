@@ -1,0 +1,18 @@
+stat,default,min,max,description
+damage_mult,1.0,0,,Multiplies all weapon damage
+fire_rate_mult,1.0,0,,Multiplies all weapon fire rates
+max_health,100,1,,Maximum health
+regen,0,0,,Health regenerated per second
+armor,0,0,0.75,Fraction of incoming damage blocked
+crit_chance,0,0,1,Chance for a hit to crit
+crit_mult,2.0,1,,Damage multiplier on a crit
+scrap_mult,1.0,0,,Multiplies all scrap earned
+combo_window,3.0,0.5,,Seconds between scoring events before the combo drops
+combo_step,0.1,0,,Combo multiplier gained per scoring event
+combo_cap,3.0,1,,Highest combo multiplier
+top_speed_mult,1.0,0.5,1.75,Multiplies the car's top speed
+boost_mult,1.0,0,,Multiplies boost strength
+ram_mult,1.0,0,,Multiplies ram damage
+bank_rate,0.10,0,0.5,Fraction of a run's scrap banked as garage parts
+start_scrap,0,0,,Scrap at the start of each run
+store_discount,0,0,0.5,Fraction knocked off every store price
