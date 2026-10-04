@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://scenes/world/raycast_car.gd" id="1_car"]
 [ext_resource type="Script" path="res://scenes/world/raycast_wheel.gd" id="2_wheel"]
 [ext_resource type="Curve" path="res://scenes/world/car_tire_BACK.tres" id="3_tireback"]
-[ext_resource type="PackedScene" path="res://assets/car/nissan35/wheel_nissan.glb" id="4_wheelglb"]
+[ext_resource type="PackedScene" path="res://assets/car/apoc/apoc_wheel.glb" id="4_wheelglb"]
 [ext_resource type="Curve" path="res://scenes/world/car_tire_FRONT.tres" id="5_tirefront"]
-[ext_resource type="PackedScene" path="res://assets/car/nissan35/nissan_skyliner35.glb" id="6_carglb"]
+[ext_resource type="PackedScene" path="res://assets/car/apoc/apoc_car.glb" id="6_carglb"]
 [ext_resource type="Script" path="res://scenes/world/car_follow_camera.gd" id="7_cam"]
 [ext_resource type="Script" path="res://scenes/world/car_boost.gd" id="8_boost"]
 [ext_resource type="Script" path="res://scenes/world/car_dust_trail.gd" id="16_dust"]
@@ -71,7 +71,7 @@ is_steer = true
 grip_curve = ExtResource("3_tireback")
 show_debug = false
 
-[node name="wheel_nissan2" parent="WheelFL" instance=ExtResource("4_wheelglb")]
+[node name="apoc_wheel" parent="WheelFL" instance=ExtResource("4_wheelglb")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="WheelFL"]
@@ -96,7 +96,7 @@ is_steer = true
 grip_curve = ExtResource("5_tirefront")
 show_debug = false
 
-[node name="wheel_nissan2" parent="WheelFR" instance=ExtResource("4_wheelglb")]
+[node name="apoc_wheel" parent="WheelFR" instance=ExtResource("4_wheelglb")]
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="WheelFR"]
 process_physics_priority = -1
@@ -120,7 +120,7 @@ is_motor = true
 grip_curve = ExtResource("3_tireback")
 show_debug = false
 
-[node name="wheel_nissan2" parent="WheelRL" instance=ExtResource("4_wheelglb")]
+[node name="apoc_wheel" parent="WheelRL" instance=ExtResource("4_wheelglb")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="WheelRL"]
@@ -145,7 +145,7 @@ is_motor = true
 grip_curve = ExtResource("3_tireback")
 show_debug = false
 
-[node name="wheel_nissan2" parent="WheelRR" instance=ExtResource("4_wheelglb")]
+[node name="apoc_wheel" parent="WheelRR" instance=ExtResource("4_wheelglb")]
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="WheelRR"]
 process_physics_priority = -1
@@ -154,7 +154,7 @@ shape = SubResource("CylinderShape3D_lhijp")
 target_position = Vector3(0, 0, 0)
 max_results = 3
 
-[node name="nissan_skyliner35" parent="." instance=ExtResource("6_carglb")]
+[node name="apoc_car" parent="." instance=ExtResource("6_carglb")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.476322, 0)
 
 [node name="CameraPivot" type="Node3D" parent="."]
@@ -193,4 +193,3 @@ script = ExtResource("14_engine")
 [node name="DustTrail" type="Node" parent="."]
 script = ExtResource("16_dust")
 
-[editable path="nissan_skyliner35"]
