@@ -41,6 +41,7 @@ func _ready() -> void:
 		GameManager.set_screen_shake(not GameManager.screen_shake)
 		label_shake.call())
 	$Center/VBox.add_child(shake)
+	($Center/VBox/MainGame as Button).grab_focus()     # controller: D-pad / stick + A drive the menus
 
 
 func _on_main_game_pressed() -> void:

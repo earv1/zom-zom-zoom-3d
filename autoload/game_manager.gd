@@ -60,7 +60,26 @@ signal parts_changed(parts: int)
 signal run_banked(parts_earned: int)
 
 
+## Gamepad (and the code-only keyboard keys) for every action. Stick up/down
+## double as throttle/brake past STICK_PRESS, so a spin is the same stick roll
+## as W A S D, and steering on the diagonal doesn't brake.
+const STICK_PRESS := 0.6
+const BINDINGS := {
+	"accelerate": [["axis", JOY_AXIS_TRIGGER_RIGHT, 1.0], ["axis", JOY_AXIS_LEFT_Y, -1.0]],
+	"decelerate": [["axis", JOY_AXIS_TRIGGER_LEFT, 1.0], ["axis", JOY_AXIS_LEFT_Y, 1.0]],
+	"turn_left": [["axis", JOY_AXIS_LEFT_X, -1.0]],
+	"turn_right": [["axis", JOY_AXIS_LEFT_X, 1.0]],
+	"jump": [["button", JOY_BUTTON_A]],
+	"handbreak": [["button", JOY_BUTTON_B], ["button", JOY_BUTTON_RIGHT_SHOULDER]],
+	"dive": [["key", KEY_CTRL], ["button", JOY_BUTTON_LEFT_SHOULDER]],
+	"respawn": [["key", KEY_R], ["button", JOY_BUTTON_Y]],
+	"restart_skill": [["key", KEY_BACKSPACE], ["button", JOY_BUTTON_BACK]],
+	"pause": [["key", KEY_P], ["key", KEY_ESCAPE], ["button", JOY_BUTTON_START]],
+}
+
+
 func _ready() -> void:
+	_bind_controls()
 	_load_meta()
 	_recompute_stats()
 	game_over.connect(bank_run)
@@ -277,6 +296,30 @@ func record_skill_time(id: String, seconds: float) -> bool:
 	skill_bests[id] = seconds
 	_save_meta()
 	return true
+
+
+func _bind_controls() -> void:
+	for action in BINDINGS:
+		if not InputMap.has_action(action):
+			InputMap.add_action(action, 0.2)
+		if action in ["accelerate", "decelerate"]:
+			InputMap.action_set_deadzone(action, STICK_PRESS)
+		for b in BINDINGS[action]:
+			var ev: InputEvent
+			match b[0]:
+				"key":
+					ev = InputEventKey.new()
+					(ev as InputEventKey).physical_keycode = b[1]
+				"button":
+					ev = InputEventJoypadButton.new()
+					(ev as InputEventJoypadButton).button_index = b[1]
+				"axis":
+					ev = InputEventJoypadMotion.new()
+					(ev as InputEventJoypadMotion).axis = b[1]
+					(ev as InputEventJoypadMotion).axis_value = b[2]
+			ev.device = -1                                   # any controller
+			if not InputMap.action_has_event(action, ev):
+				InputMap.action_add_event(action, ev)
 
 
 func set_screen_shake(on: bool) -> void:

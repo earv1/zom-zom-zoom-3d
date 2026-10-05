@@ -74,13 +74,13 @@ func _ground_pound() -> int:
 	t.place("deck", Vector3(0, 0, 0), 0.0, {width_cells = 3, depth_cells = 6, height = DECK_TOP})
 	_gate(0, 0, Vector3(0, DECK_TOP, -6), 0.0, 20.0)                # short run-up: ~25 m/s at the edge
 	# 1: one big pad right under the edge, throwing you onto deck A
-	_hint("Drive off the edge and hold CTRL to dive.\nHit the pad hard to GROUND POUND it.", Vector3(0, DECK_TOP, -14))
+	_hint("Drive off the edge and hold CTRL / LB to dive.\nHit the pad hard to GROUND POUND it.", Vector3(0, DECK_TOP, -14))
 	# a long pad (z -24 .. -72) running right up to deck A: wherever you pound it, its throw (~47 m) lands on the deck
 	t.place("pound_pad", Vector3(0, 20, -48), 0.0, {size = 48.0, bounce = 24.0, push = 12.0})
 	t.place("deck", Vector3(0, 0, -96), 0.0, {width_cells = 3, depth_cells = 6, height = DECK_TOP})    # z -72 .. -120
 	_gate(1, 1, Vector3(0, DECK_TOP, -102), 0.0, 26.0, 0.0, 0, 44.0)  # catches the landing; respawn 18 m from the edge
 	# 2: three pads and a turn, onto deck B
-	_hint("Three pads this time. A pounded pad throws you along its arrow:\nsteer in the air, CTRL to pound the next.", Vector3(0, DECK_TOP, -110))
+	_hint("Three pads this time. A pounded pad throws you along its arrow:\nsteer in the air, CTRL / LB to pound the next.", Vector3(0, DECK_TOP, -110))
 	t.place("pound_pad", Vector3(0, 20, -142), 0.0, {size = 28.0, bounce = 24.0, push = 12.0})
 	t.place("pound_pad", Vector3(0, 20, -195), 90.0, {size = 22.0, bounce = 24.0, push = 12.0})
 	_hint("Turn! This one throws you left.", Vector3(0, 20, -195), 10.0, 26.0)
@@ -105,15 +105,15 @@ func _tricks() -> int:
 	_gate(0, 0, Vector3(0, 0, -12), 0.0, 44.0)
 	# gates sit past the furthest landing at full speed, so you always land before them
 	# 1: a big kicker, one spin
-	_hint("In the air, hold SHIFT and tap W  A  S  D in order to SPIN.\nLand it to open the pink TRICK gates.", Vector3(0, 0, -40), 7.0, 70.0)
+	_hint("In the air, hold SHIFT / B and tap W  A  S  D (or roll the stick) to SPIN.\nLand it to open the pink TRICK gates.", Vector3(0, 0, -40), 7.0, 70.0)
 	t.place("kicker", Vector3(0, 0, -150), 0.0, {length = 12.0, lip_angle = 25.0, width_cells = 4})
 	_gate(2, 1, Vector3(0, 0, -440), 0.0, 44.0, 0.0, 1)
 	# 2: a smaller kicker, less air: be quick
-	_hint("Smaller kicker, less air: tap fast.\nKeep SHIFT held so you land level.", Vector3(0, 0, -470), 7.0, 60.0)
+	_hint("Smaller kicker, less air: tap fast.\nKeep SHIFT / B held so you land level.", Vector3(0, 0, -470), 7.0, 60.0)
 	t.place("kicker", Vector3(0, 0, -530), 0.0, {length = 12.0, lip_angle = 18.0, width_cells = 4})
 	_gate(2, 2, Vector3(0, 0, -800), 0.0, 44.0, 0.0, 1)
 	# 3: a huge kicker, two spins in one jump
-	_hint("Big one: SPIN TWICE.\nKeep tapping W A S D while you spin to chain another.", Vector3(0, 0, -830), 7.0, 60.0)
+	_hint("Big one: SPIN TWICE.\nKeep rolling W A S D / the stick while you spin to chain another.", Vector3(0, 0, -830), 7.0, 60.0)
 	t.place("kicker", Vector3(0, 0, -890), 0.0, {length = 12.0, lip_angle = 30.0, width_cells = 4})
 	_gate(3, 9, Vector3(0, 0, -1250), 0.0, 44.0, 0.0, 2)
 	return _save("tricks_track.tscn")
@@ -142,7 +142,7 @@ func _upside_down() -> int:
 	t.place("deck", Vector3(0, 0, 40), 0.0, {width_cells = 3, depth_cells = 4, height = 30.0})   # start tower, top y 30
 	_gate(0, 0, Vector3(0, 30, 48), 0.0, 20.0)
 	var land := _ceiling_section(0, 30, 40, 28.0,
-		"Hold the throttle into the curve: it takes you onto the CEILING.\nPress SPACE to drop off, CTRL to pound the target.")
+		"Hold the throttle into the curve: it takes you onto the CEILING.\nPress SPACE / A to drop off, CTRL / LB to pound the target.")
 	for i in 2:
 		# wide catch deck: you land moving +X, brake and turn left onto the next run-up
 		t.place("deck", Vector3(land.x + 8.0, 0, land.z), 0.0, {width_cells = 6, depth_cells = 4, height = land.y})
@@ -164,7 +164,7 @@ func _track_sense() -> int:
 	t.straight(6)
 	_gate(0, 0, Vector3(0, 0, -8), 0.0, 40.0)
 	# 1: race, a jump, and big air to fly
-	_hint("THE FINAL: every skill on one run.\nStuck or fell off? Press R to go back to the last checkpoint.", Vector3(0, 0, -24), 7.0, 50.0)
+	_hint("THE FINAL: every skill on one run.\nStuck or fell off? Press R / Y to go back to the last checkpoint.", Vector3(0, 0, -24), 7.0, 50.0)
 	t.sweep(44, TrackTurtle.RIGHT)
 	t.straight(3)
 	_hint("Jump! Keep it straight and land on all four wheels.", t.pos)
@@ -173,7 +173,7 @@ func _track_sense() -> int:
 	t.straight(24)                                         # flat out the 18-degree lip flies ~180 m
 	t.sweep(44, TrackTurtle.LEFT)
 	t.straight(3)
-	_hint("BIG AIR: above 6 m you FLY (plane icon, top left).\nA/D bank, W/S pitch. Hold S too long and you stall.", t.pos, 7.0, 50.0)
+	_hint("BIG AIR: above 6 m you FLY (plane icon, top left).\nSteer to bank, W/S (stick up/down) to pitch. Hold S too long and you stall.", t.pos, 7.0, 50.0)
 	t.jump(30.0)
 	t.straight(40)                                         # ...and the 30-degree one ~270 m: land before the gate
 	_gate_here(1, 1)
@@ -182,7 +182,7 @@ func _track_sense() -> int:
 	_hint("Loop: hold the throttle and commit.", t.pos)
 	t.loop()
 	t.straight(6)
-	_hint("Kicker: SHIFT + W A S D to spin before the pink gate.", t.pos)
+	_hint("Kicker: SHIFT / B + W A S D (roll the stick) to spin before the pink gate.", t.pos)
 	t.jump(30.0)
 	t.straight(40)
 	_gate(2, 2, t.pos - t.heading * 4.0, TrackTurtle.yaw_of(t.heading), 40.0, 0.0, 1)
@@ -191,7 +191,7 @@ func _track_sense() -> int:
 	var heading := t.heading
 	var side := heading.cross(Vector3.UP)
 	var origin := t.pos + heading * 4.0                    # the ceiling piece's origin (4 m past its entry)
-	_hint("Last: ride the ceiling, SPACE to drop, CTRL to pound the pad.", t.pos - heading * 12.0)
+	_hint("Last: ride the ceiling, SPACE / A to drop, CTRL / LB to pound the pad.", t.pos - heading * 12.0)
 	t.ceiling({radius = 26.0, exit_offset = 0.0, ceiling_length = 170.0})
 	var pad := origin - heading * 110.0                    # under the ceiling, back over the road
 	t.place("pound_pad", pad + Vector3.UP * 0.05, TrackTurtle.yaw_of(side), {size = 28.0, bounce = 18.0, push = 14.0})

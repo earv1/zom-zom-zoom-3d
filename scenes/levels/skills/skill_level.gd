@@ -3,8 +3,8 @@ extends Node3D
 ## Runs one skill track: a generated track scene (TrackRoot of Track Editor
 ## pieces) with skill gates (start, checkpoints, trick checkpoints, finish) and
 ## hint signs. Drive the gates in order against the clock; respawn at the last
-## gate you passed with R (or by falling off); Backspace restarts; Esc goes back
-## to the menu. Best times are saved per skill.
+## gate you passed with R / Y (or by falling off); Backspace / Back restarts;
+## Esc / Start goes back to the menu. Best times are saved per skill.
 
 const SKILLS := {
 	"ground_pound": {
@@ -106,7 +106,7 @@ func _process(_delta: float) -> void:
 	var count := gates.size()
 	var at := mini(_next, count)
 	var title: String = SKILLS[skill_id].title
-	_status.text = "%s   %d / %d   %.2fs\n[R] back to checkpoint   [Backspace] restart   [Esc] menu" % [title, at, count, elapsed]
+	_status.text = "%s   %d / %d   %.2fs\n[R / Y] back to checkpoint   [Backspace / Back] restart   [Esc / Start] menu" % [title, at, count, elapsed]
 	var text := ""
 	var nearest := INF
 	for h in _hints:
@@ -122,7 +122,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		respawn()
 	elif event.is_action_pressed("restart_skill"):
 		restart()
-	elif event.is_action_pressed("ui_cancel"):
+	elif event.is_action_pressed("pause"):                 # Esc / Start (not ui_cancel: that's B, the drift button)
 		get_tree().change_scene_to_file(MENU)
 
 

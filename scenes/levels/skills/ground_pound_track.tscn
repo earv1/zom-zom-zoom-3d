@@ -9,18 +9,18 @@
 [ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/pound_pad.tscn" id="7_7asql"]
 [ext_resource type="Script" path="res://addons/track_editor/pieces/park/pound_pad.gd" id="8_0buid"]
 
-[node name="GroundPoundSkill" type="Node3D" unique_id=561069308]
+[node name="GroundPoundSkill" type="Node3D" unique_id=476186608]
 
-[node name="TrackRoot" type="Node3D" parent="." unique_id=1629389555]
+[node name="TrackRoot" type="Node3D" parent="." unique_id=1629583743]
 
-[node name="deck_0_0_0" type="Node3D" parent="TrackRoot" unique_id=275048706 instance=ExtResource("1_btcxp")]
+[node name="deck_0_0_0" type="Node3D" parent="TrackRoot" unique_id=769608099 instance=ExtResource("1_btcxp")]
 script = ExtResource("2_wlglm")
 width_cells = 3
 depth_cells = 6
 height = 30.0
 side_color_name = "red"
 
-[node name="skill_gate_0_30_-6" type="Node3D" parent="TrackRoot" unique_id=139781924 instance=ExtResource("3_0tjdi")]
+[node name="skill_gate_0_30_-6" type="Node3D" parent="TrackRoot" unique_id=999215004 instance=ExtResource("3_0tjdi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, -6)
 script = ExtResource("4_i7d5v")
 kind = 0
@@ -28,15 +28,15 @@ order = 0
 width = 20.0
 side_color_name = "red"
 
-[node name="hint_sign_0_30_-14" type="Node3D" parent="TrackRoot" unique_id=1290521502 instance=ExtResource("5_0aobn")]
+[node name="hint_sign_0_30_-14" type="Node3D" parent="TrackRoot" unique_id=353017111 instance=ExtResource("5_0aobn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, -14)
 script = ExtResource("6_mx3bp")
-text = "Drive off the edge and hold CTRL to dive.
+text = "Drive off the edge and hold CTRL / LB to dive.
 Hit the pad hard to GROUND POUND it."
 reach = 45.0
 side_color_name = "red"
 
-[node name="pound_pad_0_20_-48" type="Node3D" parent="TrackRoot" unique_id=1077430033 instance=ExtResource("7_7asql")]
+[node name="pound_pad_0_20_-48" type="Node3D" parent="TrackRoot" unique_id=102398283 instance=ExtResource("7_7asql")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, -48)
 script = ExtResource("8_0buid")
 size = 48.0
@@ -44,7 +44,7 @@ bounce = 24.0
 push = 12.0
 side_color_name = "red"
 
-[node name="deck_0_0_-96" type="Node3D" parent="TrackRoot" unique_id=1116053376 instance=ExtResource("1_btcxp")]
+[node name="deck_0_0_-96" type="Node3D" parent="TrackRoot" unique_id=1996295064 instance=ExtResource("1_btcxp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -96)
 script = ExtResource("2_wlglm")
 width_cells = 3
@@ -52,22 +52,22 @@ depth_cells = 6
 height = 30.0
 side_color_name = "red"
 
-[node name="skill_gate_0_30_-102" type="Node3D" parent="TrackRoot" unique_id=932316148 instance=ExtResource("3_0tjdi")]
+[node name="skill_gate_0_30_-102" type="Node3D" parent="TrackRoot" unique_id=833331869 instance=ExtResource("3_0tjdi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, -102)
 script = ExtResource("4_i7d5v")
 width = 26.0
 depth = 44.0
 side_color_name = "red"
 
-[node name="hint_sign_0_30_-110" type="Node3D" parent="TrackRoot" unique_id=422745198 instance=ExtResource("5_0aobn")]
+[node name="hint_sign_0_30_-110" type="Node3D" parent="TrackRoot" unique_id=1777084623 instance=ExtResource("5_0aobn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, -110)
 script = ExtResource("6_mx3bp")
 text = "Three pads this time. A pounded pad throws you along its arrow:
-steer in the air, CTRL to pound the next."
+steer in the air, CTRL / LB to pound the next."
 reach = 45.0
 side_color_name = "red"
 
-[node name="pound_pad_0_20_-142" type="Node3D" parent="TrackRoot" unique_id=1587250431 instance=ExtResource("7_7asql")]
+[node name="pound_pad_0_20_-142" type="Node3D" parent="TrackRoot" unique_id=1761438561 instance=ExtResource("7_7asql")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, -142)
 script = ExtResource("8_0buid")
 size = 28.0
@@ -75,7 +75,7 @@ bounce = 24.0
 push = 12.0
 side_color_name = "red"
 
-[node name="pound_pad_0_20_-195" type="Node3D" parent="TrackRoot" unique_id=618669638 instance=ExtResource("7_7asql")]
+[node name="pound_pad_0_20_-195" type="Node3D" parent="TrackRoot" unique_id=224004014 instance=ExtResource("7_7asql")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 20, -195)
 script = ExtResource("8_0buid")
 size = 22.0
@@ -83,7 +83,7 @@ bounce = 24.0
 push = 12.0
 side_color_name = "red"
 
-[node name="hint_sign_0_20_-195" type="Node3D" parent="TrackRoot" unique_id=1488842323 instance=ExtResource("5_0aobn")]
+[node name="hint_sign_0_20_-195" type="Node3D" parent="TrackRoot" unique_id=1537834560 instance=ExtResource("5_0aobn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, -195)
 script = ExtResource("6_mx3bp")
 text = "Turn! This one throws you left."
@@ -91,7 +91,7 @@ height = 10.0
 reach = 26.0
 side_color_name = "red"
 
-[node name="pound_pad_-53_20_-195" type="Node3D" parent="TrackRoot" unique_id=621968280 instance=ExtResource("7_7asql")]
+[node name="pound_pad_-53_20_-195" type="Node3D" parent="TrackRoot" unique_id=1376513584 instance=ExtResource("7_7asql")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -53, 20, -195)
 script = ExtResource("8_0buid")
 size = 20.0
@@ -99,7 +99,7 @@ bounce = 24.0
 push = 12.0
 side_color_name = "red"
 
-[node name="deck_-116_0_-195" type="Node3D" parent="TrackRoot" unique_id=1416323843 instance=ExtResource("1_btcxp")]
+[node name="deck_-116_0_-195" type="Node3D" parent="TrackRoot" unique_id=904162840 instance=ExtResource("1_btcxp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -116, 0, -195)
 script = ExtResource("2_wlglm")
 width_cells = 6
@@ -107,7 +107,7 @@ depth_cells = 3
 height = 30.0
 side_color_name = "red"
 
-[node name="skill_gate_-122_30_-195" type="Node3D" parent="TrackRoot" unique_id=1659835004 instance=ExtResource("3_0tjdi")]
+[node name="skill_gate_-122_30_-195" type="Node3D" parent="TrackRoot" unique_id=698007032 instance=ExtResource("3_0tjdi")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -122, 30, -195)
 script = ExtResource("4_i7d5v")
 order = 2
@@ -115,27 +115,27 @@ width = 26.0
 depth = 44.0
 side_color_name = "red"
 
-[node name="hint_sign_-128_30_-195" type="Node3D" parent="TrackRoot" unique_id=1370097929 instance=ExtResource("5_0aobn")]
+[node name="hint_sign_-128_30_-195" type="Node3D" parent="TrackRoot" unique_id=1476073178 instance=ExtResource("5_0aobn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 30, -195)
 script = ExtResource("6_mx3bp")
 text = "Small pads, and they climb. Dive late to go further, early to stop short."
 reach = 45.0
 side_color_name = "red"
 
-[node name="pound_pad_-158_20_-195" type="Node3D" parent="TrackRoot" unique_id=922476387 instance=ExtResource("7_7asql")]
+[node name="pound_pad_-158_20_-195" type="Node3D" parent="TrackRoot" unique_id=1340480748 instance=ExtResource("7_7asql")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -158, 20, -195)
 script = ExtResource("8_0buid")
 size = 16.0
 bounce = 30.0
 side_color_name = "red"
 
-[node name="pound_pad_-222_28_-195" type="Node3D" parent="TrackRoot" unique_id=105964411 instance=ExtResource("7_7asql")]
+[node name="pound_pad_-222_28_-195" type="Node3D" parent="TrackRoot" unique_id=1652787293 instance=ExtResource("7_7asql")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -222, 28, -195)
 script = ExtResource("8_0buid")
 bounce = 30.0
 side_color_name = "red"
 
-[node name="deck_-285_0_-195" type="Node3D" parent="TrackRoot" unique_id=1086677043 instance=ExtResource("1_btcxp")]
+[node name="deck_-285_0_-195" type="Node3D" parent="TrackRoot" unique_id=1328974857 instance=ExtResource("1_btcxp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -285, 0, -195)
 script = ExtResource("2_wlglm")
 width_cells = 4
@@ -143,7 +143,7 @@ depth_cells = 4
 height = 40.0
 side_color_name = "red"
 
-[node name="skill_gate_-285_40_-195" type="Node3D" parent="TrackRoot" unique_id=1050868398 instance=ExtResource("3_0tjdi")]
+[node name="skill_gate_-285_40_-195" type="Node3D" parent="TrackRoot" unique_id=1782390796 instance=ExtResource("3_0tjdi")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -285, 40, -195)
 script = ExtResource("4_i7d5v")
 kind = 3
