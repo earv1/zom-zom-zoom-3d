@@ -16,5 +16,18 @@ under the same licences.
   https://creativecommons.org/licenses/by-sa/4.0/
   -> `source/hadeda_pretoria_jmk.mp3`, 14.25 s to 18.5 s; used for `*_scream.wav`
 
-Changes: trimmed, filtered, normalised; zadeda is pitched down, distorted and
-bit-crushed; cydeda is FFT-robotised, ring-modulated, bit-crushed and comb-echoed.
+The zadeda (zombie) voice layers the hadeda over these zombie recordings, also
+from Wikimedia Commons:
+
+- **"Zombie moan"** by gregoryweir, public domain
+  https://commons.wikimedia.org/wiki/File:Zombie_moan.ogg
+  -> `source/zombie_moan_gregoryweir.ogg`; under `zadeda_call.wav`
+
+- **"Zombie-Gutteral-Sounds"** by Wowsuchthings, licensed CC BY-SA 4.0
+  https://commons.wikimedia.org/wiki/File:Zombie-Gutteral-Sounds.ogg
+  https://creativecommons.org/licenses/by-sa/4.0/
+  -> `source/zombie_guttural_wowsuchthings.ogg`, 9.4-12.1 s and 14.4-17.1 s; under `zadeda_scream.wav`
+
+Changes: trimmed, filtered, normalised, mixed; zadeda is pitched down slightly
+and layered over the zombie recordings; cydeda is FFT-robotised, ring-modulated,
+bit-crushed and comb-echoed.

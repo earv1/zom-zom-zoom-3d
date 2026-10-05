@@ -21,6 +21,18 @@ func _ready() -> void:
 	garage.pressed.connect(_on_garage_pressed)
 	$Center/VBox.add_child(garage)
 	$Center/VBox.move_child(garage, $Center/VBox/MainGame.get_index() + 1)
+	var boss_test := Button.new()
+	boss_test.text = "BOSS TEST"
+	boss_test.custom_minimum_size = garage.custom_minimum_size
+	boss_test.pressed.connect(_show_boss_test)
+	$Center/VBox.add_child(boss_test)
+	$Center/VBox.move_child(boss_test, $Center/VBox/MainGame.get_index() + 1)
+	var skills := Button.new()
+	skills.text = "SKILLS"
+	skills.custom_minimum_size = garage.custom_minimum_size
+	skills.pressed.connect(_show_skills)
+	$Center/VBox.add_child(skills)
+	$Center/VBox.move_child(skills, $Center/VBox/MainGame.get_index() + 1)
 	var shake := Button.new()
 	shake.custom_minimum_size = garage.custom_minimum_size
 	var label_shake := func() -> void: shake.text = "SCREEN SHAKE: " + ("ON" if GameManager.screen_shake else "OFF")
@@ -33,6 +45,77 @@ func _ready() -> void:
 
 func _on_main_game_pressed() -> void:
 	_start_load(MAIN_GAME)
+
+
+## Skill tracks: learn each move on its own course (three sections that get
+## harder), then the final puts them all together.
+func _show_skills() -> void:
+	_center.visible = false
+	var panel := CenterContainer.new()
+	panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	var box := VBoxContainer.new()
+	box.add_theme_constant_override("separation", 10)
+	var title := Label.new()
+	title.text = "SKILLS"
+	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	title.add_theme_font_size_override("font_size", 40)
+	box.add_child(title)
+	for id in SkillLevel.ORDER:
+		var info: Dictionary = SkillLevel.SKILLS[id]
+		var best: String = "   best %.2fs" % float(GameManager.skill_bests[id]) if GameManager.skill_bests.has(id) else ""
+		var b := Button.new()
+		b.text = "%s%s\n%s" % [info.title, best, info.blurb]
+		b.custom_minimum_size = Vector2(560, 64)
+		b.alignment = HORIZONTAL_ALIGNMENT_LEFT
+		b.icon = load("res://assets/icons/skills/%s.svg" % id)
+		b.add_theme_constant_override("icon_max_width", 44)
+		b.pressed.connect(func() -> void:
+			panel.queue_free()
+			SkillLevel.selected = id
+			_start_load(SkillLevel.SCENE))
+		box.add_child(b)
+	var back := Button.new()
+	back.text = "BACK"
+	back.pressed.connect(func() -> void:
+		panel.queue_free()
+		_center.visible = true)
+	box.add_child(back)
+	panel.add_child(box)
+	add_child(panel)
+	(box.get_child(1) as Button).grab_focus()
+
+
+## Boss test mode: load the park and fight any of the three bosses right away.
+func _show_boss_test() -> void:
+	_center.visible = false
+	var panel := CenterContainer.new()
+	panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	var box := VBoxContainer.new()
+	box.add_theme_constant_override("separation", 10)
+	var title := Label.new()
+	title.text = "BOSS TEST"
+	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	title.add_theme_font_size_override("font_size", 40)
+	box.add_child(title)
+	var blurbs := ["melee, leaps, shockwaves, lava", "+ pukes zombie rats", "+ rats and the eye laser"]
+	for i in BossFight.NAMES.size():
+		var b := Button.new()
+		b.text = "%s\n%s" % [BossFight.NAMES[i], blurbs[i]]
+		b.custom_minimum_size = Vector2(420, 64)
+		b.pressed.connect(func() -> void:
+			panel.queue_free()
+			ParkLevel.test_stage = i
+			_start_load(MAIN_GAME))
+		box.add_child(b)
+	var back := Button.new()
+	back.text = "BACK"
+	back.pressed.connect(func() -> void:
+		panel.queue_free()
+		_center.visible = true)
+	box.add_child(back)
+	panel.add_child(box)
+	add_child(panel)
+	(box.get_child(1) as Button).grab_focus()
 
 
 func _on_garage_pressed() -> void:

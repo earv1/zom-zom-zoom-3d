@@ -128,3 +128,29 @@ func test_difficulty_climbs_through_racing_tiers() -> void:
 	assert_eq(GameManager.difficulty_tier().name, "NITROUS", "tops out at NITROUS")
 	GameManager.elapsed_time = 0.0
 	GameManager.bosses_defeated = 0
+
+
+func test_every_upgrade_has_an_icon() -> void:
+	for u in Economy.upgrades():
+		assert_not_null(Economy.icon(u), "%s has an icon" % u.id)
+
+
+func test_pause_screen_lists_owned_upgrades_with_hover_details() -> void:
+	GameManager.reset()
+	GameManager.scrap = 100000
+	assert_true(GameManager.buy(&"diner_damage"))
+	assert_true(GameManager.buy(&"diner_damage"))
+	assert_true(GameManager.buy(&"diner_speed"))
+	var owned := PauseMenu.owned()
+	var ids := owned.map(func(o: Dictionary) -> StringName: return o.upgrade.id)
+	assert_has(ids, &"diner_damage")
+	assert_eq(owned[ids.find(&"diner_damage")].level, 2, "counts how many levels you have")
+	var menu := PauseMenu.new()
+	add_child_autofree(menu)
+	menu.open()
+	assert_true(get_tree().paused, "pausing pauses the game")
+	var tips := menu.find_children("*", "Panel", true, false).map(func(p: Control) -> String: return p.tooltip_text)
+	assert_true(tips.any(func(t: String) -> bool: return t.begins_with("Hot Sauce Rounds") and t.contains("Level 2 / 25")), "hover shows name, level and what it does")
+	menu.close()
+	assert_false(get_tree().paused)
+	GameManager.reset()

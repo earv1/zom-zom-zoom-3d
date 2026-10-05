@@ -31,9 +31,8 @@ const TARGET_SHADER := preload("res://scenes/boss/laser_target.gdshader")
 const LEAP_TELEGRAPH := 1.1     ## seconds the landing circle fills before the jump
 const LEAP_AIR_TIME := 0.7
 const LEAP_HEIGHT := 28.0
-const LEAP_RADIUS := 14.0       ## landing circle: the car is hit inside it
+const LEAP_RADIUS := 20.0       ## landing circle: the car is hit inside it
 const LEAP_DAMAGE := 18
-const LEAP_LEAD := 1.0          ## aim this many seconds ahead of the car's motion
 const SLAM_FRAME_TIME := 20.0 / 24.0   ## wing_slam's hit frame (21) lands with the boss
 const LAVA_SHADER := preload("res://scenes/boss/lava.gdshader")
 const STOMP_FRAME_TIME := 19.0 / 24.0  ## stomp's slam frame (20)
@@ -41,7 +40,11 @@ const LAVA_REACH := BossArena.WALL_INNER   ## lava floods the whole floor, right
 const LAVA_DPS := 22.0
 const LAVA_HEAT_HEIGHT := 5.0   ## burns this far above the surface too: quake hops don't dodge it
 const LAVA_COOLDOWN := 18.0     ## seconds between lava attacks
-const LAVA_WARN_TIME := 1.6     ## the lava zone blinks red this long before the first stomp
+const LAVA_WARN_TIME := 0.6     ## the lava zone blinks red this long before the first stomp
+const LAVA_SPREAD_TIME := 3.0   ## lava wells up at the centre and reaches the wall in this long
+const WAVE_SPEED := 32.0        ## stomp shockwave: a ring racing out along the ground (jump it)
+const WAVE_BAND := 3.0          ## ...that hits a grounded car within this of the ring
+const WAVE_DAMAGE := 12
 const LAVA_WARN_BLINK := 0.18   ## seconds per blink half-cycle
 const FLY_HEIGHT := 20.0
 const FLY_RADIUS := 60.0
@@ -52,6 +55,7 @@ const REST_TIME: Array[float] = [4.5, 4.0, 3.5]   ## per stage: the opening to g
 @export var stage := HadedaBoss.Stage.HADEDA
 @export var car: Node3D
 @export var arena_radius := 70.0
+@export var auto_start := true    ## false: build it all now (e.g. hidden during the summon quake), start() later
 
 var boss: HadedaBoss
 var health := 0
@@ -87,10 +91,6 @@ func _ready() -> void:
 	boss.target = car
 	boss.scale = Vector3.ONE * BOSS_SCALE
 	add_child(boss)
-	boss.position = Vector3.UP * DROP_HEIGHT
-	if is_instance_valid(car):
-		var to_car := car.global_position - global_position
-		boss.rotation.y = atan2(to_car.x, to_car.z)
 	boss.attack_finished.connect(_on_attack_finished)
 
 	_hitbox = BossHitbox.new()
@@ -105,7 +105,21 @@ func _ready() -> void:
 	add_child(_hitbox)
 
 	_build_ui()
+	if auto_start:
+		start()
+	else:                                   # built and drawn (shaders compile) but idle until start()
+		_ui.visible = false
+		set_physics_process(false)
 
+
+## Begins the fight: the boss drops in from above and the health bar shows.
+func start() -> void:
+	_ui.visible = true
+	set_physics_process(true)
+	boss.position = Vector3.UP * DROP_HEIGHT
+	if is_instance_valid(car):
+		var to_car := car.global_position - global_position
+		boss.rotation.y = atan2(to_car.x, to_car.z)
 	var drop := create_tween()
 	drop.tween_property(boss, "position:y", 0.0, 1.1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	drop.tween_callback(_on_landed)
@@ -158,7 +172,7 @@ func _choose_attack(dist: float, facing: float) -> bool:
 		_rest()
 		return true
 	_attacks_since_rest += 1
-	var options: Array[StringName] = [&"leap"]
+	var options: Array[StringName] = [&"leap", &"shockwave", &"shockwave"]
 	if Time.get_ticks_msec() * 0.001 >= _lava_ready_at:
 		options.append(&"lava")
 	if dist >= MELEE_RANGE:
@@ -179,6 +193,9 @@ func _choose_attack(dist: float, facing: float) -> bool:
 		return true
 	if pick == &"lava":
 		_lava_attack()
+		return true
+	if pick == &"shockwave":
+		_stomp_wave(1 + mini(stage, 2))
 		return true
 	if pick == &"laser":
 		boss.fire_laser(randf_range(2.5, 3.5))
@@ -234,7 +251,8 @@ func _leap_combo(count: int) -> void:
 
 ## Marks a landing circle ahead of the car, fills it, then jumps there and slams.
 func _leap() -> void:
-	var ahead := car.global_position + Vector3(car.linear_velocity.x, 0.0, car.linear_velocity.z) * LEAP_LEAD
+	# aim where the car will be when the boss lands (warning circle + flight), on its current course
+	var ahead := car.global_position + Vector3(car.linear_velocity.x, 0.0, car.linear_velocity.z) * (LEAP_TELEGRAPH + LEAP_AIR_TIME)
 	var land := to_local(ahead)
 	land.y = 0.0
 	var reach := arena_radius - 20.0
@@ -292,14 +310,15 @@ func _lava_attack() -> void:
 	var warning := _lava_warning()
 	boss.play(&"scream", 0.15)
 	await get_tree().create_timer(LAVA_WARN_TIME, false).timeout
-	for i in 2 + mini(stage, 1):
+	for i in 1 + mini(stage, 1):
 		if _state != &"fight":
 			break
-		boss.play(&"stomp", 0.1)
-		await get_tree().create_timer(STOMP_FRAME_TIME, false).timeout
+		boss.play(&"stomp", 0.1, 1.4)
+		await get_tree().create_timer(STOMP_FRAME_TIME / 1.4, false).timeout
 		landed.emit()                                     # ground shake
 		_lava_burst(boss.bone_position("toes.R"))
-		await get_tree().create_timer(0.9, false).timeout
+		_shockwave()
+		await get_tree().create_timer(0.5, false).timeout
 	warning.queue_free()
 	if _state != &"fight":
 		_busy = false
@@ -317,9 +336,11 @@ func _lava_attack() -> void:
 	_lava.material_override = mat
 	_lava.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	_lava.position.y = -1.5
+	_lava.scale = Vector3(0.04, 1.0, 0.04)              # wells up at the centre...
 	add_child(_lava)
 	var rise := create_tween().set_parallel()
-	rise.tween_property(_lava, "position:y", 0.3, 1.6).set_trans(Tween.TRANS_SINE)
+	rise.tween_property(_lava, "position:y", 0.3, 0.5).set_trans(Tween.TRANS_SINE)
+	rise.tween_property(_lava, "scale", Vector3.ONE, LAVA_SPREAD_TIME).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)   # ...and floods out to the wall
 	rise.tween_property(boss, "position:y", FLY_HEIGHT, 1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	boss.play(&"fly", 0.3)
 	_fly_angle = atan2(boss.position.z, boss.position.x)
@@ -343,6 +364,63 @@ func _lava_attack() -> void:
 	if _state == &"fight":
 		boss.play(&"idle", 0.25)
 	_busy = false
+
+
+## Stomps `count` times, each sending a shockwave ring out along the floor.
+func _stomp_wave(count: int) -> void:
+	_busy = true
+	for i in count:
+		if _state != &"fight":
+			break
+		boss.play(&"stomp", 0.1, 1.2)
+		await get_tree().create_timer(STOMP_FRAME_TIME / 1.2, false).timeout
+		landed.emit()
+		_shockwave()
+		await get_tree().create_timer(0.7, false).timeout
+	_busy = false
+	_cooldown = randf_range(0.6, 1.2)
+	if _state == &"fight":
+		boss.play(&"idle", 0.25)
+
+
+## A ring of dust and rock racing out from the boss's feet along the ground to
+## the wall. A car on the ground where it passes is hit (once); jump it (Space)
+## or be in the air.
+func _shockwave() -> void:
+	var ring := MeshInstance3D.new()
+	var torus := TorusMesh.new()
+	torus.inner_radius = 0.92
+	torus.outer_radius = 1.0
+	torus.rings = 64
+	ring.mesh = torus
+	var mat := StandardMaterial3D.new()
+	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	mat.albedo_color = Color(1.0, 0.55, 0.2, 0.85)
+	ring.material_override = mat
+	ring.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	add_child(ring)
+	var centre := Vector3(boss.position.x, 0.6, boss.position.z)
+	ring.position = centre
+	var hit := [false]
+	var reach := arena_radius + LAVA_REACH
+	var grow := create_tween()
+	grow.tween_method(func(r: float) -> void:
+		ring.scale = Vector3(r, 12.0, r)                    # a 1.2 m tall band of dust
+		mat.albedo_color.a = 0.85 * (1.0 - r / reach * 0.6)
+		if hit[0] or not is_instance_valid(car):
+			return
+		var local := to_local(car.global_position)
+		var d := Vector2(local.x - centre.x, local.z - centre.z).length()
+		if absf(d - r) < WAVE_BAND and local.y < 2.2:      # on the ground where the ring is
+			hit[0] = true
+			GameManager.take_damage(roundi(WAVE_DAMAGE * GameManager.enemy_scale("enemy_damage_exp")))
+			var body := car as RigidBody3D
+			if body:
+				var out := Vector3(local.x - centre.x, 0.0, local.z - centre.z).normalized()
+				body.apply_central_impulse((out * 10.0 + Vector3.UP * 6.0) * body.mass),
+		2.0, reach, reach / WAVE_SPEED)
+	grow.tween_callback(ring.queue_free)
 
 
 ## Blinking red over the floor the lava will cover (all of it), so the player
@@ -385,7 +463,7 @@ func _tick_lava(delta: float) -> void:
 	if not _lava or _lava.position.y < 0.0 or not is_instance_valid(car):
 		return
 	var local := to_local(car.global_position)
-	var radius := (_lava.mesh as CylinderMesh).top_radius
+	var radius := (_lava.mesh as CylinderMesh).top_radius * _lava.scale.x   # only as far as it has spread
 	if Vector2(local.x, local.z).length() < radius and local.y < _lava.position.y + LAVA_HEAT_HEIGHT:
 		_lava_hurt += LAVA_DPS * GameManager.enemy_scale("enemy_damage_exp") * delta
 		while _lava_hurt >= 5.0:

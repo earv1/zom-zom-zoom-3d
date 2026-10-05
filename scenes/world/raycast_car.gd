@@ -9,6 +9,7 @@ class_name RaycastCar
 ## boosting, x SAND_SPEED on sand), eased in rather than snapped.
 @export var top_speed := 55.0
 const SAND_SPEED := 0.9
+const STICKY_REACH := 1.2      ## sticky track still grips this far under the wheels (m)
 @export var accel_curve: Curve
 @export var steer_curve: Curve
 @export var tire_turn_speed := 4.0
@@ -72,12 +73,21 @@ func _apply_track_adhesion() -> void:
 			if hit and hit.is_in_group("sticky_track"):
 				var n := wheel.get_collision_normal()
 				normal += n if n.dot(global_basis.y) >= 0.0 else -n
+	var reseat := 0.0
 	if normal == Vector3.ZERO:
-		return
+		# Wheels just lost the road (springs squeezed by a loop let go and push the
+		# car off a ceiling): if sticky track is still right under the belly, keep
+		# pulling the car back onto it. A deliberate jump clears this range.
+		var air := get_node_or_null("CarAirControl")
+		var belly: Dictionary = air.call("belly_contact") if air else {}
+		if belly.is_empty() or not (belly.collider as Node).is_in_group("sticky_track") or belly.gap > STICKY_REACH:
+			return
+		normal = belly.normal
+		reseat = 1.0
 	normal = normal.normalized()
 	var g := get_gravity().length()
 	apply_central_force(mass * g * (Vector3.UP - normal))        # cancel world gravity, pull into the road
-	apply_central_force(-normal * mass * g * 0.5)                # a little extra grip
+	apply_central_force(-normal * mass * g * (0.5 + reseat))     # a little extra grip (more to re-seat)
 
 
 func _cruise_cap() -> float:

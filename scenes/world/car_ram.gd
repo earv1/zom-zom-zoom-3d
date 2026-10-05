@@ -3,7 +3,8 @@
 ## and shows an animated air-wave ring effect when above the speed threshold.
 extends Node3D
 
-const RAM_SPEED_MIN  := 55.6   ## units/s (~200 km/h) — below this, no ram damage
+const RAM_SPEED_FRAC := 0.8    ## ramming (and the air-wave rings) above this fraction of the car's top speed
+const RAM_FULL_FRAC  := 1.3    ## ...reaching full damage at this fraction (boosting)
 const BASE_DAMAGE    := 20
 const MAX_DAMAGE     := 60
 const KNOCK_FORCE    := 2.5    ## multiplied by speed
@@ -22,6 +23,7 @@ var is_ramming := false
 func _ready() -> void:
 	_car = get_parent() as RigidBody3D
 	_area.body_entered.connect(_on_body_entered)
+	_area.monitoring = true        # left on: toggling it as speed crosses the threshold upsets Jolt's area events
 	_build_rings()
 
 
@@ -29,12 +31,19 @@ func _process(delta: float) -> void:
 	if not _car:
 		return
 	var speed := _car.linear_velocity.length()
-	var was_ramming := is_ramming
-	is_ramming = speed >= RAM_SPEED_MIN
-	_area.monitoring = is_ramming
-	if is_ramming != was_ramming:
-		pass
+	is_ramming = speed >= _ram_speed()
 	_update_rings(delta, speed)
+
+
+## Ram threshold follows the car's real top speed (and speed upgrades); a fixed
+## 200 km/h sat above the tuned top speed, so ramming never switched on.
+func _ram_speed() -> float:
+	return float(_car.get("top_speed")) * GameManager.speed_multiplier * RAM_SPEED_FRAC
+
+
+func _ram_t(speed: float) -> float:
+	var lo := _ram_speed()
+	return clampf((speed - lo) / (lo / RAM_SPEED_FRAC * RAM_FULL_FRAC - lo), 0.0, 1.0)
 
 
 # ── Visual ───────────────────────────────────────────────────────────────────
@@ -65,7 +74,7 @@ func _build_rings() -> void:
 
 
 func _update_rings(delta: float, speed: float) -> void:
-	var intensity := clampf((speed - RAM_SPEED_MIN) / 30.0, 0.0, 1.0)
+	var intensity := clampf(0.35 + _ram_t(speed), 0.0, 1.0)
 	for i in _rings.size():
 		var ring := _rings[i]
 		if not is_ramming:
@@ -90,9 +99,11 @@ func _on_body_entered(body: Node) -> void:
 	if body == _car or not body.has_method("take_damage"):
 		return
 	var speed := _car.linear_velocity.length()
-	var t      := clampf((speed - RAM_SPEED_MIN) / (120.0 - RAM_SPEED_MIN), 0.0, 1.0)
-	var damage := int(lerpf(BASE_DAMAGE, MAX_DAMAGE, t))
-	body.take_damage(damage)
+	var ram_mult: float = GameManager.stats.get("ram_mult", 1.0)
+	var damage := lerpf(BASE_DAMAGE, MAX_DAMAGE, _ram_t(speed))
+	if body.has_method("ram_damage"):                 # a boss: a fixed share of its health
+		damage = body.call("ram_damage")
+	body.take_damage(maxi(roundi(damage * ram_mult), 1))
 
 	if body is RigidBody3D:
 		var away: Vector3 = (body as RigidBody3D).global_position - _car.global_position

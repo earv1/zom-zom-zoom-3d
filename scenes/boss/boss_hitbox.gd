@@ -16,6 +16,11 @@ func pound_damage() -> int:
 	return maxi(roundi(float(get_parent().get("max_health")) / 20.0), 1)
 
 
+## Ramming the boss at speed takes this much (before ram upgrades): 1/50 of its health.
+func ram_damage() -> int:
+	return maxi(roundi(float(get_parent().get("max_health")) / 50.0), 1)
+
+
 func take_damage(amount: int) -> void:
 	var roll := GameManager.roll_hit(amount)
 	var dealt := maxi(roundi(roll[0]), 1)

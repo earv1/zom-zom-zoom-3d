@@ -100,6 +100,7 @@ func park(body: RigidBody3D) -> void:
 	_ui.items = stock()
 	_ui.closed.connect(leave)
 	add_child(_ui)
+	get_tree().paused = true                   # shopping pauses the game; the shelf runs paused
 	opened.emit()
 
 
@@ -108,6 +109,7 @@ func leave() -> void:
 		return
 	_ui.queue_free()
 	_ui = null
+	get_tree().paused = false
 	car.freeze = false
 	car.linear_velocity = _saved_velocity      # pick up exactly where we left off
 	car.angular_velocity = _saved_spin

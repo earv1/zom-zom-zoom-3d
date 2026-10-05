@@ -62,6 +62,11 @@ func ground_clearance() -> float:
 	return _car.global_position.y - _ray.get_collision_point().y
 
 
+## Whatever the down ray is hitting (null over a drop).
+func ground_collider() -> Object:
+	return _ray.get_collider() if _ray and _ray.is_colliding() else null
+
+
 func _physics_process(_delta: float) -> void:
 	# Follow car position in world space (ignoring its rotation)
 	global_position = _car.global_position

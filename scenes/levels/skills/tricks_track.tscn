@@ -1,0 +1,214 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/floor.tscn" id="1_af7vw"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/floor.gd" id="2_asltp"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/skill_gate.tscn" id="3_qckua"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/skill_gate.gd" id="4_hka4d"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/hint_sign.tscn" id="5_g8b4i"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/hint_sign.gd" id="6_4sd3n"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/kicker.tscn" id="7_ffpre"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/kicker.gd" id="8_kdr2r"]
+
+[node name="TricksSkill" type="Node3D" unique_id=1605790578]
+
+[node name="TrackRoot" type="Node3D" parent="." unique_id=2040840405]
+
+[node name="floor_0_0_-40" type="Node3D" parent="TrackRoot" unique_id=87167665 instance=ExtResource("1_af7vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40)
+script = ExtResource("2_asltp")
+width_cells = 6
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_0_0_-120" type="Node3D" parent="TrackRoot" unique_id=1705743566 instance=ExtResource("1_af7vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -120)
+script = ExtResource("2_asltp")
+width_cells = 6
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_0_0_-200" type="Node3D" parent="TrackRoot" unique_id=1770160384 instance=ExtResource("1_af7vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -200)
+script = ExtResource("2_asltp")
+width_cells = 6
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_0_0_-280" type="Node3D" parent="TrackRoot" unique_id=1179901357 instance=ExtResource("1_af7vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -280)
+script = ExtResource("2_asltp")
+width_cells = 6
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_0_0_-360" type="Node3D" parent="TrackRoot" unique_id=736309188 instance=ExtResource("1_af7vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -360)
+script = ExtResource("2_asltp")
+width_cells = 6
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_0_0_-440" type="Node3D" parent="TrackRoot" unique_id=590229519 instance=ExtResource("1_af7vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -440)
+script = ExtResource("2_asltp")
+width_cells = 6
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_0_0_-520" type="Node3D" parent="TrackRoot" unique_id=890838491 instance=ExtResource("1_af7vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -520)
+script = ExtResource("2_asltp")
+width_cells = 6
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_0_0_-600" type="Node3D" parent="TrackRoot" unique_id=724810676 instance=ExtResource("1_af7vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -600)
+script = ExtResource("2_asltp")
+width_cells = 6
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_0_0_-680" type="Node3D" parent="TrackRoot" unique_id=1421100925 instance=ExtResource("1_af7vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -680)
+script = ExtResource("2_asltp")
+width_cells = 6
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_0_0_-760" type="Node3D" parent="TrackRoot" unique_id=1531550578 instance=ExtResource("1_af7vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -760)
+script = ExtResource("2_asltp")
+width_cells = 6
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_0_0_-840" type="Node3D" parent="TrackRoot" unique_id=960932795 instance=ExtResource("1_af7vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -840)
+script = ExtResource("2_asltp")
+width_cells = 6
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_0_0_-920" type="Node3D" parent="TrackRoot" unique_id=1533492715 instance=ExtResource("1_af7vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -920)
+script = ExtResource("2_asltp")
+width_cells = 6
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_0_0_-1000" type="Node3D" parent="TrackRoot" unique_id=999666742 instance=ExtResource("1_af7vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1000)
+script = ExtResource("2_asltp")
+width_cells = 6
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_0_0_-1080" type="Node3D" parent="TrackRoot" unique_id=263956583 instance=ExtResource("1_af7vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1080)
+script = ExtResource("2_asltp")
+width_cells = 6
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_0_0_-1160" type="Node3D" parent="TrackRoot" unique_id=1451358399 instance=ExtResource("1_af7vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1160)
+script = ExtResource("2_asltp")
+width_cells = 6
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_0_0_-1240" type="Node3D" parent="TrackRoot" unique_id=670045178 instance=ExtResource("1_af7vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1240)
+script = ExtResource("2_asltp")
+width_cells = 6
+depth_cells = 10
+side_color_name = "red"
+
+[node name="floor_0_0_-1320" type="Node3D" parent="TrackRoot" unique_id=1563871656 instance=ExtResource("1_af7vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1320)
+script = ExtResource("2_asltp")
+width_cells = 6
+depth_cells = 10
+side_color_name = "red"
+
+[node name="skill_gate_0_0_-12" type="Node3D" parent="TrackRoot" unique_id=1888924836 instance=ExtResource("3_qckua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+script = ExtResource("4_hka4d")
+kind = 0
+order = 0
+width = 44.0
+side_color_name = "red"
+
+[node name="hint_sign_0_0_-40" type="Node3D" parent="TrackRoot" unique_id=2011471228 instance=ExtResource("5_g8b4i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40)
+script = ExtResource("6_4sd3n")
+text = "In the air, hold SHIFT and tap W  A  S  D in order to SPIN.
+Land it to open the pink TRICK gates."
+reach = 70.0
+side_color_name = "red"
+
+[node name="kicker_0_0_-150" type="Node3D" parent="TrackRoot" unique_id=867869862 instance=ExtResource("7_ffpre")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -150)
+script = ExtResource("8_kdr2r")
+length = 12.0
+lip_angle = 25.0
+width_cells = 4
+side_color_name = "red"
+
+[node name="skill_gate_0_0_-440" type="Node3D" parent="TrackRoot" unique_id=1720169333 instance=ExtResource("3_qckua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -440)
+script = ExtResource("4_hka4d")
+kind = 2
+width = 44.0
+spins = 1
+side_color_name = "red"
+
+[node name="hint_sign_0_0_-470" type="Node3D" parent="TrackRoot" unique_id=6466109 instance=ExtResource("5_g8b4i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -470)
+script = ExtResource("6_4sd3n")
+text = "Smaller kicker, less air: tap fast.
+Keep SHIFT held so you land level."
+reach = 60.0
+side_color_name = "red"
+
+[node name="kicker_0_0_-530" type="Node3D" parent="TrackRoot" unique_id=1717756302 instance=ExtResource("7_ffpre")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -530)
+script = ExtResource("8_kdr2r")
+length = 12.0
+lip_angle = 18.0
+width_cells = 4
+side_color_name = "red"
+
+[node name="skill_gate_0_0_-800" type="Node3D" parent="TrackRoot" unique_id=249364540 instance=ExtResource("3_qckua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -800)
+script = ExtResource("4_hka4d")
+kind = 2
+order = 2
+width = 44.0
+spins = 1
+side_color_name = "red"
+
+[node name="hint_sign_0_0_-830" type="Node3D" parent="TrackRoot" unique_id=1931881060 instance=ExtResource("5_g8b4i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -830)
+script = ExtResource("6_4sd3n")
+text = "Big one: SPIN TWICE.
+Keep tapping W A S D while you spin to chain another."
+reach = 60.0
+side_color_name = "red"
+
+[node name="kicker_0_0_-890" type="Node3D" parent="TrackRoot" unique_id=271140918 instance=ExtResource("7_ffpre")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -890)
+script = ExtResource("8_kdr2r")
+length = 12.0
+width_cells = 4
+side_color_name = "red"
+
+[node name="skill_gate_0_0_-1250" type="Node3D" parent="TrackRoot" unique_id=243593683 instance=ExtResource("3_qckua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1250)
+script = ExtResource("4_hka4d")
+kind = 3
+order = 9
+width = 44.0
+spins = 2
+side_color_name = "red"

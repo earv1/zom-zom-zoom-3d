@@ -1,3 +1,4 @@
+class_name ParkLevel
 extends Node3D
 ## Hadeda Park: roam the desert skatepark, race its ring road (laps and loops
 ## pay scrap) and spend at its stores. Drive through the summon panel when you're
@@ -5,7 +6,8 @@ extends Node3D
 ## dome shrinks round a boss arena and the next boss drops in:
 ## hadeda, then zadeda (pukes zombie rats), then cydeda (rats + eye laser).
 ## Beat a boss and the park rises again; beat cydeda to win.
-## Debug builds: press 0 to summon the next boss from anywhere.
+## Debug builds: press 0 to summon the next boss from anywhere. Boss test mode
+## (main menu): set `test_stage` and the level summons that boss straight away.
 
 enum Phase { RACE, QUAKE_OUT, FIGHT, QUAKE_IN, WON }
 
@@ -28,6 +30,9 @@ const DOME_FIT_TIME := 2.4
 
 var phase := Phase.RACE
 var stage_index := 0
+## Boss test mode: 0..2 (hadeda, zadeda, cydeda) summons that boss as soon as the
+## level is up; -1 plays normally. Used once, then reset.
+static var test_stage := -1
 var race_clock := 0.0
 var arena: BossArena
 var dome: Node3D                           ## the park's glass dome: stays up, shrinks round boss arenas
@@ -83,6 +88,12 @@ func _ready() -> void:
 		_music_players.append(player)
 	_play_music(RACE_MUSIC)
 	_reset_car()
+	add_child(PauseMenu.new())               # P / Esc: pause, see your upgrades
+	if test_stage >= 0:                       # boss test mode: straight to the fight
+		stage_index = clampi(test_stage, 0, STAGES.size() - 1)
+		test_stage = -1
+		_arm_panels(true)
+		get_tree().create_timer(1.0, false).timeout.connect(_start_boss)
 	var warmup := ShaderWarmup.new()          # compile every shader now, not mid-race
 	warmup.level = self
 	warmup.car = car
@@ -156,6 +167,7 @@ func _start_boss() -> void:
 	car.linear_damp = 2.5                    # the quake bogs the car down
 	spawner.process_mode = Node.PROCESS_MODE_DISABLED
 	_swallow_enemies()
+	_prepare_fight()                         # build the boss now, in the buried arena, while the quake plays
 	await _wait(0.8)
 
 	var sink := create_tween()
@@ -186,16 +198,27 @@ func _start_boss() -> void:
 	car.linear_damp = 0.0
 	_play_music(BOSS_MUSIC)
 
+	fight.global_position = Vector3(center.x, DesertLandscape.COLLISION_FLOOR_Y, center.z)
+	fight.landed.connect(func() -> void: _burst(1.0))
+	fight.defeated.connect(_on_boss_defeated, CONNECT_ONE_SHOT)
+	fight.start()
+	_set_camera_focus(fight.boss)
+	phase = Phase.FIGHT
+
+
+## Builds the next boss fight up front (model, hitbox, health bar, materials)
+## and parks it inside the still-buried arena. It's drawn there behind the
+## ground, so its shaders compile during the quake instead of freezing the
+## frame the boss arrives (the web build hitches badly on first draws).
+func _prepare_fight() -> void:
+	var center := _arena_center()
 	fight = BossFight.new()
 	fight.stage = STAGES[stage_index]
 	fight.car = car
 	fight.arena_radius = arena.radius
+	fight.auto_start = false
 	add_child(fight)
-	fight.global_position = Vector3(center.x, DesertLandscape.COLLISION_FLOOR_Y, center.z)
-	fight.landed.connect(func() -> void: _burst(1.0))
-	fight.defeated.connect(_on_boss_defeated, CONNECT_ONE_SHOT)
-	_set_camera_focus(fight.boss)
-	phase = Phase.FIGHT
+	fight.global_position = Vector3(center.x, DesertLandscape.COLLISION_FLOOR_Y - BossArena.BURY - 18.0, center.z)   # deep enough that its head stays under the sand
 
 
 func _on_boss_defeated() -> void:

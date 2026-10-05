@@ -370,10 +370,33 @@ func _ground_pound(speed: float) -> void:
 			(enemy as RigidBody3D).apply_central_impulse(push * (enemy as RigidBody3D).mass)
 	GameManager.earn(&"ground_pound", Economy.source_base(&"ground_pound") * (1.0 + 0.5 * hits))
 	_shockwave(centre, radius)
-	if hit_boss:   # spring off the boss back up toward the dome roof, ready for another dive
-		var g := _car.get_gravity().length()
+	var g := _car.get_gravity().length()
+	var pad := _pound_pad_below()
+	if pad:        # a pound pad springs you up and on toward the next one
+		var launch: Dictionary = pad.call("pound_launch")
+		_car.linear_velocity = (launch.push as Vector3) + Vector3.UP * sqrt(2.0 * g * float(launch.height))
+	elif hit_boss: # spring off the boss back up toward the dome roof, ready for another dive
 		_car.linear_velocity = Vector3(_car.linear_velocity.x * 0.3, sqrt(2.0 * g * POUND_BOUNCE_HEIGHT), _car.linear_velocity.z * 0.3)
 	ground_pounded.emit(t, hits)
+
+
+## The pound pad the car just landed on, if any (straight down, then the wheels).
+func _pound_pad_below() -> Node:
+	var hits: Array = []
+	if _shadow:
+		hits.append(_shadow.ground_collider())
+	for w in _wheels:
+		if w.is_colliding():
+			hits.append(w.get_collider())
+	for hit in hits:
+		var node := hit as Node
+		for i in 3:                                   # collider -> (body) -> piece
+			if node == null:
+				break
+			if node.has_method("pound_launch"):
+				return node
+			node = node.get_parent()
+	return null
 
 
 func _shockwave(at: Vector3, radius: float) -> void:
@@ -444,6 +467,18 @@ func _height_above_ground() -> float:
 	if _belly and _belly.is_colliding():
 		belly = _belly.global_position.distance_to(_belly.get_collision_point()) - RIDE_HEIGHT
 	return minf(belly, _drop_clearance())
+
+
+## What's out of the car's underside within the belly ray: {collider, normal
+## (facing the car), gap (m below the wheels)}, or {} if nothing.
+func belly_contact() -> Dictionary:
+	if not _belly or not _belly.is_colliding():
+		return {}
+	var n := _belly.get_collision_normal()
+	if n.dot(_car.global_basis.y) < 0.0:
+		n = -n
+	return {collider = _belly.get_collider(), normal = n,
+		gap = _belly.global_position.distance_to(_belly.get_collision_point()) - RIDE_HEIGHT}
 
 
 ## World-down clearance (the blob shadow's ray): a fall is always straight down.

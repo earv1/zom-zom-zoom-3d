@@ -40,6 +40,20 @@ static func upgrades() -> Array[Dictionary]:
 	return _upgrades
 
 
+## The upgrade's icon (white glyph: tint it with rarity_color).
+static func icon(u: Dictionary) -> Texture2D:
+	var path: String = u.get("icon", "")
+	return load(path) as Texture2D if ResourceLoader.exists(path) else null
+
+
+static func rarity_color(rarity: StringName) -> Color:
+	match rarity:
+		&"uncommon": return Color(0.45, 0.8, 1.0)
+		&"rare": return Color(1.0, 0.75, 0.25)
+		&"meta": return Color(0.55, 1.0, 0.55)
+	return Color(0.95, 0.92, 0.85)
+
+
 static func upgrade(id: StringName) -> Dictionary:
 	_load()
 	return _by_id.get(id, {})
@@ -107,6 +121,7 @@ static func _load() -> void:
 			"value": float(row.value), "max_level": int(row.max_level), "base_cost": float(row.base_cost),
 			"cost_growth": float(row.cost_growth), "weapon": StringName(row.weapon),
 			"description": row.description,
+			"icon": "res://assets/icons/upgrades/%s.svg" % row.get("icon", "wrench"),
 		}
 		_upgrades.append(u)
 		_by_id[u.id] = u

@@ -1,0 +1,304 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/deck.tscn" id="1_cutww"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/deck.gd" id="2_f6586"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/skill_gate.tscn" id="3_tpkmk"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/skill_gate.gd" id="4_ionvt"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/straight.tscn" id="5_yefsc"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/straight.gd" id="6_pydjv"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/hint_sign.tscn" id="7_6m7qd"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/hint_sign.gd" id="8_rhcax"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/ceiling.tscn" id="9_jghni"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/ceiling.gd" id="10_4og6k"]
+[ext_resource type="PackedScene" path="res://addons/track_editor/pieces/park/pound_pad.tscn" id="11_kn6qb"]
+[ext_resource type="Script" path="res://addons/track_editor/pieces/park/pound_pad.gd" id="12_evdo3"]
+
+[node name="UpsideDownSkill" type="Node3D" unique_id=900318172]
+metadata/route = PackedVector3Array(0, 30, 16, 0, 30, 8, 0, 30, 0, 0, 30, -8, 0, 30, -16, 0, 30, -24, 0, 30, -32, 0, 30, -40, 0, 30, -70, 54, 30, 62, 54, 30, 54, 54, 30, 46, 54, 30, 38, 54, 30, 30, 54, 30, 22, 54, 30, 14, 54, 30, 6, 54, 30, -24, 108, 30, 108, 108, 30, 100, 108, 30, 92, 108, 30, 84, 108, 30, 76, 108, 30, 68, 108, 30, 60, 108, 30, 52, 108, 30, 22)
+
+[node name="TrackRoot" type="Node3D" parent="." unique_id=263834327]
+
+[node name="deck_0_0_40" type="Node3D" parent="TrackRoot" unique_id=1897635883 instance=ExtResource("1_cutww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40)
+script = ExtResource("2_f6586")
+width_cells = 3
+depth_cells = 4
+height = 30.0
+side_color_name = "red"
+
+[node name="skill_gate_0_30_48" type="Node3D" parent="TrackRoot" unique_id=2109484590 instance=ExtResource("3_tpkmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 48)
+script = ExtResource("4_ionvt")
+kind = 0
+order = 0
+width = 20.0
+side_color_name = "red"
+
+[node name="straight_0_30_20" type="Node3D" parent="TrackRoot" unique_id=1470801957 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 20)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_0_30_12" type="Node3D" parent="TrackRoot" unique_id=1063167806 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 12)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_0_30_4" type="Node3D" parent="TrackRoot" unique_id=448937636 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 4)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_0_30_-4" type="Node3D" parent="TrackRoot" unique_id=871478932 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, -4)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_0_30_-12" type="Node3D" parent="TrackRoot" unique_id=1945749075 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, -12)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_0_30_-20" type="Node3D" parent="TrackRoot" unique_id=787439216 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, -20)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_0_30_-28" type="Node3D" parent="TrackRoot" unique_id=1600353722 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, -28)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_0_30_-36" type="Node3D" parent="TrackRoot" unique_id=834236491 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, -36)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="hint_sign_0_30_10" type="Node3D" parent="TrackRoot" unique_id=1263453771 instance=ExtResource("7_6m7qd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 10)
+script = ExtResource("8_rhcax")
+text = "Hold the throttle into the curve: it takes you onto the CEILING.
+Press SPACE to drop off, CTRL to pound the target."
+reach = 45.0
+side_color_name = "red"
+
+[node name="ceiling_0_30_-44" type="Node3D" parent="TrackRoot" unique_id=1091766077 instance=ExtResource("9_jghni")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -4.7699523e-08, 30, -44)
+script = ExtResource("10_4og6k")
+ceiling_length = 166.0
+side_color_name = "red"
+
+[node name="pound_pad_0_30_86" type="Node3D" parent="TrackRoot" unique_id=956767538 instance=ExtResource("11_kn6qb")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 30, 86)
+script = ExtResource("12_evdo3")
+size = 28.0
+bounce = 18.0
+side_color_name = "red"
+
+[node name="deck_62_0_86" type="Node3D" parent="TrackRoot" unique_id=210209833 instance=ExtResource("1_cutww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, 86)
+script = ExtResource("2_f6586")
+width_cells = 6
+depth_cells = 4
+height = 30.0
+side_color_name = "red"
+
+[node name="skill_gate_54_30_86" type="Node3D" parent="TrackRoot" unique_id=1816246571 instance=ExtResource("3_tpkmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 30, 86)
+script = ExtResource("4_ionvt")
+width = 48.0
+depth = 32.0
+side_color_name = "red"
+
+[node name="hint_sign_68_30_86" type="Node3D" parent="TrackRoot" unique_id=1891129227 instance=ExtResource("7_6m7qd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 30, 86)
+script = ExtResource("8_rhcax")
+text = "Landed! Brake and turn left onto the next run-up."
+height = 6.0
+reach = 20.0
+side_color_name = "red"
+
+[node name="straight_54_30_66" type="Node3D" parent="TrackRoot" unique_id=1467085227 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 30, 66)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_54_30_58" type="Node3D" parent="TrackRoot" unique_id=961321642 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 30, 58)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_54_30_50" type="Node3D" parent="TrackRoot" unique_id=130180314 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 30, 50)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_54_30_42" type="Node3D" parent="TrackRoot" unique_id=970695279 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 30, 42)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_54_30_34" type="Node3D" parent="TrackRoot" unique_id=1281117527 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 30, 34)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_54_30_26" type="Node3D" parent="TrackRoot" unique_id=424286389 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 30, 26)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_54_30_18" type="Node3D" parent="TrackRoot" unique_id=1742368248 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 30, 18)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_54_30_10" type="Node3D" parent="TrackRoot" unique_id=1124680857 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 30, 10)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="hint_sign_54_30_56" type="Node3D" parent="TrackRoot" unique_id=1672375040 instance=ExtResource("7_6m7qd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 30, 56)
+script = ExtResource("8_rhcax")
+text = "Smaller target this time."
+reach = 45.0
+side_color_name = "red"
+
+[node name="ceiling_54_30_2" type="Node3D" parent="TrackRoot" unique_id=17947629 instance=ExtResource("9_jghni")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 54, 30, 2)
+script = ExtResource("10_4og6k")
+ceiling_length = 166.0
+side_color_name = "red"
+
+[node name="pound_pad_54_30_132" type="Node3D" parent="TrackRoot" unique_id=501769956 instance=ExtResource("11_kn6qb")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 54, 30, 132)
+script = ExtResource("12_evdo3")
+size = 20.0
+bounce = 18.0
+side_color_name = "red"
+
+[node name="deck_116_0_132" type="Node3D" parent="TrackRoot" unique_id=319451728 instance=ExtResource("1_cutww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116, 0, 132)
+script = ExtResource("2_f6586")
+width_cells = 6
+depth_cells = 4
+height = 30.0
+side_color_name = "red"
+
+[node name="skill_gate_108_30_132" type="Node3D" parent="TrackRoot" unique_id=336424094 instance=ExtResource("3_tpkmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 30, 132)
+script = ExtResource("4_ionvt")
+order = 2
+width = 48.0
+depth = 32.0
+side_color_name = "red"
+
+[node name="hint_sign_122_30_132" type="Node3D" parent="TrackRoot" unique_id=1121025849 instance=ExtResource("7_6m7qd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122, 30, 132)
+script = ExtResource("8_rhcax")
+text = "Landed! Brake and turn left onto the next run-up."
+height = 6.0
+reach = 20.0
+side_color_name = "red"
+
+[node name="straight_108_30_112" type="Node3D" parent="TrackRoot" unique_id=1053755354 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 30, 112)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_108_30_104" type="Node3D" parent="TrackRoot" unique_id=1359406432 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 30, 104)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_108_30_96" type="Node3D" parent="TrackRoot" unique_id=1630380595 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 30, 96)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_108_30_88" type="Node3D" parent="TrackRoot" unique_id=1783304658 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 30, 88)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_108_30_80" type="Node3D" parent="TrackRoot" unique_id=1474785343 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 30, 80)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_108_30_72" type="Node3D" parent="TrackRoot" unique_id=1331256447 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 30, 72)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_108_30_64" type="Node3D" parent="TrackRoot" unique_id=897133260 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 30, 64)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="straight_108_30_56" type="Node3D" parent="TrackRoot" unique_id=1771546814 instance=ExtResource("5_yefsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 30, 56)
+script = ExtResource("6_pydjv")
+road_width = 24.0
+side_color_name = "red"
+
+[node name="hint_sign_108_30_102" type="Node3D" parent="TrackRoot" unique_id=1057987368 instance=ExtResource("7_6m7qd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 30, 102)
+script = ExtResource("8_rhcax")
+text = "Last one: the smallest target. Time the drop."
+reach = 45.0
+side_color_name = "red"
+
+[node name="ceiling_108_30_48" type="Node3D" parent="TrackRoot" unique_id=1779282614 instance=ExtResource("9_jghni")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 108, 30, 48)
+script = ExtResource("10_4og6k")
+ceiling_length = 166.0
+side_color_name = "red"
+
+[node name="pound_pad_108_30_178" type="Node3D" parent="TrackRoot" unique_id=74207652 instance=ExtResource("11_kn6qb")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 108, 30, 178)
+script = ExtResource("12_evdo3")
+size = 14.0
+bounce = 18.0
+side_color_name = "red"
+
+[node name="deck_162_0_178" type="Node3D" parent="TrackRoot" unique_id=419179294 instance=ExtResource("1_cutww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162, 0, 178)
+script = ExtResource("2_f6586")
+width_cells = 4
+depth_cells = 4
+height = 30.0
+side_color_name = "red"
+
+[node name="skill_gate_162_30_178" type="Node3D" parent="TrackRoot" unique_id=1745777124 instance=ExtResource("3_tpkmk")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 162, 30, 178)
+script = ExtResource("4_ionvt")
+kind = 3
+order = 9
+width = 32.0
+depth = 32.0
+side_color_name = "red"

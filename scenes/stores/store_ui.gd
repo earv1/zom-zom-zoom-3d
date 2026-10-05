@@ -1,6 +1,7 @@
 class_name StoreUI
 extends CanvasLayer
-## Store shelf shown while parked in a PitStore bay. The game keeps running.
+## Store shelf shown while parked in a PitStore bay. The game pauses while
+## you shop (you drive out with your speed kept).
 ## turn_left / turn_right pick a card, jump or ui_accept buys it (or click it),
 ## accelerate drives out.
 
@@ -18,6 +19,7 @@ var _scrap_label: Label
 
 func _ready() -> void:
 	layer = 5
+	process_mode = Node.PROCESS_MODE_ALWAYS      # runs while the game is paused
 	var dim := ColorRect.new()
 	dim.color = Color(0.05, 0.03, 0.02, 0.55)
 	dim.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -52,6 +54,12 @@ func _ready() -> void:
 		card.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		card.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		card.add_theme_font_size_override("font_size", 15)
+		var u := Economy.upgrade(items[i])
+		card.icon = Economy.icon(u)
+		card.expand_icon = false
+		card.add_theme_constant_override("icon_max_width", 48)
+		for state in ["icon_normal_color", "icon_hover_color", "icon_pressed_color", "icon_focus_color"]:
+			card.add_theme_color_override(state, Economy.rarity_color(u.rarity))
 		card.pressed.connect(_buy.bind(i))
 		card.mouse_entered.connect(func() -> void: _select(i))
 		grid.add_child(card)
@@ -59,7 +67,7 @@ func _ready() -> void:
 	if items.is_empty():
 		root.add_child(_label("Sold out!", 22, Color.WHITE))
 
-	root.add_child(_label("← →  choose     SPACE / ENTER  buy     ACCELERATE  drive out (momentum kept)", 16, Color(0.85, 0.85, 0.85)))
+	root.add_child(_label("← →  choose     SPACE / ENTER  buy     ACCELERATE  drive out (momentum kept)   (game paused)", 16, Color(0.85, 0.85, 0.85)))
 	GameManager.scrap_changed.connect(_refresh.unbind(1))
 	_refresh()
 

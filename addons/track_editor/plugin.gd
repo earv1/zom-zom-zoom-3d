@@ -52,6 +52,7 @@ var PIECE_SCENES := {
 	"loop":     "res://addons/track_editor/pieces/loop.tscn",
 	"bank":     "res://addons/track_editor/pieces/bank.tscn",
 	"jump":     "res://addons/track_editor/pieces/jump.tscn",
+	"ceiling":  "res://addons/track_editor/pieces/ceiling.tscn",
 	# skatepark kit
 	"floor":        "res://addons/track_editor/pieces/park/floor.tscn",
 	"quarter_pipe": "res://addons/track_editor/pieces/park/quarter_pipe.tscn",
@@ -68,6 +69,10 @@ var PIECE_SCENES := {
 	"diner":        "res://addons/track_editor/pieces/park/store_diner.tscn",
 	"petrol":       "res://addons/track_editor/pieces/park/store_petrol.tscn",
 	"sky_workshop": "res://addons/track_editor/pieces/park/store_sky_workshop.tscn",
+	# skill tracks
+	"pound_pad":    "res://addons/track_editor/pieces/park/pound_pad.tscn",
+	"skill_gate":   "res://addons/track_editor/pieces/park/skill_gate.tscn",
+	"hint_sign":    "res://addons/track_editor/pieces/park/hint_sign.tscn",
 }
 
 func _enter_tree() -> void:

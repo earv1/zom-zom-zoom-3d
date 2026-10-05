@@ -25,6 +25,7 @@ const PIECES := [
 	{"name": "bank", "label": "Bank Turn", "tag": "Flow", "desc": "Carry speed"},
 	{"name": "jump", "label": "Jump Pad", "tag": "Stunts", "desc": "Launch section"},
 	{"name": "loop", "label": "Loop", "tag": "Stunts", "desc": "Big commit"},
+	{"name": "ceiling", "label": "Ceiling", "tag": "Stunts", "desc": "Half loop onto an upside-down road"},
 	{"name": "floor", "label": "Floor", "tag": "Park", "desc": "Concrete slab"},
 	{"name": "quarter_pipe", "label": "Quarter Pipe", "tag": "Park", "desc": "Transition to vert"},
 	{"name": "bowl_corner", "label": "Bowl Corner", "tag": "Park", "desc": "Join two QPs"},
@@ -39,6 +40,9 @@ const PIECES := [
 	{"name": "diner", "label": "Roadside Diner", "tag": "Stores", "desc": "Common upgrades"},
 	{"name": "petrol", "label": "Petrol Station", "tag": "Stores", "desc": "Rare upgrades"},
 	{"name": "sky_workshop", "label": "Sky Workshop", "tag": "Stores", "desc": "3x upgrades, 2x price"},
+	{"name": "pound_pad", "label": "Pound Pad", "tag": "Skills", "desc": "Ground pound it to spring up"},
+	{"name": "skill_gate", "label": "Skill Gate", "tag": "Skills", "desc": "Start / checkpoint / trick / finish"},
+	{"name": "hint_sign", "label": "Hint Sign", "tag": "Skills", "desc": "Floating instructions"},
 ]
 
 var _erase_btn: Button
@@ -280,7 +284,7 @@ func _build_ui() -> void:
 
 	var categories := HBoxContainer.new()
 	root.add_child(categories)
-	for category_name in ["All", "Core", "Flow", "Stunts", "Park", "Stores"]:
+	for category_name in ["All", "Core", "Flow", "Stunts", "Park", "Stores", "Skills"]:
 		var btn := Button.new()
 		btn.text = category_name
 		btn.toggle_mode = true

@@ -10,6 +10,8 @@ const SAVE_PATH := "user://garage.cfg"
 ## Player setting: every screen shake (quakes, boss landings, ground pounds)
 ## checks this. Anything new that shakes the screen must too.
 var screen_shake := true
+## Best completion time (seconds) per skill track id, saved with the garage.
+var skill_bests: Dictionary = {}
 
 var elapsed_time: float = 0.0
 var current_health: int = 100
@@ -261,10 +263,20 @@ func _load_meta() -> void:
 		return
 	parts = cfg.get_value("garage", "parts", 0)
 	screen_shake = cfg.get_value("settings", "screen_shake", true)
+	skill_bests = cfg.get_value("skills", "bests", {})
 	var saved: Dictionary = cfg.get_value("garage", "levels", {})
 	meta_levels = {}
 	for id in saved:
 		meta_levels[StringName(id)] = int(saved[id])
+
+
+## Records a skill completion; returns true if it's a new best.
+func record_skill_time(id: String, seconds: float) -> bool:
+	if skill_bests.has(id) and float(skill_bests[id]) <= seconds:
+		return false
+	skill_bests[id] = seconds
+	_save_meta()
+	return true
 
 
 func set_screen_shake(on: bool) -> void:
@@ -276,6 +288,7 @@ func _save_meta() -> void:
 	var cfg := ConfigFile.new()
 	cfg.set_value("garage", "parts", parts)
 	cfg.set_value("settings", "screen_shake", screen_shake)
+	cfg.set_value("skills", "bests", skill_bests)
 	var plain := {}
 	for id in meta_levels:
 		plain[String(id)] = meta_levels[id]

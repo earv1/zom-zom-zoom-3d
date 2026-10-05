@@ -176,3 +176,161 @@ func test_boss_landings_shake_only_the_screen_and_the_dome_hugs_the_wall() -> vo
 	GameManager.screen_shake = true
 	get_tree().paused = false
 	scene_root.queue_free()
+
+
+func test_ramming_the_boss_at_speed_takes_a_fiftieth() -> void:
+	for c in GameManager.level_up_triggered.get_connections():
+		GameManager.level_up_triggered.disconnect(c.callable)
+	GameManager.reset()
+	var scene_root := Node3D.new()
+	get_tree().root.add_child(scene_root)
+	get_tree().current_scene = scene_root
+	var level: Node3D = LEVEL.instantiate()
+	level.race_seconds = 0.5
+	scene_root.add_child(level)
+	level.spawner.process_mode = Node.PROCESS_MODE_DISABLED
+	await wait_until(func() -> bool: return level.phase == level.Phase.FIGHT, 40.0, "boss arrives")
+	var fight: BossFight = level.fight
+	await wait_until(func() -> bool: return fight._state == &"fight", 10.0, "boss ready")
+	fight._cooldown = INF
+	await wait_until(func() -> bool: return not fight._busy and not fight.boss.laser.is_active(), 15.0, "boss idle")
+	var car: RigidBody3D = level.car
+	var ram: Node = car.get_node("RamComponent")
+	var top: float = car.get("top_speed")
+	# the air ram (and its rings) switches on near top speed, not at an unreachable 200 km/h
+	car.linear_velocity = Vector3.FORWARD * top * 0.7
+	await wait_physics_frames(1)
+	await get_tree().process_frame
+	assert_false(ram.is_ramming, "cruising below 80% of top speed: no ram")
+	# line up 30 m out, aimed at the boss, at top speed
+	var at := fight.boss.global_position
+	var from := at + Vector3(30, 0.6, 0)
+	var xf := Transform3D(Basis.looking_at(at - from, Vector3.UP), from)
+	PhysicsServer3D.body_set_state(car.get_rid(), PhysicsServer3D.BODY_STATE_TRANSFORM, xf)
+	car.global_transform = xf
+	var health := fight.health
+	for i in 60:
+		car.linear_velocity = (at - from).normalized() * top
+		await wait_physics_frames(1)
+		if fight.health < health:
+			break
+	assert_true(ram.is_ramming, "at top speed the car rams")
+	assert_almost_eq(float(health - fight.health), roundf(fight.max_health / 50.0), 1.0, "a ram takes a fiftieth of its health")
+	get_tree().paused = false
+	scene_root.queue_free()
+
+
+func test_leap_aims_where_a_moving_car_will_be_on_landing() -> void:
+	for c in GameManager.level_up_triggered.get_connections():
+		GameManager.level_up_triggered.disconnect(c.callable)
+	GameManager.reset()
+	var scene_root := Node3D.new()
+	get_tree().root.add_child(scene_root)
+	get_tree().current_scene = scene_root
+	var level: Node3D = LEVEL.instantiate()
+	level.race_seconds = 0.5
+	scene_root.add_child(level)
+	level.spawner.process_mode = Node.PROCESS_MODE_DISABLED
+	await wait_until(func() -> bool: return level.phase == level.Phase.FIGHT, 40.0, "boss arrives")
+	var fight: BossFight = level.fight
+	await wait_until(func() -> bool: return fight._state == &"fight", 10.0, "boss ready")
+	fight._cooldown = INF
+	await wait_until(func() -> bool: return not fight._busy and not fight.boss.laser.is_active(), 15.0, "boss idle")
+	var car: RigidBody3D = level.car
+	var start := fight.global_position + Vector3(-40, 0.6, 20)
+	var xf := Transform3D(Basis.looking_at(Vector3.RIGHT, Vector3.UP), start)
+	PhysicsServer3D.body_set_state(car.get_rid(), PhysicsServer3D.BODY_STATE_TRANSFORM, xf)
+	car.global_transform = xf
+	car.linear_velocity = Vector3.RIGHT * 20.0
+	await wait_physics_frames(1)
+	car.linear_velocity = Vector3.RIGHT * 20.0
+	var expect := car.global_position + Vector3.RIGHT * 20.0 * (BossFight.LEAP_TELEGRAPH + BossFight.LEAP_AIR_TIME)
+	fight._leap_combo(1)
+	await wait_physics_frames(1)
+	var markers := fight.find_children("*", "MeshInstance3D", false, false).filter(
+		func(m: Node) -> bool: return (m as MeshInstance3D).mesh is PlaneMesh)
+	assert_eq(markers.size(), 1)
+	var mark := (markers[0] as Node3D).global_position
+	assert_lt(Vector2(mark.x - expect.x, mark.z - expect.z).length(), 3.0, "the circle sits where the car will be when it lands")
+	await wait_until(func() -> bool: return not fight._busy, 6.0, "leap finishes")
+	get_tree().paused = false
+	scene_root.queue_free()
+
+
+func _fight_level(test_stage := -1) -> Node3D:
+	for c in GameManager.level_up_triggered.get_connections():
+		GameManager.level_up_triggered.disconnect(c.callable)
+	GameManager.reset()
+	var scene_root := Node3D.new()
+	get_tree().root.add_child(scene_root)
+	get_tree().current_scene = scene_root
+	ParkLevel.test_stage = test_stage
+	var level: Node3D = LEVEL.instantiate()
+	if test_stage < 0:
+		level.race_seconds = 0.5
+	scene_root.add_child(level)
+	level.spawner.process_mode = Node.PROCESS_MODE_DISABLED
+	await wait_until(func() -> bool: return level.phase == level.Phase.FIGHT, 40.0, "boss arrives")
+	await wait_until(func() -> bool: return level.fight._state == &"fight", 10.0, "boss ready")
+	level.fight._cooldown = INF
+	await wait_until(func() -> bool: return not level.fight._busy and not level.fight.boss.laser.is_active(), 15.0, "boss idle")
+	return level
+
+
+func _put_car(car: RigidBody3D, at: Vector3) -> void:
+	var xf := Transform3D(Basis(), at)
+	PhysicsServer3D.body_set_state(car.get_rid(), PhysicsServer3D.BODY_STATE_TRANSFORM, xf)
+	car.global_transform = xf
+	car.linear_velocity = Vector3.ZERO
+	car.angular_velocity = Vector3.ZERO
+
+
+func test_boss_test_mode_goes_straight_to_the_chosen_boss() -> void:
+	var level := await _fight_level(2)
+	assert_eq(level.fight.stage, HadedaBoss.Stage.CYDEDA, "boss test: cydeda straight away")
+	assert_eq(ParkLevel.test_stage, -1, "the test choice is used once")
+	get_tree().paused = false
+	level.get_parent().queue_free()
+
+
+func test_shockwave_hits_a_car_on_the_ground_but_not_one_in_the_air() -> void:
+	var level := await _fight_level()
+	var fight: BossFight = level.fight
+	var car: RigidBody3D = level.car
+	var air: CarAirControl = car.get_node("CarAirControl")
+	_put_car(car, fight.global_position + Vector3(40, 0.7, 0))
+	await wait_physics_frames(20)
+	var health := GameManager.current_health
+	fight._shockwave()
+	await wait_seconds(40.0 / BossFight.WAVE_SPEED + 0.3)
+	assert_lt(GameManager.current_health, health, "the ring hits a grounded car")
+	# now hover the car above the ring's path
+	_put_car(car, fight.global_position + Vector3(0, 0.7, 40))
+	await wait_physics_frames(20)
+	health = GameManager.current_health
+	fight._shockwave()
+	await wait_seconds(40.0 / BossFight.WAVE_SPEED - 0.25)
+	_put_car(car, fight.global_position + Vector3(0, 9.0, 40))   # jumped
+	car.freeze = true
+	await wait_seconds(0.6)
+	car.freeze = false
+	assert_eq(GameManager.current_health, health, "jumping it dodges the ring")
+	get_tree().paused = false
+	level.get_parent().queue_free()
+
+
+func test_lava_wells_up_in_the_middle_and_spreads_out() -> void:
+	var level := await _fight_level()
+	var fight: BossFight = level.fight
+	GameManager.invulnerable = true                       # the car sits in it: don't let game over pause the test
+	fight.lava_duration = 4.0
+	fight._lava_attack()
+	await wait_until(func() -> bool: return fight._lava != null and fight._lava.position.y >= 0.0, 6.0, "lava up")
+	var reach := (fight._lava.mesh as CylinderMesh).top_radius
+	assert_lt(fight._lava.scale.x * reach, reach * 0.8, "it starts small, in the middle")
+	await wait_seconds(BossFight.LAVA_SPREAD_TIME)
+	assert_almost_eq(fight._lava.scale.x, 1.0, 0.02, "then floods out to the wall")
+	await wait_until(func() -> bool: return not fight._busy, 15.0, "attack ends")
+	GameManager.invulnerable = false
+	get_tree().paused = false
+	level.get_parent().queue_free()
